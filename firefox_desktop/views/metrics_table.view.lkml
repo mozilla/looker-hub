@@ -13866,7 +13866,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.contentblocking_tracking_protection_enabled ;;
     hidden: yes
     description: "True if tracking protection is enabled globally at startup.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram TRACKING_PROTECTION_ENABLED.
 "
   }
 
@@ -13874,7 +13873,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.contentblocking_tracking_protection_pbm_disabled ;;
     hidden: yes
     description: "True if tracking protection in Private Browsing mode is disabled at startup.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram TRACKING_PROTECTION_PBM_DISABLED.
 "
   }
 
@@ -16263,7 +16261,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__security_ui_neterror_search_cta_reason {
     sql: ${TABLE}.metrics.labeled_counter.security_ui_neterror_search_cta_reason ;;
     hidden: yes
-    description: "Why the online dnsNotFound Search CTA reached its action, recorded once per eligible page load, paired with search_cta_action. keywords_found is a keyword query; no_path and no_meaningful_keywords fall back to the host; host_unusable and search_unavailable show no CTA. engine_not_general means a default search engine exists but is special-purpose (e.g. Wikipedia), so the CTA is not shown. connectivity_unconfirmed means we could not confirm we were online at page load: the captive-portal reading was stale and the authoritative re-check came back offline/captive or timed out, so no CTA was shown. Connectivity dropping *after* the CTA was shown is a different thing and is counted by search_cta_click_aborted, not here. not_top_level means the error document was not the top-level document (a DNS failure inside an embedded document on a page that loaded fine), so no CTA was offered; it is evaluated before the failed URL is looked at, which is why such a load can never appear under keywords_found, no_path or no_mean"
+    description: "Why the online dnsNotFound Search CTA reached its action, recorded once per eligible page load, paired with search_cta_action. keywords_found is a keyword query; no_path and no_meaningful_keywords fall back to the host; host_unusable and search_unavailable show no CTA. engine_not_general means a default search engine exists but is special-purpose (e.g. Wikipedia), so the CTA is not shown. connectivity_unconfirmed means we could not confirm we were online at page load: the captive-portal reading was stale and the authoritative re-check came back offline/captive or timed out, so no CTA was shown. Connectivity dropping *after* the CTA was shown is a different thing and is counted by search_cta_click_aborted, not here. decision_timed_out means the decision did not finish inside browser.netError.searchCTA.decisionTimeoutMs, the deadline the page waits out before rendering without a CTA, so it was abandoned and no CTA was shown. It absorbs most of what used to be counted under connectivity_unconfirmed. The stale-re"
   }
 
   dimension: metrics__labeled_counter__serp_ads_blocked_count {
