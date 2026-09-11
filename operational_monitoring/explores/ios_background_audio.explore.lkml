@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/startpage_initial_launch.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/startpage_initial_launch_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/ios_background_audio.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/ios_background_audio_last_updated.datagroup.lkml"
 
-explore: startpage_initial_launch {
+explore: ios_background_audio {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: startpage_initial_launch {
   }
 
   hidden: yes
-  persist_with: startpage_initial_launch_last_updated
+  persist_with: ios_background_audio_last_updated
 }
