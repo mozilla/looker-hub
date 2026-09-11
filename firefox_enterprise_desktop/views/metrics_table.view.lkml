@@ -11278,6 +11278,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__network_ssl_token_resumption_outcome {
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_resumption_outcome ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_sso_entra_success {
     sql: ${TABLE}.metrics.labeled_counter.network_sso_entra_success ;;
     hidden: yes
