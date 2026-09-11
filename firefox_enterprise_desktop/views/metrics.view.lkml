@@ -23233,6 +23233,23 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__network_ssl_token_resumption_outcome {
+    label: "Network: SSL Token Resumption Outcome"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_resumption_outcome ;;
+    group_label: "Network"
+    group_item_label: "SSL Token Resumption Outcome"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Resumption Outcome"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/network_ssl_token_resumption_outcome"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The session resumption outcome of a connection that had at least one cached token to try. Recorded once per connection. 'rejected' means the TLS stack refused every token. 'not_resumed' means a token was accepted by the stack and sent, but the server declined it. 'resumed' means the server accepted it.
+"
+  }
+
   dimension: metrics__labeled_counter__network_sso_entra_success {
     label: "Network Sso: Entra Success"
     hidden: yes
@@ -58989,6 +59006,47 @@ view: metrics__metrics__labeled_counter__network_ssl_token_cache_db_errors {
 
 view: metrics__metrics__labeled_counter__network_ssl_token_cache_hits {
   label: "Network: SSL Token Cache Hits"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_ssl_token_resumption_outcome {
+  label: "Network: SSL Token Resumption Outcome"
 
   dimension: document_id {
     type: string

@@ -1658,6 +1658,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_ssl_token_cache_hits}) AS metrics__metrics__labeled_counter__network_ssl_token_cache_hits ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_ssl_token_cache_hits.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_ssl_token_resumption_outcome {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_ssl_token_resumption_outcome}) AS metrics__metrics__labeled_counter__network_ssl_token_resumption_outcome ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_ssl_token_resumption_outcome.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_sso_entra_success {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_sso_entra_success}) AS metrics__metrics__labeled_counter__network_sso_entra_success ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_sso_entra_success.document_id} ;;

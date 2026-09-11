@@ -12833,6 +12833,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_search_widget {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_search_widget ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_searchbar ;;
     hidden: yes
@@ -15195,6 +15200,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     hidden: yes
     description: "Counts session resumption token cache hits and misses. A 'hit' means a valid cached token was found and can be used for session resumption. A 'miss' means no valid token was available.
 "
+  }
+
+  dimension: metrics__labeled_counter__network_ssl_token_resumption_outcome {
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_resumption_outcome ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__network_sso_entra_success {
