@@ -27317,7 +27317,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Time (ms) for spawning a service worker in an isolated content process.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_ISOLATED_LAUNCH_TIME.
 "
   }
 
@@ -27336,7 +27335,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time (ms) for spawning a service worker in the remote content process.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_LAUNCH_TIME_2.
 "
   }
 
@@ -27355,7 +27353,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Tracking how ServiceWorkerRegistrar loads data before the first content is shown.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_REGISTRATION_LOADING.
 "
   }
 
@@ -33517,7 +33514,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Tracking whether a DedicatedWorker spawn gets queued due to hitting max workers per domain limit.
-This metric was generated to correspond to the Legacy Telemetry count histogram DEDICATED_WORKER_SPAWN_GETS_QUEUED.
 "
   }
 
@@ -33536,7 +33532,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "Tracking whether a ServiceWorker spawn gets queued due to hitting max workers per domain limit.
-This metric was generated to correspond to the Legacy Telemetry count histogram SERVICE_WORKER_SPAWN_GETS_QUEUED.
 "
   }
 
@@ -33555,7 +33550,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "Tracking whether a SharedWorker spawn gets queued due to hitting max workers per domain limit.
-This metric was generated to correspond to the Legacy Telemetry count histogram SHARED_WORKER_SPAWN_GETS_QUEUED.
 "
   }
 

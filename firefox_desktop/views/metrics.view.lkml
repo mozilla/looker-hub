@@ -1015,7 +1015,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from about:home, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_home.
+    description: "The count of URI loads triggered in a subsession from about:home, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_home.
 "
   }
 
@@ -1032,7 +1032,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from about:newtab, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_newtab.
+    description: "The count of URI loads triggered in a subsession from about:newtab, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_newtab.
 "
   }
 
@@ -1066,7 +1066,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the contextmenu, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.contextmenu.
+    description: "The count of URI loads triggered in a subsession from the contextmenu, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.contextmenu.
 "
   }
 
@@ -1100,7 +1100,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the search CTA on a network error page, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the search CTA on a network error page, broken down by the originating action.
 "
   }
 
@@ -1117,7 +1117,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the New Tab search bar, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the New Tab search bar, broken down by the originating action.
 "
   }
 
@@ -1134,7 +1134,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the searchbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.searchbar.
+    description: "The count of URI loads triggered in a subsession from the searchbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.searchbar.
 "
   }
 
@@ -1151,7 +1151,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the smartbar, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the smartbar, broken down by the originating action.
 "
   }
 
@@ -1168,7 +1168,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the AI window assistant search handoff button.
+    description: "The count of URI loads triggered in a subsession from the AI window assistant search handoff button.
 "
   }
 
@@ -1185,7 +1185,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the urlbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar.
+    description: "The count of URI loads triggered in a subsession from the urlbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar.
 "
   }
 
@@ -1202,7 +1202,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_handoff.
 "
   }
 
@@ -1236,7 +1236,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the urlbar's search mode, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_searchmode.
+    description: "The count of URI loads triggered in a subsession from the urlbar's search mode, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_searchmode.
 "
   }
 
@@ -1253,7 +1253,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from a webextension. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.webextension.
+    description: "The count of URI loads triggered in a subsession from a webextension. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.webextension.
 "
   }
 
@@ -2088,7 +2088,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_handoff.
 "
   }
 
@@ -2377,7 +2377,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_handoff.
 "
   }
 
@@ -2666,7 +2666,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_handoff.
 "
   }
 
@@ -7830,8 +7830,8 @@ on if the loadPathHash is valid.
     description: "The display name of the user's default engine.
 
 If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+the preferences `browser.search.separatePrivateDefault.enabled` and
+`browser.search.separatePrivateDefault.featureGate` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
 "
@@ -7861,8 +7861,8 @@ suffix supplied by the configuration.
 For other engines, this is `other-<engineName>`.
 
 If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+the preferences `browser.search.separatePrivateDefault.enabled` and
+`browser.search.separatePrivateDefault.featureGate` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
 "
@@ -7894,8 +7894,8 @@ For example:
 Note: this metric is truncated at 100 characters.
 
 If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+the preferences `browser.search.separatePrivateDefault.enabled` and
+`browser.search.separatePrivateDefault.featureGate` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
 "
@@ -7983,8 +7983,8 @@ cases where:
   The engine has the same name as an application provided engine.
   The engine matches one of a specific list of well known search engines.
 If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+the preferences `browser.search.separatePrivateDefault.enabled` and
+`browser.search.separatePrivateDefault.featureGate` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
 "
@@ -35310,7 +35310,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Time (ms) for spawning a service worker in an isolated content process.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_ISOLATED_LAUNCH_TIME.
 "
   }
 
@@ -35329,7 +35328,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time (ms) for spawning a service worker in the remote content process.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_LAUNCH_TIME_2.
 "
   }
 
@@ -35348,7 +35346,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Tracking how ServiceWorkerRegistrar loads data before the first content is shown.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_REGISTRATION_LOADING.
 "
   }
 
@@ -41474,7 +41471,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Tracking whether a DedicatedWorker spawn gets queued due to hitting max workers per domain limit.
-This metric was generated to correspond to the Legacy Telemetry count histogram DEDICATED_WORKER_SPAWN_GETS_QUEUED.
 "
   }
 
@@ -41493,7 +41489,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "Tracking whether a ServiceWorker spawn gets queued due to hitting max workers per domain limit.
-This metric was generated to correspond to the Legacy Telemetry count histogram SERVICE_WORKER_SPAWN_GETS_QUEUED.
 "
   }
 
@@ -41512,7 +41507,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "Tracking whether a SharedWorker spawn gets queued due to hitting max workers per domain limit.
-This metric was generated to correspond to the Legacy Telemetry count histogram SHARED_WORKER_SPAWN_GETS_QUEUED.
 "
   }
 
