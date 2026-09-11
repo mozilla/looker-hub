@@ -10,6 +10,108 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_cm_poland_potd_widget_rollout
+    type: looker_line
+    fields: [
+      hnt_wattle_cm_poland_potd_widget_rollout.submission_date,
+      hnt_wattle_cm_poland_potd_widget_rollout.branch,
+      hnt_wattle_cm_poland_potd_widget_rollout.point
+    ]
+    pivots: [
+      hnt_wattle_cm_poland_potd_widget_rollout.branch
+    ]
+    filters:
+      hnt_wattle_cm_poland_potd_widget_rollout.metric: 'qualified_cumulative_days_of_use'
+      hnt_wattle_cm_poland_potd_widget_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
+    field_y: hnt_wattle_cm_poland_potd_widget_rollout.point
+    log_scale: false
+    ci_lower: hnt_wattle_cm_poland_potd_widget_rollout.lower
+    ci_upper: hnt_wattle_cm_poland_potd_widget_rollout.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_cm_poland_potd_widget_rollout
+    type: looker_line
+    fields: [
+      hnt_wattle_cm_poland_potd_widget_rollout.submission_date,
+      hnt_wattle_cm_poland_potd_widget_rollout.branch,
+      hnt_wattle_cm_poland_potd_widget_rollout.point
+    ]
+    pivots: [
+      hnt_wattle_cm_poland_potd_widget_rollout.branch
+    ]
+    filters:
+      hnt_wattle_cm_poland_potd_widget_rollout.metric: 'active_hours'
+      hnt_wattle_cm_poland_potd_widget_rollout.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
+    field_y: hnt_wattle_cm_poland_potd_widget_rollout.point
+    log_scale: false
+    ci_lower: hnt_wattle_cm_poland_potd_widget_rollout.lower
+    ci_upper: hnt_wattle_cm_poland_potd_widget_rollout.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_cm_poland_potd_widget_rollout
+    type: looker_line
+    fields: [
+      hnt_wattle_cm_poland_potd_widget_rollout.submission_date,
+      hnt_wattle_cm_poland_potd_widget_rollout.branch,
+      hnt_wattle_cm_poland_potd_widget_rollout.point
+    ]
+    pivots: [
+      hnt_wattle_cm_poland_potd_widget_rollout.branch
+    ]
+    filters:
+      hnt_wattle_cm_poland_potd_widget_rollout.metric: 'days_of_use'
+      hnt_wattle_cm_poland_potd_widget_rollout.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
+    field_y: hnt_wattle_cm_poland_potd_widget_rollout.point
+    log_scale: false
+    ci_lower: hnt_wattle_cm_poland_potd_widget_rollout.lower
+    ci_upper: hnt_wattle_cm_poland_potd_widget_rollout.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -28,8 +130,8 @@
     filters:
       hnt_wattle_cm_poland_potd_widget_rollout.metric: 'uri_count'
       hnt_wattle_cm_poland_potd_widget_rollout.statistic: mean
-    row: 0
-    col: 0
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
@@ -64,42 +166,7 @@
     filters:
       hnt_wattle_cm_poland_potd_widget_rollout.metric: 'memory_total'
       hnt_wattle_cm_poland_potd_widget_rollout.statistic: percentile
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
-    field_y: hnt_wattle_cm_poland_potd_widget_rollout.point
-    log_scale: false
-    ci_lower: hnt_wattle_cm_poland_potd_widget_rollout.lower
-    ci_upper: hnt_wattle_cm_poland_potd_widget_rollout.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
-      Percentile: hnt_wattle_cm_poland_potd_widget_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_cm_poland_potd_widget_rollout
-    type: looker_line
-    fields: [
-      hnt_wattle_cm_poland_potd_widget_rollout.submission_date,
-      hnt_wattle_cm_poland_potd_widget_rollout.branch,
-      hnt_wattle_cm_poland_potd_widget_rollout.point
-    ]
-    pivots: [
-      hnt_wattle_cm_poland_potd_widget_rollout.branch
-    ]
-    filters:
-      hnt_wattle_cm_poland_potd_widget_rollout.metric: 'retained'
-      hnt_wattle_cm_poland_potd_widget_rollout.statistic: mean
-    row: 10
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -111,6 +178,7 @@
     show_grid: true
     listen:
       Date: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
+      Percentile: hnt_wattle_cm_poland_potd_widget_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -132,74 +200,6 @@
     ]
     filters:
       hnt_wattle_cm_poland_potd_widget_rollout.metric: 'search_count'
-      hnt_wattle_cm_poland_potd_widget_rollout.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
-    field_y: hnt_wattle_cm_poland_potd_widget_rollout.point
-    log_scale: false
-    ci_lower: hnt_wattle_cm_poland_potd_widget_rollout.lower
-    ci_upper: hnt_wattle_cm_poland_potd_widget_rollout.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_cm_poland_potd_widget_rollout
-    type: looker_line
-    fields: [
-      hnt_wattle_cm_poland_potd_widget_rollout.submission_date,
-      hnt_wattle_cm_poland_potd_widget_rollout.branch,
-      hnt_wattle_cm_poland_potd_widget_rollout.point
-    ]
-    pivots: [
-      hnt_wattle_cm_poland_potd_widget_rollout.branch
-    ]
-    filters:
-      hnt_wattle_cm_poland_potd_widget_rollout.metric: 'qualified_cumulative_days_of_use'
-      hnt_wattle_cm_poland_potd_widget_rollout.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
-    field_y: hnt_wattle_cm_poland_potd_widget_rollout.point
-    log_scale: false
-    ci_lower: hnt_wattle_cm_poland_potd_widget_rollout.lower
-    ci_upper: hnt_wattle_cm_poland_potd_widget_rollout.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_cm_poland_potd_widget_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_cm_poland_potd_widget_rollout
-    type: looker_line
-    fields: [
-      hnt_wattle_cm_poland_potd_widget_rollout.submission_date,
-      hnt_wattle_cm_poland_potd_widget_rollout.branch,
-      hnt_wattle_cm_poland_potd_widget_rollout.point
-    ]
-    pivots: [
-      hnt_wattle_cm_poland_potd_widget_rollout.branch
-    ]
-    filters:
-      hnt_wattle_cm_poland_potd_widget_rollout.metric: 'active_hours'
       hnt_wattle_cm_poland_potd_widget_rollout.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       hnt_wattle_cm_poland_potd_widget_rollout.branch
     ]
     filters:
-      hnt_wattle_cm_poland_potd_widget_rollout.metric: 'days_of_use'
+      hnt_wattle_cm_poland_potd_widget_rollout.metric: 'retained'
       hnt_wattle_cm_poland_potd_widget_rollout.statistic: mean
     row: 30
     col: 12

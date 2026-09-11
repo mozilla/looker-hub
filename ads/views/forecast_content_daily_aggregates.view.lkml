@@ -196,6 +196,11 @@ view: forecast_content_daily_aggregates {
     type: sum
   }
 
+  measure: actual_newtab_visits_to_dau_sum {
+    sql: ${actual_newtab_visits_to_dau} ;;
+    type: sum
+  }
+
   measure: actual_sponsored_impressions_difference_from_last_month {
     based_on: actual_uapi_impressions_excluding_house_ads_sum
     based_on_time: submission_month_date
@@ -212,6 +217,16 @@ view: forecast_content_daily_aggregates {
     period: month
     type: period_over_period
     value_to_date: no
+  }
+
+  measure: actual_total_active_users_sum {
+    sql: ${actual_total_active_users} ;;
+    type: sum
+  }
+
+  measure: actual_total_newtab_visits_sum {
+    sql: ${actual_total_newtab_visits} ;;
+    type: sum
   }
 
   measure: actual_uapi_clicks_excluding_house_ads_sum {
@@ -272,6 +287,11 @@ view: forecast_content_daily_aggregates {
     type: sum
   }
 
+  measure: forecast_newtab_visits_to_dau_sum {
+    sql: ${forecast_newtab_visits_to_dau} ;;
+    type: sum
+  }
+
   measure: forecast_sponsored_impressions_nonhouse_difference_from_previous_forecast {
     based_on: forecast_uapi_impressions_excluding_house_ads_sum
     based_on_time: forecast_month_date
@@ -288,6 +308,16 @@ view: forecast_content_daily_aggregates {
     period: month
     type: period_over_period
     value_to_date: no
+  }
+
+  measure: forecast_total_active_users_sum {
+    sql: ${forecast_total_active_users} ;;
+    type: sum
+  }
+
+  measure: forecast_total_newtab_visits_sum {
+    sql: ${forecast_total_newtab_visits} ;;
+    type: sum
   }
 
   measure: forecast_uapi_impressions_excluding_house_ads_sum {
