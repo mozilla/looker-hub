@@ -208,6 +208,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_errorpage}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_errorpage ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_errorpage.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_newtab_search_widget {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_newtab_search_widget}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_newtab_search_widget ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_newtab_search_widget.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar.document_id} ;;
@@ -1181,6 +1186,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__geolocation_network_failures {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_network_failures}) AS metrics__metrics__labeled_counter__geolocation_network_failures ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_network_failures.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__geolocation_network_provider {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_network_provider}) AS metrics__metrics__labeled_counter__geolocation_network_provider ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_network_provider.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__geolocation_request_result {
