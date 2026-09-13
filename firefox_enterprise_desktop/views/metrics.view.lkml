@@ -997,7 +997,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from about:home, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_home.
+    description: "The count of URI loads triggered in a subsession from about:home, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_home.
 "
   }
 
@@ -1014,7 +1014,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from about:newtab, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_newtab.
+    description: "The count of URI loads triggered in a subsession from about:newtab, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_newtab.
 "
   }
 
@@ -1031,7 +1031,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the contextmenu, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.contextmenu.
+    description: "The count of URI loads triggered in a subsession from the contextmenu, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.contextmenu.
 "
   }
 
@@ -1065,7 +1065,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the search CTA on a network error page, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the search CTA on a network error page, broken down by the originating action.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_search_widget {
+    label: "Browser Engagement Navigation: Newtab Search Widget"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_search_widget ;;
+    group_label: "Browser Engagement Navigation"
+    group_item_label: "Newtab Search Widget"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Navigation: Newtab Search Widget"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_navigation_newtab_search_widget"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count URI loads triggered in a subsession from a search widget on about:newtab, broken down by the originating action.
 "
   }
 
@@ -1082,7 +1099,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the New Tab search bar, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the New Tab search bar, broken down by the originating action.
 "
   }
 
@@ -1099,7 +1116,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the searchbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.searchbar.
+    description: "The count of URI loads triggered in a subsession from the searchbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.searchbar.
 "
   }
 
@@ -1116,7 +1133,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the smartbar, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the smartbar, broken down by the originating action.
 "
   }
 
@@ -1133,7 +1150,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the AI window assistant search handoff button.
+    description: "The count of URI loads triggered in a subsession from the AI window assistant search handoff button.
 "
   }
 
@@ -1150,7 +1167,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the urlbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar.
+    description: "The count of URI loads triggered in a subsession from the urlbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar.
 "
   }
 
@@ -1167,7 +1184,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_handoff.
 "
   }
 
@@ -1201,7 +1218,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the urlbar's search mode, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_searchmode.
+    description: "The count of URI loads triggered in a subsession from the urlbar's search mode, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_searchmode.
 "
   }
 
@@ -1218,7 +1235,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from a webextension. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.webextension.
+    description: "The count of URI loads triggered in a subsession from a webextension. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.webextension.
 "
   }
 
@@ -2018,7 +2035,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_handoff.
 "
   }
 
@@ -2290,7 +2307,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_handoff.
 "
   }
 
@@ -2562,7 +2579,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_handoff.
 "
   }
 
@@ -7031,8 +7048,8 @@ be `other`.
     description: "The display name of the user's default engine.
 
 If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+the preferences `browser.search.separatePrivateDefault.enabled` and
+`browser.search.separatePrivateDefault.featureGate` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
 "
@@ -7062,8 +7079,8 @@ suffix supplied by the configuration.
 For other engines, this is `other-<engineName>`.
 
 If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+the preferences `browser.search.separatePrivateDefault.enabled` and
+`browser.search.separatePrivateDefault.featureGate` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
 "
@@ -7095,8 +7112,8 @@ For example:
 Note: this metric is truncated at 100 characters.
 
 If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+the preferences `browser.search.separatePrivateDefault.enabled` and
+`browser.search.separatePrivateDefault.featureGate` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
 "
@@ -7184,8 +7201,8 @@ cases where:
   The engine has the same name as an application provided engine.
   The engine matches one of a specific list of well known search engines.
 If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+the preferences `browser.search.separatePrivateDefault.enabled` and
+`browser.search.separatePrivateDefault.featureGate` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
 "
@@ -11990,7 +12007,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "This scalar reports the value of the content blocking category pref (0 = \"standard\", 1 = \"strict\", 2 = \"custom\", 3 = some other value, this is not supported). This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.category.
+    description: "This scalar reports the value of the content blocking category pref (0 = \"standard\", 1 = \"strict\", 2 = \"custom\", 3 = some other value, this is not supported).
 "
   }
 
@@ -12044,7 +12061,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "True if cryptominer blocking is enabled globally at startup. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.cryptomining_blocking_enabled.
+    description: "True if cryptominer blocking is enabled globally at startup.
 "
   }
 
@@ -12096,7 +12113,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "True if fingerprinter blocking is enabled globally at startup. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.fingerprinting_blocking_enabled.
+    description: "True if fingerprinter blocking is enabled globally at startup.
 "
   }
 
@@ -12294,7 +12311,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A count of the number of tracking events blocked. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.trackers_blocked_count.
+    description: "A count of the number of tracking events blocked.
 "
   }
 
@@ -14452,6 +14469,60 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
     description: "How long has the storage inspector been active (seconds)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_STORAGE_TIME_ACTIVE_SECONDS.
+"
+  }
+
+  dimension: metrics__counter__devtools_styleeditor_stylesheets_links_opened_in_style_editor_count {
+    label: "Devtools Styleeditor Stylesheets: Links Opened In Style Editor Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_stylesheets_links_opened_in_style_editor_count ;;
+    type: number
+    group_label: "Devtools Styleeditor Stylesheets"
+    group_item_label: "Links Opened In Style Editor Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets: Links Opened In Style Editor Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/devtools_styleeditor_stylesheets_links_opened_in_style_editor_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times stylesheets link from another panel opens the stylesheet in the style editor.
+"
+  }
+
+  dimension: metrics__counter__devtools_styleeditor_stylesheets_stylesheets_edited_count {
+    label: "Devtools Styleeditor Stylesheets: Stylesheets Edited Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_stylesheets_stylesheets_edited_count ;;
+    type: number
+    group_label: "Devtools Styleeditor Stylesheets"
+    group_item_label: "Stylesheets Edited Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets: Stylesheets Edited Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/devtools_styleeditor_stylesheets_stylesheets_edited_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of unique stylesheets edited in the style editor.
+"
+  }
+
+  dimension: metrics__counter__devtools_styleeditor_stylesheets_stylesheets_opened_count {
+    label: "Devtools Styleeditor Stylesheets: Stylesheets Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_stylesheets_stylesheets_opened_count ;;
+    type: number
+    group_label: "Devtools Styleeditor Stylesheets"
+    group_item_label: "Stylesheets Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets: Stylesheets Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/devtools_styleeditor_stylesheets_stylesheets_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times stylesheets have been selected and opened in the style editor.
 "
   }
 
@@ -16990,6 +17061,23 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "How many network geolocation requests received an error response.  The number of successful network geolocation requests should resemble the the values for these labels in the geolocation_service probe, minus these failure counts.  Not all failures can be known.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_network_provider {
+    label: "Geolocation: Network Provider"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_network_provider ;;
+    group_label: "Geolocation"
+    group_item_label: "Network Provider"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Network Provider"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/geolocation_network_provider"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which network geolocation service each request from the NetworkGeolocationProvider was sent to, determined from the host of the configured geo.provider.network.url.  \"other\" means the URL had a host that is not one of the services listed here, and \"unknown\" means it had no host that could be parsed.
 "
   }
 
@@ -41503,6 +41591,81 @@ Most samples are expected to be below the 10s timeout used.
     }
   }
 
+  measure: devtools_styleeditor_stylesheets_links_opened_in_style_editor_count {
+    type: sum
+    sql: ${metrics__counter__devtools_styleeditor_stylesheets_links_opened_in_style_editor_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets Links Opened In Style Editor Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/devtools_styleeditor_stylesheets_links_opened_in_style_editor_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_styleeditor_stylesheets_links_opened_in_style_editor_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_styleeditor_stylesheets_links_opened_in_style_editor_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets Links Opened In Style Editor Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/devtools_styleeditor_stylesheets_links_opened_in_style_editor_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_styleeditor_stylesheets_stylesheets_edited_count {
+    type: sum
+    sql: ${metrics__counter__devtools_styleeditor_stylesheets_stylesheets_edited_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets Stylesheets Edited Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/devtools_styleeditor_stylesheets_stylesheets_edited_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_styleeditor_stylesheets_stylesheets_edited_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_styleeditor_stylesheets_stylesheets_edited_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets Stylesheets Edited Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/devtools_styleeditor_stylesheets_stylesheets_edited_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_styleeditor_stylesheets_stylesheets_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_styleeditor_stylesheets_stylesheets_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets Stylesheets Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/devtools_styleeditor_stylesheets_stylesheets_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_styleeditor_stylesheets_stylesheets_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_styleeditor_stylesheets_stylesheets_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets Stylesheets Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/devtools_styleeditor_stylesheets_stylesheets_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: devtools_styleeditor_opened_count {
     type: sum
     sql: ${metrics__counter__devtools_styleeditor_opened_count} ;;
@@ -47116,6 +47279,47 @@ view: metrics__metrics__labeled_counter__browser_engagement_navigation_contextme
 
 view: metrics__metrics__labeled_counter__browser_engagement_navigation_errorpage {
   label: "Browser Engagement Navigation: Errorpage"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_engagement_navigation_newtab_search_widget {
+  label: "Browser Engagement Navigation: Newtab Search Widget"
 
   dimension: document_id {
     type: string
@@ -55111,6 +55315,47 @@ view: metrics__metrics__labeled_counter__geolocation_macos_error_code {
 
 view: metrics__metrics__labeled_counter__geolocation_network_failures {
   label: "Geolocation: Network Failures"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_network_provider {
+  label: "Geolocation: Network Provider"
 
   dimension: document_id {
     type: string

@@ -2011,6 +2011,30 @@ view: metrics_table {
     group_item_label: "Devtools Styleeditor Opened Count"
   }
 
+  dimension: metrics__counter__devtools_styleeditor_stylesheets_links_opened_in_style_editor_count {
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_stylesheets_links_opened_in_style_editor_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Styleeditor Stylesheets Links Opened In Style Editor Count"
+  }
+
+  dimension: metrics__counter__devtools_styleeditor_stylesheets_stylesheets_edited_count {
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_stylesheets_stylesheets_edited_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Styleeditor Stylesheets Stylesheets Edited Count"
+  }
+
+  dimension: metrics__counter__devtools_styleeditor_stylesheets_stylesheets_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_stylesheets_stylesheets_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Styleeditor Stylesheets Stylesheets Opened Count"
+  }
+
   dimension: metrics__counter__devtools_toolbox_opened_count {
     sql: ${TABLE}.metrics.counter.devtools_toolbox_opened_count ;;
     type: number
@@ -9175,6 +9199,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_search_widget {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_search_widget ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_searchbar ;;
     hidden: yes
@@ -10577,6 +10606,11 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     hidden: yes
     description: "How many network geolocation requests received an error response.  The number of successful network geolocation requests should resemble the the values for these labels in the geolocation_service probe, minus these failure counts.  Not all failures can be known.
 "
+  }
+
+  dimension: metrics__labeled_counter__geolocation_network_provider {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_network_provider ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__geolocation_request_result {

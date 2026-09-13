@@ -73,7 +73,8 @@ view: quick_suggest {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the home region of the user as determined by `Region.sys.mjs` and the `browser.search.region` pref.
+    description: "Records the home region of the user as determined by `Region.sys.mjs` and
+the `browser.search.region` pref.
 "
   }
 
@@ -127,7 +128,8 @@ view: quick_suggest {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether this quicksuggest-impression ping was for an item that was clicked.
+    description: "Whether this quicksuggest-impression ping was for an item that was
+clicked.
 "
   }
 
@@ -145,7 +147,8 @@ view: quick_suggest {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether this was a best/top match or not. Either \"best-match\" or \"firefox-suggest\".
+    description: "Whether this was a best/top match or not. Either \"best-match\" or
+\"firefox-suggest\".
 "
   }
 
@@ -163,7 +166,9 @@ view: quick_suggest {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The ping's type. In other situations might be designated by an event's name or an interaction field. E.g. \"quicksuggest-impression\", \"quicksuggest-block\", \"quicksuggest-click\".
+    description: "The ping's type. In other situations might be designated by an event's
+name or an interaction field. E.g. \"quicksuggest-impression\",
+\"quicksuggest-block\", \"quicksuggest-click\".
 "
   }
 
@@ -217,7 +222,9 @@ view: quick_suggest {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A request identifier for each API request to [Merino](https://mozilla-services.github.io/merino/). Only present for suggestions provided by Merino.
+    description: "A request identifier for each API request to
+[Merino](https://mozilla-services.github.io/merino/).
+Only present for suggestions provided by Merino.
 "
   }
 
@@ -253,7 +260,12 @@ view: quick_suggest {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A stringified integer value that is the intended index of the suggestion being interacted with. If `suggested_index_relative_to_group` is true, the index is relative to the \"Firefox Suggest\" group; otherwise the index is relative to the entire list of suggestions. Non-negative values (starting at 0) are relative to the start/top of the group/list; negative values are relative to the end/bottom of the group/list.
+    description: "A stringified integer value that is the intended index of the suggestion
+being interacted with. If `suggested_index_relative_to_group` is true, the
+index is relative to the \"Firefox Suggest\" group; otherwise the index is
+relative to the entire list of suggestions. Non-negative values (starting
+at 0) are relative to the start/top of the group/list; negative values are
+relative to the end/bottom of the group/list.
 "
   }
 
@@ -271,7 +283,8 @@ view: quick_suggest {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether `suggested_index` is relative to the \"Firefox Suggest\" group. If false, it is relative to the entire list of suggestions.
+    description: "Whether `suggested_index` is relative to the \"Firefox Suggest\" group. If
+false, it is relative to the entire list of suggestions.
 "
   }
 

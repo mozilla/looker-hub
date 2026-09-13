@@ -35987,6 +35987,60 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_speechrecognition_available {
+    label: "Use Counter Doc: Speechrecognition Available"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speechrecognition_available ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speechrecognition Available"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speechrecognition Available"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speechrecognition_available"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called SpeechRecognition.available. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speechrecognition_install {
+    label: "Use Counter Doc: Speechrecognition Install"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speechrecognition_install ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speechrecognition Install"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speechrecognition Install"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speechrecognition_install"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called SpeechRecognition.install. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speechrecognition_start {
+    label: "Use Counter Doc: Speechrecognition Start"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speechrecognition_start ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speechrecognition Start"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speechrecognition Start"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speechrecognition_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called SpeechRecognition.start. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_svgsvgelement_currentscale_getter {
     label: "Use Counter Doc: Svgsvgelement Currentscale Getter"
     hidden: no
@@ -45775,6 +45829,60 @@ view: use_counters {
     }
 
     description: "Whether a page has a speculation rule with a non-null tag. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speechrecognition_available {
+    label: "Use Counter Page: Speechrecognition Available"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_speechrecognition_available ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speechrecognition Available"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speechrecognition Available"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speechrecognition_available"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called SpeechRecognition.available. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speechrecognition_install {
+    label: "Use Counter Page: Speechrecognition Install"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_speechrecognition_install ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speechrecognition Install"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speechrecognition Install"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speechrecognition_install"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called SpeechRecognition.install. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speechrecognition_start {
+    label: "Use Counter Page: Speechrecognition Start"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_speechrecognition_start ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speechrecognition Start"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speechrecognition Start"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speechrecognition_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called SpeechRecognition.start. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -103616,6 +103724,81 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_speechrecognition_available {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speechrecognition_available} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speechrecognition Available"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speechrecognition_available"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speechrecognition_available_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speechrecognition_available: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speechrecognition Available"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speechrecognition_available"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speechrecognition_install {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speechrecognition_install} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speechrecognition Install"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speechrecognition_install"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speechrecognition_install_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speechrecognition_install: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speechrecognition Install"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speechrecognition_install"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speechrecognition_start {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speechrecognition_start} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speechrecognition Start"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speechrecognition_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speechrecognition_start_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speechrecognition_start: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speechrecognition Start"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speechrecognition_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_svgsvgelement_currentscale_getter {
     type: sum
     sql: ${metrics__counter__use_counter_doc_svgsvgelement_currentscale_getter} ;;
@@ -117187,6 +117370,81 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Speculation Rules Tag"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speechrecognition_available {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speechrecognition_available} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speechrecognition Available"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speechrecognition_available"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speechrecognition_available_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speechrecognition_available: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speechrecognition Available"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speechrecognition_available"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speechrecognition_install {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speechrecognition_install} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speechrecognition Install"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speechrecognition_install"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speechrecognition_install_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speechrecognition_install: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speechrecognition Install"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speechrecognition_install"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speechrecognition_start {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speechrecognition_start} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speechrecognition Start"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speechrecognition_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speechrecognition_start_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speechrecognition_start: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speechrecognition Start"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speechrecognition_start"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

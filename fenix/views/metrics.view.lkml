@@ -6150,7 +6150,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "This scalar reports the value of the content blocking category pref (0 = \"standard\", 1 = \"strict\", 2 = \"custom\", 3 = some other value, this is not supported). This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.category.
+    description: "This scalar reports the value of the content blocking category pref (0 = \"standard\", 1 = \"strict\", 2 = \"custom\", 3 = some other value, this is not supported).
 "
   }
 
@@ -6204,7 +6204,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "True if cryptominer blocking is enabled globally at startup. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.cryptomining_blocking_enabled.
+    description: "True if cryptominer blocking is enabled globally at startup.
 "
   }
 
@@ -6256,7 +6256,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "True if fingerprinter blocking is enabled globally at startup. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.fingerprinting_blocking_enabled.
+    description: "True if fingerprinter blocking is enabled globally at startup.
 "
   }
 
@@ -6454,7 +6454,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A count of the number of tracking events blocked. This metric was generated to correspond to the Legacy Telemetry scalar contentblocking.trackers_blocked_count.
+    description: "A count of the number of tracking events blocked.
 "
   }
 

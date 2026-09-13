@@ -452,8 +452,8 @@ suffix supplied by the configuration.
 For other engines, this is `other-<engineName>`.
 
 If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+the preferences `browser.search.separatePrivateDefault.enabled` and
+`browser.search.separatePrivateDefault.featureGate` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
 "
