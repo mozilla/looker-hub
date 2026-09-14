@@ -9167,21 +9167,21 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__browser_engagement_navigation_about_home {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_about_home ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from about:home, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_home.
+    description: "The count of URI loads triggered in a subsession from about:home, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_home.
 "
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_about_newtab {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_about_newtab ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from about:newtab, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_newtab.
+    description: "The count of URI loads triggered in a subsession from about:newtab, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_newtab.
 "
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from the contextmenu, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.contextmenu.
+    description: "The count of URI loads triggered in a subsession from the contextmenu, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.contextmenu.
 "
   }
 
@@ -9195,54 +9195,56 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__browser_engagement_navigation_errorpage {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_errorpage ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from the search CTA on a network error page, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the search CTA on a network error page, broken down by the originating action.
 "
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_search_widget {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_search_widget ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from a search widget on about:newtab, broken down by the originating action.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_searchbar ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from the New Tab search bar, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the New Tab search bar, broken down by the originating action.
 "
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_searchbar ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from the searchbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.searchbar.
+    description: "The count of URI loads triggered in a subsession from the searchbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.searchbar.
 "
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_smartbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_smartbar ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from the smartbar, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the smartbar, broken down by the originating action.
 "
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_smartwindow_assistant ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from the AI window assistant search handoff button.
+    description: "The count of URI loads triggered in a subsession from the AI window assistant search handoff button.
 "
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from the urlbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar.
+    description: "The count of URI loads triggered in a subsession from the urlbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar.
 "
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_handoff ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_handoff.
 "
   }
 
@@ -9256,14 +9258,14 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_searchmode {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_searchmode ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from the urlbar's search mode, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_searchmode.
+    description: "The count of URI loads triggered in a subsession from the urlbar's search mode, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_searchmode.
 "
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_webextension {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_webextension ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from a webextension. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.webextension.
+    description: "The count of URI loads triggered in a subsession from a webextension. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.webextension.
 "
   }
 
@@ -9400,7 +9402,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__browser_search_adclicks_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar_handoff ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_handoff.
 "
   }
 
@@ -9512,7 +9514,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__browser_search_content_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar_handoff ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_handoff.
 "
   }
 
@@ -9624,7 +9626,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__browser_search_withads_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar_handoff ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_handoff.
 "
   }
 
@@ -10611,6 +10613,8 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__geolocation_network_provider {
     sql: ${TABLE}.metrics.labeled_counter.geolocation_network_provider ;;
     hidden: yes
+    description: "Which network geolocation service each request from the NetworkGeolocationProvider was sent to, determined from the host of the configured geo.provider.network.url.  \"other\" means the URL had a host that is not one of the services listed here, and \"unknown\" means it had no host that could be parsed.
+"
   }
 
   dimension: metrics__labeled_counter__geolocation_request_result {
@@ -11315,6 +11319,8 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__network_ssl_token_resumption_outcome {
     sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_resumption_outcome ;;
     hidden: yes
+    description: "The session resumption outcome of a connection that had at least one cached token to try. Recorded once per connection. 'rejected' means the TLS stack refused every token. 'not_resumed' means a token was accepted by the stack and sent, but the server declined it. 'resumed' means the server accepted it.
+"
   }
 
   dimension: metrics__labeled_counter__network_sso_entra_success {
@@ -13541,7 +13547,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.service_worker_running ;;
     hidden: yes
     description: "The sampled number of simultaneous running ServiceWorkers in a session, sampled once each 10 seconds (lazily on state change)
-This metric was generated to correspond to the Legacy Telemetry linear histogram SERVICE_WORKER_RUNNING.
 "
   }
 
@@ -14516,7 +14521,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.service_worker_fetch_event_channel_reset ;;
     hidden: yes
     description: "Time (in ms) measured between when the fetch handler finished executing and when we reset the network channel.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_FETCH_EVENT_CHANNEL_RESET_MS_2.
 "
   }
 
@@ -14524,7 +14528,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.service_worker_fetch_event_dispatch ;;
     hidden: yes
     description: "Time (in ms) measured between when the fetch event is dispatched by the Service Worker and before we execute the event listeners.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_FETCH_EVENT_DISPATCH_MS_2.
 "
   }
 
@@ -14532,7 +14535,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.service_worker_fetch_event_finish_synthesized_response ;;
     hidden: yes
     description: "Time (in ms) measured between when the respondWith promise resolves and when we provide the response through the intercepted channel.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_FETCH_EVENT_FINISH_SYNTHESIZED_RESPONSE_MS_2.
 "
   }
 
@@ -14540,7 +14542,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.service_worker_fetch_interception_duration ;;
     hidden: yes
     description: "Time delta (ms) between when a network request is intercepted in the parent process and the service worker provides a response.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_FETCH_INTERCEPTION_DURATION_MS_2.
 "
   }
 
@@ -14612,7 +14613,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.workers_sync_worker_operation ;;
     hidden: yes
     description: "Tracking how long a Worker thread is blocked when a sync operation is executed on the main-thread.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SYNC_WORKER_OPERATION.
 "
   }
 

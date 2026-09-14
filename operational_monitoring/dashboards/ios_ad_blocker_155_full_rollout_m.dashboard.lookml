@@ -44,6 +44,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_ad_blocker_155_full_rollout_m
+    type: looker_line
+    fields: [
+      ios_ad_blocker_155_full_rollout_m.submission_date,
+      ios_ad_blocker_155_full_rollout_m.branch,
+      ios_ad_blocker_155_full_rollout_m.point
+    ]
+    pivots: [
+      ios_ad_blocker_155_full_rollout_m.branch
+    ]
+    filters:
+      ios_ad_blocker_155_full_rollout_m.metric: 'search_count'
+      ios_ad_blocker_155_full_rollout_m.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: ios_ad_blocker_155_full_rollout_m.submission_date
+    field_y: ios_ad_blocker_155_full_rollout_m.point
+    log_scale: false
+    ci_lower: ios_ad_blocker_155_full_rollout_m.lower
+    ci_upper: ios_ad_blocker_155_full_rollout_m.upper
+    show_grid: true
+    listen:
+      Date: ios_ad_blocker_155_full_rollout_m.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -62,8 +96,8 @@
     filters:
       ios_ad_blocker_155_full_rollout_m.metric: 'days_of_use'
       ios_ad_blocker_155_full_rollout_m.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: ios_ad_blocker_155_full_rollout_m.submission_date
@@ -97,7 +131,7 @@
       ios_ad_blocker_155_full_rollout_m.metric: 'ad_clicks'
       ios_ad_blocker_155_full_rollout_m.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: ios_ad_blocker_155_full_rollout_m.submission_date
@@ -129,40 +163,6 @@
     ]
     filters:
       ios_ad_blocker_155_full_rollout_m.metric: 'retained'
-      ios_ad_blocker_155_full_rollout_m.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: ios_ad_blocker_155_full_rollout_m.submission_date
-    field_y: ios_ad_blocker_155_full_rollout_m.point
-    log_scale: false
-    ci_lower: ios_ad_blocker_155_full_rollout_m.lower
-    ci_upper: ios_ad_blocker_155_full_rollout_m.upper
-    show_grid: true
-    listen:
-      Date: ios_ad_blocker_155_full_rollout_m.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_ad_blocker_155_full_rollout_m
-    type: looker_line
-    fields: [
-      ios_ad_blocker_155_full_rollout_m.submission_date,
-      ios_ad_blocker_155_full_rollout_m.branch,
-      ios_ad_blocker_155_full_rollout_m.point
-    ]
-    pivots: [
-      ios_ad_blocker_155_full_rollout_m.branch
-    ]
-    filters:
-      ios_ad_blocker_155_full_rollout_m.metric: 'search_count'
       ios_ad_blocker_155_full_rollout_m.statistic: mean
     row: 20
     col: 0

@@ -419,6 +419,14 @@ view: broken_site_report_table {
     group_item_label: "Broken Site Report Browser Info Graphics Has Touch Screen"
   }
 
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_ad_blocker_enabled {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_ad_blocker_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Broken Site Report Browser Info Prefs Ad Blocker Enabled"
+  }
+
   dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
     type: yesno

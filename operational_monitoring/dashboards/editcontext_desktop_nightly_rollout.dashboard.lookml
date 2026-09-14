@@ -78,6 +78,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: editcontext_desktop_nightly_rollout
+    type: looker_line
+    fields: [
+      editcontext_desktop_nightly_rollout.submission_date,
+      editcontext_desktop_nightly_rollout.branch,
+      editcontext_desktop_nightly_rollout.point
+    ]
+    pivots: [
+      editcontext_desktop_nightly_rollout.branch
+    ]
+    filters:
+      editcontext_desktop_nightly_rollout.metric: 'search_count'
+      editcontext_desktop_nightly_rollout.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: editcontext_desktop_nightly_rollout.submission_date
+    field_y: editcontext_desktop_nightly_rollout.point
+    log_scale: false
+    ci_lower: editcontext_desktop_nightly_rollout.lower
+    ci_upper: editcontext_desktop_nightly_rollout.upper
+    show_grid: true
+    listen:
+      Date: editcontext_desktop_nightly_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -97,42 +131,6 @@
       editcontext_desktop_nightly_rollout.metric: 'days_of_use'
       editcontext_desktop_nightly_rollout.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: editcontext_desktop_nightly_rollout.submission_date
-    field_y: editcontext_desktop_nightly_rollout.point
-    log_scale: false
-    ci_lower: editcontext_desktop_nightly_rollout.lower
-    ci_upper: editcontext_desktop_nightly_rollout.upper
-    show_grid: true
-    listen:
-      Date: editcontext_desktop_nightly_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: editcontext_desktop_nightly_rollout
-    type: "ci-line-chart"
-    fields: [
-      editcontext_desktop_nightly_rollout.submission_date,
-      editcontext_desktop_nightly_rollout.branch,
-      editcontext_desktop_nightly_rollout.upper,
-      editcontext_desktop_nightly_rollout.lower,
-      editcontext_desktop_nightly_rollout.point
-    ]
-    pivots: [
-      editcontext_desktop_nightly_rollout.branch
-    ]
-    filters:
-      editcontext_desktop_nightly_rollout.metric: 'memory_total'
-      editcontext_desktop_nightly_rollout.statistic: percentile
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -144,7 +142,6 @@
     show_grid: true
     listen:
       Date: editcontext_desktop_nightly_rollout.submission_date
-      Percentile: editcontext_desktop_nightly_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: editcontext_desktop_nightly_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       editcontext_desktop_nightly_rollout.submission_date,
       editcontext_desktop_nightly_rollout.branch,
+      editcontext_desktop_nightly_rollout.upper,
+      editcontext_desktop_nightly_rollout.lower,
       editcontext_desktop_nightly_rollout.point
     ]
     pivots: [
       editcontext_desktop_nightly_rollout.branch
     ]
     filters:
-      editcontext_desktop_nightly_rollout.metric: 'uri_count'
-      editcontext_desktop_nightly_rollout.statistic: mean
+      editcontext_desktop_nightly_rollout.metric: 'memory_total'
+      editcontext_desktop_nightly_rollout.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -213,6 +212,7 @@
     show_grid: true
     listen:
       Date: editcontext_desktop_nightly_rollout.submission_date
+      Percentile: editcontext_desktop_nightly_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       editcontext_desktop_nightly_rollout.branch
     ]
     filters:
-      editcontext_desktop_nightly_rollout.metric: 'search_count'
+      editcontext_desktop_nightly_rollout.metric: 'uri_count'
       editcontext_desktop_nightly_rollout.statistic: mean
     row: 30
     col: 12
