@@ -80,6 +80,29 @@ per-page `tab_info.useragent_string`).
 "
   }
 
+  dimension: metrics__boolean__broken_site_report_browser_info_prefs_ad_blocker_enabled {
+    label: "Broken Site Report Browser Info Prefs: Ad Blocker Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_ad_blocker_enabled ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Prefs"
+    group_item_label: "Ad Blocker Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs: Ad Blocker Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_browser_info_prefs_ad_blocker_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the built-in ad blocker is on: the `blockAds` pref and the
+`adBlocker` Nimbus feature flag together. iOS-only, since ad blocking is
+an extension on desktop and Android and shows up in browser_info.addons
+there. The app-wide setting, sent even when the reported URL is not the
+current tab's page. Like `block_list` and `etp_category` it reads a pref,
+so it does not say whether blocking was in force on the page itself.
+"
+  }
+
   dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
     label: "Broken Site Report Browser Info System: Is Tablet"
     hidden: no

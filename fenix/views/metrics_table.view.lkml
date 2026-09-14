@@ -1915,6 +1915,30 @@ view: metrics_table {
     group_item_label: "Devtools Styleeditor Opened Count"
   }
 
+  dimension: metrics__counter__devtools_styleeditor_stylesheets_links_opened_in_style_editor_count {
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_stylesheets_links_opened_in_style_editor_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Styleeditor Stylesheets Links Opened In Style Editor Count"
+  }
+
+  dimension: metrics__counter__devtools_styleeditor_stylesheets_stylesheets_edited_count {
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_stylesheets_stylesheets_edited_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Styleeditor Stylesheets Stylesheets Edited Count"
+  }
+
+  dimension: metrics__counter__devtools_styleeditor_stylesheets_stylesheets_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_stylesheets_stylesheets_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Styleeditor Stylesheets Stylesheets Opened Count"
+  }
+
   dimension: metrics__counter__devtools_toolbox_opened_count {
     sql: ${TABLE}.metrics.counter.devtools_toolbox_opened_count ;;
     type: number
@@ -12571,6 +12595,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__geolocation_network_provider {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_network_provider ;;
+    hidden: yes
+    description: "Which network geolocation service each request from the NetworkGeolocationProvider was sent to, determined from the host of the configured geo.provider.network.url.  \"other\" means the URL had a host that is not one of the services listed here, and \"unknown\" means it had no host that could be parsed.
+"
+  }
+
   dimension: metrics__labeled_counter__geolocation_request_result {
     sql: ${TABLE}.metrics.labeled_counter.geolocation_request_result ;;
     hidden: yes
@@ -13453,6 +13484,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_hits ;;
     hidden: yes
     description: "Counts session resumption token cache hits and misses. A 'hit' means a valid cached token was found and can be used for session resumption. A 'miss' means no valid token was available.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_ssl_token_resumption_outcome {
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_resumption_outcome ;;
+    hidden: yes
+    description: "The session resumption outcome of a connection that had at least one cached token to try. Recorded once per connection. 'rejected' means the TLS stack refused every token. 'not_resumed' means a token was accepted by the stack and sent, but the server declined it. 'resumed' means the server accepted it.
 "
   }
 
@@ -15266,7 +15304,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.service_worker_running ;;
     hidden: yes
     description: "The sampled number of simultaneous running ServiceWorkers in a session, sampled once each 10 seconds (lazily on state change)
-This metric was generated to correspond to the Legacy Telemetry linear histogram SERVICE_WORKER_RUNNING.
 "
   }
 
@@ -16083,7 +16120,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.service_worker_fetch_event_channel_reset ;;
     hidden: yes
     description: "Time (in ms) measured between when the fetch handler finished executing and when we reset the network channel.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_FETCH_EVENT_CHANNEL_RESET_MS_2.
 "
   }
 
@@ -16091,7 +16127,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.service_worker_fetch_event_dispatch ;;
     hidden: yes
     description: "Time (in ms) measured between when the fetch event is dispatched by the Service Worker and before we execute the event listeners.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_FETCH_EVENT_DISPATCH_MS_2.
 "
   }
 
@@ -16099,7 +16134,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.service_worker_fetch_event_finish_synthesized_response ;;
     hidden: yes
     description: "Time (in ms) measured between when the respondWith promise resolves and when we provide the response through the intercepted channel.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_FETCH_EVENT_FINISH_SYNTHESIZED_RESPONSE_MS_2.
 "
   }
 
@@ -16107,7 +16141,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.service_worker_fetch_interception_duration ;;
     hidden: yes
     description: "Time delta (ms) between when a network request is intercepted in the parent process and the service worker provides a response.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SERVICE_WORKER_FETCH_INTERCEPTION_DURATION_MS_2.
 "
   }
 
@@ -16147,7 +16180,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.workers_sync_worker_operation ;;
     hidden: yes
     description: "Tracking how long a Worker thread is blocked when a sync operation is executed on the main-thread.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SYNC_WORKER_OPERATION.
 "
   }
 

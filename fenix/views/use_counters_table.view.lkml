@@ -16595,6 +16595,30 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Speculation Rules Tag"
   }
 
+  dimension: metrics__counter__use_counter_doc_speechrecognition_available {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speechrecognition_available ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speechrecognition Available"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speechrecognition_install {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speechrecognition_install ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speechrecognition Install"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speechrecognition_start {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speechrecognition_start ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speechrecognition Start"
+  }
+
   dimension: metrics__counter__use_counter_doc_svgsvgelement_currentscale_getter {
     sql: ${TABLE}.metrics.counter.use_counter_doc_svgsvgelement_currentscale_getter ;;
     type: number
@@ -20937,6 +20961,30 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Speculation Rules Tag"
+  }
+
+  dimension: metrics__counter__use_counter_page_speechrecognition_available {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speechrecognition_available ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speechrecognition Available"
+  }
+
+  dimension: metrics__counter__use_counter_page_speechrecognition_install {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speechrecognition_install ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speechrecognition Install"
+  }
+
+  dimension: metrics__counter__use_counter_page_speechrecognition_start {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speechrecognition_start ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speechrecognition Start"
   }
 
   dimension: metrics__counter__use_counter_page_svgsvgelement_currentscale_getter {

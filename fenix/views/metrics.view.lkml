@@ -8895,6 +8895,60 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__counter__devtools_styleeditor_stylesheets_links_opened_in_style_editor_count {
+    label: "Devtools Styleeditor Stylesheets: Links Opened In Style Editor Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_stylesheets_links_opened_in_style_editor_count ;;
+    type: number
+    group_label: "Devtools Styleeditor Stylesheets"
+    group_item_label: "Links Opened In Style Editor Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets: Links Opened In Style Editor Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_styleeditor_stylesheets_links_opened_in_style_editor_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times stylesheets link from another panel opens the stylesheet in the style editor.
+"
+  }
+
+  dimension: metrics__counter__devtools_styleeditor_stylesheets_stylesheets_edited_count {
+    label: "Devtools Styleeditor Stylesheets: Stylesheets Edited Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_stylesheets_stylesheets_edited_count ;;
+    type: number
+    group_label: "Devtools Styleeditor Stylesheets"
+    group_item_label: "Stylesheets Edited Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets: Stylesheets Edited Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_styleeditor_stylesheets_stylesheets_edited_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of unique stylesheets edited in the style editor.
+"
+  }
+
+  dimension: metrics__counter__devtools_styleeditor_stylesheets_stylesheets_opened_count {
+    label: "Devtools Styleeditor Stylesheets: Stylesheets Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_styleeditor_stylesheets_stylesheets_opened_count ;;
+    type: number
+    group_label: "Devtools Styleeditor Stylesheets"
+    group_item_label: "Stylesheets Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets: Stylesheets Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_styleeditor_stylesheets_stylesheets_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times stylesheets have been selected and opened in the style editor.
+"
+  }
+
   dimension: metrics__counter__devtools_styleeditor_opened_count {
     label: "Devtools: Styleeditor Opened Count"
     hidden: no
@@ -11884,6 +11938,23 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "How many network geolocation requests received an error response.  The number of successful network geolocation requests should resemble the the values for these labels in the geolocation_service probe, minus these failure counts.  Not all failures can be known.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_network_provider {
+    label: "Geolocation: Network Provider"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_network_provider ;;
+    group_label: "Geolocation"
+    group_item_label: "Network Provider"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Network Provider"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geolocation_network_provider"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which network geolocation service each request from the NetworkGeolocationProvider was sent to, determined from the host of the configured geo.provider.network.url.  \"other\" means the URL had a host that is not one of the services listed here, and \"unknown\" means it had no host that could be parsed.
 "
   }
 
@@ -18776,6 +18847,23 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Number of TLS session resumption token records successfully loaded from disk into the cache on startup.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_ssl_token_resumption_outcome {
+    label: "Network: SSL Token Resumption Outcome"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_resumption_outcome ;;
+    group_label: "Network"
+    group_item_label: "SSL Token Resumption Outcome"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Resumption Outcome"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_resumption_outcome"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The session resumption outcome of a connection that had at least one cached token to try. Recorded once per connection. 'rejected' means the TLS stack refused every token. 'not_resumed' means a token was accepted by the stack and sent, but the server declined it. 'resumed' means the server accepted it.
 "
   }
 
@@ -38821,6 +38909,81 @@ Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
     }
   }
 
+  measure: devtools_styleeditor_stylesheets_links_opened_in_style_editor_count {
+    type: sum
+    sql: ${metrics__counter__devtools_styleeditor_stylesheets_links_opened_in_style_editor_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets Links Opened In Style Editor Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_styleeditor_stylesheets_links_opened_in_style_editor_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_styleeditor_stylesheets_links_opened_in_style_editor_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_styleeditor_stylesheets_links_opened_in_style_editor_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets Links Opened In Style Editor Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_styleeditor_stylesheets_links_opened_in_style_editor_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_styleeditor_stylesheets_stylesheets_edited_count {
+    type: sum
+    sql: ${metrics__counter__devtools_styleeditor_stylesheets_stylesheets_edited_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets Stylesheets Edited Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_styleeditor_stylesheets_stylesheets_edited_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_styleeditor_stylesheets_stylesheets_edited_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_styleeditor_stylesheets_stylesheets_edited_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets Stylesheets Edited Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_styleeditor_stylesheets_stylesheets_edited_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_styleeditor_stylesheets_stylesheets_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_styleeditor_stylesheets_stylesheets_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets Stylesheets Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_styleeditor_stylesheets_stylesheets_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_styleeditor_stylesheets_stylesheets_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_styleeditor_stylesheets_stylesheets_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Styleeditor Stylesheets Stylesheets Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_styleeditor_stylesheets_stylesheets_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: devtools_styleeditor_opened_count {
     type: sum
     sql: ${metrics__counter__devtools_styleeditor_opened_count} ;;
@@ -48796,6 +48959,47 @@ view: metrics__metrics__labeled_counter__geolocation_network_failures {
   }
 }
 
+view: metrics__metrics__labeled_counter__geolocation_network_provider {
+  label: "Geolocation: Network Provider"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__geolocation_request_result {
   label: "Geolocation: Request Result"
 
@@ -53595,6 +53799,47 @@ view: metrics__metrics__labeled_counter__network_ssl_token_cache_db_errors {
 
 view: metrics__metrics__labeled_counter__network_ssl_token_cache_hits {
   label: "Network: SSL Token Cache Hits"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_ssl_token_resumption_outcome {
+  label: "Network: SSL Token Resumption Outcome"
 
   dimension: document_id {
     type: string
