@@ -563,6 +563,22 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
     group_item_label: "Browser Engagement Profile Count"
   }
 
+  dimension: metrics__quantity__profiles_days_since_install {
+    sql: ${TABLE}.metrics.quantity.profiles_days_since_install ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Profiles Days Since Install"
+  }
+
+  dimension: metrics__quantity__profiles_days_since_update {
+    sql: ${TABLE}.metrics.quantity.profiles_days_since_update ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Profiles Days Since Update"
+  }
+
   dimension: metrics__quantity__profiles_profile_count {
     sql: ${TABLE}.metrics.quantity.profiles_profile_count ;;
     type: number

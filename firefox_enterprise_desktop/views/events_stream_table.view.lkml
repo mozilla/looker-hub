@@ -1448,6 +1448,14 @@ view: events_stream_table {
     group_item_label: "Vulnerable"
   }
 
+  dimension: extras__boolean__waited_out {
+    sql: ${TABLE}.extras.boolean.waited_out ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Waited Out"
+  }
+
   dimension: extras__boolean__warning {
     sql: ${TABLE}.extras.boolean.warning ;;
     type: yesno

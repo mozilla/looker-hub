@@ -19,7 +19,10 @@ view: serp_categorization {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A count incremented upon a SERP categorization event being recorded without a corresponding impression event being recorded. This metric effectively counts missing impressions due to issues with the domain-to-categories map.
+    description: "A count incremented upon a SERP categorization event being recorded
+without a corresponding impression event being recorded. This metric
+effectively counts missing impressions due to issues with the
+domain-to-categories map.
 "
   }
 

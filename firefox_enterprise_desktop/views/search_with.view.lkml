@@ -19,7 +19,9 @@ view: search_with {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "An identifier for Contextual Services user interaction pings. This is used internally for counting unique users as well as for anti-fraud. It is shared with other Contextual Services. It is not shared externally.
+    description: "An identifier for Contextual Services user interaction pings. This is
+used internally for counting unique users as well as for anti-fraud. It
+is shared with other Contextual Services. It is not shared externally.
 "
   }
 

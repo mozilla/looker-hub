@@ -997,7 +997,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from about:home, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_home.
+    description: "The count of URI loads triggered in a subsession from about:home,
+broken down by the originating action.
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.engagement.navigation.about_home.
 "
   }
 
@@ -1014,7 +1017,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from about:newtab, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_newtab.
+    description: "The count of URI loads triggered in a subsession from about:newtab,
+broken down by the originating action.
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.engagement.navigation.about_newtab.
 "
   }
 
@@ -1031,7 +1037,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the contextmenu, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.contextmenu.
+    description: "The count of URI loads triggered in a subsession from the contextmenu,
+broken down by the originating action.
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.engagement.navigation.contextmenu.
 "
   }
 
@@ -1048,7 +1057,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the context menu's visual search menuitem, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the context menu's
+visual search menuitem, broken down by the originating action.
 "
   }
 
@@ -1065,7 +1075,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the search CTA on a network error page, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the search CTA on
+a network error page, broken down by the originating action.
 "
   }
 
@@ -1082,7 +1093,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from a search widget on about:newtab, broken down by the originating action.
+    description: "The count URI loads triggered in a subsession from a search widget on
+about:newtab, broken down by the originating action.
 "
   }
 
@@ -1099,7 +1111,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the New Tab search bar, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the New Tab search
+bar, broken down by the originating action.
 "
   }
 
@@ -1116,7 +1129,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the searchbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.searchbar.
+    description: "The count of URI loads triggered in a subsession from the searchbar,
+broken down by the originating action.
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.engagement.navigation.searchbar.
 "
   }
 
@@ -1133,7 +1149,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the smartbar, broken down by the originating action.
+    description: "The count of URI loads triggered in a subsession from the smartbar,
+broken down by the originating action.
 "
   }
 
@@ -1150,7 +1167,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the AI window assistant search handoff button.
+    description: "The count of URI loads triggered in a subsession from the AI window assistant
+search handoff button.
 "
   }
 
@@ -1167,7 +1185,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar.
+    description: "The count of URI loads triggered in a subsession from the urlbar,
+broken down by the originating action.
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.engagement.navigation.urlbar.
 "
   }
 
@@ -1184,7 +1205,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via
+handoff, broken down by the originating action.
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.engagement.navigation.urlbar_handoff.
 "
   }
 
@@ -1201,7 +1225,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar after the search term was shown in the urlbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_persisted.
+    description: "The count of URI loads triggered in a subsession from the urlbar
+after the search term was shown in the urlbar, broken down by the
+originating action.
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.engagement.navigation.urlbar_persisted.
 "
   }
 
@@ -1218,7 +1246,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar's search mode, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_searchmode.
+    description: "The count of URI loads triggered in a subsession from the urlbar's
+search mode, broken down by the originating action.
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.engagement.navigation.urlbar_searchmode.
 "
   }
 
@@ -1235,7 +1266,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from a webextension. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.webextension.
+    description: "The count of URI loads triggered in a subsession from a webextension.
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.engagement.navigation.webextension.
 "
   }
 
@@ -1831,7 +1864,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from about:home. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.about_home.
+    description: "Records clicks of adverts on SERP pages where the search was started
+from about:home. The key format is ‘<provider>:<tagged|organic>’. See
+https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.about_home.
 "
   }
 
@@ -1848,7 +1885,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from about:newtab. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.about_newtab.
+    description: "Records clicks of adverts on SERP pages where the search was started
+from about:newtab. The key format is ‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.about_newtab.
 "
   }
 
@@ -1865,7 +1906,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from the context menu. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.contextmenu.
+    description: "Records clicks of adverts on SERP pages where the search was started
+from the context menu. The key format is
+‘<provider>:<tagged|organic>’. See
+https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.contextmenu.
 "
   }
 
@@ -1882,7 +1928,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on visual-search SERP pages where the search was started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
+    description: "Records clicks of adverts on visual-search SERP pages where the search was
+started from the context menu. The key format is the same as for the
+`contextmenu` labeled counter.
 "
   }
 
@@ -1899,7 +1947,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was loaded by reloading the page. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.reload.
+    description: "Records clicks of adverts on SERP pages where the search was loaded
+by reloading the page. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.reload.
 "
   }
 
@@ -1916,7 +1969,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from the search bar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.searchbar.
+    description: "Records clicks of adverts on SERP pages where the search was started
+from the search bar. The key format is ‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.searchbar.
 "
   }
 
@@ -1967,7 +2024,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from the system, e.g. command line. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.system.
+    description: "Records clicks of adverts on SERP pages where the search was started
+from the system, e.g. command line. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.system.
 "
   }
 
@@ -1984,7 +2046,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was loaded from the tab history. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.tabhistory.
+    description: "Records clicks of adverts on SERP pages where the search was loaded
+from the tab history. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.tabhistory.
 "
   }
 
@@ -2001,7 +2068,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from a place not categorized by the other scalars. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.unknown.
+    description: "Records clicks of adverts on SERP pages where the search was started
+from a place not categorized by the other scalars. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.unknown.
 "
   }
 
@@ -2018,7 +2090,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from the urlbar. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar.
+    description: "Records clicks of adverts on SERP pages where the search was started
+from the urlbar. The key format is ‘<provider>:<tagged|organic>’. See
+https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.urlbar.
 "
   }
 
@@ -2035,7 +2111,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via
+handoff, broken down by the originating action.
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.urlbar_handoff.
 "
   }
 
@@ -2052,7 +2131,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from the urlbar after the search term was shown in the urlbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_persisted.
+    description: "Records clicks of adverts on SERP pages where the search was started
+from the urlbar after the search term was shown in the urlbar. The
+key format is ‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.urlbar_persisted.
 "
   }
 
@@ -2069,7 +2153,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from the urlbar in search mode. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_searchmode.
+    description: "Records clicks of adverts on SERP pages where the search was started
+from the urlbar in search mode. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.urlbar_searchmode.
 "
   }
 
@@ -2086,7 +2175,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from a webextension. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.webextension.
+    description: "Records clicks of adverts on SERP pages where the search was started
+from a webextension. The key format is ‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.adclicks.webextension.
 "
   }
 
@@ -2103,7 +2196,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content searches where the search was most likely started from the about:home. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.about_home.
+    description: "Records counts for in-content searches where the search was most
+likely started from the about:home. The key format is
+<provider>:[tagged|tagged-follow-on|organic]:[code|other|none]
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.about_home.
 "
   }
 
@@ -2120,7 +2218,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content searches where the search was most likely started from the about:newtab. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.about_newtab.
+    description: "Records counts for in-content searches where the search was most
+likely started from the about:newtab. The key format is
+<provider>:[tagged|tagged-follow-on|organic]:[code|other|none]
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.about_newtab.
 "
   }
 
@@ -2137,7 +2240,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content searches where the search was most likely started from the context menu. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.contextmenu.
+    description: "Records counts for in-content searches where the search was most
+likely started from the context menu. The key format is
+<provider>:[tagged|tagged-follow-on|organic]:[code|other|none]
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.contextmenu.
 "
   }
 
@@ -2154,7 +2262,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content visual searches where the search was most likely started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
+    description: "Records counts for in-content visual searches where the search was most
+likely started from the context menu. The key format is the same as for
+the `contextmenu` labeled counter.
 "
   }
 
@@ -2171,7 +2281,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content searches where the search was loaded by reloading the page. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.reload.
+    description: "Records counts for in-content searches where the search was loaded
+by reloading the page. The key format is
+<provider>:[tagged|tagged-follow-on|organic]:[code|other|none]
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.reload.
 "
   }
 
@@ -2188,7 +2303,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content searches where the search was most likely started from the search bar. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.searchbar.
+    description: "Records counts for in-content searches where the search was most
+likely started from the search bar. The key format is
+<provider>:[tagged|tagged-follow-on|organic]:[code|other|none]
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.searchbar.
 "
   }
 
@@ -2239,7 +2359,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content searches where the search was most likely started from the system, e.g. command line. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.system.
+    description: "Records counts for in-content searches where the search was most
+likely started from the system, e.g. command line. The key format is
+<provider>:[tagged|tagged-follow-on|organic]:[code|other|none]
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.system.
 "
   }
 
@@ -2256,7 +2381,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content searches where the search was loaded from the tab history. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.tabhistory.
+    description: "Records counts for in-content searches where the search was loaded
+from the tab history. The key format is
+<provider>:[tagged|tagged-follow-on|organic]:[code|other|none]
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.tabhistory.
 "
   }
 
@@ -2273,7 +2403,13 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content searches where the search was started from a place that could not be determined or not categorized by the other scalars. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.unknown.
+    description: "Records counts for in-content searches where the search was started
+from a place that could not be determined or not categorized by the
+other scalars. The key format is
+<provider>:[tagged|tagged-follow-on|organic]:[code|other|none]
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.unknown.
 "
   }
 
@@ -2290,7 +2426,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content searches where the search was most likely started from the urlbar. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar.
+    description: "Records counts for in-content searches where the search was most
+likely started from the urlbar. The key format is
+<provider>:[tagged|tagged-follow-on|organic]:[code|other|none]
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.urlbar.
 "
   }
 
@@ -2307,7 +2448,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via
+handoff, broken down by the originating action.
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.urlbar_handoff.
 "
   }
 
@@ -2324,7 +2468,13 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content searches where the search was most likely started from the urlbar after the search term was shown in the urlbar. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_persisted.
+    description: "Records counts for in-content searches where the search was most
+likely started from the urlbar after the search term was shown in
+the urlbar. The key format is
+<provider>:[tagged|tagged-follow-on|organic]:[code|other|none]
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.urlbar_persisted.
 "
   }
 
@@ -2341,7 +2491,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content searches where the search was most likely started from the urlbar in search mode. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_searchmode.
+    description: "Records counts for in-content searches where the search was most
+likely started from the urlbar in search mode. The key format is
+<provider>:[tagged|tagged-follow-on|organic]:[code|other|none]
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.urlbar_searchmode.
 "
   }
 
@@ -2358,7 +2513,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts for in-content searches where the search was most likely started from a webextension. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.webextension.
+    description: "Records counts for in-content searches where the search was most
+likely started from a webextension. The key format is
+<provider>:[tagged|tagged-follow-on|organic]:[code|other|none]
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.content.webextension.
 "
   }
 
@@ -2375,7 +2535,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from about:home. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.about_home.
+    description: "Records counts of SERP pages with adverts displayed where the search
+was started from about:home. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.about_home.
 "
   }
 
@@ -2392,7 +2557,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from about:newtab. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.about_newtab.
+    description: "Records counts of SERP pages with adverts displayed where the search
+was started from about:newtab. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.about_newtab.
 "
   }
 
@@ -2409,7 +2579,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from the context menu. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.contextmenu.
+    description: "Records counts of SERP pages with adverts displayed where the search
+was started from the context menu. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.contextmenu.
 "
   }
 
@@ -2426,7 +2601,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of visual-search SERP pages with adverts displayed where the search was started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
+    description: "Records counts of visual-search SERP pages with adverts displayed where
+the search was started from the context menu. The key format is the same
+as for the `contextmenu` labeled counter.
 "
   }
 
@@ -2443,7 +2620,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was loaded by reloading the page. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.reload.
+    description: "Records counts of SERP pages with adverts displayed where the search
+was loaded by reloading the page. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.reload.
 "
   }
 
@@ -2460,7 +2642,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from the search bar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.searchbar.
+    description: "Records counts of SERP pages with adverts displayed where the search
+was started from the search bar. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.searchbar.
 "
   }
 
@@ -2511,7 +2698,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from the system, e.g. command line. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.system.
+    description: "Records counts of SERP pages with adverts displayed where the search
+was started from the system, e.g. command line. The key format is
+‘<provider>:<tagged|organic>’.
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.system.
 "
   }
 
@@ -2528,7 +2720,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was loaded from the tab history. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.tabhistory.
+    description: "Records counts of SERP pages with adverts displayed where the search
+was loaded from the tab history. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.tabhistory.
 "
   }
 
@@ -2545,7 +2742,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from a place not categorized by the other scalars. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.unknown.
+    description: "Records counts of SERP pages with adverts displayed where the search
+was started from a place not categorized by the other scalars. The
+key format is ‘<provider>:<tagged|organic>’. See
+https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.unknown.
 "
   }
 
@@ -2562,7 +2764,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from the urlbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar.
+    description: "Records counts of SERP pages with adverts displayed where the search
+was started from the urlbar. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.urlbar.
 "
   }
 
@@ -2579,7 +2786,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_handoff.
+    description: "The count of URI loads triggered in a subsession from the urlbar via
+handoff, broken down by the originating action.
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.urlbar_handoff.
 "
   }
 
@@ -2596,7 +2806,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from the urlbar after the search term was shown in the urlbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_persisted.
+    description: "Records counts of SERP pages with adverts displayed where the search
+was started from the urlbar after the search term was shown in the
+urlbar. The key format is ‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.urlbar_persisted.
 "
   }
 
@@ -2613,7 +2828,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from the urlbar in search mode. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_searchmode.
+    description: "Records counts of SERP pages with adverts displayed where the search
+was started from the urlbar in search mode. The key format is
+‘<provider>:<tagged|organic>’
+See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.urlbar_searchmode.
 "
   }
 
@@ -2630,7 +2850,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from a webextension. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.webextension.
+    description: "Records counts of SERP pages with adverts displayed where the search
+was started from a webextension. The key format is
+‘<provider>:<tagged|organic>’. See
+https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+This metric was generated to correspond to the Legacy Telemetry
+scalar browser.search.withads.webextension.
 "
   }
 
@@ -6797,10 +7022,20 @@ Previously collected in the \"main\" ping's `simpleMeasurements`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "This is deprecated metric that should not be incoporated into dashboards. Use the `sap.counts` event instead.
-This metric has been added to Glean to aid transition of histograms and allow the legacy telemetry SEARCH_COUNTS to continue to be recorded.
-Records search counts for search access points. The format is: <engine-name>.<search-access-point>. For the urlbar when in search mode, the format is <engine name>.urlbar-searchmode. For the urlbar when an internal @engine shortcut is used, the format is: <engine-name>.alias.
-This metric was generated to correspond to the Legacy Telemetry count histogram SEARCH_COUNTS.
+    description: "This is deprecated metric that should not be incoporated into dashboards.
+Use the `sap.counts` event instead.
+
+This metric has been added to Glean to aid transition of
+histograms and allow the legacy telemetry SEARCH_COUNTS to continue to be
+recorded.
+
+Records search counts for search access points. The format is:
+<engine-name>.<search-access-point>. For the urlbar when in search mode,
+the format is <engine name>.urlbar-searchmode. For the urlbar when an
+internal @engine shortcut is used, the format is: <engine-name>.alias.
+
+This metric was generated to correspond to the Legacy Telemetry count
+histogram SEARCH_COUNTS.
 "
   }
 
@@ -6817,7 +7052,9 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Count of impressions of the visual search context menu item. The counter's label is the engine's identifier if the engine is known at the time of impression and it's an app-provided engine. Otherwise the label is \"none\".
+    description: "Count of impressions of the visual search context menu item. The counter's
+label is the engine's identifier if the engine is known at the time of
+impression and it's an app-provided engine. Otherwise the label is \"none\".
 "
   }
 
@@ -7267,8 +7504,13 @@ default engine, and hence both versions of these fields will be filled in.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The input method the user used to select a result in the searchbar. 'enter' => The user hit the Enter key without choosing a result in the popup. 'enterSelection' => The user chose a result and then hit the Enter key. 'click' => The user clicked a result with the mouse.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram FX_SEARCHBAR_SELECTED_RESULT_METHOD.
+    description: "The input method the user used to select a result in the searchbar.
+'enter' => The user hit the Enter key without choosing a result in the
+popup. 'enterSelection' => The user chose a result and then hit the Enter
+key. 'click' => The user clicked a result with the mouse.
+
+This metric was generated to correspond to the Legacy Telemetry
+categorical histogram FX_SEARCHBAR_SELECTED_RESULT_METHOD.
 "
   }
 
@@ -8146,7 +8388,10 @@ phase.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "For each successful scoring, count whether the relevance score gets boosted or decreased over the original score. Note that given how the score is calculated, it's practically impossible to have the two scores tied. If that's the case anyhow, it will increment the \"boosted\" counter.
+    description: "For each successful scoring, count whether the relevance score gets
+boosted or decreased over the original score. Note that given how the
+score is calculated, it's practically impossible to have the two scores
+tied. If that's the case anyhow, it will increment the \"boosted\" counter.
 "
   }
 
@@ -8163,7 +8408,8 @@ phase.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Count the successful / failed attempts of relevance scoring in Firefox Suggest.
+    description: "Count the successful / failed attempts of relevance scoring in
+Firefox Suggest.
 "
   }
 
@@ -9252,7 +9498,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Time for first autocomplete result if > 50ms (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_AUTOCOMPLETE_1ST_RESULT_TIME_MS.
+
+This metric was generated to correspond to the Legacy Telemetry
+exponential histogram PLACES_AUTOCOMPLETE_1ST_RESULT_TIME_MS.
 "
   }
 
@@ -9271,7 +9519,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Time for the 6 first autocomplete results (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_AUTOCOMPLETE_6_FIRST_RESULTS_TIME_MS.
+
+This metric was generated to correspond to the Legacy Telemetry
+exponential histogram PLACES_AUTOCOMPLETE_6_FIRST_RESULTS_TIME_MS.
 "
   }
 
@@ -9288,7 +9538,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how many times the user dismissed a heuristic autofill result via the urlbar input's right-click context menu. Labeled by which menu item was used: `dismiss` only blocks the autofill pairing, `forget` also removes the page from history.
+    description: "Counts how many times the user dismissed a heuristic autofill result
+via the urlbar input's right-click context menu. Labeled by which
+menu item was used: `dismiss` only blocks the autofill pairing,
+`forget` also removes the page from history.
 "
   }
 
@@ -9305,7 +9558,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how many times a blocked autofill result was reintegrated (unblocked) because the user picked the same URL as a non-autofill history result.
+    description: "Counts how many times a blocked autofill result was reintegrated
+(unblocked) because the user picked the same URL as a non-autofill
+history result.
 "
   }
 
@@ -9323,7 +9578,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A uint recording the deletion count for autofilled string in the urlbar. This occurs when the user deletes whole autofilled string by BACKSPACE or DELETE key while the autofilled string is selected. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.autofill_deletion.
+    description: "A uint recording the deletion count for autofilled string in the
+urlbar. This occurs when the user deletes whole autofilled string by
+BACKSPACE or DELETE key while the autofilled string is selected.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.autofill_deletion.
 "
   }
 
@@ -9341,7 +9600,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A uint recording the number of times the address bar handleCommand fallback path is hit.
+    description: "A uint recording the number of times the address bar handleCommand fallback
+path is hit.
 "
   }
 
@@ -9359,7 +9619,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A uint recording the number of times the address bar handleCommand fallback path is hit.
+    description: "A uint recording the number of times the address bar handleCommand fallback
+path is hit.
 "
   }
 
@@ -9377,7 +9638,13 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of the number of times search terms were removed from the urlbar due to a shown PopupNotification. This event can happen when a user loads a SERP and a PopupNotification is shown, as well as when a user switches away from a tab on a SERP showing a PopupNotification and switches back to it. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.persistedsearchterms.revert_by_popup_count.
+    description: "The count of the number of times search terms were removed from the
+urlbar due to a shown PopupNotification. This event can happen when
+a user loads a SERP and a PopupNotification is shown, as well as
+when a user switches away from a tab on a SERP showing a
+PopupNotification and switches back to it.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.persistedsearchterms.revert_by_popup_count.
 "
   }
 
@@ -9395,7 +9662,13 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of the number of times search terms persisted in the Urlbar. This gets recorded after a user loads a SERP that persists search terms, or switches back to an existing tab that should be showing the persisted search terms in the Urlbar, regardless of whether PopupNotification cleared the search terms from the Urlbar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.persistedsearchterms.view_count.
+    description: "The count of the number of times search terms persisted in the
+Urlbar. This gets recorded after a user loads a SERP that persists
+search terms, or switches back to an existing tab that should be
+showing the persisted search terms in the Urlbar, regardless of
+whether PopupNotification cleared the search terms from the Urlbar.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.persistedsearchterms.view_count.
 "
   }
 
@@ -9413,7 +9686,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Maximum results to show in the Address Bar. Corresponds to the value of the `browser.urlbar.maxRichResults` pref.
+    description: "Maximum results to show in the Address Bar.
+Corresponds to the value of the `browser.urlbar.maxRichResults` pref.
 "
   }
 
@@ -9431,7 +9705,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether Suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.all` pref.
+    description: "Whether Suggest results are shown in the urlbar.
+Corresponds to the value of the
+`browser.urlbar.suggest.quicksuggest.all` pref.
 "
   }
 
@@ -9449,7 +9725,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether online Suggest is available to the user. Corresponds to the Nimbus variable `quickSuggestOnlineAvailable` and its fallback pref `browser.urlbar.quicksuggest.online.available`. NOTE: \"Online Suggest\" in this context means the new version of online Suggest introduced in 146 with Terms of Use and OHTTP.
+    description: "Whether online Suggest is available to the user.
+Corresponds to the Nimbus variable `quickSuggestOnlineAvailable` and its
+fallback pref `browser.urlbar.quicksuggest.online.available`.
+NOTE: \"Online Suggest\" in this context means the new version of online
+Suggest introduced in 146 with Terms of Use and OHTTP.
 "
   }
 
@@ -9467,7 +9747,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "This pref is true for all users by default! You probably want to use this in conjunction with pref_suggest_online_available and/or restrict your analysis to user populations where you know online Suggest is available. Corresponds to `browser.urlbar.quicksuggest.online.enabled`. NOTE: \"Online Suggest\" in this context means the new version of online Suggest introduced in 146 with Terms of Use and OHTTP.
+    description: "This pref is true for all users by default! You probably want to use this
+in conjunction with pref_suggest_online_available and/or restrict your
+analysis to user populations where you know online Suggest is available.
+Corresponds to `browser.urlbar.quicksuggest.online.enabled`.
+NOTE: \"Online Suggest\" in this context means the new version of online
+Suggest introduced in 146 with Terms of Use and OHTTP.
 "
   }
 
@@ -9485,7 +9770,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.sponsored` pref.
+    description: "Whether sponsored quick suggest results are shown in the urlbar.
+Corresponds to the value of the
+`browser.urlbar.suggest.quicksuggest.sponsored` pref.
 "
   }
 
@@ -9503,7 +9790,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether topsite results are enabled in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.topsites` pref.
+    description: "Whether topsite results are enabled in the urlbar.
+Corresponds to the value of the `browser.urlbar.suggest.topsites` pref.
 "
   }
 
@@ -9520,7 +9808,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how many times quickaction results were selected. The key is the in the form \"actionkey-N\" where N is the number of characters the user typed to be shown the action. This metric was generated to correspond to the Legacy Telemetry scalar quickaction.picked.
+    description: "Counts how many times quickaction results were selected. The key is
+the in the form \"actionkey-N\" where N is the number of characters
+the user typed to be shown the action.
+This metric was generated to correspond to the Legacy Telemetry
+scalar quickaction.picked.
 "
   }
 
@@ -9537,7 +9829,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after selecing the Search Bookmarks menu item in the Library menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.bookmarkmenu.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after selecing the Search Bookmarks menu item in the
+Library menu.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.bookmarkmenu.
 "
   }
 
@@ -9554,7 +9850,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after being handed off from the search bar on the new tab page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.handoff.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after being handed off from the search bar on the new
+tab page.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.handoff.
 "
   }
 
@@ -9571,7 +9871,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after selecing the Search History menu item in a History menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.historymenu.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after selecing the Search History menu item in a History
+menu.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.historymenu.
 "
   }
 
@@ -9588,7 +9892,13 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a keyword offer result. The scalar key for local search modes entered using a restrict keyword will be suffixed with \"keyword\". For example: tabs_keyword, bookmarks_keyword, history_keyword, and actions_keyword. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.keywordoffer.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after selecting a keyword offer result. The scalar key
+for local search modes entered using a restrict keyword will be
+suffixed with \"keyword\". For example: tabs_keyword,
+bookmarks_keyword, history_keyword, and actions_keyword.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.keywordoffer.
 "
   }
 
@@ -9605,7 +9915,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode through the messaging system.
+    description: "A keyed uint recording how many times the user entered a particular search mode
+through the messaging system.
 "
   }
 
@@ -9622,7 +9933,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a one-off. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.oneoff.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after selecting a one-off.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.oneoff.
 "
   }
 
@@ -9639,7 +9953,12 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode from an unknown entry point. If values appear for this probe in Telemetry, we should review the entry points to search mode. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.other.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode from an unknown entry point. If values appear for this
+probe in Telemetry, we should review the entry points to search
+mode.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.other.
 "
   }
 
@@ -9656,7 +9975,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode by unified search button. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.searchbutton.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode by unified search button.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.searchbutton.
 "
   }
 
@@ -9673,7 +9995,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after pressing a keyboard shortcut. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.shortcut.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after pressing a keyboard shortcut.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.shortcut.
 "
   }
 
@@ -9690,7 +10015,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after selecting the Search Tabs menu item in the Tab Overflow menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.tabmenu.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after selecting the Search Tabs menu item in the Tab
+Overflow menu.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.tabmenu.
 "
   }
 
@@ -9707,7 +10036,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a tab-to-search result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.tabtosearch.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after selecting a tab-to-search result.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.tabtosearch.
 "
   }
 
@@ -9724,7 +10056,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a tab-to-search onboarding result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.tabtosearch_onboard.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after selecting a tab-to-search onboarding result.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.tabtosearch_onboard.
 "
   }
 
@@ -9741,7 +10076,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a search shortcut Top Site on the New Tab Page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.topsites_newtab.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after selecting a search shortcut Top Site on the New
+Tab Page.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.topsites_newtab.
 "
   }
 
@@ -9758,7 +10097,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a search shortcut Top Site in the Urlbar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.topsites_urlbar.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after selecting a search shortcut Top Site in the
+Urlbar.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.topsites_urlbar.
 "
   }
 
@@ -9775,7 +10118,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a search shortcut on the macOS Touch Bar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.touchbar.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after selecting a search shortcut on the macOS Touch
+Bar.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.touchbar.
 "
   }
 
@@ -9792,7 +10139,15 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A keyed uint recording how many times the user entered a particular search mode after typing an alias. The scalar keys for local search modes entered by typing a restrict keyword will be suffixed with \"keyword\". For example: tabs_keyword, bookmarks_keyword, history_keyword, and actions_keyword. If instead search mode was entered by typing a restrict symbol the key will be suffixed with \"symbol\" (e.g. typing \"%\" will generate \"tabs_symbol\"). This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.typed.
+    description: "A keyed uint recording how many times the user entered a particular
+search mode after typing an alias. The scalar keys for local search
+modes entered by typing a restrict keyword will be suffixed with
+\"keyword\". For example: tabs_keyword, bookmarks_keyword,
+history_keyword, and actions_keyword. If instead search mode was
+entered by typing a restrict symbol the key will be suffixed with
+\"symbol\" (e.g. typing \"%\" will generate \"tabs_symbol\").
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.typed.
 "
   }
 
@@ -9810,7 +10165,17 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A rate recording the fraction of search-mode engagements whose typed string parses as a URL (per nsIURIFixup, the same check the heuristic providers use to decide whether a string should navigate). The denominator is search-mode engagements whose heuristic result is a search result (i.e. cases where changing the behavior to navigate instead of search could actually take effect); the numerator is those whose query is URL-like. Local search modes (bookmarks, history, tabs, actions) have no heuristic result and are therefore excluded. Used to evaluate whether the address bar should navigate to such strings instead of searching them while in search mode (bug 1930861). Temporary decision-making probe.
+    description: "A rate recording the fraction of search-mode engagements whose typed
+string parses as a URL (per nsIURIFixup, the same check the heuristic
+providers use to decide whether a string should navigate). The
+denominator is search-mode engagements whose heuristic result is a
+search result (i.e. cases where changing the behavior to navigate
+instead of search could actually take effect); the numerator is those
+whose query is URL-like. Local search modes (bookmarks, history, tabs,
+actions) have no heuristic result and are therefore excluded. Used to
+evaluate whether the address bar should navigate to such strings
+instead of searching them while in search mode (bug 1930861).
+Temporary decision-making probe.
 "
   }
 
@@ -9828,7 +10193,17 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A rate recording the fraction of search-mode engagements whose typed string parses as a URL (per nsIURIFixup, the same check the heuristic providers use to decide whether a string should navigate). The denominator is search-mode engagements whose heuristic result is a search result (i.e. cases where changing the behavior to navigate instead of search could actually take effect); the numerator is those whose query is URL-like. Local search modes (bookmarks, history, tabs, actions) have no heuristic result and are therefore excluded. Used to evaluate whether the address bar should navigate to such strings instead of searching them while in search mode (bug 1930861). Temporary decision-making probe.
+    description: "A rate recording the fraction of search-mode engagements whose typed
+string parses as a URL (per nsIURIFixup, the same check the heuristic
+providers use to decide whether a string should navigate). The
+denominator is search-mode engagements whose heuristic result is a
+search result (i.e. cases where changing the behavior to navigate
+instead of search could actually take effect); the numerator is those
+whose query is URL-like. Local search modes (bookmarks, history, tabs,
+actions) have no heuristic result and are therefore excluded. Used to
+evaluate whether the address bar should navigate to such strings
+instead of searching them while in search mode (bug 1930861).
+Temporary decision-making probe.
 "
   }
 
@@ -9846,7 +10221,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "User has blocked seeing trending results. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.trending.block.
+    description: "User has blocked seeing trending results.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.trending.block.
 "
   }
 
@@ -9864,7 +10241,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how many times Unified Search Button popup is opened. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.unifiedsearchbutton.opened.
+    description: "Counts how many times Unified Search Button popup is opened.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.unifiedsearchbutton.opened.
 "
   }
 
@@ -9881,7 +10260,14 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how many times Unified Search Button items were selected. The key is followings. * builtin_search: Builtin search engine. * addon_search: Addon search engine. * local_search: Local search engine such as Bookmarks. * settings: Settings menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.unifiedsearchbutton.picked.
+    description: "Counts how many times Unified Search Button items were selected.
+The key is followings.
+* builtin_search: Builtin search engine.
+* addon_search: Addon search engine.
+* local_search: Local search engine such as Bookmarks.
+* settings: Settings menu.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.unifiedsearchbutton.picked.
 "
   }
 
@@ -9952,7 +10338,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how many times the zero-prefix results view was abandoned, labeled by the search access point it was shown for.
+    description: "Counts how many times the zero-prefix results view was abandoned,
+labeled by the search access point it was shown for.
 "
   }
 
@@ -9969,7 +10356,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how many times a result was picked in the zero-prefix results view, labeled by the search access point it was shown for.
+    description: "Counts how many times a result was picked in the zero-prefix results
+view, labeled by the search access point it was shown for.
 "
   }
 
@@ -9986,7 +10374,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how many times the zero-prefix results view was shown to the user, labeled by the search access point it was shown for.
+    description: "Counts how many times the zero-prefix results view was shown to the
+user, labeled by the search access point it was shown for.
 "
   }
 
