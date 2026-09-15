@@ -328,6 +328,42 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
 "
   }
 
+  dimension: metrics__quantity__profiles_days_since_install {
+    label: "Profiles: Days Since Install"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.profiles_days_since_install ;;
+    type: number
+    group_label: "Profiles"
+    group_item_label: "Days Since Install"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Days Since Install"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profiles_days_since_install"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of days between now and the most recent installation of Firefox, as recorded in installation_telemetry.json (Windows only).
+"
+  }
+
+  dimension: metrics__quantity__profiles_days_since_update {
+    label: "Profiles: Days Since Update"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.profiles_days_since_update ;;
+    type: number
+    group_label: "Profiles"
+    group_item_label: "Days Since Update"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Days Since Update"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profiles_days_since_update"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of days between now and the most recent update of Firefox, as recorded in update_telemetry.json.
+"
+  }
+
   dimension: metrics__boolean__profiles_path_in_profiles_ini {
     label: "Profiles: Path In Profiles Ini"
     hidden: no

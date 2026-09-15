@@ -35989,7 +35989,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_speechrecognition_available {
     label: "Use Counter Doc: Speechrecognition Available"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_doc_speechrecognition_available ;;
     type: number
     group_label: "Use Counter Doc"
@@ -36007,7 +36007,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_speechrecognition_install {
     label: "Use Counter Doc: Speechrecognition Install"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_doc_speechrecognition_install ;;
     type: number
     group_label: "Use Counter Doc"
@@ -36025,7 +36025,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_speechrecognition_start {
     label: "Use Counter Doc: Speechrecognition Start"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_doc_speechrecognition_start ;;
     type: number
     group_label: "Use Counter Doc"
@@ -45834,7 +45834,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_speechrecognition_available {
     label: "Use Counter Page: Speechrecognition Available"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_page_speechrecognition_available ;;
     type: number
     group_label: "Use Counter Page"
@@ -45852,7 +45852,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_speechrecognition_install {
     label: "Use Counter Page: Speechrecognition Install"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_page_speechrecognition_install ;;
     type: number
     group_label: "Use Counter Page"
@@ -45870,7 +45870,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_speechrecognition_start {
     label: "Use Counter Page: Speechrecognition Start"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_page_speechrecognition_start ;;
     type: number
     group_label: "Use Counter Page"

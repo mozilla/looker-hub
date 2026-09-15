@@ -36403,7 +36403,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__counter__web_push_unsubscribed_by_clearing_data {
     label: "Web Push: Unsubscribed By Clearing Data"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.web_push_unsubscribed_by_clearing_data ;;
     type: number
     group_label: "Web Push"

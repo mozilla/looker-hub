@@ -1064,6 +1064,23 @@ view: crash {
     description: "One out of \"Unknown\", \"AppClose\", \"AppRestart\", \"OSForceClose\", \"OSSessionEnd\" or \"OSShutdown\"."
   }
 
+  dimension: metrics__string__crash_shutting_down_threads {
+    label: "Crash: Shutting Down Threads"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_shutting_down_threads ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Shutting Down Threads"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Shutting Down Threads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_shutting_down_threads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON array of the nsThread::Shutdown handshakes still in flight when the process crashed during shutdown. Each entry has the joining and closing thread TID and name, the handshake phase (\"Joining\", \"Recv\" or \"Ack\") and when that phase was entered, in seconds since the Epoch. A single entry of {\"error\": \"contended\"} means the thread list was locked and could not be read without blocking."
+  }
+
   dimension: metrics__timespan__crash_startup_time__value {
     label: "Crash: Startup Time Value"
     hidden: no
