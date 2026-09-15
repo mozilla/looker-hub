@@ -3374,6 +3374,10 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_firefox_desktop_baseline_active_users_view
+    metric_definitions_form_autofill_forms:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_form_autofill_forms
     metric_definitions_glean_sap_events_stream:
       type: metric_definitions_explore
       views:
@@ -3878,6 +3882,8 @@ firefox_desktop:
     metric_definitions_firefox_desktop_active_users_view:
       type: metric_definitions_view
     metric_definitions_firefox_desktop_baseline_active_users_view:
+      type: metric_definitions_view
+    metric_definitions_form_autofill_forms:
       type: metric_definitions_view
     metric_definitions_glean_sap_events_stream:
       type: metric_definitions_view
