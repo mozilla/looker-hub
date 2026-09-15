@@ -836,6 +836,14 @@ view: crash_live_table {
     group_item_label: "Crash Shutdown Reason"
   }
 
+  dimension: metrics__string__crash_shutting_down_threads {
+    sql: ${TABLE}.metrics.string.crash_shutting_down_threads ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Shutting Down Threads"
+  }
+
   dimension: metrics__string__crash_useragent_locale {
     sql: ${TABLE}.metrics.string.crash_useragent_locale ;;
     type: string
