@@ -1323,6 +1323,14 @@ view: events_stream {
     group_item_label: "CPU Utilization"
   }
 
+  dimension: extras__quantity__create_rust_store_ms {
+    sql: ${TABLE}.extras.quantity.create_rust_store_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Create Rust Store Ms"
+  }
+
   dimension: extras__quantity__decoding_time {
     sql: ${TABLE}.extras.quantity.decoding_time ;;
     type: number
@@ -1513,6 +1521,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Inference Time"
+  }
+
+  dimension: extras__quantity__init_rust_components_ms {
+    sql: ${TABLE}.extras.quantity.init_rust_components_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Init Rust Components Ms"
   }
 
   dimension: extras__quantity__initial_version {
@@ -1761,6 +1777,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Number Of App Launches"
+  }
+
+  dimension: extras__quantity__number_of_logins {
+    sql: ${TABLE}.extras.quantity.number_of_logins ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Number Of Logins"
   }
 
   dimension: extras__quantity__number_of_logins_added {
@@ -2081,6 +2105,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Total Inference Seconds"
+  }
+
+  dimension: extras__quantity__total_ms {
+    sql: ${TABLE}.extras.quantity.total_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Ms"
   }
 
   dimension: extras__quantity__total_retries {
@@ -3075,6 +3107,14 @@ view: events_stream {
     group_item_label: "Error Code"
   }
 
+  dimension: extras__string__error_kind {
+    sql: ${TABLE}.extras.string.error_kind ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Error Kind"
+  }
+
   dimension: extras__string__error_message {
     sql: ${TABLE}.extras.string.error_message ;;
     type: string
@@ -3747,6 +3787,22 @@ view: events_stream {
     group_item_label: "Label"
   }
 
+  dimension: extras__string__lang {
+    sql: ${TABLE}.extras.string.lang ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Lang"
+  }
+
+  dimension: extras__string__lang_source {
+    sql: ${TABLE}.extras.string.lang_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Lang Source"
+  }
+
   dimension: extras__string__language {
     sql: ${TABLE}.extras.string.language ;;
     type: string
@@ -4057,6 +4113,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Model ID"
+  }
+
+  dimension: extras__string__model_locale {
+    sql: ${TABLE}.extras.string.model_locale ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Model Locale"
   }
 
   dimension: extras__string__name {
