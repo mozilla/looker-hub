@@ -1172,6 +1172,24 @@ search handoff button.
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_text_selection {
+    label: "Browser Engagement Navigation: Text Selection"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_text_selection ;;
+    group_label: "Browser Engagement Navigation"
+    group_item_label: "Text Selection"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Navigation: Text Selection"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_navigation_text_selection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of URI loads triggered from the actions menu shown when text
+is selected on a page, broken down by the originating action.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar {
     label: "Browser Engagement Navigation: Urlbar"
     hidden: yes
@@ -21639,6 +21657,136 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Count the amount of times where a mime type is queried via MediaRecorder.isTypeSupported() or passed to the MediaRecorder constructor. The result is accumulated per mime type.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_speech_recognition_availability {
+    label: "Media Speech Recognition: Availability"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_speech_recognition_availability ;;
+    group_label: "Media Speech Recognition"
+    group_item_label: "Availability"
+
+    link: {
+      label: "Glean Dictionary reference for Media Speech Recognition: Availability"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/media_speech_recognition_availability"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times SpeechRecognition.available() resolved, keyed by the AvailabilityStatus it resolved with. Shows how often pages find the model missing rather than ready.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_speech_recognition_error {
+    label: "Media Speech Recognition: Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_speech_recognition_error ;;
+    group_label: "Media Speech Recognition"
+    group_item_label: "Error"
+
+    link: {
+      label: "Glean Dictionary reference for Media Speech Recognition: Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/media_speech_recognition_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of `error` events fired at a SpeechRecognition object, keyed by error code. Only a subset of the codes defined by the spec is currently reachable, so a count on any of the others is itself noteworthy.
+This does not reconcile with the `error` outcomes of `session_ended`, by construction: an error can be fired before the session reaches [[started]], and such a session records neither `session_started` nor `session_ended`. This metric therefore normally exceeds those outcomes, and `init_failure` accounts for the difference.
+The codes the spec makes us fire are also coarser than the causes behind them - four distinct causes all surface as `service-not-allowed` - so `init_failure` is what tells those apart.
+"
+  }
+
+  dimension: metrics__custom_distribution__media_speech_recognition_inference_realtime_factor__sum {
+    label: "Media Speech Recognition: Inference Realtime Factor Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.media_speech_recognition_inference_realtime_factor.sum ;;
+    type: number
+    group_label: "Media Speech Recognition"
+    group_item_label: "Inference Realtime Factor Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Speech Recognition: Inference Realtime Factor Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/media_speech_recognition_inference_realtime_factor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The mean of how much faster than real time the audio chunks in a session were processed, as a multiple of real time times 100: 400 means 4x faster than real time. Under 100 means the recognizer fell behind. One sample is recorded per session in the inference process.
+The range reaches 100x because hardware that handles this model comfortably sits well above 20x, which would otherwise pile every such session into the top bucket and saturate the high percentiles. These bounds also put a bucket boundary exactly at 100, so \"fell behind real time\" is a clean cut rather than a threshold buried mid-bucket.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_speech_recognition_init_failure {
+    label: "Media Speech Recognition: Init Failure"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_speech_recognition_init_failure ;;
+    group_label: "Media Speech Recognition"
+    group_item_label: "Init Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Media Speech Recognition: Init Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/media_speech_recognition_init_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Why a recognition session failed to start, recorded wherever the cause is still known: the content process for the first three labels, the inference process for the rest. The spec-mandated DOM error code is coarser than this, so this is what tells apart the causes that share one: `concurrent_session`, `language_not_supported`, `model_install_unavailable` and `backend_creation_failed` all reach content as `service-not-allowed`, and every inference-process failure below reaches it as `network`.
+`language_not_supported` is recorded before the session reaches [[started]], so it has no `session_started` and no `session_ended`; it is exactly the count that makes `error` and `session_ended` disagree.
+The labels name the step that failed rather than a category, so that a spike says where init broke and not merely that it did.
+"
+  }
+
+  dimension: metrics__timing_distribution__media_speech_recognition_model_load_time__sum {
+    label: "Media Speech Recognition: Model Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.media_speech_recognition_model_load_time.sum ;;
+    type: number
+    group_label: "Media Speech Recognition"
+    group_item_label: "Model Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Speech Recognition: Model Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/media_speech_recognition_model_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long the engine took to load the model, which reads the whole GGUF into memory. Recorded in the inference process.
+Only recorded when the load succeeds, so read it against `init_failure.model_load_failed` rather than alone.
+"
+  }
+
+  dimension: metrics__timing_distribution__media_speech_recognition_result_latency__sum {
+    label: "Media Speech Recognition: Result Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.media_speech_recognition_result_latency.sum ;;
+    type: number
+    group_label: "Media Speech Recognition"
+    group_item_label: "Result Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Speech Recognition: Result Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/media_speech_recognition_result_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The mean end-to-end latency of results in a recognition session, from the capture time of the audio each result covers to the moment the `result` event is dispatched in the content process. One sample per session that produced results.
+"
+  }
+
+  dimension: metrics__timing_distribution__media_speech_recognition_session_init_time__sum {
+    label: "Media Speech Recognition: Session Init Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.media_speech_recognition_session_init_time.sum ;;
+    type: number
+    group_label: "Media Speech Recognition"
+    group_item_label: "Session Init Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Media Speech Recognition: Session Init Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/media_speech_recognition_session_init_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration between start() and the time the model is ready for recognition.
+Only recorded when init succeeds, so read it against the `init_failure` totals rather than alone: a regression that turns slow inits into outright failures makes this metric look better.
 "
   }
 
@@ -47912,6 +48060,47 @@ view: metrics__metrics__labeled_counter__browser_engagement_navigation_smartwind
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_engagement_navigation_text_selection {
+  label: "Browser Engagement Navigation: Text Selection"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar {
   label: "Browser Engagement Navigation: Urlbar"
 
@@ -58410,6 +58599,129 @@ view: metrics__metrics__labeled_counter__media_recorder_mime_type_query {
 
 view: metrics__metrics__labeled_counter__media_sniffer_mp4_brand_pattern {
   label: "Media Sniffer: Mp4 Brand Pattern"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_speech_recognition_availability {
+  label: "Media Speech Recognition: Availability"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_speech_recognition_error {
+  label: "Media Speech Recognition: Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_speech_recognition_init_failure {
+  label: "Media Speech Recognition: Init Failure"
 
   dimension: document_id {
     type: string
@@ -71279,6 +71591,20 @@ view: metrics__metrics__custom_distribution__media_decoder_backend_used__values 
 }
 
 view: metrics__metrics__custom_distribution__media_mp4_parse_num_sample_description_entries__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__media_speech_recognition_inference_realtime_factor__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -86104,6 +86430,48 @@ view: metrics__metrics__timing_distribution__localstorage_database_request_allow
 }
 
 view: metrics__metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__media_speech_recognition_model_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__media_speech_recognition_result_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__media_speech_recognition_session_init_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

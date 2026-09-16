@@ -1038,6 +1038,21 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_sniffer_mp4_brand_pattern}) AS metrics__metrics__labeled_counter__media_sniffer_mp4_brand_pattern ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_sniffer_mp4_brand_pattern.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__media_speech_recognition_availability {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_speech_recognition_availability}) AS metrics__metrics__labeled_counter__media_speech_recognition_availability ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_speech_recognition_availability.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_speech_recognition_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_speech_recognition_error}) AS metrics__metrics__labeled_counter__media_speech_recognition_error ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_speech_recognition_error.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_speech_recognition_init_failure {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_speech_recognition_init_failure}) AS metrics__metrics__labeled_counter__media_speech_recognition_init_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_speech_recognition_init_failure.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__metrics_bookmarks_add {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_bookmarks_add}) AS metrics__metrics__labeled_counter__metrics_bookmarks_add ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_bookmarks_add.document_id} ;;

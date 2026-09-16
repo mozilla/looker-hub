@@ -233,6 +233,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_text_selection {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_text_selection}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_text_selection ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_text_selection.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_urlbar}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar.document_id} ;;
@@ -1516,6 +1521,21 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__media_sniffer_mp4_brand_pattern {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_sniffer_mp4_brand_pattern}) AS metrics__metrics__labeled_counter__media_sniffer_mp4_brand_pattern ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_sniffer_mp4_brand_pattern.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_speech_recognition_availability {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_speech_recognition_availability}) AS metrics__metrics__labeled_counter__media_speech_recognition_availability ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_speech_recognition_availability.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_speech_recognition_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_speech_recognition_error}) AS metrics__metrics__labeled_counter__media_speech_recognition_error ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_speech_recognition_error.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_speech_recognition_init_failure {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_speech_recognition_init_failure}) AS metrics__metrics__labeled_counter__media_speech_recognition_init_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_speech_recognition_init_failure.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__migration_discovered_migrators {

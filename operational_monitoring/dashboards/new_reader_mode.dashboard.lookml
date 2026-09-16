@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_reader_mode
-    type: looker_line
-    fields: [
-      new_reader_mode.submission_date,
-      new_reader_mode.branch,
-      new_reader_mode.point
-    ]
-    pivots: [
-      new_reader_mode.branch
-    ]
-    filters:
-      new_reader_mode.metric: 'days_of_use'
-      new_reader_mode.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: new_reader_mode.submission_date
-    field_y: new_reader_mode.point
-    log_scale: false
-    ci_lower: new_reader_mode.lower
-    ci_upper: new_reader_mode.upper
-    show_grid: true
-    listen:
-      Date: new_reader_mode.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -63,40 +29,6 @@
       new_reader_mode.metric: 'search_count'
       new_reader_mode.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: new_reader_mode.submission_date
-    field_y: new_reader_mode.point
-    log_scale: false
-    ci_lower: new_reader_mode.lower
-    ci_upper: new_reader_mode.upper
-    show_grid: true
-    listen:
-      Date: new_reader_mode.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_reader_mode
-    type: looker_line
-    fields: [
-      new_reader_mode.submission_date,
-      new_reader_mode.branch,
-      new_reader_mode.point
-    ]
-    pivots: [
-      new_reader_mode.branch
-    ]
-    filters:
-      new_reader_mode.metric: 'retained'
-      new_reader_mode.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -129,6 +61,74 @@
     ]
     filters:
       new_reader_mode.metric: 'ad_clicks'
+      new_reader_mode.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: new_reader_mode.submission_date
+    field_y: new_reader_mode.point
+    log_scale: false
+    ci_lower: new_reader_mode.lower
+    ci_upper: new_reader_mode.upper
+    show_grid: true
+    listen:
+      Date: new_reader_mode.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_reader_mode
+    type: looker_line
+    fields: [
+      new_reader_mode.submission_date,
+      new_reader_mode.branch,
+      new_reader_mode.point
+    ]
+    pivots: [
+      new_reader_mode.branch
+    ]
+    filters:
+      new_reader_mode.metric: 'days_of_use'
+      new_reader_mode.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_reader_mode.submission_date
+    field_y: new_reader_mode.point
+    log_scale: false
+    ci_lower: new_reader_mode.lower
+    ci_upper: new_reader_mode.upper
+    show_grid: true
+    listen:
+      Date: new_reader_mode.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_reader_mode
+    type: looker_line
+    fields: [
+      new_reader_mode.submission_date,
+      new_reader_mode.branch,
+      new_reader_mode.point
+    ]
+    pivots: [
+      new_reader_mode.branch
+    ]
+    filters:
+      new_reader_mode.metric: 'retained'
       new_reader_mode.statistic: mean
     row: 10
     col: 12
