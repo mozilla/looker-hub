@@ -5128,6 +5128,19 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__media_speech_recognition_inference_realtime_factor__sum {
+    sql: ${TABLE}.metrics.custom_distribution.media_speech_recognition_inference_realtime_factor.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Media Speech Recognition Inference Realtime Factor"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__media_speech_recognition_inference_realtime_factor__values {
+    sql: ${TABLE}.metrics.custom_distribution.media_speech_recognition_inference_realtime_factor.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__media_video_dropped_compositor_frames_proportion_exponential__sum {
     sql: ${TABLE}.metrics.custom_distribution.media_video_dropped_compositor_frames_proportion_exponential.sum ;;
     type: number
@@ -9252,6 +9265,14 @@ search handoff button.
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_text_selection {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_text_selection ;;
+    hidden: yes
+    description: "The count of URI loads triggered from the actions menu shown when text
+is selected on a page, broken down by the originating action.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar ;;
     hidden: yes
@@ -11323,6 +11344,31 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     hidden: yes
     description: "ISOBMFF brand pattern used to identify MP4 in media sniffer
 This metric was generated to correspond to the Legacy Telemetry categorical histogram MEDIA_SNIFFER_MP4_BRAND_PATTERN.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_speech_recognition_availability {
+    sql: ${TABLE}.metrics.labeled_counter.media_speech_recognition_availability ;;
+    hidden: yes
+    description: "The number of times SpeechRecognition.available() resolved, keyed by the AvailabilityStatus it resolved with. Shows how often pages find the model missing rather than ready.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_speech_recognition_error {
+    sql: ${TABLE}.metrics.labeled_counter.media_speech_recognition_error ;;
+    hidden: yes
+    description: "The number of `error` events fired at a SpeechRecognition object, keyed by error code. Only a subset of the codes defined by the spec is currently reachable, so a count on any of the others is itself noteworthy.
+This does not reconcile with the `error` outcomes of `session_ended`, by construction: an error can be fired before the session reaches [[started]], and such a session records neither `session_started` nor `session_ended`. This metric therefore normally exceeds those outcomes, and `init_failure` accounts for the difference.
+The codes the spec makes us fire are also coarser than the causes behind them - four distinct causes all surface as `service-not-allowed` - so `init_failure` is what tells those apart.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_speech_recognition_init_failure {
+    sql: ${TABLE}.metrics.labeled_counter.media_speech_recognition_init_failure ;;
+    hidden: yes
+    description: "Why a recognition session failed to start, recorded wherever the cause is still known: the content process for the first three labels, the inference process for the rest. The spec-mandated DOM error code is coarser than this, so this is what tells apart the causes that share one: `concurrent_session`, `language_not_supported`, `model_install_unavailable` and `backend_creation_failed` all reach content as `service-not-allowed`, and every inference-process failure below reaches it as `network`.
+`language_not_supported` is recorded before the session reaches [[started]], so it has no `session_started` and no `session_ended`; it is exactly the count that makes `error` and `session_ended` disagree.
+The labels name the step that failed rather than a category, so that a spike says where init broke and not merely that it did.
 "
   }
 
@@ -20632,6 +20678,45 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__media_speech_recognition_model_load_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.media_speech_recognition_model_load_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Media Speech Recognition Model Load Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__media_speech_recognition_model_load_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.media_speech_recognition_model_load_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__media_speech_recognition_result_latency__sum {
+    sql: ${TABLE}.metrics.timing_distribution.media_speech_recognition_result_latency.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Media Speech Recognition Result Latency"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__media_speech_recognition_result_latency__values {
+    sql: ${TABLE}.metrics.timing_distribution.media_speech_recognition_result_latency.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__media_speech_recognition_session_init_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.media_speech_recognition_session_init_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Media Speech Recognition Session Init Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__media_speech_recognition_session_init_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.media_speech_recognition_session_init_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__media_video_clearkey_play_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.media_video_clearkey_play_time.sum ;;
     type: number
@@ -25867,6 +25952,20 @@ view: metrics_table__metrics__custom_distribution__media_decoder_backend_used__v
 }
 
 view: metrics_table__metrics__custom_distribution__media_mp4_parse_num_sample_description_entries__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__media_speech_recognition_inference_realtime_factor__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -40692,6 +40791,48 @@ view: metrics_table__metrics__timing_distribution__localstorage_database_request
 }
 
 view: metrics_table__metrics__timing_distribution__localstorage_request_prepare_datastore_processing_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__media_speech_recognition_model_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__media_speech_recognition_result_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__media_speech_recognition_session_init_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

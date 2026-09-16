@@ -595,6 +595,14 @@ view: events_stream {
     group_item_label: "Firsttimetoggle"
   }
 
+  dimension: extras__boolean__first_site_load_in_tab {
+    sql: ${TABLE}.extras.boolean.first_site_load_in_tab ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "First Site Load In Tab"
+  }
+
   dimension: extras__boolean__first_visit {
     sql: ${TABLE}.extras.boolean.first_visit ;;
     type: yesno
@@ -1891,6 +1899,14 @@ view: events_stream {
     group_item_label: "CPU Utilization"
   }
 
+  dimension: extras__quantity__create_rust_store_ms {
+    sql: ${TABLE}.extras.quantity.create_rust_store_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Create Rust Store Ms"
+  }
+
   dimension: extras__quantity__current {
     sql: ${TABLE}.extras.quantity.current ;;
     type: number
@@ -1995,6 +2011,14 @@ view: events_stream {
     group_item_label: "Edited"
   }
 
+  dimension: extras__quantity__editor_opens {
+    sql: ${TABLE}.extras.quantity.editor_opens ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Editor Opens"
+  }
+
   dimension: extras__quantity__error_code {
     sql: ${TABLE}.extras.quantity.error_code ;;
     type: number
@@ -2059,6 +2083,38 @@ view: events_stream {
     group_item_label: "Fields Total"
   }
 
+  dimension: extras__quantity__fields_typed {
+    sql: ${TABLE}.extras.quantity.fields_typed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Fields Typed"
+  }
+
+  dimension: extras__quantity__fields_unknown {
+    sql: ${TABLE}.extras.quantity.fields_unknown ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Fields Unknown"
+  }
+
+  dimension: extras__quantity__filled_length {
+    sql: ${TABLE}.extras.quantity.filled_length ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Filled Length"
+  }
+
+  dimension: extras__quantity__final_length {
+    sql: ${TABLE}.extras.quantity.final_length ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Final Length"
+  }
+
   dimension: extras__quantity__first_frame_loaded_time {
     sql: ${TABLE}.extras.quantity.first_frame_loaded_time ;;
     type: number
@@ -2073,6 +2129,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Gate Wait Ms"
+  }
+
+  dimension: extras__quantity__generated_length {
+    sql: ${TABLE}.extras.quantity.generated_length ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Generated Length"
   }
 
   dimension: extras__quantity__grouped_id {
@@ -2169,6 +2233,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Inference Time"
+  }
+
+  dimension: extras__quantity__init_rust_components_ms {
+    sql: ${TABLE}.extras.quantity.init_rust_components_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Init Rust Components Ms"
   }
 
   dimension: extras__quantity__input_classified_size {
@@ -2347,12 +2419,60 @@ view: events_stream {
     group_item_label: "Memories"
   }
 
+  dimension: extras__quantity__memories_similarity_avg {
+    sql: ${TABLE}.extras.quantity.memories_similarity_avg ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories Similarity Avg"
+  }
+
+  dimension: extras__quantity__memories_similarity_max {
+    sql: ${TABLE}.extras.quantity.memories_similarity_max ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories Similarity Max"
+  }
+
+  dimension: extras__quantity__memories_similarity_min {
+    sql: ${TABLE}.extras.quantity.memories_similarity_min ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories Similarity Min"
+  }
+
   dimension: extras__quantity__memories_used {
     sql: ${TABLE}.extras.quantity.memories_used ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Memories Used"
+  }
+
+  dimension: extras__quantity__memories_used_similarity_avg {
+    sql: ${TABLE}.extras.quantity.memories_used_similarity_avg ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories Used Similarity Avg"
+  }
+
+  dimension: extras__quantity__memories_used_similarity_max {
+    sql: ${TABLE}.extras.quantity.memories_used_similarity_max ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories Used Similarity Max"
+  }
+
+  dimension: extras__quantity__memories_used_similarity_min {
+    sql: ${TABLE}.extras.quantity.memories_used_similarity_min ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories Used Similarity Min"
   }
 
   dimension: extras__quantity__memory_after {
@@ -2635,6 +2755,14 @@ view: events_stream {
     group_item_label: "Num Transports"
   }
 
+  dimension: extras__quantity__number_of_logins {
+    sql: ${TABLE}.extras.quantity.number_of_logins ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Number Of Logins"
+  }
+
   dimension: extras__quantity__number_of_logins_added {
     sql: ${TABLE}.extras.quantity.number_of_logins_added ;;
     type: number
@@ -2787,6 +2915,14 @@ view: events_stream {
     group_item_label: "Position"
   }
 
+  dimension: extras__quantity__pre_llm_confidence {
+    sql: ${TABLE}.extras.quantity.pre_llm_confidence ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Pre Llm Confidence"
+  }
+
   dimension: extras__quantity__preselected {
     sql: ${TABLE}.extras.quantity.preselected ;;
     type: number
@@ -2849,6 +2985,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Resume Prompts"
+  }
+
+  dimension: extras__quantity__reviewed_length {
+    sql: ${TABLE}.extras.quantity.reviewed_length ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Reviewed Length"
   }
 
   dimension: extras__quantity__saved_count {
@@ -3027,6 +3171,14 @@ view: events_stream {
     group_item_label: "Tabs"
   }
 
+  dimension: extras__quantity__tabs_added {
+    sql: ${TABLE}.extras.quantity.tabs_added ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Added"
+  }
+
   dimension: extras__quantity__tabs_affected {
     sql: ${TABLE}.extras.quantity.tabs_affected ;;
     type: number
@@ -3051,6 +3203,22 @@ view: events_stream {
     group_item_label: "Tabs Available"
   }
 
+  dimension: extras__quantity__tabs_final {
+    sql: ${TABLE}.extras.quantity.tabs_final ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Final"
+  }
+
+  dimension: extras__quantity__tabs_high {
+    sql: ${TABLE}.extras.quantity.tabs_high ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs High"
+  }
+
   dimension: extras__quantity__tabs_in_group {
     sql: ${TABLE}.extras.quantity.tabs_in_group ;;
     type: number
@@ -3073,6 +3241,30 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tabs Inside Groups"
+  }
+
+  dimension: extras__quantity__tabs_kept {
+    sql: ${TABLE}.extras.quantity.tabs_kept ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Kept"
+  }
+
+  dimension: extras__quantity__tabs_low {
+    sql: ${TABLE}.extras.quantity.tabs_low ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Low"
+  }
+
+  dimension: extras__quantity__tabs_medium {
+    sql: ${TABLE}.extras.quantity.tabs_medium ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Medium"
   }
 
   dimension: extras__quantity__tabs_open {
@@ -3361,6 +3553,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Total Length"
+  }
+
+  dimension: extras__quantity__total_ms {
+    sql: ${TABLE}.extras.quantity.total_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Ms"
   }
 
   dimension: extras__quantity__total_retries {
@@ -4539,6 +4739,14 @@ view: events_stream {
     group_item_label: "Duration"
   }
 
+  dimension: extras__string__editor_result {
+    sql: ${TABLE}.extras.string.editor_result ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Editor Result"
+  }
+
   dimension: extras__string__effective {
     sql: ${TABLE}.extras.string.effective ;;
     type: string
@@ -4673,6 +4881,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Error Code"
+  }
+
+  dimension: extras__string__error_kind {
+    sql: ${TABLE}.extras.string.error_kind ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Error Kind"
   }
 
   dimension: extras__string__error_message {
@@ -5459,6 +5675,22 @@ view: events_stream {
     group_item_label: "Label Reason"
   }
 
+  dimension: extras__string__lang {
+    sql: ${TABLE}.extras.string.lang ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Lang"
+  }
+
+  dimension: extras__string__lang_source {
+    sql: ${TABLE}.extras.string.lang_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Lang Source"
+  }
+
   dimension: extras__string__language {
     sql: ${TABLE}.extras.string.language ;;
     type: string
@@ -5801,6 +6033,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Model ID"
+  }
+
+  dimension: extras__string__model_locale {
+    sql: ${TABLE}.extras.string.model_locale ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Model Locale"
   }
 
   dimension: extras__string__model_revision {
@@ -6257,6 +6497,22 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Postal Code"
+  }
+
+  dimension: extras__string__pre_llm_field_kind {
+    sql: ${TABLE}.extras.string.pre_llm_field_kind ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Pre Llm Field Kind"
+  }
+
+  dimension: extras__string__pre_llm_source {
+    sql: ${TABLE}.extras.string.pre_llm_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Pre Llm Source"
   }
 
   dimension: extras__string__pref {

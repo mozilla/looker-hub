@@ -10,74 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: local_network_access_android_beta_rollout_155
-    type: looker_line
-    fields: [
-      local_network_access_android_beta_rollout_155.submission_date,
-      local_network_access_android_beta_rollout_155.branch,
-      local_network_access_android_beta_rollout_155.point
-    ]
-    pivots: [
-      local_network_access_android_beta_rollout_155.branch
-    ]
-    filters:
-      local_network_access_android_beta_rollout_155.metric: 'uri_count'
-      local_network_access_android_beta_rollout_155.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: local_network_access_android_beta_rollout_155.submission_date
-    field_y: local_network_access_android_beta_rollout_155.point
-    log_scale: false
-    ci_lower: local_network_access_android_beta_rollout_155.lower
-    ci_upper: local_network_access_android_beta_rollout_155.upper
-    show_grid: true
-    listen:
-      Date: local_network_access_android_beta_rollout_155.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: local_network_access_android_beta_rollout_155
-    type: looker_line
-    fields: [
-      local_network_access_android_beta_rollout_155.submission_date,
-      local_network_access_android_beta_rollout_155.branch,
-      local_network_access_android_beta_rollout_155.point
-    ]
-    pivots: [
-      local_network_access_android_beta_rollout_155.branch
-    ]
-    filters:
-      local_network_access_android_beta_rollout_155.metric: 'days_of_use'
-      local_network_access_android_beta_rollout_155.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: local_network_access_android_beta_rollout_155.submission_date
-    field_y: local_network_access_android_beta_rollout_155.point
-    log_scale: false
-    ci_lower: local_network_access_android_beta_rollout_155.lower
-    ci_upper: local_network_access_android_beta_rollout_155.upper
-    show_grid: true
-    listen:
-      Date: local_network_access_android_beta_rollout_155.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -96,7 +28,7 @@
     filters:
       local_network_access_android_beta_rollout_155.metric: 'search_count'
       local_network_access_android_beta_rollout_155.statistic: mean
-    row: 10
+    row: 0
     col: 0
     width: 12
     height: 8
@@ -130,42 +62,8 @@
     filters:
       local_network_access_android_beta_rollout_155.metric: 'tagged_sap_searches'
       local_network_access_android_beta_rollout_155.statistic: mean
-    row: 10
+    row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: local_network_access_android_beta_rollout_155.submission_date
-    field_y: local_network_access_android_beta_rollout_155.point
-    log_scale: false
-    ci_lower: local_network_access_android_beta_rollout_155.lower
-    ci_upper: local_network_access_android_beta_rollout_155.upper
-    show_grid: true
-    listen:
-      Date: local_network_access_android_beta_rollout_155.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: local_network_access_android_beta_rollout_155
-    type: looker_line
-    fields: [
-      local_network_access_android_beta_rollout_155.submission_date,
-      local_network_access_android_beta_rollout_155.branch,
-      local_network_access_android_beta_rollout_155.point
-    ]
-    pivots: [
-      local_network_access_android_beta_rollout_155.branch
-    ]
-    filters:
-      local_network_access_android_beta_rollout_155.metric: 'retained'
-      local_network_access_android_beta_rollout_155.statistic: mean
-    row: 20
-    col: 0
     width: 12
     height: 8
     field_x: local_network_access_android_beta_rollout_155.submission_date
@@ -197,6 +95,108 @@
     ]
     filters:
       local_network_access_android_beta_rollout_155.metric: 'ad_clicks'
+      local_network_access_android_beta_rollout_155.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: local_network_access_android_beta_rollout_155.submission_date
+    field_y: local_network_access_android_beta_rollout_155.point
+    log_scale: false
+    ci_lower: local_network_access_android_beta_rollout_155.lower
+    ci_upper: local_network_access_android_beta_rollout_155.upper
+    show_grid: true
+    listen:
+      Date: local_network_access_android_beta_rollout_155.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: local_network_access_android_beta_rollout_155
+    type: looker_line
+    fields: [
+      local_network_access_android_beta_rollout_155.submission_date,
+      local_network_access_android_beta_rollout_155.branch,
+      local_network_access_android_beta_rollout_155.point
+    ]
+    pivots: [
+      local_network_access_android_beta_rollout_155.branch
+    ]
+    filters:
+      local_network_access_android_beta_rollout_155.metric: 'uri_count'
+      local_network_access_android_beta_rollout_155.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: local_network_access_android_beta_rollout_155.submission_date
+    field_y: local_network_access_android_beta_rollout_155.point
+    log_scale: false
+    ci_lower: local_network_access_android_beta_rollout_155.lower
+    ci_upper: local_network_access_android_beta_rollout_155.upper
+    show_grid: true
+    listen:
+      Date: local_network_access_android_beta_rollout_155.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: local_network_access_android_beta_rollout_155
+    type: looker_line
+    fields: [
+      local_network_access_android_beta_rollout_155.submission_date,
+      local_network_access_android_beta_rollout_155.branch,
+      local_network_access_android_beta_rollout_155.point
+    ]
+    pivots: [
+      local_network_access_android_beta_rollout_155.branch
+    ]
+    filters:
+      local_network_access_android_beta_rollout_155.metric: 'days_of_use'
+      local_network_access_android_beta_rollout_155.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: local_network_access_android_beta_rollout_155.submission_date
+    field_y: local_network_access_android_beta_rollout_155.point
+    log_scale: false
+    ci_lower: local_network_access_android_beta_rollout_155.lower
+    ci_upper: local_network_access_android_beta_rollout_155.upper
+    show_grid: true
+    listen:
+      Date: local_network_access_android_beta_rollout_155.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: local_network_access_android_beta_rollout_155
+    type: looker_line
+    fields: [
+      local_network_access_android_beta_rollout_155.submission_date,
+      local_network_access_android_beta_rollout_155.branch,
+      local_network_access_android_beta_rollout_155.point
+    ]
+    pivots: [
+      local_network_access_android_beta_rollout_155.branch
+    ]
+    filters:
+      local_network_access_android_beta_rollout_155.metric: 'retained'
       local_network_access_android_beta_rollout_155.statistic: mean
     row: 20
     col: 12
