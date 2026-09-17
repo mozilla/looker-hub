@@ -168,24 +168,6 @@ view: forecast_content_daily_aggregates {
     type: number
   }
 
-  measure: actual_fill_rate_difference_from_last_month {
-    based_on: actual_fill_rate_avg
-    based_on_time: submission_month_date
-    kind: difference
-    period: month
-    type: period_over_period
-    value_to_date: no
-  }
-
-  measure: actual_fill_rate_perc_difference_from_last_month {
-    based_on: actual_fill_rate_avg
-    based_on_time: submission_month_date
-    kind: relative_change
-    period: month
-    type: period_over_period
-    value_to_date: no
-  }
-
   measure: actual_native_glean_inventory_sum {
     sql: ${actual_native_glean_inventory} ;;
     type: sum
@@ -199,24 +181,6 @@ view: forecast_content_daily_aggregates {
   measure: actual_newtab_visits_to_dau_sum {
     sql: ${actual_newtab_visits_to_dau} ;;
     type: sum
-  }
-
-  measure: actual_sponsored_impressions_difference_from_last_month {
-    based_on: actual_uapi_impressions_excluding_house_ads_sum
-    based_on_time: submission_month_date
-    kind: difference
-    period: month
-    type: period_over_period
-    value_to_date: no
-  }
-
-  measure: actual_sponsored_impressions_perc_difference_from_last_month {
-    based_on: actual_uapi_impressions_excluding_house_ads_sum
-    based_on_time: submission_month_date
-    kind: relative_change
-    period: month
-    type: period_over_period
-    value_to_date: no
   }
 
   measure: actual_total_active_users_sum {
@@ -249,24 +213,6 @@ view: forecast_content_daily_aggregates {
     type: number
   }
 
-  measure: forecast_fill_rate_difference_from_previous_forecast {
-    based_on: forecast_fill_rate_avg
-    based_on_time: forecast_month_date
-    kind: difference
-    period: month
-    type: period_over_period
-    value_to_date: no
-  }
-
-  measure: forecast_fill_rate_perc_difference_from_previous_forecast {
-    based_on: forecast_fill_rate_avg
-    based_on_time: forecast_month_date
-    kind: relative_change
-    period: month
-    type: period_over_period
-    value_to_date: no
-  }
-
   measure: forecast_native_glean_inventory_sum {
     sql: ${forecast_native_glean_inventory} ;;
     type: sum
@@ -292,24 +238,6 @@ view: forecast_content_daily_aggregates {
     type: sum
   }
 
-  measure: forecast_sponsored_impressions_nonhouse_difference_from_previous_forecast {
-    based_on: forecast_uapi_impressions_excluding_house_ads_sum
-    based_on_time: forecast_month_date
-    kind: difference
-    period: month
-    type: period_over_period
-    value_to_date: no
-  }
-
-  measure: forecast_sponsored_impressions_nonhouse_perc_difference_from_previous_forecast {
-    based_on: forecast_uapi_impressions_excluding_house_ads_sum
-    based_on_time: forecast_month_date
-    kind: relative_change
-    period: month
-    type: period_over_period
-    value_to_date: no
-  }
-
   measure: forecast_total_active_users_sum {
     sql: ${forecast_total_active_users} ;;
     type: sum
@@ -325,45 +253,9 @@ view: forecast_content_daily_aggregates {
     type: sum
   }
 
-  measure: forecast_uapi_inventory_difference_from_previous_forecast {
-    based_on: forecast_native_uapi_inventory_sum
-    based_on_time: forecast_month_date
-    kind: difference
-    period: month
-    type: period_over_period
-    value_to_date: no
-  }
-
-  measure: forecast_uapi_inventory_perc_difference_from_previous_forecast {
-    based_on: forecast_native_uapi_inventory_sum
-    based_on_time: forecast_month_date
-    kind: relative_change
-    period: month
-    type: period_over_period
-    value_to_date: no
-  }
-
   measure: inferred_actual_native_uapi_inventory_sum {
     sql: ${inferred_actual_native_uapi_inventory} ;;
     type: sum
-  }
-
-  measure: inferred_actual_uapi_inventory_difference_from_last_month {
-    based_on: inferred_actual_native_uapi_inventory_sum
-    based_on_time: submission_month_date
-    kind: difference
-    period: month
-    type: period_over_period
-    value_to_date: no
-  }
-
-  measure: inferred_actual_uapi_inventory_perc_difference_from_last_month {
-    based_on: inferred_actual_native_uapi_inventory_sum
-    based_on_time: submission_month_date
-    kind: relative_change
-    period: month
-    type: period_over_period
-    value_to_date: no
   }
 
   sql_table_name: `mozdata.ads.forecast_content_daily_aggregates` ;;
