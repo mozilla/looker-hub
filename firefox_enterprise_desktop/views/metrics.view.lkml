@@ -37172,6 +37172,23 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__webrtc_get_user_media_source_granted {
+    label: "Webrtc: Get User Media Source Granted"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_get_user_media_source_granted ;;
+    group_label: "Webrtc"
+    group_item_label: "Get User Media Source Granted"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtc: Get User Media Source Granted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/webrtc_get_user_media_source_granted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the media source actually granted for a getUserMedia() call, keyed by MediaSourceEnum value. Recorded once the request is granted, using the concrete device that was allocated, so it reflects the true display surface chosen for display-capture requests (screen, a specific window, or a browser tab) rather than the pre-selection request hint that get_user_media_type records.
+"
+  }
+
   dimension: metrics__custom_distribution__webrtc_get_user_media_type__sum {
     label: "Webrtc: Get User Media Type Sum"
     hidden: no
@@ -69298,6 +69315,47 @@ view: metrics__metrics__labeled_counter__webrtc_datachannel_negotiated {
   }
 }
 
+view: metrics__metrics__labeled_counter__webrtc_get_user_media_source_granted {
+  label: "Webrtc: Get User Media Source Granted"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__webrtc_gmp_init_success {
   label: "Webrtc: Gmp Init Success"
 
@@ -75254,6 +75312,33 @@ view: metrics__metrics__dual_labeled_counter__crash_submit_success__value {
   }
 }
 
+view: metrics__metrics__dual_labeled_counter__dns_cache_miss_reason {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__dns_cache_miss_reason__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__dual_labeled_counter__dns_lookup_disposition {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -75268,6 +75353,33 @@ view: metrics__metrics__dual_labeled_counter__dns_lookup_disposition {
 }
 
 view: metrics__metrics__dual_labeled_counter__dns_lookup_disposition__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__dns_negative_eviction {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__dns_negative_eviction__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

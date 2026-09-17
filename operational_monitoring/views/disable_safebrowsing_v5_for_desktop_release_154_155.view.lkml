@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: privacy_enhancing_firefox_suggest_m4_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.privacy_enhancing_firefox_suggest_m4_rollout_statistics ;;
+view: disable_safebrowsing_v5_for_desktop_release_154_155 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.disable_safebrowsing_v5_for_desktop_release_154_155_statistics ;;
 
   dimension: submission_date {
     type: date

@@ -631,6 +631,14 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Nimbus Targeting Context Addresses Saved"
   }
 
+  dimension: metrics__quantity__nimbus_targeting_context_allowed_notification_origins {
+    sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_allowed_notification_origins ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Nimbus Targeting Context Allowed Notification Origins"
+  }
+
   dimension: metrics__quantity__nimbus_targeting_context_arch_bits {
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_arch_bits ;;
     type: number

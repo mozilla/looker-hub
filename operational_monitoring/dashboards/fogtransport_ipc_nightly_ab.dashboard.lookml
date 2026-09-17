@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,77 +60,9 @@
       fogtransport_ipc_nightly_ab.branch
     ]
     filters:
-      fogtransport_ipc_nightly_ab.metric: 'ad_clicks'
+      fogtransport_ipc_nightly_ab.metric: 'qualified_cumulative_days_of_use'
       fogtransport_ipc_nightly_ab.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: fogtransport_ipc_nightly_ab.submission_date
-    field_y: fogtransport_ipc_nightly_ab.point
-    log_scale: false
-    ci_lower: fogtransport_ipc_nightly_ab.lower
-    ci_upper: fogtransport_ipc_nightly_ab.upper
-    show_grid: true
-    listen:
-      Date: fogtransport_ipc_nightly_ab.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fogtransport_ipc_nightly_ab
-    type: looker_line
-    fields: [
-      fogtransport_ipc_nightly_ab.submission_date,
-      fogtransport_ipc_nightly_ab.branch,
-      fogtransport_ipc_nightly_ab.point
-    ]
-    pivots: [
-      fogtransport_ipc_nightly_ab.branch
-    ]
-    filters:
-      fogtransport_ipc_nightly_ab.metric: 'uri_count'
-      fogtransport_ipc_nightly_ab.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: fogtransport_ipc_nightly_ab.submission_date
-    field_y: fogtransport_ipc_nightly_ab.point
-    log_scale: false
-    ci_lower: fogtransport_ipc_nightly_ab.lower
-    ci_upper: fogtransport_ipc_nightly_ab.upper
-    show_grid: true
-    listen:
-      Date: fogtransport_ipc_nightly_ab.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fogtransport_ipc_nightly_ab
-    type: looker_line
-    fields: [
-      fogtransport_ipc_nightly_ab.submission_date,
-      fogtransport_ipc_nightly_ab.branch,
-      fogtransport_ipc_nightly_ab.point
-    ]
-    pivots: [
-      fogtransport_ipc_nightly_ab.branch
-    ]
-    filters:
-      fogtransport_ipc_nightly_ab.metric: 'days_of_use'
-      fogtransport_ipc_nightly_ab.statistic: mean
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -164,6 +96,77 @@
     filters:
       fogtransport_ipc_nightly_ab.metric: 'retained'
       fogtransport_ipc_nightly_ab.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: fogtransport_ipc_nightly_ab.submission_date
+    field_y: fogtransport_ipc_nightly_ab.point
+    log_scale: false
+    ci_lower: fogtransport_ipc_nightly_ab.lower
+    ci_upper: fogtransport_ipc_nightly_ab.upper
+    show_grid: true
+    listen:
+      Date: fogtransport_ipc_nightly_ab.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: fogtransport_ipc_nightly_ab
+    type: "ci-line-chart"
+    fields: [
+      fogtransport_ipc_nightly_ab.submission_date,
+      fogtransport_ipc_nightly_ab.branch,
+      fogtransport_ipc_nightly_ab.upper,
+      fogtransport_ipc_nightly_ab.lower,
+      fogtransport_ipc_nightly_ab.point
+    ]
+    pivots: [
+      fogtransport_ipc_nightly_ab.branch
+    ]
+    filters:
+      fogtransport_ipc_nightly_ab.metric: 'memory_total'
+      fogtransport_ipc_nightly_ab.statistic: percentile
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: fogtransport_ipc_nightly_ab.submission_date
+    field_y: fogtransport_ipc_nightly_ab.point
+    log_scale: false
+    ci_lower: fogtransport_ipc_nightly_ab.lower
+    ci_upper: fogtransport_ipc_nightly_ab.upper
+    show_grid: true
+    listen:
+      Date: fogtransport_ipc_nightly_ab.submission_date
+      Percentile: fogtransport_ipc_nightly_ab.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fogtransport_ipc_nightly_ab
+    type: looker_line
+    fields: [
+      fogtransport_ipc_nightly_ab.submission_date,
+      fogtransport_ipc_nightly_ab.branch,
+      fogtransport_ipc_nightly_ab.point
+    ]
+    pivots: [
+      fogtransport_ipc_nightly_ab.branch
+    ]
+    filters:
+      fogtransport_ipc_nightly_ab.metric: 'days_of_use'
+      fogtransport_ipc_nightly_ab.statistic: mean
     row: 20
     col: 0
     width: 12
@@ -180,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +199,7 @@
       fogtransport_ipc_nightly_ab.branch
     ]
     filters:
-      fogtransport_ipc_nightly_ab.metric: 'qualified_cumulative_days_of_use'
+      fogtransport_ipc_nightly_ab.metric: 'ad_clicks'
       fogtransport_ipc_nightly_ab.statistic: mean
     row: 20
     col: 12
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: fogtransport_ipc_nightly_ab
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       fogtransport_ipc_nightly_ab.submission_date,
       fogtransport_ipc_nightly_ab.branch,
-      fogtransport_ipc_nightly_ab.upper,
-      fogtransport_ipc_nightly_ab.lower,
       fogtransport_ipc_nightly_ab.point
     ]
     pivots: [
       fogtransport_ipc_nightly_ab.branch
     ]
     filters:
-      fogtransport_ipc_nightly_ab.metric: 'memory_total'
-      fogtransport_ipc_nightly_ab.statistic: percentile
+      fogtransport_ipc_nightly_ab.metric: 'uri_count'
+      fogtransport_ipc_nightly_ab.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: fogtransport_ipc_nightly_ab.submission_date
-      Percentile: fogtransport_ipc_nightly_ab.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

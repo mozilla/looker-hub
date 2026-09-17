@@ -16443,12 +16443,140 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Requested Pointer Lock Unadjusted Movement"
   }
 
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_attributes {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_attributes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Config Attributes"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_comments {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_comments ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Config Comments"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_data_attributes {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_data_attributes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Config Data Attributes"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_element_attributes {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_element_attributes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Config Element Attributes"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_element_remove_attributes {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_element_remove_attributes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Config Element Remove Attributes"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_elements {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_elements ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Config Elements"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_javascript_urls {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_javascript_urls ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Config Javascript Urls"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_processing_instructions {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_processing_instructions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Config Processing Instructions"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_remove_attributes {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_remove_attributes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Config Remove Attributes"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_remove_elements {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_remove_elements ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Config Remove Elements"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_remove_processing_instructions {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_remove_processing_instructions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Config Remove Processing Instructions"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_replace_with_children_elements {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_replace_with_children_elements ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Config Replace With Children Elements"
+  }
+
   dimension: metrics__counter__use_counter_doc_sanitizer_constructor {
     sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_constructor ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Sanitizer Constructor"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_default_config {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_default_config ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Default Config"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_empty_config {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_empty_config ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Empty Config"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_invalid_config {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_invalid_config ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Invalid Config"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_removeunsafe {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_removeunsafe ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Sanitizer Removeunsafe"
   }
 
   dimension: metrics__counter__use_counter_doc_sanitizer_sanitize {
@@ -20811,12 +20939,140 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Requested Pointer Lock Unadjusted Movement"
   }
 
+  dimension: metrics__counter__use_counter_page_sanitizer_config_attributes {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_attributes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Config Attributes"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_comments {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_comments ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Config Comments"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_data_attributes {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_data_attributes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Config Data Attributes"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_element_attributes {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_element_attributes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Config Element Attributes"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_element_remove_attributes {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_element_remove_attributes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Config Element Remove Attributes"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_elements {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_elements ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Config Elements"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_javascript_urls {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_javascript_urls ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Config Javascript Urls"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_processing_instructions {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_processing_instructions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Config Processing Instructions"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_remove_attributes {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_remove_attributes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Config Remove Attributes"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_remove_elements {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_remove_elements ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Config Remove Elements"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_remove_processing_instructions {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_remove_processing_instructions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Config Remove Processing Instructions"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_replace_with_children_elements {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_replace_with_children_elements ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Config Replace With Children Elements"
+  }
+
   dimension: metrics__counter__use_counter_page_sanitizer_constructor {
     sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_constructor ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Sanitizer Constructor"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_default_config {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_default_config ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Default Config"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_empty_config {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_empty_config ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Empty Config"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_invalid_config {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_invalid_config ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Invalid Config"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_removeunsafe {
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_removeunsafe ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Sanitizer Removeunsafe"
   }
 
   dimension: metrics__counter__use_counter_page_sanitizer_sanitize {

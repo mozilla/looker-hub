@@ -68,6 +68,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     description: "The number of addresses the user has saved."
   }
 
+  dimension: metrics__quantity__nimbus_targeting_context_allowed_notification_origins {
+    label: "Nimbus Targeting Context: Allowed Notification Origins"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_allowed_notification_origins ;;
+    type: number
+    group_label: "Nimbus Targeting Context"
+    group_item_label: "Allowed Notification Origins"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Targeting Context: Allowed Notification Origins"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/nimbus_targeting_context_allowed_notification_origins"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of origins the user has granted permission to send notifications.
+"
+  }
+
   dimension: metrics__quantity__nimbus_targeting_context_arch_bits {
     label: "Nimbus Targeting Context: Arch Bits"
     hidden: no

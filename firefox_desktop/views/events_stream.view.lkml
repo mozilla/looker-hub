@@ -291,14 +291,6 @@ view: events_stream {
     group_item_label: "Always Ask"
   }
 
-  dimension: extras__boolean__auto {
-    sql: ${TABLE}.extras.boolean.auto ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Auto"
-  }
-
   dimension: extras__boolean__auto_show {
     sql: ${TABLE}.extras.boolean.auto_show ;;
     type: yesno
@@ -2939,6 +2931,14 @@ view: events_stream {
     group_item_label: "Previous"
   }
 
+  dimension: extras__quantity__processing_duration {
+    sql: ${TABLE}.extras.quantity.processing_duration ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Processing Duration"
+  }
+
   dimension: extras__quantity__profile_count {
     sql: ${TABLE}.extras.quantity.profile_count ;;
     type: number
@@ -2979,12 +2979,36 @@ view: events_stream {
     group_item_label: "Restore Version"
   }
 
+  dimension: extras__quantity__results_retrieved {
+    sql: ${TABLE}.extras.quantity.results_retrieved ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Results Retrieved"
+  }
+
+  dimension: extras__quantity__results_returned {
+    sql: ${TABLE}.extras.quantity.results_returned ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Results Returned"
+  }
+
   dimension: extras__quantity__resume_prompts {
     sql: ${TABLE}.extras.quantity.resume_prompts ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Resume Prompts"
+  }
+
+  dimension: extras__quantity__retrieval_duration {
+    sql: ${TABLE}.extras.quantity.retrieval_duration ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Retrieval Duration"
   }
 
   dimension: extras__quantity__reviewed_length {
@@ -3081,6 +3105,22 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Size"
+  }
+
+  dimension: extras__quantity__snippet_chars_returned {
+    sql: ${TABLE}.extras.quantity.snippet_chars_returned ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Snippet Chars Returned"
+  }
+
+  dimension: extras__quantity__snippet_chars_truncated {
+    sql: ${TABLE}.extras.quantity.snippet_chars_truncated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Snippet Chars Truncated"
   }
 
   dimension: extras__quantity__source_line {
@@ -3529,6 +3569,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Total DB Count"
+  }
+
+  dimension: extras__quantity__total_duration {
+    sql: ${TABLE}.extras.quantity.total_duration ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Duration"
   }
 
   dimension: extras__quantity__total_expanded {
