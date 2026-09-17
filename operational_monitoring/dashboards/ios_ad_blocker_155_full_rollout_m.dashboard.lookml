@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       ios_ad_blocker_155_full_rollout_m.branch
     ]
     filters:
-      ios_ad_blocker_155_full_rollout_m.metric: 'ad_clicks'
+      ios_ad_blocker_155_full_rollout_m.metric: 'retained'
       ios_ad_blocker_155_full_rollout_m.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       ios_ad_blocker_155_full_rollout_m.branch
     ]
     filters:
-      ios_ad_blocker_155_full_rollout_m.metric: 'retained'
+      ios_ad_blocker_155_full_rollout_m.metric: 'ad_clicks'
       ios_ad_blocker_155_full_rollout_m.statistic: mean
     row: 10
     col: 12

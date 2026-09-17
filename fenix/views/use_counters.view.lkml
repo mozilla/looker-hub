@@ -35645,6 +35645,222 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_attributes {
+    label: "Use Counter Doc: Sanitizer Config Attributes"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_attributes ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Config Attributes"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Config Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses the Sanitizer attributes configuration key, via a dictionary or allowAttribute(). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_comments {
+    label: "Use Counter Doc: Sanitizer Config Comments"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_comments ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Config Comments"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Config Comments"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_comments"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses the Sanitizer comments configuration key, via a dictionary or setComments(). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_data_attributes {
+    label: "Use Counter Doc: Sanitizer Config Data Attributes"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_data_attributes ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Config Data Attributes"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Config Data Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_data_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses the Sanitizer dataAttributes configuration key, via a dictionary or setDataAttributes(). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_element_attributes {
+    label: "Use Counter Doc: Sanitizer Config Element Attributes"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_element_attributes ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Config Element Attributes"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Config Element Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_element_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses the Sanitizer per-element attributes configuration key. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_element_remove_attributes {
+    label: "Use Counter Doc: Sanitizer Config Element Remove Attributes"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_element_remove_attributes ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Config Element Remove Attributes"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Config Element Remove Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_element_remove_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses the Sanitizer per-element removeAttributes configuration key. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_elements {
+    label: "Use Counter Doc: Sanitizer Config Elements"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_elements ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Config Elements"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Config Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses the Sanitizer elements configuration key, via a dictionary or allowElement(). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_javascript_urls {
+    label: "Use Counter Doc: Sanitizer Config Javascript Urls"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_javascript_urls ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Config Javascript Urls"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Config Javascript Urls"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_javascript_urls"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses the Sanitizer javascriptURLs configuration key, via a dictionary or setJavascriptURLs(). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_processing_instructions {
+    label: "Use Counter Doc: Sanitizer Config Processing Instructions"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_processing_instructions ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Config Processing Instructions"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Config Processing Instructions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_processing_instructions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses the Sanitizer processingInstructions configuration key, via a dictionary or allowProcessingInstruction(). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_remove_attributes {
+    label: "Use Counter Doc: Sanitizer Config Remove Attributes"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_remove_attributes ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Config Remove Attributes"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Config Remove Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_remove_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses the Sanitizer removeAttributes configuration key, via a dictionary or removeAttribute(). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_remove_elements {
+    label: "Use Counter Doc: Sanitizer Config Remove Elements"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_remove_elements ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Config Remove Elements"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Config Remove Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_remove_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses the Sanitizer removeElements configuration key, via a dictionary or removeElement(). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_remove_processing_instructions {
+    label: "Use Counter Doc: Sanitizer Config Remove Processing Instructions"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_remove_processing_instructions ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Config Remove Processing Instructions"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Config Remove Processing Instructions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_remove_processing_instructions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses the Sanitizer removeProcessingInstructions configuration key, via a dictionary or removeProcessingInstruction(). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_config_replace_with_children_elements {
+    label: "Use Counter Doc: Sanitizer Config Replace With Children Elements"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_config_replace_with_children_elements ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Config Replace With Children Elements"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Config Replace With Children Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_replace_with_children_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses the Sanitizer replaceWithChildrenElements configuration key, via a dictionary or replaceElementWithChildren(). Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_sanitizer_constructor {
     label: "Use Counter Doc: Sanitizer Constructor"
     hidden: no
@@ -35660,6 +35876,78 @@ view: use_counters {
     }
 
     description: "Whether a document called called Sanitizer.constructor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_default_config {
+    label: "Use Counter Doc: Sanitizer Default Config"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_default_config ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Default Config"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Default Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_default_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document sanitizes with the built-in default Sanitizer configuration. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_empty_config {
+    label: "Use Counter Doc: Sanitizer Empty Config"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_empty_config ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Empty Config"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Empty Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_empty_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document supplies an empty Sanitizer configuration dictionary. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_invalid_config {
+    label: "Use Counter Doc: Sanitizer Invalid Config"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_invalid_config ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Invalid Config"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Invalid Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_invalid_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document supplies a Sanitizer configuration that is rejected as invalid. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_sanitizer_removeunsafe {
+    label: "Use Counter Doc: Sanitizer Removeunsafe"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_removeunsafe ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Sanitizer Removeunsafe"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Sanitizer Removeunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_removeunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called Sanitizer.removeUnsafe. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -45490,6 +45778,222 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_sanitizer_config_attributes {
+    label: "Use Counter Page: Sanitizer Config Attributes"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_attributes ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Config Attributes"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Config Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses the Sanitizer attributes configuration key, via a dictionary or allowAttribute(). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_comments {
+    label: "Use Counter Page: Sanitizer Config Comments"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_comments ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Config Comments"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Config Comments"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_comments"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses the Sanitizer comments configuration key, via a dictionary or setComments(). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_data_attributes {
+    label: "Use Counter Page: Sanitizer Config Data Attributes"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_data_attributes ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Config Data Attributes"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Config Data Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_data_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses the Sanitizer dataAttributes configuration key, via a dictionary or setDataAttributes(). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_element_attributes {
+    label: "Use Counter Page: Sanitizer Config Element Attributes"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_element_attributes ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Config Element Attributes"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Config Element Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_element_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses the Sanitizer per-element attributes configuration key. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_element_remove_attributes {
+    label: "Use Counter Page: Sanitizer Config Element Remove Attributes"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_element_remove_attributes ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Config Element Remove Attributes"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Config Element Remove Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_element_remove_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses the Sanitizer per-element removeAttributes configuration key. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_elements {
+    label: "Use Counter Page: Sanitizer Config Elements"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_elements ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Config Elements"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Config Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses the Sanitizer elements configuration key, via a dictionary or allowElement(). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_javascript_urls {
+    label: "Use Counter Page: Sanitizer Config Javascript Urls"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_javascript_urls ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Config Javascript Urls"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Config Javascript Urls"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_javascript_urls"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses the Sanitizer javascriptURLs configuration key, via a dictionary or setJavascriptURLs(). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_processing_instructions {
+    label: "Use Counter Page: Sanitizer Config Processing Instructions"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_processing_instructions ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Config Processing Instructions"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Config Processing Instructions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_processing_instructions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses the Sanitizer processingInstructions configuration key, via a dictionary or allowProcessingInstruction(). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_remove_attributes {
+    label: "Use Counter Page: Sanitizer Config Remove Attributes"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_remove_attributes ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Config Remove Attributes"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Config Remove Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_remove_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses the Sanitizer removeAttributes configuration key, via a dictionary or removeAttribute(). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_remove_elements {
+    label: "Use Counter Page: Sanitizer Config Remove Elements"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_remove_elements ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Config Remove Elements"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Config Remove Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_remove_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses the Sanitizer removeElements configuration key, via a dictionary or removeElement(). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_remove_processing_instructions {
+    label: "Use Counter Page: Sanitizer Config Remove Processing Instructions"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_remove_processing_instructions ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Config Remove Processing Instructions"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Config Remove Processing Instructions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_remove_processing_instructions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses the Sanitizer removeProcessingInstructions configuration key, via a dictionary or removeProcessingInstruction(). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_config_replace_with_children_elements {
+    label: "Use Counter Page: Sanitizer Config Replace With Children Elements"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_config_replace_with_children_elements ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Config Replace With Children Elements"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Config Replace With Children Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_replace_with_children_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses the Sanitizer replaceWithChildrenElements configuration key, via a dictionary or replaceElementWithChildren(). Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_sanitizer_constructor {
     label: "Use Counter Page: Sanitizer Constructor"
     hidden: no
@@ -45505,6 +46009,78 @@ view: use_counters {
     }
 
     description: "Whether a page called called Sanitizer.constructor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_default_config {
+    label: "Use Counter Page: Sanitizer Default Config"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_default_config ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Default Config"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Default Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_default_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page sanitizes with the built-in default Sanitizer configuration. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_empty_config {
+    label: "Use Counter Page: Sanitizer Empty Config"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_empty_config ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Empty Config"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Empty Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_empty_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page supplies an empty Sanitizer configuration dictionary. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_invalid_config {
+    label: "Use Counter Page: Sanitizer Invalid Config"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_invalid_config ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Invalid Config"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Invalid Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_invalid_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page supplies a Sanitizer configuration that is rejected as invalid. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_sanitizer_removeunsafe {
+    label: "Use Counter Page: Sanitizer Removeunsafe"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_removeunsafe ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Sanitizer Removeunsafe"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Sanitizer Removeunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_removeunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called Sanitizer.removeUnsafe. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -103256,6 +103832,306 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_sanitizer_config_attributes {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_config_attributes} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_attributes_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_config_attributes: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_comments {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_config_comments} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Comments"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_comments"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_comments_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_config_comments: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Comments"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_comments"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_data_attributes {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_config_data_attributes} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Data Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_data_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_data_attributes_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_config_data_attributes: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Data Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_data_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_element_attributes {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_config_element_attributes} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Element Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_element_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_element_attributes_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_config_element_attributes: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Element Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_element_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_element_remove_attributes {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_config_element_remove_attributes} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Element Remove Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_element_remove_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_element_remove_attributes_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_config_element_remove_attributes: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Element Remove Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_element_remove_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_elements {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_config_elements} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_elements_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_config_elements: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_javascript_urls {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_config_javascript_urls} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Javascript Urls"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_javascript_urls"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_javascript_urls_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_config_javascript_urls: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Javascript Urls"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_javascript_urls"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_processing_instructions {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_config_processing_instructions} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Processing Instructions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_processing_instructions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_processing_instructions_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_config_processing_instructions: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Processing Instructions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_processing_instructions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_remove_attributes {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_config_remove_attributes} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Remove Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_remove_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_remove_attributes_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_config_remove_attributes: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Remove Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_remove_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_remove_elements {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_config_remove_elements} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Remove Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_remove_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_remove_elements_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_config_remove_elements: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Remove Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_remove_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_remove_processing_instructions {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_config_remove_processing_instructions} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Remove Processing Instructions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_remove_processing_instructions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_remove_processing_instructions_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_config_remove_processing_instructions: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Remove Processing Instructions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_remove_processing_instructions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_replace_with_children_elements {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_config_replace_with_children_elements} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Replace With Children Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_replace_with_children_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_config_replace_with_children_elements_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_config_replace_with_children_elements: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Config Replace With Children Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_config_replace_with_children_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_sanitizer_constructor {
     type: sum
     sql: ${metrics__counter__use_counter_doc_sanitizer_constructor} ;;
@@ -103277,6 +104153,106 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Doc Sanitizer Constructor"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_constructor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_default_config {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_default_config} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Default Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_default_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_default_config_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_default_config: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Default Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_default_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_empty_config {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_empty_config} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Empty Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_empty_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_empty_config_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_empty_config: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Empty Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_empty_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_invalid_config {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_invalid_config} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Invalid Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_invalid_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_invalid_config_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_invalid_config: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Invalid Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_invalid_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_removeunsafe {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_sanitizer_removeunsafe} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Removeunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_removeunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_sanitizer_removeunsafe_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_sanitizer_removeunsafe: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Sanitizer Removeunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_sanitizer_removeunsafe"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -116906,6 +117882,306 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_page_sanitizer_config_attributes {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_config_attributes} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_attributes_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_config_attributes: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_comments {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_config_comments} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Comments"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_comments"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_comments_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_config_comments: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Comments"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_comments"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_data_attributes {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_config_data_attributes} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Data Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_data_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_data_attributes_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_config_data_attributes: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Data Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_data_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_element_attributes {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_config_element_attributes} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Element Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_element_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_element_attributes_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_config_element_attributes: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Element Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_element_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_element_remove_attributes {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_config_element_remove_attributes} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Element Remove Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_element_remove_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_element_remove_attributes_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_config_element_remove_attributes: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Element Remove Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_element_remove_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_elements {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_config_elements} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_elements_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_config_elements: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_javascript_urls {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_config_javascript_urls} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Javascript Urls"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_javascript_urls"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_javascript_urls_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_config_javascript_urls: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Javascript Urls"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_javascript_urls"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_processing_instructions {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_config_processing_instructions} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Processing Instructions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_processing_instructions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_processing_instructions_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_config_processing_instructions: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Processing Instructions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_processing_instructions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_remove_attributes {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_config_remove_attributes} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Remove Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_remove_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_remove_attributes_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_config_remove_attributes: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Remove Attributes"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_remove_attributes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_remove_elements {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_config_remove_elements} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Remove Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_remove_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_remove_elements_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_config_remove_elements: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Remove Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_remove_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_remove_processing_instructions {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_config_remove_processing_instructions} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Remove Processing Instructions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_remove_processing_instructions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_remove_processing_instructions_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_config_remove_processing_instructions: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Remove Processing Instructions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_remove_processing_instructions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_replace_with_children_elements {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_config_replace_with_children_elements} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Replace With Children Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_replace_with_children_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_config_replace_with_children_elements_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_config_replace_with_children_elements: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Config Replace With Children Elements"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_config_replace_with_children_elements"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_page_sanitizer_constructor {
     type: sum
     sql: ${metrics__counter__use_counter_page_sanitizer_constructor} ;;
@@ -116927,6 +118203,106 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Sanitizer Constructor"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_constructor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_default_config {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_default_config} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Default Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_default_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_default_config_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_default_config: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Default Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_default_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_empty_config {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_empty_config} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Empty Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_empty_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_empty_config_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_empty_config: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Empty Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_empty_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_invalid_config {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_invalid_config} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Invalid Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_invalid_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_invalid_config_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_invalid_config: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Invalid Config"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_invalid_config"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_removeunsafe {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_sanitizer_removeunsafe} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Removeunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_removeunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_sanitizer_removeunsafe_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_sanitizer_removeunsafe: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Sanitizer Removeunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_sanitizer_removeunsafe"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

@@ -8518,10 +8518,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__dual_labeled_counter__dns_cache_miss_reason {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_cache_miss_reason ;;
+    hidden: yes
+    description: "Why a DNS lookup missed the in-memory cache and had to hit the network, keyed by record family. Categories: absent (no entry), expired (entry existed but its TTL had lapsed), refresh (entry still valid but bypassed, e.g. a cache-bypass/refresh flag).
+"
+  }
+
   dimension: metrics__dual_labeled_counter__dns_lookup_disposition {
     sql: ${TABLE}.metrics.dual_labeled_counter.dns_lookup_disposition ;;
     hidden: yes
     description: "DNS: lookup algorithm; Keyed by TRR domain
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_negative_eviction {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_negative_eviction ;;
+    hidden: yes
+    description: "Negative (empty/NODATA or failed) DNS records evicted from the cache on reaching network.dnsCacheEntries, keyed by record family. The category is whether the record was still within its lifetime (premature) or had already expired when evicted.
 "
   }
 
@@ -13373,6 +13387,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     hidden: yes
     description: "Was DataChannels negotiated
 This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBRTC_DATACHANNEL_NEGOTIATED.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtc_get_user_media_source_granted {
+    sql: ${TABLE}.metrics.labeled_counter.webrtc_get_user_media_source_granted ;;
+    hidden: yes
+    description: "Counts the media source actually granted for a getUserMedia() call, keyed by MediaSourceEnum value. Recorded once the request is granted, using the concrete device that was allocated, so it reflects the true display surface chosen for display-capture requests (screen, a specific window, or a browser tab) rather than the pre-selection request hint that get_user_media_type records.
 "
   }
 
@@ -29615,6 +29636,33 @@ view: metrics_table__metrics__dual_labeled_counter__crash_submit_success__value 
   }
 }
 
+view: metrics_table__metrics__dual_labeled_counter__dns_cache_miss_reason {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_cache_miss_reason__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__dual_labeled_counter__dns_lookup_disposition {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -29629,6 +29677,33 @@ view: metrics_table__metrics__dual_labeled_counter__dns_lookup_disposition {
 }
 
 view: metrics_table__metrics__dual_labeled_counter__dns_lookup_disposition__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_negative_eviction {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_negative_eviction__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
