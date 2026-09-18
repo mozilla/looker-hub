@@ -169,6 +169,24 @@ Not set for non-sponsored suggestions.
 "
   }
 
+  dimension: metrics__uuid__fx_suggest_suggestion_id {
+    label: "Fx Suggest: Suggestion ID"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.fx_suggest_suggestion_id ;;
+    type: string
+    group_label: "Fx Suggest"
+    group_item_label: "Suggestion ID"
+
+    link: {
+      label: "Glean Dictionary reference for Fx Suggest: Suggestion ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fx_suggest_suggestion_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The suggestion ID from MARS/Merino
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation: Experimentation ID"
     hidden: no
