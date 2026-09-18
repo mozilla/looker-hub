@@ -541,6 +541,14 @@ This metric is only attached to a ping if it already contains other data.
     group_item_label: "Fx Suggest Context ID"
   }
 
+  dimension: metrics__uuid__fx_suggest_suggestion_id {
+    sql: ${TABLE}.metrics.uuid.fx_suggest_suggestion_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: UUID"
+    group_item_label: "Fx Suggest Suggestion ID"
+  }
+
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
