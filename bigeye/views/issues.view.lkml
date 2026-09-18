@@ -221,6 +221,12 @@ view: issues {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: metric_configuration_include_latest_override {
+    sql: ${TABLE}.metric_configuration_include_latest_override ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metric_configuration_is_lookback_using_current_time {
     sql: ${TABLE}.metric_configuration_is_lookback_using_current_time ;;
     type: yesno
