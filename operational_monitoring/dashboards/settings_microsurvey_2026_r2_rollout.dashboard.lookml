@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       settings_microsurvey_2026_r2_rollout.branch
     ]
     filters:
-      settings_microsurvey_2026_r2_rollout.metric: 'active_hours'
+      settings_microsurvey_2026_r2_rollout.metric: 'days_of_use'
       settings_microsurvey_2026_r2_rollout.statistic: mean
     row: 0
     col: 12
@@ -146,6 +146,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: settings_microsurvey_2026_r2_rollout
+    type: looker_line
+    fields: [
+      settings_microsurvey_2026_r2_rollout.submission_date,
+      settings_microsurvey_2026_r2_rollout.branch,
+      settings_microsurvey_2026_r2_rollout.point
+    ]
+    pivots: [
+      settings_microsurvey_2026_r2_rollout.branch
+    ]
+    filters:
+      settings_microsurvey_2026_r2_rollout.metric: 'uri_count'
+      settings_microsurvey_2026_r2_rollout.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: settings_microsurvey_2026_r2_rollout.submission_date
+    field_y: settings_microsurvey_2026_r2_rollout.point
+    log_scale: false
+    ci_lower: settings_microsurvey_2026_r2_rollout.lower
+    ci_upper: settings_microsurvey_2026_r2_rollout.upper
+    show_grid: true
+    listen:
+      Date: settings_microsurvey_2026_r2_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -167,41 +201,6 @@
       settings_microsurvey_2026_r2_rollout.metric: 'memory_total'
       settings_microsurvey_2026_r2_rollout.statistic: percentile
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: settings_microsurvey_2026_r2_rollout.submission_date
-    field_y: settings_microsurvey_2026_r2_rollout.point
-    log_scale: false
-    ci_lower: settings_microsurvey_2026_r2_rollout.lower
-    ci_upper: settings_microsurvey_2026_r2_rollout.upper
-    show_grid: true
-    listen:
-      Date: settings_microsurvey_2026_r2_rollout.submission_date
-      Percentile: settings_microsurvey_2026_r2_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: settings_microsurvey_2026_r2_rollout
-    type: looker_line
-    fields: [
-      settings_microsurvey_2026_r2_rollout.submission_date,
-      settings_microsurvey_2026_r2_rollout.branch,
-      settings_microsurvey_2026_r2_rollout.point
-    ]
-    pivots: [
-      settings_microsurvey_2026_r2_rollout.branch
-    ]
-    filters:
-      settings_microsurvey_2026_r2_rollout.metric: 'uri_count'
-      settings_microsurvey_2026_r2_rollout.statistic: mean
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -213,6 +212,7 @@
     show_grid: true
     listen:
       Date: settings_microsurvey_2026_r2_rollout.submission_date
+      Percentile: settings_microsurvey_2026_r2_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       settings_microsurvey_2026_r2_rollout.branch
     ]
     filters:
-      settings_microsurvey_2026_r2_rollout.metric: 'days_of_use'
+      settings_microsurvey_2026_r2_rollout.metric: 'active_hours'
       settings_microsurvey_2026_r2_rollout.statistic: mean
     row: 30
     col: 12

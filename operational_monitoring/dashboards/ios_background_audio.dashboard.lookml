@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       ios_background_audio.branch
     ]
     filters:
-      ios_background_audio.metric: 'active_hours'
+      ios_background_audio.metric: 'days_of_use'
       ios_background_audio.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: ios_background_audio.submission_date
-    field_y: ios_background_audio.point
-    log_scale: false
-    ci_lower: ios_background_audio.lower
-    ci_upper: ios_background_audio.upper
-    show_grid: true
-    listen:
-      Date: ios_background_audio.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_background_audio
-    type: looker_line
-    fields: [
-      ios_background_audio.submission_date,
-      ios_background_audio.branch,
-      ios_background_audio.point
-    ]
-    pivots: [
-      ios_background_audio.branch
-    ]
-    filters:
-      ios_background_audio.metric: 'ad_clicks'
-      ios_background_audio.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: ios_background_audio.submission_date
@@ -95,6 +61,40 @@
     ]
     filters:
       ios_background_audio.metric: 'search_count'
+      ios_background_audio.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: ios_background_audio.submission_date
+    field_y: ios_background_audio.point
+    log_scale: false
+    ci_lower: ios_background_audio.lower
+    ci_upper: ios_background_audio.upper
+    show_grid: true
+    listen:
+      Date: ios_background_audio.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_background_audio
+    type: looker_line
+    fields: [
+      ios_background_audio.submission_date,
+      ios_background_audio.branch,
+      ios_background_audio.point
+    ]
+    pivots: [
+      ios_background_audio.branch
+    ]
+    filters:
+      ios_background_audio.metric: 'ad_clicks'
       ios_background_audio.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       ios_background_audio.branch
     ]
     filters:
-      ios_background_audio.metric: 'days_of_use'
+      ios_background_audio.metric: 'active_hours'
       ios_background_audio.statistic: mean
     row: 20
     col: 0

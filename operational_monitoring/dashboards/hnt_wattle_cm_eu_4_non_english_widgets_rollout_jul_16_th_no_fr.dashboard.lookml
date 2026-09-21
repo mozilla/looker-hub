@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.branch
     ]
     filters:
-      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.metric: 'active_hours'
+      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.metric: 'days_of_use'
       hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.statistic: mean
     row: 0
     col: 12
@@ -146,6 +146,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr
+    type: looker_line
+    fields: [
+      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.submission_date,
+      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.branch,
+      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.point
+    ]
+    pivots: [
+      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.branch
+    ]
+    filters:
+      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.metric: 'uri_count'
+      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.submission_date
+    field_y: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.point
+    log_scale: false
+    ci_lower: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.lower
+    ci_upper: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -167,41 +201,6 @@
       hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.metric: 'memory_total'
       hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.statistic: percentile
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.submission_date
-    field_y: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.point
-    log_scale: false
-    ci_lower: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.lower
-    ci_upper: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.submission_date
-      Percentile: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr
-    type: looker_line
-    fields: [
-      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.submission_date,
-      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.branch,
-      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.point
-    ]
-    pivots: [
-      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.branch
-    ]
-    filters:
-      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.metric: 'uri_count'
-      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.statistic: mean
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -213,6 +212,7 @@
     show_grid: true
     listen:
       Date: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.submission_date
+      Percentile: hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.branch
     ]
     filters:
-      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.metric: 'days_of_use'
+      hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.metric: 'active_hours'
       hnt_wattle_cm_eu_4_non_english_widgets_rollout_jul_16_th_no_fr.statistic: mean
     row: 30
     col: 12

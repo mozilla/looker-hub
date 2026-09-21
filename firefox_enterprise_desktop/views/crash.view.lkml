@@ -529,7 +529,7 @@ view: crash {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Type of the process that crashed, the possible values are defined in GeckoProcessTypes.h."
+    description: "Type of the process that crashed, the possible values are defined in GeckoProcessTypes.inc."
   }
 
   dimension: metrics__string__crash_product_id {

@@ -8673,7 +8673,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Session restore: Whether the file read on startup contained parse-able JSON
+    description: "Session restore: Counts session files that existed at startup, labelled by whether the file failed to load because it was unreadable or corrupt. Recorded once per candidate file in the load order, so one startup can contribute several samples.
+\"true\" means the file existed but failed to load because of a read error, invalid JSON, or an error Session Restore does not specifically handle. \"false\" means the file existed and was not recognised as corrupt; it includes files rejected for an incompatible format version, so it is not a count of successful loads.
+Before Firefox 157 a successful load incremented \"false\" twice. Before Firefox 158 errors that Session Restore does not specifically handle incremented \"false\" rather than \"true\".
 This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_SESSION_RESTORE_CORRUPT_FILE.
 "
   }
@@ -61048,19 +61050,19 @@ view: metrics__metrics__labeled_counter__firefox_ai_runtime_onnx_native_availabi
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
