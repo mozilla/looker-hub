@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       add_set_to_default_entrypoint_to_firefox_macos_app_menu.branch
     ]
     filters:
-      add_set_to_default_entrypoint_to_firefox_macos_app_menu.metric: 'active_hours'
+      add_set_to_default_entrypoint_to_firefox_macos_app_menu.metric: 'days_of_use'
       add_set_to_default_entrypoint_to_firefox_macos_app_menu.statistic: mean
     row: 0
     col: 12
@@ -146,6 +146,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: add_set_to_default_entrypoint_to_firefox_macos_app_menu
+    type: looker_line
+    fields: [
+      add_set_to_default_entrypoint_to_firefox_macos_app_menu.submission_date,
+      add_set_to_default_entrypoint_to_firefox_macos_app_menu.branch,
+      add_set_to_default_entrypoint_to_firefox_macos_app_menu.point
+    ]
+    pivots: [
+      add_set_to_default_entrypoint_to_firefox_macos_app_menu.branch
+    ]
+    filters:
+      add_set_to_default_entrypoint_to_firefox_macos_app_menu.metric: 'uri_count'
+      add_set_to_default_entrypoint_to_firefox_macos_app_menu.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: add_set_to_default_entrypoint_to_firefox_macos_app_menu.submission_date
+    field_y: add_set_to_default_entrypoint_to_firefox_macos_app_menu.point
+    log_scale: false
+    ci_lower: add_set_to_default_entrypoint_to_firefox_macos_app_menu.lower
+    ci_upper: add_set_to_default_entrypoint_to_firefox_macos_app_menu.upper
+    show_grid: true
+    listen:
+      Date: add_set_to_default_entrypoint_to_firefox_macos_app_menu.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -167,41 +201,6 @@
       add_set_to_default_entrypoint_to_firefox_macos_app_menu.metric: 'memory_total'
       add_set_to_default_entrypoint_to_firefox_macos_app_menu.statistic: percentile
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: add_set_to_default_entrypoint_to_firefox_macos_app_menu.submission_date
-    field_y: add_set_to_default_entrypoint_to_firefox_macos_app_menu.point
-    log_scale: false
-    ci_lower: add_set_to_default_entrypoint_to_firefox_macos_app_menu.lower
-    ci_upper: add_set_to_default_entrypoint_to_firefox_macos_app_menu.upper
-    show_grid: true
-    listen:
-      Date: add_set_to_default_entrypoint_to_firefox_macos_app_menu.submission_date
-      Percentile: add_set_to_default_entrypoint_to_firefox_macos_app_menu.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: add_set_to_default_entrypoint_to_firefox_macos_app_menu
-    type: looker_line
-    fields: [
-      add_set_to_default_entrypoint_to_firefox_macos_app_menu.submission_date,
-      add_set_to_default_entrypoint_to_firefox_macos_app_menu.branch,
-      add_set_to_default_entrypoint_to_firefox_macos_app_menu.point
-    ]
-    pivots: [
-      add_set_to_default_entrypoint_to_firefox_macos_app_menu.branch
-    ]
-    filters:
-      add_set_to_default_entrypoint_to_firefox_macos_app_menu.metric: 'uri_count'
-      add_set_to_default_entrypoint_to_firefox_macos_app_menu.statistic: mean
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -213,6 +212,7 @@
     show_grid: true
     listen:
       Date: add_set_to_default_entrypoint_to_firefox_macos_app_menu.submission_date
+      Percentile: add_set_to_default_entrypoint_to_firefox_macos_app_menu.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       add_set_to_default_entrypoint_to_firefox_macos_app_menu.branch
     ]
     filters:
-      add_set_to_default_entrypoint_to_firefox_macos_app_menu.metric: 'days_of_use'
+      add_set_to_default_entrypoint_to_firefox_macos_app_menu.metric: 'active_hours'
       add_set_to_default_entrypoint_to_firefox_macos_app_menu.statistic: mean
     row: 30
     col: 12

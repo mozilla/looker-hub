@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +26,44 @@
       vpn_android_phase_0_progressive_rollout_155.branch
     ]
     filters:
-      vpn_android_phase_0_progressive_rollout_155.metric: 'active_hours'
+      vpn_android_phase_0_progressive_rollout_155.metric: 'days_of_use'
       vpn_android_phase_0_progressive_rollout_155.statistic: mean
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: vpn_android_phase_0_progressive_rollout_155.submission_date
+    field_y: vpn_android_phase_0_progressive_rollout_155.point
+    log_scale: false
+    ci_lower: vpn_android_phase_0_progressive_rollout_155.lower
+    ci_upper: vpn_android_phase_0_progressive_rollout_155.upper
+    show_grid: true
+    listen:
+      Date: vpn_android_phase_0_progressive_rollout_155.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: vpn_android_phase_0_progressive_rollout_155
+    type: looker_line
+    fields: [
+      vpn_android_phase_0_progressive_rollout_155.submission_date,
+      vpn_android_phase_0_progressive_rollout_155.branch,
+      vpn_android_phase_0_progressive_rollout_155.point
+    ]
+    pivots: [
+      vpn_android_phase_0_progressive_rollout_155.branch
+    ]
+    filters:
+      vpn_android_phase_0_progressive_rollout_155.metric: 'tagged_sap_searches'
+      vpn_android_phase_0_progressive_rollout_155.statistic: mean
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: vpn_android_phase_0_progressive_rollout_155.submission_date
@@ -62,8 +96,8 @@
     filters:
       vpn_android_phase_0_progressive_rollout_155.metric: 'ad_clicks'
       vpn_android_phase_0_progressive_rollout_155.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: vpn_android_phase_0_progressive_rollout_155.submission_date
@@ -97,7 +131,7 @@
       vpn_android_phase_0_progressive_rollout_155.metric: 'search_count'
       vpn_android_phase_0_progressive_rollout_155.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: vpn_android_phase_0_progressive_rollout_155.submission_date
@@ -130,8 +164,8 @@
     filters:
       vpn_android_phase_0_progressive_rollout_155.metric: 'uri_count'
       vpn_android_phase_0_progressive_rollout_155.statistic: mean
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: vpn_android_phase_0_progressive_rollout_155.submission_date
@@ -165,40 +199,6 @@
       vpn_android_phase_0_progressive_rollout_155.metric: 'retained'
       vpn_android_phase_0_progressive_rollout_155.statistic: mean
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: vpn_android_phase_0_progressive_rollout_155.submission_date
-    field_y: vpn_android_phase_0_progressive_rollout_155.point
-    log_scale: false
-    ci_lower: vpn_android_phase_0_progressive_rollout_155.lower
-    ci_upper: vpn_android_phase_0_progressive_rollout_155.upper
-    show_grid: true
-    listen:
-      Date: vpn_android_phase_0_progressive_rollout_155.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: vpn_android_phase_0_progressive_rollout_155
-    type: looker_line
-    fields: [
-      vpn_android_phase_0_progressive_rollout_155.submission_date,
-      vpn_android_phase_0_progressive_rollout_155.branch,
-      vpn_android_phase_0_progressive_rollout_155.point
-    ]
-    pivots: [
-      vpn_android_phase_0_progressive_rollout_155.branch
-    ]
-    filters:
-      vpn_android_phase_0_progressive_rollout_155.metric: 'days_of_use'
-      vpn_android_phase_0_progressive_rollout_155.statistic: mean
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       vpn_android_phase_0_progressive_rollout_155.branch
     ]
     filters:
-      vpn_android_phase_0_progressive_rollout_155.metric: 'tagged_sap_searches'
+      vpn_android_phase_0_progressive_rollout_155.metric: 'active_hours'
       vpn_android_phase_0_progressive_rollout_155.statistic: mean
     row: 30
     col: 0

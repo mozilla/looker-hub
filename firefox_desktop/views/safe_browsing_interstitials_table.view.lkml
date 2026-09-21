@@ -5,6 +5,14 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: safe_browsing_interstitials_table {
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Firefox major version that sent the ping, or -1 when the version string did not parse. Part of the row grain. Firefox 142 is the first version that records page.load_error for Safe Browsing, so rows below 142 carry actions with displays of 0. Filter to 142 and above before forming any action/displays ratio.
+"
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
@@ -49,14 +57,15 @@ view: safe_browsing_interstitials_table {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized release channel, e.g. release, beta, nightly."
+    description: "Normalized release channel, e.g. release, beta, nightly, or '??' when the ping did not report one.
+"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized operating system name."
+    description: "Normalized operating system name, or '??' when unknown."
   }
 
   dimension: proceeded_anyway {
