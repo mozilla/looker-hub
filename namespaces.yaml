@@ -12537,8 +12537,8 @@ operational_monitoring:
             default: release
             options:
             - release
-            - nightly
             - aurora
+            - nightly
             - beta
             - esr
             - Other
@@ -15744,10 +15744,10 @@ operational_monitoring:
             default: Darwin - vpn_session
             options:
             - Darwin - vpn_session
+            - Windows - vpn_session
             - Linux - vpn_session
             - iOS - vpn_session
             - Android - vpn_session
-            - Windows - vpn_session
             - Android - daemon_session
             - iOS - daemon_session
         explore: mozilla_vpn
@@ -16983,17 +16983,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id746
           channel:
-            default: nightly
+            default: release
             options:
-            - nightly
             - release
             - beta
+            - nightly
           os:
-            default: Linux
+            default: Windows_NT
             options:
-            - Linux
             - Windows_NT
             - Darwin
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id747
