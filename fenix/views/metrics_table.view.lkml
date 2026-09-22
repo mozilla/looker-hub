@@ -3235,6 +3235,14 @@ view: metrics_table {
     group_item_label: "Shopping Product Page Visits"
   }
 
+  dimension: metrics__counter__tab_reload_cover_shown {
+    sql: ${TABLE}.metrics.counter.tab_reload_cover_shown ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Tab Reload Cover Shown"
+  }
+
   dimension: metrics__counter__tabs_tray_close_inactive_tab {
     sql: ${TABLE}.metrics.counter.tabs_tray_close_inactive_tab ;;
     type: number

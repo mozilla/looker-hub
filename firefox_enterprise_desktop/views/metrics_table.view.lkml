@@ -16766,6 +16766,22 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     group_item_label: "Smart Window Chat Storage"
   }
 
+  dimension: metrics__quantity__smart_window_monitor_active_count {
+    sql: ${TABLE}.metrics.quantity.smart_window_monitor_active_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Smart Window Monitor Active Count"
+  }
+
+  dimension: metrics__quantity__smart_window_monitor_paused_count {
+    sql: ${TABLE}.metrics.quantity.smart_window_monitor_paused_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Smart Window Monitor Paused Count"
+  }
+
   dimension: metrics__quantity__startup_profile_count {
     sql: ${TABLE}.metrics.quantity.startup_profile_count ;;
     type: number

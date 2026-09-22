@@ -3854,6 +3854,28 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__counter__tab_reload_cover_shown {
+    label: "Tab Reload Cover: Shown"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tab_reload_cover_shown ;;
+    type: number
+    group_label: "Tab Reload Cover"
+    group_item_label: "Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Tab Reload Cover: Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tab_reload_cover_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the tab reload cover was actually placed over the
+engine view (a cached thumbnail was found and the cover ImageView
+flipped to VISIBLE). Baseline for the feature's engagement, and
+a cross-check against `exited` event count — a gap would indicate
+the process died while a cover was up.
+"
+  }
+
   dimension: metrics__boolean__tab_strip_enabled {
     label: "Tab Strip: Enabled"
     hidden: no
@@ -35638,7 +35660,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 
   dimension: metrics__counter__places_manager_connection_initialized {
     label: "Places Manager: Connection Initialized"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.places_manager_connection_initialized ;;
     type: number
     group_label: "Places Manager"
@@ -35739,12 +35761,13 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Time taken to execute `PRAGMA_CHECKPOINT` inside `run_maintenance()`"
+    description: "Time taken to execute `PRAGMA_CHECKPOINT` inside `run_maintenance()`
+"
   }
 
   dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__sum {
     label: "Places Manager: Run Maintenance Chk Pnt Time Temp Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time_temp.sum ;;
     type: number
     group_label: "Places Manager"
@@ -35776,12 +35799,13 @@ Duplication of `run_maintenance_chk_pnt_time` for glean-sym testing.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Time taken to execute `PRAGMA optimize` inside `run_maintenance()`"
+    description: "Time taken to execute `PRAGMA optimize` inside `run_maintenance()`
+"
   }
 
   dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__sum {
     label: "Places Manager: Run Maintenance Optimize Time Temp Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time_temp.sum ;;
     type: number
     group_label: "Places Manager"
@@ -35813,12 +35837,13 @@ Duplication of `run_maintenance_optimize_time` for glean-sym testing.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Time taken to execute `prune_older_visits()` inside `run_maintenance()`"
+    description: "Time taken to execute `prune_older_visits()` inside `run_maintenance()`
+"
   }
 
   dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__sum {
     label: "Places Manager: Run Maintenance Prune Time Temp Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time_temp.sum ;;
     type: number
     group_label: "Places Manager"
@@ -35867,12 +35892,13 @@ Duplication of `run_maintenance_prune_time` for glean-sym testing.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Time taken to execute `VACUUM` inside `run_maintenance()`"
+    description: "Time taken to execute `VACUUM` inside `run_maintenance()`
+"
   }
 
   dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__sum {
     label: "Places Manager: Run Maintenance Vacuum Time Temp Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time_temp.sum ;;
     type: number
     group_label: "Places Manager"
@@ -37602,6 +37628,31 @@ Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
     link: {
       label: "Glean Dictionary reference for Shopping Product Page Visits"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tab_reload_cover_shown {
+    type: sum
+    sql: ${metrics__counter__tab_reload_cover_shown} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tab Reload Cover Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tab_reload_cover_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tab_reload_cover_shown_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tab_reload_cover_shown: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tab Reload Cover Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tab_reload_cover_shown"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -49623,19 +49674,19 @@ view: metrics__metrics__labeled_counter__htmleditors_overridden_by_beforeinput_l
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -49664,19 +49715,19 @@ view: metrics__metrics__labeled_counter__htmleditors_with_beforeinput_listeners 
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -49746,19 +49797,19 @@ view: metrics__metrics__labeled_counter__htmleditors_with_mutation_observers_wit
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
