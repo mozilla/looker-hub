@@ -1211,6 +1211,14 @@ view: events_stream {
     group_item_label: "Attemptcount"
   }
 
+  dimension: extras__quantity__available_count {
+    sql: ${TABLE}.extras.quantity.available_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Available Count"
+  }
+
   dimension: extras__quantity__average_chunk_time {
     sql: ${TABLE}.extras.quantity.average_chunk_time ;;
     type: number
@@ -1627,6 +1635,14 @@ view: events_stream {
     group_item_label: "Linenumber"
   }
 
+  dimension: extras__quantity__list_size {
+    sql: ${TABLE}.extras.quantity.list_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "List Size"
+  }
+
   dimension: extras__quantity__memory_bytes {
     sql: ${TABLE}.extras.quantity.memory_bytes ;;
     type: number
@@ -1825,6 +1841,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Number Of Logins Skipped"
+  }
+
+  dimension: extras__quantity__number_of_logins_to_delete {
+    sql: ${TABLE}.extras.quantity.number_of_logins_to_delete ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Number Of Logins To Delete"
   }
 
   dimension: extras__quantity__number_of_logins_to_migrate {
@@ -2177,6 +2201,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Value"
+  }
+
+  dimension: extras__quantity__visible_duration_ms {
+    sql: ${TABLE}.extras.quantity.visible_duration_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Visible Duration Ms"
   }
 
   dimension: extras__quantity__wait_count {
@@ -3537,6 +3569,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Hashed Addon ID"
+  }
+
+  dimension: extras__string__hide_reason {
+    sql: ${TABLE}.extras.string.hide_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Hide Reason"
   }
 
   dimension: extras__string__host {
@@ -5401,6 +5441,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Timestamp"
+  }
+
+  dimension: extras__string__to {
+    sql: ${TABLE}.extras.string.to ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "To"
   }
 
   dimension: extras__string__to_language {

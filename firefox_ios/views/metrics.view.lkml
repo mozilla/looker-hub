@@ -5199,7 +5199,7 @@ startup, as part of the initialization sequence.
 
   dimension: metrics__counter__places_manager_connection_initialized {
     label: "Places Manager: Connection Initialized"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.places_manager_connection_initialized ;;
     type: number
     group_label: "Places Manager"
@@ -5215,9 +5215,45 @@ startup, as part of the initialization sequence.
 "
   }
 
+  dimension: metrics__memory_distribution__places_manager_db_size_after_maintenance__sum {
+    label: "Places Manager: DB Size After Maintenance Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.places_manager_db_size_after_maintenance.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "DB Size After Maintenance Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager: DB Size After Maintenance Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_manager_db_size_after_maintenance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of the db after executing `run_maintenance()`
+"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__sum {
+    label: "Places Manager: Run Maintenance Chk Pnt Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Chk Pnt Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager: Run Maintenance Chk Pnt Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_manager_run_maintenance_chk_pnt_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `PRAGMA_CHECKPOINT` inside `run_maintenance()`
+"
+  }
+
   dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__sum {
     label: "Places Manager: Run Maintenance Chk Pnt Time Temp Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time_temp.sum ;;
     type: number
     group_label: "Places Manager"
@@ -5235,9 +5271,27 @@ Duplication of `run_maintenance_chk_pnt_time` for glean-sym testing.
 "
   }
 
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__sum {
+    label: "Places Manager: Run Maintenance Optimize Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Optimize Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager: Run Maintenance Optimize Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_manager_run_maintenance_optimize_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `PRAGMA optimize` inside `run_maintenance()`
+"
+  }
+
   dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__sum {
     label: "Places Manager: Run Maintenance Optimize Time Temp Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time_temp.sum ;;
     type: number
     group_label: "Places Manager"
@@ -5255,9 +5309,27 @@ Duplication of `run_maintenance_optimize_time` for glean-sym testing.
 "
   }
 
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__sum {
+    label: "Places Manager: Run Maintenance Prune Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Prune Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager: Run Maintenance Prune Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_manager_run_maintenance_prune_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `prune_older_visits()` inside `run_maintenance()`
+"
+  }
+
   dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__sum {
     label: "Places Manager: Run Maintenance Prune Time Temp Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time_temp.sum ;;
     type: number
     group_label: "Places Manager"
@@ -5275,9 +5347,44 @@ Duplication of `run_maintenance_prune_time` for glean-sym testing.
 "
   }
 
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_time__sum {
+    label: "Places Manager: Run Maintenance Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager: Run Maintenance Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_manager_run_maintenance_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `run_maintenance()`"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__sum {
+    label: "Places Manager: Run Maintenance Vacuum Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Vacuum Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager: Run Maintenance Vacuum Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_manager_run_maintenance_vacuum_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `VACUUM` inside `run_maintenance()`
+"
+  }
+
   dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__sum {
     label: "Places Manager: Run Maintenance Vacuum Time Temp Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time_temp.sum ;;
     type: number
     group_label: "Places Manager"
@@ -11375,6 +11482,20 @@ view: metrics__metrics__memory_distribution__glean_upload_pending_pings_director
   }
 }
 
+view: metrics__metrics__memory_distribution__places_manager_db_size_after_maintenance__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__ai_quick_answers_results_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -11613,7 +11734,35 @@ view: metrics__metrics__timing_distribution__places_history_migration_duration__
   }
 }
 
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_optimize_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -11641,7 +11790,49 @@ view: metrics__metrics__timing_distribution__places_manager_run_maintenance_opti
   }
 }
 
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_prune_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -1115,6 +1115,14 @@ view: events_stream {
     group_item_label: "Origin Fixable"
   }
 
+  dimension: extras__boolean__outcome {
+    sql: ${TABLE}.extras.boolean.outcome ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Outcome"
+  }
+
   dimension: extras__boolean__overridden_by_third_party {
     sql: ${TABLE}.extras.boolean.overridden_by_third_party ;;
     type: yesno
@@ -2539,6 +2547,14 @@ view: events_stream {
     group_item_label: "Number Of Logins Skipped"
   }
 
+  dimension: extras__quantity__number_of_logins_to_delete {
+    sql: ${TABLE}.extras.quantity.number_of_logins_to_delete ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Number Of Logins To Delete"
+  }
+
   dimension: extras__quantity__number_of_logins_to_migrate {
     sql: ${TABLE}.extras.quantity.number_of_logins_to_migrate ;;
     type: number
@@ -3481,6 +3497,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Action"
+  }
+
+  dimension: extras__string__action_id {
+    sql: ${TABLE}.extras.string.action_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Action ID"
   }
 
   dimension: extras__string__action_type {
