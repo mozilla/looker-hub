@@ -8585,7 +8585,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.dual_labeled_counter.dom_quota_first_initialization_attempt ;;
     hidden: yes
     description: "True if the first initialization attempt succeeded, keyed by the initialization type.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram QM_FIRST_INITIALIZATION_ATTEMPT.
 "
   }
 
@@ -14392,7 +14391,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.dom_quota_info_load_time ;;
     hidden: yes
     description: "Time (ms) for the QuotaManager to load quota information. Keyed by conditions during quota info loading, see RecordTimeDeltaHelper::Run in https://searchfox.org/firefox-main/source/dom/quota/ActorsParent.cpp
-This metric was generated to correspond to the Legacy Telemetry exponential histogram QM_QUOTA_INFO_LOAD_TIME_V0.
 "
   }
 
@@ -14400,7 +14398,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.dom_quota_shutdown_time ;;
     hidden: yes
     description: "Time (ms) for the QuotaManager to shutdown. Keyed by conditions during shutdown, see RecordTimeDeltaHelper::Run in https://searchfox.org/firefox-main/source/dom/quota/ActorsParent.cpp
-This metric was generated to correspond to the Legacy Telemetry exponential histogram QM_SHUTDOWN_TIME_V0.
 "
   }
 
