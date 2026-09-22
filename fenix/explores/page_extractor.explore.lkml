@@ -43,21 +43,6 @@ explore: page_extractor {
     sql: LEFT JOIN UNNEST(${page_extractor__events.extra}) AS page_extractor__events__extra ;;
   }
 
-  join: page_extractor__ping_info__experiments {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${page_extractor.ping_info__experiments}) AS page_extractor__ping_info__experiments ;;
-  }
-
-  join: page_extractor__ping_info__server_knobs_config__metrics_enabled {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${page_extractor.ping_info__server_knobs_config__metrics_enabled}) AS page_extractor__ping_info__server_knobs_config__metrics_enabled ;;
-  }
-
-  join: page_extractor__ping_info__server_knobs_config__pings_enabled {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${page_extractor.ping_info__server_knobs_config__pings_enabled}) AS page_extractor__ping_info__server_knobs_config__pings_enabled ;;
-  }
-
   persist_with: page_extractor_last_updated
 
   always_filter: {

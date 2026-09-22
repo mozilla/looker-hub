@@ -12218,7 +12218,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.dual_labeled_counter.dom_quota_first_initialization_attempt ;;
     hidden: yes
     description: "True if the first initialization attempt succeeded, keyed by the initialization type.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram QM_FIRST_INITIALIZATION_ATTEMPT.
 "
   }
 
@@ -16637,7 +16636,9 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__session_restore_corrupt_file {
     sql: ${TABLE}.metrics.labeled_counter.session_restore_corrupt_file ;;
     hidden: yes
-    description: "Session restore: Whether the file read on startup contained parse-able JSON
+    description: "Session restore: Counts session files that existed at startup, labelled by whether the file failed to load because it was unreadable or corrupt. Recorded once per candidate file in the load order, so one startup can contribute several samples.
+\"true\" means the file existed but failed to load because of a read error, invalid JSON, or an error Session Restore does not specifically handle. \"false\" means the file existed and was not recognised as corrupt; it includes files rejected for an incompatible format version, so it is not a count of successful loads.
+Before Firefox 157 a successful load incremented \"false\" twice. Before Firefox 158 errors that Session Restore does not specifically handle incremented \"false\" rather than \"true\".
 This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_SESSION_RESTORE_CORRUPT_FILE.
 "
   }
@@ -18860,7 +18861,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.dom_quota_info_load_time ;;
     hidden: yes
     description: "Time (ms) for the QuotaManager to load quota information. Keyed by conditions during quota info loading, see RecordTimeDeltaHelper::Run in https://searchfox.org/firefox-main/source/dom/quota/ActorsParent.cpp
-This metric was generated to correspond to the Legacy Telemetry exponential histogram QM_QUOTA_INFO_LOAD_TIME_V0.
 "
   }
 
@@ -18868,7 +18868,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.dom_quota_shutdown_time ;;
     hidden: yes
     description: "Time (ms) for the QuotaManager to shutdown. Keyed by conditions during shutdown, see RecordTimeDeltaHelper::Run in https://searchfox.org/firefox-main/source/dom/quota/ActorsParent.cpp
-This metric was generated to correspond to the Legacy Telemetry exponential histogram QM_SHUTDOWN_TIME_V0.
 "
   }
 
