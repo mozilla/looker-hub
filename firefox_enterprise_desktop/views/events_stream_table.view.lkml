@@ -1488,14 +1488,6 @@ view: events_stream_table {
     group_item_label: "Webvttsubtitles"
   }
 
-  dimension: extras__quantity__active_age {
-    sql: ${TABLE}.extras.quantity.active_age ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Quantity"
-    group_item_label: "Active Age"
-  }
-
   dimension: extras__quantity__ads_hidden {
     sql: ${TABLE}.extras.quantity.ads_hidden ;;
     type: number
