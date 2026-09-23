@@ -43,21 +43,6 @@ explore: fx_suggest_api {
     sql: LEFT JOIN UNNEST(${fx_suggest_api__events.extra}) AS fx_suggest_api__events__extra ;;
   }
 
-  join: fx_suggest_api__ping_info__experiments {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${fx_suggest_api.ping_info__experiments}) AS fx_suggest_api__ping_info__experiments ;;
-  }
-
-  join: fx_suggest_api__ping_info__server_knobs_config__metrics_enabled {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${fx_suggest_api.ping_info__server_knobs_config__metrics_enabled}) AS fx_suggest_api__ping_info__server_knobs_config__metrics_enabled ;;
-  }
-
-  join: fx_suggest_api__ping_info__server_knobs_config__pings_enabled {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${fx_suggest_api.ping_info__server_knobs_config__pings_enabled}) AS fx_suggest_api__ping_info__server_knobs_config__pings_enabled ;;
-  }
-
   persist_with: fx_suggest_api_last_updated
 
   always_filter: {
