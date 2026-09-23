@@ -9310,6 +9310,48 @@ panel the click originated from:
 "
   }
 
+  dimension: metrics__quantity__smart_window_monitor_active_count {
+    label: "Smart Window: Monitor Active Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.smart_window_monitor_active_count ;;
+    type: number
+    group_label: "Smart Window"
+    group_item_label: "Monitor Active Count"
+
+    link: {
+      label: "Glean Dictionary reference for Smart Window: Monitor Active Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/smart_window_monitor_active_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of enabled monitors the user currently has. Set when the
+monitor store is loaded at startup and after every create, edit,
+pause, resume and delete, so each metrics ping carries the current
+count.
+"
+  }
+
+  dimension: metrics__quantity__smart_window_monitor_paused_count {
+    label: "Smart Window: Monitor Paused Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.smart_window_monitor_paused_count ;;
+    type: number
+    group_label: "Smart Window"
+    group_item_label: "Monitor Paused Count"
+
+    link: {
+      label: "Glean Dictionary reference for Smart Window: Monitor Paused Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/smart_window_monitor_paused_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of paused (disabled) monitors the user currently has. Set when
+the monitor store is loaded at startup and after every create, edit,
+pause, resume and delete, so each metrics ping carries the current
+count.
+"
+  }
+
   dimension: metrics__boolean__smart_window_set_default_optin {
     label: "Smart Window: Set Default Optin"
     hidden: no
