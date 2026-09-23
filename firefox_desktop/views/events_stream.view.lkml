@@ -1235,6 +1235,14 @@ view: events_stream {
     group_item_label: "Origin Fixable"
   }
 
+  dimension: extras__boolean__outcome {
+    sql: ${TABLE}.extras.boolean.outcome ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Outcome"
+  }
+
   dimension: extras__boolean__overridden_by_third_party {
     sql: ${TABLE}.extras.boolean.overridden_by_third_party ;;
     type: yesno
@@ -3851,6 +3859,14 @@ view: events_stream {
     group_item_label: "Action"
   }
 
+  dimension: extras__string__action_id {
+    sql: ${TABLE}.extras.string.action_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Action ID"
+  }
+
   dimension: extras__string__action_type {
     sql: ${TABLE}.extras.string.action_type ;;
     type: string
@@ -4403,6 +4419,14 @@ view: events_stream {
     group_item_label: "Click Type"
   }
 
+  dimension: extras__string__closing_reason {
+    sql: ${TABLE}.extras.string.closing_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Closing Reason"
+  }
+
   dimension: extras__string__codecs {
     sql: ${TABLE}.extras.string.codecs ;;
     type: string
@@ -4497,6 +4521,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Conflicting Slug"
+  }
+
+  dimension: extras__string__connection {
+    sql: ${TABLE}.extras.string.connection ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Connection"
   }
 
   dimension: extras__string__connection_id {
@@ -6289,6 +6321,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Openingreason"
+  }
+
+  dimension: extras__string__opening_reason {
+    sql: ${TABLE}.extras.string.opening_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Opening Reason"
   }
 
   dimension: extras__string__operation {
