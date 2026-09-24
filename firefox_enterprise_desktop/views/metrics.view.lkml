@@ -7727,9 +7727,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Session restore: Counts session files that existed at startup, labelled by whether the file failed to load because it was unreadable or corrupt. Recorded once per candidate file in the load order, so one startup can contribute several samples.
-\"true\" means the file existed but failed to load because of a read error, invalid JSON, or an error Session Restore does not specifically handle. \"false\" means the file existed and was not recognised as corrupt; it includes files rejected for an incompatible format version, so it is not a count of successful loads.
-Before Firefox 157 a successful load incremented \"false\" twice. Before Firefox 158 errors that Session Restore does not specifically handle incremented \"false\" rather than \"true\".
+    description: "Session restore: Counts session files that existed at startup, labelled by whether the file failed to load because it was unreadable, corrupt or an incompatible version. Recorded once per candidate file in the load order, so one startup can contribute several samples.
+\"true\" means the file existed but failed to load because of a read error, invalid JSON, an incompatible format version or an error Session Restore does not specifically handle. \"false\" means the file existed and was not recognised as corrupt.
+Before Firefox 157 a successful load incremented \"false\" twice. Before Firefox 158 errors that Session Restore does not specifically handle, and files with an incompatible format version, incremented \"false\" rather than \"true\".
 This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_SESSION_RESTORE_CORRUPT_FILE.
 "
   }
@@ -22453,7 +22453,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Over-allocation due to PHC's rounding (aka internal fragmentation).  Measured in bytes.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_PHC_SLOP.
 "
   }
 
@@ -22472,7 +22471,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of PHC slots currently allocated
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_PHC_SLOTS_ALLOCATED.
 "
   }
 
@@ -22491,7 +22489,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of PHC slots allocated-then-freed
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_PHC_SLOTS_FREED.
 "
   }
 
