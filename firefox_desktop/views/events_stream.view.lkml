@@ -2027,12 +2027,36 @@ view: events_stream {
     group_item_label: "Editor Opens"
   }
 
+  dimension: extras__quantity__error_action {
+    sql: ${TABLE}.extras.quantity.error_action ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Error Action"
+  }
+
   dimension: extras__quantity__error_code {
     sql: ${TABLE}.extras.quantity.error_code ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Error Code"
+  }
+
+  dimension: extras__quantity__error_stage {
+    sql: ${TABLE}.extras.quantity.error_stage ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Error Stage"
+  }
+
+  dimension: extras__quantity__error_type {
+    sql: ${TABLE}.extras.quantity.error_type ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Error Type"
   }
 
   dimension: extras__quantity__extracted_code_units {
@@ -4427,6 +4451,22 @@ view: events_stream {
     group_item_label: "Closing Reason"
   }
 
+  dimension: extras__string__code {
+    sql: ${TABLE}.extras.string.code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Code"
+  }
+
+  dimension: extras__string__code_type {
+    sql: ${TABLE}.extras.string.code_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Code Type"
+  }
+
   dimension: extras__string__codecs {
     sql: ${TABLE}.extras.string.codecs ;;
     type: string
@@ -4939,6 +4979,14 @@ view: events_stream {
     group_item_label: "Enterprise"
   }
 
+  dimension: extras__string__entry_point {
+    sql: ${TABLE}.extras.string.entry_point ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Entry Point"
+  }
+
   dimension: extras__string__entrypoint {
     sql: ${TABLE}.extras.string.entrypoint ;;
     type: string
@@ -5049,6 +5097,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Exceptions"
+  }
+
+  dimension: extras__string__existing_features {
+    sql: ${TABLE}.extras.string.existing_features ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Existing Features"
   }
 
   dimension: extras__string__experiment {
@@ -6531,6 +6587,14 @@ view: events_stream {
     group_item_label: "Passwords"
   }
 
+  dimension: extras__string__patch_type {
+    sql: ${TABLE}.extras.string.patch_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Patch Type"
+  }
+
   dimension: extras__string__path_key {
     sql: ${TABLE}.extras.string.path_key ;;
     type: string
@@ -7009,6 +7073,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Request Target"
+  }
+
+  dimension: extras__string__requested_features {
+    sql: ${TABLE}.extras.string.requested_features ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Requested Features"
   }
 
   dimension: extras__string__require_signon {

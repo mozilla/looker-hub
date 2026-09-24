@@ -4520,6 +4520,14 @@ view: events_stream_table {
     group_item_label: "Enterprise"
   }
 
+  dimension: extras__string__entry_point {
+    sql: ${TABLE}.extras.string.entry_point ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Entry Point"
+  }
+
   dimension: extras__string__entrypoint {
     sql: ${TABLE}.extras.string.entrypoint ;;
     type: string
@@ -4622,6 +4630,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Exceptions"
+  }
+
+  dimension: extras__string__existing_features {
+    sql: ${TABLE}.extras.string.existing_features ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Existing Features"
   }
 
   dimension: extras__string__experiment {
@@ -6478,6 +6494,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Request Target"
+  }
+
+  dimension: extras__string__requested_features {
+    sql: ${TABLE}.extras.string.requested_features ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Requested Features"
   }
 
   dimension: extras__string__require_signon {

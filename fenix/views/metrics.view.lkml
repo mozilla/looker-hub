@@ -17399,7 +17399,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Over-allocation due to PHC's rounding (aka internal fragmentation).  Measured in bytes.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_PHC_SLOP.
 "
   }
 
@@ -17418,7 +17417,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of PHC slots currently allocated
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_PHC_SLOTS_ALLOCATED.
 "
   }
 
@@ -17437,7 +17435,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of PHC slots allocated-then-freed
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_PHC_SLOTS_FREED.
 "
   }
 

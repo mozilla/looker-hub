@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       firefox_referral_rollout_155.branch
     ]
     filters:
-      firefox_referral_rollout_155.metric: 'retained'
+      firefox_referral_rollout_155.metric: 'days_of_use'
       firefox_referral_rollout_155.statistic: mean
     row: 0
     col: 0
@@ -44,24 +44,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: firefox_referral_rollout_155
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       firefox_referral_rollout_155.submission_date,
       firefox_referral_rollout_155.branch,
+      firefox_referral_rollout_155.upper,
+      firefox_referral_rollout_155.lower,
       firefox_referral_rollout_155.point
     ]
     pivots: [
       firefox_referral_rollout_155.branch
     ]
     filters:
-      firefox_referral_rollout_155.metric: 'active_hours'
-      firefox_referral_rollout_155.statistic: mean
+      firefox_referral_rollout_155.metric: 'memory_total'
+      firefox_referral_rollout_155.statistic: percentile
     row: 0
     col: 12
     width: 12
@@ -74,6 +76,7 @@
     show_grid: true
     listen:
       Date: firefox_referral_rollout_155.submission_date
+      Percentile: firefox_referral_rollout_155.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -112,96 +115,25 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: firefox_referral_rollout_155
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       firefox_referral_rollout_155.submission_date,
       firefox_referral_rollout_155.branch,
-      firefox_referral_rollout_155.upper,
-      firefox_referral_rollout_155.lower,
       firefox_referral_rollout_155.point
     ]
     pivots: [
       firefox_referral_rollout_155.branch
     ]
     filters:
-      firefox_referral_rollout_155.metric: 'memory_total'
-      firefox_referral_rollout_155.statistic: percentile
+      firefox_referral_rollout_155.metric: 'active_hours'
+      firefox_referral_rollout_155.statistic: mean
     row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: firefox_referral_rollout_155.submission_date
-    field_y: firefox_referral_rollout_155.point
-    log_scale: false
-    ci_lower: firefox_referral_rollout_155.lower
-    ci_upper: firefox_referral_rollout_155.upper
-    show_grid: true
-    listen:
-      Date: firefox_referral_rollout_155.submission_date
-      Percentile: firefox_referral_rollout_155.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_referral_rollout_155
-    type: looker_line
-    fields: [
-      firefox_referral_rollout_155.submission_date,
-      firefox_referral_rollout_155.branch,
-      firefox_referral_rollout_155.point
-    ]
-    pivots: [
-      firefox_referral_rollout_155.branch
-    ]
-    filters:
-      firefox_referral_rollout_155.metric: 'days_of_use'
-      firefox_referral_rollout_155.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_referral_rollout_155.submission_date
-    field_y: firefox_referral_rollout_155.point
-    log_scale: false
-    ci_lower: firefox_referral_rollout_155.lower
-    ci_upper: firefox_referral_rollout_155.upper
-    show_grid: true
-    listen:
-      Date: firefox_referral_rollout_155.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_referral_rollout_155
-    type: looker_line
-    fields: [
-      firefox_referral_rollout_155.submission_date,
-      firefox_referral_rollout_155.branch,
-      firefox_referral_rollout_155.point
-    ]
-    pivots: [
-      firefox_referral_rollout_155.branch
-    ]
-    filters:
-      firefox_referral_rollout_155.metric: 'ad_clicks'
-      firefox_referral_rollout_155.statistic: mean
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -234,6 +166,74 @@
     ]
     filters:
       firefox_referral_rollout_155.metric: 'qualified_cumulative_days_of_use'
+      firefox_referral_rollout_155.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_referral_rollout_155.submission_date
+    field_y: firefox_referral_rollout_155.point
+    log_scale: false
+    ci_lower: firefox_referral_rollout_155.lower
+    ci_upper: firefox_referral_rollout_155.upper
+    show_grid: true
+    listen:
+      Date: firefox_referral_rollout_155.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_referral_rollout_155
+    type: looker_line
+    fields: [
+      firefox_referral_rollout_155.submission_date,
+      firefox_referral_rollout_155.branch,
+      firefox_referral_rollout_155.point
+    ]
+    pivots: [
+      firefox_referral_rollout_155.branch
+    ]
+    filters:
+      firefox_referral_rollout_155.metric: 'retained'
+      firefox_referral_rollout_155.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: firefox_referral_rollout_155.submission_date
+    field_y: firefox_referral_rollout_155.point
+    log_scale: false
+    ci_lower: firefox_referral_rollout_155.lower
+    ci_upper: firefox_referral_rollout_155.upper
+    show_grid: true
+    listen:
+      Date: firefox_referral_rollout_155.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_referral_rollout_155
+    type: looker_line
+    fields: [
+      firefox_referral_rollout_155.submission_date,
+      firefox_referral_rollout_155.branch,
+      firefox_referral_rollout_155.point
+    ]
+    pivots: [
+      firefox_referral_rollout_155.branch
+    ]
+    filters:
+      firefox_referral_rollout_155.metric: 'ad_clicks'
       firefox_referral_rollout_155.statistic: mean
     row: 30
     col: 0
