@@ -581,8 +581,9 @@ This metric was generated to correspond to the Legacy Telemetry scalar startup.p
   ok:
     The ini file parsed correctly
   ini-failed:
-    Parsing the ini file completely failed, normally this would indicate
-    an out of memory issue.
+    Reading or parsing the ini file completely failed. This could
+    indicate an out of memory issue or an inability to read the file
+    from disk.
   ini-error:
     The ini parser recorded some kind of failure during parsing
   missing-name:

@@ -9312,7 +9312,7 @@ panel the click originated from:
 
   dimension: metrics__quantity__smart_window_monitor_active_count {
     label: "Smart Window: Monitor Active Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.smart_window_monitor_active_count ;;
     type: number
     group_label: "Smart Window"
@@ -9333,7 +9333,7 @@ count.
 
   dimension: metrics__quantity__smart_window_monitor_paused_count {
     label: "Smart Window: Monitor Paused Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.smart_window_monitor_paused_count ;;
     type: number
     group_label: "Smart Window"
@@ -37246,8 +37246,9 @@ This metric was generated to correspond to the Legacy Telemetry scalar startup.p
   ok:
     The ini file parsed correctly
   ini-failed:
-    Parsing the ini file completely failed, normally this would indicate
-    an out of memory issue.
+    Reading or parsing the ini file completely failed. This could
+    indicate an out of memory issue or an inability to read the file
+    from disk.
   ini-error:
     The ini parser recorded some kind of failure during parsing
   missing-name:

@@ -223,7 +223,7 @@ view: issues {
 
   dimension: metric_configuration_include_latest_override {
     sql: ${TABLE}.metric_configuration_include_latest_override ;;
-    type: yesno
+    type: string
     suggest_persist_for: "24 hours"
   }
 
