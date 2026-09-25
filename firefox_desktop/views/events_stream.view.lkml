@@ -1851,6 +1851,14 @@ view: events_stream {
     group_item_label: "Character Count"
   }
 
+  dimension: extras__quantity__check_weekday {
+    sql: ${TABLE}.extras.quantity.check_weekday ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Check Weekday"
+  }
+
   dimension: extras__quantity__columnnumber {
     sql: ${TABLE}.extras.quantity.columnnumber ;;
     type: number
@@ -2057,6 +2065,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Error Type"
+  }
+
+  dimension: extras__quantity__execution_seq {
+    sql: ${TABLE}.extras.quantity.execution_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Execution Seq"
   }
 
   dimension: extras__quantity__extracted_code_units {
@@ -4059,6 +4075,14 @@ view: events_stream {
     group_item_label: "Age"
   }
 
+  dimension: extras__string__agent {
+    sql: ${TABLE}.extras.string.agent ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Agent"
+  }
+
   dimension: extras__string__alt_text_type {
     sql: ${TABLE}.extras.string.alt_text_type ;;
     type: string
@@ -4425,6 +4449,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Chat Version"
+  }
+
+  dimension: extras__string__check_time {
+    sql: ${TABLE}.extras.string.check_time ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Check Time"
   }
 
   dimension: extras__string__choice {
@@ -6321,6 +6353,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Notification Detail"
+  }
+
+  dimension: extras__string__notification_type {
+    sql: ${TABLE}.extras.string.notification_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Notification Type"
   }
 
   dimension: extras__string__num_strings {
