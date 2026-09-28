@@ -14649,6 +14649,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__geolocation_network_link_change {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_network_link_change ;;
+    hidden: yes
+    description: "How many network:link-status-changed notifications, by notification, the NetworkGeolocationProvider request cache saw after it first cached a position.
+"
+  }
+
   dimension: metrics__labeled_counter__geolocation_network_provider {
     sql: ${TABLE}.metrics.labeled_counter.geolocation_network_provider ;;
     hidden: yes
@@ -16636,9 +16643,9 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__session_restore_corrupt_file {
     sql: ${TABLE}.metrics.labeled_counter.session_restore_corrupt_file ;;
     hidden: yes
-    description: "Session restore: Counts session files that existed at startup, labelled by whether the file failed to load because it was unreadable or corrupt. Recorded once per candidate file in the load order, so one startup can contribute several samples.
-\"true\" means the file existed but failed to load because of a read error, invalid JSON, or an error Session Restore does not specifically handle. \"false\" means the file existed and was not recognised as corrupt; it includes files rejected for an incompatible format version, so it is not a count of successful loads.
-Before Firefox 157 a successful load incremented \"false\" twice. Before Firefox 158 errors that Session Restore does not specifically handle incremented \"false\" rather than \"true\".
+    description: "Session restore: Counts session files that existed at startup, labelled by whether the file failed to load because it was unreadable, corrupt or an incompatible version. Recorded once per candidate file in the load order, so one startup can contribute several samples.
+\"true\" means the file existed but failed to load because of a read error, invalid JSON, an incompatible format version or an error Session Restore does not specifically handle. \"false\" means the file existed and was not recognised as corrupt.
+Before Firefox 157 a successful load incremented \"false\" twice. Before Firefox 158 errors that Session Restore does not specifically handle, and files with an incompatible format version, incremented \"false\" rather than \"true\".
 This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_SESSION_RESTORE_CORRUPT_FILE.
 "
   }
@@ -18599,6 +18606,26 @@ The total of all labels is the total count of search engines installed.
     hidden: yes
     description: "Events on the startup timeline, in millis since process creation.
 Previously carried in Legacy \"main\" ping `simpleMeasurements`.
+"
+  }
+
+  dimension: metrics__labeled_quantity__smart_window_agent_active_actions {
+    sql: ${TABLE}.metrics.labeled_quantity.smart_window_agent_active_actions ;;
+    hidden: yes
+    description: "Number of enabled agentic actions the user currently has, keyed by
+agent type. Set when the monitor store is loaded at startup and after
+every create, edit, pause, resume and delete, so each metrics ping
+carries the current count.
+"
+  }
+
+  dimension: metrics__labeled_quantity__smart_window_agent_paused_actions {
+    sql: ${TABLE}.metrics.labeled_quantity.smart_window_agent_paused_actions ;;
+    hidden: yes
+    description: "Number of paused (disabled) agentic actions the user currently has,
+keyed by agent type. Set when the monitor store is loaded at startup
+and after every create, edit, pause, resume and delete, so each
+metrics ping carries the current count.
 "
   }
 
@@ -64784,6 +64811,34 @@ view: metrics_table__metrics__labeled_quantity__search_counts_totals {
 }
 
 view: metrics_table__metrics__labeled_quantity__session_restore_startup_timeline {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__smart_window_agent_active_actions {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__smart_window_agent_paused_actions {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

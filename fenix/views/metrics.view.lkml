@@ -318,6 +318,46 @@ where:
 "
   }
 
+  dimension: metrics__counter__browser_engine_full_page_capture_attempted {
+    label: "Browser Engine: Full Page Capture Attempted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engine_full_page_capture_attempted ;;
+    type: number
+    group_label: "Browser Engine"
+    group_item_label: "Full Page Capture Attempted"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engine: Full Page Capture Attempted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_engine_full_page_capture_attempted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Increments on every EngineView.captureFullPage() call, emitted from
+GeckoEngineView in engine-gecko. Serves as the denominator for the
+full-page screenshot failure rate.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engine_full_page_capture_result {
+    label: "Browser Engine: Full Page Capture Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engine_full_page_capture_result ;;
+    group_label: "Browser Engine"
+    group_item_label: "Full Page Capture Result"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engine: Full Page Capture Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_engine_full_page_capture_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Outcome of each full-page screenshot capture. `succeeded` = the engine
+returned a bitmap; `failed` = the capture was rejected or returned no
+bitmap. Combined with full_page_capture_attempted this gives the
+full-page screenshot failure rate.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_thumbnails_capture_attempted {
     label: "Browser Thumbnails: Capture Attempted"
     hidden: yes
@@ -4013,6 +4053,28 @@ the process died while a cover was up.
     }
 
     description: "The version of the Terms of Use the user accepted."
+  }
+
+  dimension: metrics__string__tracking_protection_privacy_report_notification_availability {
+    label: "Tracking Protection: Privacy Report Notification Availability"
+    hidden: no
+    sql: ${TABLE}.metrics.string.tracking_protection_privacy_report_notification_availability ;;
+    type: string
+    group_label: "Tracking Protection"
+    group_item_label: "Privacy Report Notification Availability"
+
+    link: {
+      label: "Glean Dictionary reference for Tracking Protection: Privacy Report Notification Availability"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tracking_protection_privacy_report_notification_availability"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the weekly privacy report notification can currently be sent
+and if not, which notification setting stops it. Possible values
+are: `available`, `app_notifications_disabled`, `channel_disabled`,
+and `channel_missing`. `channel_missing` indicates an unexpected state
+caused by a programmer error.
+"
   }
 
   dimension: metrics__boolean__user_ai_summarize_gesture_enabled {
@@ -11960,6 +12022,23 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "How many network geolocation requests received an error response.  The number of successful network geolocation requests should resemble the the values for these labels in the geolocation_service probe, minus these failure counts.  Not all failures can be known.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_network_link_change {
+    label: "Geolocation: Network Link Change"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_network_link_change ;;
+    group_label: "Geolocation"
+    group_item_label: "Network Link Change"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Network Link Change"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geolocation_network_link_change"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many network:link-status-changed notifications, by notification, the NetworkGeolocationProvider request cache saw after it first cached a position.
 "
   }
 
@@ -36855,6 +36934,31 @@ Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
     }
   }
 
+  measure: browser_engine_full_page_capture_attempted {
+    type: sum
+    sql: ${metrics__counter__browser_engine_full_page_capture_attempted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engine Full Page Capture Attempted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_engine_full_page_capture_attempted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engine_full_page_capture_attempted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engine_full_page_capture_attempted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engine Full Page Capture Attempted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_engine_full_page_capture_attempted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: credit_cards_autofill_card {
     type: sum
     sql: ${metrics__counter__credit_cards_autofill_card} ;;
@@ -45260,6 +45364,47 @@ view: metrics__metrics__labeled_counter__browser_engagement_windows_start_search
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_engine_full_page_capture_result {
+  label: "Browser Engine: Full Page Capture Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
   label: "Browser Search: Ad Clicks"
 
@@ -49116,6 +49261,47 @@ view: metrics__metrics__labeled_counter__geolocation_macos_error_code {
 
 view: metrics__metrics__labeled_counter__geolocation_network_failures {
   label: "Geolocation: Network Failures"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_network_link_change {
+  label: "Geolocation: Network Link Change"
 
   dimension: document_id {
     type: string

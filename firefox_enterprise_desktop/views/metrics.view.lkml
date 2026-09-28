@@ -8123,6 +8123,48 @@ panel the click originated from:
 "
   }
 
+  dimension: metrics__labeled_quantity__smart_window_agent_active_actions {
+    label: "Smart Window: Agent Active Actions"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_quantity.smart_window_agent_active_actions ;;
+    type: string
+    group_label: "Smart Window"
+    group_item_label: "Agent Active Actions"
+
+    link: {
+      label: "Glean Dictionary reference for Smart Window: Agent Active Actions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/smart_window_agent_active_actions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of enabled agentic actions the user currently has, keyed by
+agent type. Set when the monitor store is loaded at startup and after
+every create, edit, pause, resume and delete, so each metrics ping
+carries the current count.
+"
+  }
+
+  dimension: metrics__labeled_quantity__smart_window_agent_paused_actions {
+    label: "Smart Window: Agent Paused Actions"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_quantity.smart_window_agent_paused_actions ;;
+    type: string
+    group_label: "Smart Window"
+    group_item_label: "Agent Paused Actions"
+
+    link: {
+      label: "Glean Dictionary reference for Smart Window: Agent Paused Actions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/smart_window_agent_paused_actions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of paused (disabled) agentic actions the user currently has,
+keyed by agent type. Set when the monitor store is loaded at startup
+and after every create, edit, pause, resume and delete, so each
+metrics ping carries the current count.
+"
+  }
+
   dimension: metrics__labeled_counter__smart_window_bookmarkbar {
     label: "Smart Window: Bookmarkbar"
     hidden: yes
@@ -17512,6 +17554,23 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "How many network geolocation requests received an error response.  The number of successful network geolocation requests should resemble the the values for these labels in the geolocation_service probe, minus these failure counts.  Not all failures can be known.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_network_link_change {
+    label: "Geolocation: Network Link Change"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_network_link_change ;;
+    group_label: "Geolocation"
+    group_item_label: "Network Link Change"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Network Link Change"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/geolocation_network_link_change"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many network:link-status-changed notifications, by notification, the NetworkGeolocationProvider request cache saw after it first cached a position.
 "
   }
 
@@ -55991,6 +56050,47 @@ view: metrics__metrics__labeled_counter__geolocation_network_failures {
   }
 }
 
+view: metrics__metrics__labeled_counter__geolocation_network_link_change {
+  label: "Geolocation: Network Link Change"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__geolocation_network_provider {
   label: "Geolocation: Network Provider"
 
@@ -79346,6 +79446,34 @@ view: metrics__metrics__labeled_quantity__search_counts_totals {
 }
 
 view: metrics__metrics__labeled_quantity__session_restore_startup_timeline {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_quantity__smart_window_agent_active_actions {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_quantity__smart_window_agent_paused_actions {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

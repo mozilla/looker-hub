@@ -290,6 +290,14 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Fx Suggest Ping Type"
   }
 
+  dimension: metrics__string__fx_suggest_suggestion_id {
+    sql: ${TABLE}.metrics.string.fx_suggest_suggestion_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Fx Suggest Suggestion ID"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string

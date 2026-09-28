@@ -832,6 +832,14 @@ view: events_stream {
     group_item_label: "Session Flow ID"
   }
 
+  dimension: metrics__string__session_pairing_channel_hash {
+    sql: ${TABLE}.metrics.string.session_pairing_channel_hash ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Pairing Channel Hash"
+  }
+
   dimension: metrics__string__utm_campaign {
     sql: ${TABLE}.metrics.string.utm_campaign ;;
     type: string

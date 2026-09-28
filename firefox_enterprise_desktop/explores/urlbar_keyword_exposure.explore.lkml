@@ -43,21 +43,6 @@ explore: urlbar_keyword_exposure {
     sql: LEFT JOIN UNNEST(${urlbar_keyword_exposure__events.extra}) AS urlbar_keyword_exposure__events__extra ;;
   }
 
-  join: urlbar_keyword_exposure__ping_info__experiments {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${urlbar_keyword_exposure.ping_info__experiments}) AS urlbar_keyword_exposure__ping_info__experiments ;;
-  }
-
-  join: urlbar_keyword_exposure__ping_info__server_knobs_config__metrics_enabled {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${urlbar_keyword_exposure.ping_info__server_knobs_config__metrics_enabled}) AS urlbar_keyword_exposure__ping_info__server_knobs_config__metrics_enabled ;;
-  }
-
-  join: urlbar_keyword_exposure__ping_info__server_knobs_config__pings_enabled {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${urlbar_keyword_exposure.ping_info__server_knobs_config__pings_enabled}) AS urlbar_keyword_exposure__ping_info__server_knobs_config__pings_enabled ;;
-  }
-
   persist_with: urlbar_keyword_exposure_last_updated
 
   always_filter: {

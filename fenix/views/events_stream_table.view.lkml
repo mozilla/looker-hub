@@ -3584,6 +3584,14 @@ view: events_stream_table {
     group_item_label: "Host"
   }
 
+  dimension: extras__string__host_process {
+    sql: ${TABLE}.extras.string.host_process ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Host Process"
+  }
+
   dimension: extras__string__host_type {
     sql: ${TABLE}.extras.string.host_type ;;
     type: string

@@ -1184,6 +1184,14 @@ view: events_stream_table {
     group_item_label: "Period"
   }
 
+  dimension: extras__string__permission {
+    sql: ${TABLE}.extras.string.permission ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Permission"
+  }
+
   dimension: extras__string__position {
     sql: ${TABLE}.extras.string.position ;;
     type: string
