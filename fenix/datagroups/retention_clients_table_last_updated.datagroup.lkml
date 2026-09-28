@@ -53,6 +53,10 @@ datagroup: retention_clients_table_last_updated {
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'org_mozilla_firefox_beta_derived' AND table_name = 'baseline_clients_daily_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'fenix_derived' AND table_name = 'onboarding_completed_clients_v1')
 
     ) ;;
   description: "Updates for retention_clients_table when referenced tables are modified."
