@@ -1193,6 +1193,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_network_failures}) AS metrics__metrics__labeled_counter__geolocation_network_failures ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_network_failures.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__geolocation_network_link_change {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_network_link_change}) AS metrics__metrics__labeled_counter__geolocation_network_link_change ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_network_link_change.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__geolocation_network_provider {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_network_provider}) AS metrics__metrics__labeled_counter__geolocation_network_provider ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_network_provider.document_id} ;;

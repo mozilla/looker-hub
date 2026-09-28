@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: smart_shortcuts_rv3
-    type: looker_line
-    fields: [
-      smart_shortcuts_rv3.submission_date,
-      smart_shortcuts_rv3.branch,
-      smart_shortcuts_rv3.point
-    ]
-    pivots: [
-      smart_shortcuts_rv3.branch
-    ]
-    filters:
-      smart_shortcuts_rv3.metric: 'qualified_cumulative_days_of_use'
-      smart_shortcuts_rv3.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: smart_shortcuts_rv3.submission_date
-    field_y: smart_shortcuts_rv3.point
-    log_scale: false
-    ci_lower: smart_shortcuts_rv3.lower
-    ci_upper: smart_shortcuts_rv3.upper
-    show_grid: true
-    listen:
-      Date: smart_shortcuts_rv3.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -63,7 +29,7 @@
       smart_shortcuts_rv3.metric: 'retained'
       smart_shortcuts_rv3.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: smart_shortcuts_rv3.submission_date
@@ -78,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,10 +60,10 @@
       smart_shortcuts_rv3.branch
     ]
     filters:
-      smart_shortcuts_rv3.metric: 'days_of_use'
+      smart_shortcuts_rv3.metric: 'ad_clicks'
       smart_shortcuts_rv3.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: smart_shortcuts_rv3.submission_date
@@ -131,7 +97,7 @@
       smart_shortcuts_rv3.metric: 'search_count'
       smart_shortcuts_rv3.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: smart_shortcuts_rv3.submission_date
@@ -166,42 +132,7 @@
     filters:
       smart_shortcuts_rv3.metric: 'memory_total'
       smart_shortcuts_rv3.statistic: percentile
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: smart_shortcuts_rv3.submission_date
-    field_y: smart_shortcuts_rv3.point
-    log_scale: false
-    ci_lower: smart_shortcuts_rv3.lower
-    ci_upper: smart_shortcuts_rv3.upper
-    show_grid: true
-    listen:
-      Date: smart_shortcuts_rv3.submission_date
-      Percentile: smart_shortcuts_rv3.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: smart_shortcuts_rv3
-    type: looker_line
-    fields: [
-      smart_shortcuts_rv3.submission_date,
-      smart_shortcuts_rv3.branch,
-      smart_shortcuts_rv3.point
-    ]
-    pivots: [
-      smart_shortcuts_rv3.branch
-    ]
-    filters:
-      smart_shortcuts_rv3.metric: 'active_hours'
-      smart_shortcuts_rv3.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -213,40 +144,7 @@
     show_grid: true
     listen:
       Date: smart_shortcuts_rv3.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: smart_shortcuts_rv3
-    type: looker_line
-    fields: [
-      smart_shortcuts_rv3.submission_date,
-      smart_shortcuts_rv3.branch,
-      smart_shortcuts_rv3.point
-    ]
-    pivots: [
-      smart_shortcuts_rv3.branch
-    ]
-    filters:
-      smart_shortcuts_rv3.metric: 'ad_clicks'
-      smart_shortcuts_rv3.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: smart_shortcuts_rv3.submission_date
-    field_y: smart_shortcuts_rv3.point
-    log_scale: false
-    ci_lower: smart_shortcuts_rv3.lower
-    ci_upper: smart_shortcuts_rv3.upper
-    show_grid: true
-    listen:
-      Date: smart_shortcuts_rv3.submission_date
+      Percentile: smart_shortcuts_rv3.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -268,6 +166,108 @@
     ]
     filters:
       smart_shortcuts_rv3.metric: 'uri_count'
+      smart_shortcuts_rv3.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: smart_shortcuts_rv3.submission_date
+    field_y: smart_shortcuts_rv3.point
+    log_scale: false
+    ci_lower: smart_shortcuts_rv3.lower
+    ci_upper: smart_shortcuts_rv3.upper
+    show_grid: true
+    listen:
+      Date: smart_shortcuts_rv3.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: smart_shortcuts_rv3
+    type: looker_line
+    fields: [
+      smart_shortcuts_rv3.submission_date,
+      smart_shortcuts_rv3.branch,
+      smart_shortcuts_rv3.point
+    ]
+    pivots: [
+      smart_shortcuts_rv3.branch
+    ]
+    filters:
+      smart_shortcuts_rv3.metric: 'qualified_cumulative_days_of_use'
+      smart_shortcuts_rv3.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: smart_shortcuts_rv3.submission_date
+    field_y: smart_shortcuts_rv3.point
+    log_scale: false
+    ci_lower: smart_shortcuts_rv3.lower
+    ci_upper: smart_shortcuts_rv3.upper
+    show_grid: true
+    listen:
+      Date: smart_shortcuts_rv3.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: smart_shortcuts_rv3
+    type: looker_line
+    fields: [
+      smart_shortcuts_rv3.submission_date,
+      smart_shortcuts_rv3.branch,
+      smart_shortcuts_rv3.point
+    ]
+    pivots: [
+      smart_shortcuts_rv3.branch
+    ]
+    filters:
+      smart_shortcuts_rv3.metric: 'days_of_use'
+      smart_shortcuts_rv3.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: smart_shortcuts_rv3.submission_date
+    field_y: smart_shortcuts_rv3.point
+    log_scale: false
+    ci_lower: smart_shortcuts_rv3.lower
+    ci_upper: smart_shortcuts_rv3.upper
+    show_grid: true
+    listen:
+      Date: smart_shortcuts_rv3.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: smart_shortcuts_rv3
+    type: looker_line
+    fields: [
+      smart_shortcuts_rv3.submission_date,
+      smart_shortcuts_rv3.branch,
+      smart_shortcuts_rv3.point
+    ]
+    pivots: [
+      smart_shortcuts_rv3.branch
+    ]
+    filters:
+      smart_shortcuts_rv3.metric: 'active_hours'
       smart_shortcuts_rv3.statistic: mean
     row: 30
     col: 12

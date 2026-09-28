@@ -298,6 +298,22 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Quick Suggest Country"
   }
 
+  dimension: metrics__string__quick_suggest_experiment_branch {
+    sql: ${TABLE}.metrics.string.quick_suggest_experiment_branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Quick Suggest Experiment Branch"
+  }
+
+  dimension: metrics__string__quick_suggest_experiment_name {
+    sql: ${TABLE}.metrics.string.quick_suggest_experiment_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Quick Suggest Experiment Name"
+  }
+
   dimension: metrics__string__quick_suggest_iab_category {
     sql: ${TABLE}.metrics.string.quick_suggest_iab_category ;;
     type: string

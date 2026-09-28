@@ -5,10 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: health_issues {
+  dimension: ai_cost {
+    sql: ${TABLE}.ai_cost ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Estimated AI spend in USD for AI-assisted work on the issue."
+  }
+
   dimension: assignee {
     sql: ${TABLE}.assignee ;;
     type: string
     suggest_persist_for: "24 hours"
+  }
+
+  dimension: collaborators {
+    sql: ${TABLE}.collaborators ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Comma-separated list of collaborators."
   }
 
   dimension: epic {
@@ -45,6 +59,7 @@ view: health_issues {
     sql: ${TABLE}.labels ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A map of key, value pairs that provides additional information about the log entry."
   }
 
   dimension: originalstorypoints {
@@ -81,6 +96,7 @@ view: health_issues {
     sql: ${TABLE}.severity ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The severity of the log entry. The default value is `LogSeverity.DEFAULT`."
   }
 
   dimension: status {

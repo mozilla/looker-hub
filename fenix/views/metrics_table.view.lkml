@@ -1483,6 +1483,14 @@ view: metrics_table {
     group_item_label: "Browser Engagement Bookmarks Toolbar Bookmark Opened"
   }
 
+  dimension: metrics__counter__browser_engine_full_page_capture_attempted {
+    sql: ${TABLE}.metrics.counter.browser_engine_full_page_capture_attempted ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engine Full Page Capture Attempted"
+  }
+
   dimension: metrics__counter__cert_signature_cache_total {
     sql: ${TABLE}.metrics.counter.cert_signature_cache_total ;;
     type: number
@@ -11913,6 +11921,16 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engine_full_page_capture_result {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engine_full_page_capture_result ;;
+    hidden: yes
+    description: "Outcome of each full-page screenshot capture. `succeeded` = the engine
+returned a bitmap; `failed` = the capture was rejected or returned no
+bitmap. Combined with full_page_capture_attempted this gives the
+full-page screenshot failure rate.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
@@ -12634,6 +12652,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.geolocation_network_failures ;;
     hidden: yes
     description: "How many network geolocation requests received an error response.  The number of successful network geolocation requests should resemble the the values for these labels in the geolocation_service probe, minus these failure counts.  Not all failures can be known.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_network_link_change {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_network_link_change ;;
+    hidden: yes
+    description: "How many network:link-status-changed notifications, by notification, the NetworkGeolocationProvider request cache saw after it first cached a position.
 "
   }
 
@@ -19433,6 +19458,14 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "System Win Package Family Name"
+  }
+
+  dimension: metrics__string__tracking_protection_privacy_report_notification_availability {
+    sql: ${TABLE}.metrics.string.tracking_protection_privacy_report_notification_availability ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Tracking Protection Privacy Report Notification Availability"
   }
 
   dimension: metrics__string__update_settings_channel {
