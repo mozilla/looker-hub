@@ -47,6 +47,12 @@ view: retention_clients_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: app_version_at_onboarding_completion {
+    sql: ${TABLE}.app_version_at_onboarding_completion ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: city {
     sql: ${TABLE}.city ;;
     type: string
@@ -103,6 +109,12 @@ view: retention_clients_table {
 
   dimension: is_mobile {
     sql: ${TABLE}.is_mobile ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: is_onboarded {
+    sql: ${TABLE}.is_onboarded ;;
     type: yesno
     suggest_persist_for: "24 hours"
   }

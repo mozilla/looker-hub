@@ -2403,6 +2403,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.onboarding
       type: glean_ping_view
+    onboarding_completed_clients_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.onboarding_completed_clients
+      type: table_view
     onboarding_opt_out:
       tables:
       - channel: release
