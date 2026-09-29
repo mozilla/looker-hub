@@ -1307,6 +1307,14 @@ view: events_stream {
     group_item_label: "Reset Disabled"
   }
 
+  dimension: extras__boolean__restarted_by_os {
+    sql: ${TABLE}.extras.boolean.restarted_by_os ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Restarted By OS"
+  }
+
   dimension: extras__boolean__restricted {
     sql: ${TABLE}.extras.boolean.restricted ;;
     type: yesno
@@ -1321,6 +1329,30 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Result Is Default"
+  }
+
+  dimension: extras__boolean__resume_from_crash {
+    sql: ${TABLE}.extras.boolean.resume_from_crash ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Resume From Crash"
+  }
+
+  dimension: extras__boolean__resume_session_once {
+    sql: ${TABLE}.extras.boolean.resume_session_once ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Resume Session Once"
+  }
+
+  dimension: extras__boolean__resuming_after_os_restart {
+    sql: ${TABLE}.extras.boolean.resuming_after_os_restart ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Resuming After OS Restart"
   }
 
   dimension: extras__boolean__sampled_in {
@@ -1465,6 +1497,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Starter"
+  }
+
+  dimension: extras__boolean__startup_page_is_resume {
+    sql: ${TABLE}.extras.boolean.startup_page_is_resume ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Startup Page Is Resume"
   }
 
   dimension: extras__boolean__status {
@@ -4475,6 +4515,22 @@ view: events_stream {
     group_item_label: "Choice"
   }
 
+  dimension: extras__string__clean {
+    sql: ${TABLE}.extras.string.clean ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Clean"
+  }
+
+  dimension: extras__string__clean_backup {
+    sql: ${TABLE}.extras.string.clean_backup ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Clean Backup"
+  }
+
   dimension: extras__string__click_type {
     sql: ${TABLE}.extras.string.click_type ;;
     type: string
@@ -5385,6 +5441,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Form Action Origin Error"
+  }
+
+  dimension: extras__string__format {
+    sql: ${TABLE}.extras.string.format ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Format"
   }
 
   dimension: extras__string__formdata {
@@ -7083,6 +7147,22 @@ view: events_stream {
     group_item_label: "Record Type"
   }
 
+  dimension: extras__string__recovery {
+    sql: ${TABLE}.extras.string.recovery ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Recovery"
+  }
+
+  dimension: extras__string__recovery_backup {
+    sql: ${TABLE}.extras.string.recovery_backup ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Recovery Backup"
+  }
+
   dimension: extras__string__redirects {
     sql: ${TABLE}.extras.string.redirects ;;
     type: string
@@ -8049,6 +8129,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Updated From"
+  }
+
+  dimension: extras__string__upgrade_backup {
+    sql: ${TABLE}.extras.string.upgrade_backup ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Upgrade Backup"
   }
 
   dimension: extras__string__uptime {
