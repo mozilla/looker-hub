@@ -1664,14 +1664,6 @@ view: events_stream_table {
     group_item_label: "Columnnumber"
   }
 
-  dimension: extras__quantity__commands_available {
-    sql: ${TABLE}.extras.quantity.commands_available ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Quantity"
-    group_item_label: "Commands Available"
-  }
-
   dimension: extras__quantity__comments_count {
     sql: ${TABLE}.extras.quantity.comments_count ;;
     type: number
