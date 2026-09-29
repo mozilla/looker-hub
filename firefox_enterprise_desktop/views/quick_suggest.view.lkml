@@ -78,6 +78,46 @@ the `browser.search.region` pref.
 "
   }
 
+  dimension: metrics__string__quick_suggest_experiment_branch {
+    label: "Quick Suggest: Experiment Branch"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_experiment_branch ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Experiment Branch"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Experiment Branch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_experiment_branch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The branch of the active `urlbar` experiment or rollout. (The `urlbar`
+Nimbus feature does not allow coenrollment.) Other experiments are not
+included in order to prevent user fingerprinting.
+"
+  }
+
+  dimension: metrics__string__quick_suggest_experiment_name {
+    label: "Quick Suggest: Experiment Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_experiment_name ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Experiment Name"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Experiment Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_experiment_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The slug of the active `urlbar` experiment or rollout. (The `urlbar`
+Nimbus feature does not allow coenrollment.) Other experiments are not
+included in order to prevent user fingerprinting.
+"
+  }
+
   dimension: metrics__string__quick_suggest_iab_category {
     label: "Quick Suggest: Iab Category"
     hidden: no
