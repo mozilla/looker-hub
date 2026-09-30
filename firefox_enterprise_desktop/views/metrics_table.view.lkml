@@ -9189,6 +9189,8 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__background_notification_helper_toggled {
     sql: ${TABLE}.metrics.labeled_counter.background_notification_helper_toggled ;;
     hidden: yes
+    description: "Number of times the user turned the background notification helper on or off, labelled with the state it was turned to. This counts the user's own switch only: the Nimbus-owned gate that can withdraw the feature is not a user action and is not counted here, so a client whose helper stops because the gate closed records nothing.
+"
   }
 
   dimension: metrics__labeled_counter__bfcache_combo {

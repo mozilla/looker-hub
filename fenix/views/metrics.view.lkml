@@ -2744,6 +2744,26 @@ homescreen because the link was invalid).
 "
   }
 
+  dimension: metrics__boolean__power_saving_mode_active_at_startup {
+    label: "Power Saving Mode: Active At Startup"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.power_saving_mode_active_at_startup ;;
+    type: yesno
+    group_label: "Power Saving Mode"
+    group_item_label: "Active At Startup"
+
+    link: {
+      label: "Glean Dictionary reference for Power Saving Mode: Active At Startup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_saving_mode_active_at_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the device had the OS power saving (battery saver) mode active
+when Firefox started. Read once during startup, so it is sent in every
+metrics ping for that run.
+"
+  }
+
   dimension: metrics__boolean__preferences_app_zygote_isolated_content_processes_enabled {
     label: "Preferences: App Zygote Isolated Content Processes Enabled"
     hidden: no
@@ -4998,6 +5018,77 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "YUV color space of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__background_notification_helper_toggled {
+    label: "Background Notification Helper: Toggled"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.background_notification_helper_toggled ;;
+    group_label: "Background Notification Helper"
+    group_item_label: "Toggled"
+
+    link: {
+      label: "Glean Dictionary reference for Background Notification Helper: Toggled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/background_notification_helper_toggled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the user turned the background notification helper on or off, labelled with the state it was turned to. This counts the user's own switch only: the Nimbus-owned gate that can withdraw the feature is not a user action and is not counted here, so a client whose helper stops because the gate closed records nothing.
+"
+  }
+
+  dimension: metrics__counter__background_notification_helper_wake {
+    label: "Background Notification Helper: Wake"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.background_notification_helper_wake ;;
+    type: number
+    group_label: "Background Notification Helper"
+    group_item_label: "Wake"
+
+    link: {
+      label: "Glean Dictionary reference for Background Notification Helper: Wake"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/background_notification_helper_wake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the background notification helper woke Firefox to receive push messages, counted when Firefox is launched with --receive-push-messages.
+"
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_messages__sum {
+    label: "Background Notification Helper: Wake Messages Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_messages.sum ;;
+    type: number
+    group_label: "Background Notification Helper"
+    group_item_label: "Wake Messages Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Background Notification Helper: Wake Messages Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/background_notification_helper_wake_messages"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of push messages that arrived during a single background notification helper wake, recorded once per wake just before Firefox stops receiving. Only messages that got as far as being dispatched count; ones that failed before that are counted by `web_push.error_code` instead.
+"
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_notifications__sum {
+    label: "Background Notification Helper: Wake Notifications Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_notifications.sum ;;
+    type: number
+    group_label: "Background Notification Helper"
+    group_item_label: "Wake Notifications Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Background Notification Helper: Wake Notifications Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/background_notification_helper_wake_notifications"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of web notifications shown during a single background notification helper wake, recorded once per wake just before Firefox stops receiving, and counted from the `web-notification-shown` notification. This is not the number of notifications the wake ultimately produced: a service worker shows its notification some time after the push message arrives, and receiving stops on a timer that does not wait for it, so anything shown after that point is missed. Private browsing notifications are never counted, and neither are non-web-content ones.
 "
   }
 
@@ -37909,6 +38000,31 @@ Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
     }
   }
 
+  measure: background_notification_helper_wake {
+    type: sum
+    sql: ${metrics__counter__background_notification_helper_wake} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Background Notification Helper Wake"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/background_notification_helper_wake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: background_notification_helper_wake_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__background_notification_helper_wake: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Background Notification Helper Wake"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/background_notification_helper_wake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: bloburl_resolve_stopped {
     type: sum
     sql: ${metrics__counter__bloburl_resolve_stopped} ;;
@@ -45120,6 +45236,47 @@ view: metrics__metrics__labeled_counter__avif_sequence {
 
 view: metrics__metrics__labeled_counter__avif_yuv_color_space {
   label: "Avif: Yuv Color Space"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__background_notification_helper_toggled {
+  label: "Background Notification Helper: Toggled"
 
   dimension: document_id {
     type: string
@@ -62474,6 +62631,34 @@ view: metrics__metrics__custom_distribution__application_reputation_server_verdi
 }
 
 view: metrics__metrics__custom_distribution__apz_zoom_pinchsource__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__background_notification_helper_wake_messages__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__background_notification_helper_wake_notifications__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
