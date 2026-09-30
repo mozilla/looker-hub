@@ -1563,6 +1563,14 @@ view: metrics_table {
     group_item_label: "Apz Scrollwheel Overshoot"
   }
 
+  dimension: metrics__counter__background_notification_helper_wake {
+    sql: ${TABLE}.metrics.counter.background_notification_helper_wake ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Background Notification Helper Wake"
+  }
+
   dimension: metrics__counter__bloburl_resolve_stopped {
     sql: ${TABLE}.metrics.counter.bloburl_resolve_stopped ;;
     type: number
@@ -4017,6 +4025,48 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__apz_zoom_pinchsource__values {
     sql: ${TABLE}.metrics.custom_distribution.apz_zoom_pinchsource.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_messages__count {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_messages.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Background Notification Helper Wake Messages"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_messages__sum {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_messages.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Background Notification Helper Wake Messages"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_messages__values {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_messages.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_notifications__count {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_notifications.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Background Notification Helper Wake Notifications"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_notifications__sum {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_notifications.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Background Notification Helper Wake Notifications"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_notifications__values {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_notifications.values ;;
     hidden: yes
   }
 
@@ -12811,6 +12861,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__background_notification_helper_toggled {
+    sql: ${TABLE}.metrics.labeled_counter.background_notification_helper_toggled ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__bfcache_combo {
     sql: ${TABLE}.metrics.labeled_counter.bfcache_combo ;;
     hidden: yes
@@ -19124,6 +19179,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     description: "Total time spent playing visible video in milliseconds.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram VIDEO_VISIBLE_PLAY_TIME_MS.
 "
+  }
+
+  dimension: metrics__labeled_timing_distribution__mini_window_open_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.mini_window_open_duration ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
@@ -54651,6 +54711,34 @@ view: metrics_table__metrics__custom_distribution__apz_zoom_pinchsource__values 
   }
 }
 
+view: metrics_table__metrics__custom_distribution__background_notification_helper_wake_messages__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__background_notification_helper_wake_notifications__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__bookmarks_sidebar_cumulative_searches__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -69449,6 +69537,94 @@ view: metrics_table__metrics__labeled_timing_distribution__media_video_visible_p
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__media_video_visible_play_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__mini_window_open_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__mini_window_open_duration__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

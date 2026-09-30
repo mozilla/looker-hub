@@ -1411,6 +1411,14 @@ view: metrics_table {
     group_item_label: "Widget Rosetta Status"
   }
 
+  dimension: metrics__counter__background_notification_helper_wake {
+    sql: ${TABLE}.metrics.counter.background_notification_helper_wake ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Background Notification Helper Wake"
+  }
+
   dimension: metrics__counter__bounce_tracking_protection_purge_count_classified_tracker {
     sql: ${TABLE}.metrics.counter.bounce_tracking_protection_purge_count_classified_tracker ;;
     type: number
@@ -3617,6 +3625,32 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__apz_zoom_pinchsource__values {
     sql: ${TABLE}.metrics.custom_distribution.apz_zoom_pinchsource.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_messages__sum {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_messages.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Background Notification Helper Wake Messages"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_messages__values {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_messages.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_notifications__sum {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_notifications.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Background Notification Helper Wake Notifications"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_notifications__values {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_notifications.values ;;
     hidden: yes
   }
 
@@ -9150,6 +9184,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     hidden: yes
     description: "YUV color space of AVIF image. (Migrated from the geckoview metric of the same name).
 "
+  }
+
+  dimension: metrics__labeled_counter__background_notification_helper_toggled {
+    sql: ${TABLE}.metrics.labeled_counter.background_notification_helper_toggled ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__bfcache_combo {
@@ -24391,6 +24430,34 @@ view: metrics_table__metrics__custom_distribution__application_reputation_server
 }
 
 view: metrics_table__metrics__custom_distribution__apz_zoom_pinchsource__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__background_notification_helper_wake_messages__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__background_notification_helper_wake_notifications__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
