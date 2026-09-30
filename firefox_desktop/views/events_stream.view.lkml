@@ -1715,6 +1715,14 @@ view: events_stream {
     group_item_label: "Wasactive"
   }
 
+  dimension: extras__boolean__was_last_tab {
+    sql: ${TABLE}.extras.boolean.was_last_tab ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Was Last Tab"
+  }
+
   dimension: extras__boolean__webVTTSubtitles {
     sql: ${TABLE}.extras.boolean.webVTTSubtitles ;;
     type: yesno
@@ -1921,6 +1929,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Comments Count"
+  }
+
+  dimension: extras__quantity__concurrent_open {
+    sql: ${TABLE}.extras.quantity.concurrent_open ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Concurrent Open"
   }
 
   dimension: extras__quantity__containers {

@@ -1027,6 +1027,14 @@ view: metrics_table {
     group_item_label: "Policies Is Enterprise"
   }
 
+  dimension: metrics__boolean__power_saving_mode_active_at_startup {
+    sql: ${TABLE}.metrics.boolean.power_saving_mode_active_at_startup ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Power Saving Mode Active At Startup"
+  }
+
   dimension: metrics__boolean__preferences_app_zygote_isolated_content_processes_enabled {
     sql: ${TABLE}.metrics.boolean.preferences_app_zygote_isolated_content_processes_enabled ;;
     type: yesno
@@ -1449,6 +1457,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Apz Scrollwheel Overshoot"
+  }
+
+  dimension: metrics__counter__background_notification_helper_wake {
+    sql: ${TABLE}.metrics.counter.background_notification_helper_wake ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Background Notification Helper Wake"
   }
 
   dimension: metrics__counter__bloburl_resolve_stopped {
@@ -3793,6 +3809,48 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__apz_zoom_pinchsource__values {
     sql: ${TABLE}.metrics.custom_distribution.apz_zoom_pinchsource.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_messages__count {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_messages.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Background Notification Helper Wake Messages"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_messages__sum {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_messages.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Background Notification Helper Wake Messages"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_messages__values {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_messages.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_notifications__count {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_notifications.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Background Notification Helper Wake Notifications"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_notifications__sum {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_notifications.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Background Notification Helper Wake Notifications"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__background_notification_helper_wake_notifications__values {
+    sql: ${TABLE}.metrics.custom_distribution.background_notification_helper_wake_notifications.values ;;
     hidden: yes
   }
 
@@ -11880,6 +11938,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.avif_yuv_color_space ;;
     hidden: yes
     description: "YUV color space of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__background_notification_helper_toggled {
+    sql: ${TABLE}.metrics.labeled_counter.background_notification_helper_toggled ;;
+    hidden: yes
+    description: "Number of times the user turned the background notification helper on or off, labelled with the state it was turned to. This counts the user's own switch only: the Nimbus-owned gate that can withdraw the feature is not a user action and is not counted here, so a client whose helper stops because the gate closed records nothing.
 "
   }
 
@@ -50319,6 +50384,34 @@ view: metrics_table__metrics__custom_distribution__application_reputation_server
 }
 
 view: metrics_table__metrics__custom_distribution__apz_zoom_pinchsource__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__background_notification_helper_wake_messages__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__background_notification_helper_wake_notifications__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
