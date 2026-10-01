@@ -10,6 +10,7 @@ view: events_stream {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: app_version_major {
@@ -33,6 +34,7 @@ view: events_stream {
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__app_build {
@@ -217,17 +219,20 @@ view: events_stream {
     sql: ${TABLE}.document_event_number ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Which event number this was in the original document, in chronological order."
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
   }
 
   dimension: event {
     sql: ${TABLE}.event ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Fully qualified event name prefixed with the event category separated by a dot."
   }
 
   dimension: event_category {
@@ -239,12 +244,14 @@ view: events_stream {
   dimension: event_extra {
     sql: ${TABLE}.event_extra ;;
     hidden: yes
+    description: "Event extras, stored as a JSON object."
   }
 
   dimension: event_id {
     sql: ${TABLE}.event_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Unique event ID (typically a concatenation of `document_id` and `document_event_number`)."
     primary_key: yes
   }
 
@@ -257,6 +264,7 @@ view: events_stream {
   dimension: experiments {
     sql: JSON_KEYS(${TABLE}.experiments, 1) ;;
     hidden: yes
+    description: "Any active experiments, stored as a JSON object."
   }
 
   dimension: extras__boolean__exclude_dau {
@@ -325,6 +333,7 @@ view: events_stream {
     sql: ${TABLE}.legacy_telemetry_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "This app doesn't have a `legacy_telemetry_client_id` UUID metric, so this column will always be null."
   }
 
   dimension: metadata__geo__city {
@@ -504,21 +513,33 @@ view: events_stream {
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     hidden: yes
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     hidden: yes
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     hidden: yes
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__string__account_user_id {
@@ -645,24 +666,28 @@ view: events_stream {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -707,6 +732,7 @@ view: events_stream {
     sql: ${TABLE}.profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "This app doesn't have a `legacy_telemetry_profile_group_id` UUID metric, so this column will always be null."
   }
 
   dimension: reason {
@@ -719,6 +745,7 @@ view: events_stream {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: event {
@@ -733,6 +760,7 @@ view: events_stream {
       quarter,
       year,
     ]
+    description: "When the event ostensibly occurred based on data reported by the client (so be wary that unrealistic values are possible)."
   }
 
   dimension_group: metadata__header__parsed {
@@ -792,6 +820,7 @@ view: events_stream {
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: event_count {
