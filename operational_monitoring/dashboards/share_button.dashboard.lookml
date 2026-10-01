@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,77 +26,9 @@
       share_button.branch
     ]
     filters:
-      share_button.metric: 'retained'
+      share_button.metric: 'ad_clicks'
       share_button.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: share_button.submission_date
-    field_y: share_button.point
-    log_scale: false
-    ci_lower: share_button.lower
-    ci_upper: share_button.upper
-    show_grid: true
-    listen:
-      Date: share_button.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: share_button
-    type: looker_line
-    fields: [
-      share_button.submission_date,
-      share_button.branch,
-      share_button.point
-    ]
-    pivots: [
-      share_button.branch
-    ]
-    filters:
-      share_button.metric: 'qualified_cumulative_days_of_use'
-      share_button.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: share_button.submission_date
-    field_y: share_button.point
-    log_scale: false
-    ci_lower: share_button.lower
-    ci_upper: share_button.upper
-    show_grid: true
-    listen:
-      Date: share_button.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: share_button
-    type: looker_line
-    fields: [
-      share_button.submission_date,
-      share_button.branch,
-      share_button.point
-    ]
-    pivots: [
-      share_button.branch
-    ]
-    filters:
-      share_button.metric: 'uri_count'
-      share_button.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -130,7 +62,7 @@
     filters:
       share_button.metric: 'active_hours'
       share_button.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -146,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,9 +94,9 @@
       share_button.branch
     ]
     filters:
-      share_button.metric: 'days_of_use'
+      share_button.metric: 'retained'
       share_button.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -200,7 +132,7 @@
     filters:
       share_button.metric: 'memory_total'
       share_button.statistic: percentile
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -213,6 +145,74 @@
     listen:
       Date: share_button.submission_date
       Percentile: share_button.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: share_button
+    type: looker_line
+    fields: [
+      share_button.submission_date,
+      share_button.branch,
+      share_button.point
+    ]
+    pivots: [
+      share_button.branch
+    ]
+    filters:
+      share_button.metric: 'qualified_cumulative_days_of_use'
+      share_button.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: share_button.submission_date
+    field_y: share_button.point
+    log_scale: false
+    ci_lower: share_button.lower
+    ci_upper: share_button.upper
+    show_grid: true
+    listen:
+      Date: share_button.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: share_button
+    type: looker_line
+    fields: [
+      share_button.submission_date,
+      share_button.branch,
+      share_button.point
+    ]
+    pivots: [
+      share_button.branch
+    ]
+    filters:
+      share_button.metric: 'days_of_use'
+      share_button.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: share_button.submission_date
+    field_y: share_button.point
+    log_scale: false
+    ci_lower: share_button.lower
+    ci_upper: share_button.upper
+    show_grid: true
+    listen:
+      Date: share_button.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       share_button.branch
     ]
     filters:
-      share_button.metric: 'ad_clicks'
+      share_button.metric: 'uri_count'
       share_button.statistic: mean
     row: 30
     col: 12

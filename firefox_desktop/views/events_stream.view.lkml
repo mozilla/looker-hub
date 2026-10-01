@@ -6099,6 +6099,14 @@ view: events_stream {
     group_item_label: "Memory Source"
   }
 
+  dimension: extras__string__mention_type {
+    sql: ${TABLE}.extras.string.mention_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Mention Type"
+  }
+
   dimension: extras__string__menu_action {
     sql: ${TABLE}.extras.string.menu_action ;;
     type: string

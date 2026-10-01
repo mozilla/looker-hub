@@ -18430,7 +18430,6 @@ The bucket with the 'exited_ce' label is of special interest, since those are co
     sql: ${TABLE}.metrics.labeled_custom_distribution.popup_notification_stats ;;
     hidden: yes
     description: "(Bug 1207089) Usage of popup notifications, keyed by ID (0 = Offered, 1..4 = Action (3 is unused), 5 = Click outside (unused), 6 = Leave page, 7 = Use 'X' (unused), 8 = Not now (unused), 10 = Open submenu, 11 = Learn more. Add 20 if happened after reopen.)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram POPUP_NOTIFICATION_STATS.
 "
   }
 
@@ -19441,7 +19440,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.popup_notification_dismissal ;;
     hidden: yes
     description: "(Bug 1207089) Time in ms between displaying a popup notification and dismissing it without an action the first time, keyed by ID
-This metric was generated to correspond to the Legacy Telemetry exponential histogram POPUP_NOTIFICATION_DISMISSAL_MS.
 "
   }
 
@@ -19449,7 +19447,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.popup_notification_main_action ;;
     hidden: yes
     description: "(Bug 1207089) Time in ms between initially requesting a popup notification and triggering the main action, keyed by ID
-This metric was generated to correspond to the Legacy Telemetry exponential histogram POPUP_NOTIFICATION_MAIN_ACTION_MS.
 "
   }
 
