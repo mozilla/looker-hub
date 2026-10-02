@@ -1003,6 +1003,14 @@ view: events_stream {
     group_item_label: "Primary Password Set"
   }
 
+  dimension: extras__boolean__progress_predates_cutoff {
+    sql: ${TABLE}.extras.boolean.progress_predates_cutoff ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Progress Predates Cutoff"
+  }
+
   dimension: extras__boolean__psi_available {
     sql: ${TABLE}.extras.boolean.psi_available ;;
     type: yesno
@@ -1585,6 +1593,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Items Over Quota"
+  }
+
+  dimension: extras__quantity__last_completed_stage {
+    sql: ${TABLE}.extras.quantity.last_completed_stage ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Last Completed Stage"
   }
 
   dimension: extras__quantity__last_install {
@@ -4025,6 +4041,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Migration Error"
+  }
+
+  dimension: extras__string__migration_reason {
+    sql: ${TABLE}.extras.string.migration_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Migration Reason"
   }
 
   dimension: extras__string__mime_type {

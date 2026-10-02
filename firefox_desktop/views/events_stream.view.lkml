@@ -1259,12 +1259,28 @@ view: events_stream {
     group_item_label: "Overridden By Third Party"
   }
 
+  dimension: extras__boolean__permanent_private {
+    sql: ${TABLE}.extras.boolean.permanent_private ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Permanent Private"
+  }
+
   dimension: extras__boolean__poisoned {
     sql: ${TABLE}.extras.boolean.poisoned ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Poisoned"
+  }
+
+  dimension: extras__boolean__previous_session_crashed {
+    sql: ${TABLE}.extras.boolean.previous_session_crashed ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Previous Session Crashed"
   }
 
   dimension: extras__boolean__primary_password_set {
@@ -5803,6 +5819,14 @@ view: events_stream {
     group_item_label: "Infer Reason"
   }
 
+  dimension: extras__string__init_error {
+    sql: ${TABLE}.extras.string.init_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Init Error"
+  }
+
   dimension: extras__string__input {
     sql: ${TABLE}.extras.string.input ;;
     type: string
@@ -5889,6 +5913,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Interaction Type"
+  }
+
+  dimension: extras__string__interstitial_reason {
+    sql: ${TABLE}.extras.string.interstitial_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Interstitial Reason"
   }
 
   dimension: extras__string__issue {
@@ -7307,6 +7339,14 @@ view: events_stream {
     group_item_label: "Results"
   }
 
+  dimension: extras__string__resume_reason {
+    sql: ${TABLE}.extras.string.resume_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Resume Reason"
+  }
+
   dimension: extras__string__retime {
     sql: ${TABLE}.extras.string.retime ;;
     type: string
@@ -7537,6 +7577,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Session Start Time"
+  }
+
+  dimension: extras__string__session_type {
+    sql: ${TABLE}.extras.string.session_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Session Type"
   }
 
   dimension: extras__string__setdefault_source {
