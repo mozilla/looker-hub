@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_new_user_entry_survey_emerging_markets
-    type: looker_line
-    fields: [
-      android_new_user_entry_survey_emerging_markets.submission_date,
-      android_new_user_entry_survey_emerging_markets.branch,
-      android_new_user_entry_survey_emerging_markets.point
-    ]
-    pivots: [
-      android_new_user_entry_survey_emerging_markets.branch
-    ]
-    filters:
-      android_new_user_entry_survey_emerging_markets.metric: 'ad_clicks'
-      android_new_user_entry_survey_emerging_markets.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: android_new_user_entry_survey_emerging_markets.submission_date
-    field_y: android_new_user_entry_survey_emerging_markets.point
-    log_scale: false
-    ci_lower: android_new_user_entry_survey_emerging_markets.lower
-    ci_upper: android_new_user_entry_survey_emerging_markets.upper
-    show_grid: true
-    listen:
-      Date: android_new_user_entry_survey_emerging_markets.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -63,6 +29,40 @@
       android_new_user_entry_survey_emerging_markets.metric: 'active_hours'
       android_new_user_entry_survey_emerging_markets.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: android_new_user_entry_survey_emerging_markets.submission_date
+    field_y: android_new_user_entry_survey_emerging_markets.point
+    log_scale: false
+    ci_lower: android_new_user_entry_survey_emerging_markets.lower
+    ci_upper: android_new_user_entry_survey_emerging_markets.upper
+    show_grid: true
+    listen:
+      Date: android_new_user_entry_survey_emerging_markets.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_new_user_entry_survey_emerging_markets
+    type: looker_line
+    fields: [
+      android_new_user_entry_survey_emerging_markets.submission_date,
+      android_new_user_entry_survey_emerging_markets.branch,
+      android_new_user_entry_survey_emerging_markets.point
+    ]
+    pivots: [
+      android_new_user_entry_survey_emerging_markets.branch
+    ]
+    filters:
+      android_new_user_entry_survey_emerging_markets.metric: 'ad_clicks'
+      android_new_user_entry_survey_emerging_markets.statistic: mean
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       android_new_user_entry_survey_emerging_markets.branch
     ]
     filters:
-      android_new_user_entry_survey_emerging_markets.metric: 'retained'
+      android_new_user_entry_survey_emerging_markets.metric: 'uri_count'
       android_new_user_entry_survey_emerging_markets.statistic: mean
     row: 10
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       android_new_user_entry_survey_emerging_markets.branch
     ]
     filters:
-      android_new_user_entry_survey_emerging_markets.metric: 'uri_count'
+      android_new_user_entry_survey_emerging_markets.metric: 'retained'
       android_new_user_entry_survey_emerging_markets.statistic: mean
     row: 30
     col: 0

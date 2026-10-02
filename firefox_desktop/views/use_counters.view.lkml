@@ -5407,7 +5407,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_masonry_auto_flow {
     label: "Use Counter Css Doc: Css Masonry Auto Flow"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_masonry_auto_flow ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -18943,7 +18943,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_masonry_auto_flow {
     label: "Use Counter Css Page: Css Masonry Auto Flow"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_masonry_auto_flow ;;
     type: number
     group_label: "Use Counter Css Page"
