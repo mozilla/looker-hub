@@ -1361,7 +1361,7 @@ count. Unset on other platforms.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether we show about:sessionrestore or not. Split by key, which indicates why we showed the item or not. Specifically, 'deferred_restore' means we didn't autorestore and thus didn't show the interstitial; 'autorestore' indicates we autorestored without showing the interstitial. 'shown_old_session', 'shown_only_about_welcomeback', 'shown_many_crashes', 'shown_many_crashes_old_session' all indicate we did show the interstitial because of a crash, and the text after 'shown' indicates what secondary reason there was to show this page (as we don't show it for 'just' one crash). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.sessionrestore_interstitial.
+    description: "Whether we show about:sessionrestore or not. Split by key, which indicates why we showed the item or not. Specifically, 'deferred_restore' means we didn't autorestore and thus didn't show the interstitial; 'autorestore' indicates we autorestored without showing the interstitial. 'shown_old_session', 'shown_only_about_welcomeback', 'shown_many_crashes', 'shown_many_crashes_old_session' all indicate we did show the interstitial because of a crash, and the text after 'shown' indicates what secondary reason there was to show this page (as we don't show it for 'just' one crash). 'shown_safe_mode' also follows a crash, but the interstitial is shown because we never automatically restore in Safe Mode, whatever the crash count or session age. That case was not recorded at all before Firefox 159, so the other 'shown' keys undercount by however often it happened. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.sessionrestore_interstitial.
 "
   }
 
@@ -17103,7 +17103,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "DirectWrite system fontlist initialization problem (1=GDI interop, 2=system font collection, 3=no fonts)
+    description: "DirectWrite system fontlist initialization problem: 1=GDI interop (removed in bug 2011408), 2=system font collection, 3=no fonts
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram DWRITEFONT_INIT_PROBLEM.
 "
   }
@@ -31983,7 +31983,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__counter__security_ui_protectionspopup_smartblockembeds_shown {
     label: "Security UI Protectionspopup: Smartblockembeds Shown"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.security_ui_protectionspopup_smartblockembeds_shown ;;
     type: number
     group_label: "Security UI Protectionspopup"
