@@ -11428,7 +11428,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "DirectWrite system fontlist initialization problem (1=GDI interop, 2=system font collection, 3=no fonts)
+    description: "DirectWrite system fontlist initialization problem: 1=GDI interop (removed in bug 2011408), 2=system font collection, 3=no fonts
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram DWRITEFONT_INIT_PROBLEM.
 "
   }
@@ -27693,7 +27693,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__counter__security_ui_protectionspopup_smartblockembeds_shown {
     label: "Security UI Protectionspopup: Smartblockembeds Shown"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.security_ui_protectionspopup_smartblockembeds_shown ;;
     type: number
     group_label: "Security UI Protectionspopup"
