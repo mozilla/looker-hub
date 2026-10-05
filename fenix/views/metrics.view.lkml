@@ -1789,6 +1789,27 @@ Value will be 0 if the feature is disabled.
 "
   }
 
+  dimension: metrics__boolean__metrics_is_android_automotive {
+    label: "Metrics: Is Android Automotive"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.metrics_is_android_automotive ;;
+    type: yesno
+    group_label: "Metrics"
+    group_item_label: "Is Android Automotive"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics: Is Android Automotive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_is_android_automotive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the device reports the `android.hardware.type.automotive`
+system feature, i.e. the app is running on Android Automotive OS
+(a car's built-in infotainment system). This is not set for
+Android Auto, where a phone projects apps onto the car's display.
+"
+  }
+
   dimension: metrics__boolean__metrics_is_large_device {
     label: "Metrics: Is Large Device"
     hidden: no

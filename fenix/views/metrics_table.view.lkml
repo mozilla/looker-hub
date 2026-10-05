@@ -899,6 +899,14 @@ view: metrics_table {
     group_item_label: "Metrics Has Top Sites"
   }
 
+  dimension: metrics__boolean__metrics_is_android_automotive {
+    sql: ${TABLE}.metrics.boolean.metrics_is_android_automotive ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Metrics Is Android Automotive"
+  }
+
   dimension: metrics__boolean__metrics_is_large_device {
     sql: ${TABLE}.metrics.boolean.metrics_is_large_device ;;
     type: yesno
