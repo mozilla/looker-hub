@@ -13354,6 +13354,8 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__web_notification_push_subscribe_origin {
     sql: ${TABLE}.metrics.labeled_counter.web_notification_push_subscribe_origin ;;
     hidden: yes
+    description: "The category of the origin that calls PushManager.subscribe().
+"
   }
 
   dimension: metrics__labeled_counter__web_notification_request_permission_origin {

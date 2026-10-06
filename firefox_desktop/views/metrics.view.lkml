@@ -6506,7 +6506,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__string__os_environment_desktop_entry_exists {
     label: "OS Environment: Desktop Entry Exists"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.os_environment_desktop_entry_exists ;;
     type: string
     group_label: "OS Environment"

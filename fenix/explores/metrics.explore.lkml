@@ -2133,6 +2133,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__web_notification_permission_origin}) AS metrics__metrics__labeled_counter__web_notification_permission_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__web_notification_permission_origin.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__web_notification_push_subscribe_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__web_notification_push_subscribe_origin}) AS metrics__metrics__labeled_counter__web_notification_push_subscribe_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__web_notification_push_subscribe_origin.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__web_notification_request_permission_origin {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__web_notification_request_permission_origin}) AS metrics__metrics__labeled_counter__web_notification_request_permission_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__web_notification_request_permission_origin.document_id} ;;
