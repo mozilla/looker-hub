@@ -113,20 +113,8 @@ view: equativ_monthly_with_line_item {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: total_click_derived_actual_revenue {
-    sql: ${TABLE}.total_click_derived_actual_revenue ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: total_clicks {
     sql: ${TABLE}.total_clicks ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: total_impression_derived_actual_revenue {
-    sql: ${TABLE}.total_impression_derived_actual_revenue ;;
     type: number
     suggest_persist_for: "24 hours"
   }
