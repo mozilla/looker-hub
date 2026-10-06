@@ -81,7 +81,7 @@ by query parameter `entrypoint_variation` in the URL.
 
   dimension: metrics__string__event_app_framework {
     label: "Event: App Framework"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.event_app_framework ;;
     type: string
     group_label: "Event"
@@ -99,7 +99,7 @@ by query parameter `entrypoint_variation` in the URL.
 
   dimension: metrics__string__event_choice {
     label: "Event: Choice"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.event_choice ;;
     type: string
     group_label: "Event"
@@ -116,7 +116,7 @@ by query parameter `entrypoint_variation` in the URL.
 
   dimension: metrics__boolean__event_cms_customization_enrollment {
     label: "Event: Cms Customization Enrollment"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.event_cms_customization_enrollment ;;
     type: yesno
     group_label: "Event"
@@ -134,7 +134,7 @@ by query parameter `entrypoint_variation` in the URL.
 
   dimension: metrics__string__event_name {
     label: "Event: Name"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.event_name ;;
     type: string
     group_label: "Event"
@@ -152,7 +152,7 @@ by query parameter `entrypoint_variation` in the URL.
 
   dimension: metrics__string__event_nimbus_user_id {
     label: "Event: Nimbus User ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.event_nimbus_user_id ;;
     type: string
     group_label: "Event"
@@ -170,7 +170,7 @@ by query parameter `entrypoint_variation` in the URL.
 
   dimension: metrics__string__event_outcome {
     label: "Event: Outcome"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.event_outcome ;;
     type: string
     group_label: "Event"
@@ -189,7 +189,7 @@ or \"failure\" for the passkey PRF-less registration retry.
 
   dimension: metrics__string__event_reason {
     label: "Event: Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.event_reason ;;
     type: string
     group_label: "Event"
@@ -206,7 +206,7 @@ or \"failure\" for the passkey PRF-less registration retry.
 
   dimension: metrics__boolean__event_third_party_links {
     label: "Event: Third Party Links"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.event_third_party_links ;;
     type: yesno
     group_label: "Event"

@@ -43,7 +43,7 @@ view: accounts_events {
 
   dimension: metrics__string__event_name {
     label: "Event: Name"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.event_name ;;
     type: string
     group_label: "Event"
@@ -61,7 +61,7 @@ view: accounts_events {
 
   dimension: metrics__string__event_reason {
     label: "Event: Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.event_reason ;;
     type: string
     group_label: "Event"
@@ -78,7 +78,7 @@ view: accounts_events {
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation: Experimentation ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     group_label: "Glean Client Annotation"
@@ -1019,19 +1019,19 @@ view: accounts_events__metrics__labeled_counter__glean_error_invalid_label {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${accounts_events.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -1060,19 +1060,19 @@ view: accounts_events__metrics__labeled_counter__glean_error_invalid_overflow {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${accounts_events.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -1101,19 +1101,19 @@ view: accounts_events__metrics__labeled_counter__glean_error_invalid_state {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${accounts_events.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -1142,19 +1142,19 @@ view: accounts_events__metrics__labeled_counter__glean_error_invalid_value {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${accounts_events.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
