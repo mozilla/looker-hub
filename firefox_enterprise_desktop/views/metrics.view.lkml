@@ -39082,6 +39082,7 @@ Most samples are expected to be below the 10s timeout used.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: app_version_major {
@@ -39296,6 +39297,7 @@ Most samples are expected to be below the 10s timeout used.
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -39488,24 +39490,28 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.normalized_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -39562,11 +39568,13 @@ Most samples are expected to be below the 10s timeout used.
   dimension: ping_info__server_knobs_config__metrics_enabled {
     sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
     hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
   }
 
   dimension: ping_info__server_knobs_config__pings_enabled {
     sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
     hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
   }
 
   dimension: ping_info__server_knobs_config__session_sample_rate {
@@ -39589,6 +39597,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metrics__datetime__background_update_time_last_update_scheduled {
@@ -39738,6 +39747,7 @@ Most samples are expected to be below the 10s timeout used.
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
