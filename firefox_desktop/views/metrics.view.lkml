@@ -40771,6 +40771,23 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__web_notification_push_subscribe_origin {
+    label: "Web Notification: Push Subscribe Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.web_notification_push_subscribe_origin ;;
+    group_label: "Web Notification"
+    group_item_label: "Push Subscribe Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification: Push Subscribe Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_notification_push_subscribe_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The category of the origin that calls PushManager.subscribe().
+"
+  }
+
   dimension: metrics__labeled_counter__web_notification_request_permission_origin {
     label: "Web Notification: Request Permission Origin"
     hidden: yes
@@ -78565,6 +78582,47 @@ view: metrics__metrics__labeled_counter__web_notification_icon_url_encoding {
 
 view: metrics__metrics__labeled_counter__web_notification_permission_origin {
   label: "Web Notification: Permission Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__web_notification_push_subscribe_origin {
+  label: "Web Notification: Push Subscribe Origin"
 
   dimension: document_id {
     type: string
