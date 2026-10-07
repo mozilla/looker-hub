@@ -12742,6 +12742,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__geolocation_request_activation {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_request_activation ;;
+    hidden: yes
+    description: "The user activation state on each geolocation request.
+"
+  }
+
   dimension: metrics__labeled_counter__geolocation_request_result {
     sql: ${TABLE}.metrics.labeled_counter.geolocation_request_result ;;
     hidden: yes
