@@ -434,12 +434,36 @@ view: interaction_table {
 "
   }
 
+  dimension: metrics__string__ad_account_id {
+    sql: ${TABLE}.metrics.string.ad_account_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Ad Account ID"
+  }
+
   dimension: metrics__string__ad_advertiser {
     sql: ${TABLE}.metrics.string.ad_advertiser ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Ad Advertiser"
+  }
+
+  dimension: metrics__string__ad_advertiser_id {
+    sql: ${TABLE}.metrics.string.ad_advertiser_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Ad Advertiser ID"
+  }
+
+  dimension: metrics__string__ad_campaign_id {
+    sql: ${TABLE}.metrics.string.ad_campaign_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Ad Campaign ID"
   }
 
   dimension: metrics__string__ad_client_context_id {
@@ -568,6 +592,14 @@ view: interaction_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Ad Provider"
+  }
+
+  dimension: metrics__string__ad_rate {
+    sql: ${TABLE}.metrics.string.ad_rate ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Ad Rate"
   }
 
   dimension: metrics__string__ad_region_code {

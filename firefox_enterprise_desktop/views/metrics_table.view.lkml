@@ -10924,6 +10924,11 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__geolocation_request_activation {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_request_activation ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__geolocation_request_result {
     sql: ${TABLE}.metrics.labeled_counter.geolocation_request_result ;;
     hidden: yes
