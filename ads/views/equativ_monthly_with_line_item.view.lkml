@@ -221,20 +221,9 @@ view: equativ_monthly_with_line_item {
     type: sum
   }
 
-  measure: total_click_derived_actual_revenue_sum {
-    sql: ${total_click_derived_actual_revenue} ;;
-    type: sum
-  }
-
   measure: total_clicks_sum {
     sql: ${total_clicks} ;;
     type: sum
-  }
-
-  measure: total_impression_derived_actual_revenue_sum {
-    sql: ${total_impression_derived_actual_revenue} ;;
-    type: sum
-    value_format: "$0.00"
   }
 
   measure: total_impressions_sum {

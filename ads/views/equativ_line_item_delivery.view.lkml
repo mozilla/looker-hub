@@ -295,18 +295,13 @@ view: equativ_line_item_delivery {
     type: number
   }
 
-  measure: total_click_derived_actual_revenue_sum {
-    sql: ${total_click_derived_actual_revenue} ;;
-    type: sum
-  }
-
   measure: total_clicks_after_contract_end {
     sql: ${clicks_after_contract_end} ;;
     type: sum
   }
 
-  measure: total_impression_derived_actual_revenue_sum {
-    sql: ${total_impression_derived_actual_revenue} ;;
+  measure: total_delivered_revenue_sum {
+    sql: ${total_delivered_revenue} ;;
     type: sum
   }
 

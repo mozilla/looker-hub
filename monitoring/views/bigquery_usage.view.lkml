@@ -117,7 +117,7 @@ view: bigquery_usage {
     sql: ${TABLE}.query_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The id of the query"
+    description: "The id of the Redash query. Child jobs of a script inherit it from the parent job."
   }
 
   dimension: query_url {
@@ -238,7 +238,7 @@ view: bigquery_usage {
     sql: ${TABLE}.username ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The name of the user who ran the job"
+    description: "The name of the Redash user who ran the job. Child jobs of a script inherit it from the parent job."
   }
 
   dimension_group: creation {
