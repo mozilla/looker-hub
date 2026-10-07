@@ -5907,7 +5907,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__string__os_environment_desktop_entry_exists {
     label: "OS Environment: Desktop Entry Exists"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.os_environment_desktop_entry_exists ;;
     type: string
     group_label: "OS Environment"
@@ -17659,6 +17659,23 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Which network geolocation service each request from the NetworkGeolocationProvider was sent to, determined from the host of the configured geo.provider.network.url.  \"other\" means the URL had a host that is not one of the services listed here, and \"unknown\" means it had no host that could be parsed.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_request_activation {
+    label: "Geolocation: Request Activation"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_request_activation ;;
+    group_label: "Geolocation"
+    group_item_label: "Request Activation"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Request Activation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/geolocation_request_activation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user activation state on each geolocation request.
 "
   }
 
@@ -56283,6 +56300,47 @@ view: metrics__metrics__labeled_counter__geolocation_network_provider {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_request_activation {
+  label: "Geolocation: Request Activation"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
