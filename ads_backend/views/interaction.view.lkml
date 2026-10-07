@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: interaction {
+  dimension: metrics__string__ad_account_id {
+    label: "Ad: Account ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_account_id ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Account ID"
+
+    link: {
+      label: "Glean Dictionary reference for Ad: Account ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_account_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Identifier for the account in the onboarding api that owns that the advertiser is associated with. May be null if the ad did not originate from onboarding.
+"
+  }
+
   dimension: metrics__string__ad_advertiser {
     label: "Ad: Advertiser"
     hidden: no
@@ -20,6 +38,42 @@ view: interaction {
     }
 
     description: "Advertiser associated with the ad.  Should not be null.
+"
+  }
+
+  dimension: metrics__string__ad_advertiser_id {
+    label: "Ad: Advertiser ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_advertiser_id ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Advertiser ID"
+
+    link: {
+      label: "Glean Dictionary reference for Ad: Advertiser ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_advertiser_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Identifier for the advertiser in the onboarding api. May be null if the ad did not originate from onboarding.
+"
+  }
+
+  dimension: metrics__string__ad_campaign_id {
+    label: "Ad: Campaign ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_campaign_id ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Campaign ID"
+
+    link: {
+      label: "Glean Dictionary reference for Ad: Campaign ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_campaign_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Identifier for the campaign in the onboarding api. May be null if the ad did not originate from onboarding.
 "
   }
 
@@ -218,6 +272,24 @@ view: interaction {
     }
 
     description: "The external service providing the ad.  Should not be null.
+"
+  }
+
+  dimension: metrics__string__ad_rate {
+    label: "Ad: Rate"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_rate ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Rate"
+
+    link: {
+      label: "Glean Dictionary reference for Ad: Rate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Rate configured for the ad set (called line item here) in the onboarding api. May be null if the ad did not originate from onboarding.
 "
   }
 
