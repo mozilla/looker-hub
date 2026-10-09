@@ -6432,6 +6432,14 @@ view: events_stream_table {
     group_item_label: "Preferred Send Codec"
   }
 
+  dimension: extras__string__prescan {
+    sql: ${TABLE}.extras.string.prescan ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Prescan"
+  }
+
   dimension: extras__string__previous {
     sql: ${TABLE}.extras.string.previous ;;
     type: string
@@ -6902,6 +6910,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Sap"
+  }
+
+  dimension: extras__string__scan {
+    sql: ${TABLE}.extras.string.scan ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Scan"
   }
 
   dimension: extras__string__scenario {

@@ -14898,6 +14898,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_timing_distribution__newtab_opened_page_dwell_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.newtab_opened_page_dwell_time ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_timing_distribution__orb_javascript_validation {
     sql: ${TABLE}.metrics.labeled_timing_distribution.orb_javascript_validation ;;
     hidden: yes
@@ -36627,6 +36632,41 @@ view: metrics_table__metrics__labeled_timing_distribution__networking_trr_tls_ha
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__networking_trr_tls_handshake__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__newtab_opened_page_dwell_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__newtab_opened_page_dwell_time__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

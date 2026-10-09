@@ -26308,7 +26308,6 @@ e.g. 16446
     }
 
     description: "Results of login import from a CSV/TSV file, by category
-This metric was generated to correspond to the Legacy Telemetry categorical histogram PWMGR_IMPORT_LOGINS_FROM_FILE_CATEGORICAL.
 "
   }
 
@@ -49619,19 +49618,19 @@ view: metrics__metrics__labeled_counter__geolocation_request_activation {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
