@@ -12480,7 +12480,6 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
     sql: ${TABLE}.metrics.labeled_counter.pwmgr_import_logins_from_file_categorical ;;
     hidden: yes
     description: "Results of login import from a CSV/TSV file, by category
-This metric was generated to correspond to the Legacy Telemetry categorical histogram PWMGR_IMPORT_LOGINS_FROM_FILE_CATEGORICAL.
 "
   }
 
@@ -12635,7 +12634,9 @@ categorical histogram FX_SEARCHBAR_SELECTED_RESULT_METHOD.
   dimension: metrics__labeled_counter__session_restore_all_files_corrupt {
     sql: ${TABLE}.metrics.labeled_counter.session_restore_all_files_corrupt ;;
     hidden: yes
-    description: "Session restore: Whether none of the backup files contained parse-able JSON
+    description: "Session restore: Whether at least one candidate session file existed at startup but none of them could be loaded, across both the lz4-compressed files and the legacy uncompressed .js/.bak files. Recorded once per startup. \"false\" also covers profiles with no session files at all.
+Before Firefox 159 only the lz4-compressed files counted as existing, so a profile whose only files were unloadable legacy ones recorded \"false\".
+Profiles in permanent private browsing are not represented in this metric.
 This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_SESSION_RESTORE_ALL_FILES_CORRUPT.
 "
   }
@@ -12643,9 +12644,10 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__session_restore_corrupt_file {
     sql: ${TABLE}.metrics.labeled_counter.session_restore_corrupt_file ;;
     hidden: yes
-    description: "Session restore: Counts session files that existed at startup, labelled by whether the file failed to load because it was unreadable, corrupt or an incompatible version. Recorded once per candidate file in the load order, so one startup can contribute several samples.
-\"true\" means the file existed but failed to load because of a read error, invalid JSON, an incompatible format version or an error Session Restore does not specifically handle. \"false\" means the file existed and was not recognised as corrupt.
-Before Firefox 157 a successful load incremented \"false\" twice. Before Firefox 158 errors that Session Restore does not specifically handle, and files with an incompatible format version, incremented \"false\" rather than \"true\".
+    description: "Session restore: counts session files that existed at startup, labelled by whether the file was recognised as corrupt. Recorded once per candidate file in the load order, so one startup can contribute several samples.
+\"false\" means the file existed and was not recognised as corrupt, which also includes files rejected for an incompatible format version and files that failed to read for reasons we do not specifically handle - it is not a count of successful loads.
+Before Firefox 157 a successful load incremented \"false\" twice, so corruption rates computed across that boundary show a step of roughly 2x - this is a correction, not a regression. Before Firefox 158 errors that Session Restore does not specifically handle, and files with an incompatible format version, incremented \"false\" rather than \"true\".
+Profiles in permanent private browsing are not represented in this metric.
 This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_SESSION_RESTORE_CORRUPT_FILE.
 "
   }
@@ -12653,7 +12655,9 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__session_restore_shutdown_flush_all_outcomes {
     sql: ${TABLE}.metrics.labeled_counter.session_restore_shutdown_flush_all_outcomes ;;
     hidden: yes
-    description: "The count of time-outs, abnormal shutdown and frameloader crashes observed during an async shutdown
+    description: "Counts occurrences of each condition that can end the wait for session data to be flushed during an async shutdown.
+These are occurrence counts, not a partition of shutdowns: \"complete\" is incremented when the flush finishes regardless of whether it won the race, and the crash observers fire once per content process, so a single shutdown can contribute to more than one label and \"abnormal_content_shutdown\" can exceed the number of shutdowns.
+Use session_restore.shutdown_type's \"async\" label as the denominator for per-shutdown rates.
 "
   }
 
@@ -12661,6 +12665,8 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.session_restore_shutdown_ok ;;
     hidden: yes
     description: "Did the browser start after a successful shutdown
+Not recorded when no valid session was found at startup, so this metric's population excludes profiles with missing or corrupt session files.
+Profiles in permanent private browsing are not represented in this metric.
 This metric was generated to correspond to the Legacy Telemetry boolean histogram SHUTDOWN_OK.
 "
   }
@@ -14901,6 +14907,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__newtab_opened_page_dwell_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.newtab_opened_page_dwell_time ;;
     hidden: yes
+    description: "Active time the user spent on a page opened from the newtab, in milliseconds, labelled by what was clicked to open it. Measures how long the user was interacting with the browser, anywhere in the window, while that page was the selected tab of the focused window, not how long the tab was open.
+One sample per opened page. Samples accumulate per client and are submitted with the metrics ping. The distribution in one ping covers every page opened from a newtab since the previous metrics ping, and belongs to no single newtab visit.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__orb_javascript_validation {

@@ -1339,6 +1339,14 @@ view: metrics_table {
     group_item_label: "Tab Strip Enabled"
   }
 
+  dimension: metrics__boolean__tracking_protection_privacy_report_notification_worker_scheduled {
+    sql: ${TABLE}.metrics.boolean.tracking_protection_privacy_report_notification_worker_scheduled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Tracking Protection Privacy Report Notification Worker Scheduled"
+  }
+
   dimension: metrics__boolean__update_settings_auto_download {
     sql: ${TABLE}.metrics.boolean.update_settings_auto_download ;;
     type: yesno
@@ -11360,6 +11368,14 @@ view: metrics_table {
     group_item_label: "Raw Terms Of Use Date"
   }
 
+  dimension: metrics__datetime__raw_tracking_protection_privacy_report_notification_scheduled_at {
+    sql: ${TABLE}.metrics.datetime.raw_tracking_protection_privacy_report_notification_scheduled_at ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Datetime"
+    group_item_label: "Raw Tracking Protection Privacy Report Notification Scheduled At"
+  }
+
   dimension: metrics__dual_labeled_counter__application_reputation_server_verdict_2 {
     sql: ${TABLE}.metrics.dual_labeled_counter.application_reputation_server_verdict_2 ;;
     hidden: yes
@@ -14499,7 +14515,6 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
     sql: ${TABLE}.metrics.labeled_counter.pwmgr_import_logins_from_file_categorical ;;
     hidden: yes
     description: "Results of login import from a CSV/TSV file, by category
-This metric was generated to correspond to the Legacy Telemetry categorical histogram PWMGR_IMPORT_LOGINS_FROM_FILE_CATEGORICAL.
 "
   }
 
@@ -50190,6 +50205,21 @@ Previously reported in \"main\" ping `simpleMeasurements`.
       year,
     ]
     label: "Metrics: Datetime: Terms Of Use Date"
+  }
+
+  dimension_group: metrics__datetime__tracking_protection_privacy_report_notification_scheduled_at {
+    sql: ${TABLE}.metrics.datetime.tracking_protection_privacy_report_notification_scheduled_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics: Datetime: Tracking Protection Privacy Report Notification Scheduled At"
   }
 
   dimension_group: ping_info__parsed_end {

@@ -4118,6 +4118,24 @@ caused by a programmer error.
 "
   }
 
+  dimension: metrics__boolean__tracking_protection_privacy_report_notification_worker_scheduled {
+    label: "Tracking Protection: Privacy Report Notification Worker Scheduled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.tracking_protection_privacy_report_notification_worker_scheduled ;;
+    type: yesno
+    group_label: "Tracking Protection"
+    group_item_label: "Privacy Report Notification Worker Scheduled"
+
+    link: {
+      label: "Glean Dictionary reference for Tracking Protection: Privacy Report Notification Worker Scheduled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tracking_protection_privacy_report_notification_worker_scheduled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the worker for the weekly privacy report notification is currently scheduled.
+"
+  }
+
   dimension: metrics__boolean__user_ai_summarize_gesture_enabled {
     label: "User Ai Summarize: Gesture Enabled"
     hidden: no
@@ -36786,6 +36804,25 @@ Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
     type: number
     suggest_persist_for: "24 hours"
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension_group: metrics__datetime__tracking_protection_privacy_report_notification_scheduled_at {
+    label: "Tracking Protection: Privacy Report Notification Scheduled At"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.tracking_protection_privacy_report_notification_scheduled_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The most recent day on which the app confirmed that the worker for the weekly privacy
+report notification is scheduled.
+"
   }
 
   dimension_group: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
