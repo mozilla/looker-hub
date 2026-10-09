@@ -14,21 +14,21 @@ view: clients_daily_table {
     sql: ${TABLE}.aborts_content_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of content-process abort events (unclean shutdowns of content processes) for this client on the submission date."
+    description: "The total number of content-process abort events recorded during a session or aggregation period. A null value indicates no data was collected for this metric."
   }
 
   dimension: aborts_gmplugin_sum {
     sql: ${TABLE}.aborts_gmplugin_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of GMP (Gecko Media Plugin) process abort events for this client on the submission date."
+    description: "The total number of Gecko Media Plugin (GMP) process abort events recorded during a session or aggregation period. A null value indicates no data was collected for this metric."
   }
 
   dimension: aborts_plugin_sum {
     sql: ${TABLE}.aborts_plugin_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of plugin process abort events for this client on the submission date."
+    description: "The total number of legacy plugin process abort events recorded during a session or aggregation period. A null value indicates no data was collected for this metric."
   }
 
   dimension: active_addons {
@@ -40,68 +40,68 @@ view: clients_daily_table {
     sql: ${TABLE}.active_addons_count_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Mean number of active add-ons across subsessions for this client on the submission date."
+    description: "The mean number of active add-ons installed across the client's sessions within the aggregation period."
   }
 
   dimension: active_hours_sum {
     sql: ${TABLE}.active_hours_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total active browsing time in hours for this client on the submission date, summed across all subsessions."
+    description: "The sum of active browser usage hours across all sessions or clients within the aggregation period."
   }
 
   dimension: ad_clicks {
     sql: ${TABLE}.ad_clicks ;;
     hidden: yes
+    description: "The total number of times the user clicked on an advertisement during the measurement period. Null when no ad click data was collected."
   }
 
   dimension: ad_clicks_count_all {
     sql: ${TABLE}.ad_clicks_count_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of ad clicks recorded across all search providers on the submission date."
+    description: "The aggregated count of all ad click events across all ad types recorded for a client or group during the measurement period. Null when no ad click events were observed."
   }
 
   dimension: addon_compatibility_check_enabled {
     sql: ${TABLE}.addon_compatibility_check_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether add-on compatibility checking is enabled for this client. True if compatibility checks are enforced."
+    description: "Indicates whether the browser's add-on compatibility checking feature is enabled. True means compatibility checks are active; false means they have been disabled."
   }
 
   dimension: app_build_id {
     sql: ${TABLE}.app_build_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The build ID of the Firefox application in YYYYMMDDHHMMSS format."
+    description: "The build identifier string for the application, encoding the date and time when the specific build was compiled (format: YYYYMMDDHHmmSS)."
   }
 
   dimension: app_display_version {
     sql: ${TABLE}.app_display_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "User visible version string (e.g. \"1.0.3\") for the browser."
+    description: "The human-readable version string of the application as displayed to users, including major, minor, and patch components (e.g., '151.0.1' or '115.36.0esr')."
   }
 
   dimension: app_name {
     sql: ${TABLE}.app_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The name of the browser application (always 'Firefox' for desktop telemetry)."
+    description: "The name of the Mozilla application that generated the telemetry event (e.g., 'firefox_desktop', 'fenix', 'firefox_ios', 'mozilla_vpn'). Used to distinguish telemetry across Mozilla's suite of products."
   }
 
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "User visible version string (e.g. \"1.0.3\") for the browser."
+    description: "The full version string of the application at the time of the event (e.g., '151.0.2'). Combines major, minor, and patch components into a single human-readable version identifier."
   }
 
   dimension: apple_model_id {
     sql: ${TABLE}.apple_model_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The hardware model identifier for Apple devices (e.g., 'MacBookAir10,1'). Mac only; null on other platforms."
   }
 
   dimension: attribution__campaign {
@@ -110,7 +110,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Campaign"
-    description: "The campaign identifier from the install attribution."
   }
 
   dimension: attribution__content {
@@ -119,7 +118,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Content"
-    description: "The attribution content identifier from the install attribution."
   }
 
   dimension: attribution__dlsource {
@@ -128,7 +126,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Dlsource"
-    description: "Identifier indicating where the Firefox installation originated (e.g., 'mozorg', 'fxdotcom')."
   }
 
   dimension: attribution__dltoken {
@@ -137,7 +134,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Dltoken"
-    description: "A unique token created at Firefox download time to correlate installs with download events."
   }
 
   dimension: attribution__experiment {
@@ -146,7 +142,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Experiment"
-    description: "The attribution experiment key associated with the install."
   }
 
   dimension: attribution__medium {
@@ -155,7 +150,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Medium"
-    description: "The attribution medium from the install (e.g., 'organic', 'referral', 'cpc')."
   }
 
   dimension: attribution__msstoresignedin {
@@ -164,7 +158,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Msstoresignedin"
-    description: "Whether the user was signed in to the Microsoft Store at install time, when Firefox was installed via the Microsoft Store"
   }
 
   dimension: attribution__source {
@@ -173,7 +166,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Source"
-    description: "The attribution source from the install attribution, indicating the referring partner domain that drove the installation."
   }
 
   dimension: attribution__ua {
@@ -182,7 +174,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Ua"
-    description: "The derived user agent type at attribution time (e.g., 'chrome', 'edge', 'firefox')."
   }
 
   dimension: attribution__variation {
@@ -191,58 +182,49 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Variation"
-    description: "The attribution variation key associated with the install."
   }
 
   dimension: blocklist_enabled {
     sql: ${TABLE}.blocklist_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether the Firefox add-on blocklist is enabled for this client. True if blocklist enforcement is active."
+    description: "Indicates whether the Firefox blocklist (used to block known malicious add-ons and plugins) is enabled (true) or disabled (false) on the client."
   }
 
   dimension: bookmark_migrations_quantity_all {
     sql: ${TABLE}.bookmark_migrations_quantity_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of bookmarks migrated from all browsers on the submission date."
   }
 
   dimension: bookmark_migrations_quantity_chrome {
     sql: ${TABLE}.bookmark_migrations_quantity_chrome ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of bookmarks migrated from Google Chrome on the submission date."
   }
 
   dimension: bookmark_migrations_quantity_edge {
     sql: ${TABLE}.bookmark_migrations_quantity_edge ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of bookmarks migrated from Microsoft Edge on the submission date."
   }
 
   dimension: bookmark_migrations_quantity_safari {
     sql: ${TABLE}.bookmark_migrations_quantity_safari ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of bookmarks migrated from Apple Safari on the submission date."
   }
 
   dimension: browser_backup_archive_enabled {
     sql: ${TABLE}.browser_backup_archive_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "True if the user can create backups, i.e. it has not been disabled by a pref or otherwise deemed incompatible."
   }
 
   dimension: browser_backup_scheduler_enabled {
     sql: ${TABLE}.browser_backup_scheduler_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "The value of payload.processes.parent.scalars.browser_backup_scheduler_enabled most frequently seen on the submission date.
-If there is a tie, the value seen last according to submission_timestamp.
-True if the BackupService is configured to automatically create backups in the background."
   }
 
   dimension: browser_version_info__is_major_release {
@@ -289,41 +271,40 @@ True if the BackupService is configured to automatically create backups in the b
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The normalized channel the application is being distributed on."
+    description: "The Firefox release channel through which the client received its build, such as 'release', 'beta', 'aurora', or 'esr'. Used to segment data by product maturity and release train."
   }
 
   dimension: city {
     sql: ${TABLE}.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The city in which the client's activity took place, as determined by IP geolocation."
+    description: "The city associated with the client's IP address or profile geography at the time of the record. May be null when city-level geolocation is unavailable or suppressed."
   }
 
   dimension: client_clock_skew_mean {
     sql: ${TABLE}.client_clock_skew_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Mean difference in hours between the client's reported time and the server's reception time, averaged across subsessions."
+    description: "The mean difference, in hours, between the client's local clock and the server-side reference time across submissions in the aggregation window. Values near zero indicate accurate client clocks; positive or negative values indicate forward or backward skew, respectively."
   }
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
-    description: "A unique identifier (UUID) for the client."
+    description: "A UUID that uniquely identifies a Firefox client installation. Used to join and deduplicate records across tables at the individual client level."
   }
 
   dimension: client_submission_latency_mean {
     sql: ${TABLE}.client_submission_latency_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Mean time in hours between a ping being created and it being received by the server, averaged across subsessions."
+    description: "The mean latency, in seconds, between when a ping was created on the client and when it was received by the ingestion pipeline. Higher values indicate delayed or batched submissions from the client."
   }
 
   dimension: content_crash_count {
     sql: ${TABLE}.content_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of content (tab) process crashes detected for this client on the submission date."
   }
 
   dimension: contextual_services_quicksuggest_block_dynamic_wikipedia_sum {
@@ -502,317 +483,317 @@ True if the BackupService is configured to automatically create backups in the b
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
-    description: "Name of the country in which the activity took place, as determined by the IP geolocation."
+    description: "The ISO 3166-1 alpha-2 country code (e.g., 'US', 'DE', 'FR') derived from the client's IP address or profile geography. Used for geographic segmentation of telemetry data."
   }
 
   dimension: cpu_cores {
     sql: ${TABLE}.cpu_cores ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of physical CPU cores on the client's machine."
+    description: "The number of logical CPU cores available on the client device as reported by the Firefox telemetry environment. Used to segment performance and hardware capability data."
   }
 
   dimension: cpu_count {
     sql: ${TABLE}.cpu_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of logical CPUs (including hyperthreaded cores) on the client's machine."
+    description: "The total number of logical CPU cores available on the client device. Higher values indicate multi-core or hyperthreaded processors."
   }
 
   dimension: cpu_family {
     sql: ${TABLE}.cpu_family ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The CPU family identifier as reported by CPUID, used to characterize the processor microarchitecture."
+    description: "The processor family identifier as reported by the CPU's CPUID instruction. This numeric code corresponds to a specific generation or architectural family of the processor."
   }
 
   dimension: cpu_l2_cache_kb {
     sql: ${TABLE}.cpu_l2_cache_kb ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The CPU L2 cache size in kilobytes. Desktop only; null on failure."
+    description: "The size of the CPU's L2 cache in kilobytes. A value of 0 may indicate the cache size could not be determined."
   }
 
   dimension: cpu_l3_cache_kb {
     sql: ${TABLE}.cpu_l3_cache_kb ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The CPU L3 cache size in kilobytes. Desktop only; null on failure."
+    description: "The size of the CPU's L3 cache in kilobytes. A value of 0 may indicate no L3 cache is present or the size could not be determined; null indicates the value was not reported."
   }
 
   dimension: cpu_model {
     sql: ${TABLE}.cpu_model ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The CPU model identifier as reported by CPUID. Desktop only; null on failure."
+    description: "The processor model number as reported by the CPU's CPUID instruction. This numeric identifier distinguishes specific processor models within a family."
   }
 
   dimension: cpu_speed_mhz {
     sql: ${TABLE}.cpu_speed_mhz ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The CPU clock speed in MHz. Desktop only."
+    description: "The clock speed of the CPU in megahertz (MHz). A value of 0 indicates the speed could not be determined or was not reported."
   }
 
   dimension: cpu_stepping {
     sql: ${TABLE}.cpu_stepping ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The CPU stepping identifier as reported by CPUID. Desktop only; null on failure."
+    description: "The stepping (revision) number of the processor as reported by CPUID. This identifies a specific hardware revision within a CPU model; null indicates the value was not available."
   }
 
   dimension: cpu_vendor {
     sql: ${TABLE}.cpu_vendor ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The CPU vendor string (e.g., 'GenuineIntel', 'AuthenticAMD'). Desktop only; null on failure."
+    description: "The CPU vendor string as reported by the CPUID instruction (e.g., 'GenuineIntel', 'AuthenticAMD'). An empty string or null indicates the vendor could not be identified."
   }
 
   dimension: crash_submit_attempt_content_sum {
     sql: ${TABLE}.crash_submit_attempt_content_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of crash report submission attempts for content-process crashes on the submission date."
+    description: "The total number of crash report submission attempts for content process crashes during the reporting period. Null indicates no content process crash submissions were attempted."
   }
 
   dimension: crash_submit_attempt_main_sum {
     sql: ${TABLE}.crash_submit_attempt_main_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of crash report submission attempts for main-process crashes on the submission date."
+    description: "The total number of crash report submission attempts for main process crashes during the reporting period. Null indicates no main process crash submissions were attempted."
   }
 
   dimension: crash_submit_attempt_plugin_sum {
     sql: ${TABLE}.crash_submit_attempt_plugin_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of crash report submission attempts for plugin crashes on the submission date."
+    description: "The total number of crash report submission attempts for plugin process crashes during the reporting period. Null indicates no plugin process crash submissions were attempted."
   }
 
   dimension: crash_submit_success_content_sum {
     sql: ${TABLE}.crash_submit_success_content_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of successfully submitted crash reports for content-process crashes on the submission date."
+    description: "The total number of successfully submitted crash reports for content process crashes during the reporting period. A value of 0 means submissions were attempted but none succeeded; null indicates no attempts were made."
   }
 
   dimension: crash_submit_success_main_sum {
     sql: ${TABLE}.crash_submit_success_main_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of successfully submitted crash reports for main-process crashes on the submission date."
+    description: "The total number of successfully submitted crash reports for main process crashes during the reporting period. A value of 0 means submissions were attempted but none succeeded; null indicates no attempts were made."
   }
 
   dimension: crash_submit_success_plugin_sum {
     sql: ${TABLE}.crash_submit_success_plugin_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of successfully submitted crash reports for plugin crashes on the submission date."
+    description: "The total number of successfully submitted crash reports for plugin process crashes during the reporting period. Null indicates no plugin crash submission successes were recorded."
   }
 
   dimension: crashes_detected_content_sum {
     sql: ${TABLE}.crashes_detected_content_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of detected content-process crashes for this client on the submission date."
+    description: "The total number of detected content process crashes during the reporting period. Null indicates no content process crashes were detected."
   }
 
   dimension: crashes_detected_gmplugin_sum {
     sql: ${TABLE}.crashes_detected_gmplugin_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of detected GMP plugin crashes for this client on the submission date."
+    description: "The total number of detected Gecko Media Plugin (GMP) process crashes during the reporting period. Null indicates no GMP process crashes were detected."
   }
 
   dimension: crashes_detected_plugin_sum {
     sql: ${TABLE}.crashes_detected_plugin_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of detected plugin process crashes for this client on the submission date."
+    description: "The total number of detected plugin process crashes during the reporting period. Null indicates no plugin process crashes were detected."
   }
 
   dimension: default_private_search_engine {
     sql: ${TABLE}.default_private_search_engine ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The internal identifier of the client's default private browsing search engine (e.g., 'ddg', 'google-b-d'). Null if not configured."
+    description: "The identifier of the search engine configured as the default for private browsing windows (e.g., 'google-b-d', 'ddg'). This corresponds to the engine's internal slug as defined in the search configuration."
   }
 
   dimension: default_private_search_engine_data_load_path {
     sql: ${TABLE}.default_private_search_engine_data_load_path ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The anonymized load path of the private browsing default search engine config file."
+    description: "The load path indicating how the default private browsing search engine was installed or sourced (e.g., '[app]ddg' for a built-in engine). Null indicates this metadata was not recorded."
   }
 
   dimension: default_private_search_engine_data_name {
     sql: ${TABLE}.default_private_search_engine_data_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The display name of the client's default private browsing search engine."
+    description: "The human-readable display name of the default private browsing search engine (e.g., 'DuckDuckGo', 'Google'). Null indicates the name was not recorded."
   }
 
   dimension: default_private_search_engine_data_origin {
     sql: ${TABLE}.default_private_search_engine_data_origin ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The origin type of the private browsing default search engine."
+    description: "The origin or provenance of the default private browsing search engine configuration. Null indicates this metadata was not recorded or is not applicable."
   }
 
   dimension: default_private_search_engine_data_submission_url {
     sql: ${TABLE}.default_private_search_engine_data_submission_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The HTTP search submission URL for the private browsing default search engine."
+    description: "The submission URL template for the user's default private browsing search engine, used to construct search queries in private windows. This field is almost always null, indicating it is only populated when a distinct private search engine is explicitly configured."
   }
 
   dimension: default_search_engine {
     sql: ${TABLE}.default_search_engine ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The internal identifier of the client's default search engine (e.g., 'google-b-d', 'baidu')."
+    description: "The internal identifier of the user's default search engine (e.g., 'google-b-d', 'baidu'), which encodes both the engine and any partner or distribution-specific configuration. This field represents the engine key as recognized by Firefox's search service."
   }
 
   dimension: default_search_engine_data_load_path {
     sql: ${TABLE}.default_search_engine_data_load_path ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The anonymized path to the default search engine configuration file (e.g., '[app]google', '[addon]google@search.mozilla.org')."
+    description: "The load path indicating how and from where the default search engine definition was loaded, such as from the built-in application bundle ('[app]') or an add-on ('[addon]'). This field helps distinguish between pre-packaged, extension-provided, and other engine sources."
   }
 
   dimension: default_search_engine_data_name {
     sql: ${TABLE}.default_search_engine_data_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The display name of the client's default search engine (e.g., 'Google', 'DuckDuckGo', 'Bing')."
+    description: "The human-readable display name of the user's default search engine as reported by the browser (e.g., 'Google', 'DuckDuckGo', '百度'). This field reflects the localized name of the engine as configured on the client."
   }
 
   dimension: default_search_engine_data_origin {
     sql: ${TABLE}.default_search_engine_data_origin ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The origin type of the default search engine: 'default' for built-in engines, 'verified' for user-installed with valid signatures."
+    description: "Indicates how the default search engine was established, with values such as 'default' (set by the application), 'verified' (confirmed via policy or signature), 'unverified', or 'invalid'. This field is predominantly null when origin information is not captured or applicable."
   }
 
   dimension: default_search_engine_data_submission_url {
     sql: ${TABLE}.default_search_engine_data_submission_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The HTTP search submission URL of the default search engine. Not recorded for user-installed engines for privacy."
+    description: "The base URL template used to submit queries to the user's default search engine, including any partner or distribution-specific tracking parameters (e.g., 'client=firefox-b-d'). This URL is constructed by the browser when initiating a search."
   }
 
   dimension: devtools_toolbox_opened_count_sum {
     sql: ${TABLE}.devtools_toolbox_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the Firefox Developer Tools toolbox was opened on the submission date."
+    description: "The total number of times the Firefox Developer Tools toolbox was opened during the reporting period. A null value indicates the metric was not collected or the toolbox was never opened for that record."
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The distribution id associated with the install of Firefox."
+    description: "An identifier for the Firefox distribution package the client is running, such as 'default' for the standard Mozilla build or partner-specific identifiers like 'canonical-002' or 'mozilla-MSIX'. This field is null when no distribution identifier is available."
   }
 
   dimension: distribution_version {
     sql: ${TABLE}.distribution_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The version string of the Firefox distribution package (e.g., '1.0', '2023.6'). Null for standard builds."
   }
 
   dimension: distributor {
     sql: ${TABLE}.distributor ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The name of the organization that distributed this Firefox build (e.g., 'canonical', 'mozillaonline', 'mint')."
   }
 
   dimension: distributor_channel {
     sql: ${TABLE}.distributor_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The channel through which the distributor released this Firefox build (e.g., 'mainWinStub', 'ubuntu', 'firefox')."
   }
 
   dimension: dom_parentprocess_private_window_used {
     sql: ${TABLE}.dom_parentprocess_private_window_used ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether the client opened a Private Browsing window on the submission date. True if a private window was used."
   }
 
   dimension: e10s_enabled {
     sql: ${TABLE}.e10s_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether multi-process Firefox (Electrolysis/e10s) is enabled for this client. True if e10s is active."
+    description: "Indicates whether the Electrolysis (e10s) multi-process architecture was enabled for the Firefox session. A value of true means the browser was running in multi-process mode; false means it was running in single-process mode."
   }
 
   dimension: env_build_arch {
     sql: ${TABLE}.env_build_arch ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The build architecture of the Firefox binary (e.g., 'x86-64', 'aarch64', 'x86')."
+    description: "The CPU architecture for which the Firefox binary was compiled (e.g., 'x86-64', 'aarch64', 'x86'). This field describes the instruction set architecture of the build, not necessarily the host hardware."
   }
 
   dimension: env_build_id {
     sql: ${TABLE}.env_build_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The build ID of the Firefox application in YYYYMMDDHHMMSS format (from the environment)."
+    description: "The build ID of the Firefox application, expressed as a timestamp string in the format 'YYYYMMDDHHmmSS' (e.g., '20260520211922'). This uniquely identifies the specific compiled build of the browser."
   }
 
   dimension: env_build_platform_version {
     sql: ${TABLE}.env_build_platform_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The XULRunner platform version string from the build environment."
   }
 
   dimension: env_build_version {
     sql: ${TABLE}.env_build_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The version string of Firefox from the build environment."
+    description: "The version string of the Firefox build as reported by the environment (e.g., '151.0.1', '115.36.0'). This field represents the application version associated with the compiled binary."
   }
 
   dimension: env_build_xpcom_abi {
     sql: ${TABLE}.env_build_xpcom_abi ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The binary ABI string from the build environment (e.g., 'x86_64-msvc', 'aarch64-gcc3')."
   }
 
   dimension: environment_settings_intl_accept_languages {
     sql: ${TABLE}.environment_settings_intl_accept_languages ;;
     hidden: yes
+    description: "The list of languages specified in the browser's Accept-Language header preference setting, indicating the user's preferred languages for web content in order of priority."
   }
 
   dimension: environment_settings_intl_app_locales {
     sql: ${TABLE}.environment_settings_intl_app_locales ;;
     hidden: yes
+    description: "The list of locale codes representing the active application locales in use by the Firefox browser (e.g., ['en-US', 'fr']). These are the locales actually applied to the browser UI."
   }
 
   dimension: environment_settings_intl_available_locales {
     sql: ${TABLE}.environment_settings_intl_available_locales ;;
     hidden: yes
+    description: "The list of locale codes for all languages available in the Firefox installation. This represents the full set of locales packaged with the browser build."
   }
 
   dimension: environment_settings_intl_regional_prefs_locales {
     sql: ${TABLE}.environment_settings_intl_regional_prefs_locales ;;
     hidden: yes
+    description: "The list of locale codes representing the user's regional preferences as configured in the browser settings. These locales influence formatting of dates, numbers, and other region-specific content."
   }
 
   dimension: environment_settings_intl_requested_locales {
     sql: ${TABLE}.environment_settings_intl_requested_locales ;;
     hidden: yes
+    description: "The list of locale codes that the user has explicitly requested for the Firefox UI. These represent the user's preferred language settings before locale resolution and fallback logic is applied."
   }
 
   dimension: environment_settings_intl_system_locales {
     sql: ${TABLE}.environment_settings_intl_system_locales ;;
     hidden: yes
+    description: "The list of locale codes configured at the operating system level on the user's device. These system locales may influence browser behavior and default language selection."
   }
 
   dimension: experiments {
@@ -824,83 +805,81 @@ True if the BackupService is configured to automatically create backups in the b
     sql: ${TABLE}.first_document_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The document ID of the first ping received from this client on the submission date."
   }
 
   dimension: first_paint_mean {
     sql: ${TABLE}.first_paint_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Mean time in milliseconds from browser start to first paint, averaged across subsessions on the submission date."
+    description: "The mean time in milliseconds from browser start to first paint, averaged over the relevant aggregation period. A null value indicates no first-paint timing data was available for the record."
   }
 
   dimension: flash_version {
     sql: ${TABLE}.flash_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The version string of the Adobe Flash plugin installed on the client, if present. Null if Flash is not installed."
+    description: "The version string of the Adobe Flash plugin installed in the browser (e.g. '32.0.0.465'). This field is null when no Flash plugin is detected or when version information is unavailable."
   }
 
   dimension: fxa_configured {
     sql: ${TABLE}.fxa_configured ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether Firefox Accounts (FxA) is configured on this client. True if the user is signed in to a Firefox Account."
+    description: "Indicates whether the client has a Firefox Accounts (FxA) account configured at the time of the ping. True means FxA is set up; false means it is not; null means the status was unknown or the field was not applicable."
   }
 
   dimension: geo_db_version {
     sql: ${TABLE}.geo_db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The version of the IP geolocation database used to resolve the client's location."
   }
 
   dimension: geo_subdivision1 {
     sql: ${TABLE}.geo_subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The first-level geographic subdivision (e.g., state, province) determined by IP geolocation."
+    description: "The first-level administrative subdivision (e.g. state, province, or region) of the client's location, derived from the GeoIP database. This field may be null when subdivision-level data is unavailable for the client's geography."
   }
 
   dimension: geo_subdivision2 {
     sql: ${TABLE}.geo_subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The second-level geographic subdivision determined by IP geolocation. Not applicable for most countries."
+    description: "The second-level administrative subdivision (e.g. county, department, or district) of the client's location, derived from the GeoIP database. This field is null for the majority of records where fine-grained subdivision data is not available."
   }
 
   dimension: gfx_features_advanced_layers_status {
     sql: ${TABLE}.gfx_features_advanced_layers_status ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The status of the Advanced Layers graphics compositing feature (e.g., 'available', 'disabled', 'blocked')."
+    description: "The status of the Advanced Layers graphics feature in Firefox, indicating whether it is available, disabled, blocked, or unavailable on the client's hardware and software configuration. Blocked statuses often include a reason code explaining why the feature was prevented from running."
   }
 
   dimension: gfx_features_d2d_status {
     sql: ${TABLE}.gfx_features_d2d_status ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The status of the Direct2D hardware acceleration feature. Values include 'available', 'disabled', 'unavailable', 'blocklisted'. Windows only."
+    description: "The status of the Direct2D (D2D) hardware acceleration feature in Firefox, indicating whether it is available, disabled, blocked, or unavailable on the client's system. Blocked or unavailable statuses typically include a reason code identifying the specific failure or blocklist entry responsible."
   }
 
   dimension: gfx_features_d3d11_status {
     sql: ${TABLE}.gfx_features_d3d11_status ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The status of the Direct3D 11 compositing feature. Values include 'available', 'unavailable', 'blocklisted'. Windows only."
+    description: "The status of the Direct3D 11 graphics feature on the client, indicating whether it is available, unavailable, or blocklisted along with a reason code (e.g., 'available', 'unavailable:FEATURE_FAILURE_D3D11_NEED_HWCOMP', 'blocklisted:FEATURE_FAILURE_UNKNOWN_DEVICE_VENDOR'). A null value indicates the status could not be determined."
   }
 
   dimension: gfx_features_gpu_process_status {
     sql: ${TABLE}.gfx_features_gpu_process_status ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The status of the GPU process graphics feature on the client, indicating whether it is available, unused, or unavailable along with a reason code (e.g., 'available', 'unused', 'unavailable:FEATURE_FAILURE_OLD_WINDOWS'). A null value indicates the status could not be determined."
   }
 
   dimension: gpu_crash_count {
     sql: ${TABLE}.gpu_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of GPU process crashes detected for this client on the submission date."
   }
 
   dimension: has_adblocker_enabled {
@@ -913,621 +892,624 @@ True if the BackupService is configured to automatically create backups in the b
     sql: ${TABLE}.histogram_parent_devtools_aboutdebugging_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the 'about:debugging' DevTools panel was opened during the reporting period, summed across all subsessions. A null value indicates the panel was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_animationinspector_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_animationinspector_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Animation Inspector panel was opened during the reporting period, summed across all subsessions. A null value indicates the panel was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_browserconsole_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_browserconsole_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Browser Console was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_canvasdebugger_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_canvasdebugger_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Canvas Debugger panel was opened during the reporting period, summed across all subsessions. A null value indicates the panel was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_computedview_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_computedview_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Computed View (CSS computed styles) panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_custom_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_custom_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times a custom DevTools panel was opened during the reporting period, summed across all subsessions. A null value indicates no custom panel was opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_dom_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_dom_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools DOM panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_eyedropper_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_eyedropper_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Eyedropper color picker tool was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_fontinspector_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_fontinspector_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Font Inspector panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_inspector_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_inspector_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Inspector (HTML/DOM inspector) panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_jsbrowserdebugger_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_jsbrowserdebugger_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools JavaScript Browser Debugger was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_jsdebugger_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_jsdebugger_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools JavaScript Debugger panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_jsprofiler_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_jsprofiler_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools JavaScript Profiler panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_layoutview_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_layoutview_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Layout View panel (CSS layout inspection) was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_memory_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_memory_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Memory panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_menu_eyedropper_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_menu_eyedropper_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Eyedropper was opened via the menu entry during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_netmonitor_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_netmonitor_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Network Monitor panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_options_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_options_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Options/Settings panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_paintflashing_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_paintflashing_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Paint Flashing tool was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_picker_eyedropper_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_picker_eyedropper_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Eyedropper was opened via the color picker UI during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_responsive_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_responsive_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Responsive Design Mode was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_ruleview_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_ruleview_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Rule View (CSS rules inspector) panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_scratchpad_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_scratchpad_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Scratchpad JavaScript editor was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_scratchpad_window_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_scratchpad_window_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Scratchpad was opened as a detached window during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_shadereditor_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_shadereditor_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Shader Editor panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_storage_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_storage_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Storage Inspector panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_styleeditor_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_styleeditor_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Style Editor panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_webaudioeditor_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_webaudioeditor_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Web Audio Editor panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_webconsole_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_webconsole_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools Web Console was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: histogram_parent_devtools_webide_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_webide_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of times the DevTools WebIDE panel was opened during the reporting period, summed across all subsessions. A null value indicates it was not opened or the metric was not recorded."
   }
 
   dimension: history_migrations_quantity_all {
     sql: ${TABLE}.history_migrations_quantity_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of history entries migrated from all browsers on the submission date."
   }
 
   dimension: history_migrations_quantity_chrome {
     sql: ${TABLE}.history_migrations_quantity_chrome ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of history entries migrated from Google Chrome on the submission date."
   }
 
   dimension: history_migrations_quantity_edge {
     sql: ${TABLE}.history_migrations_quantity_edge ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of history entries migrated from Microsoft Edge on the submission date."
   }
 
   dimension: history_migrations_quantity_safari {
     sql: ${TABLE}.history_migrations_quantity_safari ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of history entries migrated from Apple Safari on the submission date."
   }
 
   dimension: install_year {
     sql: ${TABLE}.install_year ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The year Windows was installed on the client's machine. Windows only; null on failure or non-Windows."
+    description: "The calendar year in which the application was first installed on the device. A null value indicates the installation year could not be determined."
   }
 
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "A flag indicating whether the browser is set as the default browser on the client side."
+    description: "Indicates whether Firefox is set as the default browser on the client's device. True means it is the default; false means another browser is set as default."
   }
 
   dimension: is_wow64 {
     sql: ${TABLE}.is_wow64 ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether the 32-bit Firefox process is running under the WoW64 subsystem on a 64-bit Windows system. Windows only."
+    description: "Indicates whether the Firefox process is running as a 32-bit application under the 64-bit Windows-on-Windows (WoW64) compatibility layer. True means WoW64 is in use; false means it is not."
   }
 
   dimension: isp_name {
     sql: ${TABLE}.isp_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The name of the internet service provider associated with the client's IP address."
+    description: "The canonical name of the Internet Service Provider associated with the client's network connection. This is a normalized or deduplicated version of the ISP identifier."
   }
 
   dimension: isp_organization {
     sql: ${TABLE}.isp_organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The name of the specific business entity associated with the client's IP address, or the ISP name if no specific entity is available."
+    description: "The organization name associated with the client's IP address block, as registered with regional internet registries. This may differ from the ISP name when the organization is a reseller or enterprise."
   }
 
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set of language- and/or country-based preferences for a user interface."
+    description: "The language and region locale of the Firefox browser or application, such as 'en' for English or 'fr' for French. A null value indicates the locale could not be determined."
   }
 
   dimension: logins_migrations_quantity_all {
     sql: ${TABLE}.logins_migrations_quantity_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of saved logins migrated from all browsers on the submission date."
   }
 
   dimension: logins_migrations_quantity_chrome {
     sql: ${TABLE}.logins_migrations_quantity_chrome ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of saved logins migrated from Google Chrome on the submission date."
   }
 
   dimension: logins_migrations_quantity_edge {
     sql: ${TABLE}.logins_migrations_quantity_edge ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of saved logins migrated from Microsoft Edge on the submission date."
   }
 
   dimension: logins_migrations_quantity_safari {
     sql: ${TABLE}.logins_migrations_quantity_safari ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of saved logins migrated from Apple Safari on the submission date."
   }
 
   dimension: main_crash_count {
     sql: ${TABLE}.main_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of main Firefox process crashes detected for this client on the submission date."
   }
 
   dimension: max_subsession_counter {
     sql: ${TABLE}.max_subsession_counter ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The highest subsession counter value seen across all pings from this client on the submission date, indicating the total number of subsessions."
   }
 
   dimension: media_play_time_ms_audio_sum {
     sql: ${TABLE}.media_play_time_ms_audio_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total time in milliseconds audio media was playing in this client's browser on the submission date."
   }
 
   dimension: media_play_time_ms_video_sum {
     sql: ${TABLE}.media_play_time_ms_video_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total time in milliseconds video media was playing in this client's browser on the submission date."
   }
 
   dimension: memory_mb {
     sql: ${TABLE}.memory_mb ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total physical RAM on the client's machine, in megabytes."
+    description: "The total amount of physical memory available on the client device, expressed in megabytes. Used to characterize device hardware capability at finer granularity than memory_gb."
   }
 
   dimension: min_subsession_counter {
     sql: ${TABLE}.min_subsession_counter ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The lowest subsession counter value seen across all pings from this client on the submission date."
   }
 
   dimension: n_created_pictureinpicture {
     sql: ${TABLE}.n_created_pictureinpicture ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times Picture-in-Picture was activated by this client on the submission date."
+    description: "The number of times a Picture-in-Picture video window was created during the observation period. A value of 0 indicates the feature was not used; null indicates the data was not collected."
   }
 
   dimension: n_logged_event {
     sql: ${TABLE}.n_logged_event ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of telemetry events logged by this client on the submission date."
+    description: "The total number of events logged for a client or session during the observation period. Reflects the volume of tracked user interactions or system events recorded."
   }
 
   dimension: n_viewed_protection_report {
     sql: ${TABLE}.n_viewed_protection_report ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the Enhanced Tracking Protection report was viewed by this client on the submission date."
+    description: "The number of times the Firefox Privacy Protections report was viewed during the observation period. A value of 0 indicates the report was not opened."
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The normalized channel the application is being distributed on."
+    description: "The standardized release channel of the Firefox application, such as 'release', 'beta', 'nightly', 'esr', or 'aurora'. 'Other' is used when the channel does not match a known value."
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The normalized operating system version string (e.g., '10.0' for Windows, '6.8.0' for Linux)."
+    description: "The standardized version string of the client's operating system, such as '10.0' for Windows 10 or '6.8.0' for a Linux kernel version. Provides a normalized representation across different OS reporting formats."
   }
 
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The normalized name of the operating system running at the client."
+    description: "The raw operating system name as reported by the client, such as 'Windows_NT', 'Darwin', 'Linux', 'Android', or 'iOS'. This is the unprocessed OS string before normalization."
   }
 
   dimension: os_environment_is_taskbar_pinned_any {
     sql: ${TABLE}.os_environment_is_taskbar_pinned_any ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether Firefox is pinned to the Windows taskbar in any mode (regular or private). True if pinned in either mode."
   }
 
   dimension: os_environment_is_taskbar_pinned_private {
     sql: ${TABLE}.os_environment_is_taskbar_pinned_private ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether Firefox Private Browsing mode is specifically pinned to the Windows taskbar. True if pinned."
   }
 
   dimension: os_environment_is_taskbar_pinned_private_any {
     sql: ${TABLE}.os_environment_is_taskbar_pinned_private_any ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether Firefox Private Browsing is pinned to the Windows taskbar in any configuration."
   }
 
   dimension: os_service_pack_major {
     sql: ${TABLE}.os_service_pack_major ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The major Windows service pack version. Windows only; null on other platforms."
+    description: "The major version number of the Windows Service Pack installed on the client, such as 0 (no service pack), 1, or 2. Null indicates the value was not available, typically for non-Windows platforms."
   }
 
   dimension: os_service_pack_minor {
     sql: ${TABLE}.os_service_pack_minor ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The minor Windows service pack version. Windows only; null on other platforms."
+    description: "The minor version number of the Windows Service Pack installed on the client. This is almost always 0, with null indicating the value was unavailable, typically for non-Windows platforms."
   }
 
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The operating system version string (e.g., '10.0' for Windows, '24.6.0' for macOS)."
+    description: "The full version string of the operating system on which the browser is running (e.g., '10.0', '13.5.1'). Combines major, minor, and patch components into a single human-readable string."
   }
 
   dimension: partner_id {
     sql: ${TABLE}.partner_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The partner identifier from the Firefox distribution configuration (e.g., 'ubuntu', 'mozillaonline'). Null if no partner."
   }
 
   dimension: pings_aggregated_by_this_row {
     sql: ${TABLE}.pings_aggregated_by_this_row ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The number of individual telemetry pings that were aggregated into this row."
+    description: "The number of individual telemetry pings that were collapsed into this single aggregated row. Higher values indicate that multiple pings from the same client were merged during aggregation."
   }
 
   dimension: places_bookmarks_count_mean {
     sql: ${TABLE}.places_bookmarks_count_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Mean number of bookmarks in the client's Firefox Places database, averaged across subsessions."
+    description: "The mean number of bookmarks stored in the user's Places database, averaged over the reporting period. Null when bookmark count data was not available for the client."
   }
 
   dimension: places_bookmarks_searchbar_cumulative_searches_sum {
     sql: ${TABLE}.places_bookmarks_searchbar_cumulative_searches_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Cumulative count of bookmark searches via the bookmarks search bar on the submission date."
   }
 
   dimension: places_library_cumulative_bookmark_searches_sum {
     sql: ${TABLE}.places_library_cumulative_bookmark_searches_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Cumulative count of bookmark searches performed in the Firefox Library panel on the submission date."
   }
 
   dimension: places_library_cumulative_history_searches_sum {
     sql: ${TABLE}.places_library_cumulative_history_searches_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Cumulative count of history searches performed in the Firefox Library panel on the submission date."
   }
 
   dimension: places_pages_count_mean {
     sql: ${TABLE}.places_pages_count_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Mean number of pages in the client's Firefox browsing history (Places database), averaged across subsessions."
+    description: "The mean number of pages stored in the user's browsing history (Places database), averaged over the reporting period. Null when page count data was not available for the client."
   }
 
   dimension: places_previousday_visits_mean {
     sql: ${TABLE}.places_previousday_visits_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Mean number of page visits from the previous day across subsessions, as recorded in the Places database."
   }
 
   dimension: places_searchbar_cumulative_filter_count_sum {
     sql: ${TABLE}.places_searchbar_cumulative_filter_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Cumulative total of filter applications in the Places search bar on the submission date."
   }
 
   dimension: places_searchbar_cumulative_searches_sum {
     sql: ${TABLE}.places_searchbar_cumulative_searches_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Cumulative total of searches performed via the Places search bar on the submission date."
   }
 
   dimension: plugin_hangs_sum {
     sql: ${TABLE}.plugin_hangs_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of plugin hang events detected for this client on the submission date."
+    description: "The total number of plugin hang events recorded during the reporting period. Null when no plugin hang data was reported, which is common as plugin usage has become rare in modern Firefox."
   }
 
   dimension: plugins_infobar_allow_sum {
     sql: ${TABLE}.plugins_infobar_allow_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the user clicked 'Allow' on a plugin activation infobar on the submission date."
+    description: "The total number of times the user clicked 'Allow' on a plugin activation infobar during the reporting period. Null across all records, reflecting the deprecation of NPAPI plugin support in Firefox."
   }
 
   dimension: plugins_infobar_block_sum {
     sql: ${TABLE}.plugins_infobar_block_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the user clicked 'Block' on a plugin activation infobar on the submission date."
+    description: "The total number of times the user clicked 'Block' on a plugin activation infobar during the reporting period. Null across all records, reflecting the deprecation of NPAPI plugin support in Firefox."
   }
 
   dimension: plugins_infobar_shown_sum {
     sql: ${TABLE}.plugins_infobar_shown_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times a plugin activation infobar was shown to this client on the submission date."
+    description: "The total number of times a plugin activation infobar was displayed to the user during the reporting period. Null when no infobar events were recorded, consistent with the deprecation of legacy plugin support."
   }
 
   dimension: plugins_notification_shown_sum {
     sql: ${TABLE}.plugins_notification_shown_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times a plugin-related notification was shown to this client on the submission date."
+    description: "The total number of times a plugin-related notification was shown to the user during the reporting period. Null when no such notifications were recorded, consistent with the near-complete removal of plugin support."
   }
 
   dimension: previous_build_id {
     sql: ${TABLE}.previous_build_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The Firefox build ID the browser was updating from. Only valid for 'update' pings with reason 'success'."
+    description: "The Firefox build ID that was installed before the most recent update, formatted as a timestamp string (YYYYMMDDHHmmss). Null when no prior build is known, such as on a fresh installation."
   }
 
   dimension: profile_age_in_days {
     sql: ${TABLE}.profile_age_in_days ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Age of the Firefox profile in days, calculated as the difference between the submission date and profile creation date."
+    description: "The age of the Firefox profile in days, calculated as the difference between the current date and the profile creation date. A value of 0 indicates the profile was created on the same day."
   }
 
   dimension: profile_creation_date {
     sql: ${TABLE}.profile_creation_date ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The date the Firefox profile was created, as a string (e.g., '2026-05-22 00:00:00')."
+    description: "The date on which the Firefox profile was created, formatted as a YYYYMMDD string. Used to determine profile age and cohort membership."
   }
 
   dimension: profile_group_id {
     sql: ${TABLE}.profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "A UUID uniquely identifying the profile group, not shared with other telemetry data."
   }
 
   dimension: push_api_notify_sum {
     sql: ${TABLE}.push_api_notify_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of Web Push API notification deliveries received by this client on the submission date."
+    description: "The total number of Web Push API notifications delivered to a client during the reporting period. Null when no push notifications were received."
   }
 
   dimension: rdd_crash_count {
     sql: ${TABLE}.rdd_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of Remote Data Decoder (RDD) process crashes detected for this client on the submission date."
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "A number, 0-99, that samples by client_id."
+    description: "A deterministic sample bucket identifier (0–99) derived from the client_id, used to create reproducible random samples of the user population for analysis or experimentation."
   }
 
   dimension: sandbox_effective_content_process_level {
     sql: ${TABLE}.sandbox_effective_content_process_level ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The effective sandbox security level for content processes (0-9). Higher values indicate stricter sandboxing; values are OS-dependent."
+    description: "The effective sandbox security level applied to Firefox content processes, represented as an integer where higher values indicate stricter sandboxing. Null when the sandbox level could not be determined."
   }
 
   dimension: scalar_a11y_hcm_background {
     sql: ${TABLE}.scalar_a11y_hcm_background ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The background color value (as an integer) used in Windows High Contrast Mode. Non-null only when High Contrast Mode is active."
   }
 
   dimension: scalar_a11y_hcm_foreground {
     sql: ${TABLE}.scalar_a11y_hcm_foreground ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The foreground color value (as an integer) used in Windows High Contrast Mode. Non-null only when High Contrast Mode is active."
   }
 
   dimension: scalar_combined_webrtc_nicer_stun_retransmits_sum {
     sql: ${TABLE}.scalar_combined_webrtc_nicer_stun_retransmits_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of WebRTC STUN packet retransmissions detected for this client on the submission date."
+    description: "The total number of STUN packet retransmissions observed during WebRTC sessions using the NICEr library. Currently always null, indicating this metric is not yet being collected."
   }
 
   dimension: scalar_combined_webrtc_nicer_turn_401s_sum {
     sql: ${TABLE}.scalar_combined_webrtc_nicer_turn_401s_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of WebRTC TURN authentication failures (HTTP 401) for this client on the submission date."
+    description: "The total number of 401 (Unauthorized) error responses received from TURN servers during WebRTC sessions using the NICEr library. Currently always null, indicating this metric is not yet being collected."
   }
 
   dimension: scalar_combined_webrtc_nicer_turn_403s_sum {
     sql: ${TABLE}.scalar_combined_webrtc_nicer_turn_403s_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of WebRTC TURN authorization failures (HTTP 403) for this client on the submission date."
+    description: "The total number of 403 (Forbidden) error responses received from TURN servers during WebRTC sessions using the NICEr library. Currently always null, indicating this metric is not yet being collected."
   }
 
   dimension: scalar_combined_webrtc_nicer_turn_438s_sum {
     sql: ${TABLE}.scalar_combined_webrtc_nicer_turn_438s_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of WebRTC TURN stale nonce errors (HTTP 438) for this client on the submission date."
+    description: "The total number of 438 (Stale Nonce) error responses received from TURN servers during WebRTC sessions using the NICEr library. Currently always null, indicating this metric is not yet being collected."
   }
 
   dimension: scalar_content_navigator_storage_estimate_count_sum {
     sql: ${TABLE}.scalar_content_navigator_storage_estimate_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of calls to navigator.storage.estimate() from content processes on the submission date."
+    description: "The total number of times the navigator.storage.estimate() API was called in content processes during the reporting period. Currently always null, indicating this metric is not yet being collected."
   }
 
   dimension: scalar_content_navigator_storage_persist_count_sum {
     sql: ${TABLE}.scalar_content_navigator_storage_persist_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of calls to navigator.storage.persist() from content processes on the submission date."
+    description: "The total number of times the navigator.storage.persist() API was called in content processes during the reporting period. Currently always null, indicating this metric is not yet being collected."
   }
 
   dimension: scalar_content_telemetry_event_counts_sum {
@@ -1539,70 +1521,69 @@ True if the BackupService is configured to automatically create backups in the b
     sql: ${TABLE}.scalar_parent_aushelper_websense_reg_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The Websense security software registry version detected by the Firefox update helper. Null if not present."
+    description: "The version string of the Websense endpoint security software detected in the Windows registry by the AUS (Application Update Service) helper. Null when Websense is not installed or the version could not be read."
   }
 
   dimension: scalar_parent_browser_engagement_max_concurrent_tab_count_max {
     sql: ${TABLE}.scalar_parent_browser_engagement_max_concurrent_tab_count_max ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Maximum number of tabs open simultaneously across all windows on the submission date."
+    description: "The maximum number of browser tabs open simultaneously in any single session during the reporting period, as recorded by the parent process engagement scalar. Null when the metric was not collected."
   }
 
   dimension: scalar_parent_browser_engagement_max_concurrent_window_count_max {
     sql: ${TABLE}.scalar_parent_browser_engagement_max_concurrent_window_count_max ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Maximum number of Firefox windows open simultaneously on the submission date."
+    description: "The maximum number of browser windows open simultaneously in any single session during the reporting period, as recorded by the parent process engagement scalar. Null when the metric was not collected."
   }
 
   dimension: scalar_parent_browser_engagement_tab_open_event_count_sum {
     sql: ${TABLE}.scalar_parent_browser_engagement_tab_open_event_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of new tab open events for this client on the submission date."
+    description: "The total number of new tab open events recorded in the browser during the reporting period. A higher value indicates more frequent tab-opening activity by the user."
   }
 
   dimension: scalar_parent_browser_engagement_total_uri_count_normal_and_private_mode_sum {
     sql: ${TABLE}.scalar_parent_browser_engagement_total_uri_count_normal_and_private_mode_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of URIs visited across both normal and private browsing modes on the submission date."
   }
 
   dimension: scalar_parent_browser_engagement_total_uri_count_sum {
     sql: ${TABLE}.scalar_parent_browser_engagement_total_uri_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of URIs (web pages) visited by this client on the submission date."
+    description: "The total number of URIs visited in normal (non-private) browsing mode during the reporting period. This is a key measure of user browsing engagement."
   }
 
   dimension: scalar_parent_browser_engagement_unfiltered_uri_count_sum {
     sql: ${TABLE}.scalar_parent_browser_engagement_unfiltered_uri_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of URIs visited including those filtered from the main count (e.g., internal pages), on the submission date."
+    description: "The total count of URIs visited without applying engagement filters (e.g., excluding chrome or about pages) during the reporting period. This unfiltered count includes all navigations, including internal browser pages."
   }
 
   dimension: scalar_parent_browser_engagement_unique_domains_count_max {
     sql: ${TABLE}.scalar_parent_browser_engagement_unique_domains_count_max ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Maximum number of unique domains visited in any single subsession on the submission date."
+    description: "The maximum number of unique domains visited in any single browsing session during the reporting period. This reflects the breadth of a user's browsing activity at its peak."
   }
 
   dimension: scalar_parent_browser_engagement_unique_domains_count_mean {
     sql: ${TABLE}.scalar_parent_browser_engagement_unique_domains_count_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Mean number of unique domains visited across subsessions on the submission date."
+    description: "The average number of unique domains visited per browsing session during the reporting period. This provides a normalized measure of how broadly users browse across different sites."
   }
 
   dimension: scalar_parent_browser_engagement_window_open_event_count_sum {
     sql: ${TABLE}.scalar_parent_browser_engagement_window_open_event_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of new browser window open events on the submission date."
+    description: "The total number of new browser window open events recorded during the reporting period. A higher value indicates more frequent use of multiple windows."
   }
 
   dimension: scalar_parent_browser_ui_interaction_content_context_sum {
@@ -1613,34 +1594,34 @@ True if the BackupService is configured to automatically create backups in the b
   dimension: scalar_parent_browser_ui_interaction_preferences_pane_home_sum {
     sql: ${TABLE}.scalar_parent_browser_ui_interaction_preferences_pane_home_sum ;;
     hidden: yes
+    description: "A keyed map of interaction counts for elements within the Home preferences pane in the browser UI, where each key identifies a specific UI element and the value is the cumulative count of interactions."
   }
 
   dimension: scalar_parent_browser_ui_interaction_textrecognition_error_sum {
     sql: ${TABLE}.scalar_parent_browser_ui_interaction_textrecognition_error_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of errors encountered when using the Text Recognition feature on the submission date."
   }
 
   dimension: scalar_parent_devtools_accessibility_node_inspected_count_sum {
     sql: ${TABLE}.scalar_parent_devtools_accessibility_node_inspected_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times an accessibility node was inspected in DevTools on the submission date."
+    description: "The total number of times an accessibility node was inspected using the DevTools Accessibility panel during the reporting period. A null value indicates the feature was not used."
   }
 
   dimension: scalar_parent_devtools_accessibility_opened_count_sum {
     sql: ${TABLE}.scalar_parent_devtools_accessibility_opened_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the DevTools Accessibility panel was opened on the submission date."
+    description: "The total number of times the DevTools Accessibility panel was opened during the reporting period. A null value indicates the panel was not opened."
   }
 
   dimension: scalar_parent_devtools_accessibility_picker_used_count_sum {
     sql: ${TABLE}.scalar_parent_devtools_accessibility_picker_used_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the DevTools Accessibility inspector picker was used on the submission date."
+    description: "The total number of times the accessibility picker tool within DevTools was activated during the reporting period. A null value indicates the picker was not used."
   }
 
   dimension: scalar_parent_devtools_accessibility_select_accessible_for_node_sum {
@@ -1652,28 +1633,28 @@ True if the BackupService is configured to automatically create backups in the b
     sql: ${TABLE}.scalar_parent_devtools_accessibility_service_enabled_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the accessibility service was enabled via DevTools on the submission date."
+    description: "The total number of times the accessibility service was enabled via DevTools during the reporting period. A null value indicates the service was not enabled through this path."
   }
 
   dimension: scalar_parent_devtools_copy_full_css_selector_opened_sum {
     sql: ${TABLE}.scalar_parent_devtools_copy_full_css_selector_opened_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the 'Copy Full CSS Selector' DevTools action was used on the submission date."
+    description: "The total number of times the 'Copy Full CSS Selector' action was triggered in DevTools during the reporting period. A null value indicates this action was not used."
   }
 
   dimension: scalar_parent_devtools_copy_unique_css_selector_opened_sum {
     sql: ${TABLE}.scalar_parent_devtools_copy_unique_css_selector_opened_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the 'Copy Unique CSS Selector' DevTools action was used on the submission date."
+    description: "The total number of times the 'Copy Unique CSS Selector' action was triggered in DevTools during the reporting period. A null value indicates this action was not used."
   }
 
   dimension: scalar_parent_devtools_toolbar_eyedropper_opened_sum {
     sql: ${TABLE}.scalar_parent_devtools_toolbar_eyedropper_opened_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the eyedropper tool was opened from the DevTools toolbar on the submission date."
+    description: "The total number of times the eyedropper color picker tool was opened from the DevTools toolbar during the reporting period. A null value indicates the tool was not used."
   }
 
   dimension: scalar_parent_library_link_sum {
@@ -1695,63 +1676,62 @@ True if the BackupService is configured to automatically create backups in the b
     sql: ${TABLE}.scalar_parent_navigator_storage_estimate_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of calls to navigator.storage.estimate() from the parent process on the submission date."
+    description: "The total number of times the Navigator Storage Estimate API was called during the reporting period. A null value indicates the API was not invoked."
   }
 
   dimension: scalar_parent_navigator_storage_persist_count_sum {
     sql: ${TABLE}.scalar_parent_navigator_storage_persist_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of calls to navigator.storage.persist() from the parent process on the submission date."
+    description: "The total number of times the Navigator Storage Persist API was called during the reporting period. A null value indicates the API was not invoked."
   }
 
   dimension: scalar_parent_os_environment_is_taskbar_pinned {
     sql: ${TABLE}.scalar_parent_os_environment_is_taskbar_pinned ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether Firefox is pinned to the Windows taskbar. True if pinned."
+    description: "Indicates whether the Firefox application is pinned to the operating system taskbar. True means Firefox is pinned to the taskbar; false means it is not."
   }
 
   dimension: scalar_parent_os_environment_launched_via_desktop {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_desktop ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether Firefox was launched via a desktop shortcut on the submission date. True if launched this way."
+    description: "Indicates whether the browser was launched via a desktop shortcut. True means the session was initiated from a desktop icon; false means another launch method was used."
   }
 
   dimension: scalar_parent_os_environment_launched_via_other {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_other ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether Firefox was launched via any other mechanism (not taskbar, desktop, start menu, or shortcut) on the submission date."
+    description: "Indicates whether the browser was launched via a method not covered by the other specific launch-method scalars. True means an unclassified launch mechanism was used; false means it was not."
   }
 
   dimension: scalar_parent_os_environment_launched_via_other_shortcut {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_other_shortcut ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether Firefox was launched via a non-desktop shortcut (e.g., a custom shortcut) on the submission date."
+    description: "Indicates whether the browser was launched via a shortcut other than the desktop, taskbar, or Start Menu shortcuts. True means such an alternative shortcut was used; false means it was not."
   }
 
   dimension: scalar_parent_os_environment_launched_via_start_menu {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_start_menu ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether Firefox was launched via the Windows Start Menu on the submission date. True if launched this way."
+    description: "Indicates whether the browser was launched from the operating system Start Menu. True means the session was initiated via the Start Menu; false means another launch method was used."
   }
 
   dimension: scalar_parent_os_environment_launched_via_taskbar {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether Firefox was launched via the Windows taskbar on the submission date. True if launched this way."
+    description: "Indicates whether the browser was launched by clicking its icon on the operating system taskbar. True means the session originated from the taskbar; false means another launch method was used."
   }
 
   dimension: scalar_parent_os_environment_launched_via_taskbar_private {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar_private ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether Firefox was launched in Private Browsing mode via the taskbar on the submission date."
   }
 
   dimension: scalar_parent_sidebar_link_sum {
@@ -1773,7 +1753,7 @@ True if the BackupService is configured to automatically create backups in the b
     sql: ${TABLE}.scalar_parent_storage_sync_api_usage_extensions_using_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of extensions using the browser.storage.sync API on the submission date."
+    description: "The total number of extensions that used the Storage Sync API during the reporting period. A null value indicates no extensions invoked this API."
   }
 
   dimension: scalar_parent_telemetry_event_counts_sum {
@@ -1785,174 +1765,196 @@ True if the BackupService is configured to automatically create backups in the b
     sql: ${TABLE}.scalar_parent_urlbar_impression_autofill_about_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the URL bar showed an autofill suggestion for about: pages on the submission date."
+    description: "The total number of times an autofill suggestion for an 'about:' page URL was shown in the address bar during the reporting period. A null value indicates no such impressions occurred."
   }
 
   dimension: scalar_parent_urlbar_impression_autofill_adaptive_sum {
     sql: ${TABLE}.scalar_parent_urlbar_impression_autofill_adaptive_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the URL bar showed an adaptive (learned from history) autofill suggestion on the submission date."
+    description: "The total number of times an adaptive history autofill suggestion was shown in the address bar during the reporting period. Adaptive autofill learns from the user's past selections to prioritize results."
   }
 
   dimension: scalar_parent_urlbar_impression_autofill_origin_sum {
     sql: ${TABLE}.scalar_parent_urlbar_impression_autofill_origin_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the URL bar showed an origin-based autofill suggestion on the submission date."
+    description: "The total number of times an origin-based autofill suggestion (completing the domain or host portion of a URL) was shown in the address bar during the reporting period."
   }
 
   dimension: scalar_parent_urlbar_impression_autofill_other_sum {
     sql: ${TABLE}.scalar_parent_urlbar_impression_autofill_other_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the URL bar showed an autofill suggestion of type 'other' on the submission date."
+    description: "The total number of times an autofill suggestion of an unclassified or miscellaneous type was shown in the address bar during the reporting period. A null value indicates no such impressions occurred."
   }
 
   dimension: scalar_parent_urlbar_impression_autofill_preloaded_sum {
     sql: ${TABLE}.scalar_parent_urlbar_impression_autofill_preloaded_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the URL bar showed an autofill suggestion from preloaded sites on the submission date."
+    description: "The total number of times a preloaded site autofill suggestion was shown in the address bar during the reporting period. Preloaded suggestions come from a curated list of popular sites bundled with the browser."
   }
 
   dimension: scalar_parent_urlbar_impression_autofill_url_sum {
     sql: ${TABLE}.scalar_parent_urlbar_impression_autofill_url_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of times the URL bar showed a full URL autofill suggestion on the submission date."
+    description: "The total number of times a full URL autofill suggestion (completing beyond just the origin to include path or query components) was shown in the address bar during the reporting period."
   }
 
   dimension: scalar_parent_urlbar_picked_autofill_about_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_about_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A keyed map of counts for how many times a user selected an autofill suggestion for an 'about:' page URL from the address bar, broken down by the specific about page or input length key."
   }
 
   dimension: scalar_parent_urlbar_picked_autofill_adaptive_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_adaptive_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A keyed map of counts for how many times a user selected an adaptive history autofill suggestion from the address bar, where keys typically represent the character length at which the suggestion was accepted."
   }
 
   dimension: scalar_parent_urlbar_picked_autofill_origin_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_origin_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A keyed map of counts for how many times a user accepted an origin-based autofill suggestion from the address bar, broken down by the character length at which the suggestion was selected."
   }
 
   dimension: scalar_parent_urlbar_picked_autofill_other_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_other_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A keyed map of counts for how many times a user selected an unclassified autofill suggestion from the address bar, broken down by a context or input-length key."
   }
 
   dimension: scalar_parent_urlbar_picked_autofill_preloaded_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_preloaded_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A keyed map of counts for how many times a user selected a preloaded site autofill suggestion from the address bar, broken down by the site or input-length key."
   }
 
   dimension: scalar_parent_urlbar_picked_autofill_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A keyed map of aggregate counts for all autofill suggestion types selected by users in the address bar, where each key identifies an autofill category or input-length context and the value is the total selection count."
   }
 
   dimension: scalar_parent_urlbar_picked_autofill_url_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_url_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A keyed map of counts for how many times a user accepted a full URL autofill suggestion from the address bar, broken down by the character length or context at which the suggestion was confirmed."
   }
 
   dimension: scalar_parent_urlbar_picked_bookmark_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_bookmark_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A keyed map of counts for how many times a user selected a bookmark suggestion from the address bar dropdown, where each key identifies a result position or context and the value is the selection count."
   }
 
   dimension: scalar_parent_urlbar_picked_dynamic_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_dynamic_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a dynamic result type was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_extension_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_extension_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a browser extension-provided result was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_formhistory_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_formhistory_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a form history suggestion was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_history_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_history_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a browsing history result was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_keyword_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_keyword_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a keyword bookmark result was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_remotetab_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_remotetab_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a remote tab (synced tab from another device) result was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_searchengine_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_searchengine_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a search engine suggestion result was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_searchsuggestion_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_searchsuggestion_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a search suggestion result was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_switchtab_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_switchtab_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a switch-to-tab result was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_tabtosearch_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_tabtosearch_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a tab-to-search result was selected from the URL bar dropdown, allowing the user to search directly within a specific site's engine. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_tip_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_tip_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times an informational tip result was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_topsite_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_topsite_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a top site result was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_unknown_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_unknown_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a result of an unrecognized or uncategorized type was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_picked_visiturl_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_visiturl_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times a direct URL visit result was selected from the URL bar dropdown. Each key identifies a search engine or result context, and the value is the summed pick count."
   }
 
   dimension: scalar_parent_urlbar_searchmode_bookmarkmenu_sum {
@@ -2089,22 +2091,25 @@ True if the BackupService is configured to automatically create backups in the b
     sql: ${TABLE}.search_cohort ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "An identifier for the search experiment cohort the client belongs to, used for A/B testing of search features. Null for most clients."
+    description: "An identifier for a search experiment cohort that the client was enrolled in, used to track search behavior changes across specific experiment groups. A null value indicates the client was not part of any tracked search cohort."
   }
 
   dimension: search_content_about_home_sum {
     sql: ${TABLE}.search_content_about_home_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of searches performed from the Firefox Home (about:home) page. Each key identifies a search engine, and the value is the summed search count."
   }
 
   dimension: search_content_about_newtab_sum {
     sql: ${TABLE}.search_content_about_newtab_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of searches performed from the new tab page (about:newtab). Each key identifies a search engine, and the value is the summed search count."
   }
 
   dimension: search_content_contextmenu_sum {
     sql: ${TABLE}.search_content_contextmenu_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of searches performed via the browser context menu. Each key identifies a search engine, and the value is the summed search count."
   }
 
   dimension: search_content_reload_sum {
@@ -2115,16 +2120,19 @@ True if the BackupService is configured to automatically create backups in the b
   dimension: search_content_searchbar_sum {
     sql: ${TABLE}.search_content_searchbar_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of searches performed using the browser's dedicated search bar. Each key identifies a search engine, and the value is the summed search count."
   }
 
   dimension: search_content_system_sum {
     sql: ${TABLE}.search_content_system_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of searches initiated from system-level or OS-level entry points. Each key identifies a search engine, and the value is the summed search count."
   }
 
   dimension: search_content_tabhistory_sum {
     sql: ${TABLE}.search_content_tabhistory_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number"
   }
 
   dimension: search_content_unknown_sum {
@@ -2135,6 +2143,7 @@ True if the BackupService is configured to automatically create backups in the b
   dimension: search_content_urlbar_handoff_sum {
     sql: ${TABLE}.search_content_urlbar_handoff_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of searches initiated via a URL bar handoff content source. Each entry represents a distinct engine and its summed search volume."
   }
 
   dimension: search_content_urlbar_persisted_sum {
@@ -2145,138 +2154,142 @@ True if the BackupService is configured to automatically create backups in the b
   dimension: search_content_urlbar_searchmode_sum {
     sql: ${TABLE}.search_content_urlbar_searchmode_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of searches initiated while the URL bar was in search mode. Each entry represents a distinct engine and its summed search volume."
   }
 
   dimension: search_content_urlbar_sum {
     sql: ${TABLE}.search_content_urlbar_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of searches initiated from the URL bar content source. Each entry represents a distinct engine and its summed search volume."
   }
 
   dimension: search_content_webextension_sum {
     sql: ${TABLE}.search_content_webextension_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of searches initiated via a WebExtension content source. Each entry represents a distinct engine and its summed search volume."
   }
 
   dimension: search_count_abouthome {
     sql: ${TABLE}.search_count_abouthome ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of searches initiated from the about:home new tab page on the submission date."
+    description: "The number of searches initiated from the Firefox about:home page during the period. A value of zero indicates no searches from this entry point."
   }
 
   dimension: search_count_alias {
     sql: ${TABLE}.search_count_alias ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of searches initiated using a search engine alias (keyword shortcut) in the URL bar on the submission date."
+    description: "The number of searches triggered via a search engine keyword alias (e.g., typing an engine shortcut in the URL bar) during the period. A value of zero indicates no alias-based searches."
   }
 
   dimension: search_count_all {
     sql: ${TABLE}.search_count_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of all searches across all search entry points on the submission date."
+    description: "The total number of searches across all entry points and sources during the period. A value of zero indicates no searches were recorded."
   }
 
   dimension: search_count_contextmenu {
     sql: ${TABLE}.search_count_contextmenu ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of searches initiated via the right-click context menu on the submission date."
+    description: "The number of searches initiated via the browser context menu (e.g., right-click search) during the period. A value of zero indicates no context menu searches."
   }
 
   dimension: search_count_newtab {
     sql: ${TABLE}.search_count_newtab ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of searches initiated from the new tab page on the submission date."
+    description: "The number of searches initiated from the new tab page during the period. A value of zero indicates no searches from this entry point."
   }
 
   dimension: search_count_organic {
     sql: ${TABLE}.search_count_organic ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of untagged (organic) searches where Firefox cannot be identified as the source on the submission date."
+    description: "The number of organic (non-tagged, non-partner) searches performed during the period. A value of zero indicates no organic searches were recorded."
   }
 
   dimension: search_count_searchbar {
     sql: ${TABLE}.search_count_searchbar ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of searches initiated via the dedicated search bar on the submission date."
+    description: "The number of searches initiated from the dedicated browser search bar during the period. A value of zero indicates no searches from this entry point."
   }
 
   dimension: search_count_system {
     sql: ${TABLE}.search_count_system ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of searches initiated by the system (OS-level search integration) on the submission date."
+    description: "The number of searches initiated by system-level actions (e.g., OS-level search integration) during the period. A value of zero indicates no system-triggered searches."
   }
 
   dimension: search_count_tagged_follow_on {
     sql: ${TABLE}.search_count_tagged_follow_on ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of follow-on searches (subsequent searches in the same session after a tagged SAP search) on the submission date."
+    description: "The number of follow-on searches that were tagged, meaning the user continued searching after an initial tagged search access point. A value of zero indicates no tagged follow-on searches."
   }
 
   dimension: search_count_tagged_sap {
     sql: ${TABLE}.search_count_tagged_sap ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of tagged search-access-point (SAP) searches, where the search engine can attribute the search to Firefox."
+    description: "The number of searches tagged as Search Access Point (SAP) searches, indicating searches attributed to a partner-configured entry point. A value of zero indicates no tagged SAP searches."
   }
 
   dimension: search_count_urlbar {
     sql: ${TABLE}.search_count_urlbar ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of searches initiated via the address bar (URL bar) on the submission date."
+    description: "The number of searches initiated from the URL bar (address bar) during the period. A value of zero indicates no URL bar searches were recorded."
   }
 
   dimension: search_count_urlbar_handoff {
     sql: ${TABLE}.search_count_urlbar_handoff ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of searches initiated via a handoff from the new tab URL bar to the browser URL bar on the submission date."
+    description: "The number of searches initiated via a URL bar handoff, where a search typed on the new tab page is handed off to the URL bar. A value of zero indicates no handoff searches."
   }
 
   dimension: search_count_urlbar_persisted {
     sql: ${TABLE}.search_count_urlbar_persisted ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of searches where the URL bar retained the search term after the search on the submission date."
   }
 
   dimension: search_count_urlbar_searchmode {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of searches performed while the URL bar was in search mode on the submission date."
+    description: "The number of searches initiated while the URL bar was explicitly in search mode for a specific engine. A value of zero indicates the search mode entry point was not used."
   }
 
   dimension: search_count_webextension {
     sql: ${TABLE}.search_count_webextension ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of searches initiated via a WebExtension (browser extension) on the submission date."
+    description: "The number of searches initiated through a WebExtension (browser extension) entry point during the period. A value of zero indicates no extension-triggered searches."
   }
 
   dimension: search_counts {
     sql: ${TABLE}.search_counts ;;
     hidden: yes
+    description: "An array of structs recording per-engine, per-source search counts, where each entry captures the search engine identifier, the originating source, and the corresponding search count."
   }
 
   dimension: search_with_ads {
     sql: ${TABLE}.search_with_ads ;;
     hidden: yes
+    description: "The total number of search result pages that contained advertisements during the period. A null value indicates this metric was not recorded; higher values indicate more ad-bearing search sessions."
   }
 
   dimension: search_with_ads_count_all {
     sql: ${TABLE}.search_with_ads_count_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of search result pages that contained ads, across all search providers on the submission date."
+    description: "The total count of search result pages containing ads across all search entry points during the period. A null value indicates the metric was not available for the record."
   }
 
   dimension: search_withads_about_home_sum {
@@ -2348,154 +2361,145 @@ True if the BackupService is configured to automatically create backups in the b
     sql: ${TABLE}.session_restored_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Mean time in milliseconds to complete session restore across subsessions on the submission date."
+    description: "The average time in milliseconds for the browser session to be restored. A null value indicates that session restore timing data was not available or not applicable."
   }
 
   dimension: sessions_started_on_this_day {
     sql: ${TABLE}.sessions_started_on_this_day ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of browser sessions (subsessions with counter=1) started by this client on the submission date."
+    description: "The number of new browser sessions that began on the specific day represented by the record. A value of zero indicates no new sessions were started on that day."
   }
 
   dimension: shutdown_kill_sum {
     sql: ${TABLE}.shutdown_kill_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of browser processes that had to be forcibly killed during shutdown on the submission date."
+    description: "The total number of times the browser process was forcibly killed during shutdown rather than exiting cleanly. Higher values indicate repeated unclean shutdowns for a client."
   }
 
   dimension: socket_crash_count {
     sql: ${TABLE}.socket_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of networking socket process crashes detected for this client on the submission date."
   }
 
   dimension: ssl_handshake_result_failure_sum {
     sql: ${TABLE}.ssl_handshake_result_failure_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of failed TLS/SSL handshake attempts on the submission date."
+    description: "The total number of failed SSL/TLS handshake attempts recorded for a client over a period. A value of zero indicates all handshakes completed successfully with no failures."
   }
 
   dimension: ssl_handshake_result_success_sum {
     sql: ${TABLE}.ssl_handshake_result_success_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of successful TLS/SSL handshake completions on the submission date."
+    description: "The total number of successful SSL/TLS handshake completions recorded for a client over a period. Null values indicate the metric was not collected or not applicable."
   }
 
   dimension: startup_profile_selection_first_ping_only {
     sql: ${TABLE}.startup_profile_selection_first_ping_only ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The profile selection reason from the very first ping of the day, without fallback logic (unlike startup_profile_selection_reason_first)."
   }
 
   dimension: startup_profile_selection_reason_first {
     sql: ${TABLE}.startup_profile_selection_reason_first ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The reason the profile was selected at startup, taken from the first ping of the day (e.g., 'default', 'restart', 'firstrun-created-default')."
   }
 
   dimension: subsession_hours_sum {
     sql: ${TABLE}.subsession_hours_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total time in hours the browser was open across all subsessions on the submission date."
+    description: "The total number of hours spent in active Firefox subsessions for a client or cohort over the aggregation period. Values near 24 indicate nearly continuous daily usage."
   }
 
   dimension: sync_configured {
     sql: ${TABLE}.sync_configured ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether Firefox Sync is configured on this client. True if Sync is set up; null if not determined."
+    description: "Indicates whether Firefox Sync was enabled and configured on the client's browser. True means Sync was active; false means it was explicitly disabled; null indicates the state was not reported."
   }
 
   dimension: sync_count_desktop_mean {
     sql: ${TABLE}.sync_count_desktop_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Mean number of Firefox Sync operations with desktop devices across subsessions on the submission date."
+    description: "The average number of desktop devices connected to Firefox Sync accounts, computed across users in an aggregation group. Null indicates no Sync data was available for the group."
   }
 
   dimension: sync_count_desktop_sum {
     sql: ${TABLE}.sync_count_desktop_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of Firefox Sync operations with desktop devices on the submission date."
+    description: "The total number of desktop devices connected to Firefox Sync accounts, summed across users in an aggregation group. Null indicates no Sync data was available for the group."
   }
 
   dimension: sync_count_mobile_mean {
     sql: ${TABLE}.sync_count_mobile_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Mean number of Firefox Sync operations with mobile devices across subsessions on the submission date."
+    description: "The average number of mobile devices connected to Firefox Sync accounts, computed across users in an aggregation group. A value of zero indicates users had Sync configured but no mobile devices linked."
   }
 
   dimension: sync_count_mobile_sum {
     sql: ${TABLE}.sync_count_mobile_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of Firefox Sync operations with mobile devices on the submission date."
+    description: "The total number of mobile devices connected to Firefox Sync accounts, summed across users in an aggregation group. A value of zero indicates no mobile devices were linked to Sync accounts in the group."
   }
 
   dimension: telemetry_enabled {
     sql: ${TABLE}.telemetry_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether the client has data collection (legacy telemetry) explicitly enabled. False means the user opted out; null means value not recorded."
+    description: "Indicates whether the user has opted into Firefox telemetry data collection. False means the user has explicitly disabled telemetry; true means it is enabled; null indicates the value was not reported."
   }
 
   dimension: text_recognition_api_performance_count_sum {
     sql: ${TABLE}.text_recognition_api_performance_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of Text Recognition API performance measurements recorded on the submission date."
   }
 
   dimension: text_recognition_api_performance_sum {
     sql: ${TABLE}.text_recognition_api_performance_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total API performance measurement (in milliseconds) for Text Recognition operations on the submission date."
   }
 
   dimension: text_recognition_interaction_timing_count_sum {
     sql: ${TABLE}.text_recognition_interaction_timing_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of Text Recognition interaction timing measurements recorded on the submission date."
   }
 
   dimension: text_recognition_interaction_timing_sum {
     sql: ${TABLE}.text_recognition_interaction_timing_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total time in milliseconds spent on Text Recognition interactions on the submission date."
   }
 
   dimension: text_recognition_text_length_count_sum {
     sql: ${TABLE}.text_recognition_text_length_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of Text Recognition text length measurements recorded on the submission date."
   }
 
   dimension: text_recognition_text_length_sum {
     sql: ${TABLE}.text_recognition_text_length_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total length of text recognized by the Text Recognition feature on the submission date."
   }
 
   dimension: timezone_offset {
     sql: ${TABLE}.timezone_offset ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The client's timezone offset from UTC in minutes (e.g., 120 = UTC+2, -240 = UTC-4)."
+    description: "The client's local timezone offset from UTC, expressed in minutes. For example, 120 represents UTC+2 and -300 represents UTC-5."
   }
 
   dimension: total_uri_count {
@@ -2520,168 +2524,153 @@ True if the BackupService is configured to automatically create backups in the b
     sql: ${TABLE}.trackers_blocked_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of trackers blocked by Enhanced Tracking Protection on the submission date."
+    description: "The total number of trackers blocked by Firefox's Enhanced Tracking Protection during the reporting period. Null indicates the feature was not active or no data was reported."
   }
 
   dimension: update_auto_download {
     sql: ${TABLE}.update_auto_download ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether automatic update downloads are enabled for this client. True if updates download automatically."
+    description: "Indicates whether automatic update downloads are enabled for the browser. True means updates are downloaded automatically; false means the user has disabled automatic downloads."
   }
 
   dimension: update_background {
     sql: ${TABLE}.update_background ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether background updates (downloading updates when Firefox is not running) are enabled. True if enabled."
   }
 
   dimension: update_channel {
     sql: ${TABLE}.update_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The Firefox update channel as reported by the environment (may include partner-specific suffixes, unlike normalized_channel)."
+    description: "The release channel from which the browser receives updates, such as 'release', 'beta', 'nightly', or 'esr'. This reflects the user's update track and may include custom or misconfigured values."
   }
 
   dimension: update_enabled {
     sql: ${TABLE}.update_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether automatic updates are enabled for this client. True if update checks are active."
+    description: "Indicates whether automatic browser updates are enabled for the client. True means updates are turned on; false means they have been disabled."
   }
 
   dimension: user_pref_app_shield_optoutstudies_enabled {
     sql: ${TABLE}.user_pref_app_shield_optoutstudies_enabled ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "User preference controlling whether the client participates in Shield studies ('true'/'false' as string). Null if not explicitly set."
   }
 
   dimension: user_pref_browser_newtabpage_enabled {
     sql: ${TABLE}.user_pref_browser_newtabpage_enabled ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "User preference controlling whether the Firefox new tab page is enabled ('true'/'false' as string). Null if not explicitly set."
   }
 
   dimension: user_pref_browser_search_region {
     sql: ${TABLE}.user_pref_browser_search_region ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The client's configured browser search region code (e.g., 'US', 'DE'), used to determine region-specific default search settings."
+    description: "The geographic region code associated with the user's browser search preference, typically an ISO 3166-1 alpha-2 country code such as 'US' or 'DE'."
   }
 
   dimension: user_pref_browser_search_suggest_enabled {
     sql: ${TABLE}.user_pref_browser_search_suggest_enabled ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "User preference controlling whether search suggestions appear in the URL bar ('true'/'false' as string). Null if not explicitly set."
   }
 
   dimension: user_pref_browser_urlbar_quicksuggest_data_collection_enabled {
     sql: ${TABLE}.user_pref_browser_urlbar_quicksuggest_data_collection_enabled ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "User preference controlling whether interaction data with Firefox Suggest is collected ('true'/'false' as string)."
   }
 
   dimension: user_pref_browser_urlbar_quicksuggest_onboarding_dialog_choice {
     sql: ${TABLE}.user_pref_browser_urlbar_quicksuggest_onboarding_dialog_choice ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The user's response to the Firefox Suggest onboarding dialog (e.g., 'close_1', 'not_now_2', 'reject_2'). Null if not shown."
   }
 
   dimension: user_pref_browser_urlbar_show_search_suggestions_first {
     sql: ${TABLE}.user_pref_browser_urlbar_show_search_suggestions_first ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "User preference controlling whether search suggestions appear before browsing history in URL bar results ('false' if user disabled). Null if not set."
   }
 
   dimension: user_pref_browser_urlbar_suggest_bestmatch {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_bestmatch ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The user's preference for showing Best Match results in the URL bar suggestions ('true' to enable). Null if not set."
   }
 
   dimension: user_pref_browser_urlbar_suggest_quicksuggest {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "User preference controlling whether Firefox Suggest (Quicksuggest) results appear in the URL bar. Null if not set."
   }
 
   dimension: user_pref_browser_urlbar_suggest_quicksuggest_nonsponsored {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest_nonsponsored ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "User preference controlling whether non-sponsored Firefox Suggest results appear in the URL bar ('true'/'false' as string)."
   }
 
   dimension: user_pref_browser_urlbar_suggest_quicksuggest_sponsored {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest_sponsored ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "User preference controlling whether sponsored Firefox Suggest results appear in the URL bar ('true'/'false' as string)."
   }
 
   dimension: user_pref_browser_urlbar_suggest_searches {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_searches ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "User preference controlling whether URL bar search suggestions are shown ('true'/'false' as string). Null if not explicitly set."
   }
 
   dimension: user_pref_browser_widget_in_navbar {
     sql: ${TABLE}.user_pref_browser_widget_in_navbar ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "User preference controlling whether a specific widget is shown in the navigation bar ('true'/'false' as string). Null if not explicitly set."
   }
 
   dimension: utility_crash_count {
     sql: ${TABLE}.utility_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of utility process crashes detected for this client on the submission date."
   }
 
   dimension: vendor {
     sql: ${TABLE}.vendor ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The application vendor, always 'Mozilla' for Firefox."
+    description: "The organization that produced the browser or software being measured. In this dataset the value is consistently 'Mozilla'."
   }
 
   dimension: vr_crash_count {
     sql: ${TABLE}.vr_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of VR process crashes detected for this client on the submission date."
   }
 
   dimension: web_notification_shown_sum {
     sql: ${TABLE}.web_notification_shown_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total number of Web Notifications displayed to the user on the submission date."
+    description: "The total number of web notifications shown to the user during the reporting period. Null values, which are nearly universal, indicate the metric was not recorded or not applicable."
   }
 
   dimension: windows_build_number {
     sql: ${TABLE}.windows_build_number ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The Windows build number (e.g., 26200 for Windows 11 24H2, 19045 for Windows 10 22H2). Windows only; null on other platforms."
+    description: "The Windows OS build number of the client's operating system, such as 19045 for a specific Windows 10 release. Null values indicate the client was not running a Windows operating system."
   }
 
   dimension: windows_ubr {
     sql: ${TABLE}.windows_ubr ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The Windows Update Build Revision number, identifying the specific cumulative update applied. Windows 10 and 11 only."
+    description: "The Windows Update Build Revision (UBR) number, which identifies the specific cumulative update applied on top of the base Windows build. Null values indicate the client is not on Windows or the value was not collected."
   }
 
   dimension_group: first_seen {
@@ -2697,7 +2686,6 @@ True if the BackupService is configured to automatically create backups in the b
     ]
     convert_tz: no
     datatype: date
-    description: "Date when the server first received a ping from this client."
   }
 
   dimension_group: second_seen {
@@ -2713,7 +2701,6 @@ True if the BackupService is configured to automatically create backups in the b
     ]
     convert_tz: no
     datatype: date
-    description: "The date the server received the second ping from this client after first_seen_date. Null if the client has not sent a second ping."
   }
 
   dimension_group: submission {
@@ -2729,7 +2716,7 @@ True if the BackupService is configured to automatically create backups in the b
     ]
     convert_tz: no
     datatype: date
-    description: "The date when the telemetry ping is received on the server side."
+    description: "The UTC calendar date on which a ping or record was received by Mozilla's ingestion pipeline. Used as the primary partitioning and filtering dimension for date-based analysis."
   }
 
   dimension_group: submission_date_s3 {
@@ -2759,7 +2746,7 @@ True if the BackupService is configured to automatically create backups in the b
       quarter,
       year,
     ]
-    description: "The earliest ping submission timestamp received from this client on the submission date."
+    description: "The earliest submission timestamp observed for a group of pings or records, typically within an aggregation window. Useful for identifying when the first event in a batch was received."
   }
 
   sql_table_name: `mozdata.telemetry.clients_daily` ;;
