@@ -776,6 +776,14 @@ view: events_stream_table {
     group_item_label: "Is Background"
   }
 
+  dimension: extras__boolean__is_default {
+    sql: ${TABLE}.extras.boolean.is_default ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Default"
+  }
+
   dimension: extras__boolean__is_deleted {
     sql: ${TABLE}.extras.boolean.is_deleted ;;
     type: yesno
@@ -2784,6 +2792,14 @@ view: events_stream_table {
     group_item_label: "Connection Type"
   }
 
+  dimension: extras__string__consumer {
+    sql: ${TABLE}.extras.string.consumer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Consumer"
+  }
+
   dimension: extras__string__content_type {
     sql: ${TABLE}.extras.string.content_type ;;
     type: string
@@ -4200,6 +4216,14 @@ view: events_stream_table {
     group_item_label: "Model Locale"
   }
 
+  dimension: extras__string__module {
+    sql: ${TABLE}.extras.string.module ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Module"
+  }
+
   dimension: extras__string__name {
     sql: ${TABLE}.extras.string.name ;;
     type: string
@@ -5166,6 +5190,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Sourcetype"
+  }
+
+  dimension: extras__string__speed {
+    sql: ${TABLE}.extras.string.speed ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Speed"
   }
 
   dimension: extras__string__splitconsole {

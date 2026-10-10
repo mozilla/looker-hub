@@ -2763,6 +2763,22 @@ view: events_stream {
     group_item_label: "Note Length"
   }
 
+  dimension: extras__quantity__num_chars_out {
+    sql: ${TABLE}.extras.quantity.num_chars_out ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Num Chars Out"
+  }
+
+  dimension: extras__quantity__num_chars_read {
+    sql: ${TABLE}.extras.quantity.num_chars_read ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Num Chars Read"
+  }
+
   dimension: extras__quantity__num_messages {
     sql: ${TABLE}.extras.quantity.num_messages ;;
     type: number
@@ -2843,6 +2859,14 @@ view: events_stream {
     group_item_label: "Num Strings"
   }
 
+  dimension: extras__quantity__num_tabs {
+    sql: ${TABLE}.extras.quantity.num_tabs ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Num Tabs"
+  }
+
   dimension: extras__quantity__num_tabs_approved {
     sql: ${TABLE}.extras.quantity.num_tabs_approved ;;
     type: number
@@ -2881,6 +2905,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Num Tabs Suggested"
+  }
+
+  dimension: extras__quantity__num_tabs_total_attempted {
+    sql: ${TABLE}.extras.quantity.num_tabs_total_attempted ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Num Tabs Total Attempted"
   }
 
   dimension: extras__quantity__num_transports {
@@ -3107,6 +3139,14 @@ view: events_stream {
     group_item_label: "Prompts"
   }
 
+  dimension: extras__quantity__raw_content_len {
+    sql: ${TABLE}.extras.quantity.raw_content_len ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Raw Content Len"
+  }
+
   dimension: extras__quantity__recovery_count {
     sql: ${TABLE}.extras.quantity.recovery_count ;;
     type: number
@@ -3193,6 +3233,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Screeny"
+  }
+
+  dimension: extras__quantity__seconds_elapsed {
+    sql: ${TABLE}.extras.quantity.seconds_elapsed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Seconds Elapsed"
   }
 
   dimension: extras__quantity__selected {
@@ -4643,6 +4691,14 @@ view: events_stream {
     group_item_label: "Component Stack"
   }
 
+  dimension: extras__string__components_used {
+    sql: ${TABLE}.extras.string.components_used ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Components Used"
+  }
+
   dimension: extras__string__computed {
     sql: ${TABLE}.extras.string.computed ;;
     type: string
@@ -4721,6 +4777,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Connection Type"
+  }
+
+  dimension: extras__string__consumer {
+    sql: ${TABLE}.extras.string.consumer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Consumer"
   }
 
   dimension: extras__string__container_id {
@@ -5723,6 +5787,14 @@ view: events_stream {
     group_item_label: "Hours Since"
   }
 
+  dimension: extras__string__how_initiated {
+    sql: ${TABLE}.extras.string.how_initiated ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "How Initiated"
+  }
+
   dimension: extras__string__html_lang_attribute {
     sql: ${TABLE}.extras.string.html_lang_attribute ;;
     type: string
@@ -6385,6 +6457,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Modifiers"
+  }
+
+  dimension: extras__string__module {
+    sql: ${TABLE}.extras.string.module ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Module"
   }
 
   dimension: extras__string__move {

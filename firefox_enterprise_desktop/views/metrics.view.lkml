@@ -75661,6 +75661,33 @@ view: metrics__metrics__dual_labeled_counter__application_reputation_server_verd
   }
 }
 
+view: metrics__metrics__dual_labeled_counter__browser_utils_category_consumer_result {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__browser_utils_category_consumer_result__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2 {
   dimension: key {
     sql: ${TABLE}.key ;;
