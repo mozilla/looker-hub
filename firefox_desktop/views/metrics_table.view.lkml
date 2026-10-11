@@ -3299,6 +3299,14 @@ view: metrics_table {
     group_item_label: "Security UI Protectionspopup Smartblockembeds Shown"
   }
 
+  dimension: metrics__counter__session_restore_write_attempts {
+    sql: ${TABLE}.metrics.counter.session_restore_write_attempts ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Session Restore Write Attempts"
+  }
+
   dimension: metrics__counter__shopping_product_page_visits {
     sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
     type: number
@@ -16745,6 +16753,11 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     hidden: yes
     description: "On quit-application-granted, is the shutdown sync (immediate) or async
 "
+  }
+
+  dimension: metrics__labeled_counter__session_restore_write_outcome {
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_write_outcome ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__sidebar_link {

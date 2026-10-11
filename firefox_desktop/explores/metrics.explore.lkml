@@ -2638,6 +2638,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__session_restore_shutdown_type}) AS metrics__metrics__labeled_counter__session_restore_shutdown_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__session_restore_shutdown_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__session_restore_write_outcome {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__session_restore_write_outcome}) AS metrics__metrics__labeled_counter__session_restore_write_outcome ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__session_restore_write_outcome.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__sidebar_link {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__sidebar_link}) AS metrics__metrics__labeled_counter__sidebar_link ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__sidebar_link.document_id} ;;
