@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: suggest_revenue_levers_daily_last_updated {
-  label: "suggest_revenue_levers_daily Last Updated"
+datagroup: disable_local_network_access_ping_for_desktop_release_last_updated {
+  label: "disable_local_network_access_ping_for_desktop_release Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'contextual_services_derived' AND table_name = 'suggest_revenue_levers_daily_v1')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'disable_local_network_access_ping_for_desktop_release_statistics')
 
     ) ;;
-  description: "Updates for suggest_revenue_levers_daily when referenced tables are modified."
+  description: "Updates for disable_local_network_access_ping_for_desktop_release when referenced tables are modified."
   max_cache_age: "24 hours"
 }
