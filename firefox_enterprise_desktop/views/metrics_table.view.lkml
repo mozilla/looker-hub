@@ -8534,6 +8534,8 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__dual_labeled_counter__browser_utils_category_consumer_result {
     sql: ${TABLE}.metrics.dual_labeled_counter.browser_utils_category_consumer_result ;;
     hidden: yes
+    description: "The number of consumers invoked through BrowserUtils.callModulesFromCategory that returned or threw, per category. success + failure is the number of consumer runs, so the failure rate of a category is failure / (success + failure).
+"
   }
 
   dimension: metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2 {
