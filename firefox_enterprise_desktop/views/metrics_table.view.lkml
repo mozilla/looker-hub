@@ -12696,6 +12696,8 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__session_restore_write_outcome {
     sql: ${TABLE}.metrics.labeled_counter.session_restore_write_outcome ;;
     hidden: yes
+    description: "Counts completed attempts to write the session file, by outcome. \"failed\" means the session file was not written. \"session_written_backup_failed\" means the session file was written but a later step, such as taking or pruning upgrade backups, failed.
+"
   }
 
   dimension: metrics__labeled_counter__sidebar_link {
