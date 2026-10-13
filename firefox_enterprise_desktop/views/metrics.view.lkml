@@ -8002,6 +8002,24 @@ Previously carried in Legacy \"main\" ping `simpleMeasurements`.
 "
   }
 
+  dimension: metrics__counter__session_restore_write_attempts {
+    label: "Session Restore: Write Attempts"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.session_restore_write_attempts ;;
+    type: number
+    group_label: "Session Restore"
+    group_item_label: "Write Attempts"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore: Write Attempts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/session_restore_write_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts attempts to write the session file. Attempts that are not counted in write_outcome never completed.
+"
+  }
+
   dimension: metrics__timing_distribution__session_restore_write_file__sum {
     label: "Session Restore: Write File Sum"
     hidden: no
@@ -8018,6 +8036,23 @@ Previously carried in Legacy \"main\" ping `simpleMeasurements`.
 
     description: "Session restore: Time to write the session data to the file on disk (ms)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_WRITE_FILE_MS.
+"
+  }
+
+  dimension: metrics__labeled_counter__session_restore_write_outcome {
+    label: "Session Restore: Write Outcome"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_write_outcome ;;
+    group_label: "Session Restore"
+    group_item_label: "Write Outcome"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore: Write Outcome"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/session_restore_write_outcome"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts completed attempts to write the session file, by outcome. \"failed\" means the session file was not written. \"session_written_backup_failed\" means the session file was written but a later step, such as taking or pruning upgrade backups, failed.
 "
   }
 
@@ -40608,6 +40643,31 @@ Most samples are expected to be below the 10s timeout used.
     }
   }
 
+  measure: session_restore_write_attempts {
+    type: sum
+    sql: ${metrics__counter__session_restore_write_attempts} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Write Attempts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/session_restore_write_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: session_restore_write_attempts_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__session_restore_write_attempts: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore Write Attempts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/session_restore_write_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: smart_window_tabs_opened {
     type: sum
     sql: ${metrics__counter__smart_window_tabs_opened} ;;
@@ -65783,6 +65843,47 @@ view: metrics__metrics__labeled_counter__session_restore_shutdown_ok {
 
 view: metrics__metrics__labeled_counter__session_restore_shutdown_type {
   label: "Session Restore: Shutdown Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__session_restore_write_outcome {
+  label: "Session Restore: Write Outcome"
 
   dimension: document_id {
     type: string
