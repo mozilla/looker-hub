@@ -872,6 +872,14 @@ view: events_stream_table {
     group_item_label: "Is Extensions Panel Empty"
   }
 
+  dimension: extras__boolean__is_final_write {
+    sql: ${TABLE}.extras.boolean.is_final_write ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Final Write"
+  }
+
   dimension: extras__boolean__is_first_startup {
     sql: ${TABLE}.extras.boolean.is_first_startup ;;
     type: yesno
@@ -1270,6 +1278,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Sent With Blocked Trackers"
+  }
+
+  dimension: extras__boolean__session_written {
+    sql: ${TABLE}.extras.boolean.session_written ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Session Written"
   }
 
   dimension: extras__boolean__shopping_tab_displayed {
