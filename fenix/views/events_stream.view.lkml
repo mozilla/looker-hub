@@ -3331,6 +3331,14 @@ view: events_stream {
     group_item_label: "Failedlookups"
   }
 
+  dimension: extras__string__failure_reason {
+    sql: ${TABLE}.extras.string.failure_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Failure Reason"
+  }
+
   dimension: extras__string__family_name {
     sql: ${TABLE}.extras.string.family_name ;;
     type: string
@@ -5065,6 +5073,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Severity"
+  }
+
+  dimension: extras__string__share_type {
+    sql: ${TABLE}.extras.string.share_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Share Type"
   }
 
   dimension: extras__string__shortcut {
