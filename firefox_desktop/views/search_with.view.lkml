@@ -7,7 +7,7 @@
 view: search_with {
   dimension: metrics__uuid__search_with_context_id {
     label: "Search With: Context ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.search_with_context_id ;;
     type: string
     group_label: "Search With"
@@ -27,7 +27,7 @@ is shared with other Contextual Services. It is not shared externally.
 
   dimension: metrics__url2__search_with_reporting_url {
     label: "Search With: Reporting URL"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.url2.search_with_reporting_url ;;
     type: string
     group_label: "Search With"
