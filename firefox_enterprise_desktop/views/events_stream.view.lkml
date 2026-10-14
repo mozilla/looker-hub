@@ -3043,6 +3043,14 @@ view: events_stream {
     group_item_label: "Session Seq"
   }
 
+  dimension: extras__quantity__single_tabs_restored {
+    sql: ${TABLE}.extras.quantity.single_tabs_restored ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Single Tabs Restored"
+  }
+
   dimension: extras__quantity__size {
     sql: ${TABLE}.extras.quantity.size ;;
     type: number
@@ -3241,6 +3249,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tabs Medium"
+  }
+
+  dimension: extras__quantity__tabs_offered {
+    sql: ${TABLE}.extras.quantity.tabs_offered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Offered"
   }
 
   dimension: extras__quantity__tabs_open {
@@ -3641,6 +3657,22 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Window Width"
+  }
+
+  dimension: extras__quantity__windows_offered {
+    sql: ${TABLE}.extras.quantity.windows_offered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Windows Offered"
+  }
+
+  dimension: extras__quantity__windows_selected {
+    sql: ${TABLE}.extras.quantity.windows_selected ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Windows Selected"
   }
 
   dimension: extras__quantity__words_added {
@@ -7209,6 +7241,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Shortcut"
+  }
+
+  dimension: extras__string__show_reason {
+    sql: ${TABLE}.extras.string.show_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Show Reason"
   }
 
   dimension: extras__string__shutdown_ok {
