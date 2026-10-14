@@ -44,24 +44,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: win10_eos_hnt_mobile_rollout_v3
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       win10_eos_hnt_mobile_rollout_v3.submission_date,
       win10_eos_hnt_mobile_rollout_v3.branch,
+      win10_eos_hnt_mobile_rollout_v3.upper,
+      win10_eos_hnt_mobile_rollout_v3.lower,
       win10_eos_hnt_mobile_rollout_v3.point
     ]
     pivots: [
       win10_eos_hnt_mobile_rollout_v3.branch
     ]
     filters:
-      win10_eos_hnt_mobile_rollout_v3.metric: 'active_hours'
-      win10_eos_hnt_mobile_rollout_v3.statistic: mean
+      win10_eos_hnt_mobile_rollout_v3.metric: 'memory_total'
+      win10_eos_hnt_mobile_rollout_v3.statistic: percentile
     row: 0
     col: 12
     width: 12
@@ -74,40 +76,7 @@
     show_grid: true
     listen:
       Date: win10_eos_hnt_mobile_rollout_v3.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: win10_eos_hnt_mobile_rollout_v3
-    type: looker_line
-    fields: [
-      win10_eos_hnt_mobile_rollout_v3.submission_date,
-      win10_eos_hnt_mobile_rollout_v3.branch,
-      win10_eos_hnt_mobile_rollout_v3.point
-    ]
-    pivots: [
-      win10_eos_hnt_mobile_rollout_v3.branch
-    ]
-    filters:
-      win10_eos_hnt_mobile_rollout_v3.metric: 'uri_count'
-      win10_eos_hnt_mobile_rollout_v3.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: win10_eos_hnt_mobile_rollout_v3.submission_date
-    field_y: win10_eos_hnt_mobile_rollout_v3.point
-    log_scale: false
-    ci_lower: win10_eos_hnt_mobile_rollout_v3.lower
-    ci_upper: win10_eos_hnt_mobile_rollout_v3.upper
-    show_grid: true
-    listen:
-      Date: win10_eos_hnt_mobile_rollout_v3.submission_date
+      Percentile: win10_eos_hnt_mobile_rollout_v3.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -131,42 +100,6 @@
       win10_eos_hnt_mobile_rollout_v3.metric: 'retained'
       win10_eos_hnt_mobile_rollout_v3.statistic: mean
     row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: win10_eos_hnt_mobile_rollout_v3.submission_date
-    field_y: win10_eos_hnt_mobile_rollout_v3.point
-    log_scale: false
-    ci_lower: win10_eos_hnt_mobile_rollout_v3.lower
-    ci_upper: win10_eos_hnt_mobile_rollout_v3.upper
-    show_grid: true
-    listen:
-      Date: win10_eos_hnt_mobile_rollout_v3.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: win10_eos_hnt_mobile_rollout_v3
-    type: "ci-line-chart"
-    fields: [
-      win10_eos_hnt_mobile_rollout_v3.submission_date,
-      win10_eos_hnt_mobile_rollout_v3.branch,
-      win10_eos_hnt_mobile_rollout_v3.upper,
-      win10_eos_hnt_mobile_rollout_v3.lower,
-      win10_eos_hnt_mobile_rollout_v3.point
-    ]
-    pivots: [
-      win10_eos_hnt_mobile_rollout_v3.branch
-    ]
-    filters:
-      win10_eos_hnt_mobile_rollout_v3.metric: 'memory_total'
-      win10_eos_hnt_mobile_rollout_v3.statistic: percentile
-    row: 20
     col: 0
     width: 12
     height: 8
@@ -178,13 +111,12 @@
     show_grid: true
     listen:
       Date: win10_eos_hnt_mobile_rollout_v3.submission_date
-      Percentile: win10_eos_hnt_mobile_rollout_v3.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,9 +131,9 @@
       win10_eos_hnt_mobile_rollout_v3.branch
     ]
     filters:
-      win10_eos_hnt_mobile_rollout_v3.metric: 'ad_clicks'
+      win10_eos_hnt_mobile_rollout_v3.metric: 'search_count'
       win10_eos_hnt_mobile_rollout_v3.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -235,6 +167,74 @@
     filters:
       win10_eos_hnt_mobile_rollout_v3.metric: 'days_of_use'
       win10_eos_hnt_mobile_rollout_v3.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: win10_eos_hnt_mobile_rollout_v3.submission_date
+    field_y: win10_eos_hnt_mobile_rollout_v3.point
+    log_scale: false
+    ci_lower: win10_eos_hnt_mobile_rollout_v3.lower
+    ci_upper: win10_eos_hnt_mobile_rollout_v3.upper
+    show_grid: true
+    listen:
+      Date: win10_eos_hnt_mobile_rollout_v3.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: win10_eos_hnt_mobile_rollout_v3
+    type: looker_line
+    fields: [
+      win10_eos_hnt_mobile_rollout_v3.submission_date,
+      win10_eos_hnt_mobile_rollout_v3.branch,
+      win10_eos_hnt_mobile_rollout_v3.point
+    ]
+    pivots: [
+      win10_eos_hnt_mobile_rollout_v3.branch
+    ]
+    filters:
+      win10_eos_hnt_mobile_rollout_v3.metric: 'active_hours'
+      win10_eos_hnt_mobile_rollout_v3.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: win10_eos_hnt_mobile_rollout_v3.submission_date
+    field_y: win10_eos_hnt_mobile_rollout_v3.point
+    log_scale: false
+    ci_lower: win10_eos_hnt_mobile_rollout_v3.lower
+    ci_upper: win10_eos_hnt_mobile_rollout_v3.upper
+    show_grid: true
+    listen:
+      Date: win10_eos_hnt_mobile_rollout_v3.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: win10_eos_hnt_mobile_rollout_v3
+    type: looker_line
+    fields: [
+      win10_eos_hnt_mobile_rollout_v3.submission_date,
+      win10_eos_hnt_mobile_rollout_v3.branch,
+      win10_eos_hnt_mobile_rollout_v3.point
+    ]
+    pivots: [
+      win10_eos_hnt_mobile_rollout_v3.branch
+    ]
+    filters:
+      win10_eos_hnt_mobile_rollout_v3.metric: 'uri_count'
+      win10_eos_hnt_mobile_rollout_v3.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       win10_eos_hnt_mobile_rollout_v3.branch
     ]
     filters:
-      win10_eos_hnt_mobile_rollout_v3.metric: 'search_count'
+      win10_eos_hnt_mobile_rollout_v3.metric: 'ad_clicks'
       win10_eos_hnt_mobile_rollout_v3.statistic: mean
     row: 30
     col: 12
