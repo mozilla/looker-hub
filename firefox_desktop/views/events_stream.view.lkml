@@ -3315,6 +3315,14 @@ view: events_stream {
     group_item_label: "Session Seq"
   }
 
+  dimension: extras__quantity__single_tabs_restored {
+    sql: ${TABLE}.extras.quantity.single_tabs_restored ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Single Tabs Restored"
+  }
+
   dimension: extras__quantity__size {
     sql: ${TABLE}.extras.quantity.size ;;
     type: number
@@ -3521,6 +3529,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tabs Medium"
+  }
+
+  dimension: extras__quantity__tabs_offered {
+    sql: ${TABLE}.extras.quantity.tabs_offered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Offered"
   }
 
   dimension: extras__quantity__tabs_open {
@@ -4003,6 +4019,22 @@ view: events_stream {
     group_item_label: "Window Width"
   }
 
+  dimension: extras__quantity__windows_offered {
+    sql: ${TABLE}.extras.quantity.windows_offered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Windows Offered"
+  }
+
+  dimension: extras__quantity__windows_selected {
+    sql: ${TABLE}.extras.quantity.windows_selected ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Windows Selected"
+  }
+
   dimension: extras__quantity__words_added {
     sql: ${TABLE}.extras.quantity.words_added ;;
     type: number
@@ -4467,6 +4499,14 @@ view: events_stream {
     group_item_label: "Captive Portal State"
   }
 
+  dimension: extras__string__card_state {
+    sql: ${TABLE}.extras.string.card_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Card State"
+  }
+
   dimension: extras__string__category {
     sql: ${TABLE}.extras.string.category ;;
     type: string
@@ -4705,6 +4745,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Component Stack"
+  }
+
+  dimension: extras__string__component_type {
+    sql: ${TABLE}.extras.string.component_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Component Type"
   }
 
   dimension: extras__string__components_used {
@@ -5553,6 +5601,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Flow ID"
+  }
+
+  dimension: extras__string__font {
+    sql: ${TABLE}.extras.string.font ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Font"
   }
 
   dimension: extras__string__form_action_origin_error {
@@ -6641,6 +6697,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Oldpanel"
+  }
+
+  dimension: extras__string__open_target {
+    sql: ${TABLE}.extras.string.open_target ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Open Target"
   }
 
   dimension: extras__string__opened_from {
@@ -7737,6 +7801,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Shortcut"
+  }
+
+  dimension: extras__string__show_reason {
+    sql: ${TABLE}.extras.string.show_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Show Reason"
   }
 
   dimension: extras__string__shutdown_ok {
