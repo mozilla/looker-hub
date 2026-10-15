@@ -4136,6 +4136,14 @@ view: events_stream_table {
     group_item_label: "Captive Portal State"
   }
 
+  dimension: extras__string__card_state {
+    sql: ${TABLE}.extras.string.card_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Card State"
+  }
+
   dimension: extras__string__category {
     sql: ${TABLE}.extras.string.category ;;
     type: string
@@ -4304,6 +4312,14 @@ view: events_stream_table {
     group_item_label: "Click Type"
   }
 
+  dimension: extras__string__closing_reason {
+    sql: ${TABLE}.extras.string.closing_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Closing Reason"
+  }
+
   dimension: extras__string__code {
     sql: ${TABLE}.extras.string.code ;;
     type: string
@@ -4360,6 +4376,14 @@ view: events_stream_table {
     group_item_label: "Component Stack"
   }
 
+  dimension: extras__string__component_type {
+    sql: ${TABLE}.extras.string.component_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Component Type"
+  }
+
   dimension: extras__string__components_used {
     sql: ${TABLE}.extras.string.components_used ;;
     type: string
@@ -4406,6 +4430,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Conflicting Slug"
+  }
+
+  dimension: extras__string__connection {
+    sql: ${TABLE}.extras.string.connection ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Connection"
   }
 
   dimension: extras__string__connection_id {
@@ -5142,6 +5174,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Flow ID"
+  }
+
+  dimension: extras__string__font {
+    sql: ${TABLE}.extras.string.font ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Font"
   }
 
   dimension: extras__string__form_action_origin_error {
@@ -6168,6 +6208,14 @@ view: events_stream_table {
     group_item_label: "Oldpanel"
   }
 
+  dimension: extras__string__open_target {
+    sql: ${TABLE}.extras.string.open_target ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Open Target"
+  }
+
   dimension: extras__string__opened_from {
     sql: ${TABLE}.extras.string.opened_from ;;
     type: string
@@ -6182,6 +6230,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Openingreason"
+  }
+
+  dimension: extras__string__opening_reason {
+    sql: ${TABLE}.extras.string.opening_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Opening Reason"
   }
 
   dimension: extras__string__operation {

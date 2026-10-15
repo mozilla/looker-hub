@@ -10,7 +10,7 @@ include: "/looker-hub/firefox_desktop/datagroups/local_network_access_last_updat
 explore: local_network_access {
   sql_always_where: ${local_network_access.submission_date} >= '2010-01-01' ;;
   view_label: " Local_Network_Access"
-  description: "Explore for the local_network_access ping. A ping representing Local Network Access (LNA) connection attempts and permission prompt interactions. This ping does not include client_id for privacy. Only collected in early Beta and Nightly builds."
+  description: "Explore for the local_network_access ping. A ping representing Local Network Access (LNA) connection attempts and permission prompt interactions. This ping does not include client_id for privacy."
   view_name: local_network_access
 
   join: local_network_access__metrics__labeled_counter__glean_error_invalid_label {
