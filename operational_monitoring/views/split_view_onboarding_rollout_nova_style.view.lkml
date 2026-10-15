@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: share_button {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.share_button_statistics ;;
+view: split_view_onboarding_rollout_nova_style {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.split_view_onboarding_rollout_nova_style_statistics ;;
 
   dimension: submission_date {
     type: date
