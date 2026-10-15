@@ -6114,40 +6114,36 @@ marketing:
   pretty_name: Marketing
   spoke: looker-spoke-default
   views:
-    firefox_desktop_unified_attribution_clients_agg:
-      measures:
-        activation_rate:
-          sql: SAFE_DIVIDE(${total_activated_profiles}, ${total_activated_eligible})
-          type: number
-        retention_rate:
-          sql: SAFE_DIVIDE(${total_w4_retained}, ${total_w4_eligible})
-          type: number
-        total_activated_eligible:
-          sql: ${d4_6_eligible}
-          type: sum
-        total_activated_profiles:
-          sql: ${d4_6_retained}
-          type: sum
-        total_new_profiles:
-          sql: ${new_profiles}
-          type: sum
-        total_w4_eligible:
-          sql: ${w4_eligible}
-          type: sum
-        total_w4_retained:
-          sql: ${w4_retained}
-          type: sum
-      tables:
-      - table: mozdata.telemetry.firefox_desktop_unified_attribution_clients_agg
-      type: table_view
     firefox_for_families_forecasted_expectations:
       tables:
       - table: mozdata.analysis.marketing_firefox_for_families_forecasted_expectations
       type: table_view
-    unified_attribution_clients_agg:
+marketing_private:
+  connection: bigquery-oauth
+  explores:
+    unified_attribution_performance:
+      type: table_explore
+      views:
+        base_view: unified_attribution_performance
+  glean_app: false
+  owners:
+  - data-marketing-wg@mozilla.com
+  pretty_name: Marketing Private
+  spoke: looker-spoke-private
+  views:
+    unified_attribution_performance:
       measures:
         activation_rate:
           sql: SAFE_DIVIDE(${total_activated_profiles}, ${total_activated_eligible})
+          type: number
+        cost_per_activated_profile:
+          sql: SAFE_DIVIDE(${total_spend}, ${total_activated_profiles})
+          type: number
+        cost_per_new_profile:
+          sql: SAFE_DIVIDE(${total_spend}, ${total_new_profiles})
+          type: number
+        cost_per_w4_retained_profile:
+          sql: SAFE_DIVIDE(${total_spend}, ${total_w4_retained})
           type: number
         retention_rate:
           sql: SAFE_DIVIDE(${total_w4_retained}, ${total_w4_eligible})
@@ -6158,8 +6154,20 @@ marketing:
         total_activated_profiles:
           sql: ${d4_6_retained}
           type: sum
+        total_clicks:
+          sql: ${clicks}
+          type: sum
+        total_conversions:
+          sql: ${conversions}
+          type: sum
+        total_impressions:
+          sql: ${impressions}
+          type: sum
         total_new_profiles:
           sql: ${new_profiles}
+          type: sum
+        total_spend:
+          sql: ${spend}
           type: sum
         total_w4_eligible:
           sql: ${w4_eligible}
@@ -6168,7 +6176,7 @@ marketing:
           sql: ${w4_retained}
           type: sum
       tables:
-      - table: mozdata.fenix.unified_attribution_clients_agg
+      - table: mozdata.marketing_ads.unified_attribution_performance
       type: table_view
 mdn_fred:
   explores:
