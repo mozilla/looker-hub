@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/share_button.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/share_button_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/software_h264_decode_pref_flip.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/software_h264_decode_pref_flip_last_updated.datagroup.lkml"
 
-explore: share_button {
+explore: software_h264_decode_pref_flip {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: share_button {
   }
 
   hidden: yes
-  persist_with: share_button_last_updated
+  persist_with: software_h264_decode_pref_flip_last_updated
 }

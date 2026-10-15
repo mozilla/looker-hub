@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: share_button_last_updated {
-  label: "share_button Last Updated"
+datagroup: sponsored_content_client_rollout_last_updated {
+  label: "sponsored_content_client_rollout Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'share_button_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'sponsored_content_client_rollout_statistics')
 
     ) ;;
-  description: "Updates for share_button when referenced tables are modified."
+  description: "Updates for sponsored_content_client_rollout when referenced tables are modified."
   max_cache_age: "24 hours"
 }
