@@ -7784,6 +7784,14 @@ view: events_stream_table {
     group_item_label: "To Language"
   }
 
+  dimension: extras__string__toggle {
+    sql: ${TABLE}.extras.string.toggle ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Toggle"
+  }
+
   dimension: extras__string__token_kind {
     sql: ${TABLE}.extras.string.token_kind ;;
     type: string
