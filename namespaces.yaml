@@ -12276,8 +12276,8 @@ operational_monitoring:
             options:
             - release
             - beta
-            - nightly
             - aurora
+            - nightly
             - esr
             - default
             - nightly-pine
@@ -16338,15 +16338,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id701
           app:
-            default: iOS - daemon_session
+            default: Android - vpn_session
             options:
-            - iOS - daemon_session
-            - Linux - vpn_session
             - Android - vpn_session
             - iOS - vpn_session
+            - Android - daemon_session
+            - Linux - vpn_session
             - Darwin - vpn_session
             - Windows - vpn_session
-            - Android - daemon_session
+            - iOS - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id702

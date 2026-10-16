@@ -366,8 +366,8 @@
       options:
       - 'release'
       - 'beta'
-      - 'nightly'
       - 'aurora'
+      - 'nightly'
       - 'esr'
       - 'default'
       - 'nightly-pine'
