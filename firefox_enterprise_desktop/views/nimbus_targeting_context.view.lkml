@@ -51,6 +51,25 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__quantity__nimbus_targeting_context_active_web_push_subscription_count {
+    label: "Nimbus Targeting Context: Active Web Push Subscription Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_active_web_push_subscription_count ;;
+    type: number
+    group_label: "Nimbus Targeting Context"
+    group_item_label: "Active Web Push Subscription Count"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Targeting Context: Active Web Push Subscription Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/nimbus_targeting_context_active_web_push_subscription_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of unexpired web push subscriptions, excluding system subscriptions such as the one held by Firefox Accounts.
+Until the push service starts, which is usually the case for the targeting context recorded during startup, this is the count saved the last time it was evaluated while push was running.
+"
+  }
+
   dimension: metrics__quantity__nimbus_targeting_context_addresses_saved {
     label: "Nimbus Targeting Context: Addresses Saved"
     hidden: no

@@ -503,6 +503,12 @@ view: install {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: notification_helper_stop_exit_code {
+    sql: ${TABLE}.notification_helper_stop_exit_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: old_build_id {
     sql: ${TABLE}.old_build_id ;;
     type: string

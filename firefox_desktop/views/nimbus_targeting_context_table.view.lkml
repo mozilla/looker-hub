@@ -623,6 +623,14 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
   }
 
+  dimension: metrics__quantity__nimbus_targeting_context_active_web_push_subscription_count {
+    sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_active_web_push_subscription_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Nimbus Targeting Context Active Web Push Subscription Count"
+  }
+
   dimension: metrics__quantity__nimbus_targeting_context_addresses_saved {
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_addresses_saved ;;
     type: number
