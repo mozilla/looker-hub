@@ -480,6 +480,14 @@ view: events_stream_table {
     group_item_label: "Did User Confirm"
   }
 
+  dimension: extras__boolean__dry_run {
+    sql: ${TABLE}.extras.boolean.dry_run ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Dry Run"
+  }
+
   dimension: extras__boolean__enabled {
     sql: ${TABLE}.extras.boolean.enabled ;;
     type: yesno

@@ -1867,6 +1867,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Filter"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_fit_tolerance {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_fit_tolerance ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Fit Tolerance"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_flex {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_flex ;;
     type: number
@@ -1945,6 +1953,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Doc Css Flood Opacity"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_flow_tolerance {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_flow_tolerance ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Flow Tolerance"
   }
 
   dimension: metrics__counter__use_counter_css_doc_css_font {
@@ -7883,6 +7899,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Page Css Filter"
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_fit_tolerance {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_fit_tolerance ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Fit Tolerance"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_flex {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_flex ;;
     type: number
@@ -7961,6 +7985,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Page Css Flood Opacity"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_flow_tolerance {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_flow_tolerance ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Flow Tolerance"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_font {

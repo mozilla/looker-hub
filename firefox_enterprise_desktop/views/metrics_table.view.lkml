@@ -12113,7 +12113,7 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
   dimension: metrics__labeled_counter__networking_trr_connection_cycle_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_trr_connection_cycle_count ;;
     hidden: yes
-    description: "Number of times we cycled the TRR connection during a subsession. Keyed by TRR provider URL.
+    description: "Number of times we cycled the TRR connection. Keyed by TRR provider URL.
 "
   }
 

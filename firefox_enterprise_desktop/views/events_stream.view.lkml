@@ -467,6 +467,14 @@ view: events_stream {
     group_item_label: "Disabledialog"
   }
 
+  dimension: extras__boolean__dry_run {
+    sql: ${TABLE}.extras.boolean.dry_run ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Dry Run"
+  }
+
   dimension: extras__boolean__during_shutdown {
     sql: ${TABLE}.extras.boolean.during_shutdown ;;
     type: yesno
@@ -7777,6 +7785,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "To Language"
+  }
+
+  dimension: extras__string__toggle {
+    sql: ${TABLE}.extras.string.toggle ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Toggle"
   }
 
   dimension: extras__string__token_kind {

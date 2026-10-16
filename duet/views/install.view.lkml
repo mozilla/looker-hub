@@ -503,6 +503,13 @@ view: install {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: notification_helper_stop_exit_code {
+    sql: ${TABLE}.notification_helper_stop_exit_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Result of signaling the notification helper to stop during installation: the helper's exit code, \"error\" or \"timeout\" if it could not be run, or \"unset\" if the helper was not installed"
+  }
+
   dimension: old_build_id {
     sql: ${TABLE}.old_build_id ;;
     type: string

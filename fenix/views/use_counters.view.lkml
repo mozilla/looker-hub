@@ -3281,6 +3281,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_fit_tolerance {
+    label: "Use Counter Css Doc: Css Fit Tolerance"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_fit_tolerance ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Fit Tolerance"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc: Css Fit Tolerance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_fit_tolerance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property fit-tolerance. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_flex {
     label: "Use Counter Css Doc: Css Flex"
     hidden: no
@@ -3458,6 +3476,24 @@ view: use_counters {
     }
 
     description: "Whether a document used the CSS property flood-opacity. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_flow_tolerance {
+    label: "Use Counter Css Doc: Css Flow Tolerance"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_flow_tolerance ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Flow Tolerance"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc: Css Flow Tolerance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_flow_tolerance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property flow-tolerance. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -16817,6 +16853,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_fit_tolerance {
+    label: "Use Counter Css Page: Css Fit Tolerance"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_fit_tolerance ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Fit Tolerance"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page: Css Fit Tolerance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_fit_tolerance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property fit-tolerance. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_flex {
     label: "Use Counter Css Page: Css Flex"
     hidden: no
@@ -16994,6 +17048,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property flood-opacity. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_flow_tolerance {
+    label: "Use Counter Css Page: Css Flow Tolerance"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_flow_tolerance ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Flow Tolerance"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page: Css Flow Tolerance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_flow_tolerance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property flow-tolerance. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -58882,6 +58954,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_fit_tolerance {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_fit_tolerance} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Fit Tolerance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_fit_tolerance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_fit_tolerance_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_fit_tolerance: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Fit Tolerance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_fit_tolerance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_flex {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_flex} ;;
@@ -59128,6 +59225,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Doc Css Flood Opacity"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_flood_opacity"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_flow_tolerance {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_flow_tolerance} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Flow Tolerance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_flow_tolerance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_flow_tolerance_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_flow_tolerance: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Flow Tolerance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_flow_tolerance"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -77682,6 +77804,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_page_css_fit_tolerance {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_fit_tolerance} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Fit Tolerance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_fit_tolerance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_fit_tolerance_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_fit_tolerance: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Fit Tolerance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_fit_tolerance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_page_css_flex {
     type: sum
     sql: ${metrics__counter__use_counter_css_page_css_flex} ;;
@@ -77928,6 +78075,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css Flood Opacity"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_flood_opacity"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_flow_tolerance {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_flow_tolerance} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Flow Tolerance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_flow_tolerance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_flow_tolerance_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_flow_tolerance: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Flow Tolerance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_flow_tolerance"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

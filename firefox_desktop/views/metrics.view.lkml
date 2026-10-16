@@ -926,7 +926,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of maximum number of tabs open during a subsession, across all windows, including tabs in private windows and restored at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_count.
+    description: "The count of maximum number of tabs open, across all windows, including tabs in private windows and restored at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_count.
 "
   }
 
@@ -944,7 +944,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of maximum number of pinned tabs open during a subsession. This includes private windows and the ones opened when starting the browser. Starting Firefox 85 this includes number of restored pinned tabs at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_pinned_count.
+    description: "The count of maximum number of pinned tabs open. This includes private windows and the ones opened when starting the browser. Starting Firefox 85 this includes number of restored pinned tabs at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_pinned_count.
 "
   }
 
@@ -998,7 +998,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of maximum number of browser windows open during a subsession. This includes private windows and the ones opened when starting the browser. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_window_count.
+    description: "The count of maximum number of browser windows open. This includes private windows and the ones opened when starting the browser. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_window_count.
 "
   }
 
@@ -1015,7 +1015,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from about:home,
+    description: "The count of URI loads triggered from about:home,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.about_home.
@@ -1035,7 +1035,7 @@ scalar browser.engagement.navigation.about_home.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from about:newtab,
+    description: "The count of URI loads triggered from about:newtab,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.about_newtab.
@@ -1072,7 +1072,7 @@ scalar browser.engagement.navigation.about_newtab.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the contextmenu,
+    description: "The count of URI loads triggered from the contextmenu,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.contextmenu.
@@ -1092,7 +1092,7 @@ scalar browser.engagement.navigation.contextmenu.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the context menu's
+    description: "The count of URI loads triggered from the context menu's
 visual search menuitem, broken down by the originating action.
 "
   }
@@ -1110,7 +1110,7 @@ visual search menuitem, broken down by the originating action.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the search CTA on
+    description: "The count of URI loads triggered from the search CTA on
 a network error page, broken down by the originating action.
 "
   }
@@ -1128,7 +1128,7 @@ a network error page, broken down by the originating action.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from a search widget on
+    description: "The count of URI loads triggered from a search widget on
 about:newtab, broken down by the originating action.
 "
   }
@@ -1146,7 +1146,7 @@ about:newtab, broken down by the originating action.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the New Tab search
+    description: "The count of URI loads triggered from the New Tab search
 bar, broken down by the originating action.
 "
   }
@@ -1164,7 +1164,7 @@ bar, broken down by the originating action.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the searchbar,
+    description: "The count of URI loads triggered from the searchbar,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.searchbar.
@@ -1184,7 +1184,7 @@ scalar browser.engagement.navigation.searchbar.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the smartbar,
+    description: "The count of URI loads triggered from the smartbar,
 broken down by the originating action.
 "
   }
@@ -1202,7 +1202,7 @@ broken down by the originating action.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the AI window assistant
+    description: "The count of URI loads triggered from the AI window assistant
 search handoff button.
 "
   }
@@ -1238,7 +1238,7 @@ is selected on a page, broken down by the originating action.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar,
+    description: "The count of URI loads triggered from the urlbar,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.urlbar.
@@ -1258,7 +1258,7 @@ scalar browser.engagement.navigation.urlbar.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.urlbar_handoff.
@@ -1278,7 +1278,7 @@ scalar browser.engagement.navigation.urlbar_handoff.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar
+    description: "The count of URI loads triggered from the urlbar
 after the search term was shown in the urlbar, broken down by the
 originating action.
 This metric was generated to correspond to the Legacy Telemetry
@@ -1299,7 +1299,7 @@ scalar browser.engagement.navigation.urlbar_persisted.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar's
+    description: "The count of URI loads triggered from the urlbar's
 search mode, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.urlbar_searchmode.
@@ -1319,7 +1319,7 @@ scalar browser.engagement.navigation.urlbar_searchmode.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from a webextension.
+    description: "The count of URI loads triggered from a webextension.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.webextension.
 "
@@ -1433,7 +1433,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of tab open events per subsession, across all windows, after the session has been restored. This includes tab open events from private windows and from manual session restorations (i.e. after crashes and from about:home), but excludes tabs opened vertically. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_open_event_count.
+    description: "The count of tab open events, across all windows, after the session has been restored. This includes tab open events from private windows and from manual session restorations (i.e. after crashes and from about:home), but excludes tabs opened vertically. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_open_event_count.
 "
   }
 
@@ -1451,7 +1451,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of tab pinned events per subsession, across all windows, after the session has been restored. This includes tab pinned events from private windows. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_pinned_event_count.
+    description: "The count of tab pinned events, across all windows, after the session has been restored. This includes tab pinned events from private windows. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_pinned_event_count.
 "
   }
 
@@ -1524,7 +1524,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of the total non-unique URIs visited in a subsession, not restricted to a specific protocol, including page reloads and about:* pages (other than initial pages such as about:blank, ...), after the session has been restored. This does not include background page requests and URIs from embedded pages or private browsing. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unfiltered_uri_count.
+    description: "The count of the total non-unique URIs visited, not restricted to a specific protocol, including page reloads and about:* pages (other than initial pages such as about:blank, ...), after the session has been restored. This does not include background page requests and URIs from embedded pages or private browsing. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unfiltered_uri_count.
 "
   }
 
@@ -1542,7 +1542,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of the unique domains visited in a subsession, after the session has been restored. Subdomains under eTLD are aggregated after the first level (i.e. test.example.com and other.example.com are only counted once). This does not include background page requests and domains from embedded pages or private browsing. The count is limited to 100 unique domains. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unique_domains_count.
+    description: "The count of the unique domains visited, after the session has been restored. Subdomains under eTLD are aggregated after the first level (i.e. test.example.com and other.example.com are only counted once). This does not include background page requests and domains from embedded pages or private browsing. The count is limited to 100 unique domains. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unique_domains_count.
 "
   }
 
@@ -1583,7 +1583,7 @@ Migrated from Telemetry's
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of the total non-unique http(s) URIs visited in a subsession, including page reloads, after the session has been restored. URIs on minimized or background tabs may also be counted towards this. Private browsing is not included in this count. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.total_uri_count.
+    description: "The count of the total non-unique http(s) URIs visited, including page reloads, after the session has been restored. URIs on minimized or background tabs may also be counted towards this. Private browsing is not included in this count. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.total_uri_count.
 "
   }
 
@@ -1637,7 +1637,7 @@ Migrated from Telemetry's
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of browser window open events per subsession, after the session has been restored. The count includes private windows and the ones from manual session restorations (i.e. after crashes and from about:home). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.window_open_event_count.
+    description: "The count of browser window open events, after the session has been restored. The count includes private windows and the ones from manual session restorations (i.e. after crashes and from about:home). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.window_open_event_count.
 "
   }
 
@@ -2199,7 +2199,7 @@ scalar browser.search.adclicks.urlbar.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.search.adclicks.urlbar_handoff.
@@ -2553,7 +2553,7 @@ scalar browser.search.content.urlbar.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.search.content.urlbar_handoff.
@@ -2908,7 +2908,7 @@ scalar browser.search.withads.urlbar.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.search.withads.urlbar_handoff.
@@ -21550,7 +21550,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Boolean indicating whether the os compositor is being used by WebRender. Only collected in the first subsession. This metric was generated to correspond to the Legacy Telemetry scalar gfx.os_compositor.
+    description: "Boolean indicating whether the os compositor is being used by WebRender. This metric was generated to correspond to the Legacy Telemetry scalar gfx.os_compositor.
 "
   }
 
@@ -31640,7 +31640,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Number of times we cycled the TRR connection during a subsession. Keyed by TRR provider URL.
+    description: "Number of times we cycled the TRR connection. Keyed by TRR provider URL.
 "
   }
 

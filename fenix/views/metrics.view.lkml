@@ -13002,7 +13002,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Boolean indicating whether the os compositor is being used by WebRender. Only collected in the first subsession. This metric was generated to correspond to the Legacy Telemetry scalar gfx.os_compositor.
+    description: "Boolean indicating whether the os compositor is being used by WebRender. This metric was generated to correspond to the Legacy Telemetry scalar gfx.os_compositor.
 "
   }
 
@@ -23199,7 +23199,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Number of times we cycled the TRR connection during a subsession. Keyed by TRR provider URL.
+    description: "Number of times we cycled the TRR connection. Keyed by TRR provider URL.
 "
   }
 

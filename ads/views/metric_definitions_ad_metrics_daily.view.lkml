@@ -26,6 +26,7 @@ countries_region_name,
 countries_sponsored_tiles_available_on_newtab,
 countries_subregion_name,
 ad_metrics_daily_ad_id,
+ad_metrics_daily_ad_set_id,
 ad_metrics_daily_advertiser_id,
 ad_metrics_daily_advertiser_name,
 ad_metrics_daily_campaign_id,
@@ -37,6 +38,7 @@ ad_metrics_daily_country,
 ad_metrics_daily_creative_id,
 ad_metrics_daily_creative_title,
 ad_metrics_daily_creative_url,
+ad_metrics_daily_currency,
 ad_metrics_daily_external_param,
 ad_metrics_daily_flight_id,
 ad_metrics_daily_flight_name,
@@ -103,6 +105,7 @@ countries.region_name AS countries_region_name,
 countries.sponsored_tiles_available_on_newtab AS countries_sponsored_tiles_available_on_newtab,
 countries.subregion_name AS countries_subregion_name,
 ad_metrics_daily.ad_id AS ad_metrics_daily_ad_id,
+ad_metrics_daily.ad_set_id AS ad_metrics_daily_ad_set_id,
 ad_metrics_daily.advertiser_id AS ad_metrics_daily_advertiser_id,
 ad_metrics_daily.advertiser_name AS ad_metrics_daily_advertiser_name,
 ad_metrics_daily.campaign_id AS ad_metrics_daily_campaign_id,
@@ -114,6 +117,7 @@ ad_metrics_daily.country AS ad_metrics_daily_country,
 ad_metrics_daily.creative_id AS ad_metrics_daily_creative_id,
 ad_metrics_daily.creative_title AS ad_metrics_daily_creative_title,
 ad_metrics_daily.creative_url AS ad_metrics_daily_creative_url,
+ad_metrics_daily.currency AS ad_metrics_daily_currency,
 ad_metrics_daily.external_param AS ad_metrics_daily_external_param,
 ad_metrics_daily.flight_id AS ad_metrics_daily_flight_id,
 ad_metrics_daily.flight_name AS ad_metrics_daily_flight_name,
@@ -200,6 +204,7 @@ countries_region_name,
 countries_sponsored_tiles_available_on_newtab,
 countries_subregion_name,
 ad_metrics_daily_ad_id,
+ad_metrics_daily_ad_set_id,
 ad_metrics_daily_advertiser_id,
 ad_metrics_daily_advertiser_name,
 ad_metrics_daily_campaign_id,
@@ -211,6 +216,7 @@ ad_metrics_daily_country,
 ad_metrics_daily_creative_id,
 ad_metrics_daily_creative_title,
 ad_metrics_daily_creative_url,
+ad_metrics_daily_currency,
 ad_metrics_daily_external_param,
 ad_metrics_daily_flight_id,
 ad_metrics_daily_flight_name,
@@ -383,6 +389,13 @@ ad_metrics_daily_zone_name,
     group_label: "Base Fields"
   }
 
+  dimension: ad_set_id {
+    sql: ${TABLE}.ad_metrics_daily_ad_set_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
   dimension: advertiser_id {
     sql: ${TABLE}.ad_metrics_daily_advertiser_id ;;
     type: number
@@ -456,6 +469,13 @@ ad_metrics_daily_zone_name,
 
   dimension: creative_url {
     sql: ${TABLE}.ad_metrics_daily_creative_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: currency {
+    sql: ${TABLE}.ad_metrics_daily_currency ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"

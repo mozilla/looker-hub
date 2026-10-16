@@ -12,6 +12,7 @@ SUM(impressions) AS native_impressions_v2,
 SUM(clicks) AS native_clicks_v2,
 
                 ad_metrics_native_reporting_ad_id,
+ad_metrics_native_reporting_ad_set_id,
 ad_metrics_native_reporting_advertiser,
 ad_metrics_native_reporting_advertiser_id,
 ad_metrics_native_reporting_advertiser_name,
@@ -26,6 +27,7 @@ ad_metrics_native_reporting_country,
 ad_metrics_native_reporting_creative_id,
 ad_metrics_native_reporting_creative_title,
 ad_metrics_native_reporting_creative_url,
+ad_metrics_native_reporting_currency,
 ad_metrics_native_reporting_external_param,
 ad_metrics_native_reporting_flight_id,
 ad_metrics_native_reporting_flight_name,
@@ -84,6 +86,7 @@ ad_metrics_native_reporting_zone_name,
                     SELECT
                         ad_metrics_native_reporting.*,
                         ad_metrics_native_reporting.ad_id AS ad_metrics_native_reporting_ad_id,
+ad_metrics_native_reporting.ad_set_id AS ad_metrics_native_reporting_ad_set_id,
 ad_metrics_native_reporting.advertiser AS ad_metrics_native_reporting_advertiser,
 ad_metrics_native_reporting.advertiser_id AS ad_metrics_native_reporting_advertiser_id,
 ad_metrics_native_reporting.advertiser_name AS ad_metrics_native_reporting_advertiser_name,
@@ -98,6 +101,7 @@ ad_metrics_native_reporting.country AS ad_metrics_native_reporting_country,
 ad_metrics_native_reporting.creative_id AS ad_metrics_native_reporting_creative_id,
 ad_metrics_native_reporting.creative_title AS ad_metrics_native_reporting_creative_title,
 ad_metrics_native_reporting.creative_url AS ad_metrics_native_reporting_creative_url,
+ad_metrics_native_reporting.currency AS ad_metrics_native_reporting_currency,
 ad_metrics_native_reporting.external_param AS ad_metrics_native_reporting_external_param,
 ad_metrics_native_reporting.flight_id AS ad_metrics_native_reporting_flight_id,
 ad_metrics_native_reporting.flight_name AS ad_metrics_native_reporting_flight_name,
@@ -174,6 +178,7 @@ ad_metrics_native_reporting.zone_name AS ad_metrics_native_reporting_zone_name,
                 )
             GROUP BY
                 ad_metrics_native_reporting_ad_id,
+ad_metrics_native_reporting_ad_set_id,
 ad_metrics_native_reporting_advertiser,
 ad_metrics_native_reporting_advertiser_id,
 ad_metrics_native_reporting_advertiser_name,
@@ -188,6 +193,7 @@ ad_metrics_native_reporting_country,
 ad_metrics_native_reporting_creative_id,
 ad_metrics_native_reporting_creative_title,
 ad_metrics_native_reporting_creative_url,
+ad_metrics_native_reporting_currency,
 ad_metrics_native_reporting_external_param,
 ad_metrics_native_reporting_flight_id,
 ad_metrics_native_reporting_flight_name,
@@ -253,6 +259,13 @@ ad_metrics_native_reporting_zone_name,
 
   dimension: ad_id {
     sql: ${TABLE}.ad_metrics_native_reporting_ad_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: ad_set_id {
+    sql: ${TABLE}.ad_metrics_native_reporting_ad_set_id ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
@@ -352,6 +365,13 @@ ad_metrics_native_reporting_zone_name,
 
   dimension: creative_url {
     sql: ${TABLE}.ad_metrics_native_reporting_creative_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: currency {
+    sql: ${TABLE}.ad_metrics_native_reporting_currency ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"

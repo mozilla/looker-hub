@@ -5,6 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: cfs_ga4_attr_table {
+  dimension: app_build_id {
+    sql: ${TABLE}.app_build_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The build identifier string for the application, encoding the date and time when the specific build was compiled (format: YYYYMMDDHHmmSS)."
+  }
+
   dimension: app_display_version {
     sql: ${TABLE}.app_display_version ;;
     type: string
@@ -56,6 +63,7 @@ view: cfs_ga4_attr_table {
     sql: ${TABLE}.attribution_dlsource ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An identifier indicating the download source through which Firefox Desktop was obtained (e.g., \"mozorg\", \"mozillaci\", \"fxdotcom\", \"desktoplauncher\"); null when no download source attribution is available."
   }
 
   dimension: attribution_dltoken {
@@ -80,6 +88,7 @@ view: cfs_ga4_attr_table {
     sql: ${TABLE}.attribution_ua ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An identifier derived from the user-agent string of the browser used to download the Firefox Desktop installer, indicating which browser the user was switching from (e.g., \"chrome\", \"edge\", \"firefox\", \"ie\")."
   }
 
   dimension: attribution_variation {
@@ -461,6 +470,7 @@ view: cfs_ga4_attr_table {
     sql: ${TABLE}.legacy_telemetry_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The client UUID from the Firefox legacy (non-Glean) telemetry system, used to join Glean-based Firefox Desktop records with older legacy telemetry datasets; may be null or a known canary value when the legacy client_id was unavailable at ping submission time."
   }
 
   dimension: legacy_telemetry_profile_group_id {
@@ -504,6 +514,13 @@ view: cfs_ga4_attr_table {
     description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
+  dimension: startup_profile_selection_reason {
+    sql: ${TABLE}.startup_profile_selection_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The profile selection reason recorded for the first subsession or ping of a client's activity period. Common values include 'default' and 'profile-selector', indicating how Firefox chose which profile to load."
+  }
+
   dimension: stub_attr_logs_dl_token {
     sql: ${TABLE}.stub_attr_logs_dl_token ;;
     type: string
@@ -532,6 +549,7 @@ view: cfs_ga4_attr_table {
     sql: ${TABLE}.windows_build_number ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The Windows build number reported by the operating system (e.g., 19045 for Windows 10, 22000+ for Windows 11); only populated on Windows clients and null on all other platforms."
   }
 
   dimension: windows_version {
