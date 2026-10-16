@@ -8,11 +8,13 @@ view: local_network_access_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
   }
 
   dimension: events {
@@ -203,21 +205,33 @@ view: local_network_access_table {
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     hidden: yes
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     hidden: yes
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     hidden: yes
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
@@ -231,30 +245,39 @@ view: local_network_access_table {
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -267,6 +290,7 @@ view: local_network_access_table {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -296,6 +320,7 @@ view: local_network_access_table {
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   sql_table_name: `mozdata.firefox_enterprise_desktop.local_network_access` ;;
