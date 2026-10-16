@@ -12924,7 +12924,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__browser_engagement_navigation_about_home {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_about_home ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from about:home,
+    description: "The count of URI loads triggered from about:home,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.about_home.
@@ -12934,7 +12934,7 @@ scalar browser.engagement.navigation.about_home.
   dimension: metrics__labeled_counter__browser_engagement_navigation_about_newtab {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_about_newtab ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from about:newtab,
+    description: "The count of URI loads triggered from about:newtab,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.about_newtab.
@@ -12951,7 +12951,7 @@ scalar browser.engagement.navigation.about_newtab.
   dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the contextmenu,
+    description: "The count of URI loads triggered from the contextmenu,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.contextmenu.
@@ -12961,7 +12961,7 @@ scalar browser.engagement.navigation.contextmenu.
   dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu_visual {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu_visual ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the context menu's
+    description: "The count of URI loads triggered from the context menu's
 visual search menuitem, broken down by the originating action.
 "
   }
@@ -12969,7 +12969,7 @@ visual search menuitem, broken down by the originating action.
   dimension: metrics__labeled_counter__browser_engagement_navigation_errorpage {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_errorpage ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the search CTA on
+    description: "The count of URI loads triggered from the search CTA on
 a network error page, broken down by the originating action.
 "
   }
@@ -12977,7 +12977,7 @@ a network error page, broken down by the originating action.
   dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_search_widget {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_search_widget ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from a search widget on
+    description: "The count of URI loads triggered from a search widget on
 about:newtab, broken down by the originating action.
 "
   }
@@ -12985,7 +12985,7 @@ about:newtab, broken down by the originating action.
   dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_searchbar ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the New Tab search
+    description: "The count of URI loads triggered from the New Tab search
 bar, broken down by the originating action.
 "
   }
@@ -12993,7 +12993,7 @@ bar, broken down by the originating action.
   dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_searchbar ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the searchbar,
+    description: "The count of URI loads triggered from the searchbar,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.searchbar.
@@ -13003,7 +13003,7 @@ scalar browser.engagement.navigation.searchbar.
   dimension: metrics__labeled_counter__browser_engagement_navigation_smartbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_smartbar ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the smartbar,
+    description: "The count of URI loads triggered from the smartbar,
 broken down by the originating action.
 "
   }
@@ -13011,7 +13011,7 @@ broken down by the originating action.
   dimension: metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_smartwindow_assistant ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the AI window assistant
+    description: "The count of URI loads triggered from the AI window assistant
 search handoff button.
 "
   }
@@ -13027,7 +13027,7 @@ is selected on a page, broken down by the originating action.
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar,
+    description: "The count of URI loads triggered from the urlbar,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.urlbar.
@@ -13037,7 +13037,7 @@ scalar browser.engagement.navigation.urlbar.
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_handoff ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.urlbar_handoff.
@@ -13047,7 +13047,7 @@ scalar browser.engagement.navigation.urlbar_handoff.
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_persisted {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_persisted ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar
+    description: "The count of URI loads triggered from the urlbar
 after the search term was shown in the urlbar, broken down by the
 originating action.
 This metric was generated to correspond to the Legacy Telemetry
@@ -13058,7 +13058,7 @@ scalar browser.engagement.navigation.urlbar_persisted.
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_searchmode {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_searchmode ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar's
+    description: "The count of URI loads triggered from the urlbar's
 search mode, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.urlbar_searchmode.
@@ -13068,7 +13068,7 @@ scalar browser.engagement.navigation.urlbar_searchmode.
   dimension: metrics__labeled_counter__browser_engagement_navigation_webextension {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_webextension ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from a webextension.
+    description: "The count of URI loads triggered from a webextension.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.webextension.
 "
@@ -13257,7 +13257,7 @@ scalar browser.search.adclicks.urlbar.
   dimension: metrics__labeled_counter__browser_search_adclicks_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar_handoff ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.search.adclicks.urlbar_handoff.
@@ -13441,7 +13441,7 @@ scalar browser.search.content.urlbar.
   dimension: metrics__labeled_counter__browser_search_content_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar_handoff ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.search.content.urlbar_handoff.
@@ -13626,7 +13626,7 @@ scalar browser.search.withads.urlbar.
   dimension: metrics__labeled_counter__browser_search_withads_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar_handoff ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.search.withads.urlbar_handoff.
@@ -16070,7 +16070,7 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
   dimension: metrics__labeled_counter__networking_trr_connection_cycle_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_trr_connection_cycle_count ;;
     hidden: yes
-    description: "Number of times we cycled the TRR connection during a subsession. Keyed by TRR provider URL.
+    description: "Number of times we cycled the TRR connection. Keyed by TRR provider URL.
 "
   }
 
