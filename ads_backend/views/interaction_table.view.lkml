@@ -650,6 +650,14 @@ view: interaction_table {
     group_item_label: "Technical Operations Request ID"
   }
 
+  dimension: metrics__string__technical_operations_suspected_bot {
+    sql: ${TABLE}.metrics.string.technical_operations_suspected_bot ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Technical Operations Suspected Bot"
+  }
+
   dimension: metrics__string__technical_operations_user_agent {
     sql: ${TABLE}.metrics.string.technical_operations_user_agent ;;
     type: string
@@ -742,6 +750,14 @@ view: interaction_table {
     suggest_persist_for: "24 hours"
     group_label: "Ping Info: Server Knobs Config"
     group_item_label: "Event Threshold"
+  }
+
+  dimension: ping_info__server_knobs_config__events_ping_acceleration_factor {
+    sql: ${TABLE}.ping_info.server_knobs_config.events_ping_acceleration_factor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Events Ping Acceleration Factor"
   }
 
   dimension: ping_info__server_knobs_config__metrics_enabled {

@@ -6192,18 +6192,23 @@ marketing_private:
         activation_rate:
           sql: SAFE_DIVIDE(${total_activated_profiles}, ${total_activated_eligible})
           type: number
+          value_format_name: percent_2
         cost_per_activated_profile:
           sql: SAFE_DIVIDE(${total_spend}, ${total_activated_profiles})
           type: number
+          value_format: $0.00
         cost_per_new_profile:
           sql: SAFE_DIVIDE(${total_spend}, ${total_new_profiles})
           type: number
+          value_format: $0.00
         cost_per_w4_retained_profile:
           sql: SAFE_DIVIDE(${total_spend}, ${total_w4_retained})
           type: number
+          value_format: $0.00
         retention_rate:
           sql: SAFE_DIVIDE(${total_w4_retained}, ${total_w4_eligible})
           type: number
+          value_format_name: percent_2
         total_activated_eligible:
           sql: ${d4_6_eligible}
           type: sum
@@ -6225,6 +6230,7 @@ marketing_private:
         total_spend:
           sql: ${spend}
           type: sum
+          value_format: $0.00
         total_w4_eligible:
           sql: ${w4_eligible}
           type: sum
