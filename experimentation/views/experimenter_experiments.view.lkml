@@ -190,7 +190,7 @@ view: experimenter_experiments {
     suggest_persist_for: "24 hours"
     group_label: "Metric Config"
     group_item_label: "Resolution Error"
-    description: "Set only when the experiment's config could not be resolved at all (e.g. an invalid experiment spec). Starts with \"Cannot load metric-hub as of first_updated\" or \"Unexpected error resolving config\" if the failure may not repeat, and such rows are retried on every run."
+    description: "Set only when the experiment's config could not be resolved at all (e.g. an invalid experiment spec). Starts with \"Cannot load metric-hub as of the resolution timestamp\" (config_as_of) or \"Unexpected error resolving config\" if the failure may not repeat, and such rows are retried on every run."
   }
 
   dimension: metric_config__sample_size {
