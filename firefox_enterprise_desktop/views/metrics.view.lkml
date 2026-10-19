@@ -908,7 +908,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of maximum number of tabs open during a subsession, across all windows, including tabs in private windows and restored at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_count.
+    description: "The count of maximum number of tabs open, across all windows, including tabs in private windows and restored at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_count.
 "
   }
 
@@ -926,7 +926,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of maximum number of pinned tabs open during a subsession. This includes private windows and the ones opened when starting the browser. Starting Firefox 85 this includes number of restored pinned tabs at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_pinned_count.
+    description: "The count of maximum number of pinned tabs open. This includes private windows and the ones opened when starting the browser. Starting Firefox 85 this includes number of restored pinned tabs at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_pinned_count.
 "
   }
 
@@ -980,7 +980,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of maximum number of browser windows open during a subsession. This includes private windows and the ones opened when starting the browser. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_window_count.
+    description: "The count of maximum number of browser windows open. This includes private windows and the ones opened when starting the browser. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_window_count.
 "
   }
 
@@ -997,7 +997,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from about:home,
+    description: "The count of URI loads triggered from about:home,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.about_home.
@@ -1017,7 +1017,7 @@ scalar browser.engagement.navigation.about_home.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from about:newtab,
+    description: "The count of URI loads triggered from about:newtab,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.about_newtab.
@@ -1037,7 +1037,7 @@ scalar browser.engagement.navigation.about_newtab.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the contextmenu,
+    description: "The count of URI loads triggered from the contextmenu,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.contextmenu.
@@ -1057,7 +1057,7 @@ scalar browser.engagement.navigation.contextmenu.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the context menu's
+    description: "The count of URI loads triggered from the context menu's
 visual search menuitem, broken down by the originating action.
 "
   }
@@ -1075,7 +1075,7 @@ visual search menuitem, broken down by the originating action.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the search CTA on
+    description: "The count of URI loads triggered from the search CTA on
 a network error page, broken down by the originating action.
 "
   }
@@ -1093,7 +1093,7 @@ a network error page, broken down by the originating action.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count URI loads triggered in a subsession from a search widget on
+    description: "The count of URI loads triggered from a search widget on
 about:newtab, broken down by the originating action.
 "
   }
@@ -1111,7 +1111,7 @@ about:newtab, broken down by the originating action.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the New Tab search
+    description: "The count of URI loads triggered from the New Tab search
 bar, broken down by the originating action.
 "
   }
@@ -1129,7 +1129,7 @@ bar, broken down by the originating action.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the searchbar,
+    description: "The count of URI loads triggered from the searchbar,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.searchbar.
@@ -1149,7 +1149,7 @@ scalar browser.engagement.navigation.searchbar.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the smartbar,
+    description: "The count of URI loads triggered from the smartbar,
 broken down by the originating action.
 "
   }
@@ -1167,7 +1167,7 @@ broken down by the originating action.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the AI window assistant
+    description: "The count of URI loads triggered from the AI window assistant
 search handoff button.
 "
   }
@@ -1203,7 +1203,7 @@ is selected on a page, broken down by the originating action.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar,
+    description: "The count of URI loads triggered from the urlbar,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.urlbar.
@@ -1223,7 +1223,7 @@ scalar browser.engagement.navigation.urlbar.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.urlbar_handoff.
@@ -1243,7 +1243,7 @@ scalar browser.engagement.navigation.urlbar_handoff.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar
+    description: "The count of URI loads triggered from the urlbar
 after the search term was shown in the urlbar, broken down by the
 originating action.
 This metric was generated to correspond to the Legacy Telemetry
@@ -1264,7 +1264,7 @@ scalar browser.engagement.navigation.urlbar_persisted.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar's
+    description: "The count of URI loads triggered from the urlbar's
 search mode, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.urlbar_searchmode.
@@ -1284,7 +1284,7 @@ scalar browser.engagement.navigation.urlbar_searchmode.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from a webextension.
+    description: "The count of URI loads triggered from a webextension.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.webextension.
 "
@@ -1398,7 +1398,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of tab open events per subsession, across all windows, after the session has been restored. This includes tab open events from private windows and from manual session restorations (i.e. after crashes and from about:home), but excludes tabs opened vertically. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_open_event_count.
+    description: "The count of tab open events, across all windows, after the session has been restored. This includes tab open events from private windows and from manual session restorations (i.e. after crashes and from about:home), but excludes tabs opened vertically. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_open_event_count.
 "
   }
 
@@ -1416,7 +1416,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of tab pinned events per subsession, across all windows, after the session has been restored. This includes tab pinned events from private windows. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_pinned_event_count.
+    description: "The count of tab pinned events, across all windows, after the session has been restored. This includes tab pinned events from private windows. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_pinned_event_count.
 "
   }
 
@@ -1489,7 +1489,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of the total non-unique URIs visited in a subsession, not restricted to a specific protocol, including page reloads and about:* pages (other than initial pages such as about:blank, ...), after the session has been restored. This does not include background page requests and URIs from embedded pages or private browsing. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unfiltered_uri_count.
+    description: "The count of the total non-unique URIs visited, not restricted to a specific protocol, including page reloads and about:* pages (other than initial pages such as about:blank, ...), after the session has been restored. This does not include background page requests and URIs from embedded pages or private browsing. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unfiltered_uri_count.
 "
   }
 
@@ -1507,7 +1507,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of the unique domains visited in a subsession, after the session has been restored. Subdomains under eTLD are aggregated after the first level (i.e. test.example.com and other.example.com are only counted once). This does not include background page requests and domains from embedded pages or private browsing. The count is limited to 100 unique domains. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unique_domains_count.
+    description: "The count of the unique domains visited, after the session has been restored. Subdomains under eTLD are aggregated after the first level (i.e. test.example.com and other.example.com are only counted once). This does not include background page requests and domains from embedded pages or private browsing. The count is limited to 100 unique domains. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.unique_domains_count.
 "
   }
 
@@ -1548,7 +1548,7 @@ Migrated from Telemetry's
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of the total non-unique http(s) URIs visited in a subsession, including page reloads, after the session has been restored. URIs on minimized or background tabs may also be counted towards this. Private browsing is not included in this count. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.total_uri_count.
+    description: "The count of the total non-unique http(s) URIs visited, including page reloads, after the session has been restored. URIs on minimized or background tabs may also be counted towards this. Private browsing is not included in this count. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.total_uri_count.
 "
   }
 
@@ -1602,7 +1602,7 @@ Migrated from Telemetry's
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of browser window open events per subsession, after the session has been restored. The count includes private windows and the ones from manual session restorations (i.e. after crashes and from about:home). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.window_open_event_count.
+    description: "The count of browser window open events, after the session has been restored. The count includes private windows and the ones from manual session restorations (i.e. after crashes and from about:home). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.window_open_event_count.
 "
   }
 
@@ -2129,7 +2129,7 @@ scalar browser.search.adclicks.urlbar.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.search.adclicks.urlbar_handoff.
@@ -2466,7 +2466,7 @@ scalar browser.search.content.urlbar.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.search.content.urlbar_handoff.
@@ -2804,7 +2804,7 @@ scalar browser.search.withads.urlbar.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.search.withads.urlbar_handoff.
@@ -7586,6 +7586,24 @@ categorical histogram FX_SEARCHBAR_SELECTED_RESULT_METHOD.
 "
   }
 
+  dimension: metrics__boolean__selection_menu_search_enabled {
+    label: "Selection Menu: Search Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.selection_menu_search_enabled ;;
+    type: yesno
+    group_label: "Selection Menu"
+    group_item_label: "Search Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Selection Menu: Search Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/selection_menu_search_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the text selection actions menu would show the search action.
+"
+  }
+
   dimension: metrics__labeled_counter__serp_ads_blocked_count {
     label: "SERP: Ads Blocked Count"
     hidden: yes
@@ -7810,6 +7828,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Session restore: Number of tabs restored eagerly in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_SESSION_RESTORE_NUMBER_OF_EAGER_TABS_RESTORED.
+As of bug 2071519 this is recorded on every restore attempt, including attempts that produced no eagerly-restored tab. Data from earlier versions excludes those startups.
 "
   }
 
@@ -7829,6 +7848,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Session restore: Number of tabs in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_NUMBER_OF_TABS_RESTORED.
+As of bug 2071519, 0 is recorded and will land in the underflow bucket. Before that, a restore that produced no eagerly-restored tab recorded nothing at all, so data from earlier versions excludes those startups and reads higher than it should.
 "
   }
 
@@ -7848,6 +7868,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Session restore: Number of windows in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_SESSION_RESTORE_NUMBER_OF_WINDOWS_RESTORED.
+As of bug 2071519 this is recorded on every restore attempt, including attempts that produced no eagerly-restored tab. Data from earlier versions excludes those startups.
 "
   }
 
@@ -8590,7 +8611,7 @@ Firefox Suggest.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records how often the tab strip had to recover from a tab drag that never ended, leaving the toolbar unusable. \"session_live\" means a drag session was still current, i.e. the session outlived the drag; \"session_ended\" means none was left, i.e. the end of the drag never reached the tab strip. The \"_after_drop\" variants mean the drag was dropped and the drop animation is what failed to leave moving-tab mode, so they measure a Firefox shortcoming while the others measure a platform one.
+    description: "Records how often the tab strip had to recover from a tab drag that never ended, leaving the toolbar unusable. \"session_live\" means a drag session was still current, i.e. the session outlived the drag; \"session_ended\" means none was left, i.e. the end of the drag never reached the tab strip.
 "
   }
 
@@ -10957,7 +10978,6 @@ Previously carried in Legacy \"main\" ping `simpleMeasurements`.
     }
 
     description: "Whether a binary file examined by download protection is one of the common archive formats.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_BINARY_ARCHIVE.
 "
   }
 
@@ -10975,7 +10995,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Whether or not the file examined by download protection is a binary type (or it's not possible to tell because the filename is missing).
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_BINARY_TYPE.
 "
   }
 
@@ -10994,7 +11013,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Application reputation local results (0=ALLOW, 1=BLOCK, 2=NONE)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram APPLICATION_REPUTATION_LOCAL.
 "
   }
 
@@ -11012,7 +11030,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "The reason application reputation service blocks or allows the download.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_REASON.
 "
   }
 
@@ -11031,7 +11048,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Server response time to remote lookup request (ms).
-This metric was generated to correspond to the Legacy Telemetry linear histogram APPLICATION_REPUTATION_REMOTE_LOOKUP_RESPONSE_TIME.
 "
   }
 
@@ -11049,7 +11065,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "Recorded when application reputation remote lookup is performed, `true` is recorded if the lookup times out.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram APPLICATION_REPUTATION_REMOTE_LOOKUP_TIMEOUT.
 "
   }
 
@@ -11068,7 +11083,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Status of the application reputation remote lookup (0=OK, 1=failed, 2=invalid protobuf response)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram APPLICATION_REPUTATION_SERVER.
 "
   }
 
@@ -11086,7 +11100,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Network status of the application reputation remote lookup
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_SERVER_2.
 "
   }
 
@@ -11105,7 +11118,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Application reputation remote verdict (0=SAFE, 1=DANGEROUS, 2=UNCOMMON, 3=POTENTIALLY_UNWANTED, 4=DANGEROUS_HOST, 5=UNKNOWN)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram APPLICATION_REPUTATION_SERVER_VERDICT.
 "
   }
 
@@ -11123,7 +11135,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Overall (local or remote) application reputation verdict (shouldBlock=false is OK).
-This metric was generated to correspond to the Legacy Telemetry boolean histogram APPLICATION_REPUTATION_SHOULD_BLOCK.
 "
   }
 
@@ -13061,7 +13072,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Time spent per daily cookie purging activity, in milliseconds. This measures the time for all batch iterations of that day.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram COOKIE_PURGING_DURATION_MS.
 "
   }
 
@@ -13080,7 +13090,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "How much time (in hours) passed between the current cookie purging activity and the one before that (cookie purging is run on 'daily idle')
-This metric was generated to correspond to the Legacy Telemetry linear histogram COOKIE_PURGING_INTERVAL_HOURS.
 "
   }
 
@@ -13099,7 +13108,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "The number of origins that were purged during one run of cookie purging.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram COOKIE_PURGING_ORIGINS_PURGED.
 "
   }
 
@@ -13118,7 +13126,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The time remaining until expiration per user interaction permissions of trackers at the time of purging, in days (one record per tracker, not averaged).
-This metric was generated to correspond to the Legacy Telemetry linear histogram COOKIE_PURGING_TRACKERS_USER_INTERACTION_REMAINING_DAYS.
 "
   }
 
@@ -13137,7 +13144,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "The number of trackers that had user interaction at the time of purging.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram COOKIE_PURGING_TRACKERS_WITH_USER_INTERACTION.
 "
   }
 
@@ -20539,6 +20545,78 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Recorded when a site exclusion is added.
+"
+  }
+
+  dimension: metrics__quantity__ipprotection_exclusions_count {
+    label: "Ipprotection Exclusions: Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.ipprotection_exclusions_count ;;
+    type: number
+    group_label: "Ipprotection Exclusions"
+    group_item_label: "Count"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Exclusions: Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/ipprotection_exclusions_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of site exclusions the user has set.
+"
+  }
+
+  dimension: metrics__counter__ipprotection_exclusions_rule_applied {
+    label: "Ipprotection Exclusions: Rule Applied"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.ipprotection_exclusions_rule_applied ;;
+    type: number
+    group_label: "Ipprotection Exclusions"
+    group_item_label: "Rule Applied"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Exclusions: Rule Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/ipprotection_exclusions_rule_applied"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Incremented when a site exclusion decides whether a top-level page load is proxied.
+"
+  }
+
+  dimension: metrics__quantity__ipprotection_inclusions_count {
+    label: "Ipprotection Inclusions: Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.ipprotection_inclusions_count ;;
+    type: number
+    group_label: "Ipprotection Inclusions"
+    group_item_label: "Count"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Inclusions: Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/ipprotection_inclusions_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of site inclusions the user has set.
+"
+  }
+
+  dimension: metrics__counter__ipprotection_inclusions_rule_applied {
+    label: "Ipprotection Inclusions: Rule Applied"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.ipprotection_inclusions_rule_applied ;;
+    type: number
+    group_label: "Ipprotection Inclusions"
+    group_item_label: "Rule Applied"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Inclusions: Rule Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/ipprotection_inclusions_rule_applied"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Incremented when a site inclusion decides whether a top-level page load is proxied.
 "
   }
 
@@ -35982,7 +36060,6 @@ Corresponds to the value of the `MOZ_UPDATER` define.
     }
 
     description: "Time spent per AsyncClassifyLocalWithTables (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_ASYNC_CLASSIFYLOCAL_TIME.
 "
   }
 
@@ -36037,7 +36114,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent per classifier lookup (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_CL_CHECK_TIME.
 "
   }
 
@@ -36056,7 +36132,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "SafeBrowsing v4 hash completion error (0 = success, 1 = parsing failure, 2 = unknown threat type)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_COMPLETION_ERROR.
 "
   }
 
@@ -36143,7 +36218,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Time spent per dbservice lookup (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_LOOKUP_TIME_2.
 "
   }
 
@@ -36213,7 +36287,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent per dbservice shutdown (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_SHUTDOWN_TIME.
 "
   }
 
@@ -36232,7 +36305,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Whether or not an error was encountered while sending a Safe Browsing ThreatHit report. (0=sucess, 1=unknown error, 2=already connected, 3=not connected, 4=connection refused,5=net timeout, 6=offline, 7=port access not allowed, 8=net reset, 9=net interrupt, 10=proxy connection refused, 11=partial transfer, 12=inadequate security, 13=unknown host, 14=dns lookup queue full, 15=unknown proxy host)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_THREATHIT_NETWORK_ERROR.
 "
   }
 
@@ -36251,7 +36323,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Server HTTP status code from Safe Browsing ThreatHit report. (0=1xx, 1=200, 2=2xx, 3=204, 4=3xx, 5=400, 6=4xx, 7=403, 8=404, 9=408, 10=413, 11=5xx, 12=502|504|511, 13=503, 14=505, 15=Other)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_THREATHIT_REMOTE_STATUS.
 "
   }
 
@@ -36270,7 +36341,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "URL CLassifier-related (aka Safe Browsing) UI events. See nsIUrlClassifierUITelemetry.idl for the specific values.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_UI_EVENTS.
 "
   }
 
@@ -36289,7 +36359,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Time spent constructing Variable-Length PrefixSet from file (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_VLPS_CONSTRUCT_TIME.
 "
   }
 
@@ -36308,7 +36377,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent fallocating Variable-Length PrefixSet (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_VLPS_FALLOCATE_TIME.
 "
   }
 
@@ -36327,7 +36395,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent loading Variable-Length PrefixSet from file (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_VLPS_FILELOAD_TIME.
 "
   }
 
@@ -36345,7 +36412,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Whether or not the metadata for a variable-length prefix set loaded from disk is corrupted (true = file corrupted).
-This metric was generated to correspond to the Legacy Telemetry boolean histogram URLCLASSIFIER_VLPS_METADATA_CORRUPT.
 "
   }
 
@@ -43484,6 +43550,56 @@ Most samples are expected to be below the 10s timeout used.
     link: {
       label: "Glean Dictionary reference for Ipprotection Exclusion Added"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/ipprotection_exclusion_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ipprotection_exclusions_rule_applied {
+    type: sum
+    sql: ${metrics__counter__ipprotection_exclusions_rule_applied} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Exclusions Rule Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/ipprotection_exclusions_rule_applied"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ipprotection_exclusions_rule_applied_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__ipprotection_exclusions_rule_applied: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Exclusions Rule Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/ipprotection_exclusions_rule_applied"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ipprotection_inclusions_rule_applied {
+    type: sum
+    sql: ${metrics__counter__ipprotection_inclusions_rule_applied} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Inclusions Rule Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/ipprotection_inclusions_rule_applied"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ipprotection_inclusions_rule_applied_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__ipprotection_inclusions_rule_applied: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Inclusions Rule Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/ipprotection_inclusions_rule_applied"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -76122,6 +76238,33 @@ view: metrics__metrics__dual_labeled_counter__dom_quota_first_initialization_att
 }
 
 view: metrics__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__dom_register_protocol_handler_calls {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__dom_register_protocol_handler_calls__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

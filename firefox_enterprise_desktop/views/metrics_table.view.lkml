@@ -1227,6 +1227,14 @@ view: metrics_table {
     group_item_label: "Search Engine Private Overridden By Third Party"
   }
 
+  dimension: metrics__boolean__selection_menu_search_enabled {
+    sql: ${TABLE}.metrics.boolean.selection_menu_search_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Selection Menu Search Enabled"
+  }
+
   dimension: metrics__boolean__session_restore_new_tab_on_restore_enabled {
     sql: ${TABLE}.metrics.boolean.session_restore_new_tab_on_restore_enabled ;;
     type: yesno
@@ -2449,6 +2457,22 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Ipprotection Exclusion Added"
+  }
+
+  dimension: metrics__counter__ipprotection_exclusions_rule_applied {
+    sql: ${TABLE}.metrics.counter.ipprotection_exclusions_rule_applied ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Ipprotection Exclusions Rule Applied"
+  }
+
+  dimension: metrics__counter__ipprotection_inclusions_rule_applied {
+    sql: ${TABLE}.metrics.counter.ipprotection_inclusions_rule_applied ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Ipprotection Inclusions Rule Applied"
   }
 
   dimension: metrics__counter__javascript_self_hosted_cache_total {
@@ -8535,7 +8559,6 @@ view: metrics_table {
     sql: ${TABLE}.metrics.dual_labeled_counter.application_reputation_server_verdict_2 ;;
     hidden: yes
     description: "Application reputation remote verdict, keyed by file extension
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_SERVER_VERDICT_2.
 "
   }
 
@@ -8634,6 +8657,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.dual_labeled_counter.dom_quota_first_initialization_attempt ;;
     hidden: yes
     description: "True if the first initialization attempt succeeded, keyed by the initialization type.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__dom_register_protocol_handler_calls {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dom_register_protocol_handler_calls ;;
+    hidden: yes
+    description: "Counts navigator.registerProtocolHandler calls that passed the scheme and URL checks, by the frame they came from and whether it had transient user activation. The site permission gating the prompt is keyed on the top-level origin. Used to judge the web compatibility impact of no longer prompting for calls from cross-origin iframes, or without user activation.
 "
   }
 
@@ -8793,7 +8823,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.dual_labeled_counter.urlclassifier_complete_timeout ;;
     hidden: yes
     description: "This metric is recorded every time a gethash lookup is performed, `true` is recorded if the lookup times out. Keyed by provider
-This metric was generated to correspond to the Legacy Telemetry boolean histogram URLCLASSIFIER_COMPLETE_TIMEOUT2.
 "
   }
 
@@ -9000,7 +9029,6 @@ either %AppData% or %LocalAppData%.
     sql: ${TABLE}.metrics.labeled_counter.application_reputation_binary_archive ;;
     hidden: yes
     description: "Whether a binary file examined by download protection is one of the common archive formats.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_BINARY_ARCHIVE.
 "
   }
 
@@ -9008,7 +9036,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.application_reputation_binary_type ;;
     hidden: yes
     description: "Whether or not the file examined by download protection is a binary type (or it's not possible to tell because the filename is missing).
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_BINARY_TYPE.
 "
   }
 
@@ -9016,7 +9043,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.application_reputation_reason ;;
     hidden: yes
     description: "The reason application reputation service blocks or allows the download.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_REASON.
 "
   }
 
@@ -9024,7 +9050,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.application_reputation_remote_lookup_timeout ;;
     hidden: yes
     description: "Recorded when application reputation remote lookup is performed, `true` is recorded if the lookup times out.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram APPLICATION_REPUTATION_REMOTE_LOOKUP_TIMEOUT.
 "
   }
 
@@ -9032,7 +9057,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.application_reputation_server_2 ;;
     hidden: yes
     description: "Network status of the application reputation remote lookup
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_SERVER_2.
 "
   }
 
@@ -9040,7 +9064,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.application_reputation_should_block ;;
     hidden: yes
     description: "Overall (local or remote) application reputation verdict (shouldBlock=false is OK).
-This metric was generated to correspond to the Legacy Telemetry boolean histogram APPLICATION_REPUTATION_SHOULD_BLOCK.
 "
   }
 
@@ -9249,7 +9272,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__browser_engagement_navigation_about_home {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_about_home ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from about:home,
+    description: "The count of URI loads triggered from about:home,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.about_home.
@@ -9259,7 +9282,7 @@ scalar browser.engagement.navigation.about_home.
   dimension: metrics__labeled_counter__browser_engagement_navigation_about_newtab {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_about_newtab ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from about:newtab,
+    description: "The count of URI loads triggered from about:newtab,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.about_newtab.
@@ -9269,7 +9292,7 @@ scalar browser.engagement.navigation.about_newtab.
   dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the contextmenu,
+    description: "The count of URI loads triggered from the contextmenu,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.contextmenu.
@@ -9279,7 +9302,7 @@ scalar browser.engagement.navigation.contextmenu.
   dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu_visual {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu_visual ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the context menu's
+    description: "The count of URI loads triggered from the context menu's
 visual search menuitem, broken down by the originating action.
 "
   }
@@ -9287,7 +9310,7 @@ visual search menuitem, broken down by the originating action.
   dimension: metrics__labeled_counter__browser_engagement_navigation_errorpage {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_errorpage ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the search CTA on
+    description: "The count of URI loads triggered from the search CTA on
 a network error page, broken down by the originating action.
 "
   }
@@ -9295,7 +9318,7 @@ a network error page, broken down by the originating action.
   dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_search_widget {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_search_widget ;;
     hidden: yes
-    description: "The count URI loads triggered in a subsession from a search widget on
+    description: "The count of URI loads triggered from a search widget on
 about:newtab, broken down by the originating action.
 "
   }
@@ -9303,7 +9326,7 @@ about:newtab, broken down by the originating action.
   dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_searchbar ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the New Tab search
+    description: "The count of URI loads triggered from the New Tab search
 bar, broken down by the originating action.
 "
   }
@@ -9311,7 +9334,7 @@ bar, broken down by the originating action.
   dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_searchbar ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the searchbar,
+    description: "The count of URI loads triggered from the searchbar,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.searchbar.
@@ -9321,7 +9344,7 @@ scalar browser.engagement.navigation.searchbar.
   dimension: metrics__labeled_counter__browser_engagement_navigation_smartbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_smartbar ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the smartbar,
+    description: "The count of URI loads triggered from the smartbar,
 broken down by the originating action.
 "
   }
@@ -9329,7 +9352,7 @@ broken down by the originating action.
   dimension: metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_smartwindow_assistant ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the AI window assistant
+    description: "The count of URI loads triggered from the AI window assistant
 search handoff button.
 "
   }
@@ -9345,7 +9368,7 @@ is selected on a page, broken down by the originating action.
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar,
+    description: "The count of URI loads triggered from the urlbar,
 broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.urlbar.
@@ -9355,7 +9378,7 @@ scalar browser.engagement.navigation.urlbar.
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_handoff ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.urlbar_handoff.
@@ -9365,7 +9388,7 @@ scalar browser.engagement.navigation.urlbar_handoff.
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_persisted {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_persisted ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar
+    description: "The count of URI loads triggered from the urlbar
 after the search term was shown in the urlbar, broken down by the
 originating action.
 This metric was generated to correspond to the Legacy Telemetry
@@ -9376,7 +9399,7 @@ scalar browser.engagement.navigation.urlbar_persisted.
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_searchmode {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_searchmode ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar's
+    description: "The count of URI loads triggered from the urlbar's
 search mode, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.urlbar_searchmode.
@@ -9386,7 +9409,7 @@ scalar browser.engagement.navigation.urlbar_searchmode.
   dimension: metrics__labeled_counter__browser_engagement_navigation_webextension {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_webextension ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from a webextension.
+    description: "The count of URI loads triggered from a webextension.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.engagement.navigation.webextension.
 "
@@ -9568,7 +9591,7 @@ scalar browser.search.adclicks.urlbar.
   dimension: metrics__labeled_counter__browser_search_adclicks_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar_handoff ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.search.adclicks.urlbar_handoff.
@@ -9745,7 +9768,7 @@ scalar browser.search.content.urlbar.
   dimension: metrics__labeled_counter__browser_search_content_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar_handoff ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.search.content.urlbar_handoff.
@@ -9923,7 +9946,7 @@ scalar browser.search.withads.urlbar.
   dimension: metrics__labeled_counter__browser_search_withads_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar_handoff ;;
     hidden: yes
-    description: "The count of URI loads triggered in a subsession from the urlbar via
+    description: "The count of URI loads triggered from the urlbar via
 handoff, broken down by the originating action.
 This metric was generated to correspond to the Legacy Telemetry
 scalar browser.search.withads.urlbar_handoff.
@@ -12806,7 +12829,7 @@ Firefox Suggest.
   dimension: metrics__labeled_counter__tab_stale_drag_recovery {
     sql: ${TABLE}.metrics.labeled_counter.tab_stale_drag_recovery ;;
     hidden: yes
-    description: "Records how often the tab strip had to recover from a tab drag that never ended, leaving the toolbar unusable. \"session_live\" means a drag session was still current, i.e. the session outlived the drag; \"session_ended\" means none was left, i.e. the end of the drag never reached the tab strip. The \"_after_drop\" variants mean the drag was dropped and the drop animation is what failed to leave moving-tab mode, so they measure a Firefox shortcoming while the others measure a platform one.
+    description: "Records how often the tab strip had to recover from a tab drag that never ended, leaving the toolbar unusable. \"session_live\" means a drag session was still current, i.e. the session outlived the drag; \"session_ended\" means none was left, i.e. the end of the drag never reached the tab strip.
 "
   }
 
@@ -13366,7 +13389,6 @@ user, labeled by the search access point it was shown for.
     sql: ${TABLE}.metrics.labeled_counter.urlclassifier_vlps_metadata_corrupt ;;
     hidden: yes
     description: "Whether or not the metadata for a variable-length prefix set loaded from disk is corrupted (true = file corrupted).
-This metric was generated to correspond to the Legacy Telemetry boolean histogram URLCLASSIFIER_VLPS_METADATA_CORRUPT.
 "
   }
 
@@ -14037,7 +14059,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.urlclassifier_complete_remote_status2 ;;
     hidden: yes
     description: "Server HTTP status code from remote SafeBrowsing gethash lookups. (0=1xx, 1=200, 2=2xx, 3=204, 4=3xx, 5=400, 6=4xx, 7=403, 8=404, 9=408, 10=413, 11=5xx, 12=502|504|511, 13=503, 14=505, 15=Other). Keyed by provider
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_COMPLETE_REMOTE_STATUS2.
 "
   }
 
@@ -14045,7 +14066,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.urlclassifier_update_error ;;
     hidden: yes
     description: "Whether or not an error was encountered while processing a Safe Browsing update (0 = success, 1 = unspecified error, 2 = addition of an already existing prefix, 3 = parser got into an infinite loop, 4 = removal index out of bounds, 5 = checksum mismatch, 6 = missing checksum, 7 = update while shutdown, 8 = cannot find table, 9 = build prefix failure, 10 = write disk failure, 11 = protocol parser error). Keyed by provider
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_UPDATE_ERROR.
 "
   }
 
@@ -14053,7 +14073,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.urlclassifier_update_remote_network_error ;;
     hidden: yes
     description: "Network error from SafeBrowsing database updates. (0=sucess, 1=unknown error, 2=already connected, 3=not connected, 4=connection refused,5=net timeout, 6=offline, 7=port access not allowed, 8=net reset, 9=net interrupt, 10=proxy connection refused,11=partial transfer,12=inadequate security,13=unknown host,14=dns lookup queue full,15=unknown proxy host
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_UPDATE_REMOTE_NETWORK_ERROR.
 "
   }
 
@@ -14061,7 +14080,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.urlclassifier_update_remote_status2 ;;
     hidden: yes
     description: "Server HTTP status code from SafeBrowsing database updates. (0=1xx, 1=200, 2=2xx, 3=204, 4=3xx, 5=400, 6=4xx, 7=403, 8=404, 9=408, 10=413, 11=5xx, 12=502|504|511, 13=503, 14=505, 15=Other). Keyed by provider
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_UPDATE_REMOTE_STATUS2.
 "
   }
 
@@ -14069,7 +14087,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.urlclassifier_update_timeout ;;
     hidden: yes
     description: " Whether or not an update timed out (0 = no timeout, 1 = server respond
-timeout, 2 = overall timeout). Keyed by provider This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_UPDATE_TIMEOUT.
+timeout, 2 = overall timeout). Keyed by provider
 "
   }
 
@@ -15112,7 +15130,6 @@ For non-OHTTP requests, labels are simply the numeric status code, e.g.,
     sql: ${TABLE}.metrics.labeled_timing_distribution.urlclassifier_cl_keyed_update_time ;;
     hidden: yes
     description: "Time spent per classifier update (ms), keyed by the name of the provider.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_CL_KEYED_UPDATE_TIME.
 "
   }
 
@@ -15120,7 +15137,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.urlclassifier_complete_server_response_time ;;
     hidden: yes
     description: "Server response time to getHash request (ms). Keyed by provider
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_COMPLETE_SERVER_RESPONSE_TIME.
 "
   }
 
@@ -15128,7 +15144,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.urlclassifier_update_server_response_time ;;
     hidden: yes
     description: "Server response time to update request (ms). Keyed by provider
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_UPDATE_SERVER_RESPONSE_TIME.
 "
   }
 
@@ -16644,6 +16659,22 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "GPU Process Unstable Launch Attempts"
+  }
+
+  dimension: metrics__quantity__ipprotection_exclusions_count {
+    sql: ${TABLE}.metrics.quantity.ipprotection_exclusions_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Ipprotection Exclusions Count"
+  }
+
+  dimension: metrics__quantity__ipprotection_inclusions_count {
+    sql: ${TABLE}.metrics.quantity.ipprotection_inclusions_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Ipprotection Inclusions Count"
   }
 
   dimension: metrics__quantity__launcher_process_state {
@@ -30083,6 +30114,33 @@ view: metrics_table__metrics__dual_labeled_counter__dom_quota_first_initializati
 }
 
 view: metrics_table__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dom_register_protocol_handler_calls {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dom_register_protocol_handler_calls__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

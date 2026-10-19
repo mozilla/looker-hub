@@ -1923,6 +1923,14 @@ view: events_stream {
     group_item_label: "Candidates"
   }
 
+  dimension: extras__quantity__cards {
+    sql: ${TABLE}.extras.quantity.cards ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Cards"
+  }
+
   dimension: extras__quantity__cc_number_multi_parts {
     sql: ${TABLE}.extras.quantity.cc_number_multi_parts ;;
     type: number
@@ -3785,6 +3793,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Total"
+  }
+
+  dimension: extras__quantity__total_cards {
+    sql: ${TABLE}.extras.quantity.total_cards ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Cards"
   }
 
   dimension: extras__quantity__total_collapsed {

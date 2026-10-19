@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       password_storage_reliability_update.branch
     ]
     filters:
-      password_storage_reliability_update.metric: 'qualified_cumulative_days_of_use'
+      password_storage_reliability_update.metric: 'ad_clicks'
       password_storage_reliability_update.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: password_storage_reliability_update.submission_date
-    field_y: password_storage_reliability_update.point
-    log_scale: false
-    ci_lower: password_storage_reliability_update.lower
-    ci_upper: password_storage_reliability_update.upper
-    show_grid: true
-    listen:
-      Date: password_storage_reliability_update.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: password_storage_reliability_update
-    type: looker_line
-    fields: [
-      password_storage_reliability_update.submission_date,
-      password_storage_reliability_update.branch,
-      password_storage_reliability_update.point
-    ]
-    pivots: [
-      password_storage_reliability_update.branch
-    ]
-    filters:
-      password_storage_reliability_update.metric: 'retained'
-      password_storage_reliability_update.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: password_storage_reliability_update.submission_date
@@ -95,6 +61,40 @@
     ]
     filters:
       password_storage_reliability_update.metric: 'active_hours'
+      password_storage_reliability_update.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: password_storage_reliability_update.submission_date
+    field_y: password_storage_reliability_update.point
+    log_scale: false
+    ci_lower: password_storage_reliability_update.lower
+    ci_upper: password_storage_reliability_update.upper
+    show_grid: true
+    listen:
+      Date: password_storage_reliability_update.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: password_storage_reliability_update
+    type: looker_line
+    fields: [
+      password_storage_reliability_update.submission_date,
+      password_storage_reliability_update.branch,
+      password_storage_reliability_update.point
+    ]
+    pivots: [
+      password_storage_reliability_update.branch
+    ]
+    filters:
+      password_storage_reliability_update.metric: 'retained'
       password_storage_reliability_update.statistic: mean
     row: 10
     col: 0
@@ -146,40 +146,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: password_storage_reliability_update
-    type: looker_line
-    fields: [
-      password_storage_reliability_update.submission_date,
-      password_storage_reliability_update.branch,
-      password_storage_reliability_update.point
-    ]
-    pivots: [
-      password_storage_reliability_update.branch
-    ]
-    filters:
-      password_storage_reliability_update.metric: 'search_count'
-      password_storage_reliability_update.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: password_storage_reliability_update.submission_date
-    field_y: password_storage_reliability_update.point
-    log_scale: false
-    ci_lower: password_storage_reliability_update.lower
-    ci_upper: password_storage_reliability_update.upper
-    show_grid: true
-    listen:
-      Date: password_storage_reliability_update.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -201,7 +167,7 @@
       password_storage_reliability_update.metric: 'memory_total'
       password_storage_reliability_update.statistic: percentile
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: password_storage_reliability_update.submission_date
@@ -235,6 +201,40 @@
     filters:
       password_storage_reliability_update.metric: 'uri_count'
       password_storage_reliability_update.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: password_storage_reliability_update.submission_date
+    field_y: password_storage_reliability_update.point
+    log_scale: false
+    ci_lower: password_storage_reliability_update.lower
+    ci_upper: password_storage_reliability_update.upper
+    show_grid: true
+    listen:
+      Date: password_storage_reliability_update.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: password_storage_reliability_update
+    type: looker_line
+    fields: [
+      password_storage_reliability_update.submission_date,
+      password_storage_reliability_update.branch,
+      password_storage_reliability_update.point
+    ]
+    pivots: [
+      password_storage_reliability_update.branch
+    ]
+    filters:
+      password_storage_reliability_update.metric: 'search_count'
+      password_storage_reliability_update.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       password_storage_reliability_update.branch
     ]
     filters:
-      password_storage_reliability_update.metric: 'ad_clicks'
+      password_storage_reliability_update.metric: 'qualified_cumulative_days_of_use'
       password_storage_reliability_update.statistic: mean
     row: 30
     col: 12
