@@ -209,6 +209,24 @@ Until the push service starts, which is usually the case for the targeting conte
     description: "The Firefox major version number."
   }
 
+  dimension: metrics__string__nimbus_targeting_context_forget_button_area_type {
+    label: "Nimbus Targeting Context: Forget Button Area Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.nimbus_targeting_context_forget_button_area_type ;;
+    type: string
+    group_label: "Nimbus Targeting Context"
+    group_item_label: "Forget Button Area Type"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Targeting Context: Forget Button Area Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/nimbus_targeting_context_forget_button_area_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Where the Forget button is placed (e.g. \"toolbar\" or \"panel\"), or \"none\" if it is not placed.
+"
+  }
+
   dimension: metrics__boolean__nimbus_targeting_context_has_active_enterprise_policies {
     label: "Nimbus Targeting Context: Has Active Enterprise Policies"
     hidden: no

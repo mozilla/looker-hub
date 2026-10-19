@@ -8532,6 +8532,42 @@ categorical histogram FX_SEARCHBAR_SELECTED_RESULT_METHOD.
 "
   }
 
+  dimension: metrics__boolean__selection_menu_enabled {
+    label: "Selection Menu: Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.selection_menu_enabled ;;
+    type: yesno
+    group_label: "Selection Menu"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Selection Menu: Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/selection_menu_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the text selection actions menu is turned on in the user's settings. Always false while the Highlight to Search feature gate is off.
+"
+  }
+
+  dimension: metrics__boolean__selection_menu_search_enabled {
+    label: "Selection Menu: Search Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.selection_menu_search_enabled ;;
+    type: yesno
+    group_label: "Selection Menu"
+    group_item_label: "Search Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Selection Menu: Search Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/selection_menu_search_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the text selection actions menu would show the search action.
+"
+  }
+
   dimension: metrics__labeled_counter__serp_ads_blocked_count {
     label: "SERP: Ads Blocked Count"
     hidden: yes
@@ -8756,6 +8792,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Session restore: Number of tabs restored eagerly in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_SESSION_RESTORE_NUMBER_OF_EAGER_TABS_RESTORED.
+As of bug 2071519 this is recorded on every restore attempt, including attempts that produced no eagerly-restored tab. Data from earlier versions excludes those startups.
 "
   }
 
@@ -8775,6 +8812,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Session restore: Number of tabs in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_NUMBER_OF_TABS_RESTORED.
+As of bug 2071519, 0 is recorded and will land in the underflow bucket. Before that, a restore that produced no eagerly-restored tab recorded nothing at all, so data from earlier versions excludes those startups and reads higher than it should.
 "
   }
 
@@ -8794,6 +8832,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Session restore: Number of windows in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_SESSION_RESTORE_NUMBER_OF_WINDOWS_RESTORED.
+As of bug 2071519 this is recorded on every restore attempt, including attempts that produced no eagerly-restored tab. Data from earlier versions excludes those startups.
 "
   }
 
@@ -9706,7 +9745,7 @@ Firefox Suggest.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records how often the tab strip had to recover from a tab drag that never ended, leaving the toolbar unusable. \"session_live\" means a drag session was still current, i.e. the session outlived the drag; \"session_ended\" means none was left, i.e. the end of the drag never reached the tab strip. The \"_after_drop\" variants mean the drag was dropped and the drop animation is what failed to leave moving-tab mode, so they measure a Firefox shortcoming while the others measure a platform one.
+    description: "Records how often the tab strip had to recover from a tab drag that never ended, leaving the toolbar unusable. \"session_live\" means a drag session was still current, i.e. the session outlived the drag; \"session_ended\" means none was left, i.e. the end of the drag never reached the tab strip.
 "
   }
 
@@ -13223,7 +13262,6 @@ Previously carried in Legacy \"main\" ping `simpleMeasurements`.
     }
 
     description: "Whether a binary file examined by download protection is one of the common archive formats.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_BINARY_ARCHIVE.
 "
   }
 
@@ -13241,7 +13279,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Whether or not the file examined by download protection is a binary type (or it's not possible to tell because the filename is missing).
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_BINARY_TYPE.
 "
   }
 
@@ -13260,7 +13297,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Application reputation local results (0=ALLOW, 1=BLOCK, 2=NONE)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram APPLICATION_REPUTATION_LOCAL.
 "
   }
 
@@ -13278,7 +13314,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "The reason application reputation service blocks or allows the download.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_REASON.
 "
   }
 
@@ -13297,7 +13332,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Server response time to remote lookup request (ms).
-This metric was generated to correspond to the Legacy Telemetry linear histogram APPLICATION_REPUTATION_REMOTE_LOOKUP_RESPONSE_TIME.
 "
   }
 
@@ -13315,7 +13349,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "Recorded when application reputation remote lookup is performed, `true` is recorded if the lookup times out.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram APPLICATION_REPUTATION_REMOTE_LOOKUP_TIMEOUT.
 "
   }
 
@@ -13334,7 +13367,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Status of the application reputation remote lookup (0=OK, 1=failed, 2=invalid protobuf response)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram APPLICATION_REPUTATION_SERVER.
 "
   }
 
@@ -13352,7 +13384,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Network status of the application reputation remote lookup
-This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_SERVER_2.
 "
   }
 
@@ -13371,7 +13402,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Application reputation remote verdict (0=SAFE, 1=DANGEROUS, 2=UNCOMMON, 3=POTENTIALLY_UNWANTED, 4=DANGEROUS_HOST, 5=UNKNOWN)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram APPLICATION_REPUTATION_SERVER_VERDICT.
 "
   }
 
@@ -13389,7 +13419,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Overall (local or remote) application reputation verdict (shouldBlock=false is OK).
-This metric was generated to correspond to the Legacy Telemetry boolean histogram APPLICATION_REPUTATION_SHOULD_BLOCK.
 "
   }
 
@@ -15805,7 +15834,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Time spent per daily cookie purging activity, in milliseconds. This measures the time for all batch iterations of that day.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram COOKIE_PURGING_DURATION_MS.
 "
   }
 
@@ -15824,7 +15852,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "How much time (in hours) passed between the current cookie purging activity and the one before that (cookie purging is run on 'daily idle')
-This metric was generated to correspond to the Legacy Telemetry linear histogram COOKIE_PURGING_INTERVAL_HOURS.
 "
   }
 
@@ -15843,7 +15870,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "The number of origins that were purged during one run of cookie purging.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram COOKIE_PURGING_ORIGINS_PURGED.
 "
   }
 
@@ -15862,7 +15888,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The time remaining until expiration per user interaction permissions of trackers at the time of purging, in days (one record per tracker, not averaged).
-This metric was generated to correspond to the Legacy Telemetry linear histogram COOKIE_PURGING_TRACKERS_USER_INTERACTION_REMAINING_DAYS.
 "
   }
 
@@ -15881,7 +15906,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "The number of trackers that had user interaction at the time of purging.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram COOKIE_PURGING_TRACKERS_WITH_USER_INTERACTION.
 "
   }
 
@@ -23818,6 +23842,78 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "True when an IPC transaction is canceled
 This metric was generated to correspond to the Legacy Telemetry boolean histogram IPC_TRANSACTION_CANCEL.
+"
+  }
+
+  dimension: metrics__quantity__ipprotection_exclusions_count {
+    label: "Ipprotection Exclusions: Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.ipprotection_exclusions_count ;;
+    type: number
+    group_label: "Ipprotection Exclusions"
+    group_item_label: "Count"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Exclusions: Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_exclusions_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of site exclusions the user has set.
+"
+  }
+
+  dimension: metrics__counter__ipprotection_exclusions_rule_applied {
+    label: "Ipprotection Exclusions: Rule Applied"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.ipprotection_exclusions_rule_applied ;;
+    type: number
+    group_label: "Ipprotection Exclusions"
+    group_item_label: "Rule Applied"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Exclusions: Rule Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_exclusions_rule_applied"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Incremented when a site exclusion decides whether a top-level page load is proxied.
+"
+  }
+
+  dimension: metrics__quantity__ipprotection_inclusions_count {
+    label: "Ipprotection Inclusions: Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.ipprotection_inclusions_count ;;
+    type: number
+    group_label: "Ipprotection Inclusions"
+    group_item_label: "Count"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Inclusions: Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_inclusions_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of site inclusions the user has set.
+"
+  }
+
+  dimension: metrics__counter__ipprotection_inclusions_rule_applied {
+    label: "Ipprotection Inclusions: Rule Applied"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.ipprotection_inclusions_rule_applied ;;
+    type: number
+    group_label: "Ipprotection Inclusions"
+    group_item_label: "Rule Applied"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Inclusions: Rule Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_inclusions_rule_applied"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Incremented when a site inclusion decides whether a top-level page load is proxied.
 "
   }
 
@@ -40208,7 +40304,6 @@ Corresponds to the value of the `MOZ_UPDATER` define.
     }
 
     description: "Time spent per AsyncClassifyLocalWithTables (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_ASYNC_CLASSIFYLOCAL_TIME.
 "
   }
 
@@ -40263,7 +40358,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent per classifier lookup (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_CL_CHECK_TIME.
 "
   }
 
@@ -40282,7 +40376,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "SafeBrowsing v4 hash completion error (0 = success, 1 = parsing failure, 2 = unknown threat type)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_COMPLETION_ERROR.
 "
   }
 
@@ -40369,7 +40462,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Time spent per dbservice lookup (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_LOOKUP_TIME_2.
 "
   }
 
@@ -40439,7 +40531,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent per dbservice shutdown (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_SHUTDOWN_TIME.
 "
   }
 
@@ -40458,7 +40549,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Whether or not an error was encountered while sending a Safe Browsing ThreatHit report. (0=sucess, 1=unknown error, 2=already connected, 3=not connected, 4=connection refused,5=net timeout, 6=offline, 7=port access not allowed, 8=net reset, 9=net interrupt, 10=proxy connection refused, 11=partial transfer, 12=inadequate security, 13=unknown host, 14=dns lookup queue full, 15=unknown proxy host)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_THREATHIT_NETWORK_ERROR.
 "
   }
 
@@ -40477,7 +40567,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Server HTTP status code from Safe Browsing ThreatHit report. (0=1xx, 1=200, 2=2xx, 3=204, 4=3xx, 5=400, 6=4xx, 7=403, 8=404, 9=408, 10=413, 11=5xx, 12=502|504|511, 13=503, 14=505, 15=Other)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_THREATHIT_REMOTE_STATUS.
 "
   }
 
@@ -40496,7 +40585,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "URL CLassifier-related (aka Safe Browsing) UI events. See nsIUrlClassifierUITelemetry.idl for the specific values.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_UI_EVENTS.
 "
   }
 
@@ -40515,7 +40603,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Time spent constructing Variable-Length PrefixSet from file (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_VLPS_CONSTRUCT_TIME.
 "
   }
 
@@ -40534,7 +40621,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent fallocating Variable-Length PrefixSet (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_VLPS_FALLOCATE_TIME.
 "
   }
 
@@ -40553,7 +40639,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent loading Variable-Length PrefixSet from file (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_VLPS_FILELOAD_TIME.
 "
   }
 
@@ -40571,7 +40656,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Whether or not the metadata for a variable-length prefix set loaded from disk is corrupted (true = file corrupted).
-This metric was generated to correspond to the Legacy Telemetry boolean histogram URLCLASSIFIER_VLPS_METADATA_CORRUPT.
 "
   }
 
@@ -48351,6 +48435,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Idb Maintenance Unknown Metadata"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_unknown_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ipprotection_exclusions_rule_applied {
+    type: sum
+    sql: ${metrics__counter__ipprotection_exclusions_rule_applied} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Exclusions Rule Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_exclusions_rule_applied"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ipprotection_exclusions_rule_applied_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__ipprotection_exclusions_rule_applied: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Exclusions Rule Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_exclusions_rule_applied"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ipprotection_inclusions_rule_applied {
+    type: sum
+    sql: ${metrics__counter__ipprotection_inclusions_rule_applied} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Inclusions Rule Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_inclusions_rule_applied"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ipprotection_inclusions_rule_applied_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__ipprotection_inclusions_rule_applied: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Inclusions Rule Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_inclusions_rule_applied"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -85806,6 +85940,33 @@ view: metrics__metrics__dual_labeled_counter__dom_quota_first_initialization_att
 }
 
 view: metrics__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__dom_register_protocol_handler_calls {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__dom_register_protocol_handler_calls__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

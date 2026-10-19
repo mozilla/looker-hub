@@ -727,6 +727,14 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Nimbus Targeting Context Distribution ID"
   }
 
+  dimension: metrics__string__nimbus_targeting_context_forget_button_area_type {
+    sql: ${TABLE}.metrics.string.nimbus_targeting_context_forget_button_area_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Nimbus Targeting Context Forget Button Area Type"
+  }
+
   dimension: metrics__string__nimbus_targeting_context_locale {
     sql: ${TABLE}.metrics.string.nimbus_targeting_context_locale ;;
     type: string
