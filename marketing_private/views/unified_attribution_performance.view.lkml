@@ -151,26 +151,31 @@ view: unified_attribution_performance {
   measure: activation_rate {
     sql: SAFE_DIVIDE(${total_activated_profiles}, ${total_activated_eligible}) ;;
     type: number
+    value_format_name: percent_2
   }
 
   measure: cost_per_activated_profile {
     sql: SAFE_DIVIDE(${total_spend}, ${total_activated_profiles}) ;;
     type: number
+    value_format: "$0.00"
   }
 
   measure: cost_per_new_profile {
     sql: SAFE_DIVIDE(${total_spend}, ${total_new_profiles}) ;;
     type: number
+    value_format: "$0.00"
   }
 
   measure: cost_per_w4_retained_profile {
     sql: SAFE_DIVIDE(${total_spend}, ${total_w4_retained}) ;;
     type: number
+    value_format: "$0.00"
   }
 
   measure: retention_rate {
     sql: SAFE_DIVIDE(${total_w4_retained}, ${total_w4_eligible}) ;;
     type: number
+    value_format_name: percent_2
   }
 
   measure: total_activated_eligible {
@@ -206,6 +211,7 @@ view: unified_attribution_performance {
   measure: total_spend {
     sql: ${spend} ;;
     type: sum
+    value_format: "$0.00"
   }
 
   measure: total_w4_eligible {
