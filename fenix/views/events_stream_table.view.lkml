@@ -2720,6 +2720,14 @@ view: events_stream_table {
     group_item_label: "Choice"
   }
 
+  dimension: extras__string__close_reason {
+    sql: ${TABLE}.extras.string.close_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Close Reason"
+  }
+
   dimension: extras__string__codecs {
     sql: ${TABLE}.extras.string.codecs ;;
     type: string
@@ -3800,6 +3808,14 @@ view: events_stream_table {
     group_item_label: "Interaction"
   }
 
+  dimension: extras__string__interaction_type {
+    sql: ${TABLE}.extras.string.interaction_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Interaction Type"
+  }
+
   dimension: extras__string__issue {
     sql: ${TABLE}.extras.string.issue ;;
     type: string
@@ -4792,6 +4808,14 @@ view: events_stream_table {
     group_item_label: "Reason"
   }
 
+  dimension: extras__string__record_type {
+    sql: ${TABLE}.extras.string.record_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Record Type"
+  }
+
   dimension: extras__string__redirects {
     sql: ${TABLE}.extras.string.redirects ;;
     type: string
@@ -5614,6 +5638,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Typewaspassword"
+  }
+
+  dimension: extras__string__update_type {
+    sql: ${TABLE}.extras.string.update_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Update Type"
   }
 
   dimension: extras__string__updated_from {

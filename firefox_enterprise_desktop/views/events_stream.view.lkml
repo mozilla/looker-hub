@@ -1731,6 +1731,14 @@ view: events_stream {
     group_item_label: "Candidates"
   }
 
+  dimension: extras__quantity__cards {
+    sql: ${TABLE}.extras.quantity.cards ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Cards"
+  }
+
   dimension: extras__quantity__channel_status {
     sql: ${TABLE}.extras.quantity.channel_status ;;
     type: number
@@ -3451,6 +3459,14 @@ view: events_stream {
     group_item_label: "Total"
   }
 
+  dimension: extras__quantity__total_cards {
+    sql: ${TABLE}.extras.quantity.total_cards ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Cards"
+  }
+
   dimension: extras__quantity__total_completed_requests {
     sql: ${TABLE}.extras.quantity.total_completed_requests ;;
     type: number
@@ -4321,6 +4337,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Click Type"
+  }
+
+  dimension: extras__string__close_reason {
+    sql: ${TABLE}.extras.string.close_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Close Reason"
   }
 
   dimension: extras__string__closing_reason {
@@ -7873,6 +7897,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Typewaspassword"
+  }
+
+  dimension: extras__string__update_type {
+    sql: ${TABLE}.extras.string.update_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Update Type"
   }
 
   dimension: extras__string__updated_from {

@@ -4707,6 +4707,14 @@ view: events_stream {
     group_item_label: "Click Type"
   }
 
+  dimension: extras__string__close_reason {
+    sql: ${TABLE}.extras.string.close_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Close Reason"
+  }
+
   dimension: extras__string__closing_reason {
     sql: ${TABLE}.extras.string.closing_reason ;;
     type: string
@@ -8417,6 +8425,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Typewaspassword"
+  }
+
+  dimension: extras__string__update_type {
+    sql: ${TABLE}.extras.string.update_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Update Type"
   }
 
   dimension: extras__string__updated_from {
