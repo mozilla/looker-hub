@@ -509,6 +509,24 @@ view: interaction {
 "
   }
 
+  dimension: metrics__string__technical_operations_suspected_bot {
+    label: "Technical Operations: Suspected Bot"
+    hidden: no
+    sql: ${TABLE}.metrics.string.technical_operations_suspected_bot ;;
+    type: string
+    group_label: "Technical Operations"
+    group_item_label: "Suspected Bot"
+
+    link: {
+      label: "Glean Dictionary reference for Technical Operations: Suspected Bot"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/technical_operations_suspected_bot"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reason MARS flagged this interaction as suspected bot traffic (e.g. over_limit); empty if not flagged.
+"
+  }
+
   dimension: metrics__string__technical_operations_user_agent {
     label: "Technical Operations: User Agent"
     hidden: no

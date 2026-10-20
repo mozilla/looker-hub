@@ -1227,6 +1227,14 @@ view: metrics_table {
     group_item_label: "Search Engine Private Overridden By Third Party"
   }
 
+  dimension: metrics__boolean__selection_menu_enabled {
+    sql: ${TABLE}.metrics.boolean.selection_menu_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Selection Menu Enabled"
+  }
+
   dimension: metrics__boolean__selection_menu_search_enabled {
     sql: ${TABLE}.metrics.boolean.selection_menu_search_enabled ;;
     type: yesno
