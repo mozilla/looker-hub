@@ -28247,6 +28247,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_svguse_inline_event_handler {
+    label: "Use Counter Deprecated Ops Doc: Svguse Inline Event Handler"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_svguse_inline_event_handler ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Svguse Inline Event Handler"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc: Svguse Inline Event Handler"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_svguse_inline_event_handler"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used SVGUseInlineEventHandler. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_sync_xmlhttp_request_deprecated {
     label: "Use Counter Deprecated Ops Doc: Sync Xmlhttp Request Deprecated"
     hidden: no
@@ -29414,6 +29432,24 @@ view: use_counters {
     }
 
     description: "Whether a page used SVGNearestViewportElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_svguse_inline_event_handler {
+    label: "Use Counter Deprecated Ops Page: Svguse Inline Event Handler"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_svguse_inline_event_handler ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Svguse Inline Event Handler"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page: Svguse Inline Event Handler"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_svguse_inline_event_handler"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used SVGUseInlineEventHandler. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -36272,6 +36308,24 @@ view: use_counters {
     }
 
     description: "Whether a document has a speculation rule with \"moderate\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_header {
+    label: "Use Counter Doc: Speculation Rules Header"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_header ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Header"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Header"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_header"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule set from a Speculation-Rules header. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -46405,6 +46459,24 @@ view: use_counters {
     }
 
     description: "Whether a page has a speculation rule with \"moderate\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_header {
+    label: "Use Counter Page: Speculation Rules Header"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_header ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Header"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Header"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_header"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule set from a Speculation-Rules header. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -93637,6 +93709,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_deprecated_ops_doc_svguse_inline_event_handler {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_svguse_inline_event_handler} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Svguse Inline Event Handler"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_svguse_inline_event_handler"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_svguse_inline_event_handler_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_svguse_inline_event_handler: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Svguse Inline Event Handler"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_svguse_inline_event_handler"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_deprecated_ops_doc_sync_xmlhttp_request_deprecated {
     type: sum
     sql: ${metrics__counter__use_counter_deprecated_ops_doc_sync_xmlhttp_request_deprecated} ;;
@@ -95258,6 +95355,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Svgnearest Viewport Element"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_svgnearest_viewport_element"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_svguse_inline_event_handler {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_svguse_inline_event_handler} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Svguse Inline Event Handler"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_svguse_inline_event_handler"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_svguse_inline_event_handler_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_svguse_inline_event_handler: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Svguse Inline Event Handler"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_svguse_inline_event_handler"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -104783,6 +104905,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Moderate"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_header {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_header} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Header"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_header"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_header_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_header: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Header"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_header"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -118833,6 +118980,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Moderate"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_header {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_header} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Header"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_header"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_header_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_header: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Header"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_header"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

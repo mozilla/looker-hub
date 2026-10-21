@@ -167,6 +167,24 @@ view: play_store_attribution {
 "
   }
 
+  dimension: metrics__boolean__play_store_attribution_pairing_campaign {
+    label: "Play Store Attribution: Pairing Campaign"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.play_store_attribution_pairing_campaign ;;
+    type: yesno
+    group_label: "Play Store Attribution"
+    group_item_label: "Pairing Campaign"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution: Pairing Campaign"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_pairing_campaign"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the install referrer's utm_content matched the pairing campaign marker (`pairing-signin-prompt.campaign-utm-content`).
+"
+  }
+
   dimension: metrics__string__play_store_attribution_response_code {
     label: "Play Store Attribution: Response Code"
     hidden: no
