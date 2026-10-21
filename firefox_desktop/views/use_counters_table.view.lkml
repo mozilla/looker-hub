@@ -13051,6 +13051,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Deprecated Ops Doc Svgnearest Viewport Element"
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_svguse_inline_event_handler {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_svguse_inline_event_handler ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Svguse Inline Event Handler"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_sync_xmlhttp_request_deprecated {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_sync_xmlhttp_request_deprecated ;;
     type: number
@@ -13665,6 +13673,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Deprecated Ops Page Svgnearest Viewport Element"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_svguse_inline_event_handler {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_svguse_inline_event_handler ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Svguse Inline Event Handler"
   }
 
   dimension: metrics__counter__use_counter_deprecated_ops_page_sync_xmlhttp_request_deprecated {
@@ -16721,6 +16737,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Speculation Rules Eagerness Moderate"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_header {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_header ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speculation Rules Header"
   }
 
   dimension: metrics__counter__use_counter_doc_speculation_rules_list_source {
@@ -21217,6 +21241,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Speculation Rules Eagerness Moderate"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_header {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_header ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speculation Rules Header"
   }
 
   dimension: metrics__counter__use_counter_page_speculation_rules_list_source {

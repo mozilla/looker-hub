@@ -426,6 +426,11 @@ view: request_stats_table {
 "
   }
 
+  dimension: metrics__labeled_quantity__ad_client_relevance {
+    sql: ${TABLE}.metrics.labeled_quantity.ad_client_relevance ;;
+    hidden: yes
+  }
+
   dimension: metrics__quantity__technical_operations_count_filtered {
     sql: ${TABLE}.metrics.quantity.technical_operations_count_filtered ;;
     type: number
@@ -810,6 +815,20 @@ view: request_stats_table__metrics__labeled_boolean__ad_flags {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: request_stats_table__metrics__labeled_quantity__ad_client_relevance {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }
