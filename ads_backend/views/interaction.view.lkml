@@ -437,6 +437,24 @@ view: interaction {
 "
   }
 
+  dimension: metrics__labeled_quantity__ad_client_relevance {
+    label: "Ad Client: Relevance"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_quantity.ad_client_relevance ;;
+    type: string
+    group_label: "Ad Client"
+    group_item_label: "Relevance"
+
+    link: {
+      label: "Glean Dictionary reference for Ad Client: Relevance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_relevance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Relevance scores sent by the client in the ad request if they exist. Scores are computed on the client with differential privacy and sent over OHTTP, and requests that include scores never include a client identifier. Each value is the decimal score, between 0 and 1, multiplied by 10,000 so that it can be stored as an integer with 4 retained decimal places.
+"
+  }
+
   dimension: metrics__string__technical_operations_creative_id {
     label: "Technical Operations: Creative ID"
     hidden: no
@@ -1235,6 +1253,20 @@ view: interaction__metrics__labeled_boolean__ad_flags {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: interaction__metrics__labeled_quantity__ad_client_relevance {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }

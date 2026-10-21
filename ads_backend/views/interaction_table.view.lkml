@@ -434,6 +434,11 @@ view: interaction_table {
 "
   }
 
+  dimension: metrics__labeled_quantity__ad_client_relevance {
+    sql: ${TABLE}.metrics.labeled_quantity.ad_client_relevance ;;
+    hidden: yes
+  }
+
   dimension: metrics__string__ad_account_id {
     sql: ${TABLE}.metrics.string.ad_account_id ;;
     type: string
@@ -977,6 +982,20 @@ view: interaction_table__metrics__labeled_boolean__ad_flags {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: interaction_table__metrics__labeled_quantity__ad_client_relevance {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }
