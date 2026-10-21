@@ -368,14 +368,6 @@ view: events_stream_table {
     group_item_label: "Cache"
   }
 
-  dimension: extras__boolean__campaign_attributed {
-    sql: ${TABLE}.extras.boolean.campaign_attributed ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Campaign Attributed"
-  }
-
   dimension: extras__boolean__can_stage {
     sql: ${TABLE}.extras.boolean.can_stage ;;
     type: yesno

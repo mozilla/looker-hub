@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       pdf_crash_fix.branch
     ]
     filters:
-      pdf_crash_fix.metric: 'active_hours'
+      pdf_crash_fix.metric: 'qualified_cumulative_days_of_use'
       pdf_crash_fix.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       pdf_crash_fix.branch
     ]
     filters:
-      pdf_crash_fix.metric: 'qualified_cumulative_days_of_use'
+      pdf_crash_fix.metric: 'active_hours'
       pdf_crash_fix.statistic: mean
     row: 10
     col: 0
@@ -180,6 +180,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pdf_crash_fix
+    type: looker_line
+    fields: [
+      pdf_crash_fix.submission_date,
+      pdf_crash_fix.branch,
+      pdf_crash_fix.point
+    ]
+    pivots: [
+      pdf_crash_fix.branch
+    ]
+    filters:
+      pdf_crash_fix.metric: 'search_count'
+      pdf_crash_fix.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: pdf_crash_fix.submission_date
+    field_y: pdf_crash_fix.point
+    log_scale: false
+    ci_lower: pdf_crash_fix.lower
+    ci_upper: pdf_crash_fix.upper
+    show_grid: true
+    listen:
+      Date: pdf_crash_fix.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -200,8 +234,8 @@
     filters:
       pdf_crash_fix.metric: 'memory_total'
       pdf_crash_fix.statistic: percentile
-    row: 20
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: pdf_crash_fix.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       pdf_crash_fix.metric: 'days_of_use'
-      pdf_crash_fix.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: pdf_crash_fix.submission_date
-    field_y: pdf_crash_fix.point
-    log_scale: false
-    ci_lower: pdf_crash_fix.lower
-    ci_upper: pdf_crash_fix.upper
-    show_grid: true
-    listen:
-      Date: pdf_crash_fix.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pdf_crash_fix
-    type: looker_line
-    fields: [
-      pdf_crash_fix.submission_date,
-      pdf_crash_fix.branch,
-      pdf_crash_fix.point
-    ]
-    pivots: [
-      pdf_crash_fix.branch
-    ]
-    filters:
-      pdf_crash_fix.metric: 'search_count'
       pdf_crash_fix.statistic: mean
     row: 30
     col: 12
