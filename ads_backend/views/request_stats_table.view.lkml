@@ -429,6 +429,8 @@ view: request_stats_table {
   dimension: metrics__labeled_quantity__ad_client_relevance {
     sql: ${TABLE}.metrics.labeled_quantity.ad_client_relevance ;;
     hidden: yes
+    description: "Relevance scores sent by the client in the ad request if they exist. Scores are computed on the client with differential privacy and sent over OHTTP, and requests that include scores never include a client identifier. Each value is the decimal score, between 0 and 1, multiplied by 10,000 so that it can be stored as an integer with 4 retained decimal places.
+"
   }
 
   dimension: metrics__quantity__technical_operations_count_filtered {

@@ -8139,6 +8139,14 @@ view: events_stream {
     group_item_label: "Tab Layout"
   }
 
+  dimension: extras__string__tab_orientation {
+    sql: ${TABLE}.extras.string.tab_orientation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Tab Orientation"
+  }
+
   dimension: extras__string__tab_pos {
     sql: ${TABLE}.extras.string.tab_pos ;;
     type: string

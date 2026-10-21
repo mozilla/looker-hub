@@ -411,6 +411,14 @@ view: play_store_attribution_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__play_store_attribution_pairing_campaign {
+    sql: ${TABLE}.metrics.boolean.play_store_attribution_pairing_campaign ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Play Store Attribution Pairing Campaign"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
