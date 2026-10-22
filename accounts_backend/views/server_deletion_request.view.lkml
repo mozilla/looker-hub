@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: server_deletion_request {
+  dimension: metrics__string__account_user_id {
+    label: "Account: User ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    group_label: "Account"
+    group_item_label: "User ID"
+
+    link: {
+      label: "Glean Dictionary reference for Account: User ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/account_user_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The firefox/mozilla account id
+"
+  }
+
+  dimension: metrics__string__account_user_id_sha256 {
+    label: "Account: User ID Sha256"
+    hidden: no
+    sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
+    type: string
+    group_label: "Account"
+    group_item_label: "User ID Sha256"
+
+    link: {
+      label: "Glean Dictionary reference for Account: User ID Sha256"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/account_user_id_sha256"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A hex string of a sha256 hash of the account's uid
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes

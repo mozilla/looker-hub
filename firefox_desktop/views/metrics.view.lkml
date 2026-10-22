@@ -7854,6 +7854,25 @@ impression and it's an app-provided engine. Otherwise the label is \"none\".
 "
   }
 
+  dimension: metrics__labeled_counter__sap_impression_counts_text_selection {
+    label: "Sap Impression Counts: Text Selection"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.sap_impression_counts_text_selection ;;
+    group_label: "Sap Impression Counts"
+    group_item_label: "Text Selection"
+
+    link: {
+      label: "Glean Dictionary reference for Sap Impression Counts: Text Selection"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/sap_impression_counts_text_selection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of impressions of the search action in the text selection menu. The
+counter's label is the engine's identifier if it's an app-provided
+engine. Otherwise the label is \"none\".
+"
+  }
+
   dimension: metrics__labeled_quantity__search_counts_hidden_engines {
     label: "Search Counts: Hidden Engines"
     hidden: no
@@ -72460,6 +72479,47 @@ view: metrics__metrics__labeled_counter__sap_impression_counts_contextmenu_visua
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__sap_impression_counts_text_selection {
+  label: "Sap Impression Counts: Text Selection"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 

@@ -1194,6 +1194,307 @@ displayed to the user. (for tile counts)
 "
   }
 
+  dimension: metrics__counter__listen_to_page_audio_ran_out {
+    label: "Listen To Page: Audio Ran Out"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.listen_to_page_audio_ran_out ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Audio Ran Out"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Audio Ran Out"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_audio_ran_out"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times the listen player finished reading every chunk that
+had been synthesized before the next chunk was ready, indicating that
+playback had to wait for new synthesis. Not impacted by user seeks, skips,
+or changes to the currently selected voice.
+"
+  }
+
+  dimension: metrics__memory_distribution__listen_to_page_chunk_audio_size__sum {
+    label: "Listen To Page: Chunk Audio Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.listen_to_page_chunk_audio_size.sum ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Chunk Audio Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Chunk Audio Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_chunk_audio_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The size on disk of the audio the speech engine made for each chunk of a
+page after the opening.
+"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_gap_duration__sum {
+    label: "Listen To Page: Chunk Gap Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_gap_duration.sum ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Chunk Gap Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Chunk Gap Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_chunk_gap_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time playback was silent between two chunks of a page. Counted from
+when the player ran out of audio or started to buffer until it played
+again. Gaps caused by the user seeking, skipping, changing voice or
+pausing are not recorded.
+"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_synthesis_duration__sum {
+    label: "Listen To Page: Chunk Synthesis Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_synthesis_duration.sum ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Chunk Synthesis Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Chunk Synthesis Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_chunk_synthesis_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time the speech engine took to make the audio of one chunk of a
+page. The first chunk, the opening sentence, is left out every time it
+is made, because it is far shorter than the chunks after it. It is made
+again after a voice change or a seek back to the start of the article.
+See opening_synthesis_duration.
+"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_extraction_duration__sum {
+    label: "Listen To Page: Extraction Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_extraction_duration.sum ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Extraction Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Extraction Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_extraction_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to extract the article text and language from the page.
+"
+  }
+
+  dimension: metrics__memory_distribution__listen_to_page_opening_chunk_audio_size__sum {
+    label: "Listen To Page: Opening Chunk Audio Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.listen_to_page_opening_chunk_audio_size.sum ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Opening Chunk Audio Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Opening Chunk Audio Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_opening_chunk_audio_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The size on disk of the audio the speech engine made for the opening
+chunk of a page, which is a single sentence. It is recorded each time
+the opening is made, which includes after a voice change or a seek back
+to the start of the article.
+"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_opening_synthesis_duration__sum {
+    label: "Listen To Page: Opening Synthesis Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_opening_synthesis_duration.sum ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Opening Synthesis Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Opening Synthesis Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_opening_synthesis_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The phase of time_to_first_audio in which the speech engine makes the
+audio of the opening sentence.
+"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_playback_start_duration__sum {
+    label: "Listen To Page: Playback Start Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_playback_start_duration.sum ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Playback Start Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Playback Start Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_playback_start_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The last phase of time_to_first_audio, from the opening audio being made
+until the player reports reading it out. It covers chunking the rest of
+the article and starting the player.
+"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_preparation_duration__sum {
+    label: "Listen To Page: Preparation Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_preparation_duration.sum ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Preparation Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Preparation Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_preparation_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The phase of time_to_first_audio from the article text being ready
+until the speech engine starts to make the opening audio. It covers
+loading the voices and binding the speech engine.
+"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency__sum {
+    label: "Listen To Page: Seek Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency.sum ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Seek Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Seek Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_seek_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between a user seeking until audio played again, for seeks
+whose chunk had to be synthesized. A seek interrupted by another seek,
+a voice change or a pause is not recorded.
+"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency_queued__sum {
+    label: "Listen To Page: Seek Latency Queued Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency_queued.sum ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Seek Latency Queued Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Seek Latency Queued Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_seek_latency_queued"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The same as seek_latency, for seeks to audio the player already had
+queued, which need no synthesis.
+"
+  }
+
+  dimension: metrics__labeled_counter__listen_to_page_session_max_thermal_status {
+    label: "Listen To Page: Session Max Thermal Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.listen_to_page_session_max_thermal_status ;;
+    group_label: "Listen To Page"
+    group_item_label: "Session Max Thermal Status"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Session Max Thermal Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_session_max_thermal_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of listening sessions grouped by the hottest thermal status
+the device reported while audio was playing, from the first audio until
+the article ends, fails or the player is closed. Time spent paused is
+not observed. Only recorded on Android 11 and later on devices whose
+thermal HAL can forecast thermal headroom, which indicates devices
+advanced enough to give accurate measurements.
+"
+  }
+
+  dimension: metrics__counter__listen_to_page_thermal_throttling_entered {
+    label: "Listen To Page: Thermal Throttling Entered"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.listen_to_page_thermal_throttling_entered ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Thermal Throttling Entered"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Thermal Throttling Entered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_thermal_throttling_entered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times the device's thermal status rose to moderate or
+hotter while a page was being read out, on the same devices and over
+the same part of the session as session_max_thermal_status.
+"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_time_to_first_audio__sum {
+    label: "Listen To Page: Time To First Audio Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_time_to_first_audio.sum ;;
+    type: number
+    group_label: "Listen To Page"
+    group_item_label: "Time To First Audio Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Time To First Audio Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_time_to_first_audio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between the user asking to listen to a page and the player
+starting to read it out. Sessions that are stopped or fail before any
+audio plays are not recorded.
+"
+  }
+
+  dimension: metrics__string__listen_to_page_tts_engine {
+    label: "Listen To Page: Tts Engine"
+    hidden: no
+    sql: ${TABLE}.metrics.string.listen_to_page_tts_engine ;;
+    type: string
+    group_label: "Listen To Page"
+    group_item_label: "Tts Engine"
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page: Tts Engine"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_tts_engine"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The package name of the speech engine the last listening session bound,
+for example com.google.android.tts.
+"
+  }
+
   dimension: metrics__counter__logins_deleted {
     label: "Logins: Deleted"
     hidden: no
@@ -37514,6 +37815,56 @@ report notification is scheduled.
     }
   }
 
+  measure: listen_to_page_audio_ran_out {
+    type: sum
+    sql: ${metrics__counter__listen_to_page_audio_ran_out} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page Audio Ran Out"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_audio_ran_out"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: listen_to_page_audio_ran_out_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__listen_to_page_audio_ran_out: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page Audio Ran Out"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_audio_ran_out"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: listen_to_page_thermal_throttling_entered {
+    type: sum
+    sql: ${metrics__counter__listen_to_page_thermal_throttling_entered} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page Thermal Throttling Entered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_thermal_throttling_entered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: listen_to_page_thermal_throttling_entered_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__listen_to_page_thermal_throttling_entered: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Listen To Page Thermal Throttling Entered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/listen_to_page_thermal_throttling_entered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: logins_deleted {
     type: sum
     sql: ${metrics__counter__logins_deleted} ;;
@@ -51944,6 +52295,47 @@ view: metrics__metrics__labeled_counter__jxl_hdr {
 
 view: metrics__metrics__labeled_counter__layout_long_reflow_interruptible {
   label: "Layout: Long Reflow Interruptible"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__listen_to_page_session_max_thermal_status {
+  label: "Listen To Page: Session Max Thermal Status"
 
   dimension: document_id {
     type: string
@@ -80591,6 +80983,34 @@ view: metrics__metrics__memory_distribution__javascript_gc_nursery_bytes__values
   }
 }
 
+view: metrics__metrics__memory_distribution__listen_to_page_chunk_audio_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__listen_to_page_opening_chunk_audio_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__memory_distribution__memory_heap_allocated__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -83756,6 +84176,132 @@ view: metrics__metrics__timing_distribution__layout_refresh_driver_tick__values 
 }
 
 view: metrics__metrics__timing_distribution__layout_time_to_first_interaction__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__listen_to_page_chunk_gap_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__listen_to_page_chunk_synthesis_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__listen_to_page_extraction_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__listen_to_page_opening_synthesis_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__listen_to_page_playback_start_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__listen_to_page_preparation_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__listen_to_page_seek_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__listen_to_page_seek_latency_queued__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__listen_to_page_time_to_first_audio__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

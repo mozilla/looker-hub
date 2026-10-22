@@ -2555,6 +2555,22 @@ view: metrics_table {
     group_item_label: "Layout Global Stylesheet Not Found"
   }
 
+  dimension: metrics__counter__listen_to_page_audio_ran_out {
+    sql: ${TABLE}.metrics.counter.listen_to_page_audio_ran_out ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Listen To Page Audio Ran Out"
+  }
+
+  dimension: metrics__counter__listen_to_page_thermal_throttling_entered {
+    sql: ${TABLE}.metrics.counter.listen_to_page_thermal_throttling_entered ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Listen To Page Thermal Throttling Entered"
+  }
+
   dimension: metrics__counter__localstorage_request_recv_cancel_counter {
     sql: ${TABLE}.metrics.counter.localstorage_request_recv_cancel_counter ;;
     type: number
@@ -13188,6 +13204,18 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__listen_to_page_session_max_thermal_status {
+    sql: ${TABLE}.metrics.labeled_counter.listen_to_page_session_max_thermal_status ;;
+    hidden: yes
+    description: "The number of listening sessions grouped by the hottest thermal status
+the device reported while audio was playing, from the first audio until
+the article ends, fails or the player is closed. Time spent paused is
+not observed. Only recorded on Android 11 and later on devices whose
+thermal HAL can forecast thermal headroom, which indicates devices
+advanced enough to give accurate measurements.
+"
+  }
+
   dimension: metrics__labeled_counter__localdomstorage_preload_pending_on_first_access {
     sql: ${TABLE}.metrics.labeled_counter.localdomstorage_preload_pending_on_first_access ;;
     hidden: yes
@@ -16802,6 +16830,48 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__listen_to_page_chunk_audio_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.listen_to_page_chunk_audio_size.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Listen To Page Chunk Audio Size"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__listen_to_page_chunk_audio_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.listen_to_page_chunk_audio_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Listen To Page Chunk Audio Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__listen_to_page_chunk_audio_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.listen_to_page_chunk_audio_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__listen_to_page_opening_chunk_audio_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.listen_to_page_opening_chunk_audio_size.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Listen To Page Opening Chunk Audio Size"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__listen_to_page_opening_chunk_audio_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.listen_to_page_opening_chunk_audio_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Listen To Page Opening Chunk Audio Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__listen_to_page_opening_chunk_audio_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.listen_to_page_opening_chunk_audio_size.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__memory_heap_allocated__count {
     sql: ${TABLE}.metrics.memory_distribution.memory_heap_allocated.count ;;
     type: number
@@ -19220,6 +19290,14 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "GPU Process Feature Status"
+  }
+
+  dimension: metrics__string__listen_to_page_tts_engine {
+    sql: ${TABLE}.metrics.string.listen_to_page_tts_engine ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Listen To Page Tts Engine"
   }
 
   dimension: metrics__string__metrics_adjust_ad_group {
@@ -32512,6 +32590,600 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__layout_time_to_first_interaction__values {
     sql: ${TABLE}.metrics.timing_distribution.layout_time_to_first_interaction.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_gap_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_gap_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Gap Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_gap_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_gap_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Gap Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_gap_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_gap_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Gap Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_gap_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_gap_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Gap Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_gap_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_gap_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_gap_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_gap_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Gap Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_gap_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_gap_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Gap Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_gap_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_gap_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Gap Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_gap_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_gap_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_synthesis_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_synthesis_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Synthesis Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_synthesis_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_synthesis_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Synthesis Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_synthesis_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_synthesis_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Synthesis Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_synthesis_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_synthesis_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Synthesis Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_synthesis_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_synthesis_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_synthesis_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_synthesis_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Synthesis Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_synthesis_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_synthesis_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Synthesis Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_synthesis_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_synthesis_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Chunk Synthesis Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_chunk_synthesis_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_chunk_synthesis_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_extraction_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_extraction_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Extraction Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_extraction_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_extraction_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Extraction Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_extraction_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_extraction_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Extraction Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_extraction_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_extraction_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Extraction Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_extraction_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_extraction_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_extraction_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_extraction_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Extraction Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_extraction_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_extraction_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Extraction Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_extraction_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_extraction_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Extraction Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_extraction_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_extraction_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_opening_synthesis_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_opening_synthesis_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Opening Synthesis Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_opening_synthesis_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_opening_synthesis_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Opening Synthesis Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_opening_synthesis_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_opening_synthesis_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Opening Synthesis Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_opening_synthesis_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_opening_synthesis_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Opening Synthesis Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_opening_synthesis_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_opening_synthesis_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_opening_synthesis_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_opening_synthesis_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Opening Synthesis Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_opening_synthesis_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_opening_synthesis_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Opening Synthesis Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_opening_synthesis_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_opening_synthesis_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Opening Synthesis Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_opening_synthesis_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_opening_synthesis_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_playback_start_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_playback_start_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Playback Start Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_playback_start_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_playback_start_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Playback Start Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_playback_start_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_playback_start_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Playback Start Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_playback_start_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_playback_start_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Playback Start Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_playback_start_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_playback_start_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_playback_start_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_playback_start_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Playback Start Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_playback_start_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_playback_start_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Playback Start Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_playback_start_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_playback_start_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Playback Start Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_playback_start_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_playback_start_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_preparation_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_preparation_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Preparation Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_preparation_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_preparation_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Preparation Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_preparation_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_preparation_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Preparation Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_preparation_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_preparation_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Preparation Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_preparation_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_preparation_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_preparation_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_preparation_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Preparation Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_preparation_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_preparation_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Preparation Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_preparation_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_preparation_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Preparation Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_preparation_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_preparation_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency__count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency__range {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency__sum {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency__values {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency_queued__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency_queued.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency Queued"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency_queued__count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency_queued.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency Queued"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency_queued__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency_queued.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency Queued"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency_queued__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency_queued.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency Queued"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency_queued__range {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency_queued.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency_queued__sum {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency_queued.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency Queued"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency_queued__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency_queued.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency Queued"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency_queued__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency_queued.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Seek Latency Queued"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_seek_latency_queued__values {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_seek_latency_queued.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_time_to_first_audio__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_time_to_first_audio.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Time To First Audio"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_time_to_first_audio__count {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_time_to_first_audio.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Time To First Audio"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_time_to_first_audio__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_time_to_first_audio.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Time To First Audio"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_time_to_first_audio__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_time_to_first_audio.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Time To First Audio"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_time_to_first_audio__range {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_time_to_first_audio.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_time_to_first_audio__sum {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_time_to_first_audio.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Time To First Audio"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_time_to_first_audio__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_time_to_first_audio.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Time To First Audio"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_time_to_first_audio__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_time_to_first_audio.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Listen To Page Time To First Audio"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__listen_to_page_time_to_first_audio__values {
+    sql: ${TABLE}.metrics.timing_distribution.listen_to_page_time_to_first_audio.values ;;
     hidden: yes
   }
 
@@ -68161,6 +68833,34 @@ view: metrics_table__metrics__memory_distribution__javascript_gc_nursery_bytes__
   }
 }
 
+view: metrics_table__metrics__memory_distribution__listen_to_page_chunk_audio_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__listen_to_page_opening_chunk_audio_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__memory_heap_allocated__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -71326,6 +72026,132 @@ view: metrics_table__metrics__timing_distribution__layout_refresh_driver_tick__v
 }
 
 view: metrics_table__metrics__timing_distribution__layout_time_to_first_interaction__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__listen_to_page_chunk_gap_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__listen_to_page_chunk_synthesis_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__listen_to_page_extraction_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__listen_to_page_opening_synthesis_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__listen_to_page_playback_start_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__listen_to_page_preparation_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__listen_to_page_seek_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__listen_to_page_seek_latency_queued__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__listen_to_page_time_to_first_audio__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

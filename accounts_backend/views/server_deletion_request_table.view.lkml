@@ -411,6 +411,22 @@ view: server_deletion_request_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__string__account_user_id {
+    sql: ${TABLE}.metrics.string.account_user_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Account User ID"
+  }
+
+  dimension: metrics__string__account_user_id_sha256 {
+    sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Account User ID Sha256"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

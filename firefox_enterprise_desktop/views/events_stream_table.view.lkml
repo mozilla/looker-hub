@@ -2360,6 +2360,14 @@ view: events_stream_table {
     group_item_label: "Linenumber"
   }
 
+  dimension: extras__quantity__magnitude {
+    sql: ${TABLE}.extras.quantity.magnitude ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Magnitude"
+  }
+
   dimension: extras__quantity__memories {
     sql: ${TABLE}.extras.quantity.memories ;;
     type: number
@@ -4104,6 +4112,14 @@ view: events_stream_table {
     group_item_label: "Button"
   }
 
+  dimension: extras__string__call_site {
+    sql: ${TABLE}.extras.string.call_site ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Call Site"
+  }
+
   dimension: extras__string__caller {
     sql: ${TABLE}.extras.string.caller ;;
     type: string
@@ -4334,6 +4350,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Click Type"
+  }
+
+  dimension: extras__string__client {
+    sql: ${TABLE}.extras.string.client ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Client"
   }
 
   dimension: extras__string__close_reason {
@@ -7614,6 +7638,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Tab Layout"
+  }
+
+  dimension: extras__string__tab_orientation {
+    sql: ${TABLE}.extras.string.tab_orientation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Tab Orientation"
   }
 
   dimension: extras__string__tab_pos {

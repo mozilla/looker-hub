@@ -953,6 +953,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__layout_long_reflow_interruptible}) AS metrics__metrics__labeled_counter__layout_long_reflow_interruptible ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__layout_long_reflow_interruptible.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__listen_to_page_session_max_thermal_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__listen_to_page_session_max_thermal_status}) AS metrics__metrics__labeled_counter__listen_to_page_session_max_thermal_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__listen_to_page_session_max_thermal_status.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__localdomstorage_preload_pending_on_first_access {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__localdomstorage_preload_pending_on_first_access}) AS metrics__metrics__labeled_counter__localdomstorage_preload_pending_on_first_access ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__localdomstorage_preload_pending_on_first_access.document_id} ;;

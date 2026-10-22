@@ -1267,6 +1267,14 @@ view: metrics_table {
     group_item_label: "Smart Window Set Default Optin"
   }
 
+  dimension: metrics__boolean__smart_window_sidebar_open_by_default {
+    sql: ${TABLE}.metrics.boolean.smart_window_sidebar_open_by_default ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Smart Window Sidebar Open By Default"
+  }
+
   dimension: metrics__boolean__smart_window_topsites_enabled {
     sql: ${TABLE}.metrics.boolean.smart_window_topsites_enabled ;;
     type: yesno
