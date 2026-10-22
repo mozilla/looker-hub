@@ -16632,6 +16632,15 @@ impression and it's an app-provided engine. Otherwise the label is \"none\".
 "
   }
 
+  dimension: metrics__labeled_counter__sap_impression_counts_text_selection {
+    sql: ${TABLE}.metrics.labeled_counter.sap_impression_counts_text_selection ;;
+    hidden: yes
+    description: "Count of impressions of the search action in the text selection menu. The
+counter's label is the engine's identifier if it's an app-provided
+engine. Otherwise the label is \"none\".
+"
+  }
+
   dimension: metrics__labeled_counter__script_preloader_requests {
     sql: ${TABLE}.metrics.labeled_counter.script_preloader_requests ;;
     hidden: yes

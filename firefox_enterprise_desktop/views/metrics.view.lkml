@@ -7846,7 +7846,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Session restore: Number of tabs restored eagerly in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_SESSION_RESTORE_NUMBER_OF_EAGER_TABS_RESTORED.
-As of bug 2071519 this is recorded on every restore attempt, including attempts that produced no eagerly-restored tab. Data from earlier versions excludes those startups.
 "
   }
 
@@ -7866,7 +7865,6 @@ As of bug 2071519 this is recorded on every restore attempt, including attempts 
 
     description: "Session restore: Number of tabs in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_NUMBER_OF_TABS_RESTORED.
-As of bug 2071519, 0 is recorded and will land in the underflow bucket. Before that, a restore that produced no eagerly-restored tab recorded nothing at all, so data from earlier versions excludes those startups and reads higher than it should.
 "
   }
 
@@ -7886,7 +7884,6 @@ As of bug 2071519, 0 is recorded and will land in the underflow bucket. Before t
 
     description: "Session restore: Number of windows in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_SESSION_RESTORE_NUMBER_OF_WINDOWS_RESTORED.
-As of bug 2071519 this is recorded on every restore attempt, including attempts that produced no eagerly-restored tab. Data from earlier versions excludes those startups.
 "
   }
 
@@ -8411,6 +8408,26 @@ count.
     }
 
     description: "Records if the user currently has the Smart Window set as the default window.
+"
+  }
+
+  dimension: metrics__boolean__smart_window_sidebar_open_by_default {
+    label: "Smart Window: Sidebar Open By Default"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.smart_window_sidebar_open_by_default ;;
+    type: yesno
+    group_label: "Smart Window"
+    group_item_label: "Sidebar Open By Default"
+
+    link: {
+      label: "Glean Dictionary reference for Smart Window: Sidebar Open By Default"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/smart_window_sidebar_open_by_default"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user currently has the Smart Window sidebar set to open
+by default, as set by the `browser.smartwindow.sidebar.openByDefault`
+pref.
 "
   }
 

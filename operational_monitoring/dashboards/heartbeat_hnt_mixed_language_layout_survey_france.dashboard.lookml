@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: heartbeat_hnt_mixed_language_layout_survey_france
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       heartbeat_hnt_mixed_language_layout_survey_france.submission_date,
       heartbeat_hnt_mixed_language_layout_survey_france.branch,
+      heartbeat_hnt_mixed_language_layout_survey_france.upper,
+      heartbeat_hnt_mixed_language_layout_survey_france.lower,
       heartbeat_hnt_mixed_language_layout_survey_france.point
     ]
     pivots: [
       heartbeat_hnt_mixed_language_layout_survey_france.branch
     ]
     filters:
-      heartbeat_hnt_mixed_language_layout_survey_france.metric: 'qualified_cumulative_days_of_use'
-      heartbeat_hnt_mixed_language_layout_survey_france.statistic: mean
+      heartbeat_hnt_mixed_language_layout_survey_france.metric: 'memory_total'
+      heartbeat_hnt_mixed_language_layout_survey_france.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,6 +42,7 @@
     show_grid: true
     listen:
       Date: heartbeat_hnt_mixed_language_layout_survey_france.submission_date
+      Percentile: heartbeat_hnt_mixed_language_layout_survey_france.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -78,40 +81,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: heartbeat_hnt_mixed_language_layout_survey_france
-    type: looker_line
-    fields: [
-      heartbeat_hnt_mixed_language_layout_survey_france.submission_date,
-      heartbeat_hnt_mixed_language_layout_survey_france.branch,
-      heartbeat_hnt_mixed_language_layout_survey_france.point
-    ]
-    pivots: [
-      heartbeat_hnt_mixed_language_layout_survey_france.branch
-    ]
-    filters:
-      heartbeat_hnt_mixed_language_layout_survey_france.metric: 'active_hours'
-      heartbeat_hnt_mixed_language_layout_survey_france.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: heartbeat_hnt_mixed_language_layout_survey_france.submission_date
-    field_y: heartbeat_hnt_mixed_language_layout_survey_france.point
-    log_scale: false
-    ci_lower: heartbeat_hnt_mixed_language_layout_survey_france.lower
-    ci_upper: heartbeat_hnt_mixed_language_layout_survey_france.upper
-    show_grid: true
-    listen:
-      Date: heartbeat_hnt_mixed_language_layout_survey_france.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -131,6 +100,40 @@
       heartbeat_hnt_mixed_language_layout_survey_france.metric: 'ad_clicks'
       heartbeat_hnt_mixed_language_layout_survey_france.statistic: mean
     row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: heartbeat_hnt_mixed_language_layout_survey_france.submission_date
+    field_y: heartbeat_hnt_mixed_language_layout_survey_france.point
+    log_scale: false
+    ci_lower: heartbeat_hnt_mixed_language_layout_survey_france.lower
+    ci_upper: heartbeat_hnt_mixed_language_layout_survey_france.upper
+    show_grid: true
+    listen:
+      Date: heartbeat_hnt_mixed_language_layout_survey_france.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: heartbeat_hnt_mixed_language_layout_survey_france
+    type: looker_line
+    fields: [
+      heartbeat_hnt_mixed_language_layout_survey_france.submission_date,
+      heartbeat_hnt_mixed_language_layout_survey_france.branch,
+      heartbeat_hnt_mixed_language_layout_survey_france.point
+    ]
+    pivots: [
+      heartbeat_hnt_mixed_language_layout_survey_france.branch
+    ]
+    filters:
+      heartbeat_hnt_mixed_language_layout_survey_france.metric: 'qualified_cumulative_days_of_use'
+      heartbeat_hnt_mixed_language_layout_survey_france.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -146,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,10 +165,44 @@
       heartbeat_hnt_mixed_language_layout_survey_france.branch
     ]
     filters:
-      heartbeat_hnt_mixed_language_layout_survey_france.metric: 'uri_count'
+      heartbeat_hnt_mixed_language_layout_survey_france.metric: 'days_of_use'
       heartbeat_hnt_mixed_language_layout_survey_france.statistic: mean
     row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: heartbeat_hnt_mixed_language_layout_survey_france.submission_date
+    field_y: heartbeat_hnt_mixed_language_layout_survey_france.point
+    log_scale: false
+    ci_lower: heartbeat_hnt_mixed_language_layout_survey_france.lower
+    ci_upper: heartbeat_hnt_mixed_language_layout_survey_france.upper
+    show_grid: true
+    listen:
+      Date: heartbeat_hnt_mixed_language_layout_survey_france.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: heartbeat_hnt_mixed_language_layout_survey_france
+    type: looker_line
+    fields: [
+      heartbeat_hnt_mixed_language_layout_survey_france.submission_date,
+      heartbeat_hnt_mixed_language_layout_survey_france.branch,
+      heartbeat_hnt_mixed_language_layout_survey_france.point
+    ]
+    pivots: [
+      heartbeat_hnt_mixed_language_layout_survey_france.branch
+    ]
+    filters:
+      heartbeat_hnt_mixed_language_layout_survey_france.metric: 'active_hours'
+      heartbeat_hnt_mixed_language_layout_survey_france.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: heartbeat_hnt_mixed_language_layout_survey_france.submission_date
@@ -198,42 +235,6 @@
     filters:
       heartbeat_hnt_mixed_language_layout_survey_france.metric: 'search_count'
       heartbeat_hnt_mixed_language_layout_survey_france.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: heartbeat_hnt_mixed_language_layout_survey_france.submission_date
-    field_y: heartbeat_hnt_mixed_language_layout_survey_france.point
-    log_scale: false
-    ci_lower: heartbeat_hnt_mixed_language_layout_survey_france.lower
-    ci_upper: heartbeat_hnt_mixed_language_layout_survey_france.upper
-    show_grid: true
-    listen:
-      Date: heartbeat_hnt_mixed_language_layout_survey_france.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: heartbeat_hnt_mixed_language_layout_survey_france
-    type: "ci-line-chart"
-    fields: [
-      heartbeat_hnt_mixed_language_layout_survey_france.submission_date,
-      heartbeat_hnt_mixed_language_layout_survey_france.branch,
-      heartbeat_hnt_mixed_language_layout_survey_france.upper,
-      heartbeat_hnt_mixed_language_layout_survey_france.lower,
-      heartbeat_hnt_mixed_language_layout_survey_france.point
-    ]
-    pivots: [
-      heartbeat_hnt_mixed_language_layout_survey_france.branch
-    ]
-    filters:
-      heartbeat_hnt_mixed_language_layout_survey_france.metric: 'memory_total'
-      heartbeat_hnt_mixed_language_layout_survey_france.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -246,13 +247,12 @@
     show_grid: true
     listen:
       Date: heartbeat_hnt_mixed_language_layout_survey_france.submission_date
-      Percentile: heartbeat_hnt_mixed_language_layout_survey_france.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       heartbeat_hnt_mixed_language_layout_survey_france.branch
     ]
     filters:
-      heartbeat_hnt_mixed_language_layout_survey_france.metric: 'days_of_use'
+      heartbeat_hnt_mixed_language_layout_survey_france.metric: 'uri_count'
       heartbeat_hnt_mixed_language_layout_survey_france.statistic: mean
     row: 30
     col: 12
