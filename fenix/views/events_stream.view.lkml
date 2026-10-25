@@ -2483,6 +2483,14 @@ view: events_stream {
     group_item_label: "App Package"
   }
 
+  dimension: extras__string__app_state_before_click {
+    sql: ${TABLE}.extras.string.app_state_before_click ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "App State Before Click"
+  }
+
   dimension: extras__string__auto_admin {
     sql: ${TABLE}.extras.string.auto_admin ;;
     type: string
@@ -3961,6 +3969,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Language"
+  }
+
+  dimension: extras__string__language_source {
+    sql: ${TABLE}.extras.string.language_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Language Source"
   }
 
   dimension: extras__string__last_line {
