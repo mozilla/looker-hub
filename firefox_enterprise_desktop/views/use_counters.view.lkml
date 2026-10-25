@@ -29561,6 +29561,60 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_akamai_forbidden {
+    label: "Use Counter Doc: Akamai Forbidden"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_akamai_forbidden ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Akamai Forbidden"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Akamai Forbidden"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_akamai_forbidden"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document had a load get a 403 from Akamai that is not the WAF block page. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_akamai_used {
+    label: "Use Counter Doc: Akamai Used"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_akamai_used ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Akamai Used"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Akamai Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_akamai_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document loaded a document or subresource served by Akamai. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_akamai_waf_blocked {
+    label: "Use Counter Doc: Akamai Waf Blocked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_akamai_waf_blocked ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Akamai Waf Blocked"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Akamai Waf Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_akamai_waf_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document had a load blocked by the Akamai WAF. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_animation_commitstyles {
     label: "Use Counter Doc: Animation Commitstyles"
     hidden: yes
@@ -39709,6 +39763,60 @@ view: use_counters {
     }
 
     description: "How many times did we try to increment a use counter we couldn't find? Labeled by what kind of use counter it is.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_akamai_forbidden {
+    label: "Use Counter Page: Akamai Forbidden"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_akamai_forbidden ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Akamai Forbidden"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Akamai Forbidden"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_akamai_forbidden"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page had a load get a 403 from Akamai that is not the WAF block page. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_akamai_used {
+    label: "Use Counter Page: Akamai Used"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_akamai_used ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Akamai Used"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Akamai Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_akamai_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page loaded a document or subresource served by Akamai. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_akamai_waf_blocked {
+    label: "Use Counter Page: Akamai Waf Blocked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_akamai_waf_blocked ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Akamai Waf Blocked"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Akamai Waf Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_akamai_waf_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page had a load blocked by the Akamai WAF. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -95527,6 +95635,81 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_akamai_forbidden {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_akamai_forbidden} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Akamai Forbidden"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_akamai_forbidden"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_akamai_forbidden_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_akamai_forbidden: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Akamai Forbidden"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_akamai_forbidden"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_akamai_used {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_akamai_used} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Akamai Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_akamai_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_akamai_used_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_akamai_used: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Akamai Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_akamai_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_akamai_waf_blocked {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_akamai_waf_blocked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Akamai Waf Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_akamai_waf_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_akamai_waf_blocked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_akamai_waf_blocked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Akamai Waf Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_akamai_waf_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_animation_commitstyles {
     type: sum
     sql: ${metrics__counter__use_counter_doc_animation_commitstyles} ;;
@@ -109598,6 +109781,81 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Doc You Tube Flash Embed"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_you_tube_flash_embed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_akamai_forbidden {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_akamai_forbidden} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Akamai Forbidden"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_akamai_forbidden"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_akamai_forbidden_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_akamai_forbidden: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Akamai Forbidden"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_akamai_forbidden"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_akamai_used {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_akamai_used} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Akamai Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_akamai_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_akamai_used_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_akamai_used: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Akamai Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_akamai_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_akamai_waf_blocked {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_akamai_waf_blocked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Akamai Waf Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_akamai_waf_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_akamai_waf_blocked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_akamai_waf_blocked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Akamai Waf Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_akamai_waf_blocked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

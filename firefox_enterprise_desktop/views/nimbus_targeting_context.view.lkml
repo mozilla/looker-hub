@@ -416,6 +416,24 @@ Until the push service starts, which is usually the case for the targeting conte
     description: "The amount of system memory, in mebibytes (MiB)."
   }
 
+  dimension: metrics__quantity__nimbus_targeting_context_previous_session_end {
+    label: "Nimbus Targeting Context: Previous Session End"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_previous_session_end ;;
+    type: number
+    group_label: "Nimbus Targeting Context"
+    group_item_label: "Previous Session End"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Targeting Context: Previous Session End"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/nimbus_targeting_context_previous_session_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Timestamp of the previously closed session.
+"
+  }
+
   dimension: metrics__quantity__nimbus_targeting_context_profile_age_created {
     label: "Nimbus Targeting Context: Profile Age Created"
     hidden: no
@@ -448,6 +466,24 @@ Until the push service starts, which is usually the case for the targeting conte
     }
 
     description: "The number of profiles in the current profile group or zero if either the feature is not enabled or the user has not created any profiles.
+"
+  }
+
+  dimension: metrics__quantity__nimbus_targeting_context_profile_last_use {
+    label: "Nimbus Targeting Context: Profile Last Use"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_profile_last_use ;;
+    type: number
+    group_label: "Nimbus Targeting Context"
+    group_item_label: "Profile Last Use"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Targeting Context: Profile Last Use"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/nimbus_targeting_context_profile_last_use"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The UNIX timestamp of when the profile was last used before the current session, or zero if it could not be determined. This is the more recent of the previous session's lock file time and the prefs.js modification time.
 "
   }
 

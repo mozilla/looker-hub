@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: software_h264_decode_pref_flip
-    type: "ci-line-chart"
-    fields: [
-      software_h264_decode_pref_flip.submission_date,
-      software_h264_decode_pref_flip.branch,
-      software_h264_decode_pref_flip.upper,
-      software_h264_decode_pref_flip.lower,
-      software_h264_decode_pref_flip.point
-    ]
-    pivots: [
-      software_h264_decode_pref_flip.branch
-    ]
-    filters:
-      software_h264_decode_pref_flip.metric: 'memory_total'
-      software_h264_decode_pref_flip.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: software_h264_decode_pref_flip.submission_date
-    field_y: software_h264_decode_pref_flip.point
-    log_scale: false
-    ci_lower: software_h264_decode_pref_flip.lower
-    ci_upper: software_h264_decode_pref_flip.upper
-    show_grid: true
-    listen:
-      Date: software_h264_decode_pref_flip.submission_date
-      Percentile: software_h264_decode_pref_flip.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,43 +26,9 @@
       software_h264_decode_pref_flip.branch
     ]
     filters:
-      software_h264_decode_pref_flip.metric: 'retained'
+      software_h264_decode_pref_flip.metric: 'uri_count'
       software_h264_decode_pref_flip.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: software_h264_decode_pref_flip.submission_date
-    field_y: software_h264_decode_pref_flip.point
-    log_scale: false
-    ci_lower: software_h264_decode_pref_flip.lower
-    ci_upper: software_h264_decode_pref_flip.upper
-    show_grid: true
-    listen:
-      Date: software_h264_decode_pref_flip.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: software_h264_decode_pref_flip
-    type: looker_line
-    fields: [
-      software_h264_decode_pref_flip.submission_date,
-      software_h264_decode_pref_flip.branch,
-      software_h264_decode_pref_flip.point
-    ]
-    pivots: [
-      software_h264_decode_pref_flip.branch
-    ]
-    filters:
-      software_h264_decode_pref_flip.metric: 'ad_clicks'
-      software_h264_decode_pref_flip.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -133,7 +62,7 @@
     filters:
       software_h264_decode_pref_flip.metric: 'qualified_cumulative_days_of_use'
       software_h264_decode_pref_flip.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -149,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,9 +94,9 @@
       software_h264_decode_pref_flip.branch
     ]
     filters:
-      software_h264_decode_pref_flip.metric: 'days_of_use'
+      software_h264_decode_pref_flip.metric: 'retained'
       software_h264_decode_pref_flip.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -200,6 +129,74 @@
     ]
     filters:
       software_h264_decode_pref_flip.metric: 'active_hours'
+      software_h264_decode_pref_flip.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: software_h264_decode_pref_flip.submission_date
+    field_y: software_h264_decode_pref_flip.point
+    log_scale: false
+    ci_lower: software_h264_decode_pref_flip.lower
+    ci_upper: software_h264_decode_pref_flip.upper
+    show_grid: true
+    listen:
+      Date: software_h264_decode_pref_flip.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: software_h264_decode_pref_flip
+    type: looker_line
+    fields: [
+      software_h264_decode_pref_flip.submission_date,
+      software_h264_decode_pref_flip.branch,
+      software_h264_decode_pref_flip.point
+    ]
+    pivots: [
+      software_h264_decode_pref_flip.branch
+    ]
+    filters:
+      software_h264_decode_pref_flip.metric: 'ad_clicks'
+      software_h264_decode_pref_flip.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: software_h264_decode_pref_flip.submission_date
+    field_y: software_h264_decode_pref_flip.point
+    log_scale: false
+    ci_lower: software_h264_decode_pref_flip.lower
+    ci_upper: software_h264_decode_pref_flip.upper
+    show_grid: true
+    listen:
+      Date: software_h264_decode_pref_flip.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: software_h264_decode_pref_flip
+    type: looker_line
+    fields: [
+      software_h264_decode_pref_flip.submission_date,
+      software_h264_decode_pref_flip.branch,
+      software_h264_decode_pref_flip.point
+    ]
+    pivots: [
+      software_h264_decode_pref_flip.branch
+    ]
+    filters:
+      software_h264_decode_pref_flip.metric: 'days_of_use'
       software_h264_decode_pref_flip.statistic: mean
     row: 20
     col: 12
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: software_h264_decode_pref_flip
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       software_h264_decode_pref_flip.submission_date,
       software_h264_decode_pref_flip.branch,
+      software_h264_decode_pref_flip.upper,
+      software_h264_decode_pref_flip.lower,
       software_h264_decode_pref_flip.point
     ]
     pivots: [
       software_h264_decode_pref_flip.branch
     ]
     filters:
-      software_h264_decode_pref_flip.metric: 'uri_count'
-      software_h264_decode_pref_flip.statistic: mean
+      software_h264_decode_pref_flip.metric: 'memory_total'
+      software_h264_decode_pref_flip.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: software_h264_decode_pref_flip.submission_date
+      Percentile: software_h264_decode_pref_flip.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

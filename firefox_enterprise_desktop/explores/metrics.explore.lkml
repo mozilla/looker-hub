@@ -1598,6 +1598,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_http3_0rtt_state}) AS metrics__metrics__labeled_counter__netwerk_http3_0rtt_state ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_http3_0rtt_state.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_akamai_document_loads {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_akamai_document_loads}) AS metrics__metrics__labeled_counter__network_akamai_document_loads ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_akamai_document_loads.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_alpn_mismatch_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_alpn_mismatch_count}) AS metrics__metrics__labeled_counter__network_alpn_mismatch_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_alpn_mismatch_count.document_id} ;;
@@ -2301,6 +2306,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__sap_impression_counts_contextmenu_visual {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__sap_impression_counts_contextmenu_visual}) AS metrics__metrics__labeled_counter__sap_impression_counts_contextmenu_visual ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__sap_impression_counts_contextmenu_visual.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__sap_impression_counts_text_selection {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__sap_impression_counts_text_selection}) AS metrics__metrics__labeled_counter__sap_impression_counts_text_selection ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__sap_impression_counts_text_selection.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__script_preloader_requests {
