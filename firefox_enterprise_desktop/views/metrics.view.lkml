@@ -7076,6 +7076,25 @@ impression and it's an app-provided engine. Otherwise the label is \"none\".
 "
   }
 
+  dimension: metrics__labeled_counter__sap_impression_counts_text_selection {
+    label: "Sap Impression Counts: Text Selection"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.sap_impression_counts_text_selection ;;
+    group_label: "Sap Impression Counts"
+    group_item_label: "Text Selection"
+
+    link: {
+      label: "Glean Dictionary reference for Sap Impression Counts: Text Selection"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/sap_impression_counts_text_selection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of impressions of the search action in the text selection menu. The
+counter's label is the engine's identifier if it's an app-provided
+engine. Otherwise the label is \"none\".
+"
+  }
+
   dimension: metrics__labeled_quantity__search_counts_hidden_engines {
     label: "Search Counts: Hidden Engines"
     hidden: no
@@ -23114,6 +23133,59 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Counts how often the parent-connect-timeout timer is necessary to clear up EarlyHintPreloader
+"
+  }
+
+  dimension: metrics__labeled_counter__network_akamai_document_loads {
+    label: "Network: Akamai Document Loads"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_akamai_document_loads ;;
+    group_label: "Network"
+    group_item_label: "Akamai Document Loads"
+
+    link: {
+      label: "Glean Dictionary reference for Network: Akamai Document Loads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/network_akamai_document_loads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts document and frame loads served by Akamai, labeled by whether the response was the Akamai WAF \"Access Denied\" page (403 with a body referencing errors.edgesuite.net), a different 403 response, or any other response.
+"
+  }
+
+  dimension: metrics__boolean__network_akamai_waf_blocked {
+    label: "Network: Akamai Waf Blocked"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.network_akamai_waf_blocked ;;
+    type: yesno
+    group_label: "Network"
+    group_item_label: "Akamai Waf Blocked"
+
+    link: {
+      label: "Glean Dictionary reference for Network: Akamai Waf Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/network_akamai_waf_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to true when a document or frame load served by Akamai is a 403 \"Access Denied\" page from the Akamai WAF (body references errors.edgesuite.net).
+"
+  }
+
+  dimension: metrics__boolean__network_akamai_waf_blocked_subresource {
+    label: "Network: Akamai Waf Blocked Subresource"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.network_akamai_waf_blocked_subresource ;;
+    type: yesno
+    group_label: "Network"
+    group_item_label: "Akamai Waf Blocked Subresource"
+
+    link: {
+      label: "Glean Dictionary reference for Network: Akamai Waf Blocked Subresource"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/network_akamai_waf_blocked_subresource"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to true when a subresource load served by Akamai is a 403 \"Access Denied\" page from the Akamai WAF (body references errors.edgesuite.net).
 "
   }
 
@@ -59722,6 +59794,47 @@ view: metrics__metrics__labeled_counter__netwerk_http3_0rtt_state {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_akamai_document_loads {
+  label: "Network: Akamai Document Loads"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_alpn_mismatch_count {
   label: "Network: Alpn Mismatch Count"
 
@@ -65464,6 +65577,47 @@ view: metrics__metrics__labeled_counter__sap_deprecated_counts {
 
 view: metrics__metrics__labeled_counter__sap_impression_counts_contextmenu_visual {
   label: "Sap Impression Counts: Contextmenu Visual"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__sap_impression_counts_text_selection {
+  label: "Sap Impression Counts: Text Selection"
 
   dimension: document_id {
     type: string

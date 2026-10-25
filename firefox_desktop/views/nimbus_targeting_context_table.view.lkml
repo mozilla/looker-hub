@@ -679,6 +679,14 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Nimbus Targeting Context Memory Mb"
   }
 
+  dimension: metrics__quantity__nimbus_targeting_context_previous_session_end {
+    sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_previous_session_end ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Nimbus Targeting Context Previous Session End"
+  }
+
   dimension: metrics__quantity__nimbus_targeting_context_profile_age_created {
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_profile_age_created ;;
     type: number
@@ -693,6 +701,14 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Nimbus Targeting Context Profile Group Profile Count"
+  }
+
+  dimension: metrics__quantity__nimbus_targeting_context_profile_last_use {
+    sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_profile_last_use ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Nimbus Targeting Context Profile Last Use"
   }
 
   dimension: metrics__quantity__nimbus_targeting_context_total_bookmarks_count {

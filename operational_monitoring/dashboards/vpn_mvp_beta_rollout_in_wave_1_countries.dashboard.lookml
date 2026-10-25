@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: vpn_mvp_beta_rollout_in_wave_1_countries
-    type: "ci-line-chart"
-    fields: [
-      vpn_mvp_beta_rollout_in_wave_1_countries.submission_date,
-      vpn_mvp_beta_rollout_in_wave_1_countries.branch,
-      vpn_mvp_beta_rollout_in_wave_1_countries.upper,
-      vpn_mvp_beta_rollout_in_wave_1_countries.lower,
-      vpn_mvp_beta_rollout_in_wave_1_countries.point
-    ]
-    pivots: [
-      vpn_mvp_beta_rollout_in_wave_1_countries.branch
-    ]
-    filters:
-      vpn_mvp_beta_rollout_in_wave_1_countries.metric: 'memory_total'
-      vpn_mvp_beta_rollout_in_wave_1_countries.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: vpn_mvp_beta_rollout_in_wave_1_countries.submission_date
-    field_y: vpn_mvp_beta_rollout_in_wave_1_countries.point
-    log_scale: false
-    ci_lower: vpn_mvp_beta_rollout_in_wave_1_countries.lower
-    ci_upper: vpn_mvp_beta_rollout_in_wave_1_countries.upper
-    show_grid: true
-    listen:
-      Date: vpn_mvp_beta_rollout_in_wave_1_countries.submission_date
-      Percentile: vpn_mvp_beta_rollout_in_wave_1_countries.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,43 +26,9 @@
       vpn_mvp_beta_rollout_in_wave_1_countries.branch
     ]
     filters:
-      vpn_mvp_beta_rollout_in_wave_1_countries.metric: 'retained'
+      vpn_mvp_beta_rollout_in_wave_1_countries.metric: 'uri_count'
       vpn_mvp_beta_rollout_in_wave_1_countries.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: vpn_mvp_beta_rollout_in_wave_1_countries.submission_date
-    field_y: vpn_mvp_beta_rollout_in_wave_1_countries.point
-    log_scale: false
-    ci_lower: vpn_mvp_beta_rollout_in_wave_1_countries.lower
-    ci_upper: vpn_mvp_beta_rollout_in_wave_1_countries.upper
-    show_grid: true
-    listen:
-      Date: vpn_mvp_beta_rollout_in_wave_1_countries.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: vpn_mvp_beta_rollout_in_wave_1_countries
-    type: looker_line
-    fields: [
-      vpn_mvp_beta_rollout_in_wave_1_countries.submission_date,
-      vpn_mvp_beta_rollout_in_wave_1_countries.branch,
-      vpn_mvp_beta_rollout_in_wave_1_countries.point
-    ]
-    pivots: [
-      vpn_mvp_beta_rollout_in_wave_1_countries.branch
-    ]
-    filters:
-      vpn_mvp_beta_rollout_in_wave_1_countries.metric: 'ad_clicks'
-      vpn_mvp_beta_rollout_in_wave_1_countries.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -133,7 +62,7 @@
     filters:
       vpn_mvp_beta_rollout_in_wave_1_countries.metric: 'qualified_cumulative_days_of_use'
       vpn_mvp_beta_rollout_in_wave_1_countries.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -149,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,9 +94,9 @@
       vpn_mvp_beta_rollout_in_wave_1_countries.branch
     ]
     filters:
-      vpn_mvp_beta_rollout_in_wave_1_countries.metric: 'days_of_use'
+      vpn_mvp_beta_rollout_in_wave_1_countries.metric: 'retained'
       vpn_mvp_beta_rollout_in_wave_1_countries.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -200,6 +129,74 @@
     ]
     filters:
       vpn_mvp_beta_rollout_in_wave_1_countries.metric: 'active_hours'
+      vpn_mvp_beta_rollout_in_wave_1_countries.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: vpn_mvp_beta_rollout_in_wave_1_countries.submission_date
+    field_y: vpn_mvp_beta_rollout_in_wave_1_countries.point
+    log_scale: false
+    ci_lower: vpn_mvp_beta_rollout_in_wave_1_countries.lower
+    ci_upper: vpn_mvp_beta_rollout_in_wave_1_countries.upper
+    show_grid: true
+    listen:
+      Date: vpn_mvp_beta_rollout_in_wave_1_countries.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: vpn_mvp_beta_rollout_in_wave_1_countries
+    type: looker_line
+    fields: [
+      vpn_mvp_beta_rollout_in_wave_1_countries.submission_date,
+      vpn_mvp_beta_rollout_in_wave_1_countries.branch,
+      vpn_mvp_beta_rollout_in_wave_1_countries.point
+    ]
+    pivots: [
+      vpn_mvp_beta_rollout_in_wave_1_countries.branch
+    ]
+    filters:
+      vpn_mvp_beta_rollout_in_wave_1_countries.metric: 'ad_clicks'
+      vpn_mvp_beta_rollout_in_wave_1_countries.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: vpn_mvp_beta_rollout_in_wave_1_countries.submission_date
+    field_y: vpn_mvp_beta_rollout_in_wave_1_countries.point
+    log_scale: false
+    ci_lower: vpn_mvp_beta_rollout_in_wave_1_countries.lower
+    ci_upper: vpn_mvp_beta_rollout_in_wave_1_countries.upper
+    show_grid: true
+    listen:
+      Date: vpn_mvp_beta_rollout_in_wave_1_countries.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: vpn_mvp_beta_rollout_in_wave_1_countries
+    type: looker_line
+    fields: [
+      vpn_mvp_beta_rollout_in_wave_1_countries.submission_date,
+      vpn_mvp_beta_rollout_in_wave_1_countries.branch,
+      vpn_mvp_beta_rollout_in_wave_1_countries.point
+    ]
+    pivots: [
+      vpn_mvp_beta_rollout_in_wave_1_countries.branch
+    ]
+    filters:
+      vpn_mvp_beta_rollout_in_wave_1_countries.metric: 'days_of_use'
       vpn_mvp_beta_rollout_in_wave_1_countries.statistic: mean
     row: 20
     col: 12
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: vpn_mvp_beta_rollout_in_wave_1_countries
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       vpn_mvp_beta_rollout_in_wave_1_countries.submission_date,
       vpn_mvp_beta_rollout_in_wave_1_countries.branch,
+      vpn_mvp_beta_rollout_in_wave_1_countries.upper,
+      vpn_mvp_beta_rollout_in_wave_1_countries.lower,
       vpn_mvp_beta_rollout_in_wave_1_countries.point
     ]
     pivots: [
       vpn_mvp_beta_rollout_in_wave_1_countries.branch
     ]
     filters:
-      vpn_mvp_beta_rollout_in_wave_1_countries.metric: 'uri_count'
-      vpn_mvp_beta_rollout_in_wave_1_countries.statistic: mean
+      vpn_mvp_beta_rollout_in_wave_1_countries.metric: 'memory_total'
+      vpn_mvp_beta_rollout_in_wave_1_countries.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: vpn_mvp_beta_rollout_in_wave_1_countries.submission_date
+      Percentile: vpn_mvp_beta_rollout_in_wave_1_countries.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

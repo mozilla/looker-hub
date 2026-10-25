@@ -1075,6 +1075,22 @@ view: metrics_table {
     group_item_label: "Migration Uninstaller Profile Refresh"
   }
 
+  dimension: metrics__boolean__network_akamai_waf_blocked {
+    sql: ${TABLE}.metrics.boolean.network_akamai_waf_blocked ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Network Akamai Waf Blocked"
+  }
+
+  dimension: metrics__boolean__network_akamai_waf_blocked_subresource {
+    sql: ${TABLE}.metrics.boolean.network_akamai_waf_blocked_subresource ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Network Akamai Waf Blocked Subresource"
+  }
+
   dimension: metrics__boolean__network_apple_fast_datapath_used {
     sql: ${TABLE}.metrics.boolean.network_apple_fast_datapath_used ;;
     type: yesno
@@ -1305,6 +1321,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Search Suggestions Ohttp Enabled"
+  }
+
+  dimension: metrics__boolean__selection_menu_copy_enabled {
+    sql: ${TABLE}.metrics.boolean.selection_menu_copy_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Selection Menu Copy Enabled"
   }
 
   dimension: metrics__boolean__selection_menu_enabled {
@@ -15487,6 +15511,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     hidden: yes
     description: "Success / Fail Rates for HTTP3 when a 'real' ECH Extension was sent
 "
+  }
+
+  dimension: metrics__labeled_counter__network_akamai_document_loads {
+    sql: ${TABLE}.metrics.labeled_counter.network_akamai_document_loads ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__network_alpn_mismatch_count {

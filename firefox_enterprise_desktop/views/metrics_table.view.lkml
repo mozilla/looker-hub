@@ -1011,6 +1011,22 @@ view: metrics_table {
     group_item_label: "Migration Uninstaller Profile Refresh"
   }
 
+  dimension: metrics__boolean__network_akamai_waf_blocked {
+    sql: ${TABLE}.metrics.boolean.network_akamai_waf_blocked ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Network Akamai Waf Blocked"
+  }
+
+  dimension: metrics__boolean__network_akamai_waf_blocked_subresource {
+    sql: ${TABLE}.metrics.boolean.network_akamai_waf_blocked_subresource ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Network Akamai Waf Blocked Subresource"
+  }
+
   dimension: metrics__boolean__network_apple_fast_datapath_used {
     sql: ${TABLE}.metrics.boolean.network_apple_fast_datapath_used ;;
     type: yesno
@@ -11560,6 +11576,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__network_akamai_document_loads {
+    sql: ${TABLE}.metrics.labeled_counter.network_akamai_document_loads ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_alpn_mismatch_count {
     sql: ${TABLE}.metrics.labeled_counter.network_alpn_mismatch_count ;;
     hidden: yes
@@ -12608,6 +12629,11 @@ histogram SEARCH_COUNTS.
 label is the engine's identifier if the engine is known at the time of
 impression and it's an app-provided engine. Otherwise the label is \"none\".
 "
+  }
+
+  dimension: metrics__labeled_counter__sap_impression_counts_text_selection {
+    sql: ${TABLE}.metrics.labeled_counter.sap_impression_counts_text_selection ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__script_preloader_requests {

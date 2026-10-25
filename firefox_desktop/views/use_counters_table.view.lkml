@@ -13739,6 +13739,30 @@ view: use_counters_table {
     group_item_label: "Use Counter Deprecated Ops Page Xsltdeprecated"
   }
 
+  dimension: metrics__counter__use_counter_doc_akamai_forbidden {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_akamai_forbidden ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Akamai Forbidden"
+  }
+
+  dimension: metrics__counter__use_counter_doc_akamai_used {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_akamai_used ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Akamai Used"
+  }
+
+  dimension: metrics__counter__use_counter_doc_akamai_waf_blocked {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_akamai_waf_blocked ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Akamai Waf Blocked"
+  }
+
   dimension: metrics__counter__use_counter_doc_animation_commitstyles {
     sql: ${TABLE}.metrics.counter.use_counter_doc_animation_commitstyles ;;
     type: number
@@ -18241,6 +18265,30 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc You Tube Flash Embed"
+  }
+
+  dimension: metrics__counter__use_counter_page_akamai_forbidden {
+    sql: ${TABLE}.metrics.counter.use_counter_page_akamai_forbidden ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Akamai Forbidden"
+  }
+
+  dimension: metrics__counter__use_counter_page_akamai_used {
+    sql: ${TABLE}.metrics.counter.use_counter_page_akamai_used ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Akamai Used"
+  }
+
+  dimension: metrics__counter__use_counter_page_akamai_waf_blocked {
+    sql: ${TABLE}.metrics.counter.use_counter_page_akamai_waf_blocked ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Akamai Waf Blocked"
   }
 
   dimension: metrics__counter__use_counter_page_animation_commitstyles {
