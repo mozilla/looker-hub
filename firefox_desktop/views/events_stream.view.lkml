@@ -891,6 +891,14 @@ view: events_stream {
     group_item_label: "In Shutdown"
   }
 
+  dimension: extras__boolean__interacted {
+    sql: ${TABLE}.extras.boolean.interacted ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Interacted"
+  }
+
   dimension: extras__boolean__isBlock {
     sql: ${TABLE}.extras.boolean.isBlock ;;
     type: yesno
@@ -945,6 +953,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Is Background"
+  }
+
+  dimension: extras__boolean__is_block {
+    sql: ${TABLE}.extras.boolean.is_block ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Block"
   }
 
   dimension: extras__boolean__is_customizing {
@@ -1529,6 +1545,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Smartblocktoggleclicked"
+  }
+
+  dimension: extras__boolean__smartblock_embed_toggles_shown {
+    sql: ${TABLE}.extras.boolean.smartblock_embed_toggles_shown ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Smartblock Embed Toggles Shown"
   }
 
   dimension: extras__boolean__sponsored {
@@ -4299,12 +4323,28 @@ view: events_stream {
     group_item_label: "Agent"
   }
 
+  dimension: extras__string__ai {
+    sql: ${TABLE}.extras.string.ai ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Ai"
+  }
+
   dimension: extras__string__alt_text_type {
     sql: ${TABLE}.extras.string.alt_text_type ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Alt Text Type"
+  }
+
+  dimension: extras__string__app_state_before_click {
+    sql: ${TABLE}.extras.string.app_state_before_click ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "App State Before Click"
   }
 
   dimension: extras__string__appearance {
@@ -4953,6 +4993,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Context Type"
+  }
+
+  dimension: extras__string__copy {
+    sql: ${TABLE}.extras.string.copy ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Copy"
   }
 
   dimension: extras__string__country {
@@ -6161,6 +6209,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Issue Date Year"
+  }
+
+  dimension: extras__string__item {
+    sql: ${TABLE}.extras.string.item ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Item"
   }
 
   dimension: extras__string__key_system {
@@ -7699,6 +7755,14 @@ view: events_stream {
     group_item_label: "Scroll Position"
   }
 
+  dimension: extras__string__search {
+    sql: ${TABLE}.extras.string.search ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Search"
+  }
+
   dimension: extras__string__search_domain {
     sql: ${TABLE}.extras.string.search_domain ;;
     type: string
@@ -7849,6 +7913,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Share Type"
+  }
+
+  dimension: extras__string__shim_id {
+    sql: ${TABLE}.extras.string.shim_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Shim ID"
   }
 
   dimension: extras__string__shortcut {
