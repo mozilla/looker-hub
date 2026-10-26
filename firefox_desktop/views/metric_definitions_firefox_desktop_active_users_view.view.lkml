@@ -251,8 +251,13 @@ looker_base_fields_sample_id,
 
   dimension: active_in_last_3_days_legacy {
     group_label: "Metrics"
-    label: "3 Days Retention"
-    description: "Records whether a client submitted any pings (i.e. used Firefox) on any of the last 3 days. Uses legacy telemetry."
+    label: "First 3 Days Retention"
+    description: "    Whether an enrolled client qualified as DAU on at least one of the three days
+    ending on the analysis day. Read at day 4 in Experimenter, this covers the three
+    days immediately after enrollment, a critical window for new-profile engagement
+    and activation and a more robust signal than retention on exactly the third day.
+    Uses Legacy telemetry.
+"
     type: number
     sql: ${TABLE}.active_in_last_3_days_legacy ;;
   }
