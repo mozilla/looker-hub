@@ -229,6 +229,129 @@ view: experimenter_experiments {
     description: "Outcome slugs referenced by the experiment that don't support its platform."
   }
 
+  dimension: monitoring_config__alerts {
+    sql: ${TABLE}.monitoring_config.alerts ;;
+    hidden: yes
+  }
+
+  dimension: monitoring_config__branches {
+    sql: ${TABLE}.monitoring_config.branches ;;
+    hidden: yes
+    description: "Branches monitored, if restricted by the config."
+  }
+
+  dimension: monitoring_config__dimensions {
+    sql: ${TABLE}.monitoring_config.dimensions ;;
+    hidden: yes
+    description: "Dimensions the monitored population is broken down by."
+  }
+
+  dimension: monitoring_config__external_config_url {
+    sql: ${TABLE}.monitoring_config.external_config_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Monitoring Config"
+    group_item_label: "External Config URL"
+    description: "Link to the slug's metric-hub/opmon config, if any."
+  }
+
+  dimension: monitoring_config__group_by_dimension {
+    sql: ${TABLE}.monitoring_config.group_by_dimension ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Monitoring Config"
+    group_item_label: "Group By Dimension"
+  }
+
+  dimension: monitoring_config__has_external_config {
+    sql: ${TABLE}.monitoring_config.has_external_config ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Monitoring Config"
+    group_item_label: "Has External Config"
+    description: "Whether a slug-specific config exists in metric-hub/opmon."
+  }
+
+  dimension: monitoring_config__metric_groups {
+    sql: ${TABLE}.monitoring_config.metric_groups ;;
+    hidden: yes
+  }
+
+  dimension: monitoring_config__metrics {
+    sql: ${TABLE}.monitoring_config.metrics ;;
+    hidden: yes
+    description: "Metrics monitored, deduplicated by metric across statistics."
+  }
+
+  dimension: monitoring_config__monitor_entire_population {
+    sql: ${TABLE}.monitoring_config.monitor_entire_population ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Monitoring Config"
+    group_item_label: "Monitor Entire Population"
+  }
+
+  dimension: monitoring_config__platform {
+    sql: ${TABLE}.monitoring_config.platform ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Monitoring Config"
+    group_item_label: "Platform"
+    description: "Platform whose opmon definitions and defaults were applied."
+  }
+
+  dimension: monitoring_config__population_data_source {
+    sql: ${TABLE}.monitoring_config.population_data_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Monitoring Config"
+    group_item_label: "Population Data Source"
+  }
+
+  dimension: monitoring_config__reference_branch {
+    sql: ${TABLE}.monitoring_config.reference_branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Monitoring Config"
+    group_item_label: "Reference Branch"
+  }
+
+  dimension: monitoring_config__resolution_error {
+    sql: ${TABLE}.monitoring_config.resolution_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Monitoring Config"
+    group_item_label: "Resolution Error"
+    description: "Set only when the monitoring config could not be resolved (e.g. a missing metric definition or an invalid platform). Starts with \"Cannot load metric-hub as of the resolution timestamp\" (monitoring_config_as_of) or \"Unexpected error resolving config\" if the failure may not repeat, and such rows are retried on every run."
+  }
+
+  dimension: monitoring_config__skip {
+    sql: ${TABLE}.monitoring_config.skip ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Monitoring Config"
+    group_item_label: "Skip"
+    description: "Whether the config marks this project as skipped from monitoring."
+  }
+
+  dimension: monitoring_config__skip_default_metrics {
+    sql: ${TABLE}.monitoring_config.skip_default_metrics ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Monitoring Config"
+    group_item_label: "Skip Default Metrics"
+    description: "Whether the config opts out of the platform (and rollout) default metrics."
+  }
+
+  dimension: monitoring_config__xaxis {
+    sql: ${TABLE}.monitoring_config.xaxis ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Monitoring Config"
+    group_item_label: "Xaxis"
+    description: "submission_date or build_id."
+  }
+
   dimension: namespace {
     sql: ${TABLE}.namespace ;;
     type: string
@@ -323,6 +446,22 @@ view: experimenter_experiments {
     datatype: date
   }
 
+  dimension_group: metric_config__as_of {
+    sql: ${TABLE}.metric_config.as_of ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metric Config: As Of"
+    description: "Timestamp metric-hub was resolved as of for metric_config, matching jetstream (when it last touched the experiment's enrollments table). NULL means jetstream has not analyzed the experiment yet, so metric-hub HEAD was used, or that the row has no metric_config."
+  }
+
   dimension_group: metric_config__external_config_last_modified {
     sql: ${TABLE}.metric_config.external_config_last_modified ;;
     type: time
@@ -383,7 +522,72 @@ view: experimenter_experiments {
       quarter,
       year,
     ]
-    description: "When this row was last resolved. Rows for experiments that ended over 30 days ago are reused for up to 7 days, and indefinitely once over 90 days ago, unless config_as_of changes."
+    description: "When this row was last resolved. Rows for experiments that ended over 30 days ago are reused for up to 7 days, and indefinitely once over 90 days ago, unless config_as_of changes.
+Applies to both metric_config and monitoring_config, which are resolved together."
+  }
+
+  dimension_group: monitoring_config__as_of {
+    sql: ${TABLE}.monitoring_config.as_of ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Monitoring Config: As Of"
+    description: "Timestamp metric-hub was resolved as of for monitoring_config: the day after the experiment ended (its opmon config's end_date, if set), the last day opmon monitors it. NULL means the experiment is live, so metric-hub HEAD was used, or that the row has no monitoring_config."
+  }
+
+  dimension_group: monitoring_config__end {
+    sql: ${TABLE}.monitoring_config.end_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    label: "Monitoring Config: End Date"
+  }
+
+  dimension_group: monitoring_config__external_config_last_modified {
+    sql: ${TABLE}.monitoring_config.external_config_last_modified ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Monitoring Config: External Config Last Modified"
+    description: "Last-modified timestamp of the slug's metric-hub/opmon config, if any."
+  }
+
+  dimension_group: monitoring_config__start {
+    sql: ${TABLE}.monitoring_config.start_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    label: "Monitoring Config: Start Date"
   }
 
   dimension_group: start {
@@ -540,6 +744,112 @@ view: experimenter_experiments__metric_config__unresolved_metrics {
 
   dimension: name {
     sql: ${TABLE}.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: experimenter_experiments__monitoring_config__alerts {
+  dimension: description {
+    sql: ${TABLE}.description ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: friendly_name {
+    sql: ${TABLE}.friendly_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: metrics {
+    sql: ${TABLE}.metrics ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: type {
+    sql: ${TABLE}.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "ci_overlap or threshold."
+  }
+}
+
+view: experimenter_experiments__monitoring_config__dimensions {
+  dimension: description {
+    sql: ${TABLE}.description ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: friendly_name {
+    sql: ${TABLE}.friendly_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: experimenter_experiments__monitoring_config__metrics {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: data_source {
+    sql: ${TABLE}.data_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: deprecated {
+    sql: ${TABLE}.deprecated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: description {
+    sql: ${TABLE}.description ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: friendly_name {
+    sql: ${TABLE}.friendly_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: owner {
+    sql: ${TABLE}.owner ;;
+    hidden: yes
+  }
+
+  dimension: statistics {
+    sql: ${TABLE}.statistics ;;
+    hidden: yes
+  }
+
+  dimension: type {
+    sql: ${TABLE}.type ;;
     type: string
     suggest_persist_for: "24 hours"
   }

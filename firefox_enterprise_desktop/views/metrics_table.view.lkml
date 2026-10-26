@@ -11579,6 +11579,8 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__network_akamai_document_loads {
     sql: ${TABLE}.metrics.labeled_counter.network_akamai_document_loads ;;
     hidden: yes
+    description: "Counts document and frame loads served by Akamai, labeled by whether the response was the Akamai WAF \"Access Denied\" page (403 with a body referencing errors.edgesuite.net), a different 403 response, or any other response.
+"
   }
 
   dimension: metrics__labeled_counter__network_alpn_mismatch_count {
@@ -12634,6 +12636,10 @@ impression and it's an app-provided engine. Otherwise the label is \"none\".
   dimension: metrics__labeled_counter__sap_impression_counts_text_selection {
     sql: ${TABLE}.metrics.labeled_counter.sap_impression_counts_text_selection ;;
     hidden: yes
+    description: "Count of impressions of the search action in the text selection menu. The
+counter's label is the engine's identifier if it's an app-provided
+engine. Otherwise the label is \"none\".
+"
   }
 
   dimension: metrics__labeled_counter__script_preloader_requests {

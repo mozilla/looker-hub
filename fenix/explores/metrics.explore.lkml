@@ -1178,6 +1178,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_http3_ech_outcome_real}) AS metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_real ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_http3_ech_outcome_real.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_akamai_document_loads {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_akamai_document_loads}) AS metrics__metrics__labeled_counter__network_akamai_document_loads ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_akamai_document_loads.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_alpn_mismatch_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_alpn_mismatch_count}) AS metrics__metrics__labeled_counter__network_alpn_mismatch_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_alpn_mismatch_count.document_id} ;;

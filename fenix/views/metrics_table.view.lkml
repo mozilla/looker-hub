@@ -963,6 +963,22 @@ view: metrics_table {
     group_item_label: "Navigation Bar OS Navigation Uses Gestures"
   }
 
+  dimension: metrics__boolean__network_akamai_waf_blocked {
+    sql: ${TABLE}.metrics.boolean.network_akamai_waf_blocked ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Network Akamai Waf Blocked"
+  }
+
+  dimension: metrics__boolean__network_akamai_waf_blocked_subresource {
+    sql: ${TABLE}.metrics.boolean.network_akamai_waf_blocked_subresource ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Network Akamai Waf Blocked Subresource"
+  }
+
   dimension: metrics__boolean__network_apple_fast_datapath_used {
     sql: ${TABLE}.metrics.boolean.network_apple_fast_datapath_used ;;
     type: yesno
@@ -13559,6 +13575,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_ech_outcome_real ;;
     hidden: yes
     description: "Success / Fail Rates for HTTP3 when a 'real' ECH Extension was sent
+"
+  }
+
+  dimension: metrics__labeled_counter__network_akamai_document_loads {
+    sql: ${TABLE}.metrics.labeled_counter.network_akamai_document_loads ;;
+    hidden: yes
+    description: "Counts document and frame loads served by Akamai, labeled by whether the response was the Akamai WAF \"Access Denied\" page (403 with a body referencing errors.edgesuite.net), a different 403 response, or any other response.
 "
   }
 

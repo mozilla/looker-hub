@@ -15516,6 +15516,8 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__network_akamai_document_loads {
     sql: ${TABLE}.metrics.labeled_counter.network_akamai_document_loads ;;
     hidden: yes
+    description: "Counts document and frame loads served by Akamai, labeled by whether the response was the Akamai WAF \"Access Denied\" page (403 with a body referencing errors.edgesuite.net), a different 403 response, or any other response.
+"
   }
 
   dimension: metrics__labeled_counter__network_alpn_mismatch_count {
