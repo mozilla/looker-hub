@@ -43,6 +43,7 @@ view: microsurvey_table {
     group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -51,6 +52,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "DB Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -59,6 +61,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -67,6 +70,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -75,6 +79,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -83,6 +88,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "DNT"
+    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -112,6 +118,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -120,6 +127,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
+    description: "X-Foxsec-IP-Reputation header (deprecated, https://mozilla-hub.atlassian.net/browse/DENG-10434)"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -128,6 +136,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -136,6 +145,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -144,6 +154,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -152,6 +163,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -160,6 +172,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "DB Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -168,6 +181,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -176,6 +190,7 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -208,6 +223,8 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Microsurvey Event Context Parse Error"
+    description: "How often we failed to parse event_context as JSON.
+"
   }
 
   dimension: metrics__counter__microsurvey_glean_ping_for_ping_failures {
@@ -216,6 +233,9 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Microsurvey Glean Ping For Ping Failures"
+    description: "How often something went awry within
+`AboutWelcome.submitGleanPingForPing`, preventing ping submission.
+"
   }
 
   dimension: metrics__counter__microsurvey_unknown_key_count {
@@ -224,6 +244,10 @@ view: microsurvey_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Microsurvey Unknown Key Count"
+    description: "The sum of all unknown keys counted.
+Useful for testing.
+Can be removed after bug 1600008 is resolved.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -298,11 +322,15 @@ You may have forgotten to define an appropriate metric in
   dimension: metrics__object__microsurvey_smart_window_chat {
     sql: ${TABLE}.metrics.object.microsurvey_smart_window_chat ;;
     hidden: yes
+    description: "The conversation log at the time of feedback submission.
+"
   }
 
   dimension: metrics__object__microsurvey_smart_window_user_feedback_data {
     sql: ${TABLE}.metrics.object.microsurvey_smart_window_user_feedback_data ;;
     hidden: yes
+    description: "Session metadata submitted via the Smart Window feedback modal.
+"
   }
 
   dimension: metrics__quantity__microsurvey_event_screen_index {
@@ -311,6 +339,9 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Microsurvey Event Screen Index"
+    description: "A number identifier of the screen index in a sequence of screens
+(e.g. 0 for first message).
+"
   }
 
   dimension: metrics__quantity__microsurvey_windows_build_number {
@@ -319,6 +350,9 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Microsurvey Windows Build Number"
+    description: "The optional Windows build number, reported by Windows
+(e.g. 22000) and not set for other platforms.
+"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
@@ -327,6 +361,9 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
   }
 
   dimension: metrics__string__microsurvey_addon_version {
@@ -335,6 +372,8 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Addon Version"
+    description: "Used to hold the system addon's version, now is almost certainly an echo of the app's build id.
+"
   }
 
   dimension: metrics__string__microsurvey_app_build_id {
@@ -343,6 +382,9 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey App Build ID"
+    description: "The build ID of the application. Included because the microsurvey ping
+uses OHTTP and excludes standard client_info metadata.
+"
   }
 
   dimension: metrics__string__microsurvey_app_channel {
@@ -351,6 +393,8 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey App Channel"
+    description: "The channel the application is being distributed on.
+"
   }
 
   dimension: metrics__string__microsurvey_app_display_version {
@@ -359,6 +403,10 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey App Display Version"
+    description: "The user visible version string (e.g. \"1.0.3\").
+If the value was not provided through configuration,
+this metric gets set to `Unknown`.
+"
   }
 
   dimension: metrics__string__microsurvey_attribution_campaign {
@@ -367,6 +415,9 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Attribution Campaign"
+    description: "Attribution's campaign, possibly derived from the utm parameter of the
+same name.
+"
   }
 
   dimension: metrics__string__microsurvey_attribution_content {
@@ -375,6 +426,9 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Attribution Content"
+    description: "Attribution's content, possibly derived from the utm parameter of the
+same name.
+"
   }
 
   dimension: metrics__string__microsurvey_attribution_dlsource {
@@ -383,6 +437,10 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Attribution Dlsource"
+    description: "Mozilla-specific download \"source\" name. Could be something like
+\"mozillaci\" to identify that the installer came from
+`{archive|ftp}.mozilla.org`.
+"
   }
 
   dimension: metrics__string__microsurvey_attribution_dltoken {
@@ -391,6 +449,10 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Attribution Dltoken"
+    description: "String representation of the dltoken identifying the particular
+installer used to install this Firefox.
+Likely a UUID, if present.
+"
   }
 
   dimension: metrics__string__microsurvey_attribution_experiment {
@@ -399,6 +461,8 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Attribution Experiment"
+    description: "Attribution's experiment key.
+"
   }
 
   dimension: metrics__string__microsurvey_attribution_medium {
@@ -407,6 +471,9 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Attribution Medium"
+    description: "Attribution's medium, possibly derived from the utm parameter of the same
+name.
+"
   }
 
   dimension: metrics__string__microsurvey_attribution_msclkid {
@@ -415,6 +482,10 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Attribution Msclkid"
+    description: "A string containing the attribution for a Microsoft Store Ads Campaign ID.
+This differs from a Campaign ID originating from a Microsoft Store URL
+containing attribution_
+"
   }
 
   dimension: metrics__string__microsurvey_attribution_msstoresignedin {
@@ -423,6 +494,10 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Attribution Msstoresignedin"
+    description: "Either the string \"true\" or the string \"false\" to indicate whether the
+attributed install came from the Microsoft store and, if so, whether the
+user was signed in at the time.
+"
   }
 
   dimension: metrics__string__microsurvey_attribution_source {
@@ -431,6 +506,9 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Attribution Source"
+    description: "Attribution's source, possibly derived from the utm parameter of the same
+name.
+"
   }
 
   dimension: metrics__string__microsurvey_attribution_ua {
@@ -439,6 +517,8 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Attribution Ua"
+    description: "Attribution's ua key.
+"
   }
 
   dimension: metrics__string__microsurvey_attribution_variation {
@@ -447,6 +527,8 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Attribution Variation"
+    description: "Attribution's variation key.
+"
   }
 
   dimension: metrics__string__microsurvey_bucket_id {
@@ -455,6 +537,8 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Bucket ID"
+    description: "A name shared between multiple messages that may individually be too targeted. e.g. a message that gets shown on specific websites or a message asking about personal information.
+"
   }
 
   dimension: metrics__string__microsurvey_event {
@@ -463,6 +547,8 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Event"
+    description: "The type of event. Any user defined string (e.g. “IMPRESSION”, “CLICK_BUTTON”, \"INDEXEDDB_OPEN_FAILED\", “SESSION_END”)
+"
   }
 
   dimension: metrics__string__microsurvey_event_page {
@@ -471,6 +557,8 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Event Page"
+    description: "The event_context's `page`. Almost always \"about:welcome\".
+"
   }
 
   dimension: metrics__string__microsurvey_event_reason {
@@ -479,6 +567,9 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Event Reason"
+    description: "The event_context's `reason`. Likely something like
+\"welcome-window-closed\" or \"app-shut-down\",.
+"
   }
 
   dimension: metrics__string__microsurvey_event_source {
@@ -487,6 +578,8 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Event Source"
+    description: "The event_context's `source`. Likely something like \"primary_button\".
+"
   }
 
   dimension: metrics__string__microsurvey_locale {
@@ -495,6 +588,8 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Locale"
+    description: "The locale as supplied to the messaging system by `Services.locale.appLocaleAsBCP47`.
+"
   }
 
   dimension: metrics__string__microsurvey_os {
@@ -503,6 +598,11 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey OS"
+    description: "The name of the operating system.
+Possible values:
+Android, iOS, Linux, Darwin, Windows,
+FreeBSD, NetBSD, OpenBSD, Solaris, Unknown
+"
   }
 
   dimension: metrics__string__microsurvey_os_version {
@@ -511,6 +611,9 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey OS Version"
+    description: "The user-visible version of the operating system (e.g. \"1.2.3\").
+If the version detection fails, this metric gets set to `Unknown`.
+"
   }
 
   dimension: metrics__string__microsurvey_ping_type {
@@ -519,6 +622,8 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Ping Type"
+    description: "Type of event the ping is capturing. e.g. \"cfr\", \"onboarding\"
+"
   }
 
   dimension: metrics__string__microsurvey_source {
@@ -527,6 +632,8 @@ You may have forgotten to define an appropriate metric in
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Source"
+    description: "The source of the interaction described by the other metrics. e.g. \"frecent_links\", \"newtab\", \"CFR\"
+"
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
@@ -545,6 +652,8 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Microsurvey Event Context"
+    description: "The stringified JSON of `event_context`.
+"
   }
 
   dimension: metrics__text2__microsurvey_event_input_value {
@@ -553,6 +662,10 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Microsurvey Event Input Value"
+    description: "Text input by the user in a write-in textarea produced by the textarea
+tile type. Truncated to 8KB (though the textarea tile normally has a
+separate character limit enforced at display time).
+"
   }
 
   dimension: metrics__text2__microsurvey_event_screen_family {
@@ -561,6 +674,9 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Microsurvey Event Screen Family"
+    description: "A string identifier of the message family derived from the message id
+(e.g. MR_WELCOME_DEFAULT).
+"
   }
 
   dimension: metrics__text2__microsurvey_event_screen_id {
@@ -569,6 +685,9 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Microsurvey Event Screen ID"
+    description: "A string identifier of the message screen id
+(e.g. AW_MOBILE_DOWNLOAD).
+"
   }
 
   dimension: metrics__text2__microsurvey_event_screen_initials {
@@ -577,6 +696,9 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Microsurvey Event Screen Initials"
+    description: "A string identifier of the message screen initials
+(e.g. 'EMAG' for EASY_SETUP, MOBILE_DOWNLOADS, AMO, GRATITUDE).
+"
   }
 
   dimension: metrics__text2__microsurvey_message_id {
@@ -585,6 +707,8 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Microsurvey Message ID"
+    description: "A string identifier of the message in Activity Stream Router.
+"
   }
 
   dimension: metrics__uuid__microsurvey_impression_id {
@@ -593,6 +717,8 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: UUID"
     group_item_label: "Microsurvey Impression ID"
+    description: "The unique impression identifier for a specific client.
+"
   }
 
   dimension: normalized_app_name {
@@ -693,6 +819,7 @@ view: microsurvey_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Event Seq"
+    description: "Per-session event counter, reset at each new session."
   }
 
   dimension: session__session_id {
@@ -701,6 +828,7 @@ view: microsurvey_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session ID"
+    description: "The unique UUID for this session."
   }
 
   dimension: session__session_sample_rate {
@@ -709,6 +837,7 @@ view: microsurvey_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Sample Rate"
+    description: "The sampling rate in effect for this session."
   }
 
   dimension: session__session_seq {
@@ -717,6 +846,7 @@ view: microsurvey_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Seq"
+    description: "Monotonically increasing session counter, persisted across restarts."
   }
 
   dimension: session__session_start_time {
@@ -725,6 +855,7 @@ view: microsurvey_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Start Time"
+    description: "Wall-clock timestamp at session start (RFC 3339). Absent on events from before this field was introduced."
   }
 
   dimension: timestamp {

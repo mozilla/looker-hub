@@ -10,6 +10,7 @@ view: growth_accounting {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
+    description: "Country (ISO 3166-1 alpha-2) from the most recent day the user–service pair was active, taken from `users_services_daily_v1.country`, which is that day's most frequent country. Null if no geo data was available that day, even if an earlier day had one."
   }
 
   dimension: days_registered_bits {
@@ -40,6 +41,7 @@ view: growth_accounting {
     sql: ${TABLE}.service ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Identifier for the Mozilla service the user authenticated with (e.g. 'sync', 'vpn', 'relay', or an OAuth client ID hex string). Used to partition last-seen activity per user–service pair."
   }
 
   dimension: user_agent_device_count {
@@ -53,6 +55,7 @@ view: growth_accounting {
     sql: ${TABLE}.user_id_sha256 ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "SHA-256 hash of the Firefox Accounts user ID, used to identify a unique user while preserving privacy. Together with `service`, forms the key joining daily activity records to this last-seen table."
   }
 
   dimension: active_this_week {
@@ -99,6 +102,7 @@ view: growth_accounting {
     ]
     convert_tz: no
     datatype: date
+    description: "The date for which this last-seen record applies. Each row represents the most recent 28-day activity window ending on this date for a given user–service combination."
   }
 
   measure: overall_active_previous {

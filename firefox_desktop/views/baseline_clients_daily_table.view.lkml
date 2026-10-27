@@ -56,6 +56,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Campaign"
+    description: "The attribution campaign (e.g. 'mozilla-org')."
   }
 
   dimension: attribution__content {
@@ -64,6 +65,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Content"
+    description: "The attribution content (e.g. 'firefoxview')."
   }
 
   dimension: attribution__medium {
@@ -72,6 +74,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Medium"
+    description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
 
   dimension: attribution__source {
@@ -80,6 +83,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Source"
+    description: "The attribution source (e.g. 'google-play')."
   }
 
   dimension: attribution__term {
@@ -88,6 +92,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Term"
+    description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
 
   dimension: attribution_dlsource {
@@ -203,6 +208,7 @@ Migrated from Telemetry's `browser.engagement.total_uri_count_normal_and_private
     suggest_persist_for: "24 hours"
     group_label: "Distribution"
     group_item_label: "Name"
+    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: distribution_id {
@@ -427,6 +433,7 @@ view: baseline_clients_daily_table__experiments {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Experiment Key"
   }
 
   dimension: value__branch {
@@ -435,6 +442,7 @@ view: baseline_clients_daily_table__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Branch"
+    description: "Experiment Branch"
   }
 
   dimension: value__extra__enrollment_id {
@@ -443,6 +451,7 @@ view: baseline_clients_daily_table__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
+    description: "Experiment Enrollment ID"
   }
 
   dimension: value__extra__type {
@@ -451,5 +460,6 @@ view: baseline_clients_daily_table__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Type"
+    description: "Experiment Type"
   }
 }

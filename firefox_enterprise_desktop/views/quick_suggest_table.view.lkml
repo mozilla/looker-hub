@@ -43,6 +43,7 @@ view: quick_suggest_table {
     group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -51,6 +52,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "DB Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -59,6 +61,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -67,6 +70,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -75,6 +79,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -83,6 +88,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "DNT"
+    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -112,6 +118,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -120,6 +127,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
+    description: "X-Foxsec-IP-Reputation header (deprecated, https://mozilla-hub.atlassian.net/browse/DENG-10434)"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -128,6 +136,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -136,6 +145,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -144,6 +154,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -152,6 +163,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -160,6 +172,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "DB Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -168,6 +181,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -176,6 +190,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -208,6 +223,8 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Quick Suggest Improve Suggest Experience"
+    description: "Whether online Suggest is available to the user and enabled.
+"
   }
 
   dimension: metrics__boolean__quick_suggest_is_clicked {
@@ -216,6 +233,9 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Quick Suggest Is Clicked"
+    description: "Whether this quicksuggest-impression ping was for an item that was
+clicked.
+"
   }
 
   dimension: metrics__boolean__quick_suggest_suggested_index_relative_to_group {
@@ -224,6 +244,9 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Quick Suggest Suggested Index Relative To Group"
+    description: "Whether `suggested_index` is relative to the \"Firefox Suggest\" group. If
+false, it is relative to the entire list of suggestions.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -264,6 +287,8 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Quick Suggest Position"
+    description: "The position (1-based) of the QuickSuggest item being interatcted with.
+"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
@@ -272,6 +297,9 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
   }
 
   dimension: metrics__string__quick_suggest_advertiser {
@@ -280,6 +308,8 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Quick Suggest Advertiser"
+    description: "The name of the advertiser providing the sponsored TopSite.
+"
   }
 
   dimension: metrics__string__quick_suggest_block_id {
@@ -288,6 +318,8 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Quick Suggest Block ID"
+    description: "A unique identifier for the suggestion (a.k.a. a keywords block).
+"
   }
 
   dimension: metrics__string__quick_suggest_country {
@@ -296,6 +328,9 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Quick Suggest Country"
+    description: "Records the home region of the user as determined by `Region.sys.mjs` and
+the `browser.search.region` pref.
+"
   }
 
   dimension: metrics__string__quick_suggest_experiment_branch {
@@ -304,6 +339,10 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Quick Suggest Experiment Branch"
+    description: "The branch of the active `urlbar` experiment or rollout. (The `urlbar`
+Nimbus feature does not allow coenrollment.) Other experiments are not
+included in order to prevent user fingerprinting.
+"
   }
 
   dimension: metrics__string__quick_suggest_experiment_name {
@@ -312,6 +351,10 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Quick Suggest Experiment Name"
+    description: "The slug of the active `urlbar` experiment or rollout. (The `urlbar`
+Nimbus feature does not allow coenrollment.) Other experiments are not
+included in order to prevent user fingerprinting.
+"
   }
 
   dimension: metrics__string__quick_suggest_iab_category {
@@ -320,6 +363,8 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Quick Suggest Iab Category"
+    description: "The suggestion's category. Either \"22 - Shopping\" or \"5 - Educational\".
+"
   }
 
   dimension: metrics__string__quick_suggest_match_type {
@@ -328,6 +373,9 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Quick Suggest Match Type"
+    description: "Whether this was a best/top match or not. Either \"best-match\" or
+\"firefox-suggest\".
+"
   }
 
   dimension: metrics__string__quick_suggest_ping_type {
@@ -336,6 +384,10 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Quick Suggest Ping Type"
+    description: "The ping's type. In other situations might be designated by an event's
+name or an interaction field. E.g. \"quicksuggest-impression\",
+\"quicksuggest-block\", \"quicksuggest-click\".
+"
   }
 
   dimension: metrics__string__quick_suggest_request_id {
@@ -344,6 +396,10 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Quick Suggest Request ID"
+    description: "A request identifier for each API request to
+[Merino](https://mozilla-services.github.io/merino/).
+Only present for suggestions provided by Merino.
+"
   }
 
   dimension: metrics__string__quick_suggest_source {
@@ -352,6 +408,8 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Quick Suggest Source"
+    description: "The source of the interaction. E.g. \"urlbar\".
+"
   }
 
   dimension: metrics__string__quick_suggest_suggested_index {
@@ -360,6 +418,13 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Quick Suggest Suggested Index"
+    description: "A stringified integer value that is the intended index of the suggestion
+being interacted with. If `suggested_index_relative_to_group` is true, the
+index is relative to the \"Firefox Suggest\" group; otherwise the index is
+relative to the entire list of suggestions. Non-negative values (starting
+at 0) are relative to the start/top of the group/list; negative values are
+relative to the end/bottom of the group/list.
+"
   }
 
   dimension: metrics__string__quick_suggest_suggestion_id {
@@ -368,6 +433,8 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Quick Suggest Suggestion ID"
+    description: "The suggestion ID from MARS/Merino.
+"
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
@@ -386,6 +453,8 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Url2"
     group_item_label: "Quick Suggest Reporting URL"
+    description: "The url to report this interaction to.
+"
   }
 
   dimension: metrics__uuid__quick_suggest_context_id {
@@ -394,6 +463,8 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: UUID"
     group_item_label: "Quick Suggest Context ID"
+    description: "An identifier to identify users for Contextual Services user interaction pings.
+"
   }
 
   dimension: normalized_app_name {
@@ -494,6 +565,7 @@ view: quick_suggest_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Event Seq"
+    description: "Per-session event counter, reset at each new session."
   }
 
   dimension: session__session_id {
@@ -502,6 +574,7 @@ view: quick_suggest_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session ID"
+    description: "The unique UUID for this session."
   }
 
   dimension: session__session_sample_rate {
@@ -510,6 +583,7 @@ view: quick_suggest_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Sample Rate"
+    description: "The sampling rate in effect for this session."
   }
 
   dimension: session__session_seq {
@@ -518,6 +592,7 @@ view: quick_suggest_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Seq"
+    description: "Monotonically increasing session counter, persisted across restarts."
   }
 
   dimension: session__session_start_time {
@@ -526,6 +601,7 @@ view: quick_suggest_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Start Time"
+    description: "Wall-clock timestamp at session start (RFC 3339). Absent on events from before this field was introduced."
   }
 
   dimension: timestamp {

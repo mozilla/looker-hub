@@ -66,7 +66,7 @@ view: legacy_desktop_event_counts {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
-    description: "Country"
+    description: "The ISO 3166-1 alpha-2 country code (e.g., 'US', 'DE', 'FR') derived from the client's IP address or profile geography. Used for geographic segmentation of telemetry data."
   }
 
   dimension: disable_etp_cnt {
@@ -101,28 +101,28 @@ view: legacy_desktop_event_counts {
     sql: ${TABLE}.event_category ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Event Category"
+    description: "The category grouping for a telemetry event, used to classify events by feature area or subsystem (e.g., 'address', 'creditcard', 'form_autocomplete'). This field is the top-level namespace for organizing event data."
   }
 
   dimension: event_method {
     sql: ${TABLE}.event_method ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Event Method"
+    description: "The method or action that triggered the event, describing what occurred (e.g. 'detected', 'submitted', 'show'). This categorizes the type of interaction or lifecycle step associated with the event."
   }
 
   dimension: event_object {
     sql: ${TABLE}.event_object ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Event Object"
+    description: "The UI element or component that was the target of the event (e.g. 'address_form', 'cc_form_v2', 'capture_doorhanger'). This identifies which part of the product the event is associated with."
   }
 
   dimension: event_string_value {
     sql: ${TABLE}.event_string_value ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Event String Value"
+    description: "An optional free-text string value associated with an event, providing additional context such as an error code or identifier (e.g. 'SSL_ERROR_BAD_CERT_DOMAIN'). This field may be null or contain the literal string 'null' when no value is applicable."
   }
 
   dimension: installation_cnt {
@@ -143,7 +143,7 @@ view: legacy_desktop_event_counts {
     sql: ${TABLE}.nbr_events ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of Events"
+    description: "The total number of events recorded in a given context. A value of 1 indicates a single event occurred, with higher values representing multiple events aggregated together."
   }
 
   dimension: nbr_non_null_client_ids {
@@ -157,7 +157,7 @@ view: legacy_desktop_event_counts {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized Channel"
+    description: "The standardized release channel of the Firefox application, such as 'release', 'beta', 'nightly', 'esr', or 'aurora'. 'Other' is used when the channel does not match a known value."
   }
 
   dimension: open_panel {
@@ -171,14 +171,14 @@ view: legacy_desktop_event_counts {
     sql: ${TABLE}.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Operating System"
+    description: "The raw operating system name as reported by the client, such as 'Windows_NT', 'Darwin', 'Linux', 'Android', or 'iOS'. This is the unprocessed OS string before normalization."
   }
 
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Operating System Version"
+    description: "The full version string of the operating system on which the browser is running (e.g., '10.0', '13.5.1'). Combines major, minor, and patch components into a single human-readable string."
   }
 
   dimension: send_report_link_cnt {
@@ -222,7 +222,7 @@ view: legacy_desktop_event_counts {
     ]
     convert_tz: no
     datatype: date
-    description: "The date when the telemetry ping is received on the server side."
+    description: "The UTC calendar date on which a ping or record was received by Mozilla's ingestion pipeline. Used as the primary partitioning and filtering dimension for date-based analysis."
   }
 
   sql_table_name: `mozdata.telemetry.event_aggregates` ;;

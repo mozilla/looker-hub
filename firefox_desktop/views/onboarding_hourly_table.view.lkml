@@ -390,6 +390,7 @@ view: onboarding_hourly_table {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The operating system version normalized to a consistent format at ingestion (e.g., \"10.0\" for Windows 10 and 11, \"25.5.0\" for macOS); use windows_build_number >= 22000 to distinguish Windows 11 from Windows 10."
   }
 
   dimension: release_channel {

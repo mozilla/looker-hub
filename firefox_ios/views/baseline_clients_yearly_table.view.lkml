@@ -16,12 +16,14 @@ view: baseline_clients_yearly_table {
     sql: ${TABLE}.app_build ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The CI build identifier for the Firefox iOS application (e.g., '73120')."
   }
 
   dimension: app_channel {
     sql: ${TABLE}.app_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The release channel of the application as reported by the client (e.g., 'release', 'beta', 'developer')."
   }
 
   dimension: app_display_version {
@@ -42,6 +44,7 @@ view: baseline_clients_yearly_table {
     sql: ${TABLE}.city ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The city-level geolocation of the client derived from IP address. Null when city-level resolution is unavailable."
   }
 
   dimension: client_id {
@@ -106,12 +109,14 @@ view: baseline_clients_yearly_table {
     sql: ${TABLE}.days_seen_session_end_bits ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A 28-bit integer encoding the days in the past 28 days on which the client had a session end event. Each bit represents one day, with the least significant bit representing the submission date."
   }
 
   dimension: days_seen_session_start_bits {
     sql: ${TABLE}.days_seen_session_start_bits ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A 28-bit integer encoding the days in the past 28 days on which the client had a session start event. Each bit represents one day, with the least significant bit representing the submission date."
   }
 
   dimension: days_since_active {
@@ -164,12 +169,14 @@ view: baseline_clients_yearly_table {
     sql: ${TABLE}.geo_subdivision ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The primary administrative subdivision (e.g., state or province code) of the client derived from IP geolocation. Null for clients where subdivision cannot be determined."
   }
 
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Indicates whether the Firefox profile associated with the client was newly created. True means the profile was created recently."
   }
 
   dimension: isp {
@@ -211,6 +218,7 @@ view: baseline_clients_yearly_table {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized user-visible version string of iOS (e.g., '18.5', '26.3.1')."
   }
 
   dimension: sample_id {
@@ -256,6 +264,7 @@ view: baseline_clients_yearly_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the client was first observed sending a baseline ping."
   }
 
   dimension_group: submission {

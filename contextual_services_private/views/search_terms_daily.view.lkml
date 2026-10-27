@@ -15,6 +15,7 @@ view: search_terms_daily {
     sql: ${TABLE}.search_sessions ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of distinct search sessions that ended with this query on the given submission date. Only queries exceeding a rolling 7-day session count threshold (greater than 1) are included, to protect user privacy."
   }
 
   dimension_group: submission {

@@ -34,6 +34,7 @@ view: metrics_clients_last_seen_table {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The release channel on which the Firefox Desktop build is distributed, normalized to one of: release, beta, nightly, aurora, esr, or Other."
   }
 
   dimension: profile_group_id {

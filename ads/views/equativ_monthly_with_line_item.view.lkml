@@ -113,6 +113,12 @@ view: equativ_monthly_with_line_item {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: rate_type {
+    sql: ${TABLE}.rate_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: total_clicks {
     sql: ${TABLE}.total_clicks ;;
     type: number

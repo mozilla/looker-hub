@@ -31,6 +31,7 @@ view: meta_attribution_country_counts_table {
     sql: ${TABLE}.ping_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of first-session pings received for this dimension combination on the submission date, used to measure attribution volume by country and channel."
   }
 
   dimension_group: submission {

@@ -15,6 +15,8 @@ view: exchange_rates {
     sql: ${TABLE}.price ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The foreign-exchange conversion rate used to convert one unit of the base
+currency into the quote currency for the given price type on this date."
   }
 
   dimension: price_type {
@@ -42,6 +44,7 @@ view: exchange_rates {
     ]
     convert_tz: no
     datatype: date
+    description: "The calendar date associated with the record, typically representing the snapshot or reporting date for the data in the table."
   }
 
   sql_table_name: `mozdata.subscription_platform.exchange_rates` ;;

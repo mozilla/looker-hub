@@ -149,11 +149,13 @@ view: bigeye_usage__labels {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Label key."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Label value."
   }
 }
