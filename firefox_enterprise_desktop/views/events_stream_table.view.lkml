@@ -545,11 +545,11 @@ view: events_stream_table {
     description: "Depending on the type of event:
 * Whether the monitor is enabled.
 * Whether the monitor is enabled (the spec's status).
+* Whether the action was turned on or off.
 * True if the feature is enabled.
 * Chatbot was already enabled.
 * New/current state is enabled
 * Whether launch on login was turned on (true) or off (false).
-* Whether the action was turned on or off.
 * Boolean indicating if that type of memory was enabled or disabled
 * Whether the sidebar is now set to open by default
 * whether the preference was enabled or disabled in any way"
@@ -923,6 +923,15 @@ view: events_stream_table {
     group_label: "Extras: Boolean"
     group_item_label: "Inprivatebrowsing"
     description: "True if IP Protection was started in a private browsing window."
+  }
+
+  dimension: extras__boolean__interacted {
+    sql: ${TABLE}.extras.boolean.interacted ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Interacted"
+    description: "Whether the user completed an action from the menu."
   }
 
   dimension: extras__boolean__isBlock {
@@ -1395,6 +1404,15 @@ view: events_stream_table {
     description: "Whether the engine became ready again after the recovery attempt"
   }
 
+  dimension: extras__boolean__reopened_after_removal {
+    sql: ${TABLE}.extras.boolean.reopened_after_removal ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Reopened After Removal"
+    description: "True when this is the automatic reopen after a record removal prompt, false otherwise."
+  }
+
   dimension: extras__boolean__reset_disabled {
     sql: ${TABLE}.extras.boolean.reset_disabled ;;
     type: yesno
@@ -1557,8 +1575,8 @@ view: events_stream_table {
     group_label: "Extras: Boolean"
     group_item_label: "Smart Window"
     description: "Depending on the type of event:
-* Whether the prompt was sent from Smart Window.
-* Whether the menu was shown in Smart Window."
+* Whether the menu was shown in Smart Window.
+* Whether the prompt was sent from Smart Window."
   }
 
   dimension: extras__boolean__smartblockEmbedTogglesShown {
@@ -2176,8 +2194,8 @@ view: events_stream_table {
     group_label: "Extras: Quantity"
     group_item_label: "Delay"
     description: "Depending on the type of event:
-* For scheduled runs, how long after the scheduled time the run started. A timer that fired on time reports close to zero. A run that was already overdue when its timer was armed, such as at browser start, reports the missed time plus about one second, because overdue timers are armed one second out. Larger values mostly measure time the browser was closed or asleep. Absent for manual runs and when the stored scheduled time could not be parsed.
 * Milliseconds from mousedown to showing.
+* For scheduled runs, how long after the scheduled time the run started. A timer that fired on time reports close to zero. A run that was already overdue when its timer was armed, such as at browser start, reports the missed time plus about one second, because overdue timers are armed one second out. Larger values mostly measure time the browser was closed or asleep. Absent for manual runs and when the stored scheduled time could not be parsed.
 * Milliseconds waiting on previous
 * For scheduled runs, how long after the scheduled time the run started. A timer that fired on time reports close to zero. A run that was already overdue when its timer was armed, such as at browser start, reports the missed time plus about one second, because overdue timers are armed one second out. Larger values mostly measure time the browser was closed or asleep. Absent for manual runs.
 * How long after the scheduled time the run started. A timer that fir..."
@@ -2252,6 +2270,7 @@ view: events_stream_table {
 * Total session duration in milliseconds.
 * Milliseconds the card stayed open
 * How long the migration took (in milliseconds).
+* Milliseconds the menu was shown.
 * Time in ms to process the request
 * Total time of the run from start to completion, including page extraction and the model call.
 * Milliseconds elapsed to reach the step from its start. For end_file_download_* this is the time to download a single file; for end_download_* this is the total time to download the whole model.
@@ -4430,12 +4449,12 @@ view: events_stream_table {
 * The action taken on the page. Possible values are: `clicked`, `clicked_accept`, `clicked_reject`, `clicked_more_options`, `expanded`, `submitted`.
 * How this click happened
 * Which action was clicked.
+* Which action was clicked, e.g., ai, search, copy.
+* Which action was toggled, e.g., ai, search, copy, master.
 * The action that was taken by the user, remove or cancel
 * The `action` of the system (chrome privileged) alert that Firefox was launched to complete.
 * User's action on the dialogue - \"view\" (impression), \"try_it_now\", \"close\"
-* Whether the panel was hidden or shown.
-* Which action was clicked, e.g., ai, search, copy.
-* Which action was toggled, e.g., ai, sea..."
+* Whether the panel wa..."
   }
 
   dimension: extras__string__action_id {
@@ -4672,6 +4691,15 @@ view: events_stream_table {
     description: "Depending on the type of event:
 * Agent type the action belongs to. Always monitor for now; other agents, such as research, will record their own values.
 * The agent the command routes to: \"watch\", \"research\", or \"schedule\""
+  }
+
+  dimension: extras__string__ai {
+    sql: ${TABLE}.extras.string.ai ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Ai"
+    description: "State of the AI toggle, one of on, off or absent."
   }
 
   dimension: extras__string__alt_text_type {
@@ -5227,7 +5255,9 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Close Reason"
-    description: "Why the dropdown closed: \"selected\" (the user picked a suggestion), \"dismissed\" (clicked elsewhere or pressed Escape without picking anything), \"typed_through\" (kept typing until no results remained) or \"left_page\" (navigated away or closed the tab while the dropdown was open). \"left_page\" is best-effort on desktop: the native nsFormFillController closes the dropdown through the same path as \"dismissed\" before this code gets a chance to see the navigation, so most desktop page-leaves are reported as \"dismissed\" instead."
+    description: "Depending on the type of event:
+* Why the dropdown closed: \"selected\" (the user picked a suggestion), \"dismissed\" (clicked elsewhere or pressed Escape without picking anything), \"typed_through\" (kept typing until no results remained) or \"left_page\" (navigated away or closed the tab while the dropdown was open). \"left_page\" is best-effort on desktop: the native nsFormFillController closes the dropdown through the same path as \"dismissed\" before this code gets a chance to see the navigation, so most desktop page-leaves are reported as \"dismissed\" instead.
+* Why the dropdown closed: \"selected\" (the user picked a suggestion), \"dismissed\" (clicked elsewhere or pressed Escape without picking anything), \"typed_through\" (kept typing until no results remained), \"removal_prompt\" (hidden because a record removal reauthentication or confirmation prompt took focus; usually followed by a dropdown_shown with the same flow_id) or \"left_page\" (navigated away or closed the tab while the dropdown was open). \"left_page\" is be..."
   }
 
   dimension: extras__string__closing_reason {
@@ -5464,6 +5494,15 @@ view: events_stream_table {
     group_label: "Extras: String"
     group_item_label: "Context Type"
     description: "The type of content being sent. Possible values are \"link\" or \"page\"."
+  }
+
+  dimension: extras__string__copy {
+    sql: ${TABLE}.extras.string.copy ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Copy"
+    description: "State of the copy toggle, one of on, off or absent."
   }
 
   dimension: extras__string__country {
@@ -5901,7 +5940,8 @@ view: events_stream_table {
 * How was the toolbox opened? CommandLine, ContextMenu, HamburgerMenu, KeyShortcut, SessionRestore, SystemMenu or SlowScript
 * Where the user opened the page from: \"panel\" for the button in the VPN panel, \"settings\" for the button in about:settings#privacy.
 * The UI surface used to open the referrals tab. One of: app_menu, accounts_menu, preferences, help_menu, about_dialog.
-* Where the card came from: browser_action (a chat request handled by the manage_tabs tool) or resume (a \"Pick up where you left off\" pill)"
+* Where the card came from: browser_action (a chat request handled by the manage_tabs tool) or resume (a \"Pick up where you left off\" pill)
+* How was the toolbox opened? CommandLine, ContextMenu, HamburgerMenu, KeyShortcut, SessionRestore or SystemMenu"
   }
 
   dimension: extras__string__error {
@@ -6327,7 +6367,9 @@ view: events_stream_table {
 * Flow id of an interaction session with a credit card form
 * Joins to sibling firefox.ai.runtime.engine_run and run_inference_success_flow events for the same inference.
 * An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated.
-* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in between), to measure things like how often a shown dropdown leads to a removal."
+* An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated. It is reused when the dropdown reopens after a record removal prompt.
+* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in between), to measure things like how often a shown dropdown leads to a removal.
+* An id generated when the drop..."
   }
 
   dimension: extras__string__font {
@@ -6831,9 +6873,9 @@ view: events_stream_table {
     group_label: "Extras: String"
     group_item_label: "Interaction Type"
     description: "Depending on the type of event:
-* The type of user interaction with the CM record tile
 * How the user responded to the dialog: \"confirm\" or \"cancel\".
-* The secondary action that was activated: \"delete\" or \"edit\"."
+* The secondary action that was activated: \"delete\" or \"edit\".
+* The type of user interaction with the CM record tile"
   }
 
   dimension: extras__string__interstitial_reason {
@@ -6888,6 +6930,15 @@ view: events_stream_table {
     group_label: "Extras: String"
     group_item_label: "Issue Date Year"
     description: "passport issue date year field result"
+  }
+
+  dimension: extras__string__item {
+    sql: ${TABLE}.extras.string.item ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Item"
+    description: "Which entry was clicked, e.g., settings."
   }
 
   dimension: extras__string__key_system {
@@ -8403,9 +8454,9 @@ view: events_stream_table {
     group_item_label: "Record Type"
     description: "Depending on the type of event:
 * The type of saved record shown in the dropdown: \"formhistory\", \"address\", \"payment\" or \"password\".
-* Type of telemetry record: state or terminal.
 * The type of saved record the dialog is about: \"address\", \"payment\" or \"password\".
-* The type of saved record the action applies to: \"formhistory\", \"address\", \"payment\" or \"password\"."
+* The type of saved record the action applies to: \"formhistory\", \"address\", \"payment\" or \"password\".
+* Type of telemetry record: state or terminal."
   }
 
   dimension: extras__string__recovery {
@@ -8736,6 +8787,15 @@ view: events_stream_table {
     group_label: "Extras: String"
     group_item_label: "Scroll Position"
     description: "Percentage of window scrolled in Reader Mode (whole number)"
+  }
+
+  dimension: extras__string__search {
+    sql: ${TABLE}.extras.string.search ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Search"
+    description: "State of the search toggle, one of on, off or absent."
   }
 
   dimension: extras__string__search_domain {

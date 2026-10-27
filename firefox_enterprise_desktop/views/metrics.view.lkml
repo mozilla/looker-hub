@@ -7605,6 +7605,24 @@ categorical histogram FX_SEARCHBAR_SELECTED_RESULT_METHOD.
 "
   }
 
+  dimension: metrics__boolean__selection_menu_copy_enabled {
+    label: "Selection Menu: Copy Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.selection_menu_copy_enabled ;;
+    type: yesno
+    group_label: "Selection Menu"
+    group_item_label: "Copy Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Selection Menu: Copy Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/selection_menu_copy_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the text selection actions menu would show the copy action.
+"
+  }
+
   dimension: metrics__boolean__selection_menu_enabled {
     label: "Selection Menu: Enabled"
     hidden: no

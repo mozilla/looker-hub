@@ -1500,6 +1500,16 @@ overridden by a third-party add-on or OpenSearch engine.
 "
   }
 
+  dimension: metrics__boolean__selection_menu_copy_enabled {
+    sql: ${TABLE}.metrics.boolean.selection_menu_copy_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Selection Menu Copy Enabled"
+    description: "Indicates if the text selection actions menu would show the copy action.
+"
+  }
+
   dimension: metrics__boolean__selection_menu_enabled {
     sql: ${TABLE}.metrics.boolean.selection_menu_enabled ;;
     type: yesno
