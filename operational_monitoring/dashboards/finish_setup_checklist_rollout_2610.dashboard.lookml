@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,77 +26,9 @@
       finish_setup_checklist_rollout_2610.branch
     ]
     filters:
-      finish_setup_checklist_rollout_2610.metric: 'ad_clicks'
+      finish_setup_checklist_rollout_2610.metric: 'days_of_use'
       finish_setup_checklist_rollout_2610.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: finish_setup_checklist_rollout_2610.submission_date
-    field_y: finish_setup_checklist_rollout_2610.point
-    log_scale: false
-    ci_lower: finish_setup_checklist_rollout_2610.lower
-    ci_upper: finish_setup_checklist_rollout_2610.upper
-    show_grid: true
-    listen:
-      Date: finish_setup_checklist_rollout_2610.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: finish_setup_checklist_rollout_2610
-    type: looker_line
-    fields: [
-      finish_setup_checklist_rollout_2610.submission_date,
-      finish_setup_checklist_rollout_2610.branch,
-      finish_setup_checklist_rollout_2610.point
-    ]
-    pivots: [
-      finish_setup_checklist_rollout_2610.branch
-    ]
-    filters:
-      finish_setup_checklist_rollout_2610.metric: 'uri_count'
-      finish_setup_checklist_rollout_2610.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: finish_setup_checklist_rollout_2610.submission_date
-    field_y: finish_setup_checklist_rollout_2610.point
-    log_scale: false
-    ci_lower: finish_setup_checklist_rollout_2610.lower
-    ci_upper: finish_setup_checklist_rollout_2610.upper
-    show_grid: true
-    listen:
-      Date: finish_setup_checklist_rollout_2610.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: finish_setup_checklist_rollout_2610
-    type: looker_line
-    fields: [
-      finish_setup_checklist_rollout_2610.submission_date,
-      finish_setup_checklist_rollout_2610.branch,
-      finish_setup_checklist_rollout_2610.point
-    ]
-    pivots: [
-      finish_setup_checklist_rollout_2610.branch
-    ]
-    filters:
-      finish_setup_checklist_rollout_2610.metric: 'active_hours'
-      finish_setup_checklist_rollout_2610.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -132,7 +64,7 @@
     filters:
       finish_setup_checklist_rollout_2610.metric: 'memory_total'
       finish_setup_checklist_rollout_2610.statistic: percentile
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -145,6 +77,74 @@
     listen:
       Date: finish_setup_checklist_rollout_2610.submission_date
       Percentile: finish_setup_checklist_rollout_2610.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: finish_setup_checklist_rollout_2610
+    type: looker_line
+    fields: [
+      finish_setup_checklist_rollout_2610.submission_date,
+      finish_setup_checklist_rollout_2610.branch,
+      finish_setup_checklist_rollout_2610.point
+    ]
+    pivots: [
+      finish_setup_checklist_rollout_2610.branch
+    ]
+    filters:
+      finish_setup_checklist_rollout_2610.metric: 'ad_clicks'
+      finish_setup_checklist_rollout_2610.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: finish_setup_checklist_rollout_2610.submission_date
+    field_y: finish_setup_checklist_rollout_2610.point
+    log_scale: false
+    ci_lower: finish_setup_checklist_rollout_2610.lower
+    ci_upper: finish_setup_checklist_rollout_2610.upper
+    show_grid: true
+    listen:
+      Date: finish_setup_checklist_rollout_2610.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: finish_setup_checklist_rollout_2610
+    type: looker_line
+    fields: [
+      finish_setup_checklist_rollout_2610.submission_date,
+      finish_setup_checklist_rollout_2610.branch,
+      finish_setup_checklist_rollout_2610.point
+    ]
+    pivots: [
+      finish_setup_checklist_rollout_2610.branch
+    ]
+    filters:
+      finish_setup_checklist_rollout_2610.metric: 'uri_count'
+      finish_setup_checklist_rollout_2610.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: finish_setup_checklist_rollout_2610.submission_date
+    field_y: finish_setup_checklist_rollout_2610.point
+    log_scale: false
+    ci_lower: finish_setup_checklist_rollout_2610.lower
+    ci_upper: finish_setup_checklist_rollout_2610.upper
+    show_grid: true
+    listen:
+      Date: finish_setup_checklist_rollout_2610.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,44 +199,10 @@
       finish_setup_checklist_rollout_2610.branch
     ]
     filters:
-      finish_setup_checklist_rollout_2610.metric: 'qualified_cumulative_days_of_use'
+      finish_setup_checklist_rollout_2610.metric: 'active_hours'
       finish_setup_checklist_rollout_2610.statistic: mean
     row: 20
     col: 12
-    width: 12
-    height: 8
-    field_x: finish_setup_checklist_rollout_2610.submission_date
-    field_y: finish_setup_checklist_rollout_2610.point
-    log_scale: false
-    ci_lower: finish_setup_checklist_rollout_2610.lower
-    ci_upper: finish_setup_checklist_rollout_2610.upper
-    show_grid: true
-    listen:
-      Date: finish_setup_checklist_rollout_2610.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: finish_setup_checklist_rollout_2610
-    type: looker_line
-    fields: [
-      finish_setup_checklist_rollout_2610.submission_date,
-      finish_setup_checklist_rollout_2610.branch,
-      finish_setup_checklist_rollout_2610.point
-    ]
-    pivots: [
-      finish_setup_checklist_rollout_2610.branch
-    ]
-    filters:
-      finish_setup_checklist_rollout_2610.metric: 'days_of_use'
-      finish_setup_checklist_rollout_2610.statistic: mean
-    row: 30
-    col: 0
     width: 12
     height: 8
     field_x: finish_setup_checklist_rollout_2610.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       finish_setup_checklist_rollout_2610.metric: 'retained'
+      finish_setup_checklist_rollout_2610.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: finish_setup_checklist_rollout_2610.submission_date
+    field_y: finish_setup_checklist_rollout_2610.point
+    log_scale: false
+    ci_lower: finish_setup_checklist_rollout_2610.lower
+    ci_upper: finish_setup_checklist_rollout_2610.upper
+    show_grid: true
+    listen:
+      Date: finish_setup_checklist_rollout_2610.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: finish_setup_checklist_rollout_2610
+    type: looker_line
+    fields: [
+      finish_setup_checklist_rollout_2610.submission_date,
+      finish_setup_checklist_rollout_2610.branch,
+      finish_setup_checklist_rollout_2610.point
+    ]
+    pivots: [
+      finish_setup_checklist_rollout_2610.branch
+    ]
+    filters:
+      finish_setup_checklist_rollout_2610.metric: 'qualified_cumulative_days_of_use'
       finish_setup_checklist_rollout_2610.statistic: mean
     row: 30
     col: 12

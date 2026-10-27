@@ -9,7 +9,7 @@ view: unified_attribution_performance {
     sql: ${TABLE}.budget_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The budget the campaign is planned against - 'Brand', 'Performance' or 'Other' (corporate, not Firefox). A rough approximation off the campaign name, derived at this aggregate grain rather than per client. 'Brand' and 'Other' need a positive match on the name or its parsed segments, and only paid rows take the 'Performance' default, so a non-paid row the name does not classify is NULL. Filter on category = 'paid' for budget reporting."
+    description: "The budget the campaign is planned against - 'Brand', 'Performance' or 'Other' (corporate, not Firefox). A rough approximation off the campaign name, derived at this aggregate grain rather than per client. NULL for every non-paid row, whatever the name. For paid rows, 'Brand' and 'Other' need a positive match on the name or its parsed segments, and anything else takes the 'Performance' default."
   }
 
   dimension: campaign_id {
@@ -108,14 +108,14 @@ view: unified_attribution_performance {
     sql: ${TABLE}.reporting_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Channel reporting name derived from the campaign name and platform using udf.marketing_unified_attribution_reporting_name; matches the reporting_name on the unified attribution tables."
+    description: "Channel reporting name derived from the campaign name and platform using udf_marketing_shared.unified_attribution_reporting_name; matches the reporting_name on the unified attribution tables."
   }
 
   dimension: spend {
     sql: ${TABLE}.spend ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Amount of spent on the campaign on the given day, in the account currency (USD for Softonic)."
+    description: "Amount spent on the campaign on the given day, in USD."
   }
 
   dimension: w4_eligible {

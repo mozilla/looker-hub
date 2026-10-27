@@ -1558,6 +1558,15 @@ view: events_stream {
     description: "Whether the engine became ready again after the recovery attempt"
   }
 
+  dimension: extras__boolean__reopened_after_removal {
+    sql: ${TABLE}.extras.boolean.reopened_after_removal ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Reopened After Removal"
+    description: "True when this is the automatic reopen after a record removal prompt, false otherwise."
+  }
+
   dimension: extras__boolean__reset_disabled {
     sql: ${TABLE}.extras.boolean.reset_disabled ;;
     type: yesno
@@ -5697,7 +5706,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Close Reason"
-    description: "Why the dropdown closed: \"selected\" (the user picked a suggestion), \"dismissed\" (clicked elsewhere or pressed Escape without picking anything), \"typed_through\" (kept typing until no results remained) or \"left_page\" (navigated away or closed the tab while the dropdown was open). \"left_page\" is best-effort on desktop: the native nsFormFillController closes the dropdown through the same path as \"dismissed\" before this code gets a chance to see the navigation, so most desktop page-leaves are reported as \"dismissed\" instead."
+    description: "Depending on the type of event:
+* Why the dropdown closed: \"selected\" (the user picked a suggestion), \"dismissed\" (clicked elsewhere or pressed Escape without picking anything), \"typed_through\" (kept typing until no results remained) or \"left_page\" (navigated away or closed the tab while the dropdown was open). \"left_page\" is best-effort on desktop: the native nsFormFillController closes the dropdown through the same path as \"dismissed\" before this code gets a chance to see the navigation, so most desktop page-leaves are reported as \"dismissed\" instead.
+* Why the dropdown closed: \"selected\" (the user picked a suggestion), \"dismissed\" (clicked elsewhere or pressed Escape without picking anything), \"typed_through\" (kept typing until no results remained), \"removal_prompt\" (hidden because a record removal reauthentication or confirmation prompt took focus; usually followed by a dropdown_shown with the same flow_id) or \"left_page\" (navigated away or closed the tab while the dropdown was open). \"left_page\" is be..."
   }
 
   dimension: extras__string__closing_reason {
@@ -6425,7 +6436,8 @@ view: events_stream {
 * How was the toolbox opened? CommandLine, ContextMenu, HamburgerMenu, KeyShortcut, SessionRestore, SystemMenu or SlowScript
 * Where the user opened the page from: \"panel\" for the button in the VPN panel, \"settings\" for the button in about:settings#privacy.
 * The UI surface used to open the referrals tab. One of: app_menu, accounts_menu, preferences, help_menu, about_dialog.
-* Where the card came from: browser_action (a chat request handled by the manage_tabs tool) or resume (a \"Pick up where you left off\" pill)"
+* Where the card came from: browser_action (a chat request handled by the manage_tabs tool) or resume (a \"Pick up where you left off\" pill)
+* How was the toolbox opened? CommandLine, ContextMenu, HamburgerMenu, KeyShortcut, SessionRestore or SystemMenu"
   }
 
   dimension: extras__string__error {
@@ -6888,7 +6900,9 @@ view: events_stream {
 * Flow id of an interaction session with a credit card form
 * Joins to sibling firefox.ai.runtime.engine_run and run_inference_success_flow events for the same inference.
 * An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated.
-* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in between), to measure things like how often a shown dropdown leads to a removal."
+* An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated. It is reused when the dropdown reopens after a record removal prompt.
+* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in between), to measure things like how often a shown dropdown leads to a removal.
+* An id generated when the drop..."
   }
 
   dimension: extras__string__font {
@@ -7430,9 +7444,9 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Interaction Type"
     description: "Depending on the type of event:
-* The type of user interaction with the CM record tile
 * How the user responded to the dialog: \"confirm\" or \"cancel\".
-* The secondary action that was activated: \"delete\" or \"edit\"."
+* The secondary action that was activated: \"delete\" or \"edit\".
+* The type of user interaction with the CM record tile"
   }
 
   dimension: extras__string__interstitial_reason {
@@ -9078,8 +9092,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Record Type"
     description: "Depending on the type of event:
-* Type of telemetry record: state or terminal.
 * The type of saved record shown in the dropdown: \"formhistory\", \"address\", \"payment\" or \"password\".
+* Type of telemetry record: state or terminal.
 * The type of saved record the dialog is about: \"address\", \"payment\" or \"password\".
 * The type of saved record the action applies to: \"formhistory\", \"address\", \"payment\" or \"password\"."
   }

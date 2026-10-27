@@ -1186,6 +1186,15 @@ view: events_stream {
     description: "If the PDF was opened from Fenix itself (for example from the Download notification)"
   }
 
+  dimension: extras__boolean__reopened_after_removal {
+    sql: ${TABLE}.extras.boolean.reopened_after_removal ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Reopened After Removal"
+    description: "True when this is the automatic reopen after a record removal prompt, false otherwise."
+  }
+
   dimension: extras__boolean__reset_disabled {
     sql: ${TABLE}.extras.boolean.reset_disabled ;;
     type: yesno
@@ -3259,7 +3268,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Close Reason"
-    description: "Why the dropdown closed: \"selected\" (the user picked a suggestion), \"dismissed\" (clicked elsewhere or pressed Escape without picking anything), \"typed_through\" (kept typing until no results remained) or \"left_page\" (navigated away or closed the tab while the dropdown was open). \"left_page\" is best-effort on desktop: the native nsFormFillController closes the dropdown through the same path as \"dismissed\" before this code gets a chance to see the navigation, so most desktop page-leaves are reported as \"dismissed\" instead."
+    description: "Depending on the type of event:
+* Why the dropdown closed: \"selected\" (the user picked a suggestion), \"dismissed\" (clicked elsewhere or pressed Escape without picking anything), \"typed_through\" (kept typing until no results remained) or \"left_page\" (navigated away or closed the tab while the dropdown was open). \"left_page\" is best-effort on desktop: the native nsFormFillController closes the dropdown through the same path as \"dismissed\" before this code gets a chance to see the navigation, so most desktop page-leaves are reported as \"dismissed\" instead.
+* Why the dropdown closed: \"selected\" (the user picked a suggestion), \"dismissed\" (clicked elsewhere or pressed Escape without picking anything), \"typed_through\" (kept typing until no results remained), \"removal_prompt\" (hidden because a record removal reauthentication or confirmation prompt took focus; usually followed by a dropdown_shown with the same flow_id) or \"left_page\" (navigated away or closed the tab while the dropdown was open). \"left_page\" is be..."
   }
 
   dimension: extras__string__codecs {
@@ -3795,7 +3806,8 @@ view: events_stream {
 * How was the toolbox opened? CommandLine, ContextMenu, HamburgerMenu, KeyShortcut, SessionRestore, SystemMenu or SlowScript
 * The surface from which the user started the flow. Possible values: \"onboarding\", \"settings\".
 * The surface from which the user started the flow. Possible values: Homepage, Browser, Settings.
-* The surface from which the user entered the VPN settings page. Possible values: Settings, Menu, Trust Panel."
+* The surface from which the user entered the VPN settings page. Possible values: Settings, Menu, Trust Panel.
+* How was the toolbox opened? CommandLine, ContextMenu, HamburgerMenu, KeyShortcut, SessionRestore or SystemMenu"
   }
 
   dimension: extras__string__error {
@@ -4229,7 +4241,9 @@ view: events_stream {
 * Unique identifier for this ML workflow session. Used to correlate all events within this session across components.
 * Flow id of an interaction session with a credit card form
 * An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated.
-* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in between), to measure things like how often a shown dropdown leads to a removal."
+* An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated. It is reused when the dropdown reopens after a record removal prompt.
+* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in between), to measure things like how often a shown dropdown leads to a removal.
+* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in between), to measure things like how often a shown dropdown leads to..."
   }
 
   dimension: extras__string__form_action_origin_error {
