@@ -64,6 +64,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     sql: ${TABLE}.attribution_dlsource ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An identifier indicating the download source through which Firefox Desktop was obtained (e.g., \"mozorg\", \"mozillaci\", \"fxdotcom\", \"desktoplauncher\"); null when no download source attribution is available."
   }
 
   dimension: attribution_dltoken {
@@ -104,6 +105,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     sql: ${TABLE}.attribution_ua ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An identifier derived from the user-agent string of the browser used to download the Firefox Desktop installer, indicating which browser the user was switching from (e.g., \"chrome\", \"edge\", \"firefox\", \"ie\")."
   }
 
   dimension: attribution_variation {
@@ -370,6 +372,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     sql: ${TABLE}.windows_build_number ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The Windows build number reported by the operating system (e.g., 19045 for Windows 10, 22000+ for Windows 11); only populated on Windows clients and null on all other platforms."
   }
 
   dimension: windows_version {

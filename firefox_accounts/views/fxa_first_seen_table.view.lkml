@@ -14,6 +14,7 @@ view: fxa_first_seen_table {
     sql: ${TABLE}.user_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "SHA-256 hashed Firefox Accounts user identifier (uid), hex-encoded. Primary key for joining user-level tables."
   }
 
   dimension_group: first_seen {

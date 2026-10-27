@@ -16,7 +16,7 @@ view: metadata_completeness {
     sql: ${TABLE}.nbr_columns_with_non_null_desc ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of Columns with a Non-Null Description"
+    description: "Number of Columns with a Non-Empty Description (non-null and not an empty string). Prior to DENG-11519, this counted empty-string descriptions as documented, so values from before that change are not directly comparable."
   }
 
   dimension: object_description {

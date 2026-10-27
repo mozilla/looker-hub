@@ -22,7 +22,7 @@ view: firefox_android_clients_table {
     sql: ${TABLE}.adjust_ad_group ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Structure parameter for the the ad group of a campaign."
+    description: "Structure parameter for the ad group of a campaign."
   }
 
   dimension: adjust_campaign {
@@ -188,6 +188,7 @@ view: firefox_android_clients_table {
     sql: ${TABLE}.meta_attribution_app ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The Meta (Facebook) app identifier associated with the install attribution, sourced from Meta's attribution system. Null indicates the client was not attributed via Meta."
   }
 
   dimension: metadata__adjust_network__source_ping {

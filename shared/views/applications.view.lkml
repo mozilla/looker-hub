@@ -9,7 +9,7 @@ view: applications {
     sql: ${TABLE}.app_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "App Channel"
+    description: "The release channel of the application build, indicating the target audience and stability level. Possible values include 'release', 'beta', and 'nightly'."
   }
 
   dimension: app_description {
@@ -30,7 +30,7 @@ view: applications {
     sql: ${TABLE}.app_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "App Name"
+    description: "The name of the Mozilla application that generated the telemetry event (e.g., 'firefox_desktop', 'fenix', 'firefox_ios', 'mozilla_vpn'). Used to distinguish telemetry across Mozilla's suite of products."
   }
 
   dimension: bq_dataset_family {

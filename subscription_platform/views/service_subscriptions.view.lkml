@@ -167,6 +167,7 @@ This will be null for Google and Apple subscriptions."
     suggest_persist_for: "24 hours"
     group_label: "Last Touch Attribution"
     group_item_label: "Channel Group"
+    description: "Categorized marketing channel group (Direct, Marketing Owned, Marketing Paid, Product Owned, or Miscellaneous)"
   }
 
   dimension: last_touch_attribution__entrypoint {

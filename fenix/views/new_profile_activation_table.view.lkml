@@ -9,6 +9,7 @@ view: new_profile_activation_table {
     sql: ${TABLE}.activated ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Whether this new profile met the activation criteria (1) or not (0). A profile is considered activated if it was seen on more than one of days 2–7 after creation and performed at least one search on days 4–7."
   }
 
   dimension: adjust_adgroup {
@@ -107,6 +108,7 @@ view: new_profile_activation_table {
     sql: ${TABLE}.new_profile ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Always 1, indicating this row represents a new profile that entered the activation assessment window."
   }
 
   dimension: normalized_channel {

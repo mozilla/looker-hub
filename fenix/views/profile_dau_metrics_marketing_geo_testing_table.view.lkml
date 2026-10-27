@@ -153,6 +153,7 @@ view: profile_dau_metrics_marketing_geo_testing_table {
     sql: ${TABLE}.play_store_attribution_content ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The UTM content parameter from the Google Play Store install referral, used to identify the specific creative or UI element that drove the installation (e.g., 'onboarding-modal', 'firefoxview'). Null when content attribution is unavailable."
   }
 
   dimension: play_store_attribution_medium {
@@ -173,6 +174,7 @@ view: profile_dau_metrics_marketing_geo_testing_table {
     sql: ${TABLE}.play_store_attribution_term ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The UTM term parameter from the Google Play Store install referral, typically capturing the search keyword that led to the app installation (e.g., 'firefox', 'mozilla firefox'). Null when keyword attribution is unavailable."
   }
 
   dimension_group: submission {

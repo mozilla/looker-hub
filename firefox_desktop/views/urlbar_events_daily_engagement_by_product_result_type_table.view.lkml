@@ -14,6 +14,7 @@ view: urlbar_events_daily_engagement_by_product_result_type_table {
   dimension: experiments {
     sql: ${TABLE}.experiments ;;
     hidden: yes
+    description: "An array of Nimbus experiments and rollouts the Firefox Desktop client was enrolled in at the time of the ping, where each element contains the experiment slug (key) and the assigned branch name."
   }
 
   dimension: firefox_suggest_enabled {
