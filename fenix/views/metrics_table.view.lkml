@@ -1584,6 +1584,16 @@ Tracks the pref `signon.rememberSignons`.
 "
   }
 
+  dimension: metrics__boolean__quotamanager_had_temporary_storage_usage_underflow {
+    sql: ${TABLE}.metrics.boolean.quotamanager_had_temporary_storage_usage_underflow ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Quotamanager Had Temporary Storage Usage Underflow"
+    description: "Whether the in-memory total temporary storage usage tracked by the quota manager went negative at least once during this session. False means the quota manager was initialized and no underflow was seen.
+"
+  }
+
   dimension: metrics__boolean__recent_tabs_section_visible {
     sql: ${TABLE}.metrics.boolean.recent_tabs_section_visible ;;
     type: yesno

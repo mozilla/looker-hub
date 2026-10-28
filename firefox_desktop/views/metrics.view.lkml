@@ -100282,6 +100282,7 @@ view: metrics__metrics__labeled_timing_distribution__widget_jump_list_shell_call
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {

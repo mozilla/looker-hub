@@ -512,6 +512,14 @@ view: crash_table {
     description: "True if the app was invoked in headless mode via `--headless ...` or `--backgroundtask ...`, false otherwise."
   }
 
+  dimension: metrics__datetime__raw_crash_jump_list_shell_call_start {
+    sql: ${TABLE}.metrics.datetime.raw_crash_jump_list_shell_call_start ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Datetime"
+    group_item_label: "Raw Crash Jump List Shell Call Start"
+  }
+
   dimension: metrics__datetime__raw_crash_time {
     sql: ${TABLE}.metrics.datetime.raw_crash_time ;;
     type: string
@@ -1364,6 +1372,22 @@ This metric is only attached to a ping if it already contains other data.
       year,
     ]
     label: "Metadata: Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__crash_jump_list_shell_call_start {
+    sql: ${TABLE}.metrics.datetime.crash_jump_list_shell_call_start ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics: Datetime: Crash Jump List Shell Call Start"
+    description: "Time, in seconds since the Epoch, at which the Windows Shell call currently running on the Jump List thread was started. It is cleared when the call returns, so its presence in a crash report means the call never returned, and CrashTime minus this value is how long it had been blocked. If calls from the normal and private-browsing builders overlap, which in practice only happens at startup, this reflects the most recent one."
   }
 
   dimension_group: metrics__datetime__crash {

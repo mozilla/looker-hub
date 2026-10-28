@@ -26920,6 +26920,24 @@ Tracks the pref `signon.rememberSignons`.
 "
   }
 
+  dimension: metrics__boolean__quotamanager_had_temporary_storage_usage_underflow {
+    label: "Quotamanager: Had Temporary Storage Usage Underflow"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.quotamanager_had_temporary_storage_usage_underflow ;;
+    type: yesno
+    group_label: "Quotamanager"
+    group_item_label: "Had Temporary Storage Usage Underflow"
+
+    link: {
+      label: "Glean Dictionary reference for Quotamanager: Had Temporary Storage Usage Underflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/quotamanager_had_temporary_storage_usage_underflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the in-memory total temporary storage usage tracked by the quota manager went negative at least once during this session. False means the quota manager was initialized and no underflow was seen.
+"
+  }
+
   dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__sum {
     label: "Quotamanager Initialize Temporarystorage: Non Persisted Zero Usage Origins Sum"
     hidden: no
