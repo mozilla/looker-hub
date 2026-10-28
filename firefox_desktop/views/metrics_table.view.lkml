@@ -1568,6 +1568,14 @@ Tracks the pref `signon.rememberSignons`.
 "
   }
 
+  dimension: metrics__boolean__quotamanager_had_temporary_storage_usage_underflow {
+    sql: ${TABLE}.metrics.boolean.quotamanager_had_temporary_storage_usage_underflow ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Quotamanager Had Temporary Storage Usage Underflow"
+  }
+
   dimension: metrics__boolean__search_engine_default_overridden_by_third_party {
     sql: ${TABLE}.metrics.boolean.search_engine_default_overridden_by_third_party ;;
     type: yesno
@@ -21204,6 +21212,11 @@ For non-OHTTP requests, labels are simply the numeric status code, e.g.,
     hidden: yes
     description: "Server response time to update request (ms). Keyed by provider
 "
+  }
+
+  dimension: metrics__labeled_timing_distribution__widget_jump_list_shell_call {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.widget_jump_list_shell_call ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_timing_distribution__workers_sync_worker_operation {
@@ -77725,6 +77738,94 @@ view: metrics_table__metrics__labeled_timing_distribution__urlclassifier_update_
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__urlclassifier_update_server_response_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__widget_jump_list_shell_call {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__widget_jump_list_shell_call__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
