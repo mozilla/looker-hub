@@ -8829,6 +8829,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Session restore: Number of tabs restored eagerly in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_SESSION_RESTORE_NUMBER_OF_EAGER_TABS_RESTORED.
+As of bug 2071519 this is recorded on every restore attempt, including attempts that produced no eagerly-restored tab. Data from earlier versions excludes those startups.
 "
   }
 
@@ -8848,6 +8849,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Session restore: Number of tabs in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_NUMBER_OF_TABS_RESTORED.
+As of bug 2071519, 0 is recorded and will land in the underflow bucket. Before that, a restore that produced no eagerly-restored tab recorded nothing at all, so data from earlier versions excludes those startups and reads higher than it should.
 "
   }
 
@@ -8867,6 +8869,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Session restore: Number of windows in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_SESSION_RESTORE_NUMBER_OF_WINDOWS_RESTORED.
+As of bug 2071519 this is recorded on every restore attempt, including attempts that produced no eagerly-restored tab. Data from earlier versions excludes those startups.
 "
   }
 
@@ -35150,6 +35153,24 @@ Tracks the pref `signon.rememberSignons`.
     }
 
     description: "Elapsed time to detect whether a <form> element is a signup form.
+"
+  }
+
+  dimension: metrics__boolean__quotamanager_had_temporary_storage_usage_underflow {
+    label: "Quotamanager: Had Temporary Storage Usage Underflow"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.quotamanager_had_temporary_storage_usage_underflow ;;
+    type: yesno
+    group_label: "Quotamanager"
+    group_item_label: "Had Temporary Storage Usage Underflow"
+
+    link: {
+      label: "Glean Dictionary reference for Quotamanager: Had Temporary Storage Usage Underflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quotamanager_had_temporary_storage_usage_underflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the in-memory total temporary storage usage tracked by the quota manager went negative at least once during this session. False means the quota manager was initialized and no underflow was seen.
 "
   }
 
@@ -100227,6 +100248,94 @@ view: metrics__metrics__labeled_timing_distribution__urlclassifier_update_server
 }
 
 view: metrics__metrics__labeled_timing_distribution__urlclassifier_update_server_response_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__widget_jump_list_shell_call {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__widget_jump_list_shell_call__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

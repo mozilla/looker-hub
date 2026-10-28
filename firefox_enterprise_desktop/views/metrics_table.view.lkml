@@ -1478,6 +1478,14 @@ Tracks the pref `signon.rememberSignons`.
 "
   }
 
+  dimension: metrics__boolean__quotamanager_had_temporary_storage_usage_underflow {
+    sql: ${TABLE}.metrics.boolean.quotamanager_had_temporary_storage_usage_underflow ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Quotamanager Had Temporary Storage Usage Underflow"
+  }
+
   dimension: metrics__boolean__search_engine_default_overridden_by_third_party {
     sql: ${TABLE}.metrics.boolean.search_engine_default_overridden_by_third_party ;;
     type: yesno

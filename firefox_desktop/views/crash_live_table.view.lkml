@@ -410,6 +410,14 @@ view: crash_live_table {
     group_item_label: "Environment Headless Mode"
   }
 
+  dimension: metrics__datetime__crash_jump_list_shell_call_start {
+    sql: ${TABLE}.metrics.datetime.crash_jump_list_shell_call_start ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Datetime"
+    group_item_label: "Crash Jump List Shell Call Start"
+  }
+
   dimension: metrics__datetime__crash_time {
     sql: ${TABLE}.metrics.datetime.crash_time ;;
     type: string
