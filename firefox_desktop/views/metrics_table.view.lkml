@@ -1574,6 +1574,8 @@ Tracks the pref `signon.rememberSignons`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Quotamanager Had Temporary Storage Usage Underflow"
+    description: "Whether the in-memory total temporary storage usage tracked by the quota manager went negative at least once during this session. False means the quota manager was initialized and no underflow was seen.
+"
   }
 
   dimension: metrics__boolean__search_engine_default_overridden_by_third_party {
@@ -21217,6 +21219,8 @@ For non-OHTTP requests, labels are simply the numeric status code, e.g.,
   dimension: metrics__labeled_timing_distribution__widget_jump_list_shell_call {
     sql: ${TABLE}.metrics.labeled_timing_distribution.widget_jump_list_shell_call ;;
     hidden: yes
+    description: "Wall-clock time taken by each individual Windows Shell COM call made by the Jump List builder, labeled by which call it was. Only calls that returned are recorded; a call that never returns leaves the JumpListShellCallStart crash annotation set instead.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__workers_sync_worker_operation {
@@ -77772,6 +77776,7 @@ view: metrics_table__metrics__labeled_timing_distribution__widget_jump_list_shel
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {

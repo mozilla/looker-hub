@@ -1793,6 +1793,23 @@ The labels are the `category.name` identifier of the metric.
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
+  dimension_group: metrics__datetime__crash_jump_list_shell_call_start {
+    label: "Crash: Jump List Shell Call Start"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.crash_jump_list_shell_call_start ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Time, in seconds since the Epoch, at which the Windows Shell call currently running on the Jump List thread was started. It is cleared when the call returns, so its presence in a crash report means the call never returned, and CrashTime minus this value is how long it had been blocked. If calls from the normal and private-browsing builders overlap, which in practice only happens at startup, this reflects the most recent one."
+  }
+
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
