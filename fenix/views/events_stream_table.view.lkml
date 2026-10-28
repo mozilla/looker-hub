@@ -1552,8 +1552,7 @@ view: events_stream_table {
 * The number of top site suggestions displayed.
 * The number of trending search suggestions displayed.
 * The number of available Labs fetched from Nimbus.
-* Number of items flipped from on to off. Zero if the user cancelled the dialog.
-* How many times the dropdown was withheld on the form's fields, counted at most once per field focus."
+* Number of items flipped from on to off. Zero if the user cancelled the dialog."
   }
 
   dimension: extras__quantity__cpu_milliseconds {
@@ -3125,7 +3124,6 @@ view: events_stream_table {
     group_item_label: "Category"
     description: "Depending on the type of event:
 * The category whose consumer failed, e.g. \"browser-window-idle-tasks\".
-* Autofill category of the field: \"address\", \"creditCard\" or \"passport\".
 * Autofill category. Either \"creditcard\" or \"address\"
 * Autofill category. Either \"creditcard\", \"address\" or \"passport\""
   }
@@ -4152,8 +4150,7 @@ view: events_stream_table {
 * Name of the field being affected by the method. Used by `popup_shown` and `filled_modified` methods.
 * Name of the field being affected by the event
 * Name of the field being affected by the method
-* Name of the field being affected by the method, filled when method is `popup_shown` or `filled_modified`.
-* The field name the field was classified as before its autocomplete attribute changed, such as \"address-line1\"."
+* Name of the field being affected by the method, filled when method is `popup_shown` or `filled_modified`."
   }
 
   dimension: extras__string__file_name {

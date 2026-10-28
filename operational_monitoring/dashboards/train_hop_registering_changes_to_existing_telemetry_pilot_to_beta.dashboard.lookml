@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +26,180 @@
       train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch
     ]
     filters:
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'days_of_use'
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'qualified_cumulative_days_of_use'
       train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: mean
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
+    field_y: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
+    log_scale: false
+    ci_lower: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.lower
+    ci_upper: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.upper
+    show_grid: true
+    listen:
+      Date: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta
+    type: looker_line
+    fields: [
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date,
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch,
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
+    ]
+    pivots: [
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch
+    ]
+    filters:
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'active_hours'
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
+    field_y: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
+    log_scale: false
+    ci_lower: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.lower
+    ci_upper: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.upper
+    show_grid: true
+    listen:
+      Date: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta
+    type: looker_line
+    fields: [
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date,
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch,
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
+    ]
+    pivots: [
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch
+    ]
+    filters:
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'retained'
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
+    field_y: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
+    log_scale: false
+    ci_lower: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.lower
+    ci_upper: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.upper
+    show_grid: true
+    listen:
+      Date: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta
+    type: looker_line
+    fields: [
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date,
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch,
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
+    ]
+    pivots: [
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch
+    ]
+    filters:
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'search_count'
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
+    field_y: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
+    log_scale: false
+    ci_lower: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.lower
+    ci_upper: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.upper
+    show_grid: true
+    listen:
+      Date: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta
+    type: looker_line
+    fields: [
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date,
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch,
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
+    ]
+    pivots: [
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch
+    ]
+    filters:
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'uri_count'
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
+    field_y: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
+    log_scale: false
+    ci_lower: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.lower
+    ci_upper: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.upper
+    show_grid: true
+    listen:
+      Date: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta
+    type: looker_line
+    fields: [
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date,
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch,
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
+    ]
+    pivots: [
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch
+    ]
+    filters:
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'ad_clicks'
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
@@ -64,8 +234,8 @@
     filters:
       train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'memory_total'
       train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: percentile
-    row: 0
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
@@ -81,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -97,177 +267,7 @@
       train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch
     ]
     filters:
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'ad_clicks'
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
-    field_y: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
-    log_scale: false
-    ci_lower: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.lower
-    ci_upper: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.upper
-    show_grid: true
-    listen:
-      Date: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta
-    type: looker_line
-    fields: [
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date,
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch,
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
-    ]
-    pivots: [
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch
-    ]
-    filters:
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'uri_count'
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
-    field_y: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
-    log_scale: false
-    ci_lower: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.lower
-    ci_upper: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.upper
-    show_grid: true
-    listen:
-      Date: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta
-    type: looker_line
-    fields: [
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date,
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch,
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
-    ]
-    pivots: [
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch
-    ]
-    filters:
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'search_count'
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
-    field_y: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
-    log_scale: false
-    ci_lower: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.lower
-    ci_upper: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.upper
-    show_grid: true
-    listen:
-      Date: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta
-    type: looker_line
-    fields: [
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date,
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch,
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
-    ]
-    pivots: [
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch
-    ]
-    filters:
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'active_hours'
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
-    field_y: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
-    log_scale: false
-    ci_lower: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.lower
-    ci_upper: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.upper
-    show_grid: true
-    listen:
-      Date: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta
-    type: looker_line
-    fields: [
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date,
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch,
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
-    ]
-    pivots: [
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch
-    ]
-    filters:
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'retained'
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
-    field_y: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
-    log_scale: false
-    ci_lower: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.lower
-    ci_upper: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.upper
-    show_grid: true
-    listen:
-      Date: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: train_hop_registering_changes_to_existing_telemetry_pilot_to_beta
-    type: looker_line
-    fields: [
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.submission_date,
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch,
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.point
-    ]
-    pivots: [
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.branch
-    ]
-    filters:
-      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'qualified_cumulative_days_of_use'
+      train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.metric: 'days_of_use'
       train_hop_registering_changes_to_existing_telemetry_pilot_to_beta.statistic: mean
     row: 30
     col: 12
