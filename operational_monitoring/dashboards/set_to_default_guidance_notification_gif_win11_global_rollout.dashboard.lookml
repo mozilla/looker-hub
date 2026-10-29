@@ -10,8 +10,45 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: set_to_default_guidance_notification_gif_win11_global_rollout
+    type: "ci-line-chart"
+    fields: [
+      set_to_default_guidance_notification_gif_win11_global_rollout.submission_date,
+      set_to_default_guidance_notification_gif_win11_global_rollout.branch,
+      set_to_default_guidance_notification_gif_win11_global_rollout.upper,
+      set_to_default_guidance_notification_gif_win11_global_rollout.lower,
+      set_to_default_guidance_notification_gif_win11_global_rollout.point
+    ]
+    pivots: [
+      set_to_default_guidance_notification_gif_win11_global_rollout.branch
+    ]
+    filters:
+      set_to_default_guidance_notification_gif_win11_global_rollout.metric: 'memory_total'
+      set_to_default_guidance_notification_gif_win11_global_rollout.statistic: percentile
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
+    field_y: set_to_default_guidance_notification_gif_win11_global_rollout.point
+    log_scale: false
+    ci_lower: set_to_default_guidance_notification_gif_win11_global_rollout.lower
+    ci_upper: set_to_default_guidance_notification_gif_win11_global_rollout.upper
+    show_grid: true
+    listen:
+      Date: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
+      Percentile: set_to_default_guidance_notification_gif_win11_global_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,9 +63,43 @@
       set_to_default_guidance_notification_gif_win11_global_rollout.branch
     ]
     filters:
-      set_to_default_guidance_notification_gif_win11_global_rollout.metric: 'qualified_cumulative_days_of_use'
+      set_to_default_guidance_notification_gif_win11_global_rollout.metric: 'uri_count'
       set_to_default_guidance_notification_gif_win11_global_rollout.statistic: mean
     row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
+    field_y: set_to_default_guidance_notification_gif_win11_global_rollout.point
+    log_scale: false
+    ci_lower: set_to_default_guidance_notification_gif_win11_global_rollout.lower
+    ci_upper: set_to_default_guidance_notification_gif_win11_global_rollout.upper
+    show_grid: true
+    listen:
+      Date: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: set_to_default_guidance_notification_gif_win11_global_rollout
+    type: looker_line
+    fields: [
+      set_to_default_guidance_notification_gif_win11_global_rollout.submission_date,
+      set_to_default_guidance_notification_gif_win11_global_rollout.branch,
+      set_to_default_guidance_notification_gif_win11_global_rollout.point
+    ]
+    pivots: [
+      set_to_default_guidance_notification_gif_win11_global_rollout.branch
+    ]
+    filters:
+      set_to_default_guidance_notification_gif_win11_global_rollout.metric: 'days_of_use'
+      set_to_default_guidance_notification_gif_win11_global_rollout.statistic: mean
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -62,8 +133,42 @@
     filters:
       set_to_default_guidance_notification_gif_win11_global_rollout.metric: 'active_hours'
       set_to_default_guidance_notification_gif_win11_global_rollout.statistic: mean
-    row: 0
+    row: 10
     col: 12
+    width: 12
+    height: 8
+    field_x: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
+    field_y: set_to_default_guidance_notification_gif_win11_global_rollout.point
+    log_scale: false
+    ci_lower: set_to_default_guidance_notification_gif_win11_global_rollout.lower
+    ci_upper: set_to_default_guidance_notification_gif_win11_global_rollout.upper
+    show_grid: true
+    listen:
+      Date: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: set_to_default_guidance_notification_gif_win11_global_rollout
+    type: looker_line
+    fields: [
+      set_to_default_guidance_notification_gif_win11_global_rollout.submission_date,
+      set_to_default_guidance_notification_gif_win11_global_rollout.branch,
+      set_to_default_guidance_notification_gif_win11_global_rollout.point
+    ]
+    pivots: [
+      set_to_default_guidance_notification_gif_win11_global_rollout.branch
+    ]
+    filters:
+      set_to_default_guidance_notification_gif_win11_global_rollout.metric: 'qualified_cumulative_days_of_use'
+      set_to_default_guidance_notification_gif_win11_global_rollout.statistic: mean
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
@@ -96,8 +201,8 @@
     filters:
       set_to_default_guidance_notification_gif_win11_global_rollout.metric: 'retained'
       set_to_default_guidance_notification_gif_win11_global_rollout.statistic: mean
-    row: 10
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
@@ -130,41 +235,7 @@
     filters:
       set_to_default_guidance_notification_gif_win11_global_rollout.metric: 'search_count'
       set_to_default_guidance_notification_gif_win11_global_rollout.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
-    field_y: set_to_default_guidance_notification_gif_win11_global_rollout.point
-    log_scale: false
-    ci_lower: set_to_default_guidance_notification_gif_win11_global_rollout.lower
-    ci_upper: set_to_default_guidance_notification_gif_win11_global_rollout.upper
-    show_grid: true
-    listen:
-      Date: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: set_to_default_guidance_notification_gif_win11_global_rollout
-    type: looker_line
-    fields: [
-      set_to_default_guidance_notification_gif_win11_global_rollout.submission_date,
-      set_to_default_guidance_notification_gif_win11_global_rollout.branch,
-      set_to_default_guidance_notification_gif_win11_global_rollout.point
-    ]
-    pivots: [
-      set_to_default_guidance_notification_gif_win11_global_rollout.branch
-    ]
-    filters:
-      set_to_default_guidance_notification_gif_win11_global_rollout.metric: 'uri_count'
-      set_to_default_guidance_notification_gif_win11_global_rollout.statistic: mean
-    row: 20
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -197,77 +268,6 @@
     ]
     filters:
       set_to_default_guidance_notification_gif_win11_global_rollout.metric: 'ad_clicks'
-      set_to_default_guidance_notification_gif_win11_global_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
-    field_y: set_to_default_guidance_notification_gif_win11_global_rollout.point
-    log_scale: false
-    ci_lower: set_to_default_guidance_notification_gif_win11_global_rollout.lower
-    ci_upper: set_to_default_guidance_notification_gif_win11_global_rollout.upper
-    show_grid: true
-    listen:
-      Date: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: set_to_default_guidance_notification_gif_win11_global_rollout
-    type: "ci-line-chart"
-    fields: [
-      set_to_default_guidance_notification_gif_win11_global_rollout.submission_date,
-      set_to_default_guidance_notification_gif_win11_global_rollout.branch,
-      set_to_default_guidance_notification_gif_win11_global_rollout.upper,
-      set_to_default_guidance_notification_gif_win11_global_rollout.lower,
-      set_to_default_guidance_notification_gif_win11_global_rollout.point
-    ]
-    pivots: [
-      set_to_default_guidance_notification_gif_win11_global_rollout.branch
-    ]
-    filters:
-      set_to_default_guidance_notification_gif_win11_global_rollout.metric: 'memory_total'
-      set_to_default_guidance_notification_gif_win11_global_rollout.statistic: percentile
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
-    field_y: set_to_default_guidance_notification_gif_win11_global_rollout.point
-    log_scale: false
-    ci_lower: set_to_default_guidance_notification_gif_win11_global_rollout.lower
-    ci_upper: set_to_default_guidance_notification_gif_win11_global_rollout.upper
-    show_grid: true
-    listen:
-      Date: set_to_default_guidance_notification_gif_win11_global_rollout.submission_date
-      Percentile: set_to_default_guidance_notification_gif_win11_global_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: set_to_default_guidance_notification_gif_win11_global_rollout
-    type: looker_line
-    fields: [
-      set_to_default_guidance_notification_gif_win11_global_rollout.submission_date,
-      set_to_default_guidance_notification_gif_win11_global_rollout.branch,
-      set_to_default_guidance_notification_gif_win11_global_rollout.point
-    ]
-    pivots: [
-      set_to_default_guidance_notification_gif_win11_global_rollout.branch
-    ]
-    filters:
-      set_to_default_guidance_notification_gif_win11_global_rollout.metric: 'days_of_use'
       set_to_default_guidance_notification_gif_win11_global_rollout.statistic: mean
     row: 30
     col: 12
