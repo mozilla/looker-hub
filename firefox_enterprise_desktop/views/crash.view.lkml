@@ -1753,7 +1753,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension_group: metrics__datetime__crash_jump_list_shell_call_start {
     label: "Crash: Jump List Shell Call Start"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.datetime.crash_jump_list_shell_call_start ;;
     type: time
     timeframes: [
