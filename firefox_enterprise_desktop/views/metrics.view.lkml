@@ -7883,6 +7883,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Session restore: Number of tabs restored eagerly in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_SESSION_RESTORE_NUMBER_OF_EAGER_TABS_RESTORED.
+As of bug 2071519 this is recorded on every restore attempt, including attempts that produced no eagerly-restored tab. Data from earlier versions excludes those startups.
 "
   }
 
@@ -7902,6 +7903,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Session restore: Number of tabs in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_SESSION_RESTORE_NUMBER_OF_TABS_RESTORED.
+As of bug 2071519, 0 is recorded and will land in the underflow bucket. Before that, a restore that produced no eagerly-restored tab recorded nothing at all, so data from earlier versions excludes those startups and reads higher than it should.
 "
   }
 
@@ -7921,6 +7923,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Session restore: Number of windows in the session that has just been restored.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_SESSION_RESTORE_NUMBER_OF_WINDOWS_RESTORED.
+As of bug 2071519 this is recorded on every restore attempt, including attempts that produced no eagerly-restored tab. Data from earlier versions excludes those startups.
 "
   }
 
@@ -21149,7 +21152,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_ion_compile_time__sum {
     label: "Javascript Ion: Compile Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.sum ;;
     type: number
     group_label: "Javascript Ion"

@@ -1937,7 +1937,9 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Linenumber"
-    description: "The same as SecurityPolicyViolationEvent's lineNumber."
+    description: "Depending on the type of event:
+* The same as SecurityPolicyViolationEvent's lineNumber.
+* The line in `fileName` the thrown error was created at. Line numbers change between builds, so read them against the build that recorded the event. Absent if the thrown value carries no line, or if `fileName` is \"other\" or absent."
   }
 
   dimension: extras__quantity__list_size {
@@ -4191,7 +4193,9 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Filename"
-    description: "Filename"
+    description: "Depending on the type of event:
+* Filename
+* The URI of the file the thrown error was created in, from a JS error's `fileName` or an XPCOM exception or DOMException's `filename`, e.g. \"chrome://browser/content/sidebar/browser-sidebar.js\". This can differ from `module` when the consumer calls into other code. \"other\" for anything outside moz-src://, resource:// and chrome://, such as a local path or a moz-extension:// URI, and for a file name containing whitespace, such as the \"a -> b\" name of a script loaded by another or the \"a line 7 > eval\" name of evaluated code. Absent if the thrown value carries no file, e.g. a bare nsresult."
   }
 
   dimension: extras__string__filter {
@@ -5149,7 +5153,9 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Module"
-    description: "The URI of the module the failing consumer is registered from, e.g. \"moz-src:///browser/components/downloads/DownloadsCommon.sys.mjs\". \"other\" for a URI outside moz-src://, resource:// and chrome://, which an entry registered at runtime can pick freely."
+    description: "Depending on the type of event:
+* The URI of the module the failing consumer is registered from, e.g. \"moz-src:///browser/components/downloads/DownloadsCommon.sys.mjs\". \"other\" for a URI outside moz-src://, resource:// and chrome://, which an entry registered at runtime can pick freely.
+* The URI of the module the failing consumer is registered from, e.g. \"moz-src:///browser/components/downloads/DownloadsCommon.sys.mjs\". \"other\" for a URI outside moz-src://, resource:// and chrome://, or one containing whitespace, which an entry registered at runtime can pick freely."
   }
 
   dimension: extras__string__name {

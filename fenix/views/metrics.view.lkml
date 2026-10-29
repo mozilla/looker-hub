@@ -16106,7 +16106,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_ion_compile_time__sum {
     label: "Javascript Ion: Compile Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_ion_compile_time.sum ;;
     type: number
     group_label: "Javascript Ion"
