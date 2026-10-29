@@ -13,6 +13,7 @@ SUM(clicks) AS native_clicks_v2,
 
                 ad_metrics_native_reporting_ad_id,
 ad_metrics_native_reporting_ad_set_id,
+ad_metrics_native_reporting_ad_unit,
 ad_metrics_native_reporting_advertiser,
 ad_metrics_native_reporting_advertiser_id,
 ad_metrics_native_reporting_advertiser_name,
@@ -39,6 +40,9 @@ ad_metrics_native_reporting_normalized_os,
 ad_metrics_native_reporting_position,
 ad_metrics_native_reporting_price,
 ad_metrics_native_reporting_product,
+ad_metrics_native_reporting_product_page,
+ad_metrics_native_reporting_product_property,
+ad_metrics_native_reporting_product_surface,
 ad_metrics_native_reporting_provider,
 ad_metrics_native_reporting_rate_type,
 ad_metrics_native_reporting_revenue,
@@ -87,6 +91,7 @@ ad_metrics_native_reporting_zone_name,
                         ad_metrics_native_reporting.*,
                         ad_metrics_native_reporting.ad_id AS ad_metrics_native_reporting_ad_id,
 ad_metrics_native_reporting.ad_set_id AS ad_metrics_native_reporting_ad_set_id,
+ad_metrics_native_reporting.ad_unit AS ad_metrics_native_reporting_ad_unit,
 ad_metrics_native_reporting.advertiser AS ad_metrics_native_reporting_advertiser,
 ad_metrics_native_reporting.advertiser_id AS ad_metrics_native_reporting_advertiser_id,
 ad_metrics_native_reporting.advertiser_name AS ad_metrics_native_reporting_advertiser_name,
@@ -113,6 +118,9 @@ ad_metrics_native_reporting.normalized_os AS ad_metrics_native_reporting_normali
 ad_metrics_native_reporting.position AS ad_metrics_native_reporting_position,
 ad_metrics_native_reporting.price AS ad_metrics_native_reporting_price,
 ad_metrics_native_reporting.product AS ad_metrics_native_reporting_product,
+ad_metrics_native_reporting.product_page AS ad_metrics_native_reporting_product_page,
+ad_metrics_native_reporting.product_property AS ad_metrics_native_reporting_product_property,
+ad_metrics_native_reporting.product_surface AS ad_metrics_native_reporting_product_surface,
 ad_metrics_native_reporting.provider AS ad_metrics_native_reporting_provider,
 ad_metrics_native_reporting.rate_type AS ad_metrics_native_reporting_rate_type,
 ad_metrics_native_reporting.revenue AS ad_metrics_native_reporting_revenue,
@@ -179,6 +187,7 @@ ad_metrics_native_reporting.zone_name AS ad_metrics_native_reporting_zone_name,
             GROUP BY
                 ad_metrics_native_reporting_ad_id,
 ad_metrics_native_reporting_ad_set_id,
+ad_metrics_native_reporting_ad_unit,
 ad_metrics_native_reporting_advertiser,
 ad_metrics_native_reporting_advertiser_id,
 ad_metrics_native_reporting_advertiser_name,
@@ -205,6 +214,9 @@ ad_metrics_native_reporting_normalized_os,
 ad_metrics_native_reporting_position,
 ad_metrics_native_reporting_price,
 ad_metrics_native_reporting_product,
+ad_metrics_native_reporting_product_page,
+ad_metrics_native_reporting_product_property,
+ad_metrics_native_reporting_product_surface,
 ad_metrics_native_reporting_provider,
 ad_metrics_native_reporting_rate_type,
 ad_metrics_native_reporting_revenue,
@@ -267,6 +279,13 @@ ad_metrics_native_reporting_zone_name,
   dimension: ad_set_id {
     sql: ${TABLE}.ad_metrics_native_reporting_ad_set_id ;;
     type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: ad_unit {
+    sql: ${TABLE}.ad_metrics_native_reporting_ad_unit ;;
+    type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
@@ -442,6 +461,27 @@ ad_metrics_native_reporting_zone_name,
 
   dimension: product {
     sql: ${TABLE}.ad_metrics_native_reporting_product ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: product_page {
+    sql: ${TABLE}.ad_metrics_native_reporting_product_page ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: product_property {
+    sql: ${TABLE}.ad_metrics_native_reporting_product_property ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: product_surface {
+    sql: ${TABLE}.ad_metrics_native_reporting_product_surface ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"

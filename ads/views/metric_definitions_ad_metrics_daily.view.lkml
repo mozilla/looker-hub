@@ -27,6 +27,7 @@ countries_sponsored_tiles_available_on_newtab,
 countries_subregion_name,
 ad_metrics_daily_ad_id,
 ad_metrics_daily_ad_set_id,
+ad_metrics_daily_ad_unit,
 ad_metrics_daily_advertiser_id,
 ad_metrics_daily_advertiser_name,
 ad_metrics_daily_campaign_id,
@@ -50,6 +51,9 @@ ad_metrics_daily_normalized_os,
 ad_metrics_daily_position,
 ad_metrics_daily_price,
 ad_metrics_daily_product,
+ad_metrics_daily_product_page,
+ad_metrics_daily_product_property,
+ad_metrics_daily_product_surface,
 ad_metrics_daily_provider,
 ad_metrics_daily_rate_type,
 ad_metrics_daily_site_id,
@@ -106,6 +110,7 @@ countries.sponsored_tiles_available_on_newtab AS countries_sponsored_tiles_avail
 countries.subregion_name AS countries_subregion_name,
 ad_metrics_daily.ad_id AS ad_metrics_daily_ad_id,
 ad_metrics_daily.ad_set_id AS ad_metrics_daily_ad_set_id,
+ad_metrics_daily.ad_unit AS ad_metrics_daily_ad_unit,
 ad_metrics_daily.advertiser_id AS ad_metrics_daily_advertiser_id,
 ad_metrics_daily.advertiser_name AS ad_metrics_daily_advertiser_name,
 ad_metrics_daily.campaign_id AS ad_metrics_daily_campaign_id,
@@ -129,6 +134,9 @@ ad_metrics_daily.normalized_os AS ad_metrics_daily_normalized_os,
 ad_metrics_daily.position AS ad_metrics_daily_position,
 ad_metrics_daily.price AS ad_metrics_daily_price,
 ad_metrics_daily.product AS ad_metrics_daily_product,
+ad_metrics_daily.product_page AS ad_metrics_daily_product_page,
+ad_metrics_daily.product_property AS ad_metrics_daily_product_property,
+ad_metrics_daily.product_surface AS ad_metrics_daily_product_surface,
 ad_metrics_daily.provider AS ad_metrics_daily_provider,
 ad_metrics_daily.rate_type AS ad_metrics_daily_rate_type,
 ad_metrics_daily.site_id AS ad_metrics_daily_site_id,
@@ -205,6 +213,7 @@ countries_sponsored_tiles_available_on_newtab,
 countries_subregion_name,
 ad_metrics_daily_ad_id,
 ad_metrics_daily_ad_set_id,
+ad_metrics_daily_ad_unit,
 ad_metrics_daily_advertiser_id,
 ad_metrics_daily_advertiser_name,
 ad_metrics_daily_campaign_id,
@@ -228,6 +237,9 @@ ad_metrics_daily_normalized_os,
 ad_metrics_daily_position,
 ad_metrics_daily_price,
 ad_metrics_daily_product,
+ad_metrics_daily_product_page,
+ad_metrics_daily_product_property,
+ad_metrics_daily_product_surface,
 ad_metrics_daily_provider,
 ad_metrics_daily_rate_type,
 ad_metrics_daily_site_id,
@@ -396,6 +408,13 @@ ad_metrics_daily_zone_name,
     group_label: "Base Fields"
   }
 
+  dimension: ad_unit {
+    sql: ${TABLE}.ad_metrics_daily_ad_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
   dimension: advertiser_id {
     sql: ${TABLE}.ad_metrics_daily_advertiser_id ;;
     type: number
@@ -546,6 +565,27 @@ ad_metrics_daily_zone_name,
 
   dimension: product {
     sql: ${TABLE}.ad_metrics_daily_product ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: product_page {
+    sql: ${TABLE}.ad_metrics_daily_product_page ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: product_property {
+    sql: ${TABLE}.ad_metrics_daily_product_property ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: product_surface {
+    sql: ${TABLE}.ad_metrics_daily_product_surface ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
