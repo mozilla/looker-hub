@@ -10,111 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: enable_happy_eyeballs_on_beta_rollout
-    type: "ci-line-chart"
-    fields: [
-      enable_happy_eyeballs_on_beta_rollout.submission_date,
-      enable_happy_eyeballs_on_beta_rollout.branch,
-      enable_happy_eyeballs_on_beta_rollout.upper,
-      enable_happy_eyeballs_on_beta_rollout.lower,
-      enable_happy_eyeballs_on_beta_rollout.point
-    ]
-    pivots: [
-      enable_happy_eyeballs_on_beta_rollout.branch
-    ]
-    filters:
-      enable_happy_eyeballs_on_beta_rollout.metric: 'memory_total'
-      enable_happy_eyeballs_on_beta_rollout.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: enable_happy_eyeballs_on_beta_rollout.submission_date
-    field_y: enable_happy_eyeballs_on_beta_rollout.point
-    log_scale: false
-    ci_lower: enable_happy_eyeballs_on_beta_rollout.lower
-    ci_upper: enable_happy_eyeballs_on_beta_rollout.upper
-    show_grid: true
-    listen:
-      Date: enable_happy_eyeballs_on_beta_rollout.submission_date
-      Percentile: enable_happy_eyeballs_on_beta_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enable_happy_eyeballs_on_beta_rollout
-    type: looker_line
-    fields: [
-      enable_happy_eyeballs_on_beta_rollout.submission_date,
-      enable_happy_eyeballs_on_beta_rollout.branch,
-      enable_happy_eyeballs_on_beta_rollout.point
-    ]
-    pivots: [
-      enable_happy_eyeballs_on_beta_rollout.branch
-    ]
-    filters:
-      enable_happy_eyeballs_on_beta_rollout.metric: 'uri_count'
-      enable_happy_eyeballs_on_beta_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: enable_happy_eyeballs_on_beta_rollout.submission_date
-    field_y: enable_happy_eyeballs_on_beta_rollout.point
-    log_scale: false
-    ci_lower: enable_happy_eyeballs_on_beta_rollout.lower
-    ci_upper: enable_happy_eyeballs_on_beta_rollout.upper
-    show_grid: true
-    listen:
-      Date: enable_happy_eyeballs_on_beta_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enable_happy_eyeballs_on_beta_rollout
-    type: looker_line
-    fields: [
-      enable_happy_eyeballs_on_beta_rollout.submission_date,
-      enable_happy_eyeballs_on_beta_rollout.branch,
-      enable_happy_eyeballs_on_beta_rollout.point
-    ]
-    pivots: [
-      enable_happy_eyeballs_on_beta_rollout.branch
-    ]
-    filters:
-      enable_happy_eyeballs_on_beta_rollout.metric: 'days_of_use'
-      enable_happy_eyeballs_on_beta_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: enable_happy_eyeballs_on_beta_rollout.submission_date
-    field_y: enable_happy_eyeballs_on_beta_rollout.point
-    log_scale: false
-    ci_lower: enable_happy_eyeballs_on_beta_rollout.lower
-    ci_upper: enable_happy_eyeballs_on_beta_rollout.upper
-    show_grid: true
-    listen:
-      Date: enable_happy_eyeballs_on_beta_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -133,7 +28,41 @@
     filters:
       enable_happy_eyeballs_on_beta_rollout.metric: 'active_hours'
       enable_happy_eyeballs_on_beta_rollout.statistic: mean
-    row: 10
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: enable_happy_eyeballs_on_beta_rollout.submission_date
+    field_y: enable_happy_eyeballs_on_beta_rollout.point
+    log_scale: false
+    ci_lower: enable_happy_eyeballs_on_beta_rollout.lower
+    ci_upper: enable_happy_eyeballs_on_beta_rollout.upper
+    show_grid: true
+    listen:
+      Date: enable_happy_eyeballs_on_beta_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: enable_happy_eyeballs_on_beta_rollout
+    type: looker_line
+    fields: [
+      enable_happy_eyeballs_on_beta_rollout.submission_date,
+      enable_happy_eyeballs_on_beta_rollout.branch,
+      enable_happy_eyeballs_on_beta_rollout.point
+    ]
+    pivots: [
+      enable_happy_eyeballs_on_beta_rollout.branch
+    ]
+    filters:
+      enable_happy_eyeballs_on_beta_rollout.metric: 'ad_clicks'
+      enable_happy_eyeballs_on_beta_rollout.statistic: mean
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -167,8 +96,42 @@
     filters:
       enable_happy_eyeballs_on_beta_rollout.metric: 'qualified_cumulative_days_of_use'
       enable_happy_eyeballs_on_beta_rollout.statistic: mean
-    row: 20
+    row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: enable_happy_eyeballs_on_beta_rollout.submission_date
+    field_y: enable_happy_eyeballs_on_beta_rollout.point
+    log_scale: false
+    ci_lower: enable_happy_eyeballs_on_beta_rollout.lower
+    ci_upper: enable_happy_eyeballs_on_beta_rollout.upper
+    show_grid: true
+    listen:
+      Date: enable_happy_eyeballs_on_beta_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: enable_happy_eyeballs_on_beta_rollout
+    type: looker_line
+    fields: [
+      enable_happy_eyeballs_on_beta_rollout.submission_date,
+      enable_happy_eyeballs_on_beta_rollout.branch,
+      enable_happy_eyeballs_on_beta_rollout.point
+    ]
+    pivots: [
+      enable_happy_eyeballs_on_beta_rollout.branch
+    ]
+    filters:
+      enable_happy_eyeballs_on_beta_rollout.metric: 'days_of_use'
+      enable_happy_eyeballs_on_beta_rollout.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: enable_happy_eyeballs_on_beta_rollout.submission_date
@@ -202,7 +165,7 @@
       enable_happy_eyeballs_on_beta_rollout.metric: 'retained'
       enable_happy_eyeballs_on_beta_rollout.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: enable_happy_eyeballs_on_beta_rollout.submission_date
@@ -235,8 +198,8 @@
     filters:
       enable_happy_eyeballs_on_beta_rollout.metric: 'search_count'
       enable_happy_eyeballs_on_beta_rollout.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: enable_happy_eyeballs_on_beta_rollout.submission_date
@@ -251,8 +214,45 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: enable_happy_eyeballs_on_beta_rollout
+    type: "ci-line-chart"
+    fields: [
+      enable_happy_eyeballs_on_beta_rollout.submission_date,
+      enable_happy_eyeballs_on_beta_rollout.branch,
+      enable_happy_eyeballs_on_beta_rollout.upper,
+      enable_happy_eyeballs_on_beta_rollout.lower,
+      enable_happy_eyeballs_on_beta_rollout.point
+    ]
+    pivots: [
+      enable_happy_eyeballs_on_beta_rollout.branch
+    ]
+    filters:
+      enable_happy_eyeballs_on_beta_rollout.metric: 'memory_total'
+      enable_happy_eyeballs_on_beta_rollout.statistic: percentile
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: enable_happy_eyeballs_on_beta_rollout.submission_date
+    field_y: enable_happy_eyeballs_on_beta_rollout.point
+    log_scale: false
+    ci_lower: enable_happy_eyeballs_on_beta_rollout.lower
+    ci_upper: enable_happy_eyeballs_on_beta_rollout.upper
+    show_grid: true
+    listen:
+      Date: enable_happy_eyeballs_on_beta_rollout.submission_date
+      Percentile: enable_happy_eyeballs_on_beta_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       enable_happy_eyeballs_on_beta_rollout.branch
     ]
     filters:
-      enable_happy_eyeballs_on_beta_rollout.metric: 'ad_clicks'
+      enable_happy_eyeballs_on_beta_rollout.metric: 'uri_count'
       enable_happy_eyeballs_on_beta_rollout.statistic: mean
     row: 30
     col: 12
