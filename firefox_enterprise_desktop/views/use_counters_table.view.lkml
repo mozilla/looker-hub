@@ -20195,6 +20195,8 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Navigationtransition To Getter"
+    description: "Whether a document got NavigationTransition.to. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
   }
 
   dimension: metrics__counter__use_counter_doc_navigationtransition_to_setter {
@@ -20203,6 +20205,8 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Navigationtransition To Setter"
+    description: "Whether a document set NavigationTransition.to. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
   }
 
   dimension: metrics__counter__use_counter_doc_navigator_canshare {
@@ -25871,6 +25875,8 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Navigationtransition To Getter"
+    description: "Whether a page got NavigationTransition.to. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
   }
 
   dimension: metrics__counter__use_counter_page_navigationtransition_to_setter {
@@ -25879,6 +25885,8 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Navigationtransition To Setter"
+    description: "Whether a page set NavigationTransition.to. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
   }
 
   dimension: metrics__counter__use_counter_page_navigator_canshare {

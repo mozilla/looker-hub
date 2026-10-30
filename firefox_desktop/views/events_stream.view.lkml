@@ -2155,8 +2155,8 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Attempt"
     description: "Depending on the type of event:
-* Number of prior restore attempts across sessions (0 on the first attempt). Restores stop being attempted once this reaches its budget.
 * How many launches had already tried and failed before this one, 0 on the first. A retry emits an otherwise identical event, so this is what separates a profile that failed once from one failing every time. The migrator gives up after 3.
+* Number of prior restore attempts across sessions (0 on the first attempt). Restores stop being attempted once this reaches its budget.
 * Number of prior migration attempts across sessions (0 on the first attempt)."
   }
 
@@ -2527,9 +2527,9 @@ view: events_stream {
     group_item_label: "Duration Ms"
     description: "Depending on the type of event:
 * The amount of time in Ms since the user opened the SmartWindow
+* Wall-clock duration of the migration, in milliseconds.
 * Duration of the migration in milliseconds.
 * Duration of the restore in milliseconds, measured with a monotonic clock.
-* Wall-clock duration of the migration, in milliseconds.
 * Duration of the call as seen by the caller, measured in LoginManager around the delegation to the active backend.
 * How long the mini window was open, in milliseconds.
 * How long the panel was open, in milliseconds, measured from the moment it was shown."
@@ -5503,6 +5503,17 @@ view: events_stream {
 * The interruption cause, `system_transient` or `system_permanent`."
   }
 
+  dimension: extras__string__cc_csc {
+    sql: ${TABLE}.extras.string.cc_csc ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Cc Csc"
+    description: "Depending on the type of event:
+* credit card security code (CVV) field result
+* Credit card security code (CVV) field result"
+  }
+
   dimension: extras__string__cc_exp {
     sql: ${TABLE}.extras.string.cc_exp ;;
     type: string
@@ -6201,9 +6212,9 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Direction"
     description: "Depending on the type of event:
-* Direction of the m-section. recvonly, sendonly, sendrecv or inactive.
 * Which way the addresses were copied: \"to_rust\" for the migration into the Rust store, \"to_json\" for the copy back when the pref that chooses the store is turned off again. A profile can do both, so this is what keeps the two apart.
-* Which way the credit cards were copied: \"to_rust\" for the migration into the Rust store, \"to_json\" for the copy back when the pref that chooses the store is turned off again. A profile can do both, so this is what keeps the two apart."
+* Which way the credit cards were copied: \"to_rust\" for the migration into the Rust store, \"to_json\" for the copy back when the pref that chooses the store is turned off again. A profile can do both, so this is what keeps the two apart.
+* Direction of the m-section. recvonly, sendonly, sendrecv or inactive."
   }
 
   dimension: extras__string__directive {
@@ -6495,9 +6506,8 @@ view: events_stream {
 * One of the monitor run error codes: network_error, timeout, rate_limit, auth_error, content_extraction_error, canceled, interrupted, model_error, prompt_load_error or unknown_error. Only present when success is false. Never a free-form message.
 * Human-readable error message if the monitor run failed. Only present when success is false.
 * The UniFFI error variant when the migration threw, for grouping. Absent otherwise, including when records were rejected or came up short: the counts already describe that.
-* The error code after users click the email alias generation panel. When the event is successful, the error_code is 0.
-* The string representation of the error code.
-* Why creation failed: limit_reached (the active monitor cap), invalid_input (no prompt, no valid URL, too many URLs or a bad schedule),..."
+* The UniFFI error variant when the migration threw, for grouping, or \"SourceChanged\" when the JSON store was written to while it was copied into the Rust store, which fails the run. Absent otherwise, including when records were rejected or came up short: the counts already describe that.
+* The error c..."
   }
 
   dimension: extras__string__error_kind {
@@ -6518,9 +6528,9 @@ view: events_stream {
     description: "Depending on the type of event:
 * The error message or exception string from the failure.
 * What the failure is attributed to, from a closed set of reasons shared with the chat: connectionFailure, fxaTokenUnavailable, modelConfigUnavailable, offline, promptLoadFailure or remoteSettingsUnavailable. Anything else, including a bug of our own, is genericError. Never a free form message, and absent on success.
+* A normalized, PII-stripped message: the first reason a record was rejected, or the error text where the migration threw. One example to read rather than a set to aggregate -- rejected records in one batch nearly always share a cause. Absent when the counts say it all.
 * The fatal error that aborted the run, or empty if the run completed.
-* What the failure is attributed to, from a closed set of reasons shared with the chat: connectionFailure, fxaTokenUnavailable, modelConfigUnavailable, offline, promptLoadFailure or remoteSettingsUnavailable. Anything else, including a bug of our own, is genericError. Never a free form message, and absent on success..
-* A normalized, PII-stripped message: the first reason a record was rejected, or the error text where the migration threw. One example to read rather than a set to aggregate -- rejected records in one batch nearly always ..."
+* What the failure is attributed to, from a closed set of reasons shared with the chat: connectionFailure, fxaTokenUnavailable, modelConfigUnavailable, offline, promptLoadFailure or remoteSettingsUnavailable. Anything else, including a bug of our own, is genericError. N..."
   }
 
   dimension: extras__string__error_name {
@@ -6805,8 +6815,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Field Name"
     description: "Depending on the type of event:
-* Name of the field being affected by the method. Used by `popup_shown`, `filled_modified` and `cleared` methods.
 * Name of the field being affected by the method. Used by `popup_shown` and `filled_modified` methods.
+* Name of the field being affected by the method. Used by `popup_shown`, `filled_modified` and `cleared` methods.
 * Name of the field being affected by the event
 * Name of the field being affected by the method
 * Name of the field being affected by the method, filled when method is `popup_shown` or `filled_modified`.
@@ -9247,10 +9257,10 @@ view: events_stream {
     group_item_label: "Result"
     description: "Depending on the type of event:
 * Undo result: success, partial_success, or error
+* \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\".
 * The result of the OS Authentication.
 * Outcome of the action: success, partial_success, no_match, unclear_target, blocked, cancelled, or error.
 * Optionally, the name of the error that occurred.
-* \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\".
 * The error code, converted to a string.
 * \"ok\", or \"error\" when initialization aborted with a fatal error.
 * \"switch\" when an existing tab was focused, \"new\" when a tab was opened, \"error\" when that attempt failed.
@@ -9305,9 +9315,9 @@ view: events_stream {
     description: "Depending on the type of event:
 * Unique identifier for the login change event
 * Unique identifier for the migration run.
+* A fresh id per run, so that the migrate_record_divergence events a run emitted join to it unambiguously.
 * Unique identifier for the restore run.
 * The migrate_to_rust run this record was copied by.
-* A fresh id per run, so that the migrate_record_divergence events a run emitted join to it unambiguously.
 * Unique identifier for the migration run
 * Unique identifier for the restore run"
   }
