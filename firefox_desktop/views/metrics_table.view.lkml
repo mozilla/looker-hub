@@ -23809,6 +23809,8 @@ API for the purposes of Validation (hence GVSV).
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Formautofill Creditcards Saved Count"
+    description: "The number of credit cards saved in the store serving them. Read when the store loads at startup and after every change, so it is sent on every metrics ping, unlike autofill_profiles_count, which is only set when a card is added or edited.
+"
   }
 
   dimension: metrics__quantity__formautofill_creditcards_saved_cvv_count {
@@ -23817,6 +23819,8 @@ API for the purposes of Validation (hence GVSV).
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Formautofill Creditcards Saved Cvv Count"
+    description: "The number of saved credit cards that have a security code (CVV) saved. Read and sent like saved_count. Reports only the count, never the code or its length.
+"
   }
 
   dimension: metrics__quantity__gfx_adapter_primary_ram {

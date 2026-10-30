@@ -495,6 +495,8 @@ view: interaction_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Ad Ad Set Version ID"
+    description: "Version identifier for the ad set in the Mozilla Ads API.
+"
   }
 
   dimension: metrics__string__ad_ad_version_id {
@@ -503,6 +505,8 @@ view: interaction_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Ad Ad Version ID"
+    description: "Version identifier for the ad in the Mozilla Ads API.
+"
   }
 
   dimension: metrics__string__ad_advertiser {
@@ -541,6 +545,8 @@ view: interaction_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Ad Campaign Version ID"
+    description: "Version identifier for the campaign in the Mozilla Ads API.
+"
   }
 
   dimension: metrics__string__ad_client_context_id {
@@ -629,6 +635,8 @@ view: interaction_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Ad Creative Version ID"
+    description: "Version identifier for the creative in the Mozilla Ads API.
+"
   }
 
   dimension: metrics__string__ad_flight_id {

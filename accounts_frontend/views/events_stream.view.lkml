@@ -538,12 +538,13 @@ view: events_stream {
     description: "Depending on the type of event:
 * additional context-dependent info, e.g. the cause of an error
 * Page is viewed to \"setup\", \"inline setup\" or \"replace\" backup authentication codes
+* The surface the passkey sign-in started on: 'emailfirst' or 'signin'.
 * Differentiates OTP/passwordless flows ('otp') from third-party auth flows ('third_party_auth').
 * If reason is \"create_password\", the user must set a password before they can confirm the account unlinking.
 * Page is viewed to 'setup' (from settings), 'inline setup' or 'change' a recovery phone
 * Categorized WebAuthn or sign-in error: 'not_allowed', 'not_supported', 'security', 'timeout', 'no_passkey_found', or 'unexpected'. See first_passkey_submit_frontend_error for full definitions.
 * Categorized WebAuthn or sign-in error: 'not_allowed', 'not_supported', 'security', 'timeout', 'no_passkey_found', 'throttled', 'request_blocked', 'authentication_failed', 'challenge_expired', or 'unexpected'. See first_passkey_submit_frontend_error for full definitions.
-* Categorized WebAuthn or sign-in error: 'not_allowed', 'not_readable', 'no..."
+* C..."
   }
 
   dimension: extras__string__referrer {

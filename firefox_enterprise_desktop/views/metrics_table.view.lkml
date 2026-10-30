@@ -16226,6 +16226,8 @@ For non-OHTTP requests, labels are simply the numeric status code, e.g.,
   dimension: metrics__labeled_timing_distribution__widget_jump_list_shell_call {
     sql: ${TABLE}.metrics.labeled_timing_distribution.widget_jump_list_shell_call ;;
     hidden: yes
+    description: "Wall-clock time taken by each individual Windows Shell COM call made by the Jump List builder, labeled by which call it was. Only calls that returned are recorded; a call that never returns leaves the JumpListShellCallStart crash annotation set instead.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__workers_sync_worker_operation {
@@ -18086,6 +18088,8 @@ See `nsIXULRuntime.maxWebProcessCount`
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Formautofill Creditcards Saved Count"
+    description: "The number of credit cards saved in the store serving them. Read when the store loads at startup and after every change, so it is sent on every metrics ping, unlike autofill_profiles_count, which is only set when a card is added or edited.
+"
   }
 
   dimension: metrics__quantity__formautofill_creditcards_saved_cvv_count {
@@ -18094,6 +18098,8 @@ See `nsIXULRuntime.maxWebProcessCount`
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Formautofill Creditcards Saved Cvv Count"
+    description: "The number of saved credit cards that have a security code (CVV) saved. Read and sent like saved_count. Reports only the count, never the code or its length.
+"
   }
 
   dimension: metrics__quantity__gfx_adapter_primary_ram {
