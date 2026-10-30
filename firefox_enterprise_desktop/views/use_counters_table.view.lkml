@@ -20189,6 +20189,22 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_navigationtransition_to_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationtransition_to_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationtransition To Getter"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationtransition_to_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationtransition_to_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationtransition To Setter"
+  }
+
   dimension: metrics__counter__use_counter_doc_navigator_canshare {
     sql: ${TABLE}.metrics.counter.use_counter_doc_navigator_canshare ;;
     type: number
@@ -25847,6 +25863,22 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Navigationtransition Navigationtype Setter"
     description: "Whether a page set NavigationTransition.navigationType. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationtransition_to_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationtransition_to_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationtransition To Getter"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationtransition_to_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationtransition_to_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationtransition To Setter"
   }
 
   dimension: metrics__counter__use_counter_page_navigator_canshare {
