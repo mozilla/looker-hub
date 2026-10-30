@@ -489,6 +489,22 @@ view: interaction_table {
 "
   }
 
+  dimension: metrics__string__ad_ad_set_version_id {
+    sql: ${TABLE}.metrics.string.ad_ad_set_version_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Ad Ad Set Version ID"
+  }
+
+  dimension: metrics__string__ad_ad_version_id {
+    sql: ${TABLE}.metrics.string.ad_ad_version_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Ad Ad Version ID"
+  }
+
   dimension: metrics__string__ad_advertiser {
     sql: ${TABLE}.metrics.string.ad_advertiser ;;
     type: string
@@ -517,6 +533,14 @@ view: interaction_table {
     group_item_label: "Ad Campaign ID"
     description: "Identifier for the campaign in the onboarding api. May be null if the ad did not originate from onboarding.
 "
+  }
+
+  dimension: metrics__string__ad_campaign_version_id {
+    sql: ${TABLE}.metrics.string.ad_campaign_version_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Ad Campaign Version ID"
   }
 
   dimension: metrics__string__ad_client_context_id {
@@ -597,6 +621,14 @@ view: interaction_table {
     group_item_label: "Ad Creative ID"
     description: "Advertiser/partner provided identifier for assets used in a specific ad.  May be null.
 "
+  }
+
+  dimension: metrics__string__ad_creative_version_id {
+    sql: ${TABLE}.metrics.string.ad_creative_version_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Ad Creative Version ID"
   }
 
   dimension: metrics__string__ad_flight_id {

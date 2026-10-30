@@ -23,6 +23,42 @@ view: interaction {
 "
   }
 
+  dimension: metrics__string__ad_ad_set_version_id {
+    label: "Ad: Ad Set Version ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_ad_set_version_id ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Ad Set Version ID"
+
+    link: {
+      label: "Glean Dictionary reference for Ad: Ad Set Version ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_ad_set_version_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Version identifier for the ad set in the Mozilla Ads API.
+"
+  }
+
+  dimension: metrics__string__ad_ad_version_id {
+    label: "Ad: Ad Version ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_ad_version_id ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Ad Version ID"
+
+    link: {
+      label: "Glean Dictionary reference for Ad: Ad Version ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_ad_version_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Version identifier for the ad in the Mozilla Ads API.
+"
+  }
+
   dimension: metrics__string__ad_advertiser {
     label: "Ad: Advertiser"
     hidden: no
@@ -77,6 +113,24 @@ view: interaction {
 "
   }
 
+  dimension: metrics__string__ad_campaign_version_id {
+    label: "Ad: Campaign Version ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_campaign_version_id ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Campaign Version ID"
+
+    link: {
+      label: "Glean Dictionary reference for Ad: Campaign Version ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_campaign_version_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Version identifier for the campaign in the Mozilla Ads API.
+"
+  }
+
   dimension: metrics__string__ad_country_code {
     label: "Ad: Country Code"
     hidden: no
@@ -110,6 +164,24 @@ view: interaction {
     }
 
     description: "Advertiser/partner provided identifier for assets used in a specific ad.  May be null.
+"
+  }
+
+  dimension: metrics__string__ad_creative_version_id {
+    label: "Ad: Creative Version ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_creative_version_id ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Creative Version ID"
+
+    link: {
+      label: "Glean Dictionary reference for Ad: Creative Version ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_creative_version_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Version identifier for the creative in the Mozilla Ads API.
 "
   }
 

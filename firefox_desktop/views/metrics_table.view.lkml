@@ -23803,6 +23803,22 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__quantity__formautofill_creditcards_saved_count {
+    sql: ${TABLE}.metrics.quantity.formautofill_creditcards_saved_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Formautofill Creditcards Saved Count"
+  }
+
+  dimension: metrics__quantity__formautofill_creditcards_saved_cvv_count {
+    sql: ${TABLE}.metrics.quantity.formautofill_creditcards_saved_cvv_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Formautofill Creditcards Saved Cvv Count"
+  }
+
   dimension: metrics__quantity__gfx_adapter_primary_ram {
     sql: ${TABLE}.metrics.quantity.gfx_adapter_primary_ram ;;
     type: number

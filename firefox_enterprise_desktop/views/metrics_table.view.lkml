@@ -16223,6 +16223,11 @@ For non-OHTTP requests, labels are simply the numeric status code, e.g.,
 "
   }
 
+  dimension: metrics__labeled_timing_distribution__widget_jump_list_shell_call {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.widget_jump_list_shell_call ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_timing_distribution__workers_sync_worker_operation {
     sql: ${TABLE}.metrics.labeled_timing_distribution.workers_sync_worker_operation ;;
     hidden: yes
@@ -18073,6 +18078,22 @@ See `nsIXULRuntime.maxWebProcessCount`
     group_item_label: "Formautofill Creditcards Autofill Profiles Count"
     description: "Count at store time how many credit card autofill profiles the user has.
 "
+  }
+
+  dimension: metrics__quantity__formautofill_creditcards_saved_count {
+    sql: ${TABLE}.metrics.quantity.formautofill_creditcards_saved_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Formautofill Creditcards Saved Count"
+  }
+
+  dimension: metrics__quantity__formautofill_creditcards_saved_cvv_count {
+    sql: ${TABLE}.metrics.quantity.formautofill_creditcards_saved_cvv_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Formautofill Creditcards Saved Cvv Count"
   }
 
   dimension: metrics__quantity__gfx_adapter_primary_ram {
@@ -39717,6 +39738,41 @@ view: metrics_table__metrics__labeled_timing_distribution__urlclassifier_update_
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__urlclassifier_update_server_response_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__widget_jump_list_shell_call {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__widget_jump_list_shell_call__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

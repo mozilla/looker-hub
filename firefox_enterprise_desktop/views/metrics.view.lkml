@@ -17418,6 +17418,42 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__quantity__formautofill_creditcards_saved_count {
+    label: "Formautofill Creditcards: Saved Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.formautofill_creditcards_saved_count ;;
+    type: number
+    group_label: "Formautofill Creditcards"
+    group_item_label: "Saved Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Creditcards: Saved Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/formautofill_creditcards_saved_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of credit cards saved in the store serving them. Read when the store loads at startup and after every change, so it is sent on every metrics ping, unlike autofill_profiles_count, which is only set when a card is added or edited.
+"
+  }
+
+  dimension: metrics__quantity__formautofill_creditcards_saved_cvv_count {
+    label: "Formautofill Creditcards: Saved Cvv Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.formautofill_creditcards_saved_cvv_count ;;
+    type: number
+    group_label: "Formautofill Creditcards"
+    group_item_label: "Saved Cvv Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Creditcards: Saved Cvv Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/formautofill_creditcards_saved_cvv_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of saved credit cards that have a security code (CVV) saved. Read and sent like saved_count. Reports only the count, never the code or its length.
+"
+  }
+
   dimension: metrics__labeled_counter__formautofill_form_submission_heuristic {
     label: "Formautofill: Form Submission Heuristic"
     hidden: yes
@@ -84062,6 +84098,41 @@ view: metrics__metrics__labeled_timing_distribution__urlclassifier_update_server
 }
 
 view: metrics__metrics__labeled_timing_distribution__urlclassifier_update_server_response_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__widget_jump_list_shell_call {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__widget_jump_list_shell_call__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

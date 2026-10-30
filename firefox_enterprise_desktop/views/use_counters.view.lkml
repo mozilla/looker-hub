@@ -35105,6 +35105,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_navigationtransition_to_getter {
+    label: "Use Counter Doc: Navigationtransition To Getter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationtransition_to_getter ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Navigationtransition To Getter"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Navigationtransition To Getter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_navigationtransition_to_getter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document got NavigationTransition.to. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationtransition_to_setter {
+    label: "Use Counter Doc: Navigationtransition To Setter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationtransition_to_setter ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Navigationtransition To Setter"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Navigationtransition To Setter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_navigationtransition_to_setter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document set NavigationTransition.to. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_navigator_canshare {
     label: "Use Counter Doc: Navigator Canshare"
     hidden: yes
@@ -45307,6 +45343,42 @@ view: use_counters {
     }
 
     description: "Whether a page set NavigationTransition.navigationType. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationtransition_to_getter {
+    label: "Use Counter Page: Navigationtransition To Getter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationtransition_to_getter ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Navigationtransition To Getter"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Navigationtransition To Getter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_navigationtransition_to_getter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page got NavigationTransition.to. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationtransition_to_setter {
+    label: "Use Counter Page: Navigationtransition To Setter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationtransition_to_setter ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Navigationtransition To Setter"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Navigationtransition To Setter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_navigationtransition_to_setter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page set NavigationTransition.to. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -103376,6 +103448,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_navigationtransition_to_getter {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_navigationtransition_to_getter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Navigationtransition To Getter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_navigationtransition_to_getter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_navigationtransition_to_getter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_navigationtransition_to_getter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Navigationtransition To Getter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_navigationtransition_to_getter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_navigationtransition_to_setter {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_navigationtransition_to_setter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Navigationtransition To Setter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_navigationtransition_to_setter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_navigationtransition_to_setter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_navigationtransition_to_setter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Navigationtransition To Setter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_navigationtransition_to_setter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_navigator_canshare {
     type: sum
     sql: ${metrics__counter__use_counter_doc_navigator_canshare} ;;
@@ -117522,6 +117644,56 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Navigationtransition Navigationtype Setter"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_navigationtransition_navigationtype_setter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_navigationtransition_to_getter {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_navigationtransition_to_getter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Navigationtransition To Getter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_navigationtransition_to_getter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_navigationtransition_to_getter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_navigationtransition_to_getter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Navigationtransition To Getter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_navigationtransition_to_getter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_navigationtransition_to_setter {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_navigationtransition_to_setter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Navigationtransition To Setter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_navigationtransition_to_setter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_navigationtransition_to_setter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_navigationtransition_to_setter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Navigationtransition To Setter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_navigationtransition_to_setter"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
