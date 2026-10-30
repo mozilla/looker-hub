@@ -1422,8 +1422,8 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Attempt"
     description: "Depending on the type of event:
-* How many launches had already tried and failed before this one, 0 on the first. A retry emits an otherwise identical event, so this is what separates a profile that failed once from one failing every time. The migrator gives up after 3.
 * Number of prior restore attempts across sessions (0 on the first attempt). Restores stop being attempted once this reaches its budget.
+* How many launches had already tried and failed before this one, 0 on the first. A retry emits an otherwise identical event, so this is what separates a profile that failed once from one failing every time. The migrator gives up after 3.
 * Number of prior migration attempts across sessions (0 on the first attempt)."
   }
 
@@ -1643,9 +1643,9 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Duration Ms"
     description: "Depending on the type of event:
-* Wall-clock duration of the migration, in milliseconds.
 * Duration of the migration in milliseconds.
 * Duration of the restore in milliseconds, measured with a monotonic clock.
+* Wall-clock duration of the migration, in milliseconds.
 * Duration of the call as seen by the caller, measured in LoginManager around the delegation to the active backend.
 * Time in milliseconds between requesting warmup and warmup completion.
 * The duration of time from when the resource began sharing until the share sheet was ready to appear.
@@ -2709,8 +2709,7 @@ view: events_stream {
 * The action selected by the user. Possible values are \"device\" (sent to specific device), \"all_devices\" (sent to all devices), or \"manage_devices\" (opened device management).
 * How this click happened
 * The action that was taken by the user, remove or cancel
-* Whether the toggle was used to enable or disable ads. Possible values are `enabled` and `disabled`.
-* \"add\": a code is saved for a card that had none. \"edit\": the stored code is changed. \"clear\": the stored code is removed."
+* Whether the toggle was used to enable or disable ads. Possible values are `enabled` and `disabled`."
   }
 
   dimension: extras__string__action_uuid {
@@ -3163,17 +3162,6 @@ view: events_stream {
     description: "The interruption cause, `system_transient` or `system_permanent`."
   }
 
-  dimension: extras__string__cc_csc {
-    sql: ${TABLE}.extras.string.cc_csc ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Cc Csc"
-    description: "Depending on the type of event:
-* credit card security code (CVV) field result
-* Credit card security code (CVV) field result"
-  }
-
   dimension: extras__string__cc_exp {
     sql: ${TABLE}.extras.string.cc_exp ;;
     type: string
@@ -3615,10 +3603,10 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Direction"
     description: "Depending on the type of event:
-* Which way the addresses were copied: \"to_rust\" for the migration into the Rust store, \"to_json\" for the copy back when the pref that chooses the store is turned off again. A profile can do both, so this is what keeps the two apart.
-* Which way the credit cards were copied: \"to_rust\" for the migration into the Rust store, \"to_json\" for the copy back when the pref that chooses the store is turned off again. A profile can do both, so this is what keeps the two apart.
 * Direction of the m-section. recvonly, sendonly, sendrecv or inactive.
-* Whether the seek moved the position `forward` or `backward`."
+* Whether the seek moved the position `forward` or `backward`.
+* Which way the addresses were copied: \"to_rust\" for the migration into the Rust store, \"to_json\" for the copy back when the pref that chooses the store is turned off again. A profile can do both, so this is what keeps the two apart.
+* Which way the credit cards were copied: \"to_rust\" for the migration into the Rust store, \"to_json\" for the copy back when the pref that chooses the store is turned off again. A profile can do both, so this is what keeps the two apart."
   }
 
   dimension: extras__string__directive {
@@ -3872,9 +3860,8 @@ view: events_stream {
 * The error code after users click the fill username autocomplete entry. Only present if the object is \"fill_username\". When the event is successful, the error_code is 0.
 * The error code or number associated with the error, if available.
 * The UniFFI error variant when the migration threw, for grouping. Absent otherwise, including when records were rejected or came up short: the counts already describe that.
-* The UniFFI error variant when the migration threw, for grouping, or \"SourceChanged\" when the JSON store was written to while it was copied into the Rust store, which fails the run. Absent otherwise, including when records were rejected or came up short: the counts already describe that.
 * The error code after users click the email alias generation panel. When the event is successful, the error_code is 0.
-* The error code describing what occurred during import. Current values are: 1xxx - errors imply a file reading error 1001 - file read error 2xxx - errors imply an er..."
+* The error code describing what occurred during import. Current values are: 1xxx - errors imply a file reading error 1001 - file read error 2xxx - errors imply an error encountered during parsing 2001 - parsing error - unsupported content type (like an html file that is not netscape format) 2002 - parsing error - invalid format (content type is supported, but has a bad format) 2003 - parsing error - an unexpected error related to parsing 3xxx - errors..."
   }
 
   dimension: extras__string__error_kind {
@@ -3894,8 +3881,8 @@ view: events_stream {
     group_item_label: "Error Message"
     description: "Depending on the type of event:
 * The error message or exception string from the failure.
-* A normalized, PII-stripped message: the first reason a record was rejected, or the error text where the migration threw. One example to read rather than a set to aggregate -- rejected records in one batch nearly always share a cause. Absent when the counts say it all.
 * The fatal error that aborted the run, or empty if the run completed.
+* A normalized, PII-stripped message: the first reason a record was rejected, or the error text where the migration threw. One example to read rather than a set to aggregate -- rejected records in one batch nearly always share a cause. Absent when the counts say it all.
 * Records the error message. Likely errors include \"Cr.NS_ERROR_FAILURE\" and \"Cr.NS_ERROR_ABORT\". If no error then \"NO_ERROR\".
 * The error message from the failed login entry."
   }
@@ -4166,8 +4153,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Field Name"
     description: "Depending on the type of event:
-* Name of the field being affected by the method. Used by `popup_shown` and `filled_modified` methods.
 * Name of the field being affected by the method. Used by `popup_shown`, `filled_modified` and `cleared` methods.
+* Name of the field being affected by the method. Used by `popup_shown` and `filled_modified` methods.
 * Name of the field being affected by the event
 * Name of the field being affected by the method
 * Name of the field being affected by the method, filled when method is `popup_shown` or `filled_modified`.
@@ -5935,9 +5922,9 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Result"
     description: "Depending on the type of event:
-* \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\".
 * The result of the OS Authentication.
 * Optionally, the name of the error that occurred.
+* \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\".
 * The error code, converted to a string.
 * \"ok\", or \"error\" when initialization aborted with a fatal error.
 * The outcome of the Nimbus event recording attempt. One of \"success\", \"cancelled\", or \"error\".
@@ -5980,9 +5967,9 @@ view: events_stream {
     description: "Depending on the type of event:
 * Unique identifier for the login change event
 * Unique identifier for the migration run.
-* A fresh id per run, so that the migrate_record_divergence events a run emitted join to it unambiguously.
 * Unique identifier for the restore run.
 * The migrate_to_rust run this record was copied by.
+* A fresh id per run, so that the migrate_record_divergence events a run emitted join to it unambiguously.
 * Unique identifier for the migration run
 * Unique identifier for the restore run"
   }
@@ -6981,8 +6968,7 @@ view: events_stream {
 * The `value` of the event. Mirrors to the Legacy Telemetry event's `value` parameter (i.e., the experiment slug).
 * The `value` of the event.
 * The value is the ID of the add-on.
-* Flow id of an interaction session with a credit card form
-* The event value. This is either \"started\", \"success\", \"d..."
+* The event value. This is either \"started\", \"success\", \"decryptionError\" or \"encryptionError\". \"started\" gets emitted..."
   }
 
   dimension: extras__string__variant_shown {
