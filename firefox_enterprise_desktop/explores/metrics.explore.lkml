@@ -1608,6 +1608,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_alpn_mismatch_count}) AS metrics__metrics__labeled_counter__network_alpn_mismatch_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_alpn_mismatch_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_apple_fast_datapath_probe {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_apple_fast_datapath_probe}) AS metrics__metrics__labeled_counter__network_apple_fast_datapath_probe ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_apple_fast_datapath_probe.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_back_pressure_suspension_rate {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_back_pressure_suspension_rate}) AS metrics__metrics__labeled_counter__network_back_pressure_suspension_rate ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_back_pressure_suspension_rate.document_id} ;;

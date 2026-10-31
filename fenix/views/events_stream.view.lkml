@@ -567,7 +567,8 @@ view: events_stream {
 * The set value.
 * Whether power saving mode is now enabled.
 * Whether or not studies is enabled from Settings screen.
-* Whether or not the preference is enabled"
+* Whether or not the preference is enabled
+* The new state, true when saving security codes is on."
   }
 
   dimension: extras__boolean__engine_available {
@@ -640,6 +641,15 @@ view: events_stream {
     group_label: "Extras: Boolean"
     group_item_label: "Had Form Data"
     description: "Whether or not the tab had unsubmitted form data when it was killed."
+  }
+
+  dimension: extras__boolean__had_saved_cvv {
+    sql: ${TABLE}.extras.boolean.had_saved_cvv ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Had Saved Cvv"
+    description: "Whether at least one saved card had a security code when the setting changed."
   }
 
   dimension: extras__boolean__has_been_saved {
@@ -1424,6 +1434,7 @@ view: events_stream {
     description: "Depending on the type of event:
 * How many launches had already tried and failed before this one, 0 on the first. A retry emits an otherwise identical event, so this is what separates a profile that failed once from one failing every time. The migrator gives up after 3.
 * Number of prior restore attempts across sessions (0 on the first attempt). Restores stop being attempted once this reaches its budget.
+* How many launches had already tried and failed before this one, 0 on the first. A retry emits an otherwise identical event, so this is what separates a profile that failed once from one failing every time. The migrator gives up after 10. Always 0 for \"to_json\", which is not limited.
 * Number of prior migration attempts across sessions (0 on the first attempt)."
   }
 
@@ -2273,6 +2284,15 @@ view: events_stream {
 * The position of the clicked recent site suggestion.
 * The position of the clicked top site suggestion.
 * The position of the clicked trending search suggestion."
+  }
+
+  dimension: extras__quantity__primary_password_deferrals {
+    sql: ${TABLE}.extras.quantity.primary_password_deferrals ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Primary Password Deferrals"
+    description: "How many startups in a row the primary password prompt for the migration had been canceled: on a run, before it started; on a deferred startup, including this one."
   }
 
   dimension: extras__quantity__profile_count {
@@ -3519,6 +3539,15 @@ view: events_stream {
 * The name of the decoder when the error occurred."
   }
 
+  dimension: extras__string__deferral_reason {
+    sql: ${TABLE}.extras.string.deferral_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Deferral Reason"
+    description: "Why the migration was deferred, only set with the end state \"Deferred\": \"primary_password_canceled\" when the user canceled the primary password prompt, or \"primary_password_limit\" when it was not shown because it had been canceled too often."
+  }
+
   dimension: extras__string__deletedBy {
     sql: ${TABLE}.extras.string.deletedBy ;;
     type: string
@@ -3744,7 +3773,8 @@ view: events_stream {
     description: "Depending on the type of event:
 * Outcome of the run: \"Restored\" when every login made it into the JSON store, \"Incomplete\" when individual logins failed, \"Deferred\" when the primary password was locked and the restore is waiting for the unlock, \"Aborted\" when the browser shut down mid-run, \"TooManyLogins\" when the Rust store held implausibly many logins, \"Failed\" when a fatal error aborted the run. The Rust database is never touched. \"Restored\" and \"TooManyLogins\" are final, the others mean a later startup tries again.
 * Migrator state after the run, e.g. \"RustPrimary\" when the migration completed or \"MigrationPending\" when it did not.
-* Outcome of the run: \"Restored\" when every login made it into the JSON store, \"Incomplete\" when individual logins failed, \"Deferred\" when the primary password was locked and the restore is waiting for the unlock, \"Aborted\" when the browser shut down mid-run, \"SyncSkipped\" when Sync is set up to carry logins and brings them back itself, \"TooManyLogins\" when the Rust store h..."
+* Migrator state after the run, e.g. \"RustPrimary\" when the migration completed or \"MigrationPending\" when it did not, or \"Deferred\" when it did not run because the primary password was not entered.
+* Outcome of the run: \"Restored\" when every login made it into the JSON store, \"Incomplete\" when individual logins failed, \"Deferred\" when the primary password was locked and th..."
   }
 
   dimension: extras__string__engine {
@@ -3871,8 +3901,8 @@ view: events_stream {
     description: "Depending on the type of event:
 * The error code after users click the fill username autocomplete entry. Only present if the object is \"fill_username\". When the event is successful, the error_code is 0.
 * The error code or number associated with the error, if available.
-* The UniFFI error variant when the migration threw, for grouping. Absent otherwise, including when records were rejected or came up short: the counts already describe that.
 * The UniFFI error variant when the migration threw, for grouping, or \"SourceChanged\" when the JSON store was written to while it was copied into the Rust store, which fails the run. Absent otherwise, including when records were rejected or came up short: the counts already describe that.
+* The UniFFI error variant when the migration threw, for grouping. Absent otherwise, including when records were rejected or came up short: the counts already describe that.
 * The error code after users click the email alias generation panel. When the event is successful, the error_code is 0.
 * The error code describing what occurred during import. Current values are: 1xxx - errors imply a file reading error 1001 - file read error 2xxx - errors imply an er..."
   }
@@ -5938,10 +5968,11 @@ view: events_stream {
 * \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\".
 * The result of the OS Authentication.
 * Optionally, the name of the error that occurred.
+* \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\". A \"to_json\" copy hands the profile back to the JSON store either way, so an \"error\" there means some records did not make it back.
 * The error code, converted to a string.
+* The outcome of the prompt.
 * \"ok\", or \"error\" when initialization aborted with a fatal error.
-* The outcome of the Nimbus event recording attempt. One of \"success\", \"cancelled\", or \"error\".
-* The outcome of the prompt."
+* The outcome of the Nimbus event recording attempt. One of \"success\", \"cancelled\", or \"error\"."
   }
 
   dimension: extras__string__results {
@@ -5979,8 +6010,8 @@ view: events_stream {
     group_item_label: "Run ID"
     description: "Depending on the type of event:
 * Unique identifier for the login change event
-* Unique identifier for the migration run.
 * A fresh id per run, so that the migrate_record_divergence events a run emitted join to it unambiguously.
+* Unique identifier for the migration run.
 * Unique identifier for the restore run.
 * The migrate_to_rust run this record was copied by.
 * Unique identifier for the migration run
