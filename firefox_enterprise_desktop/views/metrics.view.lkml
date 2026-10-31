@@ -17418,6 +17418,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__boolean__formautofill_creditcards_cvv_saving_enabled {
+    label: "Formautofill Creditcards: Cvv Saving Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.formautofill_creditcards_cvv_saving_enabled ;;
+    type: yesno
+    group_label: "Formautofill Creditcards"
+    group_item_label: "Cvv Saving Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Creditcards: Cvv Saving Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/formautofill_creditcards_cvv_saving_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether saving security codes (CVV) is turned on. Set at startup, so it is sent on every metrics ping. Only set when security codes are supported.
+"
+  }
+
   dimension: metrics__quantity__formautofill_creditcards_saved_count {
     label: "Formautofill Creditcards: Saved Count"
     hidden: no
@@ -23260,6 +23278,23 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Counts the number of times we encountered a mismatched ALPN token and needed to reset the connection. Keyed by the negotiated NPN.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_apple_fast_datapath_probe {
+    label: "Network: Apple Fast Datapath Probe"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_apple_fast_datapath_probe ;;
+    group_label: "Network"
+    group_item_label: "Apple Fast Datapath Probe"
+
+    link: {
+      label: "Glean Dictionary reference for Network: Apple Fast Datapath Probe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/network_apple_fast_datapath_probe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Outcome of the Apple fast datapath (sendmsg_x/recvmsg_x) probe at startup. Only recorded on Apple platforms.
 "
   }
 
@@ -59992,6 +60027,47 @@ view: metrics__metrics__labeled_counter__network_alpn_mismatch_count {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_apple_fast_datapath_probe {
+  label: "Network: Apple Fast Datapath Probe"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_back_pressure_suspension_rate {
   label: "Network: Back Pressure Suspension Rate"
 
@@ -79121,6 +79197,41 @@ view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_dns_
 }
 
 view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_dns_resolution_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_last_answer_to_attempt {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_last_answer_to_attempt__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

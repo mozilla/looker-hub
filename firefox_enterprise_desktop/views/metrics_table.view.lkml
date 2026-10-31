@@ -926,6 +926,14 @@ Child-process data will likely be absent, or incomplete.
 "
   }
 
+  dimension: metrics__boolean__formautofill_creditcards_cvv_saving_enabled {
+    sql: ${TABLE}.metrics.boolean.formautofill_creditcards_cvv_saving_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Formautofill Creditcards Cvv Saving Enabled"
+  }
+
   dimension: metrics__boolean__formautofill_os_auth_enabled {
     sql: ${TABLE}.metrics.boolean.formautofill_os_auth_enabled ;;
     type: yesno
@@ -12618,6 +12626,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__network_apple_fast_datapath_probe {
+    sql: ${TABLE}.metrics.labeled_counter.network_apple_fast_datapath_probe ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_back_pressure_suspension_rate {
     sql: ${TABLE}.metrics.labeled_counter.network_back_pressure_suspension_rate ;;
     hidden: yes
@@ -15022,6 +15035,11 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     hidden: yes
     description: "Happy Eyeballs: time in milliseconds to resolve each DNS record type (A, AAAA, HTTPS).
 "
+  }
+
+  dimension: metrics__labeled_custom_distribution__netwerk_happy_eyeballs_last_answer_to_attempt {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.netwerk_happy_eyeballs_last_answer_to_attempt ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_custom_distribution__network_cache_entry_count {
@@ -34767,6 +34785,41 @@ view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeball
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_dns_resolution_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_last_answer_to_attempt {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_last_answer_to_attempt__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
