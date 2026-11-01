@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       heartbeat_hnt_mixed_language_layout_survey_germany.branch
     ]
     filters:
-      heartbeat_hnt_mixed_language_layout_survey_germany.metric: 'active_hours'
+      heartbeat_hnt_mixed_language_layout_survey_germany.metric: 'uri_count'
       heartbeat_hnt_mixed_language_layout_survey_germany.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       heartbeat_hnt_mixed_language_layout_survey_germany.branch
     ]
     filters:
-      heartbeat_hnt_mixed_language_layout_survey_germany.metric: 'ad_clicks'
+      heartbeat_hnt_mixed_language_layout_survey_germany.metric: 'retained'
       heartbeat_hnt_mixed_language_layout_survey_germany.statistic: mean
     row: 0
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       heartbeat_hnt_mixed_language_layout_survey_germany.branch
     ]
     filters:
-      heartbeat_hnt_mixed_language_layout_survey_germany.metric: 'retained'
+      heartbeat_hnt_mixed_language_layout_survey_germany.metric: 'ad_clicks'
       heartbeat_hnt_mixed_language_layout_survey_germany.statistic: mean
     row: 20
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       heartbeat_hnt_mixed_language_layout_survey_germany.branch
     ]
     filters:
-      heartbeat_hnt_mixed_language_layout_survey_germany.metric: 'uri_count'
+      heartbeat_hnt_mixed_language_layout_survey_germany.metric: 'active_hours'
       heartbeat_hnt_mixed_language_layout_survey_germany.statistic: mean
     row: 30
     col: 12

@@ -467,6 +467,15 @@ view: events_stream {
     description: "Whether the Search button was actually shown (a default engine existed and the query derivation produced a query). False when the CTA page rendered but the Search button was suppressed (no engine, connectivity lost, or an unusable host), leaving Reload only."
   }
 
+  dimension: extras__boolean__cvv_saving_enabled {
+    sql: ${TABLE}.extras.boolean.cvv_saving_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Cvv Saving Enabled"
+    description: "Whether saving security codes was turned on when the user responded."
+  }
+
   dimension: extras__boolean__description {
     sql: ${TABLE}.extras.boolean.description ;;
     type: yesno
@@ -6956,11 +6965,11 @@ view: events_stream {
 * Unique identifier for this ML workflow session. Used to correlate all events within this session across components.
 * Unique id for this fill invocation; correlates all of its events.
 * Flow id of an interaction session with a credit card form
+* Flow id of the interaction session with the credit card form, shared with the credit card form events.
 * Joins to sibling firefox.ai.runtime.engine_run and run_inference_success_flow events for the same inference.
 * An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated.
 * An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated. It is reused when the dropdown reopens after a record removal prompt.
-* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in between), to measure things like how often a shown dropdown leads to a removal.
-* An id generated when the drop..."
+* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in betwee..."
   }
 
   dimension: extras__string__font {
@@ -8965,7 +8974,8 @@ view: events_stream {
     group_item_label: "Prompt Type"
     description: "Depending on the type of event:
 * Type of prompt shown: disambiguation, batch_preview, or safety_confirmation
-* Type of prompt shown - disambiguation, batch_preview, or safety_confirmation"
+* Type of prompt shown - disambiguation, batch_preview, or safety_confirmation
+* \"new_card\" for the save doorhanger of a new card, \"existing_card\" for the update doorhanger offering to add a security code to a saved card."
   }
 
   dimension: extras__string__prompt_version {
@@ -8977,9 +8987,9 @@ view: events_stream {
     description: "Depending on the type of event:
 * Version of the monitor prompt used for the monitor.
 * Major version of the chat prompt used for this request.
+* Remote Settings prompt configuration version, or empty if unavailable
 * Version of the generation prompt config.
 * Version of the relevant tabs prompt config.
-* Remote Settings prompt configuration version, or empty if unavailable
 * Version of the classification prompt config."
   }
 
@@ -10378,7 +10388,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Tool Name"
-    description: "Name of the invoked tool, e.g. \"run_search\", \"get_open_tabs\", \"search_browsing_history\", \"get_user_memories\""
+    description: "Depending on the type of event:
+* Name of the invoked tool, e.g. \"run_search\", \"get_open_tabs\", \"search_browsing_history\", \"get_user_memories\"
+* Name of the requested tool, e.g. \"run_search\", \"get_open_tabs\", \"search_browsing_history\", \"get_user_memories\""
   }
 
   dimension: extras__string__top_preferred_language {
