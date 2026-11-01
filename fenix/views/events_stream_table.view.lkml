@@ -478,6 +478,15 @@ view: events_stream_table {
     description: "Whether the Search button was actually shown (a default engine existed and the query derivation produced a query). False when the CTA page rendered but the Search button was suppressed (no engine, connectivity lost, or an unusable host), leaving Reload only."
   }
 
+  dimension: extras__boolean__cvv_saving_enabled {
+    sql: ${TABLE}.extras.boolean.cvv_saving_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Cvv Saving Enabled"
+    description: "Whether saving security codes was turned on when the user responded."
+  }
+
   dimension: extras__boolean__data_fetched {
     sql: ${TABLE}.extras.boolean.data_fetched ;;
     type: yesno
@@ -2727,7 +2736,8 @@ view: events_stream_table {
 * How this click happened
 * The action that was taken by the user, remove or cancel
 * Whether the toggle was used to enable or disable ads. Possible values are `enabled` and `disabled`.
-* \"add\": a code is saved for a card that had none. \"edit\": the stored code is changed. \"clear\": the stored code is removed."
+* \"add\": a code is saved for a card that had none. \"edit\": the stored code is changed. \"clear\": the stored code is removed.
+* \"save\" when the card is saved or updated, \"save_new\" when an existing card is saved as a new payment method, \"not_now\" (new_card) or \"no_thanks\" (existing_card) when the Dismiss button is clicked, \"never_save\" when the user stops saving cards, and \"..."
   }
 
   dimension: extras__string__action_uuid {
@@ -4287,10 +4297,11 @@ view: events_stream_table {
 * A uuid to relate events associated with the current panel session.
 * Unique identifier for this ML workflow session. Used to correlate all events within this session across components.
 * Flow id of an interaction session with a credit card form
+* Flow id of the interaction session with the credit card form, shared with the credit card form events.
 * An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated.
 * An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated. It is reused when the dropdown reopens after a record removal prompt.
 * An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in between), to measure things like how often a shown dropdown leads to a removal.
-* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in between), to measure things like how often a shown dropdown leads to..."
+* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_c..."
   }
 
   dimension: extras__string__form_action_origin_error {
@@ -5753,6 +5764,15 @@ view: events_stream_table {
     group_label: "Extras: String"
     group_item_label: "Prompt Enabled"
     description: "True if the user enables the prompt, false otherwise."
+  }
+
+  dimension: extras__string__prompt_type {
+    sql: ${TABLE}.extras.string.prompt_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Prompt Type"
+    description: "\"new_card\" for the save doorhanger of a new card, \"existing_card\" for the update doorhanger offering to add a security code to a saved card."
   }
 
   dimension: extras__string__prompt_was_displayed {

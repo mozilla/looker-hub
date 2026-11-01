@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: smartwindow_mvp_microsurvey {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.smartwindow_mvp_microsurvey_statistics ;;
+view: remote_settings_v2_api_test_android {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.remote_settings_v2_api_test_android_statistics ;;
 
   dimension: submission_date {
     type: date

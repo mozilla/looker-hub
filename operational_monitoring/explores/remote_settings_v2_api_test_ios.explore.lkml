@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/smartwindow_mvp_microsurvey.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/smartwindow_mvp_microsurvey_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/remote_settings_v2_api_test_ios.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/remote_settings_v2_api_test_ios_last_updated.datagroup.lkml"
 
-explore: smartwindow_mvp_microsurvey {
+explore: remote_settings_v2_api_test_ios {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: smartwindow_mvp_microsurvey {
   }
 
   hidden: yes
-  persist_with: smartwindow_mvp_microsurvey_last_updated
+  persist_with: remote_settings_v2_api_test_ios_last_updated
 }

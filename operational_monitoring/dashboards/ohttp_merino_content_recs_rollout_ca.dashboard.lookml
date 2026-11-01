@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       ohttp_merino_content_recs_rollout_ca.branch
     ]
     filters:
-      ohttp_merino_content_recs_rollout_ca.metric: 'active_hours'
+      ohttp_merino_content_recs_rollout_ca.metric: 'uri_count'
       ohttp_merino_content_recs_rollout_ca.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       ohttp_merino_content_recs_rollout_ca.branch
     ]
     filters:
-      ohttp_merino_content_recs_rollout_ca.metric: 'ad_clicks'
+      ohttp_merino_content_recs_rollout_ca.metric: 'retained'
       ohttp_merino_content_recs_rollout_ca.statistic: mean
     row: 0
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       ohttp_merino_content_recs_rollout_ca.branch
     ]
     filters:
-      ohttp_merino_content_recs_rollout_ca.metric: 'retained'
+      ohttp_merino_content_recs_rollout_ca.metric: 'ad_clicks'
       ohttp_merino_content_recs_rollout_ca.statistic: mean
     row: 20
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       ohttp_merino_content_recs_rollout_ca.branch
     ]
     filters:
-      ohttp_merino_content_recs_rollout_ca.metric: 'uri_count'
+      ohttp_merino_content_recs_rollout_ca.metric: 'active_hours'
       ohttp_merino_content_recs_rollout_ca.statistic: mean
     row: 30
     col: 12

@@ -449,6 +449,15 @@ view: events_stream {
     description: "Whether the Search button was actually shown (a default engine existed and the query derivation produced a query). False when the CTA page rendered but the Search button was suppressed (no engine, connectivity lost, or an unusable host), leaving Reload only."
   }
 
+  dimension: extras__boolean__cvv_saving_enabled {
+    sql: ${TABLE}.extras.boolean.cvv_saving_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Cvv Saving Enabled"
+    description: "Whether saving security codes was turned on when the user responded."
+  }
+
   dimension: extras__boolean__description {
     sql: ${TABLE}.extras.boolean.description ;;
     type: yesno
@@ -548,10 +557,10 @@ view: events_stream {
     description: "Depending on the type of event:
 * Whether the monitor is enabled.
 * Whether the monitor is enabled (the spec's status).
+* New/current state is enabled
 * Whether the action was turned on or off.
 * True if the feature is enabled.
 * Chatbot was already enabled.
-* New/current state is enabled
 * Whether launch on login was turned on (true) or off (false).
 * Boolean indicating if that type of memory was enabled or disabled
 * Whether the sidebar is now set to open by default
@@ -1264,8 +1273,8 @@ view: events_stream {
     group_label: "Extras: Boolean"
     group_item_label: "Native Theme"
     description: "Depending on the type of event:
-* Whether native theme styling was enabled. Not recorded until `property` can be `\"nativeTheme\"`.
-* Whether native theme styling was enabled. Set when `property` is `\"nativeTheme\"`."
+* Whether native theme styling was enabled. Set when `property` is `\"nativeTheme\"`.
+* Whether native theme styling was enabled. Not recorded until `property` can be `\"nativeTheme\"`."
   }
 
   dimension: extras__boolean__new_window {
@@ -1972,6 +1981,15 @@ view: events_stream {
     description: "How many times `effective` changed by itself, without the user changing the setting, earlier in this session. Reset to 0 each time the user changes the setting, so on a setting-change event this is the number of automatic adjustments the user saw before making that change. Counts adjustments strictly before this event, so the first automatic adjustment of a session reports 0."
   }
 
+  dimension: extras__quantity__available {
+    sql: ${TABLE}.extras.quantity.available ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Available"
+    description: "The number of items of this resource type that the other browser had available to migrate. Not set if the migrator cannot count them."
+  }
+
   dimension: extras__quantity__average_chunk_time {
     sql: ${TABLE}.extras.quantity.average_chunk_time ;;
     type: number
@@ -2282,9 +2300,9 @@ view: events_stream {
     description: "Depending on the type of event:
 * Total time of the run from start to its terminal event, including page extraction and the model call.
 * Engine creation time in milliseconds
+* Milliseconds the card stayed open
 * how long it took to reach the step from start
 * Total session duration in milliseconds.
-* Milliseconds the card stayed open
 * How long the migration took (in milliseconds).
 * Milliseconds the menu was shown.
 * Time in ms to process the request
@@ -2771,9 +2789,9 @@ view: events_stream {
     description: "Depending on the type of event:
 * Number of characters in the monitor prompt.
 * Number of characters submitted
+* Length of the article
 * Number of characters in the mention
 * Page content length.
-* Length of the article
 * Number of characters read from the page
 * number of characters of generated text."
   }
@@ -2969,7 +2987,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Migrated"
-    description: "Number of records the import reported as written. A record the store copied into already held under the same timeLastModified is left alone, so source_total minus migrated minus failed is the number that needed nothing doing."
+    description: "Depending on the type of event:
+* Number of records the import reported as written. A record the store copied into already held under the same timeLastModified is left alone, so source_total minus migrated minus failed is the number that needed nothing doing.
+* The number of items of this resource type that were actually migrated."
   }
 
   dimension: extras__quantity__ml_label_length {
@@ -4023,9 +4043,9 @@ view: events_stream {
     group_item_label: "Time"
     description: "Depending on the type of event:
 * How long the process took.
-* How long the user waited between asking for the panel and seeing it populated.
 * Milliseconds to fetch and extract page
 * Milliseconds to generate full result
+* How long the user waited between asking for the panel and seeing it populated.
 * Time to process the request
 * time in ms to generate result."
   }
@@ -4476,11 +4496,11 @@ view: events_stream {
 * The action taken on the page. Possible values are: `clicked`, `clicked_accept`, `clicked_reject`, `clicked_more_options`, `expanded`, `submitted`.
 * How this click happened
 * Which action was clicked.
+* User's action on the dialogue - \"view\" (impression), \"try_it_now\", \"close\"
 * Which action was clicked, e.g., ai, search, copy.
 * Which action was toggled, e.g., ai, search, copy, master.
 * The action that was taken by the user, remove or cancel
 * The `action` of the system (chrome privileged) alert that Firefox was launched to complete.
-* User's action on the dialogue - \"view\" (impression), \"try_it_now\", \"close\"
 * Whether the panel wa..."
   }
 
@@ -4758,8 +4778,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Appearance"
     description: "Depending on the type of event:
-* The appearance mode selected, one of `\"light\"`, `\"dark\"`, or `\"device\"`. Not recorded until `property` can be `\"appearance\"`.
-* The appearance mode selected, one of `\"light\"`, `\"dark\"`, or `\"device\"`. Set when `property` is `\"appearance\"`."
+* The appearance mode selected, one of `\"light\"`, `\"dark\"`, or `\"device\"`. Set when `property` is `\"appearance\"`.
+* The appearance mode selected, one of `\"light\"`, `\"dark\"`, or `\"device\"`. Not recorded until `property` can be `\"appearance\"`."
   }
 
   dimension: extras__string__attribute_name {
@@ -5919,8 +5939,8 @@ view: events_stream {
     group_item_label: "Engagement Type"
     description: "Depending on the type of event:
 * Records how the user selected the result. The possible values are: `ask_button`, `click`, `dismiss`, `drop_go`, `enter`, `go_button`, `help`, `inaccurate_location`, `manage`, `navigate_button`, `not_interested`, `not_now`, `opt_in`, `paste_go`, `search_button`, `show_less_frequently`
-* Records how the user selected the result. The possible values are the same as those defined for the engagement event engagement_type property.
-* Records how the user selected the result. The possible values are: `ask_button`, `click`, `dismiss`, `drop_go`, `enter`, `go_button`, `help`, `inaccurate_location`, `manage`, `navigate_button`, `not_interested`, `not_now`, `opt_in`, `paste_go`, `remove_history`, `search_button`, `show_less_frequently`"
+* Records how the user selected the result. The possible values are: `ask_button`, `click`, `dismiss`, `drop_go`, `enter`, `go_button`, `help`, `inaccurate_location`, `manage`, `navigate_button`, `not_interested`, `not_now`, `opt_in`, `paste_go`, `remove_history`, `search_button`, `show_less_frequently`
+* Records how the user selected the result. The possible values are the same as those defined for the engagement event engagement_type property."
   }
 
   dimension: extras__string__engineId {
@@ -5987,6 +6007,7 @@ view: events_stream {
     group_item_label: "Entrypoint"
     description: "Depending on the type of event:
 * How was the toolbox opened? CommandLine, ContextMenu, HamburgerMenu, KeyShortcut, SessionRestore, SystemMenu or SlowScript
+* Where the migration wizard was opened from. One of the values of MigrationUtils.MIGRATION_ENTRYPOINTS, for example \"aboutwelcome\", \"preferences\" or \"file_menu\".
 * Where the user opened the page from: \"panel\" for the button in the VPN panel, \"settings\" for the button in about:settings#privacy.
 * The UI surface used to open the referrals tab. One of: app_menu, accounts_menu, preferences, help_menu, about_dialog.
 * Where the card came from: browser_action (a chat request handled by the manage_tabs tool) or resume (a \"Pick up where you left off\" pill)
@@ -6414,12 +6435,12 @@ view: events_stream {
 * A uuid to relate events associated with the current panel session.
 * Unique identifier for this ML workflow session. Used to correlate all events within this session across components.
 * Unique id for this fill invocation; correlates all of its events.
+* Flow id of the interaction session with the credit card form, shared with the credit card form events.
 * Flow id of an interaction session with a credit card form
 * Joins to sibling firefox.ai.runtime.engine_run and run_inference_success_flow events for the same inference.
 * An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated.
 * An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated. It is reused when the dropdown reopens after a record removal prompt.
-* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in between), to measure things like how often a shown dropdown leads to a removal.
-* An id generated when the drop..."
+* An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in betwee..."
   }
 
   dimension: extras__string__font {
@@ -7304,6 +7325,7 @@ view: events_stream {
 * The key of the migrator that will perform the migration.
 * The key of the browser that was selected.
 * The key of the browser that had a profile selected for it.
+* The key of the migrator that performed the migration, for example \"chrome\" or \"safari\".
 * The key of the browser that had resources selected for it."
   }
 
@@ -7852,12 +7874,12 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Outcome"
     description: "Depending on the type of event:
+* success or error
+* success or prefetch or error
 * \"ready\", \"unavailable\", or \"error\".
 * Whether the user kept the value. One of: kept, edited, or cleared.
 * \"deleted\" if the user confirmed deleting, recorded when the deletion starts; \"cancelled\" if the user backed out with Cancel, the dialog's close button or Escape; \"dismissed\" if the dialog closed without a choice, for example from the Settings dialog's close button or because its window closed.
 * \"deleted\" if data was cleared, \"cancelled\" if the user explicitly backed out with Cancel, \"dismissed\" if the confirmation panel was closed without a choice, for example with Escape or a click outside it, \"aborted\" if the user confirmed but nothing was deleted because the windows could not be closed, for example when the user chose to stay on a page that asked before leaving.
-* success or error
-* success or prefetch or error
 * What became of the page, one of: - \"restore_all\": the session was restored with every window and tab selected - \"restore_subset\": the session was restore..."
   }
 
@@ -8330,7 +8352,8 @@ view: events_stream {
     group_item_label: "Prompt Type"
     description: "Depending on the type of event:
 * Type of prompt shown: disambiguation, batch_preview, or safety_confirmation
-* Type of prompt shown - disambiguation, batch_preview, or safety_confirmation"
+* Type of prompt shown - disambiguation, batch_preview, or safety_confirmation
+* \"new_card\" for the save doorhanger of a new card, \"existing_card\" for the update doorhanger offering to add a security code to a saved card."
   }
 
   dimension: extras__string__prompt_version {
@@ -8355,8 +8378,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Property"
     description: "Depending on the type of event:
-* Which setting changed. Only `\"theme\"` is recorded today. `\"appearance\"` and `\"nativeTheme\"` are declared ahead of the appearance and native theme instrumentation.
-* Which setting changed: `\"theme\"`, `\"appearance\"`, or `\"nativeTheme\"`."
+* Which setting changed: `\"theme\"`, `\"appearance\"`, or `\"nativeTheme\"`.
+* Which setting changed. Only `\"theme\"` is recorded today. `\"appearance\"` and `\"nativeTheme\"` are declared ahead of the appearance and native theme instrumentation."
   }
 
   dimension: extras__string__protocol {
@@ -8633,6 +8656,15 @@ view: events_stream {
 * The video resolution used for EME playback
 * The video resolution used for playback
 * The video resolution was being used when the error or crash happened"
+  }
+
+  dimension: extras__string__resource_type {
+    sql: ${TABLE}.extras.string.resource_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Resource Type"
+    description: "The resource type that was migrated. One of \"history\", \"formdata\", \"passwords\", \"bookmarks\", \"payment_methods\" or \"extensions\"."
   }
 
   dimension: extras__string__response {
@@ -8931,6 +8963,15 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Selftype"
     description: "The sanitized type of the \"self uri\", which is roughly similar to the documentURI. This follows eval_usage_system_context sanitization procedure."
+  }
+
+  dimension: extras__string__semantic_distances {
+    sql: ${TABLE}.extras.string.semantic_distances ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Semantic Distances"
+    description: "Comma separated list, aligned with `results`, of the cosine distance between the search string and each semantic history result, converted to an integer between 0 and 100. Non-semantic results have an empty entry. Only recorded when semantic results were shown."
   }
 
   dimension: extras__string__server_content_process_stack {
@@ -9558,8 +9599,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Theme ID"
     description: "Depending on the type of event:
-* The addon ID of the theme selected. Set on every recorded event, since `property` is always `\"theme\"` today.
-* The addon ID of the theme selected. Set when `property` is `\"theme\"`."
+* The addon ID of the theme selected. Set when `property` is `\"theme\"`.
+* The addon ID of the theme selected. Set on every recorded event, since `property` is always `\"theme\"` today."
   }
 
   dimension: extras__string__threshold {
@@ -9748,8 +9789,8 @@ view: events_stream {
     group_item_label: "Type"
     description: "Depending on the type of event:
 * Content scope.
-* \"full_tab\" for a whole popped-out tab, or \"fragment\" for one framing a region of the page.
 * The type of onboarding trigger, e.g. \"longPress\" or \"shiftKey\".
+* \"full_tab\" for a whole popped-out tab, or \"fragment\" for one framing a region of the page.
 * the type for the proxy configuration source. e.g. api or string version of nsIProtocolProxyService.proxyConfigType
 * chat or browsing
 * Whether the user reopened a saved group or a deleted group.
