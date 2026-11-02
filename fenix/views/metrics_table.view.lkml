@@ -884,6 +884,16 @@ Child-process data will likely be absent, or incomplete.
 "
   }
 
+  dimension: metrics__boolean__formautofill_creditcards_cvv_saving_enabled {
+    sql: ${TABLE}.metrics.boolean.formautofill_creditcards_cvv_saving_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Formautofill Creditcards Cvv Saving Enabled"
+    description: "Whether saving security codes (CVV) is turned on. Set at startup, so it is sent on every metrics ping. Only set when security codes are supported.
+"
+  }
+
   dimension: metrics__boolean__formautofill_os_auth_enabled {
     sql: ${TABLE}.metrics.boolean.formautofill_os_auth_enabled ;;
     type: yesno
@@ -15051,6 +15061,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__network_apple_fast_datapath_probe {
+    sql: ${TABLE}.metrics.labeled_counter.network_apple_fast_datapath_probe ;;
+    hidden: yes
+    description: "Outcome of the Apple fast datapath (sendmsg_x/recvmsg_x) probe at startup. Only recorded on Apple platforms.
+"
+  }
+
   dimension: metrics__labeled_counter__network_back_pressure_suspension_rate {
     sql: ${TABLE}.metrics.labeled_counter.network_back_pressure_suspension_rate ;;
     hidden: yes
@@ -16927,6 +16944,14 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     sql: ${TABLE}.metrics.labeled_custom_distribution.netwerk_happy_eyeballs_dns_resolution_time ;;
     hidden: yes
     description: "Happy Eyeballs: time in milliseconds to resolve each DNS record type (A, AAAA, HTTPS).
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__netwerk_happy_eyeballs_last_answer_to_attempt {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.netwerk_happy_eyeballs_last_answer_to_attempt ;;
+    hidden: yes
+    description: "Happy Eyeballs: time in milliseconds from the last positive DNS answer to the first connection attempt of a single algorithm run, i.e. the time spent waiting after happy_eyeballs_dns_answer_spread ends. Recorded once per run.
+Labels describe what ended the wait: - no_wait: No algorithmic wait, or gap below 1 ms; may include processing delay. - address_negative: Negative preferred-family answer ended the wait. - https_negative: Negative HTTPS answer ended the wait. - address_timeout: Timer expired awaiting the preferred address family. - https_timeout: Timer expired awaiting HTTPS. - both_timeout: Timer expired awaiting both.
 "
   }
 
@@ -61795,6 +61820,50 @@ view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeball
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_dns_resolution_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_last_answer_to_attempt {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_last_answer_to_attempt__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

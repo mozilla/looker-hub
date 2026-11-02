@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       remote_settings_v2_api_test_ios.branch
     ]
     filters:
-      remote_settings_v2_api_test_ios.metric: 'ad_clicks'
+      remote_settings_v2_api_test_ios.metric: 'active_hours'
       remote_settings_v2_api_test_ios.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       remote_settings_v2_api_test_ios.branch
     ]
     filters:
-      remote_settings_v2_api_test_ios.metric: 'active_hours'
+      remote_settings_v2_api_test_ios.metric: 'ad_clicks'
       remote_settings_v2_api_test_ios.statistic: mean
     row: 20
     col: 0

@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: brand_campaign_moment_page
-    type: looker_line
-    fields: [
-      brand_campaign_moment_page.submission_date,
-      brand_campaign_moment_page.branch,
-      brand_campaign_moment_page.point
-    ]
-    pivots: [
-      brand_campaign_moment_page.branch
-    ]
-    filters:
-      brand_campaign_moment_page.metric: 'uri_count'
-      brand_campaign_moment_page.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: brand_campaign_moment_page.submission_date
-    field_y: brand_campaign_moment_page.point
-    log_scale: false
-    ci_lower: brand_campaign_moment_page.lower
-    ci_upper: brand_campaign_moment_page.upper
-    show_grid: true
-    listen:
-      Date: brand_campaign_moment_page.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -63,40 +29,6 @@
       brand_campaign_moment_page.metric: 'retained'
       brand_campaign_moment_page.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: brand_campaign_moment_page.submission_date
-    field_y: brand_campaign_moment_page.point
-    log_scale: false
-    ci_lower: brand_campaign_moment_page.lower
-    ci_upper: brand_campaign_moment_page.upper
-    show_grid: true
-    listen:
-      Date: brand_campaign_moment_page.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: brand_campaign_moment_page
-    type: looker_line
-    fields: [
-      brand_campaign_moment_page.submission_date,
-      brand_campaign_moment_page.branch,
-      brand_campaign_moment_page.point
-    ]
-    pivots: [
-      brand_campaign_moment_page.branch
-    ]
-    filters:
-      brand_campaign_moment_page.metric: 'qualified_cumulative_days_of_use'
-      brand_campaign_moment_page.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -130,7 +62,7 @@
     filters:
       brand_campaign_moment_page.metric: 'days_of_use'
       brand_campaign_moment_page.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -146,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,10 +94,44 @@
       brand_campaign_moment_page.branch
     ]
     filters:
-      brand_campaign_moment_page.metric: 'ad_clicks'
+      brand_campaign_moment_page.metric: 'active_hours'
       brand_campaign_moment_page.statistic: mean
-    row: 20
+    row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: brand_campaign_moment_page.submission_date
+    field_y: brand_campaign_moment_page.point
+    log_scale: false
+    ci_lower: brand_campaign_moment_page.lower
+    ci_upper: brand_campaign_moment_page.upper
+    show_grid: true
+    listen:
+      Date: brand_campaign_moment_page.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: brand_campaign_moment_page
+    type: looker_line
+    fields: [
+      brand_campaign_moment_page.submission_date,
+      brand_campaign_moment_page.branch,
+      brand_campaign_moment_page.point
+    ]
+    pivots: [
+      brand_campaign_moment_page.branch
+    ]
+    filters:
+      brand_campaign_moment_page.metric: 'uri_count'
+      brand_campaign_moment_page.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: brand_campaign_moment_page.submission_date
@@ -199,7 +165,75 @@
       brand_campaign_moment_page.metric: 'search_count'
       brand_campaign_moment_page.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: brand_campaign_moment_page.submission_date
+    field_y: brand_campaign_moment_page.point
+    log_scale: false
+    ci_lower: brand_campaign_moment_page.lower
+    ci_upper: brand_campaign_moment_page.upper
+    show_grid: true
+    listen:
+      Date: brand_campaign_moment_page.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: brand_campaign_moment_page
+    type: looker_line
+    fields: [
+      brand_campaign_moment_page.submission_date,
+      brand_campaign_moment_page.branch,
+      brand_campaign_moment_page.point
+    ]
+    pivots: [
+      brand_campaign_moment_page.branch
+    ]
+    filters:
+      brand_campaign_moment_page.metric: 'ad_clicks'
+      brand_campaign_moment_page.statistic: mean
+    row: 20
     col: 12
+    width: 12
+    height: 8
+    field_x: brand_campaign_moment_page.submission_date
+    field_y: brand_campaign_moment_page.point
+    log_scale: false
+    ci_lower: brand_campaign_moment_page.lower
+    ci_upper: brand_campaign_moment_page.upper
+    show_grid: true
+    listen:
+      Date: brand_campaign_moment_page.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: brand_campaign_moment_page
+    type: looker_line
+    fields: [
+      brand_campaign_moment_page.submission_date,
+      brand_campaign_moment_page.branch,
+      brand_campaign_moment_page.point
+    ]
+    pivots: [
+      brand_campaign_moment_page.branch
+    ]
+    filters:
+      brand_campaign_moment_page.metric: 'qualified_cumulative_days_of_use'
+      brand_campaign_moment_page.statistic: mean
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: brand_campaign_moment_page.submission_date
@@ -235,41 +269,6 @@
       brand_campaign_moment_page.metric: 'memory_total'
       brand_campaign_moment_page.statistic: percentile
     row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: brand_campaign_moment_page.submission_date
-    field_y: brand_campaign_moment_page.point
-    log_scale: false
-    ci_lower: brand_campaign_moment_page.lower
-    ci_upper: brand_campaign_moment_page.upper
-    show_grid: true
-    listen:
-      Date: brand_campaign_moment_page.submission_date
-      Percentile: brand_campaign_moment_page.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: brand_campaign_moment_page
-    type: looker_line
-    fields: [
-      brand_campaign_moment_page.submission_date,
-      brand_campaign_moment_page.branch,
-      brand_campaign_moment_page.point
-    ]
-    pivots: [
-      brand_campaign_moment_page.branch
-    ]
-    filters:
-      brand_campaign_moment_page.metric: 'active_hours'
-      brand_campaign_moment_page.statistic: mean
-    row: 30
     col: 12
     width: 12
     height: 8
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: brand_campaign_moment_page.submission_date
+      Percentile: brand_campaign_moment_page.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
