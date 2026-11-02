@@ -132,7 +132,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'checkerboard_severity'
+    default_value: 'gc_budget_overrun'
     allow_multiple_values: false
     required: true
     ui_config:

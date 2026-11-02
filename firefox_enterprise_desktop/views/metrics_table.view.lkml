@@ -932,6 +932,8 @@ Child-process data will likely be absent, or incomplete.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Formautofill Creditcards Cvv Saving Enabled"
+    description: "Whether saving security codes (CVV) is turned on. Set at startup, so it is sent on every metrics ping. Only set when security codes are supported.
+"
   }
 
   dimension: metrics__boolean__formautofill_os_auth_enabled {
@@ -1679,6 +1681,8 @@ Windows only.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Theme Picker Native Theme"
+    description: "Whether native theme styling is enabled, i.e. the value of the `browser.theme.native-theme` preference. Its default differs by platform. Recorded at startup and again on each daily idle. A default value doesn't distinguish users who never changed the setting from users who changed it and switched back.
+"
   }
 
   dimension: metrics__boolean__update_settings_auto_download {
@@ -12637,6 +12641,8 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__network_apple_fast_datapath_probe {
     sql: ${TABLE}.metrics.labeled_counter.network_apple_fast_datapath_probe ;;
     hidden: yes
+    description: "Outcome of the Apple fast datapath (sendmsg_x/recvmsg_x) probe at startup. Only recorded on Apple platforms.
+"
   }
 
   dimension: metrics__labeled_counter__network_back_pressure_suspension_rate {
@@ -15048,6 +15054,9 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
   dimension: metrics__labeled_custom_distribution__netwerk_happy_eyeballs_last_answer_to_attempt {
     sql: ${TABLE}.metrics.labeled_custom_distribution.netwerk_happy_eyeballs_last_answer_to_attempt ;;
     hidden: yes
+    description: "Happy Eyeballs: time in milliseconds from the last positive DNS answer to the first connection attempt of a single algorithm run, i.e. the time spent waiting after happy_eyeballs_dns_answer_spread ends. Recorded once per run.
+Labels describe what ended the wait: - no_wait: No algorithmic wait, or gap below 1 ms; may include processing delay. - address_negative: Negative preferred-family answer ended the wait. - https_negative: Negative HTTPS answer ended the wait. - address_timeout: Timer expired awaiting the preferred address family. - https_timeout: Timer expired awaiting HTTPS. - both_timeout: Timer expired awaiting both.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__network_cache_entry_count {
@@ -15504,26 +15513,36 @@ resumes.
   dimension: metrics__labeled_timing_distribution__browser_migration_bookmarks_import_duration {
     sql: ${TABLE}.metrics.labeled_timing_distribution.browser_migration_bookmarks_import_duration ;;
     hidden: yes
+    description: "How long it took to import bookmarks from another browser, keyed by the key of the migrator that performed the migration. Each resource of this type is timed separately.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__browser_migration_cards_import_duration {
     sql: ${TABLE}.metrics.labeled_timing_distribution.browser_migration_cards_import_duration ;;
     hidden: yes
+    description: "How long it took to import credit card entries from another browser, keyed by the key of the migrator that performed the migration. Each resource of this type is timed separately.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__browser_migration_extensions_import_duration {
     sql: ${TABLE}.metrics.labeled_timing_distribution.browser_migration_extensions_import_duration ;;
     hidden: yes
+    description: "How long it took to import extensions from another browser, keyed by the key of the migrator that performed the migration. Each resource of this type is timed separately.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__browser_migration_history_import_duration {
     sql: ${TABLE}.metrics.labeled_timing_distribution.browser_migration_history_import_duration ;;
     hidden: yes
+    description: "How long it took to import history from another browser, keyed by the key of the migrator that performed the migration. Each resource of this type is timed separately.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__browser_migration_logins_import_duration {
     sql: ${TABLE}.metrics.labeled_timing_distribution.browser_migration_logins_import_duration ;;
     hidden: yes
+    description: "How long it took to import logins (passwords) from another browser, keyed by the key of the migrator that performed the migration. Each resource of this type is timed separately.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__content_analysis_response_duration_by_analysis_type {
@@ -20237,6 +20256,8 @@ e.g. \"Mozilla.Firefox_n80bbvh6b1yt2\"
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Theme Picker Appearance"
+    description: "The current appearance mode from the theme picker, one of `\"light\"`, `\"dark\"`, or `\"device\"`, derived from the `ui.systemUsesDarkTheme` preference. Recorded at startup and again on each daily idle. A value of `\"device\"` doesn't distinguish users who never changed the setting from users who changed it and switched back.
+"
   }
 
   dimension: metrics__string__update_settings_channel {
