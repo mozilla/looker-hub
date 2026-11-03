@@ -699,7 +699,7 @@ view: experimenter_experiments__metric_config__metrics__statistics {
   dimension: analysis_periods {
     sql: ${TABLE}.analysis_periods ;;
     hidden: yes
-    description: "Analysis periods (daily, weekly, days28, overall, preenrollment_weekly, preenrollment_days28) this statistic is computed for."
+    description: "Analysis periods (day, week, days28, overall, preenrollment_week, preenrollment_days28) this statistic is computed for."
   }
 
   dimension: name {
