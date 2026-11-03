@@ -838,6 +838,8 @@ This metric is only attached to a ping if it already contains other data.
   dimension: metrics__string_list__newtab_widgets_home_list {
     sql: ${TABLE}.metrics.string_list.newtab_widgets_home_list ;;
     hidden: yes
+    description: "The list of widget telemetry names pinned to the Home space that it currently shows. Recorded at startup and whenever the user pins or unpins a widget or a widget is enabled or disabled. Only set in layouts where users pin widgets to Home, so an empty list means nothing is pinned there.
+"
   }
 
   dimension: metrics__text__topsites_sponsored_tiles_received {

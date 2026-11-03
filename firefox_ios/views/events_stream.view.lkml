@@ -435,6 +435,15 @@ view: events_stream {
     description: "Whether the user is enrolled in the Sent from Firefox experiment."
   }
 
+  dimension: extras__boolean__is_follow_up {
+    sql: ${TABLE}.extras.boolean.is_follow_up ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Follow Up"
+    description: "True when the event belongs to a question asked after a previous answer in the same Quick Answers session, false for the first question."
+  }
+
   dimension: extras__boolean__is_homepage {
     sql: ${TABLE}.extras.boolean.is_homepage ;;
     type: yesno
