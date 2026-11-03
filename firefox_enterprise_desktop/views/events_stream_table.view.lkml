@@ -8362,9 +8362,9 @@ view: events_stream_table {
     description: "Depending on the type of event:
 * Version of the monitor prompt used for the monitor.
 * Major version of the chat prompt used for this request.
-* Remote Settings prompt configuration version, or empty if unavailable
 * Version of the generation prompt config.
 * Version of the relevant tabs prompt config.
+* Remote Settings prompt configuration version, or empty if unavailable
 * Version of the classification prompt config."
   }
 
@@ -9711,9 +9711,7 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Tool Name"
-    description: "Depending on the type of event:
-* Name of the invoked tool, e.g. \"run_search\", \"get_open_tabs\", \"search_browsing_history\", \"get_user_memories\"
-* Name of the requested tool, e.g. \"run_search\", \"get_open_tabs\", \"search_browsing_history\", \"get_user_memories\""
+    description: "Name of the invoked tool, e.g. \"run_search\", \"get_open_tabs\", \"search_browsing_history\", \"get_user_memories\""
   }
 
   dimension: extras__string__top_preferred_language {

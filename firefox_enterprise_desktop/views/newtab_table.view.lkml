@@ -835,6 +835,11 @@ This metric is only attached to a ping if it already contains other data.
 "
   }
 
+  dimension: metrics__string_list__newtab_widgets_home_list {
+    sql: ${TABLE}.metrics.string_list.newtab_widgets_home_list ;;
+    hidden: yes
+  }
+
   dimension: metrics__text__topsites_sponsored_tiles_received {
     sql: ${TABLE}.metrics.text.topsites_sponsored_tiles_received ;;
     type: string
