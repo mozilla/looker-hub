@@ -10,74 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: remote_settings_v2_api_test_ios
-    type: looker_line
-    fields: [
-      remote_settings_v2_api_test_ios.submission_date,
-      remote_settings_v2_api_test_ios.branch,
-      remote_settings_v2_api_test_ios.point
-    ]
-    pivots: [
-      remote_settings_v2_api_test_ios.branch
-    ]
-    filters:
-      remote_settings_v2_api_test_ios.metric: 'search_count'
-      remote_settings_v2_api_test_ios.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: remote_settings_v2_api_test_ios.submission_date
-    field_y: remote_settings_v2_api_test_ios.point
-    log_scale: false
-    ci_lower: remote_settings_v2_api_test_ios.lower
-    ci_upper: remote_settings_v2_api_test_ios.upper
-    show_grid: true
-    listen:
-      Date: remote_settings_v2_api_test_ios.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: remote_settings_v2_api_test_ios
-    type: looker_line
-    fields: [
-      remote_settings_v2_api_test_ios.submission_date,
-      remote_settings_v2_api_test_ios.branch,
-      remote_settings_v2_api_test_ios.point
-    ]
-    pivots: [
-      remote_settings_v2_api_test_ios.branch
-    ]
-    filters:
-      remote_settings_v2_api_test_ios.metric: 'ad_clicks'
-      remote_settings_v2_api_test_ios.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: remote_settings_v2_api_test_ios.submission_date
-    field_y: remote_settings_v2_api_test_ios.point
-    log_scale: false
-    ci_lower: remote_settings_v2_api_test_ios.lower
-    ci_upper: remote_settings_v2_api_test_ios.upper
-    show_grid: true
-    listen:
-      Date: remote_settings_v2_api_test_ios.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -96,7 +28,7 @@
     filters:
       remote_settings_v2_api_test_ios.metric: 'active_hours'
       remote_settings_v2_api_test_ios.statistic: mean
-    row: 10
+    row: 0
     col: 0
     width: 12
     height: 8
@@ -129,6 +61,74 @@
     ]
     filters:
       remote_settings_v2_api_test_ios.metric: 'retained'
+      remote_settings_v2_api_test_ios.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: remote_settings_v2_api_test_ios.submission_date
+    field_y: remote_settings_v2_api_test_ios.point
+    log_scale: false
+    ci_lower: remote_settings_v2_api_test_ios.lower
+    ci_upper: remote_settings_v2_api_test_ios.upper
+    show_grid: true
+    listen:
+      Date: remote_settings_v2_api_test_ios.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: remote_settings_v2_api_test_ios
+    type: looker_line
+    fields: [
+      remote_settings_v2_api_test_ios.submission_date,
+      remote_settings_v2_api_test_ios.branch,
+      remote_settings_v2_api_test_ios.point
+    ]
+    pivots: [
+      remote_settings_v2_api_test_ios.branch
+    ]
+    filters:
+      remote_settings_v2_api_test_ios.metric: 'ad_clicks'
+      remote_settings_v2_api_test_ios.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: remote_settings_v2_api_test_ios.submission_date
+    field_y: remote_settings_v2_api_test_ios.point
+    log_scale: false
+    ci_lower: remote_settings_v2_api_test_ios.lower
+    ci_upper: remote_settings_v2_api_test_ios.upper
+    show_grid: true
+    listen:
+      Date: remote_settings_v2_api_test_ios.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: remote_settings_v2_api_test_ios
+    type: looker_line
+    fields: [
+      remote_settings_v2_api_test_ios.submission_date,
+      remote_settings_v2_api_test_ios.branch,
+      remote_settings_v2_api_test_ios.point
+    ]
+    pivots: [
+      remote_settings_v2_api_test_ios.branch
+    ]
+    filters:
+      remote_settings_v2_api_test_ios.metric: 'search_count'
       remote_settings_v2_api_test_ios.statistic: mean
     row: 10
     col: 12

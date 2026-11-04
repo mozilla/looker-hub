@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       show_blocked_trackers_microsurvey_control.branch
     ]
     filters:
-      show_blocked_trackers_microsurvey_control.metric: 'search_count'
+      show_blocked_trackers_microsurvey_control.metric: 'active_hours'
       show_blocked_trackers_microsurvey_control.statistic: mean
     row: 0
     col: 0
@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: show_blocked_trackers_microsurvey_control
-    type: looker_line
-    fields: [
-      show_blocked_trackers_microsurvey_control.submission_date,
-      show_blocked_trackers_microsurvey_control.branch,
-      show_blocked_trackers_microsurvey_control.point
-    ]
-    pivots: [
-      show_blocked_trackers_microsurvey_control.branch
-    ]
-    filters:
-      show_blocked_trackers_microsurvey_control.metric: 'active_hours'
-      show_blocked_trackers_microsurvey_control.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: show_blocked_trackers_microsurvey_control.submission_date
-    field_y: show_blocked_trackers_microsurvey_control.point
-    log_scale: false
-    ci_lower: show_blocked_trackers_microsurvey_control.lower
-    ci_upper: show_blocked_trackers_microsurvey_control.upper
-    show_grid: true
-    listen:
-      Date: show_blocked_trackers_microsurvey_control.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       show_blocked_trackers_microsurvey_control.metric: 'retained'
+      show_blocked_trackers_microsurvey_control.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: show_blocked_trackers_microsurvey_control.submission_date
+    field_y: show_blocked_trackers_microsurvey_control.point
+    log_scale: false
+    ci_lower: show_blocked_trackers_microsurvey_control.lower
+    ci_upper: show_blocked_trackers_microsurvey_control.upper
+    show_grid: true
+    listen:
+      Date: show_blocked_trackers_microsurvey_control.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: show_blocked_trackers_microsurvey_control
+    type: looker_line
+    fields: [
+      show_blocked_trackers_microsurvey_control.submission_date,
+      show_blocked_trackers_microsurvey_control.branch,
+      show_blocked_trackers_microsurvey_control.point
+    ]
+    pivots: [
+      show_blocked_trackers_microsurvey_control.branch
+    ]
+    filters:
+      show_blocked_trackers_microsurvey_control.metric: 'search_count'
       show_blocked_trackers_microsurvey_control.statistic: mean
     row: 10
     col: 12
@@ -180,6 +180,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: show_blocked_trackers_microsurvey_control
+    type: looker_line
+    fields: [
+      show_blocked_trackers_microsurvey_control.submission_date,
+      show_blocked_trackers_microsurvey_control.branch,
+      show_blocked_trackers_microsurvey_control.point
+    ]
+    pivots: [
+      show_blocked_trackers_microsurvey_control.branch
+    ]
+    filters:
+      show_blocked_trackers_microsurvey_control.metric: 'days_of_use'
+      show_blocked_trackers_microsurvey_control.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: show_blocked_trackers_microsurvey_control.submission_date
+    field_y: show_blocked_trackers_microsurvey_control.point
+    log_scale: false
+    ci_lower: show_blocked_trackers_microsurvey_control.lower
+    ci_upper: show_blocked_trackers_microsurvey_control.upper
+    show_grid: true
+    listen:
+      Date: show_blocked_trackers_microsurvey_control.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -198,8 +232,8 @@
     filters:
       show_blocked_trackers_microsurvey_control.metric: 'uri_count'
       show_blocked_trackers_microsurvey_control.statistic: mean
-    row: 20
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: show_blocked_trackers_microsurvey_control.submission_date
@@ -235,41 +269,6 @@
       show_blocked_trackers_microsurvey_control.metric: 'memory_total'
       show_blocked_trackers_microsurvey_control.statistic: percentile
     row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: show_blocked_trackers_microsurvey_control.submission_date
-    field_y: show_blocked_trackers_microsurvey_control.point
-    log_scale: false
-    ci_lower: show_blocked_trackers_microsurvey_control.lower
-    ci_upper: show_blocked_trackers_microsurvey_control.upper
-    show_grid: true
-    listen:
-      Date: show_blocked_trackers_microsurvey_control.submission_date
-      Percentile: show_blocked_trackers_microsurvey_control.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: show_blocked_trackers_microsurvey_control
-    type: looker_line
-    fields: [
-      show_blocked_trackers_microsurvey_control.submission_date,
-      show_blocked_trackers_microsurvey_control.branch,
-      show_blocked_trackers_microsurvey_control.point
-    ]
-    pivots: [
-      show_blocked_trackers_microsurvey_control.branch
-    ]
-    filters:
-      show_blocked_trackers_microsurvey_control.metric: 'days_of_use'
-      show_blocked_trackers_microsurvey_control.statistic: mean
-    row: 30
     col: 12
     width: 12
     height: 8
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: show_blocked_trackers_microsurvey_control.submission_date
+      Percentile: show_blocked_trackers_microsurvey_control.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

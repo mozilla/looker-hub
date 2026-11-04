@@ -132,7 +132,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'gc_ms_content'
+    default_value: 'js_pageload_execution_ms'
     allow_multiple_values: false
     required: true
     ui_config:
