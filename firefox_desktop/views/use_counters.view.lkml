@@ -5,6 +5,23 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: use_counters {
+  dimension: metrics__labeled_counter__security_trusted_types_readiness {
+    label: "Security: Trusted Types Readiness"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.security_trusted_types_readiness ;;
+    group_label: "Security"
+    group_item_label: "Trusted Types Readiness"
+
+    link: {
+      label: "Glean Dictionary reference for Security: Trusted Types Readiness"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/security_trusted_types_readiness"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts content documents at destruction, labeled by a combination of signals indicating how ready the document is to adopt Trusted Types. Each document increments exactly one label of the form `htmlsink-{none,trusted,string}_writesink-{none,trusted,string}_ttcsp-{none,report,enforce}_strictcsp-{none,report,enforce}_created-{0,1}_used-{0,1}_lib-{0,1}_js-{0,1}`. `htmlsink` is what was passed to a TrustedHTML sink other than `document.write`: `innerHTML`, `outerHTML`, `insertAdjacentHTML`, `setHTMLUnsafe`, `Document.parseHTMLUnsafe`, `Range.createContextualFragment`, `DOMParser.parseFromString` or an iframe's `srcdoc`, and `writesink` what was passed to `document.write` or `document.writeln`: `none` if no such sink was used, `string` if a string was passed at least once, and `trusted` if only `TrustedHTML` was passed. `ttcsp` is the disposition of the `require-trusted-types-for` CSP directive at document destruction, so it includes policies added after load (e.g. by a `<meta>` element). `strictcsp` is the disposition of a strict CSP, i.e. a policy whose directive for script elements contains `'strict-dynamic'` and whose `base-uri` is `'none'`. `created` is whether a Trusted Types policy was created and `used` whether a policy was invoked (explicitly or implicitly as the default policy) for any of `createHTML`, `createScript` or `createScriptURL`, unlike the sinks which only cover HTML sinks; `used` implies `created`. `lib` is whether a library that eases Trusted Types adoption was detected: Lit by its `lit-html` policy, counted even if the CSP blocked it, React by its lookup of `__REACT_DEVTOOLS_GLOBAL_HOOK__` if that global still does not exist after load, or otherwise by that hook holding React or being defined by the page, htmx by an `htmx` global and Angular by an `ng-version` attribute on `body` or one of its first children, all once after the load event. `js` is whether script of the document itself ran, from a script element, an event handler attribute or a `javascript:` URL; with `js-0`, the sinks are `none` and `created`, `used` and `lib` are 0. Only recorded while `dom.security.trusted_types.readiness_telemetry.enabled` is set. Compare against `use.counter.content_documents_destroyed`.
+"
+  }
+
   dimension: metrics__counter__use_counter_content_documents_destroyed {
     label: "Use Counter: Content Documents Destroyed"
     hidden: no
@@ -129837,6 +129854,47 @@ view: use_counters__metrics__labeled_counter__glean_error_invalid_state {
 
 view: use_counters__metrics__labeled_counter__glean_error_invalid_value {
   label: "Glean Error: Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${use_counters.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${use_counters.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${use_counters.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: use_counters__metrics__labeled_counter__security_trusted_types_readiness {
+  label: "Security: Trusted Types Readiness"
 
   dimension: document_id {
     type: string

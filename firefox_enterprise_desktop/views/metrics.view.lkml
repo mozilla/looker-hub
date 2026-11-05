@@ -8284,6 +8284,28 @@ metrics ping carries the current count.
 "
   }
 
+  dimension: metrics__string__smart_window_auth_impl {
+    label: "Smart Window: Auth Impl"
+    hidden: no
+    sql: ${TABLE}.metrics.string.smart_window_auth_impl ;;
+    type: string
+    group_label: "Smart Window"
+    group_item_label: "Auth Impl"
+
+    link: {
+      label: "Glean Dictionary reference for Smart Window: Auth Impl"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/smart_window_auth_impl"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Smart Window auth provider currently in use. One of: fxa (Mozilla
+account) or guest (guest token, no account). Set when a provider is
+chosen, which happens the first time Smart Window needs one, and again
+whenever it switches. Lets other Smart Window metrics be split by guest
+vs fxa.
+"
+  }
+
   dimension: metrics__labeled_counter__smart_window_bookmarkbar {
     label: "Smart Window: Bookmarkbar"
     hidden: yes

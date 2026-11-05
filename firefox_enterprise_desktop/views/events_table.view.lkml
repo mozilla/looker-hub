@@ -449,6 +449,54 @@ view: events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__browser_backup_scheduler_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_scheduler_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Browser Backup Scheduler Enabled"
+  }
+
+  dimension: metrics__boolean__fxa_account_enabled {
+    sql: ${TABLE}.metrics.boolean.fxa_account_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Fxa Account Enabled"
+  }
+
+  dimension: metrics__boolean__fxa_sync_enabled {
+    sql: ${TABLE}.metrics.boolean.fxa_sync_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Fxa Sync Enabled"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_enabled {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Genai Chatbot Enabled"
+  }
+
+  dimension: metrics__boolean__os_environment_is_kept_in_dock {
+    sql: ${TABLE}.metrics.boolean.os_environment_is_kept_in_dock ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "OS Environment Is Kept In Dock"
+  }
+
+  dimension: metrics__boolean__os_environment_is_taskbar_pinned {
+    sql: ${TABLE}.metrics.boolean.os_environment_is_taskbar_pinned ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "OS Environment Is Taskbar Pinned"
+  }
+
   dimension: metrics__boolean__policies_is_enterprise {
     sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
     type: yesno
@@ -615,11 +663,58 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__counter__pdfjs_used {
+    sql: ${TABLE}.metrics.counter.pdfjs_used ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Pdfjs Used"
+  }
+
+  dimension: metrics__counter__power_total_cpu_time_ms {
+    sql: ${TABLE}.metrics.counter.power_total_cpu_time_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Power Total CPU Time Ms"
+  }
+
+  dimension: metrics__counter__power_total_gpu_time_ms {
+    sql: ${TABLE}.metrics.counter.power_total_gpu_time_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Power Total GPU Time Ms"
+  }
+
+  dimension: metrics__counter__power_total_thread_wakeups {
+    sql: ${TABLE}.metrics.counter.power_total_thread_wakeups ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Power Total Thread Wakeups"
+  }
+
   dimension: metrics__dual_labeled_counter__media_error {
     sql: ${TABLE}.metrics.dual_labeled_counter.media_error ;;
     hidden: yes
     description: "Count of errors surfaced on a media element, keyed by error type and whether the playback is encrypted. Serves as a high-level signal for all media error categories.
 "
+  }
+
+  dimension: metrics__labeled_boolean__os_environment_is_default_handler {
+    sql: ${TABLE}.metrics.labeled_boolean.os_environment_is_default_handler ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_cert_revocation_mechanisms ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_status {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -652,6 +747,51 @@ The labels are the `category.name` identifier of the metric.
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
+  }
+
+  dimension: metrics__labeled_counter__os_environment_invoked_to_handle {
+    sql: ${TABLE}.metrics.labeled_counter.os_environment_invoked_to_handle ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__os_environment_launched_to_handle {
+    sql: ${TABLE}.metrics.labeled_counter.os_environment_launched_to_handle ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_kind {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_kind ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_organize_action {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_organize_action ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_stamp {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_stamp ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__splitview_uri_count {
+    sql: ${TABLE}.metrics.labeled_counter.splitview_uri_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__tabgroup_tab_interactions {
+    sql: ${TABLE}.metrics.labeled_counter.tabgroup_tab_interactions ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_searchbutton {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_searchbutton ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
@@ -699,6 +839,11 @@ resumes.
 "
   }
 
+  dimension: metrics__object__addons_theme {
+    sql: ${TABLE}.metrics.object.addons_theme ;;
+    hidden: yes
+  }
+
   dimension: metrics__object__glean_attribution_ext {
     sql: ${TABLE}.metrics.object.glean_attribution_ext ;;
     hidden: yes
@@ -742,6 +887,14 @@ Mapped to client_info.distribution.ext in datasets.
 "
   }
 
+  dimension: metrics__quantity__tabgroup_saved_groups {
+    sql: ${TABLE}.metrics.quantity.tabgroup_saved_groups ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Tabgroup Saved Groups"
+  }
+
   dimension: metrics__quantity__urlbar_pref_max_results {
     sql: ${TABLE}.metrics.quantity.urlbar_pref_max_results ;;
     type: number
@@ -762,6 +915,22 @@ Corresponds to the value of the `browser.urlbar.maxRichResults` pref.
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
 "
+  }
+
+  dimension: metrics__string__os_environment_launch_method {
+    sql: ${TABLE}.metrics.string.os_environment_launch_method ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "OS Environment Launch Method"
+  }
+
+  dimension: metrics__string__os_environment_launch_on_login_state {
+    sql: ${TABLE}.metrics.string.os_environment_launch_on_login_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "OS Environment Launch On Login State"
   }
 
   dimension: metrics__string__region_home_region {
@@ -900,6 +1069,14 @@ be `other`.
 "
   }
 
+  dimension: metrics__string__sidebar_tabs_layout {
+    sql: ${TABLE}.metrics.string.sidebar_tabs_layout ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Sidebar Tabs Layout"
+  }
+
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
@@ -908,6 +1085,19 @@ Should be the same as the ones defined for that particular ping.
 
 This metric is only attached to a ping if it already contains other data.
 "
+  }
+
+  dimension: metrics__timing_distribution__web_app_usage_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.web_app_usage_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Web App Usage Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__web_app_usage_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.web_app_usage_time.values ;;
+    hidden: yes
   }
 
   dimension: metrics__url__search_engine_default_submission_url {
@@ -986,6 +1176,14 @@ Might not always have a value due to being too early for it to have
 loaded.
 Does not need to be sent in the Glean \"deletion-request\" ping.
 "
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_session_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_session_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: UUID"
+    group_item_label: "Legacy Telemetry Session ID"
   }
 
   dimension: normalized_app_name {
@@ -1287,6 +1485,20 @@ view: events_table__metrics__dual_labeled_counter__media_error__value {
   }
 }
 
+view: events_table__metrics__labeled_boolean__os_environment_is_default_handler {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: events_table__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -1344,6 +1556,20 @@ view: events_table__metrics__labeled_timing_distribution__browser_engagement_ina
 }
 
 view: events_table__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: events_table__metrics__timing_distribution__web_app_usage_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

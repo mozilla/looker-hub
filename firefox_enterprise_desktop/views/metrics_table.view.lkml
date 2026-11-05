@@ -20054,6 +20054,14 @@ be `other`.
 "
   }
 
+  dimension: metrics__string__smart_window_auth_impl {
+    sql: ${TABLE}.metrics.string.smart_window_auth_impl ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Smart Window Auth Impl"
+  }
+
   dimension: metrics__string__smart_window_model {
     sql: ${TABLE}.metrics.string.smart_window_model ;;
     type: string

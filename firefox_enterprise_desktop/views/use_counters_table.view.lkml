@@ -30711,6 +30711,11 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_counter__security_trusted_types_readiness {
+    sql: ${TABLE}.metrics.labeled_counter.security_trusted_types_readiness ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__use_counter_error_unknown_counter {
     sql: ${TABLE}.metrics.labeled_counter.use_counter_error_unknown_counter ;;
     hidden: yes
