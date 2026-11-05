@@ -688,15 +688,6 @@ view: events_stream {
     description: "There is a matching cookie rule for the reloading domain."
   }
 
-  dimension: extras__boolean__has_cvv {
-    sql: ${TABLE}.extras.boolean.has_cvv ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Has Cvv"
-    description: "Whether a security code was involved: the card being written carried one, the code being cleared, or a card being read has one. Absent when a failed read could not tell."
-  }
-
   dimension: extras__boolean__has_description {
     sql: ${TABLE}.extras.boolean.has_description ;;
     type: yesno
@@ -3627,15 +3618,6 @@ view: events_stream {
 * Number of connected devices available to send tabs to"
   }
 
-  dimension: extras__string__device_kind {
-    sql: ${TABLE}.extras.string.device_kind ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Device Kind"
-    description: "Kind of the device that loaded the model: cpu, gpu or npu. Only llama.cpp in the HWInference process reports it; null for every other engine."
-  }
-
   dimension: extras__string__device_name {
     sql: ${TABLE}.extras.string.device_name ;;
     type: string
@@ -3825,8 +3807,8 @@ view: events_stream {
     description: "Depending on the type of event:
 * Engine id
 * engine id
-* The Engine Id of the created inference engine
-* model id"
+* model id
+* The Engine Id of the created inference engine"
   }
 
   dimension: extras__string__engine_id {
@@ -3990,8 +3972,7 @@ view: events_stream {
 * A string set to determine which kind of errors originated from IOUtils.writeJSON was hit by JSONFile.save. The expected values are: - \"TooMuchRecursion\" (if the error hit was an \"too much recursion\" InternalError - the value set on `name` property of the error object instance - \"Unknown\" as a fallback if the error object did not have a `name` property and it wasn't detected as a \"too much recursion\" error.
 * If an error occurred, a human-readable name for the failure (typically the exception class name, e.g. \"RateLimited\", \"RequestTooLarge\").
 * If an error occurred, the resulting error code. Examples include: 1005 (meaning content was too large to summarize) 1007 (meaning LLM service has rate-limited the user)
-* The error type of the error page encountered
-* The UniFFI error variant the store threw, e.g. \"CryptoError\" or \"SqlError\". \"PrimaryPasswordLocked\" when the user declined or has not entered the primary password; filter it out to count real failures. \"Unknown\" for an..."
+* The error type of the error page encountered"
   }
 
   dimension: extras__string__etld {
@@ -5422,7 +5403,6 @@ view: events_stream {
 * \"refresh\" if a selection in effect vanished from a refreshed list, or \"restore\" if a saved selection was unavailable before it was applied.
 * \"search\", \"list\", \"count\" or \"record_password_use\".
 * \"user_action\" when the user tapped a location in the location list, \"restore\" when a saved location was applied at startup, \"reset\" when the previous location was put back after a failed switch.
-* \"add\": a new card was being saved. \"update\": a stored card was being changed. \"clear\": a stored card's security code was being removed. \"read\": one or all stored cards were being read.
 * The operation being performed when the incompatible format was found (e.g. addLogin, modifyLogin, removeLogin)."
   }
 
@@ -6906,11 +6886,11 @@ view: events_stream {
 * Which user interaction triggered the event.
 * The reason why this confirmation was triggered. Values: [cp-connectivity, pref-change, context-init, retry, failed-lookups]
 * A label to distinguish what triggered the polling/fetching of remote content (eg. \"broadcast\", \"timer\", \"forced\", \"manual\")
-* The element that triggered the polling/fetching of remote content (eg. ``\"broadcast\"``, ``\"timer\"``, ``\"forced\"``, ``\"manual\"``).
 * How the user initiated summarization. Possible values: \"shake\", \"menu\".
 * How the user initiated summarization. Possible values: \"shake\", \"menu\", \"toolbar_button\".
 * What triggered the OS Keystore Popup. \"edit\" - when editing credit cards \"autofill\" - when autofilling credit cards
-* The cause of the filter change: error, warn, log, info, debug, css, netxhr, net, chrome, content, ..."
+* The cause of the filter change: error, warn, log, info, debug, css, netxhr, net, chrome, content, text or reset and all, html, css, js, xhr, fonts, images, media, ws or other for netmonitor
+* The element that triggered the polling..."
   }
 
   dimension: extras__string__trr {
@@ -6931,7 +6911,6 @@ view: events_stream {
     description: "Depending on the type of event:
 * The type of top site. Options are: \"FRECENCY\", \"DEFAULT\", \"PINNED\", or \"PROVIDED\"
 * A string containing the name of the tab view the user tapped. These items include: list or grid.
-* The type of top site. Options are: \"FRECENT\", \"DEFAULT\", \"DEFAULT_PINNED\", \"PINNED\", or \"PROVIDED\"
 * type, draw, text."
   }
 
@@ -7102,17 +7081,6 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "View Name"
     description: "The type of view shown in the panel."
-  }
-
-  dimension: extras__string__widget_type {
-    sql: ${TABLE}.extras.string.widget_type ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Widget Type"
-    description: "Depending on the type of event:
-* The search widget variant the user tapped. Possible values are: `search_bar`, `search_bar_actions`, `bar_compact` or `legacy`.
-* The search widget variant the user added. Possible values are: `search_bar`, `search_bar_actions`, `bar_compact` or `legacy`."
   }
 
   dimension: extras__string__width {
