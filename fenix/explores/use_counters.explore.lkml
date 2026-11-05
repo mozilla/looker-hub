@@ -33,6 +33,11 @@ explore: use_counters {
     sql: LEFT JOIN UNNEST(${use_counters.metrics__labeled_counter__glean_error_invalid_value}) AS use_counters__metrics__labeled_counter__glean_error_invalid_value ON ${use_counters.document_id} = ${use_counters__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
 
+  join: use_counters__metrics__labeled_counter__security_trusted_types_readiness {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${use_counters.metrics__labeled_counter__security_trusted_types_readiness}) AS use_counters__metrics__labeled_counter__security_trusted_types_readiness ON ${use_counters.document_id} = ${use_counters__metrics__labeled_counter__security_trusted_types_readiness.document_id} ;;
+  }
+
   join: use_counters__metrics__labeled_counter__use_counter_error_unknown_counter {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${use_counters.metrics__labeled_counter__use_counter_error_unknown_counter}) AS use_counters__metrics__labeled_counter__use_counter_error_unknown_counter ON ${use_counters.document_id} = ${use_counters__metrics__labeled_counter__use_counter_error_unknown_counter.document_id} ;;

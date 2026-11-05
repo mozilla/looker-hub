@@ -431,6 +431,15 @@ view: events_stream {
 * The checked state of the fingerprinting protection checkbox"
   }
 
+  dimension: extras__boolean__com_fallback {
+    sql: ${TABLE}.extras.boolean.com_fallback ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Com Fallback"
+    description: "Whether pinning fell back to the undocumented COM API after the WinRT attempt failed. False when WinRT succeeded or when the caller requested prompt-only pinning."
+  }
+
   dimension: extras__boolean__confident {
     sql: ${TABLE}.extras.boolean.confident ;;
     type: yesno
@@ -708,7 +717,9 @@ view: events_stream {
     group_item_label: "Fxa"
     description: "Depending on the type of event:
 * Whether the user is signed in to their Firefox Account
-* Whether the user is signed in to their Firefox Account when the launch is requested. False means the launch sends the user through the sign-in flow first"
+* Whether the user is signed in to their Firefox Account when the launch is requested. False means the launch sends the user through the sign-in flow first
+* Whether a verified Mozilla account is signed in when the launch is requested. Reflects the Mozilla account only, so it is false by default for guest users; see auth_provider
+* Whether a verified Mozilla account is signed in. Reflects the Mozilla account only, so it is false by default for guest users; see auth_provider"
   }
 
   dimension: extras__boolean__hadPreviousJwt {
@@ -754,6 +765,15 @@ view: events_stream {
     group_label: "Extras: Boolean"
     group_item_label: "Has Been Saved"
     description: "Indicates if the signature was saved."
+  }
+
+  dimension: extras__boolean__has_cvv {
+    sql: ${TABLE}.extras.boolean.has_cvv ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Cvv"
+    description: "Whether a security code was involved: the card being written carried one, the code being cleared, or a card being read has one. Absent when a failed read could not tell."
   }
 
   dimension: extras__boolean__has_description {
@@ -2298,14 +2318,14 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Duration"
     description: "Depending on the type of event:
-* Total time of the run from start to its terminal event, including page extraction and the model call.
 * Engine creation time in milliseconds
+* Total time of the run from start to its terminal event, including page extraction and the model call.
 * Milliseconds the card stayed open
+* Time in ms to process the request
 * how long it took to reach the step from start
 * Total session duration in milliseconds.
 * How long the migration took (in milliseconds).
 * Milliseconds the menu was shown.
-* Time in ms to process the request
 * Total time of the run from start to completion, including page extraction and the model call.
 * Milliseconds elapsed to reach the step from its start. For end_file_download_* this is the time to download a single file; for end_download_* this is the total time to download the whole model.
 * Wall-clock milliseconds from reaching [[started]] to teardown."
@@ -2841,8 +2861,8 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Memories"
     description: "Depending on the type of event:
-* Number of memories included as context.
 * Number of memories included in the response
+* Number of memories included as context.
 * Number of memories available
 * Total number of memories available
 * Total number of memories still present after the removal"
@@ -4809,6 +4829,15 @@ view: events_stream {
     description: "The audio codec was being used when the error or crash happened"
   }
 
+  dimension: extras__string__auth_provider {
+    sql: ${TABLE}.extras.string.auth_provider ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Auth Provider"
+    description: "The Smart Window auth provider active when the event is recorded. One of: fxa (Mozilla account) or guest (guest token, no account)"
+  }
+
   dimension: extras__string__auto_admin {
     sql: ${TABLE}.extras.string.auto_admin ;;
     type: string
@@ -5745,6 +5774,15 @@ view: events_stream {
 * Number of connected devices available to send tabs to"
   }
 
+  dimension: extras__string__device_kind {
+    sql: ${TABLE}.extras.string.device_kind ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Device Kind"
+    description: "Kind of the device that loaded the model: cpu, gpu or npu. Only llama.cpp in the HWInference process reports it; null for every other engine."
+  }
+
   dimension: extras__string__device_name {
     sql: ${TABLE}.extras.string.device_name ;;
     type: string
@@ -6027,9 +6065,9 @@ view: events_stream {
 * Canonical error code, or absent on success: no_content, canceled, page_load_failed, page_not_found, conversation_unavailable, pages_unreadable, nothing_to_change, history_limit, empty_response, invalid_json, invalid_format, or generation_failed
 * Canonical error code, or absent on success: no_content, canceled, page_load_failed, page_not_found, conversation_unavailable, pages_unreadable, nothing_to_change, history_limit, empty_response, invalid_json, content_related, invalid_format, or generation_failed
 * Error code if Undo was not successful
+* Canonical chat error name, or empty on success
 * If the event value is \"decryptionError\" or \"encryptionError\", this contains the thrown error name (for example \"NS_ERROR_ILLEGAL_VALUE\").
-* A description of the error; one of: - DOMException:{name} (e.g., DOMException:AbortError) - NS_ERROR_* - the error constructor's name - the string \"(unknown)\"
-* Error code if the action was u..."
+* A description of the error; one of: - DOMException:{name} (e.g., DOMException:AbortError) - NS_ERROR_* - the error constructor's name - the st..."
   }
 
   dimension: extras__string__errorName {
@@ -6123,7 +6161,8 @@ view: events_stream {
 * Why the process failed, empty when success is true: the error's name, such as \"TypeError\", or \"TimeoutError\" when the process ran out of time. Error messages are never recorded, only the name, so no path, URL or tab title can appear here.
 * Why the process failed, empty when success is true: the error's name, such as \"TypeError\". Error messages are never recorded, only the name, so no path, URL or tab title can appear here.
 * A string set to determine which kind of errors originated from IOUtils.writeJSON was hit by JSONFile.save. The expected values are: - \"TooMuchRecursion\" (if the error hit was an \"too much recursion\" InternalError - the value set on `name` property of the error object instance - \"Unknown\" as a fallback if the error object did not have a `name` property and it wasn't detected as a \"too much recursion\" error.
-* Type of non-HTTP error. One of \"invalid-schema-error\", \"generic-error\", or \"max-retry-attempts-error\"."
+* Type of non-HTTP error. One of \"invalid-schema-error\", \"generic-error\", or \"max-retry-attempts-error\".
+* The UniFFI error variant the store threw..."
   }
 
   dimension: extras__string__etld {
@@ -6499,7 +6538,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "From"
-    description: "The original domain (eTLD+1) of the request that matched a search endpoint."
+    description: "Depending on the type of event:
+* The original domain (eTLD+1) of the request that matched a search endpoint.
+* The auth provider in use before the switch. One of: fxa (Mozilla account) or guest (guest token, no account)"
   }
 
   dimension: extras__string__from_container_id {
@@ -6745,7 +6786,17 @@ view: events_stream {
     group_item_label: "How Initiated"
     description: "Depending on the type of event:
 * How the generation was requested: tab_list, tab_group, chat, or chat_followup
+* How the generation was requested: tab_list, tab_group, fxms, chat, or chat_followup
 * How the modification was requested: chat, refresh, or chat_followup"
+  }
+
+  dimension: extras__string__hresult {
+    sql: ${TABLE}.extras.string.hresult ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Hresult"
+    description: "The HRESULT of the Windows error as a hex string (e.g. `0x80070490`). Only recorded when `result` is an `error_*` value."
   }
 
   dimension: extras__string__html_lang_attribute {
@@ -7010,6 +7061,15 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Item"
     description: "Which entry was clicked, e.g., settings."
+  }
+
+  dimension: extras__string__judge_model {
+    sql: ${TABLE}.extras.string.judge_model ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Judge Model"
+    description: "Model used as the judge to evaluate the conversation"
   }
 
   dimension: extras__string__key_system {
@@ -7761,6 +7821,7 @@ view: events_stream {
     description: "Depending on the type of event:
 * The type of operation that failed (e.g. \"add\", \"modify\", \"remove\", \"remove-all\", \"migration\", etc.).
 * \"search\", \"list\", \"count\" or \"record_password_use\".
+* \"add\": a new card was being saved. \"update\": a stored card was being changed. \"clear\": a stored card's security code was being removed. \"read\": one or all stored cards were being read.
 * The operation being performed when the incompatible format was found (e.g. addLogin, modifyLogin, removeLogin)."
   }
 
@@ -7878,9 +7939,9 @@ view: events_stream {
 * success or prefetch or error
 * \"ready\", \"unavailable\", or \"error\".
 * Whether the user kept the value. One of: kept, edited, or cleared.
+* How the flow ended. One of: completed (the user signed in), abandoned (the user closed the sign-in tab or window without finishing), blocked (an account cannot be connected, so the sign-in page was never shown), or error (the flow threw)
 * \"deleted\" if the user confirmed deleting, recorded when the deletion starts; \"cancelled\" if the user backed out with Cancel, the dialog's close button or Escape; \"dismissed\" if the dialog closed without a choice, for example from the Settings dialog's close button or because its window closed.
-* \"deleted\" if data was cleared, \"cancelled\" if the user explicitly backed out with Cancel, \"dismissed\" if the confirmation panel was closed without a choice, for example with Escape or a click outside it, \"aborted\" if the user confirmed but nothing was deleted because the windows could not be closed, for example when the user chose to stay on a page that asked before leaving.
-* What became of the page, one of: - \"restore_all\": the session was restored with every window and tab selected - \"restore_subset\": the session was restore..."
+* \"deleted\" if data was cleared, \"cancelled\" if the user explicitly backed out with Cancel, \"dismissed\" if the confirmation panel was closed without a choice, for example with Escape or a click outside it, \"aborted\" if the user confirmed but nothing was deleted because the windows could not be ..."
   }
 
   dimension: extras__string__output_hash {
@@ -8402,8 +8463,8 @@ view: events_stream {
 * The name of the `UrlbarProvider` that provided the selected result. The possible values are: `AboutPages`, `AliasEngines`, `Autofill`, `BookmarkKeywords`, `calculator`, `UrlbarProviderContextualSearch`, `HeuristicFallback`, `HistoryUrlHeuristic`, `InputHistory`, `UrlbarProviderInterventions`, `Omnibox`, `OpenTabs`, `Places`, `PrivateSearch`, `quickactions`, `UrlbarProviderQuickSuggest`, `RemoteTabs`, `SearchSuggestions`, `UrlbarProviderSearchTips`, `TabToSearch`, `TokenAliasEngines`, `UrlbarProviderTopSites`, `UnitConversion` and `UnifiedComplete`. If engagement_type is `drop_go` or `paste_go`, this will be null because no results are shown. And also, if selected_result is `experimental_addon`, it means that the user selected a result from an add-on using the urlbar experimental API. In this case, this will be the provider name specified by the add-on.
 * The name of the provider.
 * Current provider id.
-* Which provider was last selected.
-* Search pr..."
+* Search provider used in the request
+* Which p..."
   }
 
   dimension: extras__string__provider_id {
@@ -8529,9 +8590,9 @@ view: events_stream {
     group_item_label: "Record Type"
     description: "Depending on the type of event:
 * The type of saved record shown in the dropdown: \"formhistory\", \"address\", \"payment\" or \"password\".
+* Type of telemetry record: state or terminal.
 * The type of saved record the dialog is about: \"address\", \"payment\" or \"password\".
-* The type of saved record the action applies to: \"formhistory\", \"address\", \"payment\" or \"password\".
-* Type of telemetry record: state or terminal."
+* The type of saved record the action applies to: \"formhistory\", \"address\", \"payment\" or \"password\"."
   }
 
   dimension: extras__string__recovery {
@@ -8686,12 +8747,9 @@ view: events_stream {
 * \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\".
 * The result of the OS Authentication.
 * Undo result: success, partial_success, or error
+* The outcome of the attempt to pin, values include: - `success_pinned`: The pin request was affirmed by the user. - `success_rejected`: The pin request was rejected by the user or system. - `success_fire_and_forget`: The pin request was submitted, but its result is unknown. - `error_get_aumid`: Failed to get the Application User Model ID. - `error_set_aumid`: Failed to set the Application User Model ID. - `error_get_taskbar_manager`: Failed to get the TaskbarManager. - `error_schedule_request_pin`: Failed to schedule the pin request. - `error_request_pin`: The pin request failed.
 * Optionally, the name of the error that occurred.
-* \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\". A \"to_json\" copy hands the profile back to the JSON store either way, so an \"error\" there means some records did not make it back.
-* The error code, converted to a string.
-* The outcome of the prompt.
-* \"ok\", or \"error\" when initialization aborted with a fatal error.
-* \"switch\" when an existing tab was focused, \"new\" when a tab was opened, \"error\" when that attem..."
+* \"ok\" when the sto..."
   }
 
   dimension: extras__string__results {
@@ -9394,7 +9452,8 @@ view: events_stream {
     description: "Depending on the type of event:
 * How the request was submitted: button, enter, follow-up, shortcuts, starter, or suggestion
 * How the request was submitted: button, enter, follow-up, resume, retry, shortcuts, starter, or suggestion
-* How the request was submitted: button, enter, follow-up, menu, resume, retry, shortcuts, starter, or suggestion"
+* How the request was submitted: button, enter, follow-up, menu, resume, retry, shortcuts, starter, or suggestion
+* How the request was submitted: button, enter, follow-up, fxms, menu, resume, retry, shortcuts, starter, or suggestion. Messaging surfaces may supply their own value instead of fxms"
   }
 
   dimension: extras__string__surface {
@@ -9669,7 +9728,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "To"
-    description: "The domain (eTLD+1) of the final redirect target."
+    description: "Depending on the type of event:
+* The domain (eTLD+1) of the final redirect target.
+* The auth provider in use after the switch. One of: fxa or guest"
   }
 
   dimension: extras__string__to_container_id {
@@ -9758,11 +9819,9 @@ view: events_stream {
 * Which user interaction triggered the event.
 * The reason why this confirmation was triggered. Values: [cp-connectivity, pref-change, context-init, retry, failed-lookups]
 * A label to distinguish what triggered the polling/fetching of remote content (eg. \"broadcast\", \"timer\", \"forced\", \"manual\")
-* The cause of the filter change: error, warn, log, info, debug, css, netxhr, net, chrome, content, text or reset and all, html, css, js, xhr, fonts, images, media, ws or other for netmonitor
 * The element that triggered the polling/fetching of remote content (eg. ``\"broadcast\"``, ``\"timer\"``, ``\"forced\"``, ``\"manual\"``).
-* Which UI surface triggered the action
-* What triggered the sync.
-* What triggered the database consistency check. Th..."
+* The entry point that requested the launch. One of: switch, menu, keyboard_shortcut, startup, settings, bedrock, asrouter, or other. Messaging surfaces may supply their own value instead of asrouter
+* The reason the Smart Window was opened. One of: switch, menu, new_window, open_browser, undo_close, keyboard..."
   }
 
   dimension: extras__string__triggers {

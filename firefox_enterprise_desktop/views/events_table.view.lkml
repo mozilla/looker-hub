@@ -455,6 +455,8 @@ view: events_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Browser Backup Scheduler Enabled"
+    description: "True if the BackupService is configured to automatically create backups in the background.
+"
   }
 
   dimension: metrics__boolean__fxa_account_enabled {
@@ -463,6 +465,8 @@ view: events_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Fxa Account Enabled"
+    description: "Whether the user's logged in to an FxA account.
+"
   }
 
   dimension: metrics__boolean__fxa_sync_enabled {
@@ -471,6 +475,9 @@ view: events_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Fxa Sync Enabled"
+    description: "Whether the weave service is present and enabled.
+Implies `fxa.account_enabled`.
+"
   }
 
   dimension: metrics__boolean__genai_chatbot_enabled {
@@ -479,6 +486,8 @@ view: events_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Genai Chatbot Enabled"
+    description: "Indicates if the chatbot feature is enabled.
+"
   }
 
   dimension: metrics__boolean__os_environment_is_kept_in_dock {
@@ -487,6 +496,8 @@ view: events_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "OS Environment Is Kept In Dock"
+    description: "Whether this app was kept in macOS Dock on startup This metric was generated to correspond to the Legacy Telemetry scalar os.environment.is_kept_in_dock.
+"
   }
 
   dimension: metrics__boolean__os_environment_is_taskbar_pinned {
@@ -495,6 +506,8 @@ view: events_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "OS Environment Is Taskbar Pinned"
+    description: "Whether the non-Private Browsing version of this app was pinned to taskbar on startup This metric was generated to correspond to the Legacy Telemetry scalar os.environment.is_taskbar_pinned.
+"
   }
 
   dimension: metrics__boolean__policies_is_enterprise {
@@ -669,6 +682,8 @@ Migrated from Telemetry's
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Pdfjs Used"
+    description: "How many times PDF Viewer was used.
+"
   }
 
   dimension: metrics__counter__power_total_cpu_time_ms {
@@ -677,6 +692,8 @@ Migrated from Telemetry's
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Power Total CPU Time Ms"
+    description: "Total CPU time used by all processes in ms.
+"
   }
 
   dimension: metrics__counter__power_total_gpu_time_ms {
@@ -685,6 +702,8 @@ Migrated from Telemetry's
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Power Total GPU Time Ms"
+    description: "Total GPU time used by all processes in ms.
+"
   }
 
   dimension: metrics__counter__power_total_thread_wakeups {
@@ -693,6 +712,8 @@ Migrated from Telemetry's
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Power Total Thread Wakeups"
+    description: "How many times threads woke up and could have woken up a CPU core.
+"
   }
 
   dimension: metrics__dual_labeled_counter__media_error {
@@ -705,16 +726,22 @@ Migrated from Telemetry's
   dimension: metrics__labeled_boolean__os_environment_is_default_handler {
     sql: ${TABLE}.metrics.labeled_boolean.os_environment_is_default_handler ;;
     hidden: yes
+    description: "Records whether Firefox was the default handler for particular file types or protocols.  The result is split into keys which represent the file extension or scheme: currently, a subset of the file types Firefox registers to handle, namely \".pdf\" and \"mailto\" as protocol. In the future, more file types may be recorded. This metric was generated to correspond to the Legacy Telemetry scalar os.environment.is_default_handler.
+"
   }
 
   dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
     sql: ${TABLE}.metrics.labeled_counter.cert_verifier_cert_revocation_mechanisms ;;
     hidden: yes
+    description: "Which revocation checking mechanisms were used in a TLS handshake?
+"
   }
 
   dimension: metrics__labeled_counter__cert_verifier_crlite_status {
     sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
     hidden: yes
+    description: "Counts the number of times different CRLite statuses were returned.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -752,46 +779,67 @@ The labels are the `category.name` identifier of the metric.
   dimension: metrics__labeled_counter__os_environment_invoked_to_handle {
     sql: ${TABLE}.metrics.labeled_counter.os_environment_invoked_to_handle ;;
     hidden: yes
+    description: "Records counts for when Firefox was invoked (i.e., was already running and was not launched) to handle a file type or protocol with `-osint -url ...`.  The result is split into keys which represent the file extension: currently, the set of file types Firefox registers to handle, namely \".avif\", \".htm\", \".html\", \".pdf\", \".shtml\", \".xht\", \".xhtml\", \".svg\", \".webp\", and the set of protocol schemes that Firefox registers to handle, namely \"about\", \"http\", \"https\", \"mailto\".  If Firefox was invoked to handle a file type or protocol it does not register to handle by default, the count is recorded as \".<other extension>\" or \"<other protocol>\", respectively (neither of which are valid extension or protocol identifiers). This metric was generated to correspond to the Legacy Telemetry scalar os.environment.invoked_to_handle.
+"
   }
 
   dimension: metrics__labeled_counter__os_environment_launched_to_handle {
     sql: ${TABLE}.metrics.labeled_counter.os_environment_launched_to_handle ;;
     hidden: yes
+    description: "Records counts for when Firefox was launched afresh (i.e., was not already running) to handle a file type or protocol with `-osint -url ...`.  The result is split into keys which represent the file extension: currently, the set of file types Firefox registers to handle, namely \".avif\", \".htm\", \".html\", \".pdf\", \".shtml\", \".xht\", \".xhtml\", \".svg\", \".webp\", and the set of protocol schemes that Firefox registers to handle, namely \"about\", \"http\", \"https\", \"mailto\".  If Firefox was launched to handle a file type or protocol it does not register to handle by default, the count is recorded as \".<other extension>\" or \"<other protocol>\", respectively (neither of which are valid extension or protocol identifiers). This metric was generated to correspond to the Legacy Telemetry scalar os.environment.launched_to_handle.
+"
   }
 
   dimension: metrics__labeled_counter__pdfjs_editing {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
     hidden: yes
+    description: "Counts the number of times some PDF editing features are used.
+"
   }
 
   dimension: metrics__labeled_counter__pdfjs_editing_highlight_kind {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_kind ;;
     hidden: yes
+    description: "Counts the number of times a given kind is used to highlight.
+"
   }
 
   dimension: metrics__labeled_counter__pdfjs_organize_action {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_organize_action ;;
     hidden: yes
+    description: "Counts the number of times the user performs a page organization action (copy, cut, delete, merge, move, paste), exports selected pages, or saves a PDF modified through page organization.
+"
   }
 
   dimension: metrics__labeled_counter__pdfjs_stamp {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_stamp ;;
     hidden: yes
+    description: "Counts the number of times some PDF editing features are used.
+"
   }
 
   dimension: metrics__labeled_counter__splitview_uri_count {
     sql: ${TABLE}.metrics.labeled_counter.splitview_uri_count ;;
     hidden: yes
+    description: "Records how many URIs were loaded on each side of the splitview.
+"
   }
 
   dimension: metrics__labeled_counter__tabgroup_tab_interactions {
     sql: ${TABLE}.metrics.labeled_counter.tabgroup_tab_interactions ;;
     hidden: yes
+    description: "Records interactions with tabs related to a group: open, add tab to group, duplicate, create a new tab, close a tab, reorder, and remove from group
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_searchbutton {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_searchbutton ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular
+search mode by unified search button.
+This metric was generated to correspond to the Legacy Telemetry
+scalar urlbar.searchmode.searchbutton.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
@@ -842,6 +890,23 @@ resumes.
   dimension: metrics__object__addons_theme {
     sql: ${TABLE}.metrics.object.addons_theme ;;
     hidden: yes
+    description: "The currently active theme.
+
+Some of the addon fields are not available during startup. The fields
+that will always be present are id, version, updateDay, and scope. All
+the other fields become present shortly after the
+`sessionstore-windows-restored` observer topic is notified.
+
+This metric is an echo of the Legacy Telemetry Environment field
+addons.theme. Like its counterpart, it will only have data in Firefox
+Desktop and at times and on platforms where the environment would have
+values.
+
+NOTE: this metric is available in both `metrics` and `addons` pings. However
+the `addons` ping is the preferred source of data for add-ons related analyses,
+whereas the `metrics` ping is better suited for analyses that correlates other
+metrics with the add-ons listed in the `theme` metric.
+"
   }
 
   dimension: metrics__object__glean_attribution_ext {
@@ -893,6 +958,8 @@ Mapped to client_info.distribution.ext in datasets.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Tabgroup Saved Groups"
+    description: "Records the number of saved tab groups present in the user's session
+"
   }
 
   dimension: metrics__quantity__urlbar_pref_max_results {
@@ -923,6 +990,8 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "OS Environment Launch Method"
+    description: "Records how Firefox was started on Windows. Currently will be one of \"Desktop\", \"DesktopPrivate\", \"StartMenu\" (including pins), \"StartMenuPrivate\", \"Taskbar\", \"TaskbarPrivate\", \"OtherShortcut\", or \"Other\" This metric was generated to correspond to the Legacy Telemetry scalar os.environment.launch_method.
+"
   }
 
   dimension: metrics__string__os_environment_launch_on_login_state {
@@ -931,6 +1000,8 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "OS Environment Launch On Login State"
+    description: "The state of the launch-on-login setting at startup. One of: \"enabled\" (launch on login is active), \"disabled\" (not enabled by the user), \"disabled_by_settings\" (blocked by Windows Settings or policy), \"not_supported\" (feature unavailable on this platform), or \"error\" (failed to determine state).
+"
   }
 
   dimension: metrics__string__region_home_region {
@@ -1075,6 +1146,8 @@ be `other`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Sidebar Tabs Layout"
+    description: "Setting for tabs orientation (either \"horizontal\" or \"vertical\").
+"
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
@@ -1184,6 +1257,9 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: UUID"
     group_item_label: "Legacy Telemetry Session ID"
+    description: "Legacy Telemetry's session identifier.
+Set near startup and stable until shutdown.
+"
   }
 
   dimension: normalized_app_name {
