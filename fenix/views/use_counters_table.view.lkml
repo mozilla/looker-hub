@@ -30711,6 +30711,12 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_counter__security_trusted_types_readiness {
+    sql: ${TABLE}.metrics.labeled_counter.security_trusted_types_readiness ;;
+    hidden: yes
+    description: "Counts content documents at destruction, labeled by a combination of signals indicating how ready the document is to adopt Trusted Types. Each document increments exactly one label of the form `htmlsink-{none,trusted,string}_writesink-{none,trusted,string}_ttcsp-{none,report,enforce}_strictcsp-{none,report,enforce}_created-{0,1}_used-{0,1}_lib-{0,1}_js-{0,1}`. `htmlsink` is what was passed to a TrustedHTML sink other than `document.write`: `innerHTML`, `outerHTML`, `insertAdjacentHTML`, `setHTMLUnsafe`, `Document.parseHTMLUnsafe`, `Range.createContextualFragment`, `DOMParser.parseFromString` or an iframe's `srcdoc`, and `writesink` what was passed to `document.write` or `document.writeln`: `none` if no such sink was used, `string` if a string was passed at least once, and `trusted` if only `TrustedHTML` was passed. `ttcsp` is the disposition of the `require-trusted-types-for` CSP directive at document destruction, so it includes policies added after load (e.g. by a `<meta>` element). `strictcsp` is the dispos"
+  }
+
   dimension: metrics__labeled_counter__use_counter_error_unknown_counter {
     sql: ${TABLE}.metrics.labeled_counter.use_counter_error_unknown_counter ;;
     hidden: yes

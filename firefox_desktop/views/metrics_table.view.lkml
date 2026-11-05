@@ -26002,6 +26002,12 @@ default engine, and hence both versions of these fields will be filled in.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Smart Window Auth Impl"
+    description: "The Smart Window auth provider currently in use. One of: fxa (Mozilla
+account) or guest (guest token, no account). Set when a provider is
+chosen, which happens the first time Smart Window needs one, and again
+whenever it switches. Lets other Smart Window metrics be split by guest
+vs fxa.
+"
   }
 
   dimension: metrics__string__smart_window_model {

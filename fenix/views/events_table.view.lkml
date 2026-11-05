@@ -459,10 +459,64 @@ view: events_table {
 "
   }
 
+  dimension: metrics__counter__pdfjs_used {
+    sql: ${TABLE}.metrics.counter.pdfjs_used ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Pdfjs Used"
+    description: "How many times PDF Viewer was used.
+"
+  }
+
+  dimension: metrics__counter__power_total_cpu_time_ms {
+    sql: ${TABLE}.metrics.counter.power_total_cpu_time_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Power Total CPU Time Ms"
+    description: "Total CPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_gpu_time_ms {
+    sql: ${TABLE}.metrics.counter.power_total_gpu_time_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Power Total GPU Time Ms"
+    description: "Total GPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_thread_wakeups {
+    sql: ${TABLE}.metrics.counter.power_total_thread_wakeups ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Power Total Thread Wakeups"
+    description: "How many times threads woke up and could have woken up a CPU core.
+"
+  }
+
   dimension: metrics__dual_labeled_counter__media_error {
     sql: ${TABLE}.metrics.dual_labeled_counter.media_error ;;
     hidden: yes
     description: "Count of errors surfaced on a media element, keyed by error type and whether the playback is encrypted. Serves as a high-level signal for all media error categories.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_cert_revocation_mechanisms {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_cert_revocation_mechanisms ;;
+    hidden: yes
+    description: "Which revocation checking mechanisms were used in a TLS handshake?
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_status {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
+    hidden: yes
+    description: "Counts the number of times different CRLite statuses were returned.
 "
   }
 
@@ -498,10 +552,60 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_editing {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
+    hidden: yes
+    description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_kind {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_kind ;;
+    hidden: yes
+    description: "Counts the number of times a given kind is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_organize_action {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_organize_action ;;
+    hidden: yes
+    description: "Counts the number of times the user performs a page organization action (copy, cut, delete, merge, move, paste), exports selected pages, or saves a PDF modified through page organization.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_stamp {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_stamp ;;
+    hidden: yes
+    description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
   dimension: metrics__labeled_counter__wallpapers_new_wallpaper_applied {
     sql: ${TABLE}.metrics.labeled_counter.wallpapers_new_wallpaper_applied ;;
     hidden: yes
     description: "How many and which type of wallpapers were applied.
+"
+  }
+
+  dimension: metrics__object__addons_theme {
+    sql: ${TABLE}.metrics.object.addons_theme ;;
+    hidden: yes
+    description: "The currently active theme.
+
+Some of the addon fields are not available during startup. The fields
+that will always be present are id, version, updateDay, and scope. All
+the other fields become present shortly after the
+`sessionstore-windows-restored` observer topic is notified.
+
+This metric is an echo of the Legacy Telemetry Environment field
+addons.theme. Like its counterpart, it will only have data in Firefox
+Desktop and at times and on platforms where the environment would have
+values.
+
+NOTE: this metric is available in both `metrics` and `addons` pings. However
+the `addons` ping is the preferred source of data for add-ons related analyses,
+whereas the `metrics` ping is better suited for analyses that correlates other
+metrics with the add-ons listed in the `theme` metric.
 "
   }
 

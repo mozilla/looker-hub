@@ -5149,6 +5149,10 @@ firefox_ios:
       type: glean_ping_explore
       views:
         base_view: history_sync
+    installation:
+      type: glean_ping_explore
+      views:
+        base_view: installation
     metric_definitions_appstore_funnel:
       type: metric_definitions_explore
       views:
@@ -5621,6 +5625,24 @@ firefox_ios:
         table: mozdata.org_mozilla_ios_firefoxbeta.history_sync
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.history_sync
+      type: table_view
+    installation:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.installation
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.installation
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.installation
+      type: glean_ping_view
+    installation_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.installation
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.installation
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.installation
       type: table_view
     ltv_ios_aggregates_table:
       tables:
