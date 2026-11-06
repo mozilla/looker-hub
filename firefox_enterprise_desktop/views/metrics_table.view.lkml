@@ -12042,6 +12042,11 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__geolocation_persisted_cache {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_persisted_cache ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__geolocation_request_activation {
     sql: ${TABLE}.metrics.labeled_counter.geolocation_request_activation ;;
     hidden: yes
@@ -15283,6 +15288,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_memory_distribution__speculation_rules_prefetch_transfer_size {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.speculation_rules_prefetch_transfer_size ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_quantity__addons_manager_startup_timeline {
     sql: ${TABLE}.metrics.labeled_quantity.addons_manager_startup_timeline ;;
     hidden: yes
@@ -15907,6 +15917,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     hidden: yes
     description: "How long a mini window stayed open, split by which flavour it was.
 "
+  }
+
+  dimension: metrics__labeled_timing_distribution__netwerk_happy_eyeballs_dns_answer_spread_v2 {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_happy_eyeballs_dns_answer_spread_v2 ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
@@ -35994,6 +36009,41 @@ view: metrics_table__metrics__labeled_memory_distribution__networking_trr_respon
   }
 }
 
+view: metrics_table__metrics__labeled_memory_distribution__speculation_rules_prefetch_transfer_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__speculation_rules_prefetch_transfer_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_quantity__addons_manager_startup_timeline {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -38263,6 +38313,41 @@ view: metrics_table__metrics__labeled_timing_distribution__mini_window_open_dura
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__mini_window_open_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_happy_eyeballs_dns_answer_spread_v2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__netwerk_happy_eyeballs_dns_answer_spread_v2__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
