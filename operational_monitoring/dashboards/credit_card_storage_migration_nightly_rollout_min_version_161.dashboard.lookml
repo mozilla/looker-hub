@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: credit_card_storage_migration_nightly_rollout_min_version_161
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       credit_card_storage_migration_nightly_rollout_min_version_161.submission_date,
       credit_card_storage_migration_nightly_rollout_min_version_161.branch,
+      credit_card_storage_migration_nightly_rollout_min_version_161.upper,
+      credit_card_storage_migration_nightly_rollout_min_version_161.lower,
       credit_card_storage_migration_nightly_rollout_min_version_161.point
     ]
     pivots: [
       credit_card_storage_migration_nightly_rollout_min_version_161.branch
     ]
     filters:
-      credit_card_storage_migration_nightly_rollout_min_version_161.metric: 'ad_clicks'
-      credit_card_storage_migration_nightly_rollout_min_version_161.statistic: mean
+      credit_card_storage_migration_nightly_rollout_min_version_161.metric: 'memory_total'
+      credit_card_storage_migration_nightly_rollout_min_version_161.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: credit_card_storage_migration_nightly_rollout_min_version_161.submission_date
+      Percentile: credit_card_storage_migration_nightly_rollout_min_version_161.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,6 +149,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: credit_card_storage_migration_nightly_rollout_min_version_161
+    type: looker_line
+    fields: [
+      credit_card_storage_migration_nightly_rollout_min_version_161.submission_date,
+      credit_card_storage_migration_nightly_rollout_min_version_161.branch,
+      credit_card_storage_migration_nightly_rollout_min_version_161.point
+    ]
+    pivots: [
+      credit_card_storage_migration_nightly_rollout_min_version_161.branch
+    ]
+    filters:
+      credit_card_storage_migration_nightly_rollout_min_version_161.metric: 'ad_clicks'
+      credit_card_storage_migration_nightly_rollout_min_version_161.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: credit_card_storage_migration_nightly_rollout_min_version_161.submission_date
+    field_y: credit_card_storage_migration_nightly_rollout_min_version_161.point
+    log_scale: false
+    ci_lower: credit_card_storage_migration_nightly_rollout_min_version_161.lower
+    ci_upper: credit_card_storage_migration_nightly_rollout_min_version_161.upper
+    show_grid: true
+    listen:
+      Date: credit_card_storage_migration_nightly_rollout_min_version_161.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -165,7 +202,7 @@
       credit_card_storage_migration_nightly_rollout_min_version_161.metric: 'retained'
       credit_card_storage_migration_nightly_rollout_min_version_161.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: credit_card_storage_migration_nightly_rollout_min_version_161.submission_date
@@ -198,42 +235,6 @@
     filters:
       credit_card_storage_migration_nightly_rollout_min_version_161.metric: 'active_hours'
       credit_card_storage_migration_nightly_rollout_min_version_161.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: credit_card_storage_migration_nightly_rollout_min_version_161.submission_date
-    field_y: credit_card_storage_migration_nightly_rollout_min_version_161.point
-    log_scale: false
-    ci_lower: credit_card_storage_migration_nightly_rollout_min_version_161.lower
-    ci_upper: credit_card_storage_migration_nightly_rollout_min_version_161.upper
-    show_grid: true
-    listen:
-      Date: credit_card_storage_migration_nightly_rollout_min_version_161.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: credit_card_storage_migration_nightly_rollout_min_version_161
-    type: "ci-line-chart"
-    fields: [
-      credit_card_storage_migration_nightly_rollout_min_version_161.submission_date,
-      credit_card_storage_migration_nightly_rollout_min_version_161.branch,
-      credit_card_storage_migration_nightly_rollout_min_version_161.upper,
-      credit_card_storage_migration_nightly_rollout_min_version_161.lower,
-      credit_card_storage_migration_nightly_rollout_min_version_161.point
-    ]
-    pivots: [
-      credit_card_storage_migration_nightly_rollout_min_version_161.branch
-    ]
-    filters:
-      credit_card_storage_migration_nightly_rollout_min_version_161.metric: 'memory_total'
-      credit_card_storage_migration_nightly_rollout_min_version_161.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: credit_card_storage_migration_nightly_rollout_min_version_161.submission_date
-      Percentile: credit_card_storage_migration_nightly_rollout_min_version_161.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

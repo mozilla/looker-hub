@@ -112,40 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_import_bookmarks
-    type: looker_line
-    fields: [
-      android_import_bookmarks.submission_date,
-      android_import_bookmarks.branch,
-      android_import_bookmarks.point
-    ]
-    pivots: [
-      android_import_bookmarks.branch
-    ]
-    filters:
-      android_import_bookmarks.metric: 'tagged_sap_searches'
-      android_import_bookmarks.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: android_import_bookmarks.submission_date
-    field_y: android_import_bookmarks.point
-    log_scale: false
-    ci_lower: android_import_bookmarks.lower
-    ci_upper: android_import_bookmarks.upper
-    show_grid: true
-    listen:
-      Date: android_import_bookmarks.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -163,6 +129,40 @@
     ]
     filters:
       android_import_bookmarks.metric: 'retained'
+      android_import_bookmarks.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: android_import_bookmarks.submission_date
+    field_y: android_import_bookmarks.point
+    log_scale: false
+    ci_lower: android_import_bookmarks.lower
+    ci_upper: android_import_bookmarks.upper
+    show_grid: true
+    listen:
+      Date: android_import_bookmarks.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_import_bookmarks
+    type: looker_line
+    fields: [
+      android_import_bookmarks.submission_date,
+      android_import_bookmarks.branch,
+      android_import_bookmarks.point
+    ]
+    pivots: [
+      android_import_bookmarks.branch
+    ]
+    filters:
+      android_import_bookmarks.metric: 'tagged_sap_searches'
       android_import_bookmarks.statistic: mean
     row: 20
     col: 0

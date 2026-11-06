@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: show_blocked_trackers_microsurvey_control
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       show_blocked_trackers_microsurvey_control.submission_date,
       show_blocked_trackers_microsurvey_control.branch,
+      show_blocked_trackers_microsurvey_control.upper,
+      show_blocked_trackers_microsurvey_control.lower,
       show_blocked_trackers_microsurvey_control.point
     ]
     pivots: [
       show_blocked_trackers_microsurvey_control.branch
     ]
     filters:
-      show_blocked_trackers_microsurvey_control.metric: 'ad_clicks'
-      show_blocked_trackers_microsurvey_control.statistic: mean
+      show_blocked_trackers_microsurvey_control.metric: 'memory_total'
+      show_blocked_trackers_microsurvey_control.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: show_blocked_trackers_microsurvey_control.submission_date
+      Percentile: show_blocked_trackers_microsurvey_control.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,6 +149,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: show_blocked_trackers_microsurvey_control
+    type: looker_line
+    fields: [
+      show_blocked_trackers_microsurvey_control.submission_date,
+      show_blocked_trackers_microsurvey_control.branch,
+      show_blocked_trackers_microsurvey_control.point
+    ]
+    pivots: [
+      show_blocked_trackers_microsurvey_control.branch
+    ]
+    filters:
+      show_blocked_trackers_microsurvey_control.metric: 'ad_clicks'
+      show_blocked_trackers_microsurvey_control.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: show_blocked_trackers_microsurvey_control.submission_date
+    field_y: show_blocked_trackers_microsurvey_control.point
+    log_scale: false
+    ci_lower: show_blocked_trackers_microsurvey_control.lower
+    ci_upper: show_blocked_trackers_microsurvey_control.upper
+    show_grid: true
+    listen:
+      Date: show_blocked_trackers_microsurvey_control.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -165,7 +202,7 @@
       show_blocked_trackers_microsurvey_control.metric: 'retained'
       show_blocked_trackers_microsurvey_control.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: show_blocked_trackers_microsurvey_control.submission_date
@@ -198,42 +235,6 @@
     filters:
       show_blocked_trackers_microsurvey_control.metric: 'active_hours'
       show_blocked_trackers_microsurvey_control.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: show_blocked_trackers_microsurvey_control.submission_date
-    field_y: show_blocked_trackers_microsurvey_control.point
-    log_scale: false
-    ci_lower: show_blocked_trackers_microsurvey_control.lower
-    ci_upper: show_blocked_trackers_microsurvey_control.upper
-    show_grid: true
-    listen:
-      Date: show_blocked_trackers_microsurvey_control.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: show_blocked_trackers_microsurvey_control
-    type: "ci-line-chart"
-    fields: [
-      show_blocked_trackers_microsurvey_control.submission_date,
-      show_blocked_trackers_microsurvey_control.branch,
-      show_blocked_trackers_microsurvey_control.upper,
-      show_blocked_trackers_microsurvey_control.lower,
-      show_blocked_trackers_microsurvey_control.point
-    ]
-    pivots: [
-      show_blocked_trackers_microsurvey_control.branch
-    ]
-    filters:
-      show_blocked_trackers_microsurvey_control.metric: 'memory_total'
-      show_blocked_trackers_microsurvey_control.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: show_blocked_trackers_microsurvey_control.submission_date
-      Percentile: show_blocked_trackers_microsurvey_control.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

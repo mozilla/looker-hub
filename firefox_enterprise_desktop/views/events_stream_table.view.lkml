@@ -3815,7 +3815,27 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tab Count"
-    description: "The number of tabs involved in the action."
+    description: "Depending on the type of event:
+* The number of tabs involved in the action.
+* Number of tabs the user chose for this action."
+  }
+
+  dimension: extras__quantity__tab_cpu_hundredths {
+    sql: ${TABLE}.extras.quantity.tab_cpu_hundredths ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tab CPU Hundredths"
+    description: "CPU usage (in hundredths of a percent of total capacity) attributed to the tab(s) chosen for this action. Omitted until CPU has been measured, so a missing value is not zero."
+  }
+
+  dimension: extras__quantity__tab_ram_mb {
+    sql: ${TABLE}.extras.quantity.tab_ram_mb ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tab Ram Mb"
+    description: "RAM (in MB) attributed to the tab(s) chosen for this action."
   }
 
   dimension: extras__quantity__tabs {
@@ -4188,6 +4208,17 @@ view: events_stream_table {
     description: "The count of translation requests that were completed by this engine."
   }
 
+  dimension: extras__quantity__total_cpu_hundredths {
+    sql: ${TABLE}.extras.quantity.total_cpu_hundredths ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total CPU Hundredths"
+    description: "Depending on the type of event:
+* Total CPU usage (in hundredths of a percent of total capacity) across all tabs shown in the view.
+* Total CPU usage (in hundredths of a percent of total capacity) across all tabs at action time. Omitted until CPU has been measured, so a missing value is not zero."
+  }
+
   dimension: extras__quantity__total_db_count {
     sql: ${TABLE}.extras.quantity.total_db_count ;;
     type: number
@@ -4237,6 +4268,17 @@ view: events_stream_table {
     description: "Duration of the complete initialization."
   }
 
+  dimension: extras__quantity__total_ram_mb {
+    sql: ${TABLE}.extras.quantity.total_ram_mb ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Ram Mb"
+    description: "Depending on the type of event:
+* Total RAM (in MB) across all tabs shown in the view.
+* Total RAM (in MB) across all tabs at action time."
+  }
+
   dimension: extras__quantity__total_retries {
     sql: ${TABLE}.extras.quantity.total_retries ;;
     type: number
@@ -4262,6 +4304,17 @@ view: events_stream_table {
     group_label: "Extras: Quantity"
     group_item_label: "Total Store Count"
     description: "The total number of enrollments in the ExperimentStore JSON file."
+  }
+
+  dimension: extras__quantity__total_tab_count {
+    sql: ${TABLE}.extras.quantity.total_tab_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Tab Count"
+    description: "Depending on the type of event:
+* Total number of tabs shown in the view.
+* Total number of tabs at action time."
   }
 
   dimension: extras__quantity__total_time {
@@ -4530,6 +4583,15 @@ view: events_stream_table {
     description: "Random UUID of the monitor the event belongs to, generated on the client when the monitor is created. Lets create, run, notification and click events be joined per monitor."
   }
 
+  dimension: extras__string__action_source {
+    sql: ${TABLE}.extras.string.action_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Action Source"
+    description: "Which UI surface the action originated from. \"tab_row\": The action originated from a single tab's own row. \"bulk_bar\": The action originated from the bulk-action bar acting on the current multi-select. \"site_header\": The action originated from a site header row, acting on that site's tabs."
+  }
+
   dimension: extras__string__action_type {
     sql: ${TABLE}.extras.string.action_type ;;
     type: string
@@ -4540,7 +4602,8 @@ view: events_stream_table {
 * How the action was triggered: tab_mention, description, or unsupported.
 * Type of browser action requested
 * The type of action that the client interactd with
-* Type of browser action that was undone"
+* Type of browser action that was undone
+* Which action the user chose. \"unload\": The user chose to unload the tab(s). \"navigate\": The user chose to switch to the tab from this view. \"close\": The user chose to close the tab(s). \"reload\": The user chose to reload the tab(s)."
   }
 
   dimension: extras__string__actions {
@@ -6471,11 +6534,11 @@ view: events_stream_table {
 * A uuid to relate events associated with the current panel session.
 * Unique identifier for this ML workflow session. Used to correlate all events within this session across components.
 * Unique id for this fill invocation; correlates all of its events.
+* An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated. It is reused when the dropdown reopens after a record removal prompt.
 * Flow id of the interaction session with the credit card form, shared with the credit card form events.
 * Flow id of an interaction session with a credit card form
 * Joins to sibling firefox.ai.runtime.engine_run and run_inference_success_flow events for the same inference.
 * An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated.
-* An id generated when the dropdown opened, shared with the matching dropdown_shown event so the two can be correlated. It is reused when the dropdown reopens after a record removal prompt.
 * An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_closed event (and any interactions in betwee..."
   }
 
@@ -7777,6 +7840,15 @@ view: events_stream_table {
     group_label: "Extras: String"
     group_item_label: "Open Target"
     description: "Where the page opens: \"current\" or \"new\"."
+  }
+
+  dimension: extras__string__open_type {
+    sql: ${TABLE}.extras.string.open_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Open Type"
+    description: "Why this view was shown. \"sidebar_launch\": Opened by the user through the sidebar, e.g. its Resource Monitor icon or the View > Sidebar menu. \"restored\": Shown automatically, carried over from another window's sidebar or a previous session. \"direct_nav\": Reached without going through the sidebar (typed, bookmarked, or linked). \"other\": Any firing that matches none of the above."
   }
 
   dimension: extras__string__opened_from {

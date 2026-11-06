@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: shortcuts_grouped_pins_release_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       shortcuts_grouped_pins_release_rollout.submission_date,
       shortcuts_grouped_pins_release_rollout.branch,
+      shortcuts_grouped_pins_release_rollout.upper,
+      shortcuts_grouped_pins_release_rollout.lower,
       shortcuts_grouped_pins_release_rollout.point
     ]
     pivots: [
       shortcuts_grouped_pins_release_rollout.branch
     ]
     filters:
-      shortcuts_grouped_pins_release_rollout.metric: 'ad_clicks'
-      shortcuts_grouped_pins_release_rollout.statistic: mean
+      shortcuts_grouped_pins_release_rollout.metric: 'memory_total'
+      shortcuts_grouped_pins_release_rollout.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: shortcuts_grouped_pins_release_rollout.submission_date
+      Percentile: shortcuts_grouped_pins_release_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,6 +149,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: shortcuts_grouped_pins_release_rollout
+    type: looker_line
+    fields: [
+      shortcuts_grouped_pins_release_rollout.submission_date,
+      shortcuts_grouped_pins_release_rollout.branch,
+      shortcuts_grouped_pins_release_rollout.point
+    ]
+    pivots: [
+      shortcuts_grouped_pins_release_rollout.branch
+    ]
+    filters:
+      shortcuts_grouped_pins_release_rollout.metric: 'ad_clicks'
+      shortcuts_grouped_pins_release_rollout.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: shortcuts_grouped_pins_release_rollout.submission_date
+    field_y: shortcuts_grouped_pins_release_rollout.point
+    log_scale: false
+    ci_lower: shortcuts_grouped_pins_release_rollout.lower
+    ci_upper: shortcuts_grouped_pins_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: shortcuts_grouped_pins_release_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -165,7 +202,7 @@
       shortcuts_grouped_pins_release_rollout.metric: 'retained'
       shortcuts_grouped_pins_release_rollout.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: shortcuts_grouped_pins_release_rollout.submission_date
@@ -198,42 +235,6 @@
     filters:
       shortcuts_grouped_pins_release_rollout.metric: 'active_hours'
       shortcuts_grouped_pins_release_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: shortcuts_grouped_pins_release_rollout.submission_date
-    field_y: shortcuts_grouped_pins_release_rollout.point
-    log_scale: false
-    ci_lower: shortcuts_grouped_pins_release_rollout.lower
-    ci_upper: shortcuts_grouped_pins_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: shortcuts_grouped_pins_release_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: shortcuts_grouped_pins_release_rollout
-    type: "ci-line-chart"
-    fields: [
-      shortcuts_grouped_pins_release_rollout.submission_date,
-      shortcuts_grouped_pins_release_rollout.branch,
-      shortcuts_grouped_pins_release_rollout.upper,
-      shortcuts_grouped_pins_release_rollout.lower,
-      shortcuts_grouped_pins_release_rollout.point
-    ]
-    pivots: [
-      shortcuts_grouped_pins_release_rollout.branch
-    ]
-    filters:
-      shortcuts_grouped_pins_release_rollout.metric: 'memory_total'
-      shortcuts_grouped_pins_release_rollout.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: shortcuts_grouped_pins_release_rollout.submission_date
-      Percentile: shortcuts_grouped_pins_release_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
