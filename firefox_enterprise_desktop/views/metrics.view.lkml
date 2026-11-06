@@ -17898,6 +17898,23 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__labeled_counter__geolocation_persisted_cache {
+    label: "Geolocation: Persisted Cache"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_persisted_cache ;;
+    group_label: "Geolocation"
+    group_item_label: "Persisted Cache"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Persisted Cache"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/geolocation_persisted_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What became of the NetworkGeolocationProvider request cache entry that an earlier session persisted, recorded when a session first consults the cache: absent if there was none, adopted if it was for the current network, rejected if it was for another network, or superseded if a network request completed before the network ID was known.
+"
+  }
+
   dimension: metrics__labeled_counter__geolocation_request_activation {
     label: "Geolocation: Request Activation"
     hidden: yes
@@ -56805,6 +56822,47 @@ view: metrics__metrics__labeled_counter__geolocation_network_provider {
   }
 }
 
+view: metrics__metrics__labeled_counter__geolocation_persisted_cache {
+  label: "Geolocation: Persisted Cache"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__geolocation_request_activation {
   label: "Geolocation: Request Activation"
 
@@ -80388,6 +80446,41 @@ view: metrics__metrics__labeled_memory_distribution__networking_trr_response_siz
   }
 }
 
+view: metrics__metrics__labeled_memory_distribution__speculation_rules_prefetch_transfer_size {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__speculation_rules_prefetch_transfer_size__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_quantity__addons_manager_startup_timeline {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -82657,6 +82750,41 @@ view: metrics__metrics__labeled_timing_distribution__mini_window_open_duration {
 }
 
 view: metrics__metrics__labeled_timing_distribution__mini_window_open_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__netwerk_happy_eyeballs_dns_answer_spread_v2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__netwerk_happy_eyeballs_dns_answer_spread_v2__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
