@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: new_user_trust_microsurvey
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       new_user_trust_microsurvey.submission_date,
       new_user_trust_microsurvey.branch,
+      new_user_trust_microsurvey.upper,
+      new_user_trust_microsurvey.lower,
       new_user_trust_microsurvey.point
     ]
     pivots: [
       new_user_trust_microsurvey.branch
     ]
     filters:
-      new_user_trust_microsurvey.metric: 'ad_clicks'
-      new_user_trust_microsurvey.statistic: mean
+      new_user_trust_microsurvey.metric: 'memory_total'
+      new_user_trust_microsurvey.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: new_user_trust_microsurvey.submission_date
+      Percentile: new_user_trust_microsurvey.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,6 +149,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_user_trust_microsurvey
+    type: looker_line
+    fields: [
+      new_user_trust_microsurvey.submission_date,
+      new_user_trust_microsurvey.branch,
+      new_user_trust_microsurvey.point
+    ]
+    pivots: [
+      new_user_trust_microsurvey.branch
+    ]
+    filters:
+      new_user_trust_microsurvey.metric: 'ad_clicks'
+      new_user_trust_microsurvey.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_user_trust_microsurvey.submission_date
+    field_y: new_user_trust_microsurvey.point
+    log_scale: false
+    ci_lower: new_user_trust_microsurvey.lower
+    ci_upper: new_user_trust_microsurvey.upper
+    show_grid: true
+    listen:
+      Date: new_user_trust_microsurvey.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -165,7 +202,7 @@
       new_user_trust_microsurvey.metric: 'retained'
       new_user_trust_microsurvey.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: new_user_trust_microsurvey.submission_date
@@ -198,42 +235,6 @@
     filters:
       new_user_trust_microsurvey.metric: 'active_hours'
       new_user_trust_microsurvey.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: new_user_trust_microsurvey.submission_date
-    field_y: new_user_trust_microsurvey.point
-    log_scale: false
-    ci_lower: new_user_trust_microsurvey.lower
-    ci_upper: new_user_trust_microsurvey.upper
-    show_grid: true
-    listen:
-      Date: new_user_trust_microsurvey.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: new_user_trust_microsurvey
-    type: "ci-line-chart"
-    fields: [
-      new_user_trust_microsurvey.submission_date,
-      new_user_trust_microsurvey.branch,
-      new_user_trust_microsurvey.upper,
-      new_user_trust_microsurvey.lower,
-      new_user_trust_microsurvey.point
-    ]
-    pivots: [
-      new_user_trust_microsurvey.branch
-    ]
-    filters:
-      new_user_trust_microsurvey.metric: 'memory_total'
-      new_user_trust_microsurvey.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: new_user_trust_microsurvey.submission_date
-      Percentile: new_user_trust_microsurvey.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

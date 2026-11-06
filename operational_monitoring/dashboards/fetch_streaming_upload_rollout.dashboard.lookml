@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: fetch_streaming_upload_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       fetch_streaming_upload_rollout.submission_date,
       fetch_streaming_upload_rollout.branch,
+      fetch_streaming_upload_rollout.upper,
+      fetch_streaming_upload_rollout.lower,
       fetch_streaming_upload_rollout.point
     ]
     pivots: [
       fetch_streaming_upload_rollout.branch
     ]
     filters:
-      fetch_streaming_upload_rollout.metric: 'ad_clicks'
-      fetch_streaming_upload_rollout.statistic: mean
+      fetch_streaming_upload_rollout.metric: 'memory_total'
+      fetch_streaming_upload_rollout.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: fetch_streaming_upload_rollout.submission_date
+      Percentile: fetch_streaming_upload_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,6 +149,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fetch_streaming_upload_rollout
+    type: looker_line
+    fields: [
+      fetch_streaming_upload_rollout.submission_date,
+      fetch_streaming_upload_rollout.branch,
+      fetch_streaming_upload_rollout.point
+    ]
+    pivots: [
+      fetch_streaming_upload_rollout.branch
+    ]
+    filters:
+      fetch_streaming_upload_rollout.metric: 'ad_clicks'
+      fetch_streaming_upload_rollout.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: fetch_streaming_upload_rollout.submission_date
+    field_y: fetch_streaming_upload_rollout.point
+    log_scale: false
+    ci_lower: fetch_streaming_upload_rollout.lower
+    ci_upper: fetch_streaming_upload_rollout.upper
+    show_grid: true
+    listen:
+      Date: fetch_streaming_upload_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -165,7 +202,7 @@
       fetch_streaming_upload_rollout.metric: 'retained'
       fetch_streaming_upload_rollout.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: fetch_streaming_upload_rollout.submission_date
@@ -198,42 +235,6 @@
     filters:
       fetch_streaming_upload_rollout.metric: 'active_hours'
       fetch_streaming_upload_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: fetch_streaming_upload_rollout.submission_date
-    field_y: fetch_streaming_upload_rollout.point
-    log_scale: false
-    ci_lower: fetch_streaming_upload_rollout.lower
-    ci_upper: fetch_streaming_upload_rollout.upper
-    show_grid: true
-    listen:
-      Date: fetch_streaming_upload_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: fetch_streaming_upload_rollout
-    type: "ci-line-chart"
-    fields: [
-      fetch_streaming_upload_rollout.submission_date,
-      fetch_streaming_upload_rollout.branch,
-      fetch_streaming_upload_rollout.upper,
-      fetch_streaming_upload_rollout.lower,
-      fetch_streaming_upload_rollout.point
-    ]
-    pivots: [
-      fetch_streaming_upload_rollout.branch
-    ]
-    filters:
-      fetch_streaming_upload_rollout.metric: 'memory_total'
-      fetch_streaming_upload_rollout.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: fetch_streaming_upload_rollout.submission_date
-      Percentile: fetch_streaming_upload_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

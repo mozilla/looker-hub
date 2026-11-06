@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: v2_firefox_user_expectations_desk_q4_2026
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       v2_firefox_user_expectations_desk_q4_2026.submission_date,
       v2_firefox_user_expectations_desk_q4_2026.branch,
+      v2_firefox_user_expectations_desk_q4_2026.upper,
+      v2_firefox_user_expectations_desk_q4_2026.lower,
       v2_firefox_user_expectations_desk_q4_2026.point
     ]
     pivots: [
       v2_firefox_user_expectations_desk_q4_2026.branch
     ]
     filters:
-      v2_firefox_user_expectations_desk_q4_2026.metric: 'ad_clicks'
-      v2_firefox_user_expectations_desk_q4_2026.statistic: mean
+      v2_firefox_user_expectations_desk_q4_2026.metric: 'memory_total'
+      v2_firefox_user_expectations_desk_q4_2026.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: v2_firefox_user_expectations_desk_q4_2026.submission_date
+      Percentile: v2_firefox_user_expectations_desk_q4_2026.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,6 +149,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: v2_firefox_user_expectations_desk_q4_2026
+    type: looker_line
+    fields: [
+      v2_firefox_user_expectations_desk_q4_2026.submission_date,
+      v2_firefox_user_expectations_desk_q4_2026.branch,
+      v2_firefox_user_expectations_desk_q4_2026.point
+    ]
+    pivots: [
+      v2_firefox_user_expectations_desk_q4_2026.branch
+    ]
+    filters:
+      v2_firefox_user_expectations_desk_q4_2026.metric: 'ad_clicks'
+      v2_firefox_user_expectations_desk_q4_2026.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: v2_firefox_user_expectations_desk_q4_2026.submission_date
+    field_y: v2_firefox_user_expectations_desk_q4_2026.point
+    log_scale: false
+    ci_lower: v2_firefox_user_expectations_desk_q4_2026.lower
+    ci_upper: v2_firefox_user_expectations_desk_q4_2026.upper
+    show_grid: true
+    listen:
+      Date: v2_firefox_user_expectations_desk_q4_2026.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -165,7 +202,7 @@
       v2_firefox_user_expectations_desk_q4_2026.metric: 'retained'
       v2_firefox_user_expectations_desk_q4_2026.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: v2_firefox_user_expectations_desk_q4_2026.submission_date
@@ -198,42 +235,6 @@
     filters:
       v2_firefox_user_expectations_desk_q4_2026.metric: 'active_hours'
       v2_firefox_user_expectations_desk_q4_2026.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: v2_firefox_user_expectations_desk_q4_2026.submission_date
-    field_y: v2_firefox_user_expectations_desk_q4_2026.point
-    log_scale: false
-    ci_lower: v2_firefox_user_expectations_desk_q4_2026.lower
-    ci_upper: v2_firefox_user_expectations_desk_q4_2026.upper
-    show_grid: true
-    listen:
-      Date: v2_firefox_user_expectations_desk_q4_2026.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: v2_firefox_user_expectations_desk_q4_2026
-    type: "ci-line-chart"
-    fields: [
-      v2_firefox_user_expectations_desk_q4_2026.submission_date,
-      v2_firefox_user_expectations_desk_q4_2026.branch,
-      v2_firefox_user_expectations_desk_q4_2026.upper,
-      v2_firefox_user_expectations_desk_q4_2026.lower,
-      v2_firefox_user_expectations_desk_q4_2026.point
-    ]
-    pivots: [
-      v2_firefox_user_expectations_desk_q4_2026.branch
-    ]
-    filters:
-      v2_firefox_user_expectations_desk_q4_2026.metric: 'memory_total'
-      v2_firefox_user_expectations_desk_q4_2026.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: v2_firefox_user_expectations_desk_q4_2026.submission_date
-      Percentile: v2_firefox_user_expectations_desk_q4_2026.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

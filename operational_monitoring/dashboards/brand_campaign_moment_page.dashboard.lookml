@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: brand_campaign_moment_page
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       brand_campaign_moment_page.submission_date,
       brand_campaign_moment_page.branch,
+      brand_campaign_moment_page.upper,
+      brand_campaign_moment_page.lower,
       brand_campaign_moment_page.point
     ]
     pivots: [
       brand_campaign_moment_page.branch
     ]
     filters:
-      brand_campaign_moment_page.metric: 'ad_clicks'
-      brand_campaign_moment_page.statistic: mean
+      brand_campaign_moment_page.metric: 'memory_total'
+      brand_campaign_moment_page.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: brand_campaign_moment_page.submission_date
+      Percentile: brand_campaign_moment_page.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,6 +149,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: brand_campaign_moment_page
+    type: looker_line
+    fields: [
+      brand_campaign_moment_page.submission_date,
+      brand_campaign_moment_page.branch,
+      brand_campaign_moment_page.point
+    ]
+    pivots: [
+      brand_campaign_moment_page.branch
+    ]
+    filters:
+      brand_campaign_moment_page.metric: 'ad_clicks'
+      brand_campaign_moment_page.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: brand_campaign_moment_page.submission_date
+    field_y: brand_campaign_moment_page.point
+    log_scale: false
+    ci_lower: brand_campaign_moment_page.lower
+    ci_upper: brand_campaign_moment_page.upper
+    show_grid: true
+    listen:
+      Date: brand_campaign_moment_page.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -165,7 +202,7 @@
       brand_campaign_moment_page.metric: 'retained'
       brand_campaign_moment_page.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: brand_campaign_moment_page.submission_date
@@ -198,42 +235,6 @@
     filters:
       brand_campaign_moment_page.metric: 'active_hours'
       brand_campaign_moment_page.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: brand_campaign_moment_page.submission_date
-    field_y: brand_campaign_moment_page.point
-    log_scale: false
-    ci_lower: brand_campaign_moment_page.lower
-    ci_upper: brand_campaign_moment_page.upper
-    show_grid: true
-    listen:
-      Date: brand_campaign_moment_page.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: brand_campaign_moment_page
-    type: "ci-line-chart"
-    fields: [
-      brand_campaign_moment_page.submission_date,
-      brand_campaign_moment_page.branch,
-      brand_campaign_moment_page.upper,
-      brand_campaign_moment_page.lower,
-      brand_campaign_moment_page.point
-    ]
-    pivots: [
-      brand_campaign_moment_page.branch
-    ]
-    filters:
-      brand_campaign_moment_page.metric: 'memory_total'
-      brand_campaign_moment_page.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: brand_campaign_moment_page.submission_date
-      Percentile: brand_campaign_moment_page.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

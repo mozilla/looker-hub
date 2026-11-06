@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: disable_safebrowsing_v5_for_desktop_release_154_155
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       disable_safebrowsing_v5_for_desktop_release_154_155.submission_date,
       disable_safebrowsing_v5_for_desktop_release_154_155.branch,
+      disable_safebrowsing_v5_for_desktop_release_154_155.upper,
+      disable_safebrowsing_v5_for_desktop_release_154_155.lower,
       disable_safebrowsing_v5_for_desktop_release_154_155.point
     ]
     pivots: [
       disable_safebrowsing_v5_for_desktop_release_154_155.branch
     ]
     filters:
-      disable_safebrowsing_v5_for_desktop_release_154_155.metric: 'ad_clicks'
-      disable_safebrowsing_v5_for_desktop_release_154_155.statistic: mean
+      disable_safebrowsing_v5_for_desktop_release_154_155.metric: 'memory_total'
+      disable_safebrowsing_v5_for_desktop_release_154_155.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: disable_safebrowsing_v5_for_desktop_release_154_155.submission_date
+      Percentile: disable_safebrowsing_v5_for_desktop_release_154_155.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,6 +149,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_safebrowsing_v5_for_desktop_release_154_155
+    type: looker_line
+    fields: [
+      disable_safebrowsing_v5_for_desktop_release_154_155.submission_date,
+      disable_safebrowsing_v5_for_desktop_release_154_155.branch,
+      disable_safebrowsing_v5_for_desktop_release_154_155.point
+    ]
+    pivots: [
+      disable_safebrowsing_v5_for_desktop_release_154_155.branch
+    ]
+    filters:
+      disable_safebrowsing_v5_for_desktop_release_154_155.metric: 'ad_clicks'
+      disable_safebrowsing_v5_for_desktop_release_154_155.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: disable_safebrowsing_v5_for_desktop_release_154_155.submission_date
+    field_y: disable_safebrowsing_v5_for_desktop_release_154_155.point
+    log_scale: false
+    ci_lower: disable_safebrowsing_v5_for_desktop_release_154_155.lower
+    ci_upper: disable_safebrowsing_v5_for_desktop_release_154_155.upper
+    show_grid: true
+    listen:
+      Date: disable_safebrowsing_v5_for_desktop_release_154_155.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -165,7 +202,7 @@
       disable_safebrowsing_v5_for_desktop_release_154_155.metric: 'retained'
       disable_safebrowsing_v5_for_desktop_release_154_155.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: disable_safebrowsing_v5_for_desktop_release_154_155.submission_date
@@ -198,42 +235,6 @@
     filters:
       disable_safebrowsing_v5_for_desktop_release_154_155.metric: 'active_hours'
       disable_safebrowsing_v5_for_desktop_release_154_155.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: disable_safebrowsing_v5_for_desktop_release_154_155.submission_date
-    field_y: disable_safebrowsing_v5_for_desktop_release_154_155.point
-    log_scale: false
-    ci_lower: disable_safebrowsing_v5_for_desktop_release_154_155.lower
-    ci_upper: disable_safebrowsing_v5_for_desktop_release_154_155.upper
-    show_grid: true
-    listen:
-      Date: disable_safebrowsing_v5_for_desktop_release_154_155.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: disable_safebrowsing_v5_for_desktop_release_154_155
-    type: "ci-line-chart"
-    fields: [
-      disable_safebrowsing_v5_for_desktop_release_154_155.submission_date,
-      disable_safebrowsing_v5_for_desktop_release_154_155.branch,
-      disable_safebrowsing_v5_for_desktop_release_154_155.upper,
-      disable_safebrowsing_v5_for_desktop_release_154_155.lower,
-      disable_safebrowsing_v5_for_desktop_release_154_155.point
-    ]
-    pivots: [
-      disable_safebrowsing_v5_for_desktop_release_154_155.branch
-    ]
-    filters:
-      disable_safebrowsing_v5_for_desktop_release_154_155.metric: 'memory_total'
-      disable_safebrowsing_v5_for_desktop_release_154_155.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: disable_safebrowsing_v5_for_desktop_release_154_155.submission_date
-      Percentile: disable_safebrowsing_v5_for_desktop_release_154_155.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

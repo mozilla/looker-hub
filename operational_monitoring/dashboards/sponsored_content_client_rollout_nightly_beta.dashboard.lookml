@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: sponsored_content_client_rollout_nightly_beta
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       sponsored_content_client_rollout_nightly_beta.submission_date,
       sponsored_content_client_rollout_nightly_beta.branch,
+      sponsored_content_client_rollout_nightly_beta.upper,
+      sponsored_content_client_rollout_nightly_beta.lower,
       sponsored_content_client_rollout_nightly_beta.point
     ]
     pivots: [
       sponsored_content_client_rollout_nightly_beta.branch
     ]
     filters:
-      sponsored_content_client_rollout_nightly_beta.metric: 'ad_clicks'
-      sponsored_content_client_rollout_nightly_beta.statistic: mean
+      sponsored_content_client_rollout_nightly_beta.metric: 'memory_total'
+      sponsored_content_client_rollout_nightly_beta.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: sponsored_content_client_rollout_nightly_beta.submission_date
+      Percentile: sponsored_content_client_rollout_nightly_beta.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,6 +149,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sponsored_content_client_rollout_nightly_beta
+    type: looker_line
+    fields: [
+      sponsored_content_client_rollout_nightly_beta.submission_date,
+      sponsored_content_client_rollout_nightly_beta.branch,
+      sponsored_content_client_rollout_nightly_beta.point
+    ]
+    pivots: [
+      sponsored_content_client_rollout_nightly_beta.branch
+    ]
+    filters:
+      sponsored_content_client_rollout_nightly_beta.metric: 'ad_clicks'
+      sponsored_content_client_rollout_nightly_beta.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: sponsored_content_client_rollout_nightly_beta.submission_date
+    field_y: sponsored_content_client_rollout_nightly_beta.point
+    log_scale: false
+    ci_lower: sponsored_content_client_rollout_nightly_beta.lower
+    ci_upper: sponsored_content_client_rollout_nightly_beta.upper
+    show_grid: true
+    listen:
+      Date: sponsored_content_client_rollout_nightly_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -165,7 +202,7 @@
       sponsored_content_client_rollout_nightly_beta.metric: 'retained'
       sponsored_content_client_rollout_nightly_beta.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: sponsored_content_client_rollout_nightly_beta.submission_date
@@ -198,42 +235,6 @@
     filters:
       sponsored_content_client_rollout_nightly_beta.metric: 'active_hours'
       sponsored_content_client_rollout_nightly_beta.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: sponsored_content_client_rollout_nightly_beta.submission_date
-    field_y: sponsored_content_client_rollout_nightly_beta.point
-    log_scale: false
-    ci_lower: sponsored_content_client_rollout_nightly_beta.lower
-    ci_upper: sponsored_content_client_rollout_nightly_beta.upper
-    show_grid: true
-    listen:
-      Date: sponsored_content_client_rollout_nightly_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: sponsored_content_client_rollout_nightly_beta
-    type: "ci-line-chart"
-    fields: [
-      sponsored_content_client_rollout_nightly_beta.submission_date,
-      sponsored_content_client_rollout_nightly_beta.branch,
-      sponsored_content_client_rollout_nightly_beta.upper,
-      sponsored_content_client_rollout_nightly_beta.lower,
-      sponsored_content_client_rollout_nightly_beta.point
-    ]
-    pivots: [
-      sponsored_content_client_rollout_nightly_beta.branch
-    ]
-    filters:
-      sponsored_content_client_rollout_nightly_beta.metric: 'memory_total'
-      sponsored_content_client_rollout_nightly_beta.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: sponsored_content_client_rollout_nightly_beta.submission_date
-      Percentile: sponsored_content_client_rollout_nightly_beta.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
