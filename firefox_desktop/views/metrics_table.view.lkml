@@ -16336,6 +16336,8 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__geolocation_persisted_cache {
     sql: ${TABLE}.metrics.labeled_counter.geolocation_persisted_cache ;;
     hidden: yes
+    description: "What became of the NetworkGeolocationProvider request cache entry that an earlier session persisted, recorded when a session first consults the cache: absent if there was none, adopted if it was for the current network, rejected if it was for another network, or superseded if a network request completed before the network ID was known.
+"
   }
 
   dimension: metrics__labeled_counter__geolocation_request_activation {
@@ -20248,6 +20250,10 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_memory_distribution__speculation_rules_prefetch_transfer_size {
     sql: ${TABLE}.metrics.labeled_memory_distribution.speculation_rules_prefetch_transfer_size ;;
     hidden: yes
+    description: "Bytes a Speculation Rules prefetch read from the network, summed over its redirect chain. Recorded once per prefetch record when the record is discarded, which is the first point that knows whether a navigation ever came for it, so each label's sample count is also the number of records that ended with that outcome.
+used: a navigation activated the record. unused: the prefetch completed, but no navigation activated it. Includes a record that a later prefetch of the same URL superseded. incomplete: the fetch started but never completed, because the document cancelled it, it exceeded the body cap, or it failed.
+The value is nsIHttpChannel.transferSize: response header fields plus the encoded response body. It excludes the request, and it is zero when the prefetch was itself served from the HTTP cache. A navigation that reuses a prefetched cache entry transfers nothing of its own, so prefetched bytes are counted here and only here.
+A candidate rejected before its request was sent, a cross-origin one for instance"
   }
 
   dimension: metrics__labeled_quantity__addons_manager_startup_timeline {
@@ -20901,6 +20907,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__netwerk_happy_eyeballs_dns_answer_spread_v2 {
     sql: ${TABLE}.metrics.labeled_timing_distribution.netwerk_happy_eyeballs_dns_answer_spread_v2 ;;
     hidden: yes
+    description: "Happy Eyeballs: time between the first and the last positive DNS answer of a single algorithm run, across the A, AAAA and HTTPS queries (a positive answer is one that carried at least one address or service info). Used to tune the resolution delay (network.http.happy_eyeballs_resolution_delay). A run with a single positive answer records 0, which Glean stores in the lowest (1 ns) bucket; any real spread, even below 1 ms, lands in a higher bucket. Every run with a positive answer records one sample per label.
+Labels: - until_first_attempt: Only answers received before the first
+  connection attempt, i.e. while the resolution delay applies.
+- until_end: All answers received during the run.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_duration {
@@ -68335,6 +68346,7 @@ view: metrics_table__metrics__labeled_memory_distribution__speculation_rules_pre
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -73720,6 +73732,7 @@ view: metrics_table__metrics__labeled_timing_distribution__netwerk_happy_eyeball
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
