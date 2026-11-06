@@ -1111,6 +1111,15 @@ view: events_stream_table {
     description: "The source of the extension event. Always \"share-extension\" for the legacy Share Extension."
   }
 
+  dimension: extras__string__failure_reason {
+    sql: ${TABLE}.extras.string.failure_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Failure Reason"
+    description: "Why the attestation failed. One of `unsupported`, `key_unusable`, `network`, `session_not_persisted`, `not_available` or `unknown` (see `VPNAttestationFailureReason`)."
+  }
+
   dimension: extras__string__feature_id {
     sql: ${TABLE}.extras.string.feature_id ;;
     type: string

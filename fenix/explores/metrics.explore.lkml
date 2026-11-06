@@ -678,6 +678,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_network_provider}) AS metrics__metrics__labeled_counter__geolocation_network_provider ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_network_provider.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__geolocation_persisted_cache {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_persisted_cache}) AS metrics__metrics__labeled_counter__geolocation_persisted_cache ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_persisted_cache.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__geolocation_request_activation {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_request_activation}) AS metrics__metrics__labeled_counter__geolocation_request_activation ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_request_activation.document_id} ;;

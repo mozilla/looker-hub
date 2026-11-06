@@ -8481,8 +8481,8 @@ view: events_stream_table {
     group_label: "Extras: String"
     group_item_label: "Prompt Type"
     description: "Depending on the type of event:
-* Type of prompt shown: disambiguation, batch_preview, or safety_confirmation
 * Type of prompt shown - disambiguation, batch_preview, or safety_confirmation
+* Type of prompt shown: disambiguation, batch_preview, or safety_confirmation
 * \"new_card\" for the save doorhanger of a new card, \"existing_card\" for the update doorhanger offering to add a security code to a saved card."
   }
 
