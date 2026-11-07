@@ -6520,8 +6520,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Engagement Type"
     description: "Depending on the type of event:
-* Records how the user selected the result. The possible values are: `click`, `dismiss`, `drop_go`, `enter`, `go_button`, `help`, `inaccurate_location`, `manage`, `not_interested`, `not_relevant`, `paste_go`, `show_less_frequently`
 * Records how the user selected the result. The possible values are: `ask_button`, `click`, `dismiss`, `drop_go`, `enter`, `go_button`, `help`, `inaccurate_location`, `manage`, `navigate_button`, `not_interested`, `not_now`, `opt_in`, `paste_go`, `search_button`, `show_less_frequently`
+* Records how the user selected the result. The possible values are: `click`, `dismiss`, `drop_go`, `enter`, `go_button`, `help`, `inaccurate_location`, `manage`, `not_interested`, `not_relevant`, `paste_go`, `show_less_frequently`
 * Records how the user selected the result. The possible values are: `click`, `dismiss`, `drop_go`, `enter`, `go_button`, `help`, `inaccurate_location`, `manage`, `not_interested`, `not_now`, `not_relevant`, `opt_in`, `paste_go`, `show_less_frequently`
 * Records how the user selected the result. The possible values are the same as those defined for the engagement event engagement_type property.
 * Records how the user selected the result. The possible values are: `as..."
@@ -9153,8 +9153,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Provider"
     description: "Depending on the type of event:
-* The name of the `UrlbarProvider` that provided the selected result. The possible values are: `AboutPages`, `AliasEngines`, `Autofill`, `BookmarkKeywords`, `calculator`, `UrlbarProviderContextualSearch`, `HeuristicFallback`, `HistoryUrlHeuristic`, `InputHistory`, `UrlbarProviderInterventions`, `Omnibox`, `OpenTabs`, `Places`, `PrivateSearch`, `quickactions`, `UrlbarProviderQuickSuggest`, `RemoteTabs`, `SearchSuggestions`, `UrlbarProviderSearchTips`, `TabToSearch`, `TokenAliasEngines`, `UrlbarProviderTopSites`, `UnitConversion` and `UnifiedComplete`. If engagement_type is `drop_go` or `paste_go`, this will be null because no results are shown. And also, if selected_result is `experimental_addon`, it means that the user selected a result from an add-on using the urlbar experimental API. In this case, this will be the provider name specified by the add-on.
 * Selected provider id.
+* The name of the `UrlbarProvider` that provided the selected result. The possible values are: `AboutPages`, `AliasEngines`, `Autofill`, `BookmarkKeywords`, `calculator`, `UrlbarProviderContextualSearch`, `HeuristicFallback`, `HistoryUrlHeuristic`, `InputHistory`, `UrlbarProviderInterventions`, `Omnibox`, `OpenTabs`, `Places`, `PrivateSearch`, `quickactions`, `UrlbarProviderQuickSuggest`, `RemoteTabs`, `SearchSuggestions`, `UrlbarProviderSearchTips`, `TabToSearch`, `TokenAliasEngines`, `UrlbarProviderTopSites`, `UnitConversion` and `UnifiedComplete`. If engagement_type is `drop_go` or `paste_go`, this will be null because no results are shown. And also, if selected_result is `experimental_addon`, it means that the user selected a result from an add-on using the urlbar experimental API. In this case, this will be the provider name specified by the add-on.
 * The name of the provider.
 * Which provider was last selected.
 * Current provider id.

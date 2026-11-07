@@ -15829,6 +15829,30 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_gamepad_hand {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_gamepad_hand ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Gamepad Hand"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_gamepad_haptic_actuators {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_gamepad_haptic_actuators ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Gamepad Haptic Actuators"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_gamepad_pose {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_gamepad_pose ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Gamepad Pose"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_gwtrich_text_area_compat_hack {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_gwtrich_text_area_compat_hack ;;
     type: number
@@ -16607,6 +16631,30 @@ view: use_counters_table {
     group_item_label: "Use Counter Deprecated Ops Page Fullscreen Attribute"
     description: "Whether a page used FullscreenAttribute. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_gamepad_hand {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_gamepad_hand ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Gamepad Hand"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_gamepad_haptic_actuators {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_gamepad_haptic_actuators ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Gamepad Haptic Actuators"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_gamepad_pose {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_gamepad_pose ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Gamepad Pose"
   }
 
   dimension: metrics__counter__use_counter_deprecated_ops_page_gwtrich_text_area_compat_hack {
