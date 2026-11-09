@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: addresses_storage_migration_nightly_rollout_min_version_161
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       addresses_storage_migration_nightly_rollout_min_version_161.submission_date,
       addresses_storage_migration_nightly_rollout_min_version_161.branch,
+      addresses_storage_migration_nightly_rollout_min_version_161.upper,
+      addresses_storage_migration_nightly_rollout_min_version_161.lower,
       addresses_storage_migration_nightly_rollout_min_version_161.point
     ]
     pivots: [
       addresses_storage_migration_nightly_rollout_min_version_161.branch
     ]
     filters:
-      addresses_storage_migration_nightly_rollout_min_version_161.metric: 'days_of_use'
-      addresses_storage_migration_nightly_rollout_min_version_161.statistic: mean
+      addresses_storage_migration_nightly_rollout_min_version_161.metric: 'memory_total'
+      addresses_storage_migration_nightly_rollout_min_version_161.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,6 +42,7 @@
     show_grid: true
     listen:
       Date: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
+      Percentile: addresses_storage_migration_nightly_rollout_min_version_161.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -78,111 +81,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: addresses_storage_migration_nightly_rollout_min_version_161
-    type: "ci-line-chart"
-    fields: [
-      addresses_storage_migration_nightly_rollout_min_version_161.submission_date,
-      addresses_storage_migration_nightly_rollout_min_version_161.branch,
-      addresses_storage_migration_nightly_rollout_min_version_161.upper,
-      addresses_storage_migration_nightly_rollout_min_version_161.lower,
-      addresses_storage_migration_nightly_rollout_min_version_161.point
-    ]
-    pivots: [
-      addresses_storage_migration_nightly_rollout_min_version_161.branch
-    ]
-    filters:
-      addresses_storage_migration_nightly_rollout_min_version_161.metric: 'memory_total'
-      addresses_storage_migration_nightly_rollout_min_version_161.statistic: percentile
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
-    field_y: addresses_storage_migration_nightly_rollout_min_version_161.point
-    log_scale: false
-    ci_lower: addresses_storage_migration_nightly_rollout_min_version_161.lower
-    ci_upper: addresses_storage_migration_nightly_rollout_min_version_161.upper
-    show_grid: true
-    listen:
-      Date: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
-      Percentile: addresses_storage_migration_nightly_rollout_min_version_161.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: addresses_storage_migration_nightly_rollout_min_version_161
-    type: looker_line
-    fields: [
-      addresses_storage_migration_nightly_rollout_min_version_161.submission_date,
-      addresses_storage_migration_nightly_rollout_min_version_161.branch,
-      addresses_storage_migration_nightly_rollout_min_version_161.point
-    ]
-    pivots: [
-      addresses_storage_migration_nightly_rollout_min_version_161.branch
-    ]
-    filters:
-      addresses_storage_migration_nightly_rollout_min_version_161.metric: 'qualified_cumulative_days_of_use'
-      addresses_storage_migration_nightly_rollout_min_version_161.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
-    field_y: addresses_storage_migration_nightly_rollout_min_version_161.point
-    log_scale: false
-    ci_lower: addresses_storage_migration_nightly_rollout_min_version_161.lower
-    ci_upper: addresses_storage_migration_nightly_rollout_min_version_161.upper
-    show_grid: true
-    listen:
-      Date: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: addresses_storage_migration_nightly_rollout_min_version_161
-    type: looker_line
-    fields: [
-      addresses_storage_migration_nightly_rollout_min_version_161.submission_date,
-      addresses_storage_migration_nightly_rollout_min_version_161.branch,
-      addresses_storage_migration_nightly_rollout_min_version_161.point
-    ]
-    pivots: [
-      addresses_storage_migration_nightly_rollout_min_version_161.branch
-    ]
-    filters:
-      addresses_storage_migration_nightly_rollout_min_version_161.metric: 'ad_clicks'
-      addresses_storage_migration_nightly_rollout_min_version_161.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
-    field_y: addresses_storage_migration_nightly_rollout_min_version_161.point
-    log_scale: false
-    ci_lower: addresses_storage_migration_nightly_rollout_min_version_161.lower
-    ci_upper: addresses_storage_migration_nightly_rollout_min_version_161.upper
-    show_grid: true
-    listen:
-      Date: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -201,7 +99,41 @@
     filters:
       addresses_storage_migration_nightly_rollout_min_version_161.metric: 'retained'
       addresses_storage_migration_nightly_rollout_min_version_161.statistic: mean
-    row: 20
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
+    field_y: addresses_storage_migration_nightly_rollout_min_version_161.point
+    log_scale: false
+    ci_lower: addresses_storage_migration_nightly_rollout_min_version_161.lower
+    ci_upper: addresses_storage_migration_nightly_rollout_min_version_161.upper
+    show_grid: true
+    listen:
+      Date: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: addresses_storage_migration_nightly_rollout_min_version_161
+    type: looker_line
+    fields: [
+      addresses_storage_migration_nightly_rollout_min_version_161.submission_date,
+      addresses_storage_migration_nightly_rollout_min_version_161.branch,
+      addresses_storage_migration_nightly_rollout_min_version_161.point
+    ]
+    pivots: [
+      addresses_storage_migration_nightly_rollout_min_version_161.branch
+    ]
+    filters:
+      addresses_storage_migration_nightly_rollout_min_version_161.metric: 'search_count'
+      addresses_storage_migration_nightly_rollout_min_version_161.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -235,6 +167,74 @@
     filters:
       addresses_storage_migration_nightly_rollout_min_version_161.metric: 'active_hours'
       addresses_storage_migration_nightly_rollout_min_version_161.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
+    field_y: addresses_storage_migration_nightly_rollout_min_version_161.point
+    log_scale: false
+    ci_lower: addresses_storage_migration_nightly_rollout_min_version_161.lower
+    ci_upper: addresses_storage_migration_nightly_rollout_min_version_161.upper
+    show_grid: true
+    listen:
+      Date: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: addresses_storage_migration_nightly_rollout_min_version_161
+    type: looker_line
+    fields: [
+      addresses_storage_migration_nightly_rollout_min_version_161.submission_date,
+      addresses_storage_migration_nightly_rollout_min_version_161.branch,
+      addresses_storage_migration_nightly_rollout_min_version_161.point
+    ]
+    pivots: [
+      addresses_storage_migration_nightly_rollout_min_version_161.branch
+    ]
+    filters:
+      addresses_storage_migration_nightly_rollout_min_version_161.metric: 'days_of_use'
+      addresses_storage_migration_nightly_rollout_min_version_161.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
+    field_y: addresses_storage_migration_nightly_rollout_min_version_161.point
+    log_scale: false
+    ci_lower: addresses_storage_migration_nightly_rollout_min_version_161.lower
+    ci_upper: addresses_storage_migration_nightly_rollout_min_version_161.upper
+    show_grid: true
+    listen:
+      Date: addresses_storage_migration_nightly_rollout_min_version_161.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: addresses_storage_migration_nightly_rollout_min_version_161
+    type: looker_line
+    fields: [
+      addresses_storage_migration_nightly_rollout_min_version_161.submission_date,
+      addresses_storage_migration_nightly_rollout_min_version_161.branch,
+      addresses_storage_migration_nightly_rollout_min_version_161.point
+    ]
+    pivots: [
+      addresses_storage_migration_nightly_rollout_min_version_161.branch
+    ]
+    filters:
+      addresses_storage_migration_nightly_rollout_min_version_161.metric: 'ad_clicks'
+      addresses_storage_migration_nightly_rollout_min_version_161.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       addresses_storage_migration_nightly_rollout_min_version_161.branch
     ]
     filters:
-      addresses_storage_migration_nightly_rollout_min_version_161.metric: 'search_count'
+      addresses_storage_migration_nightly_rollout_min_version_161.metric: 'qualified_cumulative_days_of_use'
       addresses_storage_migration_nightly_rollout_min_version_161.statistic: mean
     row: 30
     col: 12

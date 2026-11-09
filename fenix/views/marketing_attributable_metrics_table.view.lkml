@@ -9,6 +9,7 @@ view: marketing_attributable_metrics_table {
     sql: ${TABLE}.activated ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "True if `fenix.new_profile_activation` reported this client as activated on the submission date; false when there is no activation record."
   }
 
   dimension: activations {
@@ -21,24 +22,31 @@ view: marketing_attributable_metrics_table {
     sql: ${TABLE}.ad_clicks ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Number of ad clicks on search result pages by this client on the submission date. 0 when neither `fenix.baseline` metrics nor `search.mobile_search_clients_daily` reported search data for this client on that day."
   }
 
   dimension: adjust_adgroup {
     sql: ${TABLE}.adjust_adgroup ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Structure parameter for the ad group of a campaign.
+Adjust campaign structure parameters (`campaign`, `adgroup`, `creative`) are set on the Adjust link URL by marketing, analogous to UTM parameters on a web URL, so values are not telemetry-derived and their format is campaign-specific. Only populated for clients whose `adjust_network` is known."
   }
 
   dimension: adjust_campaign {
     sql: ${TABLE}.adjust_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Structure parameter for the campaign name.
+Adjust campaign structure parameters (`campaign`, `adgroup`, `creative`) are set on the Adjust link URL by marketing, analogous to UTM parameters on a web URL, so values are not telemetry-derived and their format is campaign-specific. Only populated for clients whose `adjust_network` is known."
   }
 
   dimension: adjust_creative {
     sql: ${TABLE}.adjust_creative ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Structure parameter for the creative content of a campaign.
+Adjust campaign structure parameters (`campaign`, `adgroup`, `creative`) are set on the Adjust link URL by marketing, analogous to UTM parameters on a web URL, so values are not telemetry-derived and their format is campaign-specific. Only populated for clients whose `adjust_network` is known."
   }
 
   dimension: adjust_network {
@@ -72,12 +80,14 @@ view: marketing_attributable_metrics_table {
     sql: ${TABLE}.is_new_install ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "True if the client was first seen on the submission date and reported a `first_session` ping (`metadata.reported_first_session_ping` from `fenix.firefox_android_clients`), distinguishing a genuine new install from a new profile."
   }
 
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "True if this is the first time a profile has been seen for this client, false if the profile was seen before."
   }
 
   dimension: new_installs {
@@ -96,7 +106,7 @@ view: marketing_attributable_metrics_table {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings. Computed by the ingestion pipeline as `CRC32(client_id) % 100`, where the source `client_id` is `client_info.client_id` for Glean pings and the top-level `clientId` for legacy telemetry pings."
   }
 
   dimension: search_count {
@@ -109,6 +119,7 @@ view: marketing_attributable_metrics_table {
     sql: ${TABLE}.searches_with_ads ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Number of search result pages (SERPs) that contained advertisements, recorded for this client on the submission date. 0 when neither `fenix.baseline` metrics nor `search.mobile_search_clients_daily` reported search data for this client on that day."
   }
 
   dimension_group: cohort {
@@ -124,6 +135,7 @@ view: marketing_attributable_metrics_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date this client was first seen (cohort entry date), used to group clients by when they were first seen."
   }
 
   dimension_group: submission {

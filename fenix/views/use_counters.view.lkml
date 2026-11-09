@@ -18,7 +18,7 @@ view: use_counters {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts content documents at destruction, labeled by a combination of signals indicating how ready the document is to adopt Trusted Types. Each document increments exactly one label of the form `htmlsink-{none,trusted,string}_writesink-{none,trusted,string}_ttcsp-{none,report,enforce}_strictcsp-{none,report,enforce}_created-{0,1}_used-{0,1}_lib-{0,1}_js-{0,1}`. `htmlsink` is what was passed to a TrustedHTML sink other than `document.write`: `innerHTML`, `outerHTML`, `insertAdjacentHTML`, `setHTMLUnsafe`, `Document.parseHTMLUnsafe`, `Range.createContextualFragment`, `DOMParser.parseFromString` or an iframe's `srcdoc`, and `writesink` what was passed to `document.write` or `document.writeln`: `none` if no such sink was used, `string` if a string was passed at least once, and `trusted` if only `TrustedHTML` was passed. `ttcsp` is the disposition of the `require-trusted-types-for` CSP directive at document destruction, so it includes policies added after load (e.g. by a `<meta>` element). `strictcsp` is the disposition of a strict CSP, i.e. a policy whose directive for script elements contains `'strict-dynamic'` and whose `base-uri` is `'none'`. `created` is whether a Trusted Types policy was created and `used` whether a policy was invoked (explicitly or implicitly as the default policy) for any of `createHTML`, `createScript` or `createScriptURL`, unlike the sinks which only cover HTML sinks; `used` implies `created`. `lib` is whether a library that eases Trusted Types adoption was detected: Lit by its `lit-html` policy, counted even if the CSP blocked it, React by its lookup of `__REACT_DEVTOOLS_GLOBAL_HOOK__` if that global still does not exist after load, or otherwise by that hook holding React or being defined by the page, htmx by an `htmx` global and Angular by an `ng-version` attribute on `body` or one of its first children, all once after the load event. `js` is whether script of the document itself ran, from a script element, an event handler attribute or a `javascript:` URL; with `js-0`, the sinks are `none` and `created`, `used` and `lib` are 0. Only recorded while `dom.security.trusted_types.readiness_telemetry.enabled` is set. Compare against `use.counter.content_documents_destroyed`.
+    description: "Counts content documents at destruction, labeled by a combination of signals indicating how ready the document is to adopt Trusted Types. Each document increments exactly one label of the form `doc-{top,sub}_htmlsink-{none,trusted,string}_writesink-{none,trusted,string}_ttcsp-{none,report,enforce}_strictcsp-{none,report,enforce}_created-{0,1}_used-{0,1}_lib-{0,1}_js-{0,1}`. `doc` is `top` for a top-level document and `sub` for a document in a frame, so that frames, which outnumber top-level documents, can be told apart; compare `doc-top` against `use.counter.top_level_content_documents_destroyed`. `htmlsink` is what was passed to a TrustedHTML sink other than `document.write`: `innerHTML`, `outerHTML`, `insertAdjacentHTML`, `setHTMLUnsafe`, `Document.parseHTMLUnsafe`, `Range.createContextualFragment`, `DOMParser.parseFromString` or an iframe's `srcdoc`, and `writesink` what was passed to `document.write` or `document.writeln`: `none` if no such sink was used, `string` if a string was passed at least once, and `trusted` if only `TrustedHTML` was passed. `ttcsp` is the disposition of the `require-trusted-types-for` CSP directive at document destruction, so it includes policies added after load (e.g. by a `<meta>` element). `strictcsp` is the disposition of a strict CSP, i.e. a policy whose directive for script elements contains `'strict-dynamic'` and whose `base-uri` is `'none'`. `created` is whether a Trusted Types policy was created and `used` whether a policy was invoked (explicitly or implicitly as the default policy) for any of `createHTML`, `createScript` or `createScriptURL`, unlike the sinks which only cover HTML sinks; `used` implies `created`. `lib` is whether a library that eases Trusted Types adoption was detected: Lit by its `lit-html` policy, counted even if the CSP blocked it, React by its lookup of `__REACT_DEVTOOLS_GLOBAL_HOOK__` if that global still does not exist after load, or otherwise by that hook holding React or being defined by the page, htmx by an `htmx` global and Angular by an `ng-version` attribute on `body` or one of its first children, all once after the load event. `js` is whether script of the document itself ran, from a script element, an event handler attribute or a `javascript:` URL; with `js-0`, the sinks are `none` and `created`, `used` and `lib` are 0. Only recorded while `dom.security.trusted_types.readiness_telemetry.enabled` is set. Compare against `use.counter.content_documents_destroyed`.
 "
   }
 
@@ -27688,6 +27688,60 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_gamepad_hand {
+    label: "Use Counter Deprecated Ops Doc: Gamepad Hand"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_gamepad_hand ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Gamepad Hand"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc: Gamepad Hand"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_gamepad_hand"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used GamepadHand. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_gamepad_haptic_actuators {
+    label: "Use Counter Deprecated Ops Doc: Gamepad Haptic Actuators"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_gamepad_haptic_actuators ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Gamepad Haptic Actuators"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc: Gamepad Haptic Actuators"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_gamepad_haptic_actuators"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used GamepadHapticActuators. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_gamepad_pose {
+    label: "Use Counter Deprecated Ops Doc: Gamepad Pose"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_gamepad_pose ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Gamepad Pose"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc: Gamepad Pose"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_gamepad_pose"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used GamepadPose. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_gwtrich_text_area_compat_hack {
     label: "Use Counter Deprecated Ops Doc: Gwtrich Text Area Compat Hack"
     hidden: no
@@ -28873,6 +28927,60 @@ view: use_counters {
     }
 
     description: "Whether a page used FullscreenAttribute. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_gamepad_hand {
+    label: "Use Counter Deprecated Ops Page: Gamepad Hand"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_gamepad_hand ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Gamepad Hand"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page: Gamepad Hand"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_gamepad_hand"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used GamepadHand. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_gamepad_haptic_actuators {
+    label: "Use Counter Deprecated Ops Page: Gamepad Haptic Actuators"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_gamepad_haptic_actuators ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Gamepad Haptic Actuators"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page: Gamepad Haptic Actuators"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_gamepad_haptic_actuators"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used GamepadHapticActuators. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_gamepad_pose {
+    label: "Use Counter Deprecated Ops Page: Gamepad Pose"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_gamepad_pose ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Gamepad Pose"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page: Gamepad Pose"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_gamepad_pose"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used GamepadPose. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -93183,6 +93291,81 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_deprecated_ops_doc_gamepad_hand {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_gamepad_hand} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Gamepad Hand"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_gamepad_hand"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_gamepad_hand_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_gamepad_hand: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Gamepad Hand"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_gamepad_hand"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_gamepad_haptic_actuators {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_gamepad_haptic_actuators} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Gamepad Haptic Actuators"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_gamepad_haptic_actuators"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_gamepad_haptic_actuators_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_gamepad_haptic_actuators: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Gamepad Haptic Actuators"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_gamepad_haptic_actuators"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_gamepad_pose {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_gamepad_pose} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Gamepad Pose"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_gamepad_pose"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_gamepad_pose_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_gamepad_pose: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Gamepad Pose"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_gamepad_pose"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_deprecated_ops_doc_gwtrich_text_area_compat_hack {
     type: sum
     sql: ${metrics__counter__use_counter_deprecated_ops_doc_gwtrich_text_area_compat_hack} ;;
@@ -94829,6 +95012,81 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Fullscreen Attribute"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_fullscreen_attribute"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_gamepad_hand {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_gamepad_hand} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Gamepad Hand"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_gamepad_hand"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_gamepad_hand_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_gamepad_hand: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Gamepad Hand"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_gamepad_hand"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_gamepad_haptic_actuators {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_gamepad_haptic_actuators} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Gamepad Haptic Actuators"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_gamepad_haptic_actuators"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_gamepad_haptic_actuators_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_gamepad_haptic_actuators: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Gamepad Haptic Actuators"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_gamepad_haptic_actuators"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_gamepad_pose {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_gamepad_pose} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Gamepad Pose"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_gamepad_pose"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_gamepad_pose_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_gamepad_pose: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Gamepad Pose"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_gamepad_pose"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
