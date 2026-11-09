@@ -2402,6 +2402,24 @@ view: events_stream {
     description: "The number of container configurations read from the user profile."
   }
 
+  dimension: extras__quantity__context_length {
+    sql: ${TABLE}.extras.quantity.context_length ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Context Length"
+    description: "UTF-16 code units in the JSON-serialized compacted messages at turn start, including the system prompt and history but excluding tool schemas. This is a context-size proxy, not a token count."
+  }
+
+  dimension: extras__quantity__context_message_count {
+    sql: ${TABLE}.extras.quantity.context_message_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Context Message Count"
+    description: "Number of messages in the compacted chat-completions snapshot after prompt preparation and before this turn's first model call."
+  }
+
   dimension: extras__quantity__cores {
     sql: ${TABLE}.extras.quantity.cores ;;
     type: number
@@ -2564,6 +2582,7 @@ view: events_stream {
 * How long the migration took (in milliseconds).
 * Milliseconds the menu was shown.
 * Total time of the run from start to completion, including page extraction and the model call.
+* The time from the original response request start to turn completion, including engine and prompt preparation.
 * Milliseconds elapsed to reach the step from its start. For end_file_download_* this is the time to download a single file; for end_download_* this is the total time to download the whole model.
 * Wall-clock milliseconds from reaching [[started]] to teardown."
   }
@@ -3025,7 +3044,8 @@ view: events_stream {
 * Time in ms to start processing the request
 * Milliseconds to output first sentence
 * Time spent in the model call only, excluding page extraction and the account token fetch. Only present when the model call completed.
-* Time from response request start to the first rendered assistant character"
+* Time from response request start to the first rendered assistant character
+* Time from response request start to the first rendered action-log entry"
   }
 
   dimension: extras__quantity__latency_ms {
@@ -3692,7 +3712,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Output Tokens"
-    description: "Number of tokens generated"
+    description: "Depending on the type of event:
+* Number of tokens generated
+* The sum of backend completion tokens across chat model responses in the turn, including tool follow-up responses but excluding direct tool answer streams. Omitted if any chat model response lacks completion-token usage."
   }
 
   dimension: extras__quantity__pc_negotiation_count {
@@ -4582,6 +4604,15 @@ view: events_stream {
     description: "Inference throughput in tokens per second (rounded integer)"
   }
 
+  dimension: extras__quantity__tool_call_count {
+    sql: ${TABLE}.extras.quantity.tool_call_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tool Call Count"
+    description: "The number of model-requested tool executions attempted during the chat turn."
+  }
+
   dimension: extras__quantity__total {
     sql: ${TABLE}.extras.quantity.total ;;
     type: number
@@ -4779,6 +4810,15 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Trigger Sampling Probability"
     description: "Sampling probability scaled by 1,000. For example, 0.25 is recorded as 250."
+  }
+
+  dimension: extras__quantity__turn_index {
+    sql: ${TABLE}.extras.quantity.turn_index ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Turn Index"
+    description: "Zero-based user turn index within the conversation; zero is the first turn."
   }
 
   dimension: extras__quantity__turn_number {
@@ -10201,6 +10241,7 @@ view: events_stream {
     group_item_label: "Surface"
     description: "Depending on the type of event:
 * Which UI surface.
+* Which surface the notification was shown on. Value is settingsPage or cwtsDialog.
 * Where the terminal action was taken: \"panel\" for the confirmation panel's own buttons, \"dialog\" for the clear-data dialog reached either through the panel's \"Choose...\" link or directly. The \"direct\" flow has no panel and so only ever reports \"dialog\"."
   }
 

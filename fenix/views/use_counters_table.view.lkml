@@ -15829,6 +15829,36 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_gamepad_hand {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_gamepad_hand ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Gamepad Hand"
+    description: "Whether a document used GamepadHand. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_gamepad_haptic_actuators {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_gamepad_haptic_actuators ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Gamepad Haptic Actuators"
+    description: "Whether a document used GamepadHapticActuators. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_gamepad_pose {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_gamepad_pose ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Gamepad Pose"
+    description: "Whether a document used GamepadPose. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_gwtrich_text_area_compat_hack {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_gwtrich_text_area_compat_hack ;;
     type: number
@@ -16606,6 +16636,36 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Deprecated Ops Page Fullscreen Attribute"
     description: "Whether a page used FullscreenAttribute. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_gamepad_hand {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_gamepad_hand ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Gamepad Hand"
+    description: "Whether a page used GamepadHand. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_gamepad_haptic_actuators {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_gamepad_haptic_actuators ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Gamepad Haptic Actuators"
+    description: "Whether a page used GamepadHapticActuators. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_gamepad_pose {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_gamepad_pose ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Gamepad Pose"
+    description: "Whether a page used GamepadPose. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -30714,7 +30774,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: metrics__labeled_counter__security_trusted_types_readiness {
     sql: ${TABLE}.metrics.labeled_counter.security_trusted_types_readiness ;;
     hidden: yes
-    description: "Counts content documents at destruction, labeled by a combination of signals indicating how ready the document is to adopt Trusted Types. Each document increments exactly one label of the form `htmlsink-{none,trusted,string}_writesink-{none,trusted,string}_ttcsp-{none,report,enforce}_strictcsp-{none,report,enforce}_created-{0,1}_used-{0,1}_lib-{0,1}_js-{0,1}`. `htmlsink` is what was passed to a TrustedHTML sink other than `document.write`: `innerHTML`, `outerHTML`, `insertAdjacentHTML`, `setHTMLUnsafe`, `Document.parseHTMLUnsafe`, `Range.createContextualFragment`, `DOMParser.parseFromString` or an iframe's `srcdoc`, and `writesink` what was passed to `document.write` or `document.writeln`: `none` if no such sink was used, `string` if a string was passed at least once, and `trusted` if only `TrustedHTML` was passed. `ttcsp` is the disposition of the `require-trusted-types-for` CSP directive at document destruction, so it includes policies added after load (e.g. by a `<meta>` element). `strictcsp` is the dispos"
+    description: "Counts content documents at destruction, labeled by a combination of signals indicating how ready the document is to adopt Trusted Types. Each document increments exactly one label of the form `doc-{top,sub}_htmlsink-{none,trusted,string}_writesink-{none,trusted,string}_ttcsp-{none,report,enforce}_strictcsp-{none,report,enforce}_created-{0,1}_used-{0,1}_lib-{0,1}_js-{0,1}`. `doc` is `top` for a top-level document and `sub` for a document in a frame, so that frames, which outnumber top-level documents, can be told apart; compare `doc-top` against `use.counter.top_level_content_documents_destroyed`. `htmlsink` is what was passed to a TrustedHTML sink other than `document.write`: `innerHTML`, `outerHTML`, `insertAdjacentHTML`, `setHTMLUnsafe`, `Document.parseHTMLUnsafe`, `Range.createContextualFragment`, `DOMParser.parseFromString` or an iframe's `srcdoc`, and `writesink` what was passed to `document.write` or `document.writeln`: `none` if no such sink was used, `string` if a string was passed at least once, and"
   }
 
   dimension: metrics__labeled_counter__use_counter_error_unknown_counter {
