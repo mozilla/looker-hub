@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: relay_desktop_to_mobile_callout_rollout
+    type: looker_line
+    fields: [
+      relay_desktop_to_mobile_callout_rollout.submission_date,
+      relay_desktop_to_mobile_callout_rollout.branch,
+      relay_desktop_to_mobile_callout_rollout.point
+    ]
+    pivots: [
+      relay_desktop_to_mobile_callout_rollout.branch
+    ]
+    filters:
+      relay_desktop_to_mobile_callout_rollout.metric: 'search_count'
+      relay_desktop_to_mobile_callout_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: relay_desktop_to_mobile_callout_rollout.submission_date
+    field_y: relay_desktop_to_mobile_callout_rollout.point
+    log_scale: false
+    ci_lower: relay_desktop_to_mobile_callout_rollout.lower
+    ci_upper: relay_desktop_to_mobile_callout_rollout.upper
+    show_grid: true
+    listen:
+      Date: relay_desktop_to_mobile_callout_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -31,7 +65,7 @@
       relay_desktop_to_mobile_callout_rollout.metric: 'memory_total'
       relay_desktop_to_mobile_callout_rollout.statistic: percentile
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: relay_desktop_to_mobile_callout_rollout.submission_date
@@ -47,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,10 +97,10 @@
       relay_desktop_to_mobile_callout_rollout.branch
     ]
     filters:
-      relay_desktop_to_mobile_callout_rollout.metric: 'uri_count'
+      relay_desktop_to_mobile_callout_rollout.metric: 'qualified_cumulative_days_of_use'
       relay_desktop_to_mobile_callout_rollout.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: relay_desktop_to_mobile_callout_rollout.submission_date
@@ -100,75 +134,7 @@
       relay_desktop_to_mobile_callout_rollout.metric: 'retained'
       relay_desktop_to_mobile_callout_rollout.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: relay_desktop_to_mobile_callout_rollout.submission_date
-    field_y: relay_desktop_to_mobile_callout_rollout.point
-    log_scale: false
-    ci_lower: relay_desktop_to_mobile_callout_rollout.lower
-    ci_upper: relay_desktop_to_mobile_callout_rollout.upper
-    show_grid: true
-    listen:
-      Date: relay_desktop_to_mobile_callout_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: relay_desktop_to_mobile_callout_rollout
-    type: looker_line
-    fields: [
-      relay_desktop_to_mobile_callout_rollout.submission_date,
-      relay_desktop_to_mobile_callout_rollout.branch,
-      relay_desktop_to_mobile_callout_rollout.point
-    ]
-    pivots: [
-      relay_desktop_to_mobile_callout_rollout.branch
-    ]
-    filters:
-      relay_desktop_to_mobile_callout_rollout.metric: 'search_count'
-      relay_desktop_to_mobile_callout_rollout.statistic: mean
-    row: 10
     col: 12
-    width: 12
-    height: 8
-    field_x: relay_desktop_to_mobile_callout_rollout.submission_date
-    field_y: relay_desktop_to_mobile_callout_rollout.point
-    log_scale: false
-    ci_lower: relay_desktop_to_mobile_callout_rollout.lower
-    ci_upper: relay_desktop_to_mobile_callout_rollout.upper
-    show_grid: true
-    listen:
-      Date: relay_desktop_to_mobile_callout_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: relay_desktop_to_mobile_callout_rollout
-    type: looker_line
-    fields: [
-      relay_desktop_to_mobile_callout_rollout.submission_date,
-      relay_desktop_to_mobile_callout_rollout.branch,
-      relay_desktop_to_mobile_callout_rollout.point
-    ]
-    pivots: [
-      relay_desktop_to_mobile_callout_rollout.branch
-    ]
-    filters:
-      relay_desktop_to_mobile_callout_rollout.metric: 'active_hours'
-      relay_desktop_to_mobile_callout_rollout.statistic: mean
-    row: 20
-    col: 0
     width: 12
     height: 8
     field_x: relay_desktop_to_mobile_callout_rollout.submission_date
@@ -202,7 +168,75 @@
       relay_desktop_to_mobile_callout_rollout.metric: 'days_of_use'
       relay_desktop_to_mobile_callout_rollout.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: relay_desktop_to_mobile_callout_rollout.submission_date
+    field_y: relay_desktop_to_mobile_callout_rollout.point
+    log_scale: false
+    ci_lower: relay_desktop_to_mobile_callout_rollout.lower
+    ci_upper: relay_desktop_to_mobile_callout_rollout.upper
+    show_grid: true
+    listen:
+      Date: relay_desktop_to_mobile_callout_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: relay_desktop_to_mobile_callout_rollout
+    type: looker_line
+    fields: [
+      relay_desktop_to_mobile_callout_rollout.submission_date,
+      relay_desktop_to_mobile_callout_rollout.branch,
+      relay_desktop_to_mobile_callout_rollout.point
+    ]
+    pivots: [
+      relay_desktop_to_mobile_callout_rollout.branch
+    ]
+    filters:
+      relay_desktop_to_mobile_callout_rollout.metric: 'uri_count'
+      relay_desktop_to_mobile_callout_rollout.statistic: mean
+    row: 20
     col: 12
+    width: 12
+    height: 8
+    field_x: relay_desktop_to_mobile_callout_rollout.submission_date
+    field_y: relay_desktop_to_mobile_callout_rollout.point
+    log_scale: false
+    ci_lower: relay_desktop_to_mobile_callout_rollout.lower
+    ci_upper: relay_desktop_to_mobile_callout_rollout.upper
+    show_grid: true
+    listen:
+      Date: relay_desktop_to_mobile_callout_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: relay_desktop_to_mobile_callout_rollout
+    type: looker_line
+    fields: [
+      relay_desktop_to_mobile_callout_rollout.submission_date,
+      relay_desktop_to_mobile_callout_rollout.branch,
+      relay_desktop_to_mobile_callout_rollout.point
+    ]
+    pivots: [
+      relay_desktop_to_mobile_callout_rollout.branch
+    ]
+    filters:
+      relay_desktop_to_mobile_callout_rollout.metric: 'active_hours'
+      relay_desktop_to_mobile_callout_rollout.statistic: mean
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: relay_desktop_to_mobile_callout_rollout.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       relay_desktop_to_mobile_callout_rollout.metric: 'ad_clicks'
-      relay_desktop_to_mobile_callout_rollout.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: relay_desktop_to_mobile_callout_rollout.submission_date
-    field_y: relay_desktop_to_mobile_callout_rollout.point
-    log_scale: false
-    ci_lower: relay_desktop_to_mobile_callout_rollout.lower
-    ci_upper: relay_desktop_to_mobile_callout_rollout.upper
-    show_grid: true
-    listen:
-      Date: relay_desktop_to_mobile_callout_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: relay_desktop_to_mobile_callout_rollout
-    type: looker_line
-    fields: [
-      relay_desktop_to_mobile_callout_rollout.submission_date,
-      relay_desktop_to_mobile_callout_rollout.branch,
-      relay_desktop_to_mobile_callout_rollout.point
-    ]
-    pivots: [
-      relay_desktop_to_mobile_callout_rollout.branch
-    ]
-    filters:
-      relay_desktop_to_mobile_callout_rollout.metric: 'qualified_cumulative_days_of_use'
       relay_desktop_to_mobile_callout_rollout.statistic: mean
     row: 30
     col: 12

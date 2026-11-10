@@ -29641,7 +29641,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__performance_time_to_first_contentful_paint__sum {
     label: "Performance Time: To First Contentful Paint Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_time_to_first_contentful_paint.sum ;;
     type: number
     group_label: "Performance Time"
