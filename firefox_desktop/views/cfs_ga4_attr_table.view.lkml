@@ -132,6 +132,13 @@ view: cfs_ga4_attr_table {
     description: "The distribution id associated with the install of Firefox."
   }
 
+  dimension: funnel_derived {
+    sql: ${TABLE}.funnel_derived ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "A categorical label describing the acquisition channel or funnel through which a user was obtained (e.g. 'mozorg windows funnel', 'mozorg mac funnel', 'partner', 'other'). This is used to segment users by how they came to install Firefox."
+  }
+
   dimension: ga4_ad_crosschannel_campaign {
     sql: ${TABLE}.ga4_ad_crosschannel_campaign ;;
     type: string
