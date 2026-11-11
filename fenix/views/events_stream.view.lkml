@@ -1983,6 +1983,15 @@ view: events_stream {
     description: "How many countries the refreshed list contained."
   }
 
+  dimension: extras__quantity__logins_count {
+    sql: ${TABLE}.extras.quantity.logins_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Logins Count"
+    description: "The number of logins imported."
+  }
+
   dimension: extras__quantity__magnitude {
     sql: ${TABLE}.extras.quantity.magnitude ;;
     type: number
