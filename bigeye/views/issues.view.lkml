@@ -425,6 +425,12 @@ view: issues {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: metric_metadata_data_node_entity_path {
+    sql: ${TABLE}.metric_metadata_data_node_entity_path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metric_metadata_dataset_id {
     sql: ${TABLE}.metric_metadata_dataset_id ;;
     type: number

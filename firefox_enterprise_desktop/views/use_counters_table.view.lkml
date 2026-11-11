@@ -18079,6 +18079,22 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_domparser_fast_path {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_domparser_fast_path ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Domparser Fast Path"
+  }
+
+  dimension: metrics__counter__use_counter_doc_domparser_fast_path_rejected {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_domparser_fast_path_rejected ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Domparser Fast Path Rejected"
+  }
+
   dimension: metrics__counter__use_counter_doc_domparser_parsefromstring {
     sql: ${TABLE}.metrics.counter.use_counter_doc_domparser_parsefromstring ;;
     type: number
@@ -19047,6 +19063,22 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Imagedata Colorspace"
     description: "Whether a document called called ImageData.colorSpace. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
+  }
+
+  dimension: metrics__counter__use_counter_doc_inner_html_fast_path {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_inner_html_fast_path ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Inner Html Fast Path"
+  }
+
+  dimension: metrics__counter__use_counter_doc_inner_html_fast_path_rejected {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_inner_html_fast_path_rejected ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Inner Html Fast Path Rejected"
   }
 
   dimension: metrics__counter__use_counter_doc_invalid_text_directives {
@@ -23759,6 +23791,22 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_domparser_fast_path {
+    sql: ${TABLE}.metrics.counter.use_counter_page_domparser_fast_path ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Domparser Fast Path"
+  }
+
+  dimension: metrics__counter__use_counter_page_domparser_fast_path_rejected {
+    sql: ${TABLE}.metrics.counter.use_counter_page_domparser_fast_path_rejected ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Domparser Fast Path Rejected"
+  }
+
   dimension: metrics__counter__use_counter_page_domparser_parsefromstring {
     sql: ${TABLE}.metrics.counter.use_counter_page_domparser_parsefromstring ;;
     type: number
@@ -24727,6 +24775,22 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Imagedata Colorspace"
     description: "Whether a page called called ImageData.colorSpace. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
+  }
+
+  dimension: metrics__counter__use_counter_page_inner_html_fast_path {
+    sql: ${TABLE}.metrics.counter.use_counter_page_inner_html_fast_path ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Inner Html Fast Path"
+  }
+
+  dimension: metrics__counter__use_counter_page_inner_html_fast_path_rejected {
+    sql: ${TABLE}.metrics.counter.use_counter_page_inner_html_fast_path_rejected ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Inner Html Fast Path Rejected"
   }
 
   dimension: metrics__counter__use_counter_page_invalid_text_directives {
