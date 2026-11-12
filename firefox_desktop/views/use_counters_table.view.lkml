@@ -18085,6 +18085,8 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Domparser Fast Path"
+    description: "Whether a document parses HTML with DOMParser that the innerHTML fast path parses. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
   }
 
   dimension: metrics__counter__use_counter_doc_domparser_fast_path_rejected {
@@ -18093,6 +18095,8 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Domparser Fast Path Rejected"
+    description: "Whether a document parses HTML with DOMParser that the innerHTML fast path leaves to the full parser. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
   }
 
   dimension: metrics__counter__use_counter_doc_domparser_parsefromstring {
@@ -19071,6 +19075,8 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Inner Html Fast Path"
+    description: "Whether a document sets innerHTML to markup that the innerHTML fast path parses. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
   }
 
   dimension: metrics__counter__use_counter_doc_inner_html_fast_path_rejected {
@@ -19079,6 +19085,8 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Inner Html Fast Path Rejected"
+    description: "Whether a document sets innerHTML to markup that the innerHTML fast path leaves to the full parser. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
   }
 
   dimension: metrics__counter__use_counter_doc_invalid_text_directives {
@@ -23797,6 +23805,8 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Domparser Fast Path"
+    description: "Whether a page parses HTML with DOMParser that the innerHTML fast path parses. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
   }
 
   dimension: metrics__counter__use_counter_page_domparser_fast_path_rejected {
@@ -23805,6 +23815,8 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Domparser Fast Path Rejected"
+    description: "Whether a page parses HTML with DOMParser that the innerHTML fast path leaves to the full parser. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
   }
 
   dimension: metrics__counter__use_counter_page_domparser_parsefromstring {
@@ -24783,6 +24795,8 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Inner Html Fast Path"
+    description: "Whether a page sets innerHTML to markup that the innerHTML fast path parses. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
   }
 
   dimension: metrics__counter__use_counter_page_inner_html_fast_path_rejected {
@@ -24791,6 +24805,8 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Inner Html Fast Path Rejected"
+    description: "Whether a page sets innerHTML to markup that the innerHTML fast path leaves to the full parser. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
   }
 
   dimension: metrics__counter__use_counter_page_invalid_text_directives {

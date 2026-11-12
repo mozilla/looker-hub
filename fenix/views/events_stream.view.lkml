@@ -831,7 +831,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Hidden"
-    description: "The document is hidden."
+    description: "Depending on the type of event:
+* Whether the section was moved to the sections marked as hidden in the menu, or marked as showing in it.
+* The document is hidden."
   }
 
   dimension: extras__boolean__history_and_downloads {
@@ -1983,6 +1985,15 @@ view: events_stream {
     description: "How many countries the refreshed list contained."
   }
 
+  dimension: extras__quantity__logins_count {
+    sql: ${TABLE}.extras.quantity.logins_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Logins Count"
+    description: "The number of logins imported."
+  }
+
   dimension: extras__quantity__magnitude {
     sql: ${TABLE}.extras.quantity.magnitude ;;
     type: number
@@ -2301,7 +2312,8 @@ view: events_stream {
 * The tile placement (1-based)
 * The position of the clicked recent site suggestion.
 * The position of the clicked top site suggestion.
-* The position of the clicked trending search suggestion."
+* The position of the clicked trending search suggestion.
+* The position of the section after it was moved, among the sections marked as hidden in the menu if `hidden` is true, among the ones marked as showing in it otherwise. Counted from top to bottom, starting at 1, inclusive."
   }
 
   dimension: extras__quantity__primary_password_deferrals {
@@ -4554,6 +4566,15 @@ view: events_stream {
     description: "The hashed addon id."
   }
 
+  dimension: extras__string__hidden_sections {
+    sql: ${TABLE}.extras.string.hidden_sections ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Hidden Sections"
+    description: "Comma separated names of the sections marked as hidden in the menu, from top to bottom. Each name is one of: page_controls, reader_view, vpn, tools, library, accounts_and_settings, tabs_controls, quit."
+  }
+
   dimension: extras__string__hide_reason {
     sql: ${TABLE}.extras.string.hide_reason ;;
     type: string
@@ -5501,8 +5522,9 @@ view: events_stream {
 * \"refresh\" if a selection in effect vanished from a refreshed list, or \"restore\" if a saved selection was unavailable before it was applied.
 * \"search\", \"list\", \"count\" or \"record_password_use\".
 * \"user_action\" when the user tapped a location in the location list, \"restore\" when a saved location was applied at startup, \"reset\" when the previous location was put back after a failed switch.
+* \"user_action\" when the user tapped a location in the location list, \"restore\" when a saved location was applied at startup.
 * \"add\": a new card was being saved. \"update\": a stored card was being changed. \"clear\": a stored card's security code was being removed. \"read\": one or all stored cards were being read.
-* The operation being performed when the incompatible format was found (e.g. addLogin, modifyLogin, removeLogin)."
+* The operation being performed wh..."
   }
 
   dimension: extras__string__option_clicked {
@@ -5914,8 +5936,8 @@ view: events_stream {
     group_item_label: "Proxy State"
     description: "Depending on the type of event:
 * Proxy state when the engine reported the failure. Not the state that issued the request: the reply is asynchronous, so the two can differ. One of \"uninitialized\", \"idle\", \"activating\", \"active\", \"data_limit_reached\", \"connection_error\".
-* Proxy state when the reset was recorded. One of \"uninitialized\", \"idle\", \"activating\", \"active\", \"data_limit_reached\", \"connection_error\".
-* Proxy state when the change happened. One of \"uninitialized\", \"idle\", \"activating\", \"active\", \"data_limit_reached\", \"connection_error\"."
+* Proxy state when the change happened. One of \"uninitialized\", \"idle\", \"activating\", \"active\", \"data_limit_reached\", \"connection_error\".
+* Proxy state when the reset was recorded. One of \"uninitialized\", \"idle\", \"activating\", \"active\", \"data_limit_reached\", \"connection_error\"."
   }
 
   dimension: extras__string__psi_full_avg10 {
@@ -6238,6 +6260,15 @@ view: events_stream {
     description: "The Google search domain where the GDPR choice was made."
   }
 
+  dimension: extras__string__section {
+    sql: ${TABLE}.extras.string.section ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Section"
+    description: "The name of the moved section. One of: page_controls, reader_view, vpn, tools, library, accounts_and_settings, tabs_controls, quit."
+  }
+
   dimension: extras__string__selected_total {
     sql: ${TABLE}.extras.string.selected_total ;;
     type: string
@@ -6386,6 +6417,15 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Shortcut"
     description: "The key combination pressed. Used only in the case that entrypoint === KeyShortcut."
+  }
+
+  dimension: extras__string__shown_sections {
+    sql: ${TABLE}.extras.string.shown_sections ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Shown Sections"
+    description: "Comma separated names of the sections marked as showing in the menu, from top to bottom. Each name is one of: page_controls, reader_view, vpn, tools, library, accounts_and_settings, tabs_controls, quit."
   }
 
   dimension: extras__string__signature {

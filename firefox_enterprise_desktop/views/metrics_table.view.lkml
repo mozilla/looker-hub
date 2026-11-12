@@ -15671,21 +15671,29 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__dom_fragment_parsing_dom_parser {
     sql: ${TABLE}.metrics.labeled_timing_distribution.dom_fragment_parsing_dom_parser ;;
     hidden: yes
+    description: "Time spent by DOMParser.parseFromString() parsing text/html, including the attempt of the fast path (nsHtml5FragmentFastPath) to parse it. Labeled like dom.fragment_parsing.inner_html. Only a random sample of the calls is timed, see dom.html_fragment_fast_path.telemetry_sample_shift.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__dom_fragment_parsing_dom_parser_fast_path_rejected {
     sql: ${TABLE}.metrics.labeled_timing_distribution.dom_fragment_parsing_dom_parser_fast_path_rejected ;;
     hidden: yes
+    description: "Time that the fast path (nsHtml5FragmentFastPath) spent on the input of DOMParser.parseFromString() before leaving it to the full parser, labeled like dom.fragment_parsing.inner_html_fast_path_rejected. Only a random sample of the calls is timed, see dom.html_fragment_fast_path.telemetry_sample_shift.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__dom_fragment_parsing_inner_html {
     sql: ${TABLE}.metrics.labeled_timing_distribution.dom_fragment_parsing_inner_html ;;
     hidden: yes
+    description: "Time spent parsing the markup that innerHTML is set to, including the attempt of the fast path (nsHtml5FragmentFastPath) to parse it. Labeled by whether the fast path parsed it (fast), left it to the full parser (fallback) or wasn't tried (full), and by the length of the markup in UTF-16 code units. Short markup without \"<\" or \"&\", which innerHTML doesn't parse, isn't recorded. Only a random sample of the calls is timed, see dom.html_fragment_fast_path.telemetry_sample_shift.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__dom_fragment_parsing_inner_html_fast_path_rejected {
     sql: ${TABLE}.metrics.labeled_timing_distribution.dom_fragment_parsing_inner_html_fast_path_rejected ;;
     hidden: yes
+    description: "Time that the innerHTML fast path (nsHtml5FragmentFastPath) spent on markup before leaving it to the full parser, labeled by the length of the markup in UTF-16 code units. Only a random sample of the calls is timed, see dom.html_fragment_fast_path.telemetry_sample_shift.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__dom_gc_in_progress {
