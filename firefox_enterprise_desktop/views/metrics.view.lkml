@@ -36797,6 +36797,42 @@ Corresponds to the value of the `MOZ_UPDATER` define.
 "
   }
 
+  dimension: metrics__rate__verification_used_cert_from_pkcs11_module__numerator {
+    label: "Verification Used Cert From: Pkcs11 Module Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_pkcs11_module.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Pkcs11 Module Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From: Pkcs11 Module Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/verification_used_cert_from_pkcs11_module"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from a third-party PKCS#11 module.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_pkcs11_module__denominator {
+    label: "Verification Used Cert From: Pkcs11 Module Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_pkcs11_module.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Pkcs11 Module Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From: Pkcs11 Module Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/verification_used_cert_from_pkcs11_module"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from a third-party PKCS#11 module.
+"
+  }
+
   dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__numerator {
     label: "Verification Used Cert From: Preloaded Intermediates Numerator"
     hidden: no
