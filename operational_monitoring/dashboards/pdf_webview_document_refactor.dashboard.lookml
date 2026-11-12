@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pdf_webview_document_refactor
-    type: looker_line
-    fields: [
-      pdf_webview_document_refactor.submission_date,
-      pdf_webview_document_refactor.branch,
-      pdf_webview_document_refactor.point
-    ]
-    pivots: [
-      pdf_webview_document_refactor.branch
-    ]
-    filters:
-      pdf_webview_document_refactor.metric: 'active_hours'
-      pdf_webview_document_refactor.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: pdf_webview_document_refactor.submission_date
-    field_y: pdf_webview_document_refactor.point
-    log_scale: false
-    ci_lower: pdf_webview_document_refactor.lower
-    ci_upper: pdf_webview_document_refactor.upper
-    show_grid: true
-    listen:
-      Date: pdf_webview_document_refactor.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -63,7 +29,75 @@
       pdf_webview_document_refactor.metric: 'days_of_use'
       pdf_webview_document_refactor.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: pdf_webview_document_refactor.submission_date
+    field_y: pdf_webview_document_refactor.point
+    log_scale: false
+    ci_lower: pdf_webview_document_refactor.lower
+    ci_upper: pdf_webview_document_refactor.upper
+    show_grid: true
+    listen:
+      Date: pdf_webview_document_refactor.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pdf_webview_document_refactor
+    type: looker_line
+    fields: [
+      pdf_webview_document_refactor.submission_date,
+      pdf_webview_document_refactor.branch,
+      pdf_webview_document_refactor.point
+    ]
+    pivots: [
+      pdf_webview_document_refactor.branch
+    ]
+    filters:
+      pdf_webview_document_refactor.metric: 'search_count'
+      pdf_webview_document_refactor.statistic: mean
+    row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: pdf_webview_document_refactor.submission_date
+    field_y: pdf_webview_document_refactor.point
+    log_scale: false
+    ci_lower: pdf_webview_document_refactor.lower
+    ci_upper: pdf_webview_document_refactor.upper
+    show_grid: true
+    listen:
+      Date: pdf_webview_document_refactor.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pdf_webview_document_refactor
+    type: looker_line
+    fields: [
+      pdf_webview_document_refactor.submission_date,
+      pdf_webview_document_refactor.branch,
+      pdf_webview_document_refactor.point
+    ]
+    pivots: [
+      pdf_webview_document_refactor.branch
+    ]
+    filters:
+      pdf_webview_document_refactor.metric: 'active_hours'
+      pdf_webview_document_refactor.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: pdf_webview_document_refactor.submission_date
@@ -97,7 +131,7 @@
       pdf_webview_document_refactor.metric: 'retained'
       pdf_webview_document_refactor.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: pdf_webview_document_refactor.submission_date
@@ -129,40 +163,6 @@
     ]
     filters:
       pdf_webview_document_refactor.metric: 'ad_clicks'
-      pdf_webview_document_refactor.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: pdf_webview_document_refactor.submission_date
-    field_y: pdf_webview_document_refactor.point
-    log_scale: false
-    ci_lower: pdf_webview_document_refactor.lower
-    ci_upper: pdf_webview_document_refactor.upper
-    show_grid: true
-    listen:
-      Date: pdf_webview_document_refactor.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pdf_webview_document_refactor
-    type: looker_line
-    fields: [
-      pdf_webview_document_refactor.submission_date,
-      pdf_webview_document_refactor.branch,
-      pdf_webview_document_refactor.point
-    ]
-    pivots: [
-      pdf_webview_document_refactor.branch
-    ]
-    filters:
-      pdf_webview_document_refactor.metric: 'search_count'
       pdf_webview_document_refactor.statistic: mean
     row: 20
     col: 0
