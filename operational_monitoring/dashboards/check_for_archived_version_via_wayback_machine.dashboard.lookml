@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,77 +26,9 @@
       check_for_archived_version_via_wayback_machine.branch
     ]
     filters:
-      check_for_archived_version_via_wayback_machine.metric: 'search_count'
+      check_for_archived_version_via_wayback_machine.metric: 'active_hours'
       check_for_archived_version_via_wayback_machine.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: check_for_archived_version_via_wayback_machine.submission_date
-    field_y: check_for_archived_version_via_wayback_machine.point
-    log_scale: false
-    ci_lower: check_for_archived_version_via_wayback_machine.lower
-    ci_upper: check_for_archived_version_via_wayback_machine.upper
-    show_grid: true
-    listen:
-      Date: check_for_archived_version_via_wayback_machine.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: check_for_archived_version_via_wayback_machine
-    type: looker_line
-    fields: [
-      check_for_archived_version_via_wayback_machine.submission_date,
-      check_for_archived_version_via_wayback_machine.branch,
-      check_for_archived_version_via_wayback_machine.point
-    ]
-    pivots: [
-      check_for_archived_version_via_wayback_machine.branch
-    ]
-    filters:
-      check_for_archived_version_via_wayback_machine.metric: 'retained'
-      check_for_archived_version_via_wayback_machine.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: check_for_archived_version_via_wayback_machine.submission_date
-    field_y: check_for_archived_version_via_wayback_machine.point
-    log_scale: false
-    ci_lower: check_for_archived_version_via_wayback_machine.lower
-    ci_upper: check_for_archived_version_via_wayback_machine.upper
-    show_grid: true
-    listen:
-      Date: check_for_archived_version_via_wayback_machine.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: check_for_archived_version_via_wayback_machine
-    type: looker_line
-    fields: [
-      check_for_archived_version_via_wayback_machine.submission_date,
-      check_for_archived_version_via_wayback_machine.branch,
-      check_for_archived_version_via_wayback_machine.point
-    ]
-    pivots: [
-      check_for_archived_version_via_wayback_machine.branch
-    ]
-    filters:
-      check_for_archived_version_via_wayback_machine.metric: 'tagged_sap_searches'
-      check_for_archived_version_via_wayback_machine.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -130,7 +62,7 @@
     filters:
       check_for_archived_version_via_wayback_machine.metric: 'days_of_use'
       check_for_archived_version_via_wayback_machine.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -164,7 +96,7 @@
     filters:
       check_for_archived_version_via_wayback_machine.metric: 'uri_count'
       check_for_archived_version_via_wayback_machine.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -180,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,10 +128,44 @@
       check_for_archived_version_via_wayback_machine.branch
     ]
     filters:
-      check_for_archived_version_via_wayback_machine.metric: 'active_hours'
+      check_for_archived_version_via_wayback_machine.metric: 'tagged_sap_searches'
+      check_for_archived_version_via_wayback_machine.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: check_for_archived_version_via_wayback_machine.submission_date
+    field_y: check_for_archived_version_via_wayback_machine.point
+    log_scale: false
+    ci_lower: check_for_archived_version_via_wayback_machine.lower
+    ci_upper: check_for_archived_version_via_wayback_machine.upper
+    show_grid: true
+    listen:
+      Date: check_for_archived_version_via_wayback_machine.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: check_for_archived_version_via_wayback_machine
+    type: looker_line
+    fields: [
+      check_for_archived_version_via_wayback_machine.submission_date,
+      check_for_archived_version_via_wayback_machine.branch,
+      check_for_archived_version_via_wayback_machine.point
+    ]
+    pivots: [
+      check_for_archived_version_via_wayback_machine.branch
+    ]
+    filters:
+      check_for_archived_version_via_wayback_machine.metric: 'retained'
       check_for_archived_version_via_wayback_machine.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: check_for_archived_version_via_wayback_machine.submission_date
@@ -231,6 +197,40 @@
     ]
     filters:
       check_for_archived_version_via_wayback_machine.metric: 'ad_clicks'
+      check_for_archived_version_via_wayback_machine.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: check_for_archived_version_via_wayback_machine.submission_date
+    field_y: check_for_archived_version_via_wayback_machine.point
+    log_scale: false
+    ci_lower: check_for_archived_version_via_wayback_machine.lower
+    ci_upper: check_for_archived_version_via_wayback_machine.upper
+    show_grid: true
+    listen:
+      Date: check_for_archived_version_via_wayback_machine.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: check_for_archived_version_via_wayback_machine
+    type: looker_line
+    fields: [
+      check_for_archived_version_via_wayback_machine.submission_date,
+      check_for_archived_version_via_wayback_machine.branch,
+      check_for_archived_version_via_wayback_machine.point
+    ]
+    pivots: [
+      check_for_archived_version_via_wayback_machine.branch
+    ]
+    filters:
+      check_for_archived_version_via_wayback_machine.metric: 'search_count'
       check_for_archived_version_via_wayback_machine.statistic: mean
     row: 30
     col: 0

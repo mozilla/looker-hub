@@ -31324,6 +31324,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_domparser_fast_path {
+    label: "Use Counter Doc: Domparser Fast Path"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_domparser_fast_path ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Domparser Fast Path"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Domparser Fast Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_domparser_fast_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document parses HTML with DOMParser that the innerHTML fast path parses. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_domparser_fast_path_rejected {
+    label: "Use Counter Doc: Domparser Fast Path Rejected"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_domparser_fast_path_rejected ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Domparser Fast Path Rejected"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Domparser Fast Path Rejected"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_domparser_fast_path_rejected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document parses HTML with DOMParser that the innerHTML fast path leaves to the full parser. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_domparser_parsefromstring {
     label: "Use Counter Doc: Domparser Parsefromstring"
     hidden: no
@@ -33067,6 +33103,42 @@ view: use_counters {
     }
 
     description: "Whether a document called called ImageData.colorSpace. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_inner_html_fast_path {
+    label: "Use Counter Doc: Inner Html Fast Path"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_inner_html_fast_path ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Inner Html Fast Path"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Inner Html Fast Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_inner_html_fast_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document sets innerHTML to markup that the innerHTML fast path parses. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_inner_html_fast_path_rejected {
+    label: "Use Counter Doc: Inner Html Fast Path Rejected"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_inner_html_fast_path_rejected ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Inner Html Fast Path Rejected"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Inner Html Fast Path Rejected"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_inner_html_fast_path_rejected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document sets innerHTML to markup that the innerHTML fast path leaves to the full parser. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -41565,6 +41637,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_domparser_fast_path {
+    label: "Use Counter Page: Domparser Fast Path"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_domparser_fast_path ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Domparser Fast Path"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Domparser Fast Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_domparser_fast_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page parses HTML with DOMParser that the innerHTML fast path parses. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_domparser_fast_path_rejected {
+    label: "Use Counter Page: Domparser Fast Path Rejected"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_domparser_fast_path_rejected ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Domparser Fast Path Rejected"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Domparser Fast Path Rejected"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_domparser_fast_path_rejected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page parses HTML with DOMParser that the innerHTML fast path leaves to the full parser. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_domparser_parsefromstring {
     label: "Use Counter Page: Domparser Parsefromstring"
     hidden: no
@@ -43308,6 +43416,42 @@ view: use_counters {
     }
 
     description: "Whether a page called called ImageData.colorSpace. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_inner_html_fast_path {
+    label: "Use Counter Page: Inner Html Fast Path"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_inner_html_fast_path ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Inner Html Fast Path"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Inner Html Fast Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_inner_html_fast_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page sets innerHTML to markup that the innerHTML fast path parses. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_inner_html_fast_path_rejected {
+    label: "Use Counter Page: Inner Html Fast Path Rejected"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_inner_html_fast_path_rejected ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Inner Html Fast Path Rejected"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Inner Html Fast Path Rejected"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_inner_html_fast_path_rejected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page sets innerHTML to markup that the innerHTML fast path leaves to the full parser. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -98334,6 +98478,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_domparser_fast_path {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_domparser_fast_path} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Domparser Fast Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_domparser_fast_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_domparser_fast_path_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_domparser_fast_path: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Domparser Fast Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_domparser_fast_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_domparser_fast_path_rejected {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_domparser_fast_path_rejected} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Domparser Fast Path Rejected"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_domparser_fast_path_rejected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_domparser_fast_path_rejected_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_domparser_fast_path_rejected: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Domparser Fast Path Rejected"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_domparser_fast_path_rejected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_domparser_parsefromstring {
     type: sum
     sql: ${metrics__counter__use_counter_doc_domparser_parsefromstring} ;;
@@ -100755,6 +100949,56 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Doc Imagedata Colorspace"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_imagedata_colorspace"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_inner_html_fast_path {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_inner_html_fast_path} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Inner Html Fast Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_inner_html_fast_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_inner_html_fast_path_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_inner_html_fast_path: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Inner Html Fast Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_inner_html_fast_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_inner_html_fast_path_rejected {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_inner_html_fast_path_rejected} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Inner Html Fast Path Rejected"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_inner_html_fast_path_rejected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_inner_html_fast_path_rejected_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_inner_html_fast_path_rejected: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Inner Html Fast Path Rejected"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_doc_inner_html_fast_path_rejected"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -112534,6 +112778,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_page_domparser_fast_path {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_domparser_fast_path} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Domparser Fast Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_domparser_fast_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_domparser_fast_path_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_domparser_fast_path: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Domparser Fast Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_domparser_fast_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_domparser_fast_path_rejected {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_domparser_fast_path_rejected} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Domparser Fast Path Rejected"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_domparser_fast_path_rejected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_domparser_fast_path_rejected_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_domparser_fast_path_rejected: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Domparser Fast Path Rejected"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_domparser_fast_path_rejected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_page_domparser_parsefromstring {
     type: sum
     sql: ${metrics__counter__use_counter_page_domparser_parsefromstring} ;;
@@ -114955,6 +115249,56 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Imagedata Colorspace"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_imagedata_colorspace"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_inner_html_fast_path {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_inner_html_fast_path} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Inner Html Fast Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_inner_html_fast_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_inner_html_fast_path_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_inner_html_fast_path: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Inner Html Fast Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_inner_html_fast_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_inner_html_fast_path_rejected {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_inner_html_fast_path_rejected} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Inner Html Fast Path Rejected"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_inner_html_fast_path_rejected"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_inner_html_fast_path_rejected_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_inner_html_fast_path_rejected: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Inner Html Fast Path Rejected"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_page_inner_html_fast_path_rejected"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
