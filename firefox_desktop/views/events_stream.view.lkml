@@ -4193,8 +4193,8 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Tabs"
     description: "Depending on the type of event:
-* Number of tabs selected
 * Number of tabs open in the window.
+* Number of tabs selected
 * Number of tabs restored
 * The number of tabs in the group when it was created
 * Number of open tabs included as context.
@@ -6323,7 +6323,6 @@ view: events_stream {
     group_item_label: "Detected Intent"
     description: "Depending on the type of event:
 * What was the detected intent for the request: navigate, search, chat, or action
-* What was the detected intent for the request: navigate, search, chat, or action. When the smartWindow feature's smartbarIntent variable pins search or chat, non-navigate requests report the pinned value rather than the classifier's.
 * What was the detected intent for the request navigate, search, chat, or action"
   }
 
@@ -9199,7 +9198,7 @@ view: events_stream {
 * The name of the provider.
 * Which provider was last selected.
 * Current provider id.
-* Search pr..."
+* Which pro..."
   }
 
   dimension: extras__string__provider_id {
@@ -10228,8 +10227,8 @@ view: events_stream {
     group_item_label: "Submit Type"
     description: "Depending on the type of event:
 * How the request was submitted: button, enter, follow-up, starter, or suggestion
-* How the request was submitted: button, enter, follow-up, fxms, menu, resume, retry, shortcuts, starter, or suggestion. Messaging surfaces may supply their own value instead of fxms
 * How the request was submitted: button, enter, follow-up, shortcuts, starter, or suggestion
+* How the request was submitted: button, enter, follow-up, fxms, menu, resume, retry, shortcuts, starter, or suggestion. Messaging surfaces may supply their own value instead of fxms
 * How the request was submitted: button, enter, follow-up, resume, retry, shortcuts, starter, or suggestion
 * How the request was submitted: button, enter, follow-up, menu, resume, retry, shortcuts, starter, or suggestion"
   }
