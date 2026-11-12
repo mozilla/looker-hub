@@ -424,6 +424,17 @@ view: events_stream_table {
     description: "Error or fallback reason when supported=false (e.g., no_getClientCapabilities, error)"
   }
 
+  dimension: extras__string__firefox_version {
+    sql: ${TABLE}.extras.string.firefox_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Firefox Version"
+    description: "Depending on the type of event:
+* The Firefox major version from the user agent, or unknown when the browser is not Firefox, which indicates Firefox is not installed or not in use.
+* The Firefox major version from the user agent, or unknown when the browser is not Firefox."
+  }
+
   dimension: extras__string__has_passkey_option {
     sql: ${TABLE}.extras.string.has_passkey_option ;;
     type: string
