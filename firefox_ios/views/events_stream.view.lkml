@@ -551,6 +551,15 @@ view: events_stream {
     description: "Whether the Google Lens results page loaded successfully."
   }
 
+  dimension: extras__quantity__actual {
+    sql: ${TABLE}.extras.quantity.actual ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Actual"
+    description: "The actual number of tabs."
+  }
+
   dimension: extras__quantity__api_query_count {
     sql: ${TABLE}.extras.quantity.api_query_count ;;
     type: number
@@ -587,6 +596,15 @@ view: events_stream {
     description: "Depending on the type of event:
 * The number of recent search suggestions displayed.
 * The number of trending search suggestions displayed."
+  }
+
+  dimension: extras__quantity__expected {
+    sql: ${TABLE}.extras.quantity.expected ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Expected"
+    description: "The expected number of tabs."
   }
 
   dimension: extras__quantity__figures {
@@ -694,6 +712,15 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Migrated Version"
     description: "The version of the database that was migrated to. This field will be empty if no migration(s) occurred."
+  }
+
+  dimension: extras__quantity__missing {
+    sql: ${TABLE}.extras.quantity.missing ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Missing"
+    description: "The missing number of tabs."
   }
 
   dimension: extras__quantity__n_chars {
@@ -810,6 +837,15 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Webview Count"
     description: "The number of living WKWebViews at the time of the memory warning."
+  }
+
+  dimension: extras__quantity__windows {
+    sql: ${TABLE}.extras.quantity.windows ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Windows"
+    description: "The number of windows."
   }
 
   dimension: extras__string__action {

@@ -2808,9 +2808,10 @@ view: events_stream_table {
 * The action selected by the user. Possible values are \"device\" (sent to specific device), \"all_devices\" (sent to all devices), or \"manage_devices\" (opened device management).
 * How this click happened
 * The action that was taken by the user, remove or cancel
+* Type of action taken by the user: `impression` or `click`.
 * Whether the toggle was used to enable or disable ads. Possible values are `enabled` and `disabled`.
 * \"add\": a code is saved for a card that had none. \"edit\": the stored code is changed. \"clear\": the stored code is removed.
-* \"save\" when the card is saved or updated, \"save_new\" when an existing card is saved as a new payment method, \"not_now\" (new_card) or \"no_thanks\" (existing_card) when the Dismiss button is clicked, \"never_save\" when the user stops saving cards, and \"..."
+* \"save\" when the card is saved or updated, \"save_new\" when an existing card is saved as a new payment method, \"not_now\" (new_card) or \"no_thanks\" (existing_card) when the Dismiss button is ..."
   }
 
   dimension: extras__string__action_source {
@@ -3034,6 +3035,15 @@ view: events_stream_table {
     description: "Depending on the type of event:
 * The state of the application before the notification was clicked. One of `foreground`, `background_with_window`, `background_no_window` or `unknown`. Only determined on Windows and macOS. `background_no_window` means no browser windows were open, and is only reported on macOS.
 * The state of the application before the notification was clicked. One of `foreground`, `background_with_window`, `background_no_window`, `closed` or `unknown`. Only determined on Windows and macOS. `background_no_window` means Firefox was running with no browser windows open. `closed` means the click launched Firefox because it wasn't running, and is only reported on Windows, as macOS removes Firefox's notifications when it quits."
+  }
+
+  dimension: extras__string__auth_type {
+    sql: ${TABLE}.extras.string.auth_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Auth Type"
+    description: "How the account was authenticated: `pairing` (pairing code was scanned), `sign_in` or `sign_up` (the user signed in with email). If the pairing flow fails to start after a scan for some reason, it falls back to an email sign in, which is recorded as `sign_in` or `sign_up`."
   }
 
   dimension: extras__string__auto_admin {
@@ -3839,7 +3849,9 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Element Type"
-    description: "Type of element that was viewed."
+    description: "Depending on the type of event:
+* Type of element that was viewed.
+* Type of element that was viewed or clicked: `onboarding_card` (impression), `primary_button` (scan), `secondary_button` (email) or `skip_button` (skip)."
   }
 
   dimension: extras__string__email {
@@ -3957,6 +3969,7 @@ view: events_stream_table {
     description: "Depending on the type of event:
 * The surface from which the user started the flow. Possible values: Homepage, Browser.
 * How was the toolbox opened? CommandLine, ContextMenu, HamburgerMenu, KeyShortcut, SessionRestore, SystemMenu or SlowScript
+* The `FenixFxAEntryPoint` the scanner was opened from: `onboarding-pairing` from the onboarding pairing sync card, otherwise the entrypoint of the sign in screen (for example `settings-menu` or `newuser-onboarding`).
 * The surface from which the user started the flow. Possible values: \"onboarding\", \"settings\".
 * The surface from which the user started the flow. Possible values: Homepage, Browser, Settings.
 * The surface from which the user entered the VPN settings page. Possible values: Settings, Menu, Trust Panel.

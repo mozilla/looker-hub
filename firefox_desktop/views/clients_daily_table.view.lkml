@@ -8,6 +8,7 @@ view: clients_daily_table {
   dimension: a11y_theme {
     sql: ${TABLE}.a11y_theme ;;
     hidden: yes
+    description: "A map of accessibility theme settings active in the browser, where each key is a theme identifier and the value indicates whether that theme is enabled."
   }
 
   dimension: aborts_content_sum {
@@ -102,6 +103,7 @@ view: clients_daily_table {
     sql: ${TABLE}.apple_model_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The Apple hardware model identifier for macOS and iOS devices (e.g., 'MacBookAir10,1', 'Mac16,12'). Null for non-Apple platforms or when the model cannot be determined."
   }
 
   dimension: attribution__campaign {
@@ -110,6 +112,7 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Campaign"
+    description: "The marketing campaign name associated with a user's acquisition or install event (e.g., 'SET_DEFAULT_BROWSER', 'non-fx-button'). Null when no campaign attribution is available."
   }
 
   dimension: attribution__content {
@@ -118,6 +121,7 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Content"
+    description: "A string representing the UTM content parameter or creative identifier associated with a marketing touchpoint or link. May be null or URL-encoded when not explicitly set."
   }
 
   dimension: attribution__dlsource {
@@ -126,6 +130,7 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Dlsource"
+    description: "Identifier indicating where the Firefox installation originated (e.g., 'mozorg', 'fxdotcom')."
   }
 
   dimension: attribution__dltoken {
@@ -134,6 +139,7 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Dltoken"
+    description: "A unique token created at Firefox download time to correlate installs with download events."
   }
 
   dimension: attribution__experiment {
@@ -142,6 +148,7 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Experiment"
+    description: "The slug or identifier of a Nimbus or Normandy experiment the client was enrolled in at the time of the ping. This field is null when the client was not enrolled in any experiment."
   }
 
   dimension: attribution__medium {
@@ -150,6 +157,7 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Medium"
+    description: "The marketing or traffic medium through which a user arrived, such as 'referral', 'cpc', or 'firefox-desktop'. Used to classify the acquisition channel for attribution purposes."
   }
 
   dimension: attribution__msstoresignedin {
@@ -158,6 +166,7 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Msstoresignedin"
+    description: "Whether the user was signed in to the Microsoft Store at install time, when Firefox was installed via the Microsoft Store"
   }
 
   dimension: attribution__source {
@@ -166,6 +175,7 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Source"
+    description: "The referring domain or source URL from which a user navigated to a Mozilla property. Null indicates the source was not captured or not applicable."
   }
 
   dimension: attribution__ua {
@@ -174,6 +184,7 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Ua"
+    description: "The derived user agent type at attribution time (e.g., 'chrome', 'edge', 'firefox')."
   }
 
   dimension: attribution__variation {
@@ -182,6 +193,7 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Variation"
+    description: "The attribution variation key associated with the install."
   }
 
   dimension: blocklist_enabled {
@@ -195,36 +207,42 @@ view: clients_daily_table {
     sql: ${TABLE}.bookmark_migrations_quantity_all ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of bookmarks migrated from all external browsers into Firefox. Null when no migration occurred or migration data was not collected."
   }
 
   dimension: bookmark_migrations_quantity_chrome {
     sql: ${TABLE}.bookmark_migrations_quantity_chrome ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of bookmarks migrated specifically from Google Chrome into Firefox. Null when no Chrome migration occurred or data was not collected."
   }
 
   dimension: bookmark_migrations_quantity_edge {
     sql: ${TABLE}.bookmark_migrations_quantity_edge ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of bookmarks migrated specifically from Microsoft Edge into Firefox. Null when no Edge migration occurred or data was not collected."
   }
 
   dimension: bookmark_migrations_quantity_safari {
     sql: ${TABLE}.bookmark_migrations_quantity_safari ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of bookmarks migrated specifically from Apple Safari into Firefox. Null when no Safari migration occurred or data was not collected."
   }
 
   dimension: browser_backup_archive_enabled {
     sql: ${TABLE}.browser_backup_archive_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Indicates whether the Firefox browser backup archive feature is enabled (true) or disabled (false). Null when the feature state could not be determined or the feature is unavailable."
   }
 
   dimension: browser_backup_scheduler_enabled {
     sql: ${TABLE}.browser_backup_scheduler_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Indicates whether the Firefox automatic backup scheduler is enabled (true) or disabled (false). Null when the feature state could not be determined or the feature is unavailable."
   }
 
   dimension: browser_version_info__is_major_release {
@@ -305,177 +323,207 @@ view: clients_daily_table {
     sql: ${TABLE}.content_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Number of content (tab) process crashes detected for this client on the submission date."
   }
 
   dimension: contextual_services_quicksuggest_block_dynamic_wikipedia_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_block_dynamic_wikipedia_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of times a dynamic Wikipedia Quick Suggest result was blocked by the user, keyed by a relevant dimension such as match type or position. Each entry accumulates block counts across the aggregation window."
   }
 
   dimension: contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of block events for non-sponsored best-match Quick Suggest results, keyed by a relevant dimension. Reflects user opt-out signals for this suggestion type."
   }
 
   dimension: contextual_services_quicksuggest_block_nonsponsored_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_block_nonsponsored_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of block events for non-sponsored Quick Suggest results, keyed by a relevant dimension. Reflects how often users dismissed or blocked non-sponsored suggestions."
   }
 
   dimension: contextual_services_quicksuggest_block_sponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_block_sponsored_bestmatch_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of block events for sponsored best-match Quick Suggest results, keyed by a relevant dimension. Captures user opt-out interactions with high-prominence sponsored suggestions."
   }
 
   dimension: contextual_services_quicksuggest_block_sponsored_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_block_sponsored_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of block events for sponsored Quick Suggest results, keyed by a relevant dimension. Reflects how often users dismissed or blocked sponsored suggestions."
   }
 
   dimension: contextual_services_quicksuggest_block_weather_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_block_weather_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of times a weather Quick Suggest result was blocked by the user, keyed by a relevant dimension. Captures opt-out interactions with weather-type suggestions."
   }
 
   dimension: contextual_services_quicksuggest_click_dynamic_wikipedia_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_dynamic_wikipedia_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of click events on dynamic Wikipedia Quick Suggest results, keyed by a relevant dimension. Measures user engagement with this suggestion type."
   }
 
   dimension: contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of click events on non-sponsored best-match Quick Suggest results, keyed by a relevant dimension. Measures user engagement with high-prominence non-sponsored suggestions."
   }
 
   dimension: contextual_services_quicksuggest_click_nonsponsored_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_nonsponsored_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of click events on non-sponsored Quick Suggest results, keyed by a relevant dimension. Measures overall click-through engagement with non-sponsored suggestions."
   }
 
   dimension: contextual_services_quicksuggest_click_sponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_sponsored_bestmatch_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of click events on sponsored best-match Quick Suggest results, keyed by a relevant dimension. Measures user engagement with high-prominence sponsored suggestions."
   }
 
   dimension: contextual_services_quicksuggest_click_sponsored_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_sponsored_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of click events on sponsored Quick Suggest results, keyed by a relevant dimension. Measures overall click-through engagement with sponsored suggestions."
   }
 
   dimension: contextual_services_quicksuggest_click_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_sum ;;
     hidden: yes
+    description: "An array of key-value pairs summing the total number of click events across all Quick Suggest result types, keyed by a relevant dimension. Provides an aggregate view of user click engagement with the Quick Suggest feature."
   }
 
   dimension: contextual_services_quicksuggest_click_weather_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_weather_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of click events on weather Quick Suggest results, keyed by a relevant dimension. Measures user engagement with weather-type suggestions."
   }
 
   dimension: contextual_services_quicksuggest_help_dynamic_wikipedia_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_help_dynamic_wikipedia_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of times users clicked the help link on dynamic Wikipedia Quick Suggest results, keyed by a relevant dimension. Indicates how often users sought more information about this suggestion type."
   }
 
   dimension: contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of help-link interactions on non-sponsored best-match Quick Suggest results, keyed by a relevant dimension. Reflects user curiosity or confusion about this suggestion type."
   }
 
   dimension: contextual_services_quicksuggest_help_nonsponsored_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_help_nonsponsored_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of help-link interactions on non-sponsored Quick Suggest results, keyed by a relevant dimension. Tracks how often users accessed help information for non-sponsored suggestions."
   }
 
   dimension: contextual_services_quicksuggest_help_sponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_help_sponsored_bestmatch_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of help-link interactions on sponsored best-match Quick Suggest results, keyed by a relevant dimension. Captures user requests for more information about high-prominence sponsored suggestions."
   }
 
   dimension: contextual_services_quicksuggest_help_sponsored_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_help_sponsored_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of help-link interactions on sponsored Quick Suggest results, keyed by a relevant dimension. Tracks how often users accessed help information for sponsored suggestions."
   }
 
   dimension: contextual_services_quicksuggest_help_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_help_sum ;;
     hidden: yes
+    description: "An array of key-value pairs summing the total number of help-link interactions across all Quick Suggest result types, keyed by a relevant dimension. Provides an aggregate view of user help-seeking behavior within the Quick Suggest feature."
   }
 
   dimension: contextual_services_quicksuggest_help_weather_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_help_weather_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of help-link interactions on weather Quick Suggest results, keyed by a relevant dimension. Captures user requests for more information about weather-type suggestions."
   }
 
   dimension: contextual_services_quicksuggest_impression_dynamic_wikipedia_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_impression_dynamic_wikipedia_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of times dynamic Wikipedia Quick Suggest results were displayed to users, keyed by a relevant dimension. Measures the reach and visibility of this suggestion type."
   }
 
   dimension: contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of impressions for non-sponsored best-match Quick Suggest results, keyed by a relevant dimension. Measures how often this high-prominence suggestion type was shown to users."
   }
 
   dimension: contextual_services_quicksuggest_impression_nonsponsored_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_impression_nonsponsored_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of impressions for non-sponsored Quick Suggest results, keyed by a relevant dimension. Measures the overall display frequency of non-sponsored suggestions."
   }
 
   dimension: contextual_services_quicksuggest_impression_sponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_impression_sponsored_bestmatch_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of impressions for sponsored best-match Quick Suggest results, keyed by a relevant dimension. Measures how often this high-prominence sponsored suggestion type was shown to users."
   }
 
   dimension: contextual_services_quicksuggest_impression_sponsored_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_impression_sponsored_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of impressions for sponsored Quick Suggest results, keyed by a relevant dimension. Measures the overall display frequency of sponsored suggestions."
   }
 
   dimension: contextual_services_quicksuggest_impression_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_impression_sum ;;
     hidden: yes
+    description: "An array of key-value pairs summing the total number of impressions across all Quick Suggest result types, keyed by a relevant dimension. Provides an aggregate view of the overall reach of the Quick Suggest feature."
   }
 
   dimension: contextual_services_quicksuggest_impression_weather_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_impression_weather_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of impressions for weather Quick Suggest results, keyed by a relevant dimension. Measures how often weather-type suggestions were displayed to users."
   }
 
   dimension: contextual_services_topsites_click_sum {
     sql: ${TABLE}.contextual_services_topsites_click_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of click events on Top Sites tiles in the new tab page, keyed by a relevant dimension such as position or tile type. Measures user engagement with the Top Sites feature."
   }
 
   dimension: contextual_services_topsites_impression_sum {
     sql: ${TABLE}.contextual_services_topsites_impression_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs summing the number of impressions recorded for Top Sites tiles on the new tab page, keyed by a relevant dimension. Measures the display frequency and reach of the Top Sites feature."
   }
 
   dimension: country {
@@ -700,24 +748,28 @@ view: clients_daily_table {
     sql: ${TABLE}.distribution_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The version string of the distribution package, which may differ from the Firefox application version and indicates the specific release of the partner or vendor distribution. This field is frequently null when no distribution versioning is applicable."
   }
 
   dimension: distributor {
     sql: ${TABLE}.distributor ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the organization or project responsible for distributing this Firefox build (e.g., 'canonical', 'mozillaonline', 'mint'). This field is null for standard Mozilla-distributed builds where no third-party distributor is involved."
   }
 
   dimension: distributor_channel {
     sql: ${TABLE}.distributor_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The specific channel or mechanism through which the distributor delivered Firefox to the end user (e.g., 'ubuntu', 'mainWinStub', 'firefox'). This field complements the distributor field and is null for non-partner distributions."
   }
 
   dimension: dom_parentprocess_private_window_used {
     sql: ${TABLE}.dom_parentprocess_private_window_used ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Indicates whether a private browsing window was used in the parent DOM process during the session. A value of true means at least one private window was opened; false means no private window activity was detected."
   }
 
   dimension: e10s_enabled {
@@ -745,6 +797,7 @@ view: clients_daily_table {
     sql: ${TABLE}.env_build_platform_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The version of the underlying Gecko platform on which Firefox was built (e.g., '151.0.1', '115.36.0'). This may differ from the application's user-facing version in certain release configurations such as ESR."
   }
 
   dimension: env_build_version {
@@ -758,6 +811,7 @@ view: clients_daily_table {
     sql: ${TABLE}.env_build_xpcom_abi ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The XPCOM Application Binary Interface (ABI) string describing the target platform and compiler used for the Firefox build (e.g., 'x86_64-msvc', 'aarch64-gcc3'). This field identifies the binary compatibility target of the build."
   }
 
   dimension: environment_settings_intl_accept_languages {
@@ -805,6 +859,7 @@ view: clients_daily_table {
     sql: ${TABLE}.first_document_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The document ID (UUID) of the first ping submitted by a client in the relevant period or cohort. This uniquely identifies the initial telemetry submission associated with the record."
   }
 
   dimension: first_paint_mean {
@@ -832,6 +887,7 @@ view: clients_daily_table {
     sql: ${TABLE}.geo_db_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The version timestamp of the GeoIP database used to resolve the client's geographic location, formatted as an ISO 8601 datetime string. This allows geo lookups to be audited and compared across database releases."
   }
 
   dimension: geo_subdivision1 {
@@ -880,6 +936,7 @@ view: clients_daily_table {
     sql: ${TABLE}.gpu_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Number of GPU process crashes detected for this client on the submission date."
   }
 
   dimension: has_adblocker_enabled {
@@ -1102,24 +1159,28 @@ view: clients_daily_table {
     sql: ${TABLE}.history_migrations_quantity_all ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of history entries migrated from all supported browsers during a migration event. A value of 0 indicates a migration was attempted but no history entries were transferred; null indicates no migration occurred or the metric was not recorded."
   }
 
   dimension: history_migrations_quantity_chrome {
     sql: ${TABLE}.history_migrations_quantity_chrome ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of history entries migrated specifically from Google Chrome during a migration event. A value of 0 indicates a Chrome migration was attempted but no entries were transferred; null indicates no Chrome migration occurred or the metric was not recorded."
   }
 
   dimension: history_migrations_quantity_edge {
     sql: ${TABLE}.history_migrations_quantity_edge ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of history entries migrated specifically from Microsoft Edge during a migration event. A value of 0 indicates an Edge migration was attempted but no entries were transferred; null indicates no Edge migration occurred or the metric was not recorded."
   }
 
   dimension: history_migrations_quantity_safari {
     sql: ${TABLE}.history_migrations_quantity_safari ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of history entries migrated from Safari into Firefox. A null value indicates that no Safari history migration was attempted or recorded."
   }
 
   dimension: install_year {
@@ -1168,48 +1229,56 @@ view: clients_daily_table {
     sql: ${TABLE}.logins_migrations_quantity_all ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of saved login entries migrated into Firefox from all supported browsers. A null value indicates no login migration data was recorded."
   }
 
   dimension: logins_migrations_quantity_chrome {
     sql: ${TABLE}.logins_migrations_quantity_chrome ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of saved login entries migrated into Firefox from Google Chrome. A null value indicates no Chrome login migration data was recorded."
   }
 
   dimension: logins_migrations_quantity_edge {
     sql: ${TABLE}.logins_migrations_quantity_edge ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of saved login entries migrated into Firefox from Microsoft Edge. A null value indicates no Edge login migration data was recorded."
   }
 
   dimension: logins_migrations_quantity_safari {
     sql: ${TABLE}.logins_migrations_quantity_safari ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of saved login entries migrated into Firefox from Safari. A null value indicates no Safari login migration data was recorded."
   }
 
   dimension: main_crash_count {
     sql: ${TABLE}.main_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Number of main Firefox process crashes detected for this client on the submission date."
   }
 
   dimension: max_subsession_counter {
     sql: ${TABLE}.max_subsession_counter ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The highest subsession counter value recorded for a client within a given day, indicating how many browser subsessions occurred. A value of 1 means only one subsession was recorded."
   }
 
   dimension: media_play_time_ms_audio_sum {
     sql: ${TABLE}.media_play_time_ms_audio_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Total cumulative time in milliseconds that audio media was played during a session. This field is null when no audio playback occurred."
   }
 
   dimension: media_play_time_ms_video_sum {
     sql: ${TABLE}.media_play_time_ms_video_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Total cumulative time in milliseconds that video media was played during a session. This field is null when no video playback occurred."
   }
 
   dimension: memory_mb {
@@ -1223,6 +1292,7 @@ view: clients_daily_table {
     sql: ${TABLE}.min_subsession_counter ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The minimum subsession counter value observed for a client within the aggregation period, indicating the earliest subsession sequence number. A value of 1 typically corresponds to the first subsession of a browser session."
   }
 
   dimension: n_created_pictureinpicture {
@@ -1271,18 +1341,21 @@ view: clients_daily_table {
     sql: ${TABLE}.os_environment_is_taskbar_pinned_any ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "A boolean flag indicating whether Firefox is pinned to the Windows taskbar in any configuration (regular or private browsing). True means Firefox is pinned to the taskbar; False means it is not."
   }
 
   dimension: os_environment_is_taskbar_pinned_private {
     sql: ${TABLE}.os_environment_is_taskbar_pinned_private ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "A boolean flag indicating whether the Firefox Private Browsing shortcut is specifically pinned to the Windows taskbar. True means it is pinned; False means it is not."
   }
 
   dimension: os_environment_is_taskbar_pinned_private_any {
     sql: ${TABLE}.os_environment_is_taskbar_pinned_private_any ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "A boolean flag indicating whether a Firefox Private Browsing shortcut is pinned to the Windows taskbar in any taskbar configuration. True means at least one such pin exists; False means none exist."
   }
 
   dimension: os_service_pack_major {
@@ -1310,6 +1383,7 @@ view: clients_daily_table {
     sql: ${TABLE}.partner_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A short identifier for the top-level partner organization associated with the browser installation (e.g., 'ubuntu', 'mozillaonline', 'yandex'). Null when the client has no partner affiliation."
   }
 
   dimension: pings_aggregated_by_this_row {
@@ -1330,18 +1404,21 @@ view: clients_daily_table {
     sql: ${TABLE}.places_bookmarks_searchbar_cumulative_searches_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The cumulative total number of searches performed via the bookmarks search bar within the Places library, summed over the reporting period. Null when this interaction was not recorded for the client."
   }
 
   dimension: places_library_cumulative_bookmark_searches_sum {
     sql: ${TABLE}.places_library_cumulative_bookmark_searches_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The cumulative total number of bookmark searches performed within the Places library panel, summed over the reporting period. Null when this activity was not recorded for the client."
   }
 
   dimension: places_library_cumulative_history_searches_sum {
     sql: ${TABLE}.places_library_cumulative_history_searches_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The cumulative total number of history searches performed within the Places library panel, summed over the reporting period. Null when this activity was not recorded for the client."
   }
 
   dimension: places_pages_count_mean {
@@ -1355,18 +1432,21 @@ view: clients_daily_table {
     sql: ${TABLE}.places_previousday_visits_mean ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The mean number of page visits recorded in the Places database on the previous day, averaged across days in the reporting period. A value of 0 indicates the user had no recorded visits on the prior day."
   }
 
   dimension: places_searchbar_cumulative_filter_count_sum {
     sql: ${TABLE}.places_searchbar_cumulative_filter_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The cumulative total number of filter operations applied via the Places search bar, summed over the reporting period. Null when this interaction was not recorded for the client."
   }
 
   dimension: places_searchbar_cumulative_searches_sum {
     sql: ${TABLE}.places_searchbar_cumulative_searches_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The cumulative total number of searches performed via the Places search bar, summed over the reporting period. Null when this interaction was not recorded for the client."
   }
 
   dimension: plugin_hangs_sum {
@@ -1429,6 +1509,7 @@ view: clients_daily_table {
     sql: ${TABLE}.profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A UUID that identifies a group of profiles belonging to the same user or installation context. Null when profile group information is unavailable."
   }
 
   dimension: push_api_notify_sum {
@@ -1442,6 +1523,7 @@ view: clients_daily_table {
     sql: ${TABLE}.rdd_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Number of Remote Data Decoder (RDD) process crashes detected for this client on the submission date."
   }
 
   dimension: sample_id {
@@ -1462,12 +1544,14 @@ view: clients_daily_table {
     sql: ${TABLE}.scalar_a11y_hcm_background ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The RGBA color value of the background color configured in the operating system's High Contrast Mode accessibility setting, stored as a packed integer. Null when High Contrast Mode is not enabled or the value was not collected."
   }
 
   dimension: scalar_a11y_hcm_foreground {
     sql: ${TABLE}.scalar_a11y_hcm_foreground ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The RGBA color value of the foreground (text) color configured in the operating system's High Contrast Mode accessibility setting, stored as a packed integer. Null when High Contrast Mode is not enabled or the value was not collected."
   }
 
   dimension: scalar_combined_webrtc_nicer_stun_retransmits_sum {
@@ -1549,6 +1633,7 @@ view: clients_daily_table {
     sql: ${TABLE}.scalar_parent_browser_engagement_total_uri_count_normal_and_private_mode_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of URIs visited across both normal and private browsing modes during the reporting period. This provides a combined measure of overall browsing activity regardless of window type."
   }
 
   dimension: scalar_parent_browser_engagement_total_uri_count_sum {
@@ -1589,6 +1674,7 @@ view: clients_daily_table {
   dimension: scalar_parent_browser_ui_interaction_content_context_sum {
     sql: ${TABLE}.scalar_parent_browser_ui_interaction_content_context_sum ;;
     hidden: yes
+    description: "A keyed map of interaction counts for content context menu actions in the browser UI, where each key identifies a specific menu item or action and the value is the cumulative count of interactions."
   }
 
   dimension: scalar_parent_browser_ui_interaction_preferences_pane_home_sum {
@@ -1601,6 +1687,7 @@ view: clients_daily_table {
     sql: ${TABLE}.scalar_parent_browser_ui_interaction_textrecognition_error_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of errors encountered during text recognition interactions in the browser UI during the reporting period. A null or zero value indicates no errors were recorded."
   }
 
   dimension: scalar_parent_devtools_accessibility_node_inspected_count_sum {
@@ -1660,16 +1747,19 @@ view: clients_daily_table {
   dimension: scalar_parent_library_link_sum {
     sql: ${TABLE}.scalar_parent_library_link_sum ;;
     hidden: yes
+    description: "A keyed map of counts for link-related actions taken within the browser Library panel, where each key identifies a specific link type or destination and the value is the cumulative count of interactions."
   }
 
   dimension: scalar_parent_library_opened_sum {
     sql: ${TABLE}.scalar_parent_library_opened_sum ;;
     hidden: yes
+    description: "A keyed map of counts for the number of times each section of the browser Library panel was opened, where each key identifies a specific library section (e.g., history, bookmarks) and the value is the open count."
   }
 
   dimension: scalar_parent_library_search_sum {
     sql: ${TABLE}.scalar_parent_library_search_sum ;;
     hidden: yes
+    description: "A keyed map of counts for search interactions within the browser Library panel, where each key identifies a specific search context or section and the value is the cumulative number of searches performed."
   }
 
   dimension: scalar_parent_navigator_storage_estimate_count_sum {
@@ -1732,21 +1822,25 @@ view: clients_daily_table {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar_private ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Indicates whether a Private Browsing window was launched directly from a taskbar shortcut or jump list entry. True means the private window was opened via the taskbar; false means it was not."
   }
 
   dimension: scalar_parent_sidebar_link_sum {
     sql: ${TABLE}.scalar_parent_sidebar_link_sum ;;
     hidden: yes
+    description: "A keyed map of counts for link-related actions taken within the browser sidebar, where each key identifies a specific link type or panel and the value is the cumulative count of interactions."
   }
 
   dimension: scalar_parent_sidebar_opened_sum {
     sql: ${TABLE}.scalar_parent_sidebar_opened_sum ;;
     hidden: yes
+    description: "A keyed map of counts for how many times each sidebar panel was opened, where each key identifies a specific sidebar panel (e.g., bookmarks, history, synced tabs) and the value is the open count."
   }
 
   dimension: scalar_parent_sidebar_search_sum {
     sql: ${TABLE}.scalar_parent_sidebar_search_sum ;;
     hidden: yes
+    description: "A keyed map of counts for search interactions performed within the browser sidebar, where each key identifies a specific sidebar search context and the value is the cumulative number of searches."
   }
 
   dimension: scalar_parent_storage_sync_api_usage_extensions_using_sum {
@@ -2025,66 +2119,79 @@ view: clients_daily_table {
   dimension: search_adclicks_about_home_sum {
     sql: ${TABLE}.search_adclicks_about_home_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks originating from the Firefox Home (about:home) page. Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_adclicks_about_newtab_sum {
     sql: ${TABLE}.search_adclicks_about_newtab_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks originating from the new tab page (about:newtab). Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_adclicks_contextmenu_sum {
     sql: ${TABLE}.search_adclicks_contextmenu_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks originating from a context menu search. Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_adclicks_reload_sum {
     sql: ${TABLE}.search_adclicks_reload_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks occurring when a search results page was reloaded. Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_adclicks_searchbar_sum {
     sql: ${TABLE}.search_adclicks_searchbar_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks originating from the browser search bar. Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_adclicks_system_sum {
     sql: ${TABLE}.search_adclicks_system_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks originating from system-level or OS-initiated searches. Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_adclicks_tabhistory_sum {
     sql: ${TABLE}.search_adclicks_tabhistory_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks occurring when navigating through tab history (e.g., back/forward to a search results page). Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_adclicks_unknown_sum {
     sql: ${TABLE}.search_adclicks_unknown_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks where the originating access point could not be determined. Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_adclicks_urlbar_handoff_sum {
     sql: ${TABLE}.search_adclicks_urlbar_handoff_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks originating from searches initiated via URL bar handoff from the new tab page. Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_adclicks_urlbar_persisted_sum {
     sql: ${TABLE}.search_adclicks_urlbar_persisted_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks originating from a persisted URL bar search (where the search term is retained in the bar). Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_adclicks_urlbar_searchmode_sum {
     sql: ${TABLE}.search_adclicks_urlbar_searchmode_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks originating from searches performed while URL bar search mode was active. Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_adclicks_urlbar_sum {
     sql: ${TABLE}.search_adclicks_urlbar_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks originating from the URL bar (address bar). Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_adclicks_webextension_sum {
     sql: ${TABLE}.search_adclicks_webextension_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of search ad clicks originating from a search initiated by a web extension. Each key identifies a search engine, and the value is the summed click count."
   }
 
   dimension: search_cohort {
@@ -2115,6 +2222,7 @@ view: clients_daily_table {
   dimension: search_content_reload_sum {
     sql: ${TABLE}.search_content_reload_sum ;;
     hidden: yes
+    description: "Keyed scalar aggregating the total number of searches triggered by reloading a search results page. Each key identifies a search engine, and the value is the summed search count."
   }
 
   dimension: search_content_searchbar_sum {
@@ -2132,12 +2240,13 @@ view: clients_daily_table {
   dimension: search_content_tabhistory_sum {
     sql: ${TABLE}.search_content_tabhistory_sum ;;
     hidden: yes
-    description: "Keyed scalar aggregating the total number"
+    description: "Keyed scalar aggregating the total number of searches triggered via tab history navigation (e.g., back/forward to a search results page). Each key identifies a search engine, and the value is the summed search count."
   }
 
   dimension: search_content_unknown_sum {
     sql: ${TABLE}.search_content_unknown_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of searches initiated from an unknown content source. Each entry represents a distinct engine and its summed search volume."
   }
 
   dimension: search_content_urlbar_handoff_sum {
@@ -2149,6 +2258,7 @@ view: clients_daily_table {
   dimension: search_content_urlbar_persisted_sum {
     sql: ${TABLE}.search_content_urlbar_persisted_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of searches initiated via a persisted URL bar content source. Each entry represents a distinct engine and its summed search volume."
   }
 
   dimension: search_content_urlbar_searchmode_sum {
@@ -2257,6 +2367,7 @@ view: clients_daily_table {
     sql: ${TABLE}.search_count_urlbar_persisted ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of searches initiated from the URL bar while a previously selected search engine was persisted in the search mode. A value of zero indicates no such searches."
   }
 
   dimension: search_count_urlbar_searchmode {
@@ -2295,66 +2406,79 @@ view: clients_daily_table {
   dimension: search_withads_about_home_sum {
     sql: ${TABLE}.search_withads_about_home_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages reached from the about:home entry point. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: search_withads_about_newtab_sum {
     sql: ${TABLE}.search_withads_about_newtab_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages reached from the new tab page entry point. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: search_withads_contextmenu_sum {
     sql: ${TABLE}.search_withads_contextmenu_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages reached via the context menu entry point. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: search_withads_reload_sum {
     sql: ${TABLE}.search_withads_reload_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages that were reloaded. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: search_withads_searchbar_sum {
     sql: ${TABLE}.search_withads_searchbar_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages reached from the search bar entry point. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: search_withads_system_sum {
     sql: ${TABLE}.search_withads_system_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages reached via a system-level search entry point. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: search_withads_tabhistory_sum {
     sql: ${TABLE}.search_withads_tabhistory_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages navigated to via tab history. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: search_withads_unknown_sum {
     sql: ${TABLE}.search_withads_unknown_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages reached from an unknown entry point. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: search_withads_urlbar_handoff_sum {
     sql: ${TABLE}.search_withads_urlbar_handoff_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages reached via a URL bar handoff. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: search_withads_urlbar_persisted_sum {
     sql: ${TABLE}.search_withads_urlbar_persisted_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages reached via a persisted URL bar search mode. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: search_withads_urlbar_searchmode_sum {
     sql: ${TABLE}.search_withads_urlbar_searchmode_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages reached while the URL bar was in search mode. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: search_withads_urlbar_sum {
     sql: ${TABLE}.search_withads_urlbar_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages reached from the URL bar entry point. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: search_withads_webextension_sum {
     sql: ${TABLE}.search_withads_webextension_sum ;;
     hidden: yes
+    description: "An array of key-value pairs mapping search engine identifiers to the aggregated count of ad-bearing search result pages reached via a WebExtension entry point. Each entry represents a distinct engine and its summed count."
   }
 
   dimension: session_restored_mean {
@@ -2382,6 +2506,7 @@ view: clients_daily_table {
     sql: ${TABLE}.socket_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Number of networking socket process crashes detected for this client on the submission date."
   }
 
   dimension: ssl_handshake_result_failure_sum {
@@ -2402,12 +2527,14 @@ view: clients_daily_table {
     sql: ${TABLE}.startup_profile_selection_first_ping_only ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The method by which a Firefox profile was selected at startup, recorded only for the first ping of a session. Common values include 'default' (the default profile was used) and 'restart' (Firefox restarted with the same profile)."
   }
 
   dimension: startup_profile_selection_reason_first {
     sql: ${TABLE}.startup_profile_selection_reason_first ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The profile selection reason recorded for the first subsession or ping of a client's activity period. Common values include 'default' and 'profile-selector', indicating how Firefox chose which profile to load."
   }
 
   dimension: subsession_hours_sum {
@@ -2463,36 +2590,42 @@ view: clients_daily_table {
     sql: ${TABLE}.text_recognition_api_performance_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total count of text recognition API calls made during a session or aggregation period. Near-100% null rate indicates this feature is used by a very small fraction of clients."
   }
 
   dimension: text_recognition_api_performance_sum {
     sql: ${TABLE}.text_recognition_api_performance_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The cumulative performance measurement (e.g., total duration in milliseconds) of text recognition API calls made during a session or aggregation period. Near-100% null rate reflects rare usage of the text recognition feature."
   }
 
   dimension: text_recognition_interaction_timing_count_sum {
     sql: ${TABLE}.text_recognition_interaction_timing_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total count of text recognition interaction timing histogram samples recorded. This field is almost always null, indicating the text recognition feature was not used."
   }
 
   dimension: text_recognition_interaction_timing_sum {
     sql: ${TABLE}.text_recognition_interaction_timing_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The sum of interaction timing values (in milliseconds) recorded during text recognition events. This field is almost always null, only populated when the text recognition feature is actively used."
   }
 
   dimension: text_recognition_text_length_count_sum {
     sql: ${TABLE}.text_recognition_text_length_count_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total count of text length histogram samples recorded during text recognition interactions. This field is almost always null, indicating the text recognition feature was not used."
   }
 
   dimension: text_recognition_text_length_sum {
     sql: ${TABLE}.text_recognition_text_length_sum ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The sum of character lengths of text processed during text recognition events. This field is almost always null, only populated when the text recognition feature is actively used."
   }
 
   dimension: timezone_offset {
@@ -2538,6 +2671,7 @@ view: clients_daily_table {
     sql: ${TABLE}.update_background ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Indicates whether browser updates are applied in the background without requiring user interaction. True means background updates are enabled; false means they are disabled."
   }
 
   dimension: update_channel {
@@ -2558,12 +2692,14 @@ view: clients_daily_table {
     sql: ${TABLE}.user_pref_app_shield_optoutstudies_enabled ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The user's preference setting for opting out of Shield studies, stored as a string boolean. A value of 'true' means the user has opted in to studies; 'false' means they have opted out."
   }
 
   dimension: user_pref_browser_newtabpage_enabled {
     sql: ${TABLE}.user_pref_browser_newtabpage_enabled ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The user's preference setting controlling whether the browser's New Tab Page is enabled, stored as a string boolean. A value of 'false' indicates the new tab page has been disabled by the user."
   }
 
   dimension: user_pref_browser_search_region {
@@ -2577,66 +2713,77 @@ view: clients_daily_table {
     sql: ${TABLE}.user_pref_browser_search_suggest_enabled ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The user's preference setting for whether search suggestions are enabled in the browser, stored as a string boolean. A value of 'false' means the user has disabled search suggestions."
   }
 
   dimension: user_pref_browser_urlbar_quicksuggest_data_collection_enabled {
     sql: ${TABLE}.user_pref_browser_urlbar_quicksuggest_data_collection_enabled ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The user's preference controlling whether data collection for the urlbar Quick Suggest feature is enabled, stored as a string boolean. A value of 'false' means the user has opted out of data collection for Quick Suggest."
   }
 
   dimension: user_pref_browser_urlbar_quicksuggest_onboarding_dialog_choice {
     sql: ${TABLE}.user_pref_browser_urlbar_quicksuggest_onboarding_dialog_choice ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The choice the user made when presented with the Quick Suggest onboarding dialog, such as closing it or selecting 'not now' or 'reject'. Null indicates the dialog was not shown or no choice was recorded."
   }
 
   dimension: user_pref_browser_urlbar_show_search_suggestions_first {
     sql: ${TABLE}.user_pref_browser_urlbar_show_search_suggestions_first ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The user's preference for whether search suggestions are displayed before browsing history in the urlbar, stored as a string boolean. A value of 'false' means search suggestions are not prioritized first."
   }
 
   dimension: user_pref_browser_urlbar_suggest_bestmatch {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_bestmatch ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The user's preference controlling whether the Best Match feature is enabled in the urlbar, stored as a string boolean. A value of 'true' means Best Match suggestions are shown."
   }
 
   dimension: user_pref_browser_urlbar_suggest_quicksuggest {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The user's legacy preference setting for whether Quick Suggest results are shown in the urlbar, stored as a string boolean. Null indicates the preference was not set or not applicable."
   }
 
   dimension: user_pref_browser_urlbar_suggest_quicksuggest_nonsponsored {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest_nonsponsored ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The user's preference controlling whether non-sponsored Quick Suggest results are shown in the urlbar, stored as a string boolean. A value of 'false' means non-sponsored suggestions are disabled."
   }
 
   dimension: user_pref_browser_urlbar_suggest_quicksuggest_sponsored {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest_sponsored ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The user's preference controlling whether sponsored Quick Suggest results are shown in the urlbar, stored as a string boolean. A value of 'false' means sponsored suggestions are disabled."
   }
 
   dimension: user_pref_browser_urlbar_suggest_searches {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_searches ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The user's preference for whether search suggestions are shown in the urlbar, stored as a string boolean. A value of 'false' indicates the user has disabled urlbar search suggestions."
   }
 
   dimension: user_pref_browser_widget_in_navbar {
     sql: ${TABLE}.user_pref_browser_widget_in_navbar ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The user's preference indicating whether a specific browser widget is displayed in the navigation bar, stored as a string boolean. A value of 'true' means the widget is present in the navbar."
   }
 
   dimension: utility_crash_count {
     sql: ${TABLE}.utility_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Number of utility process crashes detected for this client on the submission date."
   }
 
   dimension: vendor {
@@ -2650,6 +2797,7 @@ view: clients_daily_table {
     sql: ${TABLE}.vr_crash_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Number of VR process crashes detected for this client on the submission date."
   }
 
   dimension: web_notification_shown_sum {
@@ -2686,6 +2834,7 @@ view: clients_daily_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The calendar date on which the client profile was first observed in telemetry data. This is used to determine client tenure and cohort assignment."
   }
 
   dimension_group: second_seen {
@@ -2701,6 +2850,7 @@ view: clients_daily_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The calendar date on which the client was observed for the second time. A null value indicates the client has not yet been seen a second time within the tracked period."
   }
 
   dimension_group: submission {
@@ -2757,6 +2907,7 @@ view: clients_daily_table__a11y_theme {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -2771,6 +2922,7 @@ view: clients_daily_table__active_addons {
     sql: ${TABLE}.addon_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The unique identifier string for a Firefox browser add-on or extension, typically in the format of a UUID or a reverse-DNS email-style string (e.g., 'formautofill@mozilla.org')."
   }
 
   dimension: app_disabled {
@@ -2807,6 +2959,7 @@ view: clients_daily_table__active_addons {
     sql: ${TABLE}.is_system ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Indicates whether the add-on or component is a system-level (built-in) item rather than a user-installed one. True means it is a system item; false means it is user-installed."
   }
 
   dimension: is_web_extension {
@@ -2819,12 +2972,14 @@ view: clients_daily_table__active_addons {
     sql: ${TABLE}.multiprocess_compatible ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "A structured array of metadata about all active browser add-ons installed on the client, including identifiers, versioning, installation details, and compatibility flags."
   }
 
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A human-readable name string associated with the entity being described, such as an add-on or extension name. May be null or a placeholder string when the name is unavailable or not yet resolved."
   }
 
   dimension: scope {
@@ -2843,6 +2998,7 @@ view: clients_daily_table__active_addons {
     sql: ${TABLE}.type ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The category of a browser add-on or extension, indicating its nature. Common values include 'extension', 'locale', 'dictionary', and 'service'."
   }
 
   dimension: update_day {
@@ -2861,6 +3017,7 @@ view: clients_daily_table__active_addons {
     sql: ${TABLE}.version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The version string of the software, add-on, or component being measured. Follows standard versioning conventions such as major.minor.patch."
   }
 }
 
@@ -2869,6 +3026,7 @@ view: clients_daily_table__ad_clicks {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -2883,6 +3041,7 @@ view: clients_daily_table__contextual_services_quicksuggest_click_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -2897,6 +3056,7 @@ view: clients_daily_table__contextual_services_quicksuggest_help_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -2911,6 +3071,7 @@ view: clients_daily_table__contextual_services_quicksuggest_impression_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -2925,12 +3086,14 @@ view: clients_daily_table__experiments {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An array of key-value pairs representing all active experiment enrollments for the client at the time of the ping, where the key is the experiment slug and the value is the assigned branch. This captures the full set of concurrent experiment enrollments."
   }
 }
 
@@ -2939,12 +3102,14 @@ view: clients_daily_table__scalar_content_telemetry_event_counts_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A keyed map of telemetry event category-method-object combinations to their total occurrence counts, as recorded from content processes. Each key identifies a distinct event type and the corresponding value is the sum of occurrences."
   }
 }
 
@@ -2953,6 +3118,7 @@ view: clients_daily_table__scalar_parent_browser_ui_interaction_content_context_
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -2967,6 +3133,7 @@ view: clients_daily_table__scalar_parent_browser_ui_interaction_preferences_pane
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -2981,12 +3148,14 @@ view: clients_daily_table__scalar_parent_devtools_accessibility_select_accessibl
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A keyed map of counts representing how many times the 'select accessible object for node' action was triggered in the DevTools Accessibility panel, broken down by node type or context."
   }
 }
 
@@ -2995,12 +3164,14 @@ view: clients_daily_table__scalar_parent_library_link_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A generic integer value associated with a measurement, event, or metric. The specific meaning depends on the context of the surrounding fields."
   }
 }
 
@@ -3009,12 +3180,14 @@ view: clients_daily_table__scalar_parent_library_opened_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A generic integer value associated with a measurement, event, or metric. The specific meaning depends on the context of the surrounding fields."
   }
 }
 
@@ -3023,12 +3196,14 @@ view: clients_daily_table__scalar_parent_library_search_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A generic integer value associated with a measurement, event, or metric. The specific meaning depends on the context of the surrounding fields."
   }
 }
 
@@ -3037,6 +3212,7 @@ view: clients_daily_table__scalar_parent_sidebar_link_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3051,6 +3227,7 @@ view: clients_daily_table__scalar_parent_sidebar_opened_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3065,6 +3242,7 @@ view: clients_daily_table__scalar_parent_sidebar_search_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3079,12 +3257,14 @@ view: clients_daily_table__scalar_parent_telemetry_event_counts_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A keyed map of aggregated telemetry event counts, where each key identifies a specific event category and method combination and the value is the cumulative number of times that event was recorded."
   }
 }
 
@@ -3093,12 +3273,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_bookmarkmenu_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered via the bookmark menu entry point. Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3107,12 +3289,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_handoff_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered via a handoff interaction (e.g., from the new tab page search box). Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3121,12 +3305,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_keywordoffer_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered via a keyword offer suggestion. Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3135,12 +3321,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_oneoff_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered by clicking a one-off search engine button in the dropdown. Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3149,12 +3337,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_other_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered via an entry point not captured by other specific categories. Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3163,12 +3353,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_shortcut_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered via a keyboard shortcut. Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3177,12 +3369,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_tabmenu_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered via the tab menu. Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3191,12 +3385,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_tabtosearch_onboard_s
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered via the tab-to-search onboarding prompt shown to first-time users. Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3205,12 +3401,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_tabtosearch_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered via the tab-to-search feature. Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3219,12 +3417,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_topsites_newtab_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered from a top site on the new tab page. Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3233,12 +3433,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_topsites_urlbar_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered from a top site suggestion within the URL bar dropdown. Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3247,12 +3449,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_touchbar_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered via the macOS Touch Bar. Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3261,12 +3465,14 @@ view: clients_daily_table__scalar_parent_urlbar_searchmode_typed_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Keyed scalar aggregating the total number of times URL bar search mode was entered by the user typing a search engine alias directly into the URL bar. Each key identifies a search engine, and the value is the summed activation count."
   }
 }
 
@@ -3275,6 +3481,7 @@ view: clients_daily_table__search_adclicks_about_home_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3289,6 +3496,7 @@ view: clients_daily_table__search_adclicks_about_newtab_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3303,6 +3511,7 @@ view: clients_daily_table__search_adclicks_contextmenu_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3317,6 +3526,7 @@ view: clients_daily_table__search_adclicks_reload_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3331,6 +3541,7 @@ view: clients_daily_table__search_adclicks_searchbar_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3345,6 +3556,7 @@ view: clients_daily_table__search_adclicks_system_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3359,6 +3571,7 @@ view: clients_daily_table__search_adclicks_tabhistory_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3373,6 +3586,7 @@ view: clients_daily_table__search_adclicks_unknown_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3387,6 +3601,7 @@ view: clients_daily_table__search_adclicks_urlbar_handoff_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3401,6 +3616,7 @@ view: clients_daily_table__search_adclicks_urlbar_persisted_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3415,6 +3631,7 @@ view: clients_daily_table__search_adclicks_urlbar_searchmode_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3429,6 +3646,7 @@ view: clients_daily_table__search_adclicks_urlbar_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3443,6 +3661,7 @@ view: clients_daily_table__search_adclicks_webextension_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3457,6 +3676,7 @@ view: clients_daily_table__search_content_about_home_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3471,6 +3691,7 @@ view: clients_daily_table__search_content_about_newtab_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3485,6 +3706,7 @@ view: clients_daily_table__search_content_contextmenu_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3499,6 +3721,7 @@ view: clients_daily_table__search_content_reload_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3513,6 +3736,7 @@ view: clients_daily_table__search_content_searchbar_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3527,6 +3751,7 @@ view: clients_daily_table__search_content_system_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3541,6 +3766,7 @@ view: clients_daily_table__search_content_tabhistory_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3555,6 +3781,7 @@ view: clients_daily_table__search_content_unknown_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3569,6 +3796,7 @@ view: clients_daily_table__search_content_urlbar_handoff_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3583,6 +3811,7 @@ view: clients_daily_table__search_content_urlbar_persisted_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3597,6 +3826,7 @@ view: clients_daily_table__search_content_urlbar_searchmode_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3611,6 +3841,7 @@ view: clients_daily_table__search_content_urlbar_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3625,6 +3856,7 @@ view: clients_daily_table__search_content_webextension_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3651,6 +3883,7 @@ view: clients_daily_table__search_counts {
     sql: ${TABLE}.source ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The referring domain or source URL from which a user navigated to a Mozilla property. Null indicates the source was not captured or not applicable."
   }
 }
 
@@ -3659,6 +3892,7 @@ view: clients_daily_table__search_with_ads {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3673,6 +3907,7 @@ view: clients_daily_table__search_withads_about_home_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3687,6 +3922,7 @@ view: clients_daily_table__search_withads_about_newtab_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3701,6 +3937,7 @@ view: clients_daily_table__search_withads_contextmenu_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3715,6 +3952,7 @@ view: clients_daily_table__search_withads_reload_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3729,6 +3967,7 @@ view: clients_daily_table__search_withads_searchbar_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3743,6 +3982,7 @@ view: clients_daily_table__search_withads_system_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3757,6 +3997,7 @@ view: clients_daily_table__search_withads_tabhistory_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3771,6 +4012,7 @@ view: clients_daily_table__search_withads_unknown_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3785,6 +4027,7 @@ view: clients_daily_table__search_withads_urlbar_handoff_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3799,6 +4042,7 @@ view: clients_daily_table__search_withads_urlbar_persisted_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3813,6 +4057,7 @@ view: clients_daily_table__search_withads_urlbar_searchmode_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3827,6 +4072,7 @@ view: clients_daily_table__search_withads_urlbar_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {
@@ -3841,6 +4087,7 @@ view: clients_daily_table__search_withads_webextension_sum {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string identifier representing the specific action, search engine, or event type associated with a record, such as a search entry point or provider key. An empty string indicates no specific key was recorded."
   }
 
   dimension: value {

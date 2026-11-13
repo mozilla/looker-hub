@@ -5849,7 +5849,9 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Detected Intent"
-    description: "What was the detected intent for the request: navigate, search, chat, or action"
+    description: "Depending on the type of event:
+* What was the detected intent for the request: navigate, search, chat, or action
+* What was the detected intent for the request: navigate, search, chat, or action. When the smartWindow feature's smartbarIntent variable pins search or chat, non-navigate requests report the pinned value rather than the classifier's."
   }
 
   dimension: extras__string__detected_language {
@@ -8571,8 +8573,8 @@ view: events_stream_table {
 * Selected provider id.
 * The name of the `UrlbarProvider` that provided the selected result. The possible values are: `AboutPages`, `AliasEngines`, `Autofill`, `BookmarkKeywords`, `calculator`, `UrlbarProviderContextualSearch`, `HeuristicFallback`, `HistoryUrlHeuristic`, `InputHistory`, `UrlbarProviderInterventions`, `Omnibox`, `OpenTabs`, `Places`, `PrivateSearch`, `quickactions`, `UrlbarProviderQuickSuggest`, `RemoteTabs`, `SearchSuggestions`, `UrlbarProviderSearchTips`, `TabToSearch`, `TokenAliasEngines`, `UrlbarProviderTopSites`, `UnitConversion` and `UnifiedComplete`. If engagement_type is `drop_go` or `paste_go`, this will be null because no results are shown. And also, if selected_result is `experimental_addon`, it means that the user selected a result from an add-on using the urlbar experimental API. In this case, this will be the provider name specified by the add-on.
 * The name of the provider.
-* Current provider id.
 * Search provider used in the request
+* Current provider id.
 * Which p..."
   }
 
@@ -9559,10 +9561,10 @@ view: events_stream_table {
     group_label: "Extras: String"
     group_item_label: "Submit Type"
     description: "Depending on the type of event:
+* How the request was submitted: button, enter, follow-up, fxms, menu, resume, retry, shortcuts, starter, or suggestion. Messaging surfaces may supply their own value instead of fxms
 * How the request was submitted: button, enter, follow-up, shortcuts, starter, or suggestion
 * How the request was submitted: button, enter, follow-up, resume, retry, shortcuts, starter, or suggestion
-* How the request was submitted: button, enter, follow-up, menu, resume, retry, shortcuts, starter, or suggestion
-* How the request was submitted: button, enter, follow-up, fxms, menu, resume, retry, shortcuts, starter, or suggestion. Messaging surfaces may supply their own value instead of fxms"
+* How the request was submitted: button, enter, follow-up, menu, resume, retry, shortcuts, starter, or suggestion"
   }
 
   dimension: extras__string__surface {

@@ -20151,7 +20151,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__http3_loss_ratio__sum {
     label: "Http3: Loss Ratio Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.http3_loss_ratio.sum ;;
     type: number
     group_label: "Http3"
@@ -65739,19 +65739,19 @@ view: metrics__metrics__labeled_counter__quotamanager_storage_sqlite_corruption_
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -77189,6 +77189,33 @@ view: metrics__metrics__dual_labeled_counter__page_load_error {
 }
 
 view: metrics__metrics__dual_labeled_counter__page_load_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__quotamanager_storage_init_corruption_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__quotamanager_storage_init_corruption_error__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
