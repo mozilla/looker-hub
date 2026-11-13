@@ -11,9 +11,15 @@ view: metric_definitions_ad_metrics_native_reporting {
 SUM(impressions) AS native_impressions_v2,
 SUM(clicks) AS native_clicks_v2,
 
-                ad_metrics_native_reporting_ad_id,
+                ad_metrics_native_reporting_account_id,
+ad_metrics_native_reporting_account_name,
+ad_metrics_native_reporting_ad_id,
 ad_metrics_native_reporting_ad_set_id,
+ad_metrics_native_reporting_ad_set_name,
+ad_metrics_native_reporting_ad_set_version_id,
+ad_metrics_native_reporting_ad_status,
 ad_metrics_native_reporting_ad_unit,
+ad_metrics_native_reporting_ad_version_id,
 ad_metrics_native_reporting_advertiser,
 ad_metrics_native_reporting_advertiser_id,
 ad_metrics_native_reporting_advertiser_name,
@@ -21,6 +27,7 @@ ad_metrics_native_reporting_campaign_id,
 ad_metrics_native_reporting_campaign_name,
 ad_metrics_native_reporting_campaign_name_custom,
 ad_metrics_native_reporting_campaign_name_custom_2,
+ad_metrics_native_reporting_campaign_version_id,
 ad_metrics_native_reporting_channel,
 ad_metrics_native_reporting_clicks,
 ad_metrics_native_reporting_content_url,
@@ -28,6 +35,7 @@ ad_metrics_native_reporting_country,
 ad_metrics_native_reporting_creative_id,
 ad_metrics_native_reporting_creative_title,
 ad_metrics_native_reporting_creative_url,
+ad_metrics_native_reporting_creative_version_id,
 ad_metrics_native_reporting_currency,
 ad_metrics_native_reporting_external_param,
 ad_metrics_native_reporting_flight_id,
@@ -89,9 +97,15 @@ ad_metrics_native_reporting_zone_name,
                 (
                     SELECT
                         ad_metrics_native_reporting.*,
-                        ad_metrics_native_reporting.ad_id AS ad_metrics_native_reporting_ad_id,
+                        ad_metrics_native_reporting.account_id AS ad_metrics_native_reporting_account_id,
+ad_metrics_native_reporting.account_name AS ad_metrics_native_reporting_account_name,
+ad_metrics_native_reporting.ad_id AS ad_metrics_native_reporting_ad_id,
 ad_metrics_native_reporting.ad_set_id AS ad_metrics_native_reporting_ad_set_id,
+ad_metrics_native_reporting.ad_set_name AS ad_metrics_native_reporting_ad_set_name,
+ad_metrics_native_reporting.ad_set_version_id AS ad_metrics_native_reporting_ad_set_version_id,
+ad_metrics_native_reporting.ad_status AS ad_metrics_native_reporting_ad_status,
 ad_metrics_native_reporting.ad_unit AS ad_metrics_native_reporting_ad_unit,
+ad_metrics_native_reporting.ad_version_id AS ad_metrics_native_reporting_ad_version_id,
 ad_metrics_native_reporting.advertiser AS ad_metrics_native_reporting_advertiser,
 ad_metrics_native_reporting.advertiser_id AS ad_metrics_native_reporting_advertiser_id,
 ad_metrics_native_reporting.advertiser_name AS ad_metrics_native_reporting_advertiser_name,
@@ -99,6 +113,7 @@ ad_metrics_native_reporting.campaign_id AS ad_metrics_native_reporting_campaign_
 ad_metrics_native_reporting.campaign_name AS ad_metrics_native_reporting_campaign_name,
 ad_metrics_native_reporting.campaign_name_custom AS ad_metrics_native_reporting_campaign_name_custom,
 ad_metrics_native_reporting.campaign_name_custom_2 AS ad_metrics_native_reporting_campaign_name_custom_2,
+ad_metrics_native_reporting.campaign_version_id AS ad_metrics_native_reporting_campaign_version_id,
 ad_metrics_native_reporting.channel AS ad_metrics_native_reporting_channel,
 ad_metrics_native_reporting.clicks AS ad_metrics_native_reporting_clicks,
 ad_metrics_native_reporting.content_url AS ad_metrics_native_reporting_content_url,
@@ -106,6 +121,7 @@ ad_metrics_native_reporting.country AS ad_metrics_native_reporting_country,
 ad_metrics_native_reporting.creative_id AS ad_metrics_native_reporting_creative_id,
 ad_metrics_native_reporting.creative_title AS ad_metrics_native_reporting_creative_title,
 ad_metrics_native_reporting.creative_url AS ad_metrics_native_reporting_creative_url,
+ad_metrics_native_reporting.creative_version_id AS ad_metrics_native_reporting_creative_version_id,
 ad_metrics_native_reporting.currency AS ad_metrics_native_reporting_currency,
 ad_metrics_native_reporting.external_param AS ad_metrics_native_reporting_external_param,
 ad_metrics_native_reporting.flight_id AS ad_metrics_native_reporting_flight_id,
@@ -185,9 +201,15 @@ ad_metrics_native_reporting.zone_name AS ad_metrics_native_reporting_zone_name,
                 
                 )
             GROUP BY
-                ad_metrics_native_reporting_ad_id,
+                ad_metrics_native_reporting_account_id,
+ad_metrics_native_reporting_account_name,
+ad_metrics_native_reporting_ad_id,
 ad_metrics_native_reporting_ad_set_id,
+ad_metrics_native_reporting_ad_set_name,
+ad_metrics_native_reporting_ad_set_version_id,
+ad_metrics_native_reporting_ad_status,
 ad_metrics_native_reporting_ad_unit,
+ad_metrics_native_reporting_ad_version_id,
 ad_metrics_native_reporting_advertiser,
 ad_metrics_native_reporting_advertiser_id,
 ad_metrics_native_reporting_advertiser_name,
@@ -195,6 +217,7 @@ ad_metrics_native_reporting_campaign_id,
 ad_metrics_native_reporting_campaign_name,
 ad_metrics_native_reporting_campaign_name_custom,
 ad_metrics_native_reporting_campaign_name_custom_2,
+ad_metrics_native_reporting_campaign_version_id,
 ad_metrics_native_reporting_channel,
 ad_metrics_native_reporting_clicks,
 ad_metrics_native_reporting_content_url,
@@ -202,6 +225,7 @@ ad_metrics_native_reporting_country,
 ad_metrics_native_reporting_creative_id,
 ad_metrics_native_reporting_creative_title,
 ad_metrics_native_reporting_creative_url,
+ad_metrics_native_reporting_creative_version_id,
 ad_metrics_native_reporting_currency,
 ad_metrics_native_reporting_external_param,
 ad_metrics_native_reporting_flight_id,
@@ -269,6 +293,20 @@ ad_metrics_native_reporting_zone_name,
     sql: ${TABLE}.native_clicks_v2 ;;
   }
 
+  dimension: account_id {
+    sql: ${TABLE}.ad_metrics_native_reporting_account_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: account_name {
+    sql: ${TABLE}.ad_metrics_native_reporting_account_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
   dimension: ad_id {
     sql: ${TABLE}.ad_metrics_native_reporting_ad_id ;;
     type: number
@@ -283,9 +321,37 @@ ad_metrics_native_reporting_zone_name,
     group_label: "Base Fields"
   }
 
+  dimension: ad_set_name {
+    sql: ${TABLE}.ad_metrics_native_reporting_ad_set_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: ad_set_version_id {
+    sql: ${TABLE}.ad_metrics_native_reporting_ad_set_version_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: ad_status {
+    sql: ${TABLE}.ad_metrics_native_reporting_ad_status ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
   dimension: ad_unit {
     sql: ${TABLE}.ad_metrics_native_reporting_ad_unit ;;
     type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: ad_version_id {
+    sql: ${TABLE}.ad_metrics_native_reporting_ad_version_id ;;
+    type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
@@ -339,6 +405,13 @@ ad_metrics_native_reporting_zone_name,
     group_label: "Base Fields"
   }
 
+  dimension: campaign_version_id {
+    sql: ${TABLE}.ad_metrics_native_reporting_campaign_version_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
   dimension: channel {
     sql: ${TABLE}.ad_metrics_native_reporting_channel ;;
     type: string
@@ -385,6 +458,13 @@ ad_metrics_native_reporting_zone_name,
   dimension: creative_url {
     sql: ${TABLE}.ad_metrics_native_reporting_creative_url ;;
     type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: creative_version_id {
+    sql: ${TABLE}.ad_metrics_native_reporting_creative_version_id ;;
+    type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }

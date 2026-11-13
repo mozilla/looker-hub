@@ -10231,7 +10231,8 @@ view: events_stream {
 * How the request was submitted: button, enter, follow-up, fxms, menu, resume, retry, shortcuts, starter, or suggestion. Messaging surfaces may supply their own value instead of fxms
 * How the request was submitted: button, enter, follow-up, shortcuts, starter, or suggestion
 * How the request was submitted: button, enter, follow-up, resume, retry, shortcuts, starter, or suggestion
-* How the request was submitted: button, enter, follow-up, menu, resume, retry, shortcuts, starter, or suggestion"
+* How the request was submitted: button, enter, follow-up, menu, resume, retry, shortcuts, starter, or suggestion
+* How the request was submitted: button, enter, follow-up, fxms, menu, resume, retry, shortcuts, starter, suggestion, or toolbar. Messaging surfaces may supply their own value instead of fxms"
   }
 
   dimension: extras__string__surface {
@@ -10602,8 +10603,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Trigger"
     description: "Depending on the type of event:
-* The cause of the filter change: error, warn, log, info, debug, css, netxhr, net, text or reset and all, html, css, js, xhr, fonts, images, media, ws or other for netmonitor
 * How the action was triggered: tab_mention, description, or unsupported.
+* The cause of the filter change: error, warn, log, info, debug, css, netxhr, net, text or reset and all, html, css, js, xhr, fonts, images, media, ws or other for netmonitor
 * The location where the removal occurred (assistant, settings)
 * Which user interaction triggered the event.
 * The reason the Smart Window was opened. One of: switch, menu, new_window, open_browser, or undo_close

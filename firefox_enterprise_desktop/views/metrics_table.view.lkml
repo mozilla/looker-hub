@@ -9848,6 +9848,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__dual_labeled_counter__quotamanager_storage_init_corruption_error {
+    sql: ${TABLE}.metrics.dual_labeled_counter.quotamanager_storage_init_corruption_error ;;
+    hidden: yes
+    description: "Increments when a database corruption error (as defined by IsDatabaseCorruptionError) propagates during QuotaManager initialization with no recovery path, leaving all storage APIs (localStorage, IndexedDB, Cache API) broken until the next initialization attempt. This covers corruption that passes the initial storage.sqlite open and integrity checks but breaks subsequent operations such as schema upgrades, cache setup, or quota loading. Note in some cases we recover from corruption: this metric is here to record missing cases where we didn't recover. Labeled by the initialization context that failed and by the name of the propagated error, which tells apart real corruption (NS_ERROR_FILE_CORRUPTED) from I/O errors (NS_ERROR_STORAGE_IOERR), which are often transient. See bug 2090041.
+"
+  }
+
   dimension: metrics__dual_labeled_counter__security_content_signature_verification_errors {
     sql: ${TABLE}.metrics.dual_labeled_counter.security_content_signature_verification_errors ;;
     hidden: yes
@@ -15162,7 +15169,6 @@ The bucket with the 'exited_ce' label is of special interest, since those are co
     sql: ${TABLE}.metrics.labeled_custom_distribution.sandbox_failed_launch_keyed ;;
     hidden: yes
     description: "Error code when a Windows sandboxed process fails to launch, keyed by process type and Windows error code. See https://searchfox.org/mozilla-central/search?q=ResultCode++path%3Asandbox_types.h&redirect=true for definitions of the error codes.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram SANDBOX_FAILED_LAUNCH_KEYED.
 "
   }
 
@@ -32771,6 +32777,33 @@ view: metrics_table__metrics__dual_labeled_counter__page_load_error {
 }
 
 view: metrics_table__metrics__dual_labeled_counter__page_load_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__quotamanager_storage_init_corruption_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__quotamanager_storage_init_corruption_error__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

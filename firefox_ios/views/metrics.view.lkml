@@ -11438,6 +11438,33 @@ view: metrics__events__extra {
   }
 }
 
+view: metrics__metrics__dual_labeled_counter__rust_component_errors_expected_failures {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__rust_component_errors_expected_failures__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_string__ads_client_build_cache_error {
   dimension: key {
     sql: ${TABLE}.key ;;

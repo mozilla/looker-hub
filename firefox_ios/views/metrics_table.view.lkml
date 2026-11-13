@@ -2361,6 +2361,13 @@ widget opens firefox for regular search
     group_item_label: "Raw User Terms Of Use Date Accepted"
   }
 
+  dimension: metrics__dual_labeled_counter__rust_component_errors_expected_failures {
+    sql: ${TABLE}.metrics.dual_labeled_counter.rust_component_errors_expected_failures ;;
+    hidden: yes
+    description: "Counts expected failures for Rust components
+"
+  }
+
   dimension: metrics__labeled_counter__ads_client_client_operation_total {
     sql: ${TABLE}.metrics.labeled_counter.ads_client_client_operation_total ;;
     hidden: yes
@@ -5635,6 +5642,33 @@ view: metrics_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__rust_component_errors_expected_failures {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__rust_component_errors_expected_failures__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }

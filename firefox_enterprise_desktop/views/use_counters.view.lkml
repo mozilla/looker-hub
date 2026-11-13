@@ -1804,6 +1804,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_border_shape {
+    label: "Use Counter Css Doc: Css Border Shape"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_border_shape ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Border Shape"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc: Css Border Shape"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_css_doc_css_border_shape"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property border-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_border_spacing {
     label: "Use Counter Css Doc: Css Border Spacing"
     hidden: no
@@ -15391,6 +15409,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property border-right-width. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_border_shape {
+    label: "Use Counter Css Page: Css Border Shape"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_border_shape ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Border Shape"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page: Css Border Shape"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_css_page_css_border_shape"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property border-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -57478,6 +57514,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_border_shape {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_border_shape} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Border Shape"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_css_doc_css_border_shape"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_border_shape_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_border_shape: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Border Shape"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_css_doc_css_border_shape"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_border_spacing {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_border_spacing} ;;
@@ -76349,6 +76410,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css Border Right Width"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_css_page_css_border_right_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_border_shape {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_border_shape} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Border Shape"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_css_page_css_border_shape"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_border_shape_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_border_shape: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Border Shape"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/use_counter_css_page_css_border_shape"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
