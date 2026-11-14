@@ -9567,7 +9567,8 @@ view: events_stream {
 * How the request was submitted: button, enter, follow-up, fxms, menu, resume, retry, shortcuts, starter, or suggestion. Messaging surfaces may supply their own value instead of fxms
 * How the request was submitted: button, enter, follow-up, shortcuts, starter, or suggestion
 * How the request was submitted: button, enter, follow-up, resume, retry, shortcuts, starter, or suggestion
-* How the request was submitted: button, enter, follow-up, menu, resume, retry, shortcuts, starter, or suggestion"
+* How the request was submitted: button, enter, follow-up, menu, resume, retry, shortcuts, starter, or suggestion
+* How the request was submitted: button, enter, follow-up, fxms, menu, resume, retry, shortcuts, starter, suggestion, or toolbar. Messaging surfaces may supply their own value instead of fxms"
   }
 
   dimension: extras__string__surface {
@@ -9929,11 +9930,11 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Trigger"
     description: "Depending on the type of event:
-* The cause of the filter change: error, warn, log, info, debug, css, netxhr, net, text or reset and all, html, css, js, xhr, fonts, images, media, ws or other for netmonitor
 * How the action was triggered: tab_mention, description, or unsupported.
+* The cause of the filter change: error, warn, log, info, debug, css, netxhr, net, text or reset and all, html, css, js, xhr, fonts, images, media, ws or other for netmonitor
 * Which user interaction triggered the event.
-* The reason why this confirmation was triggered. Values: [cp-connectivity, pref-change, context-init, retry, failed-lookups]
 * The element that triggered the polling/fetching of remote content (eg. ``\"broadcast\"``, ``\"timer\"``, ``\"forced\"``, ``\"manual\"``).
+* The reason why this confirmation was triggered. Values: [cp-connectivity, pref-change, context-init, retry, failed-lookups]
 * The entry point that requested the launch. One of: switch, menu, keyboard_shortcut, startup, settings, bedrock, asrouter, or other. Messaging surfaces may supply their own value instead of asrouter
 * The reason the Smart Window was opened. One of: switch, menu, new_window, open_browser, undo_close, keyboard_shortcut, settings, bedrock, asrouter, or other. Messaging surfaces may supply their own value instead of asrouter
 * The caus..."
@@ -10082,8 +10083,7 @@ view: events_stream {
 * The filename's type, see `nsContentSecurityUtils::FilenameToFilenameType(...)`.
 * identifier of pane shown.
 * The `value` of the event.
-* Either \"extension\" or \"server\". Mapped to Legacy Telemetry's `value` parameter.
-* The `value` of the event..."
+* The `value` of the event. Mirrors to the Legacy Telemetry event's `value` parameter. Reported statuses are..."
   }
 
   dimension: extras__string__variant_shown {

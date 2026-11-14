@@ -13998,6 +13998,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__dual_labeled_counter__rust_component_errors_expected_failures {
+    sql: ${TABLE}.metrics.dual_labeled_counter.rust_component_errors_expected_failures ;;
+    hidden: yes
+  }
+
   dimension: metrics__dual_labeled_counter__search_suggestions_ohttp_request_counter {
     sql: ${TABLE}.metrics.dual_labeled_counter.search_suggestions_ohttp_request_counter ;;
     hidden: yes
@@ -64318,6 +64323,33 @@ view: metrics_table__metrics__dual_labeled_counter__quotamanager_storage_init_co
 }
 
 view: metrics_table__metrics__dual_labeled_counter__quotamanager_storage_init_corruption_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__rust_component_errors_expected_failures {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__rust_component_errors_expected_failures__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
