@@ -4381,7 +4381,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Size (in bytes) of the compressed crash store JSON file.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CRASH_STORE_COMPRESSED_BYTES.
 "
   }
 
@@ -4399,7 +4398,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "An attempt to submit a crash. Keyed on the CrashManager Crash.type.
-This metric was generated to correspond to the Legacy Telemetry count histogram PROCESS_CRASH_SUBMIT_ATTEMPT.
 "
   }
 

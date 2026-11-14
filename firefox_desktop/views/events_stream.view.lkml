@@ -10607,10 +10607,10 @@ view: events_stream {
 * The cause of the filter change: error, warn, log, info, debug, css, netxhr, net, text or reset and all, html, css, js, xhr, fonts, images, media, ws or other for netmonitor
 * The location where the removal occurred (assistant, settings)
 * Which user interaction triggered the event.
+* The element that triggered the polling/fetching of remote content (eg. ``\"broadcast\"``, ``\"timer\"``, ``\"forced\"``, ``\"manual\"``).
 * The reason the Smart Window was opened. One of: switch, menu, new_window, open_browser, or undo_close
 * The reason why this confirmation was triggered. Values: [cp-connectivity, pref-change, context-init, retry, failed-lookups]
 * A label to distinguish what triggered the polling/fetching of remote content (eg. \"broadcast\", \"timer\", \"forced\", \"manual\")
-* The element that triggered the polling/fetching of remote content (eg. ``\"broadcast\"``, ``\"timer\"``, ``\"forced\"``, ``\"manual\"``).
 * What triggered the sync.
 * What triggered the database consistency check. This is either \"migration\" or \"startup\".
 * The entry point that re..."

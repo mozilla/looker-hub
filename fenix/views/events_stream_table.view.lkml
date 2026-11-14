@@ -7033,9 +7033,9 @@ view: events_stream_table {
     description: "Depending on the type of event:
 * The cause of the filter change: error, warn, log, info, debug, css, netxhr, net, text or reset and all, html, css, js, xhr, fonts, images, media, ws or other for netmonitor
 * Which user interaction triggered the event.
+* The element that triggered the polling/fetching of remote content (eg. ``\"broadcast\"``, ``\"timer\"``, ``\"forced\"``, ``\"manual\"``).
 * The reason why this confirmation was triggered. Values: [cp-connectivity, pref-change, context-init, retry, failed-lookups]
 * A label to distinguish what triggered the polling/fetching of remote content (eg. \"broadcast\", \"timer\", \"forced\", \"manual\")
-* The element that triggered the polling/fetching of remote content (eg. ``\"broadcast\"``, ``\"timer\"``, ``\"forced\"``, ``\"manual\"``).
 * How the user initiated summarization. Possible values: \"shake\", \"menu\".
 * How the user initiated summarization. Possible values: \"shake\", \"menu\", \"toolbar_button\".
 * What triggered the OS Keystore Popup. \"edit\" - when editing credit cards \"autofill\" - when autofilling credit cards
@@ -7181,9 +7181,7 @@ view: events_stream_table {
 * The filename's type, see `nsContentSecurityUtils::FilenameToFilenameType(...)`.
 * The `value` of the event. Mirrors to the Legacy Telemetry event's `value` parameter (i.e., the experiment slug).
 * The `value` of the event.
-* The value is the ID of the add-on.
-* Flow id of an interaction session with a credit card form
-* The event value. This is either \"started\", \"success\", \"d..."
+* The `value` of the event. Mirrors to the Legacy Telemetry event's `value` parameter. Reported statuses are: - `up_to_date`: Local content was already up-..."
   }
 
   dimension: extras__string__variant_shown {
