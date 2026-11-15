@@ -249,6 +249,11 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_counter__newtab_content_stories_feed_result {
+    sql: ${TABLE}.metrics.labeled_counter.newtab_content_stories_feed_result ;;
+    hidden: yes
+  }
+
   dimension: metrics__object__newtab_content_active_experiments {
     sql: ${TABLE}.metrics.object.newtab_content_active_experiments ;;
     hidden: yes
@@ -369,6 +374,14 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
     group_item_label: "Newtab Content Inferred Interests"
     description: "Differentially private high-level inferred interests (e.g. Entertainment or News), encoded in a JSON string. Key is the feature, and the value is a unary encoded string that must be decoded based on known differential privacy q and p values. Example \"{\"arts\":\"001\"}\"
 "
+  }
+
+  dimension: metrics__string__newtab_content_stories_feed_state {
+    sql: ${TABLE}.metrics.string.newtab_content_stories_feed_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Newtab Content Stories Feed State"
   }
 
   dimension: metrics__string__newtab_content_surface_id {
