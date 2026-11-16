@@ -14001,6 +14001,8 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__dual_labeled_counter__rust_component_errors_expected_failures {
     sql: ${TABLE}.metrics.dual_labeled_counter.rust_component_errors_expected_failures ;;
     hidden: yes
+    description: "Counts expected failures for Rust components
+"
   }
 
   dimension: metrics__dual_labeled_counter__search_suggestions_ohttp_request_counter {

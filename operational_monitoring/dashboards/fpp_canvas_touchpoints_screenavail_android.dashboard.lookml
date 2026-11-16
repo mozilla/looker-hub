@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       fpp_canvas_touchpoints_screenavail_android.branch
     ]
     filters:
-      fpp_canvas_touchpoints_screenavail_android.metric: 'retained'
+      fpp_canvas_touchpoints_screenavail_android.metric: 'tagged_sap_searches'
       fpp_canvas_touchpoints_screenavail_android.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,44 +60,10 @@
       fpp_canvas_touchpoints_screenavail_android.branch
     ]
     filters:
-      fpp_canvas_touchpoints_screenavail_android.metric: 'days_of_use'
+      fpp_canvas_touchpoints_screenavail_android.metric: 'search_count'
       fpp_canvas_touchpoints_screenavail_android.statistic: mean
     row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: fpp_canvas_touchpoints_screenavail_android.submission_date
-    field_y: fpp_canvas_touchpoints_screenavail_android.point
-    log_scale: false
-    ci_lower: fpp_canvas_touchpoints_screenavail_android.lower
-    ci_upper: fpp_canvas_touchpoints_screenavail_android.upper
-    show_grid: true
-    listen:
-      Date: fpp_canvas_touchpoints_screenavail_android.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fpp_canvas_touchpoints_screenavail_android
-    type: looker_line
-    fields: [
-      fpp_canvas_touchpoints_screenavail_android.submission_date,
-      fpp_canvas_touchpoints_screenavail_android.branch,
-      fpp_canvas_touchpoints_screenavail_android.point
-    ]
-    pivots: [
-      fpp_canvas_touchpoints_screenavail_android.branch
-    ]
-    filters:
-      fpp_canvas_touchpoints_screenavail_android.metric: 'ad_clicks'
-      fpp_canvas_touchpoints_screenavail_android.statistic: mean
-    row: 10
-    col: 0
     width: 12
     height: 8
     field_x: fpp_canvas_touchpoints_screenavail_android.submission_date
@@ -131,6 +97,40 @@
       fpp_canvas_touchpoints_screenavail_android.metric: 'uri_count'
       fpp_canvas_touchpoints_screenavail_android.statistic: mean
     row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: fpp_canvas_touchpoints_screenavail_android.submission_date
+    field_y: fpp_canvas_touchpoints_screenavail_android.point
+    log_scale: false
+    ci_lower: fpp_canvas_touchpoints_screenavail_android.lower
+    ci_upper: fpp_canvas_touchpoints_screenavail_android.upper
+    show_grid: true
+    listen:
+      Date: fpp_canvas_touchpoints_screenavail_android.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fpp_canvas_touchpoints_screenavail_android
+    type: looker_line
+    fields: [
+      fpp_canvas_touchpoints_screenavail_android.submission_date,
+      fpp_canvas_touchpoints_screenavail_android.branch,
+      fpp_canvas_touchpoints_screenavail_android.point
+    ]
+    pivots: [
+      fpp_canvas_touchpoints_screenavail_android.branch
+    ]
+    filters:
+      fpp_canvas_touchpoints_screenavail_android.metric: 'retained'
+      fpp_canvas_touchpoints_screenavail_android.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       fpp_canvas_touchpoints_screenavail_android.branch
     ]
     filters:
-      fpp_canvas_touchpoints_screenavail_android.metric: 'search_count'
+      fpp_canvas_touchpoints_screenavail_android.metric: 'ad_clicks'
       fpp_canvas_touchpoints_screenavail_android.statistic: mean
     row: 20
     col: 0
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       fpp_canvas_touchpoints_screenavail_android.branch
     ]
     filters:
-      fpp_canvas_touchpoints_screenavail_android.metric: 'tagged_sap_searches'
+      fpp_canvas_touchpoints_screenavail_android.metric: 'days_of_use'
       fpp_canvas_touchpoints_screenavail_android.statistic: mean
     row: 20
     col: 12

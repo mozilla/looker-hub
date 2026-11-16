@@ -9666,7 +9666,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.dual_labeled_counter.crash_submit_success ;;
     hidden: yes
     description: "The submission status when main/plugin/content crashes are submitted. 1 is success, 0 is failure. Keyed on the CrashManager Crash.type.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram PROCESS_CRASH_SUBMIT_SUCCESS.
 "
   }
 
@@ -11672,7 +11671,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.crash_submit_attempt ;;
     hidden: yes
     description: "An attempt to submit a crash. Keyed on the CrashManager Crash.type.
-This metric was generated to correspond to the Legacy Telemetry count histogram PROCESS_CRASH_SUBMIT_ATTEMPT.
 "
   }
 
