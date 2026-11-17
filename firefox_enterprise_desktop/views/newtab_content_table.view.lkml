@@ -252,6 +252,8 @@ The labels are the `category.name` identifier of the metric.
   dimension: metrics__labeled_counter__newtab_content_stories_feed_result {
     sql: ${TABLE}.metrics.labeled_counter.newtab_content_stories_feed_result ;;
     hidden: yes
+    description: "Merino stories feed requests, by result. Requests skipped because the cached feed is still fresh are not counted. Labels are `success` or the error type. `network` covers any failure without an error status, and over OHTTP, `http_4xx` and `http_5xx` include errors from the relay. For what New Tab showed instead, see `stories_feed_state`.
+"
   }
 
   dimension: metrics__object__newtab_content_inferred_interests {
@@ -340,6 +342,8 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Newtab Content Stories Feed State"
+    description: "What the New Tab stories section shows, as of the latest stories feed load: `stories` (a fresh feed), `cache` (an expired cached feed, because the latest Merino request failed), `placeholder` (placeholders or the empty state, because there was no usable feed), or `off` (stories are turned off). Sent with every newtab-content ping, so the share of pings with `placeholder` estimates the share of New Tab sessions that showed no stories. Unlike `stories_feed_result`, retries do not inflate it. Missing from pings sent before the first feed load in a session. Only recorded when the private ping is enabled.
+"
   }
 
   dimension: metrics__string__newtab_content_surface_id {

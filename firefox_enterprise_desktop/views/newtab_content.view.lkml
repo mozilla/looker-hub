@@ -97,6 +97,41 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
 "
   }
 
+  dimension: metrics__labeled_counter__newtab_content_stories_feed_result {
+    label: "Newtab Content: Stories Feed Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.newtab_content_stories_feed_result ;;
+    group_label: "Newtab Content"
+    group_item_label: "Stories Feed Result"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Content: Stories Feed Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/newtab_content_stories_feed_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Merino stories feed requests, by result. Requests skipped because the cached feed is still fresh are not counted. Labels are `success` or the error type. `network` covers any failure without an error status, and over OHTTP, `http_4xx` and `http_5xx` include errors from the relay. For what New Tab showed instead, see `stories_feed_state`.
+"
+  }
+
+  dimension: metrics__string__newtab_content_stories_feed_state {
+    label: "Newtab Content: Stories Feed State"
+    hidden: no
+    sql: ${TABLE}.metrics.string.newtab_content_stories_feed_state ;;
+    type: string
+    group_label: "Newtab Content"
+    group_item_label: "Stories Feed State"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Content: Stories Feed State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/newtab_content_stories_feed_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What the New Tab stories section shows, as of the latest stories feed load: `stories` (a fresh feed), `cache` (an expired cached feed, because the latest Merino request failed), `placeholder` (placeholders or the empty state, because there was no usable feed), or `off` (stories are turned off). Sent with every newtab-content ping, so the share of pings with `placeholder` estimates the share of New Tab sessions that showed no stories. Unlike `stories_feed_result`, retries do not inflate it. Missing from pings sent before the first feed load in a session. Only recorded when the private ping is enabled.
+"
+  }
+
   dimension: metrics__string__newtab_content_surface_id {
     label: "Newtab Content: Surface ID"
     hidden: no
@@ -622,6 +657,41 @@ view: newtab_content__metrics__labeled_counter__glean_error_invalid_state {
 
 view: newtab_content__metrics__labeled_counter__glean_error_invalid_value {
   label: "Glean Error: Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${newtab_content.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${newtab_content.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+}
+
+view: newtab_content__metrics__labeled_counter__newtab_content_stories_feed_result {
+  label: "Newtab Content: Stories Feed Result"
 
   dimension: document_id {
     type: string
