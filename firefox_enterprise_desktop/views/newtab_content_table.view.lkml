@@ -249,6 +249,11 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_counter__newtab_content_stories_feed_result {
+    sql: ${TABLE}.metrics.labeled_counter.newtab_content_stories_feed_result ;;
+    hidden: yes
+  }
+
   dimension: metrics__object__newtab_content_inferred_interests {
     sql: ${TABLE}.metrics.object.newtab_content_inferred_interests ;;
     hidden: yes
@@ -327,6 +332,14 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
     group_item_label: "Newtab Content Experiment Name"
     description: "The name of the primary new tab content experiment. We don't include all experiments to prevent user fingerprinting.
 "
+  }
+
+  dimension: metrics__string__newtab_content_stories_feed_state {
+    sql: ${TABLE}.metrics.string.newtab_content_stories_feed_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Newtab Content Stories Feed State"
   }
 
   dimension: metrics__string__newtab_content_surface_id {
