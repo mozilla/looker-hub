@@ -33,6 +33,11 @@ explore: newtab_content {
     sql: LEFT JOIN UNNEST(${newtab_content.metrics__labeled_counter__glean_error_invalid_value}) AS newtab_content__metrics__labeled_counter__glean_error_invalid_value ON ${newtab_content.document_id} = ${newtab_content__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
 
+  join: newtab_content__metrics__labeled_counter__newtab_content_stories_feed_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${newtab_content.metrics__labeled_counter__newtab_content_stories_feed_result}) AS newtab_content__metrics__labeled_counter__newtab_content_stories_feed_result ON ${newtab_content.document_id} = ${newtab_content__metrics__labeled_counter__newtab_content_stories_feed_result.document_id} ;;
+  }
+
   join: newtab_content__events {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${newtab_content.events}) AS newtab_content__events ;;

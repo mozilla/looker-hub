@@ -594,6 +594,7 @@ view: events_stream {
 * Whether launch on login was turned on (true) or off (false).
 * Whether the sidebar is now set to open by default
 * whether the preference was enabled or disabled in any way
+* Whether the tracker count was enabled by this toggle.
 * The new state, true when saving security codes is on."
   }
 
