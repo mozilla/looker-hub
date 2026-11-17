@@ -285,8 +285,8 @@
       options:
       - 'release'
       - 'aurora'
-      - 'nightly'
       - 'beta'
+      - 'nightly'
       - 'esr'
       - 'Other'
       
