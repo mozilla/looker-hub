@@ -17707,6 +17707,40 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__labeled_counter__geckoview_scroll_capture_outcome {
+    label: "Geckoview: Scroll Capture Outcome"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geckoview_scroll_capture_outcome ;;
+    group_label: "Geckoview"
+    group_item_label: "Scroll Capture Outcome"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview: Scroll Capture Outcome"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/geckoview_scroll_capture_outcome"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Per-capture verdict of each scroll capture (long screenshot) operation, recorded once per capture in GeckoViewScrollCaptureCallback. \"complete\" means every rendered tile succeeded; \"partial\" means at least one tile rendered but at least one hit a hard failure; \"failed\" means no tile rendered; \"canceled\" means the capture was canceled (session teardown, the user dismissing it, or a tile that could not finish in time). This complements scroll_capture_tile_result, which counts individual tiles.
+"
+  }
+
+  dimension: metrics__labeled_counter__geckoview_scroll_capture_tile_result {
+    label: "Geckoview: Scroll Capture Tile Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geckoview_scroll_capture_tile_result ;;
+    group_label: "Geckoview"
+    group_item_label: "Scroll Capture Tile Result"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview: Scroll Capture Tile Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/geckoview_scroll_capture_tile_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Outcome of each scroll capture (long screenshot) image request handled by GeckoViewScrollCaptureCallback. The \"success\" label counts rendered tiles; the other labels are the cancellation and failure paths. \"canceled_before\" is a request that arrived already canceled (session teardown or the user dismissing the capture); \"canceled_inflight\" is a request canceled while the native paint was running, which correlates with the paint being too slow.
+"
+  }
+
   dimension: metrics__custom_distribution__geolocation_accuracy__sum {
     label: "Geolocation: Accuracy Sum"
     hidden: no
@@ -25238,7 +25272,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__boolean__networking_cookie_file_present {
     label: "Networking: Cookie File Present"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.networking_cookie_file_present ;;
     type: yesno
     group_label: "Networking"
@@ -56448,6 +56482,88 @@ view: metrics__metrics__labeled_counter__fontlist_font_cache_hit {
 
 view: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
   label: "Formautofill: Form Submission Heuristic"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geckoview_scroll_capture_outcome {
+  label: "Geckoview: Scroll Capture Outcome"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geckoview_scroll_capture_tile_result {
+  label: "Geckoview: Scroll Capture Tile Result"
 
   dimension: document_id {
     type: string

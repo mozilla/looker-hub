@@ -20524,7 +20524,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__boolean__networking_cookie_file_present {
     label: "Networking: Cookie File Present"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.networking_cookie_file_present ;;
     type: yesno
     group_label: "Networking"

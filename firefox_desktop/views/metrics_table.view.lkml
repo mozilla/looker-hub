@@ -16282,6 +16282,16 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     description: "The heuristic that detected the form submission."
   }
 
+  dimension: metrics__labeled_counter__geckoview_scroll_capture_outcome {
+    sql: ${TABLE}.metrics.labeled_counter.geckoview_scroll_capture_outcome ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__geckoview_scroll_capture_tile_result {
+    sql: ${TABLE}.metrics.labeled_counter.geckoview_scroll_capture_tile_result ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__geolocation_fallback {
     sql: ${TABLE}.metrics.labeled_counter.geolocation_fallback ;;
     hidden: yes

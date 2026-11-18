@@ -574,6 +574,7 @@ view: events_stream {
 * Boolean indicating if that type of memory was enabled or disabled
 * Whether the sidebar is now set to open by default
 * whether the preference was enabled or disabled in any way
+* Whether the tracker count was enabled by this toggle.
 * The new state, true when saving security codes is on."
   }
 
