@@ -14232,6 +14232,20 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__geckoview_scroll_capture_outcome {
+    sql: ${TABLE}.metrics.labeled_counter.geckoview_scroll_capture_outcome ;;
+    hidden: yes
+    description: "Per-capture verdict of each scroll capture (long screenshot) operation, recorded once per capture in GeckoViewScrollCaptureCallback. \"complete\" means every rendered tile succeeded; \"partial\" means at least one tile rendered but at least one hit a hard failure; \"failed\" means no tile rendered; \"canceled\" means the capture was canceled (session teardown, the user dismissing it, or a tile that could not finish in time). This complements scroll_capture_tile_result, which counts individual tiles.
+"
+  }
+
+  dimension: metrics__labeled_counter__geckoview_scroll_capture_tile_result {
+    sql: ${TABLE}.metrics.labeled_counter.geckoview_scroll_capture_tile_result ;;
+    hidden: yes
+    description: "Outcome of each scroll capture (long screenshot) image request handled by GeckoViewScrollCaptureCallback. The \"success\" label counts rendered tiles; the other labels are the cancellation and failure paths. \"canceled_before\" is a request that arrived already canceled (session teardown or the user dismissing the capture); \"canceled_inflight\" is a request canceled while the native paint was running, which correlates with the paint being too slow.
+"
+  }
+
   dimension: metrics__labeled_counter__geolocation_fallback {
     sql: ${TABLE}.metrics.labeled_counter.geolocation_fallback ;;
     hidden: yes
