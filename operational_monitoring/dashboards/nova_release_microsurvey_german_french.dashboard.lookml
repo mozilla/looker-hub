@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,77 +26,9 @@
       nova_release_microsurvey_german_french.branch
     ]
     filters:
-      nova_release_microsurvey_german_french.metric: 'ad_clicks'
+      nova_release_microsurvey_german_french.metric: 'retained'
       nova_release_microsurvey_german_french.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: nova_release_microsurvey_german_french.submission_date
-    field_y: nova_release_microsurvey_german_french.point
-    log_scale: false
-    ci_lower: nova_release_microsurvey_german_french.lower
-    ci_upper: nova_release_microsurvey_german_french.upper
-    show_grid: true
-    listen:
-      Date: nova_release_microsurvey_german_french.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: nova_release_microsurvey_german_french
-    type: looker_line
-    fields: [
-      nova_release_microsurvey_german_french.submission_date,
-      nova_release_microsurvey_german_french.branch,
-      nova_release_microsurvey_german_french.point
-    ]
-    pivots: [
-      nova_release_microsurvey_german_french.branch
-    ]
-    filters:
-      nova_release_microsurvey_german_french.metric: 'days_of_use'
-      nova_release_microsurvey_german_french.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: nova_release_microsurvey_german_french.submission_date
-    field_y: nova_release_microsurvey_german_french.point
-    log_scale: false
-    ci_lower: nova_release_microsurvey_german_french.lower
-    ci_upper: nova_release_microsurvey_german_french.upper
-    show_grid: true
-    listen:
-      Date: nova_release_microsurvey_german_french.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: nova_release_microsurvey_german_french
-    type: looker_line
-    fields: [
-      nova_release_microsurvey_german_french.submission_date,
-      nova_release_microsurvey_german_french.branch,
-      nova_release_microsurvey_german_french.point
-    ]
-    pivots: [
-      nova_release_microsurvey_german_french.branch
-    ]
-    filters:
-      nova_release_microsurvey_german_french.metric: 'active_hours'
-      nova_release_microsurvey_german_french.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -130,7 +62,7 @@
     filters:
       nova_release_microsurvey_german_french.metric: 'uri_count'
       nova_release_microsurvey_german_french.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -146,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,10 +94,44 @@
       nova_release_microsurvey_german_french.branch
     ]
     filters:
-      nova_release_microsurvey_german_french.metric: 'qualified_cumulative_days_of_use'
+      nova_release_microsurvey_german_french.metric: 'ad_clicks'
       nova_release_microsurvey_german_french.statistic: mean
-    row: 20
+    row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: nova_release_microsurvey_german_french.submission_date
+    field_y: nova_release_microsurvey_german_french.point
+    log_scale: false
+    ci_lower: nova_release_microsurvey_german_french.lower
+    ci_upper: nova_release_microsurvey_german_french.upper
+    show_grid: true
+    listen:
+      Date: nova_release_microsurvey_german_french.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: nova_release_microsurvey_german_french
+    type: looker_line
+    fields: [
+      nova_release_microsurvey_german_french.submission_date,
+      nova_release_microsurvey_german_french.branch,
+      nova_release_microsurvey_german_french.point
+    ]
+    pivots: [
+      nova_release_microsurvey_german_french.branch
+    ]
+    filters:
+      nova_release_microsurvey_german_french.metric: 'search_count'
+      nova_release_microsurvey_german_french.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: nova_release_microsurvey_german_french.submission_date
@@ -201,7 +167,7 @@
       nova_release_microsurvey_german_french.metric: 'memory_total'
       nova_release_microsurvey_german_french.statistic: percentile
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: nova_release_microsurvey_german_french.submission_date
@@ -217,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +199,41 @@
       nova_release_microsurvey_german_french.branch
     ]
     filters:
-      nova_release_microsurvey_german_french.metric: 'retained'
+      nova_release_microsurvey_german_french.metric: 'days_of_use'
+      nova_release_microsurvey_german_french.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: nova_release_microsurvey_german_french.submission_date
+    field_y: nova_release_microsurvey_german_french.point
+    log_scale: false
+    ci_lower: nova_release_microsurvey_german_french.lower
+    ci_upper: nova_release_microsurvey_german_french.upper
+    show_grid: true
+    listen:
+      Date: nova_release_microsurvey_german_french.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: nova_release_microsurvey_german_french
+    type: looker_line
+    fields: [
+      nova_release_microsurvey_german_french.submission_date,
+      nova_release_microsurvey_german_french.branch,
+      nova_release_microsurvey_german_french.point
+    ]
+    pivots: [
+      nova_release_microsurvey_german_french.branch
+    ]
+    filters:
+      nova_release_microsurvey_german_french.metric: 'qualified_cumulative_days_of_use'
       nova_release_microsurvey_german_french.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       nova_release_microsurvey_german_french.branch
     ]
     filters:
-      nova_release_microsurvey_german_french.metric: 'search_count'
+      nova_release_microsurvey_german_french.metric: 'active_hours'
       nova_release_microsurvey_german_french.statistic: mean
     row: 30
     col: 12
