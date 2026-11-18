@@ -5361,7 +5361,8 @@ view: events_stream {
     group_item_label: "Named"
     description: "Depending on the type of event:
 * The name of the item that was tapped. Available items are: ``` open_in_new_tab, open_in_private_tab, open_image_in_new_tab, save_image, share_link, copy_link, copy_image_location, share_image ```
-* The name of the item that was tapped. Available items are: ``` open_in_new_tab, open_in_private_tab, open_image_in_new_tab, save_image, share_link, copy_link, copy_image_location, share_image, open_with_google_lens ```"
+* The name of the item that was tapped. Available items are: ``` open_in_new_tab, open_in_private_tab, open_image_in_new_tab, save_image, share_link, copy_link, copy_image_location, share_image, open_with_google_lens ```
+* The name of the item that was tapped. Available items are: ``` open_in_new_tab, open_in_private_tab, open_image_in_new_tab, save_image, share_link, copy_link, copy_image_location, share_image, open_with_google_lens, open_in_tab_group ```"
   }
 
   dimension: extras__string__networkID {
