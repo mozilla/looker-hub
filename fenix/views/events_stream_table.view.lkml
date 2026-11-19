@@ -1765,6 +1765,15 @@ view: events_stream_table {
     description: "How long (in milliseconds) does the our media pipeline take to load the first video frame from \"the creation of MDSM\" to \"the first frame loaded\"."
   }
 
+  dimension: extras__quantity__flow_seq {
+    sql: ${TABLE}.extras.quantity.flow_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Flow Seq"
+    description: "The instance's sequence number within its session. Matches `seq` in the `flows` entries of the instance's tagged events."
+  }
+
   dimension: extras__quantity__from_version {
     sql: ${TABLE}.extras.quantity.from_version ;;
     type: number
@@ -4428,6 +4437,15 @@ view: events_stream_table {
 * An id generated when the dropdown opened, letting this event be correlated with the matching dropdown_c..."
   }
 
+  dimension: extras__string__flow_name {
+    sql: ${TABLE}.extras.string.flow_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Flow Name"
+    description: "The name of the flow, as declared in `flows.yaml`."
+  }
+
   dimension: extras__string__form_action_origin_error {
     sql: ${TABLE}.extras.string.form_action_origin_error ;;
     type: string
@@ -6388,6 +6406,7 @@ view: events_stream_table {
 * The toolbox session start time e.g. 13963.
 * The `session_id` of the `session_started` this ends.
 * Identifies this session, and is recorded again on the matching `session_ended`. Lets a start be paired with its outcome, which is what makes the two reconcile across a day boundary and lets an outcome be cross-tabulated against `lang`. Freshly generated per session and stored nowhere.
+* The session that owned the instance. Only present when `reason` is \"abnormal\", since that `flow_end` is recorded outside any session.
 * The unique UUID of the ended session.
 * The unique UUID of the started session."
   }
@@ -6870,6 +6889,15 @@ view: events_stream_table {
     description: "Depending on the type of event:
 * telephone
 * tel result"
+  }
+
+  dimension: extras__string__terminating_event {
+    sql: ${TABLE}.extras.string.terminating_event ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Terminating Event"
+    description: "The event that closed the instance (`category.name`). Only present when `reason` is \"exit\"."
   }
 
   dimension: extras__string__text_source {

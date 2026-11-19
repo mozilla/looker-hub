@@ -627,6 +627,15 @@ view: events_stream {
 * The digit-count boundary that was crossed, from 4 to 8."
   }
 
+  dimension: extras__quantity__flow_seq {
+    sql: ${TABLE}.extras.quantity.flow_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Flow Seq"
+    description: "The instance's sequence number within its session. Matches `seq` in the `flows` entries of the instance's tagged events."
+  }
+
   dimension: extras__quantity__from_version {
     sql: ${TABLE}.extras.quantity.from_version ;;
     type: number
@@ -1189,6 +1198,15 @@ view: events_stream {
     description: "The FIFA code of the country selected by the user."
   }
 
+  dimension: extras__string__flow_name {
+    sql: ${TABLE}.extras.string.flow_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Flow Name"
+    description: "The name of the flow, as declared in `flows.yaml`."
+  }
+
   dimension: extras__string__flow_type {
     sql: ${TABLE}.extras.string.flow_type ;;
     type: string
@@ -1546,7 +1564,7 @@ view: events_stream {
 * The reason for the unenrollment failure
 * Why the pill went away. One of `swipe` or `new_session`. See the `QuickAnswersReturnPillDismissReason` enum for the valid values.
 * The selected issue category. Options are listed in the WebCompatIssueCategory enumeration.
-* Why the session ended. When in MANUAL mode, the reason can optionally be set by the application. Possible values set by Glean in AUTO or LIFECYCLE session management modes include: - \"inactive\": client went to background (LIFECYCLE mode) - \"replaced\": a n..."
+* Why the instance ended: - \"exit\": an event in the flow's `ends_on` was recorded - \"timeout\": the flow's `auto_close_timeout` elapsed - \"session_end\": the session ended while the instance was active - \"abnormal\": the app ended abnormally while the instance..."
   }
 
   dimension: extras__string__received_url {
@@ -1650,6 +1668,7 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Session ID"
     description: "Depending on the type of event:
+* The session that owned the instance. Only present when `reason` is \"abnormal\", since that `flow_end` is recorded outside any session.
 * The unique UUID of the ended session.
 * The unique UUID of the started session."
   }
@@ -1754,6 +1773,15 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Survey ID"
     description: "The id of the survey."
+  }
+
+  dimension: extras__string__terminating_event {
+    sql: ${TABLE}.extras.string.terminating_event ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Terminating Event"
+    description: "The event that closed the instance (`category.name`). Only present when `reason` is \"exit\"."
   }
 
   dimension: extras__string__tile_type {
