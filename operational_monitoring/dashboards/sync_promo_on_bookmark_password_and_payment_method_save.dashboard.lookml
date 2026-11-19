@@ -44,6 +44,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sync_promo_on_bookmark_password_and_payment_method_save
+    type: looker_line
+    fields: [
+      sync_promo_on_bookmark_password_and_payment_method_save.submission_date,
+      sync_promo_on_bookmark_password_and_payment_method_save.branch,
+      sync_promo_on_bookmark_password_and_payment_method_save.point
+    ]
+    pivots: [
+      sync_promo_on_bookmark_password_and_payment_method_save.branch
+    ]
+    filters:
+      sync_promo_on_bookmark_password_and_payment_method_save.metric: 'search_count'
+      sync_promo_on_bookmark_password_and_payment_method_save.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: sync_promo_on_bookmark_password_and_payment_method_save.submission_date
+    field_y: sync_promo_on_bookmark_password_and_payment_method_save.point
+    log_scale: false
+    ci_lower: sync_promo_on_bookmark_password_and_payment_method_save.lower
+    ci_upper: sync_promo_on_bookmark_password_and_payment_method_save.upper
+    show_grid: true
+    listen:
+      Date: sync_promo_on_bookmark_password_and_payment_method_save.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -62,7 +96,41 @@
     filters:
       sync_promo_on_bookmark_password_and_payment_method_save.metric: 'uri_count'
       sync_promo_on_bookmark_password_and_payment_method_save.statistic: mean
-    row: 0
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: sync_promo_on_bookmark_password_and_payment_method_save.submission_date
+    field_y: sync_promo_on_bookmark_password_and_payment_method_save.point
+    log_scale: false
+    ci_lower: sync_promo_on_bookmark_password_and_payment_method_save.lower
+    ci_upper: sync_promo_on_bookmark_password_and_payment_method_save.upper
+    show_grid: true
+    listen:
+      Date: sync_promo_on_bookmark_password_and_payment_method_save.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sync_promo_on_bookmark_password_and_payment_method_save
+    type: looker_line
+    fields: [
+      sync_promo_on_bookmark_password_and_payment_method_save.submission_date,
+      sync_promo_on_bookmark_password_and_payment_method_save.branch,
+      sync_promo_on_bookmark_password_and_payment_method_save.point
+    ]
+    pivots: [
+      sync_promo_on_bookmark_password_and_payment_method_save.branch
+    ]
+    filters:
+      sync_promo_on_bookmark_password_and_payment_method_save.metric: 'days_of_use'
+      sync_promo_on_bookmark_password_and_payment_method_save.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -96,42 +164,8 @@
     filters:
       sync_promo_on_bookmark_password_and_payment_method_save.metric: 'ad_clicks'
       sync_promo_on_bookmark_password_and_payment_method_save.statistic: mean
-    row: 10
+    row: 20
     col: 0
-    width: 12
-    height: 8
-    field_x: sync_promo_on_bookmark_password_and_payment_method_save.submission_date
-    field_y: sync_promo_on_bookmark_password_and_payment_method_save.point
-    log_scale: false
-    ci_lower: sync_promo_on_bookmark_password_and_payment_method_save.lower
-    ci_upper: sync_promo_on_bookmark_password_and_payment_method_save.upper
-    show_grid: true
-    listen:
-      Date: sync_promo_on_bookmark_password_and_payment_method_save.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sync_promo_on_bookmark_password_and_payment_method_save
-    type: looker_line
-    fields: [
-      sync_promo_on_bookmark_password_and_payment_method_save.submission_date,
-      sync_promo_on_bookmark_password_and_payment_method_save.branch,
-      sync_promo_on_bookmark_password_and_payment_method_save.point
-    ]
-    pivots: [
-      sync_promo_on_bookmark_password_and_payment_method_save.branch
-    ]
-    filters:
-      sync_promo_on_bookmark_password_and_payment_method_save.metric: 'search_count'
-      sync_promo_on_bookmark_password_and_payment_method_save.statistic: mean
-    row: 10
-    col: 12
     width: 12
     height: 8
     field_x: sync_promo_on_bookmark_password_and_payment_method_save.submission_date
@@ -167,7 +201,7 @@
       sync_promo_on_bookmark_password_and_payment_method_save.metric: 'memory_total'
       sync_promo_on_bookmark_password_and_payment_method_save.statistic: percentile
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: sync_promo_on_bookmark_password_and_payment_method_save.submission_date
@@ -183,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,10 +233,10 @@
       sync_promo_on_bookmark_password_and_payment_method_save.branch
     ]
     filters:
-      sync_promo_on_bookmark_password_and_payment_method_save.metric: 'days_of_use'
+      sync_promo_on_bookmark_password_and_payment_method_save.metric: 'active_hours'
       sync_promo_on_bookmark_password_and_payment_method_save.statistic: mean
-    row: 20
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: sync_promo_on_bookmark_password_and_payment_method_save.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       sync_promo_on_bookmark_password_and_payment_method_save.metric: 'qualified_cumulative_days_of_use'
-      sync_promo_on_bookmark_password_and_payment_method_save.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: sync_promo_on_bookmark_password_and_payment_method_save.submission_date
-    field_y: sync_promo_on_bookmark_password_and_payment_method_save.point
-    log_scale: false
-    ci_lower: sync_promo_on_bookmark_password_and_payment_method_save.lower
-    ci_upper: sync_promo_on_bookmark_password_and_payment_method_save.upper
-    show_grid: true
-    listen:
-      Date: sync_promo_on_bookmark_password_and_payment_method_save.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sync_promo_on_bookmark_password_and_payment_method_save
-    type: looker_line
-    fields: [
-      sync_promo_on_bookmark_password_and_payment_method_save.submission_date,
-      sync_promo_on_bookmark_password_and_payment_method_save.branch,
-      sync_promo_on_bookmark_password_and_payment_method_save.point
-    ]
-    pivots: [
-      sync_promo_on_bookmark_password_and_payment_method_save.branch
-    ]
-    filters:
-      sync_promo_on_bookmark_password_and_payment_method_save.metric: 'active_hours'
       sync_promo_on_bookmark_password_and_payment_method_save.statistic: mean
     row: 30
     col: 12

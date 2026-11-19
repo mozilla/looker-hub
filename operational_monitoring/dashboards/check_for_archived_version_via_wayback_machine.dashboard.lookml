@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       check_for_archived_version_via_wayback_machine.branch
     ]
     filters:
-      check_for_archived_version_via_wayback_machine.metric: 'uri_count'
+      check_for_archived_version_via_wayback_machine.metric: 'days_of_use'
       check_for_archived_version_via_wayback_machine.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       check_for_archived_version_via_wayback_machine.branch
     ]
     filters:
-      check_for_archived_version_via_wayback_machine.metric: 'ad_clicks'
+      check_for_archived_version_via_wayback_machine.metric: 'uri_count'
       check_for_archived_version_via_wayback_machine.statistic: mean
     row: 10
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       check_for_archived_version_via_wayback_machine.branch
     ]
     filters:
-      check_for_archived_version_via_wayback_machine.metric: 'days_of_use'
+      check_for_archived_version_via_wayback_machine.metric: 'ad_clicks'
       check_for_archived_version_via_wayback_machine.statistic: mean
     row: 20
     col: 12

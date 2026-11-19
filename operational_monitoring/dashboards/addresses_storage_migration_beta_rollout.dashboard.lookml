@@ -44,6 +44,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: addresses_storage_migration_beta_rollout
+    type: looker_line
+    fields: [
+      addresses_storage_migration_beta_rollout.submission_date,
+      addresses_storage_migration_beta_rollout.branch,
+      addresses_storage_migration_beta_rollout.point
+    ]
+    pivots: [
+      addresses_storage_migration_beta_rollout.branch
+    ]
+    filters:
+      addresses_storage_migration_beta_rollout.metric: 'search_count'
+      addresses_storage_migration_beta_rollout.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: addresses_storage_migration_beta_rollout.submission_date
+    field_y: addresses_storage_migration_beta_rollout.point
+    log_scale: false
+    ci_lower: addresses_storage_migration_beta_rollout.lower
+    ci_upper: addresses_storage_migration_beta_rollout.upper
+    show_grid: true
+    listen:
+      Date: addresses_storage_migration_beta_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -62,7 +96,41 @@
     filters:
       addresses_storage_migration_beta_rollout.metric: 'uri_count'
       addresses_storage_migration_beta_rollout.statistic: mean
-    row: 0
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: addresses_storage_migration_beta_rollout.submission_date
+    field_y: addresses_storage_migration_beta_rollout.point
+    log_scale: false
+    ci_lower: addresses_storage_migration_beta_rollout.lower
+    ci_upper: addresses_storage_migration_beta_rollout.upper
+    show_grid: true
+    listen:
+      Date: addresses_storage_migration_beta_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: addresses_storage_migration_beta_rollout
+    type: looker_line
+    fields: [
+      addresses_storage_migration_beta_rollout.submission_date,
+      addresses_storage_migration_beta_rollout.branch,
+      addresses_storage_migration_beta_rollout.point
+    ]
+    pivots: [
+      addresses_storage_migration_beta_rollout.branch
+    ]
+    filters:
+      addresses_storage_migration_beta_rollout.metric: 'days_of_use'
+      addresses_storage_migration_beta_rollout.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -96,42 +164,8 @@
     filters:
       addresses_storage_migration_beta_rollout.metric: 'ad_clicks'
       addresses_storage_migration_beta_rollout.statistic: mean
-    row: 10
+    row: 20
     col: 0
-    width: 12
-    height: 8
-    field_x: addresses_storage_migration_beta_rollout.submission_date
-    field_y: addresses_storage_migration_beta_rollout.point
-    log_scale: false
-    ci_lower: addresses_storage_migration_beta_rollout.lower
-    ci_upper: addresses_storage_migration_beta_rollout.upper
-    show_grid: true
-    listen:
-      Date: addresses_storage_migration_beta_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: addresses_storage_migration_beta_rollout
-    type: looker_line
-    fields: [
-      addresses_storage_migration_beta_rollout.submission_date,
-      addresses_storage_migration_beta_rollout.branch,
-      addresses_storage_migration_beta_rollout.point
-    ]
-    pivots: [
-      addresses_storage_migration_beta_rollout.branch
-    ]
-    filters:
-      addresses_storage_migration_beta_rollout.metric: 'search_count'
-      addresses_storage_migration_beta_rollout.statistic: mean
-    row: 10
-    col: 12
     width: 12
     height: 8
     field_x: addresses_storage_migration_beta_rollout.submission_date
@@ -167,7 +201,7 @@
       addresses_storage_migration_beta_rollout.metric: 'memory_total'
       addresses_storage_migration_beta_rollout.statistic: percentile
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: addresses_storage_migration_beta_rollout.submission_date
@@ -183,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,10 +233,10 @@
       addresses_storage_migration_beta_rollout.branch
     ]
     filters:
-      addresses_storage_migration_beta_rollout.metric: 'days_of_use'
+      addresses_storage_migration_beta_rollout.metric: 'active_hours'
       addresses_storage_migration_beta_rollout.statistic: mean
-    row: 20
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: addresses_storage_migration_beta_rollout.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       addresses_storage_migration_beta_rollout.metric: 'qualified_cumulative_days_of_use'
-      addresses_storage_migration_beta_rollout.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: addresses_storage_migration_beta_rollout.submission_date
-    field_y: addresses_storage_migration_beta_rollout.point
-    log_scale: false
-    ci_lower: addresses_storage_migration_beta_rollout.lower
-    ci_upper: addresses_storage_migration_beta_rollout.upper
-    show_grid: true
-    listen:
-      Date: addresses_storage_migration_beta_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: addresses_storage_migration_beta_rollout
-    type: looker_line
-    fields: [
-      addresses_storage_migration_beta_rollout.submission_date,
-      addresses_storage_migration_beta_rollout.branch,
-      addresses_storage_migration_beta_rollout.point
-    ]
-    pivots: [
-      addresses_storage_migration_beta_rollout.branch
-    ]
-    filters:
-      addresses_storage_migration_beta_rollout.metric: 'active_hours'
       addresses_storage_migration_beta_rollout.statistic: mean
     row: 30
     col: 12
