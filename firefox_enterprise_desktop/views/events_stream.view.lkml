@@ -723,6 +723,15 @@ view: events_stream {
 * Whether a verified Mozilla account is signed in. Reflects the Mozilla account only, so it is false by default for guest users; see auth_provider"
   }
 
+  dimension: extras__boolean__generation_triggered {
+    sql: ${TABLE}.extras.boolean.generation_triggered ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Generation Triggered"
+    description: "True when the scheduler found enough new evidence to generate memories. False when it found none; every other extra is then absent."
+  }
+
   dimension: extras__boolean__hadPreviousJwt {
     sql: ${TABLE}.extras.boolean.hadPreviousJwt ;;
     type: yesno
@@ -1076,6 +1085,15 @@ view: events_stream {
     group_label: "Extras: Boolean"
     group_item_label: "Is Final Write"
     description: "Whether this was the final write at shutdown"
+  }
+
+  dimension: extras__boolean__is_first_run {
+    sql: ${TABLE}.extras.boolean.is_first_run ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is First Run"
+    description: "True the first time memories are generated for a user."
   }
 
   dimension: extras__boolean__is_first_startup {
@@ -2113,6 +2131,24 @@ view: events_stream {
     description: "The number of characters generated for text generation tasks."
   }
 
+  dimension: extras__quantity__chat_messages_kept {
+    sql: ${TABLE}.extras.quantity.chat_messages_kept ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Chat Messages Kept"
+    description: "Number of those chat messages left after removing blocked or sensitive messages. Absent when generating memories from chats is turned off."
+  }
+
+  dimension: extras__quantity__chat_messages_pulled {
+    sql: ${TABLE}.extras.quantity.chat_messages_pulled ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Chat Messages Pulled"
+    description: "Number of the user's chat messages read since the last activity an earlier run processed. Absent when generating memories from chats is turned off."
+  }
+
   dimension: extras__quantity__check_weekday {
     sql: ${TABLE}.extras.quantity.check_weekday ;;
     type: number
@@ -2282,6 +2318,24 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Deleted"
     description: "Number of deleted comments."
+  }
+
+  dimension: extras__quantity__demoted_to_long_term {
+    sql: ${TABLE}.extras.quantity.demoted_to_long_term ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Demoted To Long Term"
+    description: "Number of aged memories whose type changed from durable to long term. Memories deleted by decay in the same run are not counted. Absent when the run failed before ageing finished."
+  }
+
+  dimension: extras__quantity__demoted_to_short_term {
+    sql: ${TABLE}.extras.quantity.demoted_to_short_term ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Demoted To Short Term"
+    description: "Number of aged memories whose type changed from durable or long term to short term. Memories deleted by decay in the same run are not counted. Absent when the run failed before ageing finished."
   }
 
   dimension: extras__quantity__diverged {
@@ -2523,6 +2577,15 @@ view: events_stream {
     description: "Character count of the value the fill wrote into the field. This is the value as approved in the review dialog, which is not necessarily the value the model generated. Sent alongside final_length to give that count something to be read against, so only sent when the outcome is edited."
   }
 
+  dimension: extras__quantity__filter_dropped {
+    sql: ${TABLE}.extras.quantity.filter_dropped ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Filter Dropped"
+    description: "Number of candidate memories dropped by the quality and sensitivity filter. Absent when the filter did not run or did not finish."
+  }
+
   dimension: extras__quantity__final_length {
     sql: ${TABLE}.extras.quantity.final_length ;;
     type: number
@@ -2557,6 +2620,37 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Generated Length"
     description: "Character count of the value the model generated. Only sent when the outcome is edited."
+  }
+
+  dimension: extras__quantity__generation_batches {
+    sql: ${TABLE}.extras.quantity.generation_batches ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Generation Batches"
+    description: "Depending on the type of event:
+* Number of batches of processed memories that were attempted, each one model request plus any retries. Lower than the number of batches planned when the run stopped early on an error. Absent when no memory was processed.
+* Number of batches of processed sessions that were attempted, each one model request plus any retries. Lower than the number of batches planned when the run stopped early on an error. Absent when no session was processed."
+  }
+
+  dimension: extras__quantity__generation_batches_skipped {
+    sql: ${TABLE}.extras.quantity.generation_batches_skipped ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Generation Batches Skipped"
+    description: "Depending on the type of event:
+* Number of batches skipped because their request failed in a way that retrying will not fix. The run continues with the remaining batches. Absent when no memory was processed.
+* Number of batches skipped because their request failed in a way that retrying will not fix. The run continues with the remaining batches. Absent when no session was processed."
+  }
+
+  dimension: extras__quantity__generation_candidates {
+    sql: ${TABLE}.extras.quantity.generation_candidates ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Generation Candidates"
+    description: "Number of initial candidate memories generated before filtering. Absent when generation did not finish."
   }
 
   dimension: extras__quantity__grouped_id {
@@ -2615,6 +2709,24 @@ view: events_stream {
     description: "Depending on the type of event:
 * The height that the window was created at
 * The height that the window was resize to"
+  }
+
+  dimension: extras__quantity__history_rows_kept {
+    sql: ${TABLE}.extras.quantity.history_rows_kept ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "History Rows Kept"
+    description: "Number of those history rows left after removing blocked or sensitive pages. Absent when generating memories from history is turned off."
+  }
+
+  dimension: extras__quantity__history_rows_pulled {
+    sql: ${TABLE}.extras.quantity.history_rows_pulled ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "History Rows Pulled"
+    description: "Number of browsing history rows (page visits and searches) read since the last activity an earlier run processed. Absent when generating memories from history is turned off."
   }
 
   dimension: extras__quantity__httpStatus {
@@ -2763,6 +2875,60 @@ view: events_stream {
     description: "Count of items larger than QUOTA_BYTES_PER_ITEM."
   }
 
+  dimension: extras__quantity__journey_memory_candidates {
+    sql: ${TABLE}.extras.quantity.journey_memory_candidates ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Journey Memory Candidates"
+    description: "Number of those memories sent for journey generation: the most recent eligible memories, up to the per-run limit, that still have at least one linked browsing history page. When the run stopped early on an error, only the batches reached are counted. Absent when the run failed before selecting memories."
+  }
+
+  dimension: extras__quantity__journeys_after {
+    sql: ${TABLE}.extras.quantity.journeys_after ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Journeys After"
+    description: "Number of stored journeys when the run ended, counted the same way as journeys_before. Recorded on errors too. Absent when counting them failed."
+  }
+
+  dimension: extras__quantity__journeys_before {
+    sql: ${TABLE}.extras.quantity.journeys_before ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Journeys Before"
+    description: "Number of stored journeys when maintenance started, including dismissed or snoozed journeys. Absent when counting them failed."
+  }
+
+  dimension: extras__quantity__journeys_eligible_after {
+    sql: ${TABLE}.extras.quantity.journeys_eligible_after ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Journeys Eligible After"
+    description: "Number of stored journeys that can be suggested when the run ended: not dismissed or snoozed, and their memory still exists. Recorded on errors too. Absent when counting them failed."
+  }
+
+  dimension: extras__quantity__journeys_generated {
+    sql: ${TABLE}.extras.quantity.journeys_generated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Journeys Generated"
+    description: "Number of valid journeys the model returned for the processed memories. A response that could not be read counts as none. Absent when generation did not finish."
+  }
+
+  dimension: extras__quantity__journeys_removed {
+    sql: ${TABLE}.extras.quantity.journeys_removed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Journeys Removed"
+    description: "Number of stored journeys deleted because their memory no longer exists or was deleted by the user. Absent when the run failed before deleting finished."
+  }
+
   dimension: extras__quantity__last_install {
     sql: ${TABLE}.extras.quantity.last_install ;;
     type: number
@@ -2890,6 +3056,55 @@ view: events_stream {
 * Total number of memories still present after the removal"
   }
 
+  dimension: extras__quantity__memories_after {
+    sql: ${TABLE}.extras.quantity.memories_after ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories After"
+    description: "Depending on the type of event:
+* Number of stored memories when the run ended.
+* Number of stored memories when the run ended, counted the same way as memories_before. Recorded on errors too. Absent when counting them failed."
+  }
+
+  dimension: extras__quantity__memories_aged {
+    sql: ${TABLE}.extras.quantity.memories_aged ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories Aged"
+    description: "Number of remaining stored memories whose usage counts were aged and whose strength and type were updated, including those then deleted by decay. When the run stopped early on an error, only the memories reached are counted. Absent when the run failed before ageing."
+  }
+
+  dimension: extras__quantity__memories_before {
+    sql: ${TABLE}.extras.quantity.memories_before ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories Before"
+    description: "Depending on the type of event:
+* Number of stored memories when generation started.
+* Number of stored memories when maintenance started, including memories the user deleted via natural language command. Absent when counting them failed."
+  }
+
+  dimension: extras__quantity__memories_decayed {
+    sql: ${TABLE}.extras.quantity.memories_decayed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories Decayed"
+    description: "Number of aged memories permanently deleted because their strength decayed below the retention threshold. Absent when the run failed before ageing finished."
+  }
+
+  dimension: extras__quantity__memories_eligible {
+    sql: ${TABLE}.extras.quantity.memories_eligible ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories Eligible"
+    description: "Number of stored memories that can have a journey and do not have one yet: memories that are not sensitive and are linked to browsing history. Counted before the limit on how many memories one run processes. Absent when the run failed before selecting memories."
+  }
+
   dimension: extras__quantity__memories_similarity_avg {
     sql: ${TABLE}.extras.quantity.memories_similarity_avg ;;
     type: number
@@ -2915,6 +3130,15 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Memories Similarity Min"
     description: "Lowest similarity score of memories included as context, as a percentage rounded to the nearest whole one. The score is what memory retrieval ranked the memory as. Absent when no memory was included."
+  }
+
+  dimension: extras__quantity__memories_skipped {
+    sql: ${TABLE}.extras.quantity.memories_skipped ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories Skipped"
+    description: "Number of remaining stored memories not aged because they were aged less than a day ago. When the run stopped early on an error, only the memories reached are counted. Absent when the run failed before ageing."
   }
 
   dimension: extras__quantity__memories_used {
@@ -3001,6 +3225,33 @@ view: events_stream {
     description: "Depending on the type of event:
 * Number of mention suggestions available
 * Number of mention suggestions shown"
+  }
+
+  dimension: extras__quantity__merge_components_removed {
+    sql: ${TABLE}.extras.quantity.merge_components_removed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Merge Components Removed"
+    description: "Number of stored memories deleted because they were combined into a merged memory. A memory in more than one group is counted once. Absent unless merge_status is ran or when merging failed before deleting finished."
+  }
+
+  dimension: extras__quantity__merge_groups_proposed {
+    sql: ${TABLE}.extras.quantity.merge_groups_proposed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Merge Groups Proposed"
+    description: "Number of groups of stored memories the model proposed combining before invalid groups were dropped. Absent unless merge_status is ran or when merging failed before the model responded."
+  }
+
+  dimension: extras__quantity__merge_groups_saved {
+    sql: ${TABLE}.extras.quantity.merge_groups_saved ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Merge Groups Saved"
+    description: "Number of proposed groups that were valid and saved, each as one merged memory. Absent unless merge_status is ran or when merging failed before saving finished."
   }
 
   dimension: extras__quantity__message_seq {
@@ -3518,6 +3769,24 @@ view: events_stream {
 * The number of profiles in the database at the time."
   }
 
+  dimension: extras__quantity__promoted_to_durable {
+    sql: ${TABLE}.extras.quantity.promoted_to_durable ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Promoted To Durable"
+    description: "Number of aged memories whose type changed from short term or long term to durable. Memories deleted by decay in the same run are not counted. Absent when the run failed before ageing finished."
+  }
+
+  dimension: extras__quantity__promoted_to_long_term {
+    sql: ${TABLE}.extras.quantity.promoted_to_long_term ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Promoted To Long Term"
+    description: "Number of aged memories whose type changed from short term to long term. Memories deleted by decay in the same run are not counted. Absent when the run failed before ageing finished."
+  }
+
   dimension: extras__quantity__prompts {
     sql: ${TABLE}.extras.quantity.prompts ;;
     type: number
@@ -3606,6 +3875,26 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Reviewed Length"
     description: "Character count of the value the user submitted. Read against generated_length it says whether the user cut the generated value down or added to it. Only sent when the outcome is edited, as above."
+  }
+
+  dimension: extras__quantity__save_new {
+    sql: ${TABLE}.extras.quantity.save_new ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Save New"
+    description: "Depending on the type of event:
+* Number of those journeys saved. Every saved journey is new, since memories that already have a journey are not processed. When the run stopped early on an error, only the batches reached are counted. Absent when no journey was generated to save.
+* Number of candidate memories that passed the filter and were saved as new memories, increasing the number of stored memories. Candidates saved as an update to a stored memory are counted in save_updated instead. Absent when saving did not run or did not finish."
+  }
+
+  dimension: extras__quantity__save_updated {
+    sql: ${TABLE}.extras.quantity.save_updated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Save Updated"
+    description: "Number of candidate memories that passed the filter but matched the summary, and so same ID, of a stored memory and were saved as an update to it instead of a new memory. Absent when saving did not run or did not finish."
   }
 
   dimension: extras__quantity__saved_count {
@@ -3709,6 +3998,60 @@ view: events_stream {
     description: "The session sequence number (monotonically increasing across restarts)."
   }
 
+  dimension: extras__quantity__sessions_built {
+    sql: ${TABLE}.extras.quantity.sessions_built ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Sessions Built"
+    description: "Number of sessions the kept history rows and chat messages were grouped into. Absent when the run failed before grouping."
+  }
+
+  dimension: extras__quantity__sessions_processed {
+    sql: ${TABLE}.extras.quantity.sessions_processed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Sessions Processed"
+    description: "Number of sessions eligible for memory generation: those not skipped. Absent when the run failed before grouping."
+  }
+
+  dimension: extras__quantity__sessions_processed_events {
+    sql: ${TABLE}.extras.quantity.sessions_processed_events ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Sessions Processed Events"
+    description: "Total number of page visits, searches and chat messages across the processed sessions. Absent when no session was processed."
+  }
+
+  dimension: extras__quantity__sessions_processed_events_max {
+    sql: ${TABLE}.extras.quantity.sessions_processed_events_max ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Sessions Processed Events Max"
+    description: "Number of page visits, searches and chat messages in the largest processed session. Absent when no session was processed."
+  }
+
+  dimension: extras__quantity__sessions_processed_events_min {
+    sql: ${TABLE}.extras.quantity.sessions_processed_events_min ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Sessions Processed Events Min"
+    description: "Number of page visits, searches and chat messages in the smallest processed session. Absent when no session was processed."
+  }
+
+  dimension: extras__quantity__sessions_skipped {
+    sql: ${TABLE}.extras.quantity.sessions_skipped ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Sessions Skipped"
+    description: "Number of those sessions dropped as too trivial to generate memories from. Absent when the run failed before grouping."
+  }
+
   dimension: extras__quantity__single_tabs_restored {
     sql: ${TABLE}.extras.quantity.single_tabs_restored ;;
     type: number
@@ -3745,6 +4088,15 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Snippet Chars Truncated"
     description: "Total characters removed from those snippets by the per-snippet cap, summed across the results handed to the assistant. A length only, never the text itself. 0 when nothing was cut and on any failure. A large value means the assistant is answering from material the cap shortened."
+  }
+
+  dimension: extras__quantity__soft_deleted_removed {
+    sql: ${TABLE}.extras.quantity.soft_deleted_removed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Soft Deleted Removed"
+    description: "Number of stored memories permanently deleted because the user had deleted them via natural language command. Absent when the run failed before deleting finished."
   }
 
   dimension: extras__quantity__source_line {
@@ -6267,6 +6619,17 @@ view: events_stream {
     description: "A string describing the error that occurred. Reasons include: - \"unknown\": an unknown exception occurred. - one of the reasons documented in `nimbus_events.remote_settings_sync_error`."
   }
 
+  dimension: extras__string__error_stage {
+    sql: ${TABLE}.extras.string.error_stage ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Error Stage"
+    description: "Depending on the type of event:
+* The step that failed when outcome is error: sources (reading the browsing history pages or chats linked to memories), generation (including every batch being skipped), save (including every generated journey being rejected), or other (anything else in the run, such as reading stored journeys). Absent otherwise.
+* The step that failed when outcome is error: sources (reading history or chats), generation, filter, save, merge, or other (anything else in the run, such as grouping sessions or saving run bookkeeping). Absent otherwise."
+  }
+
   dimension: extras__string__error_type {
     sql: ${TABLE}.extras.string.error_type ;;
     type: string
@@ -6277,8 +6640,7 @@ view: events_stream {
 * Why the process failed, empty when success is true: the error's name, such as \"TypeError\", or \"TimeoutError\" when the process ran out of time. Error messages are never recorded, only the name, so no path, URL or tab title can appear here.
 * Why the process failed, empty when success is true: the error's name, such as \"TypeError\". Error messages are never recorded, only the name, so no path, URL or tab title can appear here.
 * A string set to determine which kind of errors originated from IOUtils.writeJSON was hit by JSONFile.save. The expected values are: - \"TooMuchRecursion\" (if the error hit was an \"too much recursion\" InternalError - the value set on `name` property of the error object instance - \"Unknown\" as a fallback if the error object did not have a `name` property and it wasn't detected as a \"too much recursion\" error.
-* Type of non-HTTP error. One of \"invalid-schema-error\", \"generic-error\", or \"max-retry-attempts-error\".
-* The UniFFI error variant the store threw..."
+* The kind of failure when outcome is error. One of: firefox_internal (an exception in Firefox; maintenance makes no request to the model service)...."
   }
 
   dimension: extras__string__etld {
@@ -7416,6 +7778,15 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Menu Action"
     description: "The menu action the user has selected for a given tab"
+  }
+
+  dimension: extras__string__merge_status {
+    sql: ${TABLE}.extras.string.merge_status ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Merge Status"
+    description: "Whether the merge step ran. One of: not_reached (the run ended on an error before merging), not_run (no memories were saved, so there was nothing new to merge), below_threshold (too few memories to merge), or ran (merging was attempted; when it failed, error_stage is merge)."
   }
 
   dimension: extras__string__message {
