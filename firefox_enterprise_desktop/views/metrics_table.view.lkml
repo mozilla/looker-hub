@@ -11427,7 +11427,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.canvas_used_2d ;;
     hidden: yes
     description: "2D canvas used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram CANVAS_2D_USED.
 "
   }
 
@@ -11435,15 +11434,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.canvas_webgl2_success ;;
     hidden: yes
     description: "WebGL2 creation success
-This metric was generated to correspond to the Legacy Telemetry boolean histogram CANVAS_WEBGL2_SUCCESS.
 "
   }
 
   dimension: metrics__labeled_counter__canvas_webgl_accl_failure_id {
     sql: ${TABLE}.metrics.labeled_counter.canvas_webgl_accl_failure_id ;;
     hidden: yes
-    description: "Track the failure IDs that lead us to reject attempting to create an accelerated context. CANVAS_WEBGL_FAILURE_ID reports the overall WebGL status with the attempt to fallback.
-This metric was generated to correspond to the Legacy Telemetry count histogram CANVAS_WEBGL_ACCL_FAILURE_ID.
+    description: "Track the failure IDs that lead us to reject attempting to create an accelerated context. canvas.webgl_failure_id reports the overall WebGL status with the attempt to fallback.
 "
   }
 
@@ -11451,7 +11448,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.labeled_counter.canvas_webgl_failure_id ;;
     hidden: yes
     description: "WebGL runtime and dynamic failure IDs. This will record a count for each context creation success or failure. Each failure id is a unique identifier that can be traced back to a particular failure branch or blocklist rule.
-This metric was generated to correspond to the Legacy Telemetry count histogram CANVAS_WEBGL_FAILURE_ID.
 "
   }
 
@@ -11459,7 +11455,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.labeled_counter.canvas_webgl_success ;;
     hidden: yes
     description: "WebGL1 creation success
-This metric was generated to correspond to the Legacy Telemetry boolean histogram CANVAS_WEBGL_SUCCESS.
 "
   }
 
@@ -11467,7 +11462,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.canvas_webgl_used ;;
     hidden: yes
     description: "WebGL canvas used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram CANVAS_WEBGL_USED.
 "
   }
 

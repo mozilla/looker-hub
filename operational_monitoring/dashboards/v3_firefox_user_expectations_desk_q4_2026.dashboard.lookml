@@ -44,6 +44,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: v3_firefox_user_expectations_desk_q4_2026
+    type: looker_line
+    fields: [
+      v3_firefox_user_expectations_desk_q4_2026.submission_date,
+      v3_firefox_user_expectations_desk_q4_2026.branch,
+      v3_firefox_user_expectations_desk_q4_2026.point
+    ]
+    pivots: [
+      v3_firefox_user_expectations_desk_q4_2026.branch
+    ]
+    filters:
+      v3_firefox_user_expectations_desk_q4_2026.metric: 'search_count'
+      v3_firefox_user_expectations_desk_q4_2026.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: v3_firefox_user_expectations_desk_q4_2026.submission_date
+    field_y: v3_firefox_user_expectations_desk_q4_2026.point
+    log_scale: false
+    ci_lower: v3_firefox_user_expectations_desk_q4_2026.lower
+    ci_upper: v3_firefox_user_expectations_desk_q4_2026.upper
+    show_grid: true
+    listen:
+      Date: v3_firefox_user_expectations_desk_q4_2026.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -62,7 +96,41 @@
     filters:
       v3_firefox_user_expectations_desk_q4_2026.metric: 'uri_count'
       v3_firefox_user_expectations_desk_q4_2026.statistic: mean
-    row: 0
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: v3_firefox_user_expectations_desk_q4_2026.submission_date
+    field_y: v3_firefox_user_expectations_desk_q4_2026.point
+    log_scale: false
+    ci_lower: v3_firefox_user_expectations_desk_q4_2026.lower
+    ci_upper: v3_firefox_user_expectations_desk_q4_2026.upper
+    show_grid: true
+    listen:
+      Date: v3_firefox_user_expectations_desk_q4_2026.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: v3_firefox_user_expectations_desk_q4_2026
+    type: looker_line
+    fields: [
+      v3_firefox_user_expectations_desk_q4_2026.submission_date,
+      v3_firefox_user_expectations_desk_q4_2026.branch,
+      v3_firefox_user_expectations_desk_q4_2026.point
+    ]
+    pivots: [
+      v3_firefox_user_expectations_desk_q4_2026.branch
+    ]
+    filters:
+      v3_firefox_user_expectations_desk_q4_2026.metric: 'days_of_use'
+      v3_firefox_user_expectations_desk_q4_2026.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -96,42 +164,8 @@
     filters:
       v3_firefox_user_expectations_desk_q4_2026.metric: 'ad_clicks'
       v3_firefox_user_expectations_desk_q4_2026.statistic: mean
-    row: 10
+    row: 20
     col: 0
-    width: 12
-    height: 8
-    field_x: v3_firefox_user_expectations_desk_q4_2026.submission_date
-    field_y: v3_firefox_user_expectations_desk_q4_2026.point
-    log_scale: false
-    ci_lower: v3_firefox_user_expectations_desk_q4_2026.lower
-    ci_upper: v3_firefox_user_expectations_desk_q4_2026.upper
-    show_grid: true
-    listen:
-      Date: v3_firefox_user_expectations_desk_q4_2026.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: v3_firefox_user_expectations_desk_q4_2026
-    type: looker_line
-    fields: [
-      v3_firefox_user_expectations_desk_q4_2026.submission_date,
-      v3_firefox_user_expectations_desk_q4_2026.branch,
-      v3_firefox_user_expectations_desk_q4_2026.point
-    ]
-    pivots: [
-      v3_firefox_user_expectations_desk_q4_2026.branch
-    ]
-    filters:
-      v3_firefox_user_expectations_desk_q4_2026.metric: 'search_count'
-      v3_firefox_user_expectations_desk_q4_2026.statistic: mean
-    row: 10
-    col: 12
     width: 12
     height: 8
     field_x: v3_firefox_user_expectations_desk_q4_2026.submission_date
@@ -167,7 +201,7 @@
       v3_firefox_user_expectations_desk_q4_2026.metric: 'memory_total'
       v3_firefox_user_expectations_desk_q4_2026.statistic: percentile
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: v3_firefox_user_expectations_desk_q4_2026.submission_date
@@ -183,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,10 +233,10 @@
       v3_firefox_user_expectations_desk_q4_2026.branch
     ]
     filters:
-      v3_firefox_user_expectations_desk_q4_2026.metric: 'days_of_use'
+      v3_firefox_user_expectations_desk_q4_2026.metric: 'active_hours'
       v3_firefox_user_expectations_desk_q4_2026.statistic: mean
-    row: 20
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: v3_firefox_user_expectations_desk_q4_2026.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       v3_firefox_user_expectations_desk_q4_2026.metric: 'qualified_cumulative_days_of_use'
-      v3_firefox_user_expectations_desk_q4_2026.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: v3_firefox_user_expectations_desk_q4_2026.submission_date
-    field_y: v3_firefox_user_expectations_desk_q4_2026.point
-    log_scale: false
-    ci_lower: v3_firefox_user_expectations_desk_q4_2026.lower
-    ci_upper: v3_firefox_user_expectations_desk_q4_2026.upper
-    show_grid: true
-    listen:
-      Date: v3_firefox_user_expectations_desk_q4_2026.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: v3_firefox_user_expectations_desk_q4_2026
-    type: looker_line
-    fields: [
-      v3_firefox_user_expectations_desk_q4_2026.submission_date,
-      v3_firefox_user_expectations_desk_q4_2026.branch,
-      v3_firefox_user_expectations_desk_q4_2026.point
-    ]
-    pivots: [
-      v3_firefox_user_expectations_desk_q4_2026.branch
-    ]
-    filters:
-      v3_firefox_user_expectations_desk_q4_2026.metric: 'active_hours'
       v3_firefox_user_expectations_desk_q4_2026.statistic: mean
     row: 30
     col: 12
