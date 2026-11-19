@@ -1455,7 +1455,8 @@ view: events_stream {
 * How many launches had already tried and failed before this one, 0 on the first. A retry emits an otherwise identical event, so this is what separates a profile that failed once from one failing every time. The migrator gives up after 3.
 * Number of prior restore attempts across sessions (0 on the first attempt). Restores stop being attempted once this reaches its budget.
 * How many launches had already tried and failed before this one, 0 on the first. A retry emits an otherwise identical event, so this is what separates a profile that failed once from one failing every time. The migrator gives up after 10. Always 0 for \"to_json\", which is not limited.
-* Number of prior migration attempts across sessions (0 on the first attempt)."
+* How many launches had already tried and failed before this one, 0 on the first. A retry emits an otherwise identical event, so this is what separates a profile that failed once from one failing every time. The migrator gives up after 15. Always 0 for \"to_json\", which is not limited.
+* Number of prior migration attempts acro..."
   }
 
   dimension: extras__quantity__attemptCount {
@@ -3817,6 +3818,15 @@ view: events_stream {
     description: "The number of ms needed to complete the download"
   }
 
+  dimension: extras__string__drop_reason {
+    sql: ${TABLE}.extras.string.drop_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Drop Reason"
+    description: "Present only when a \"to_rust\" migration completed by leaving out cards whose number would not decrypt, and says why it was allowed to: \"others_decrypted\" when another card's number decrypted in the same attempt; \"attempt_threshold\" when enough attempts had already failed, the last of them failing to decrypt a card too. When both hold, \"others_decrypted\" is reported. How many were left out is source_total minus migrated minus failed. Never set on a dry run."
+  }
+
   dimension: extras__string__dropped {
     sql: ${TABLE}.extras.string.dropped ;;
     type: string
@@ -4023,8 +4033,8 @@ view: events_stream {
     group_item_label: "Error Code"
     description: "Depending on the type of event:
 * The error code after users click the fill username autocomplete entry. Only present if the object is \"fill_username\". When the event is successful, the error_code is 0.
-* The error code or number associated with the error, if available.
 * The UniFFI error variant when the migration threw, for grouping, or \"SourceChanged\" when the JSON store was written to while it was copied into the Rust store, which fails the run. Absent otherwise, including when records were rejected or came up short: the counts already describe that.
+* The error code or number associated with the error, if available.
 * The UniFFI error variant when the migration threw, for grouping. Absent otherwise, including when records were rejected or came up short: the counts already describe that.
 * The error code after users click the email alias generation panel. When the event is successful, the error_code is 0.
 * The error code describing what occurred during import. Current values are: 1xxx - errors imply a file reading error 1001 - file read error 2xxx - errors imply an er..."
@@ -6121,9 +6131,9 @@ view: events_stream {
     group_item_label: "Result"
     description: "Depending on the type of event:
 * \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\".
+* \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\". A \"to_json\" copy hands the profile back to the JSON store either way, so an \"error\" there means some records did not make it back.
 * The result of the OS Authentication.
 * Optionally, the name of the error that occurred.
-* \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\". A \"to_json\" copy hands the profile back to the JSON store either way, so an \"error\" there means some records did not make it back.
 * The error code, converted to a string.
 * The outcome of the prompt.
 * \"ok\", or \"error\" when initialization aborted with a fatal error.

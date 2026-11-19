@@ -2216,7 +2216,8 @@ view: events_stream {
 * How many launches had already tried and failed before this one, 0 on the first. A retry emits an otherwise identical event, so this is what separates a profile that failed once from one failing every time. The migrator gives up after 3.
 * Number of prior restore attempts across sessions (0 on the first attempt). Restores stop being attempted once this reaches its budget.
 * How many launches had already tried and failed before this one, 0 on the first. A retry emits an otherwise identical event, so this is what separates a profile that failed once from one failing every time. The migrator gives up after 10. Always 0 for \"to_json\", which is not limited.
-* Number of prior migration attempts across sessions (0 on the first attempt)."
+* How many launches had already tried and failed before this one, 0 on the first. A retry emits an otherwise identical event, so this is what separates a profile that failed once from one failing every time. The migrator gives up after 15. Always 0 for \"to_json\", which is not limited.
+* Number of prior migration attempts acro..."
   }
 
   dimension: extras__quantity__attemptCount {
@@ -6817,6 +6818,15 @@ view: events_stream {
     description: "The number of ms needed to complete the download"
   }
 
+  dimension: extras__string__drop_reason {
+    sql: ${TABLE}.extras.string.drop_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Drop Reason"
+    description: "Present only when a \"to_rust\" migration completed by leaving out cards whose number would not decrypt, and says why it was allowed to: \"others_decrypted\" when another card's number decrypted in the same attempt; \"attempt_threshold\" when enough attempts had already failed, the last of them failing to decrypt a card too. When both hold, \"others_decrypted\" is reported. How many were left out is source_total minus migrated minus failed. Never set on a dry run."
+  }
+
   dimension: extras__string__dropped {
     sql: ${TABLE}.extras.string.dropped ;;
     type: string
@@ -9866,10 +9876,11 @@ view: events_stream {
     description: "Depending on the type of event:
 * Undo result: success, partial_success, or error
 * \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\".
+* \"ok\" when the store copied into ended up holding exactly what the source holds -- every record arrived and nothing the source lacks survived, compared by guid rather than by count -- so the profile could be handed to it; otherwise \"error\". A \"to_json\" copy hands the profile back to the JSON store either way, so an \"error\" there means some records did not make it back.
 * The result of the OS Authentication.
 * Outcome of the action: success, partial_success, no_match, unclear_target, blocked, cancelled, or error.
 * Optionally, the name of the error that occurred.
-* The outcome of the attempt to pin, values include: - `success_pinned`: The pin request was affirmed by the user. - `success_rejected`: The pin request was rejected by the user or system. - `success_fire_and_forget`: The pin request was submitted, but its result is unknown. - `error_get_aumid`: Failed to get the Application User Model ID. - `error_set_aumid`: Failed to set the Application User Model ID. - `error_get_taskbar_manager`: Failed to get the TaskbarManager. - `error_schedule_request_p..."
+* The outcome of the attempt to pin, values include: - `success_pinned`: The pin request was affirmed by the user. - `success_r..."
   }
 
   dimension: extras__string__results {
