@@ -295,8 +295,8 @@ view: events_stream {
     group_label: "Extras: Boolean"
     group_item_label: "Agreed"
     description: "Depending on the type of event:
-* Describes whether the user accepted the summarization terms of service.
-* Whether the consent prompt was accepted."
+* Whether the consent prompt was accepted.
+* Describes whether the user accepted the summarization terms of service."
   }
 
   dimension: extras__boolean__auto_translate {
@@ -460,6 +460,15 @@ view: events_stream {
     group_label: "Extras: Boolean"
     group_item_label: "Is Impression"
     description: "True for the first card recorded after the WorldCup section is built in the current homepage session — i.e. the section's initial impression. False for every subsequent swipe within that session."
+  }
+
+  dimension: extras__boolean__is_minimized {
+    sql: ${TABLE}.extras.boolean.is_minimized ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Minimized"
+    description: "Whether the pill was in its minimized form (minimal address bar) when tapped."
   }
 
   dimension: extras__boolean__is_new_email_mask {
@@ -1535,8 +1544,9 @@ view: events_stream {
 * The reason associated with the system photo picker interaction. Options are listed in the PhotoPickerReason enumeration.
 * The reason for the enrollment failure
 * The reason for the unenrollment failure
+* Why the pill went away. One of `swipe` or `new_session`. See the `QuickAnswersReturnPillDismissReason` enum for the valid values.
 * The selected issue category. Options are listed in the WebCompatIssueCategory enumeration.
-* Why the session ended. When in MANUAL mode, the reason can optionally be set by the application. Possible values set by Glean in AUTO or LIFECYCLE session management modes include: - \"inactive\": client went to background (LIFECYCLE mode) - \"replaced\": a new session was started while one was already active - \"timeout\": AUTO mode inactivity timeout expired - \"abnormal\": session ended du..."
+* Why the session ended. When in MANUAL mode, the reason can optionally be set by the application. Possible values set by Glean in AUTO or LIFECYCLE session management modes include: - \"inactive\": client went to background (LIFECYCLE mode) - \"replaced\": a n..."
   }
 
   dimension: extras__string__received_url {
