@@ -14505,7 +14505,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "2D canvas used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram CANVAS_2D_USED.
 "
   }
 
@@ -14523,7 +14522,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "WebGL2 creation success
-This metric was generated to correspond to the Legacy Telemetry boolean histogram CANVAS_WEBGL2_SUCCESS.
 "
   }
 
@@ -14540,8 +14538,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Track the failure IDs that lead us to reject attempting to create an accelerated context. CANVAS_WEBGL_FAILURE_ID reports the overall WebGL status with the attempt to fallback.
-This metric was generated to correspond to the Legacy Telemetry count histogram CANVAS_WEBGL_ACCL_FAILURE_ID.
+    description: "Track the failure IDs that lead us to reject attempting to create an accelerated context. canvas.webgl_failure_id reports the overall WebGL status with the attempt to fallback.
 "
   }
 
@@ -14559,7 +14556,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "WebGL runtime and dynamic failure IDs. This will record a count for each context creation success or failure. Each failure id is a unique identifier that can be traced back to a particular failure branch or blocklist rule.
-This metric was generated to correspond to the Legacy Telemetry count histogram CANVAS_WEBGL_FAILURE_ID.
 "
   }
 
@@ -14577,7 +14573,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "WebGL1 creation success
-This metric was generated to correspond to the Legacy Telemetry boolean histogram CANVAS_WEBGL_SUCCESS.
 "
   }
 
@@ -14595,7 +14590,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "WebGL canvas used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram CANVAS_WEBGL_USED.
 "
   }
 
@@ -23701,7 +23695,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of chunks per decode attempt
-This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_CHUNKS.
 "
   }
 
@@ -23720,7 +23713,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Decode count
-This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_COUNT.
 "
   }
 
@@ -23739,7 +23731,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time from starting a decode to it showing up on the screen (us)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_ON_DRAW_LATENCY.
 "
   }
 
@@ -23758,7 +23749,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "AVIF image decode speed (Kbytes/sec)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_SPEED_AVIF.
 "
   }
 
@@ -23777,7 +23767,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "GIF image decode speed (Kbytes/sec)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_SPEED_GIF.
 "
   }
 
@@ -23796,7 +23785,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "JPEG image decode speed (Kbytes/sec)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_SPEED_JPEG.
 "
   }
 
@@ -23833,7 +23821,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PNG image decode speed (Kbytes/sec)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_SPEED_PNG.
 "
   }
 
@@ -23852,7 +23839,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "WebP image decode speed (Kbytes/sec)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_SPEED_WEBP.
 "
   }
 
@@ -23871,7 +23857,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent decoding an image (us)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram IMAGE_DECODE_TIME.
 "
   }
 
