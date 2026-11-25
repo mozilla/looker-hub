@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: autocomplete_dropdown_suppression
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       autocomplete_dropdown_suppression.submission_date,
       autocomplete_dropdown_suppression.branch,
+      autocomplete_dropdown_suppression.upper,
+      autocomplete_dropdown_suppression.lower,
       autocomplete_dropdown_suppression.point
     ]
     pivots: [
       autocomplete_dropdown_suppression.branch
     ]
     filters:
-      autocomplete_dropdown_suppression.metric: 'retained'
-      autocomplete_dropdown_suppression.statistic: mean
+      autocomplete_dropdown_suppression.metric: 'memory_total'
+      autocomplete_dropdown_suppression.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,12 +42,13 @@
     show_grid: true
     listen:
       Date: autocomplete_dropdown_suppression.submission_date
+      Percentile: autocomplete_dropdown_suppression.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,44 +63,10 @@
       autocomplete_dropdown_suppression.branch
     ]
     filters:
-      autocomplete_dropdown_suppression.metric: 'search_count'
+      autocomplete_dropdown_suppression.metric: 'active_hours'
       autocomplete_dropdown_suppression.statistic: mean
     row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: autocomplete_dropdown_suppression.submission_date
-    field_y: autocomplete_dropdown_suppression.point
-    log_scale: false
-    ci_lower: autocomplete_dropdown_suppression.lower
-    ci_upper: autocomplete_dropdown_suppression.upper
-    show_grid: true
-    listen:
-      Date: autocomplete_dropdown_suppression.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: autocomplete_dropdown_suppression
-    type: looker_line
-    fields: [
-      autocomplete_dropdown_suppression.submission_date,
-      autocomplete_dropdown_suppression.branch,
-      autocomplete_dropdown_suppression.point
-    ]
-    pivots: [
-      autocomplete_dropdown_suppression.branch
-    ]
-    filters:
-      autocomplete_dropdown_suppression.metric: 'uri_count'
-      autocomplete_dropdown_suppression.statistic: mean
-    row: 10
-    col: 0
     width: 12
     height: 8
     field_x: autocomplete_dropdown_suppression.submission_date
@@ -129,6 +98,40 @@
     ]
     filters:
       autocomplete_dropdown_suppression.metric: 'days_of_use'
+      autocomplete_dropdown_suppression.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: autocomplete_dropdown_suppression.submission_date
+    field_y: autocomplete_dropdown_suppression.point
+    log_scale: false
+    ci_lower: autocomplete_dropdown_suppression.lower
+    ci_upper: autocomplete_dropdown_suppression.upper
+    show_grid: true
+    listen:
+      Date: autocomplete_dropdown_suppression.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: autocomplete_dropdown_suppression
+    type: looker_line
+    fields: [
+      autocomplete_dropdown_suppression.submission_date,
+      autocomplete_dropdown_suppression.branch,
+      autocomplete_dropdown_suppression.point
+    ]
+    pivots: [
+      autocomplete_dropdown_suppression.branch
+    ]
+    filters:
+      autocomplete_dropdown_suppression.metric: 'qualified_cumulative_days_of_use'
       autocomplete_dropdown_suppression.statistic: mean
     row: 10
     col: 12
@@ -180,45 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: autocomplete_dropdown_suppression
-    type: "ci-line-chart"
-    fields: [
-      autocomplete_dropdown_suppression.submission_date,
-      autocomplete_dropdown_suppression.branch,
-      autocomplete_dropdown_suppression.upper,
-      autocomplete_dropdown_suppression.lower,
-      autocomplete_dropdown_suppression.point
-    ]
-    pivots: [
-      autocomplete_dropdown_suppression.branch
-    ]
-    filters:
-      autocomplete_dropdown_suppression.metric: 'memory_total'
-      autocomplete_dropdown_suppression.statistic: percentile
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: autocomplete_dropdown_suppression.submission_date
-    field_y: autocomplete_dropdown_suppression.point
-    log_scale: false
-    ci_lower: autocomplete_dropdown_suppression.lower
-    ci_upper: autocomplete_dropdown_suppression.upper
-    show_grid: true
-    listen:
-      Date: autocomplete_dropdown_suppression.submission_date
-      Percentile: autocomplete_dropdown_suppression.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +199,41 @@
       autocomplete_dropdown_suppression.branch
     ]
     filters:
-      autocomplete_dropdown_suppression.metric: 'active_hours'
+      autocomplete_dropdown_suppression.metric: 'search_count'
+      autocomplete_dropdown_suppression.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: autocomplete_dropdown_suppression.submission_date
+    field_y: autocomplete_dropdown_suppression.point
+    log_scale: false
+    ci_lower: autocomplete_dropdown_suppression.lower
+    ci_upper: autocomplete_dropdown_suppression.upper
+    show_grid: true
+    listen:
+      Date: autocomplete_dropdown_suppression.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: autocomplete_dropdown_suppression
+    type: looker_line
+    fields: [
+      autocomplete_dropdown_suppression.submission_date,
+      autocomplete_dropdown_suppression.branch,
+      autocomplete_dropdown_suppression.point
+    ]
+    pivots: [
+      autocomplete_dropdown_suppression.branch
+    ]
+    filters:
+      autocomplete_dropdown_suppression.metric: 'retained'
       autocomplete_dropdown_suppression.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       autocomplete_dropdown_suppression.branch
     ]
     filters:
-      autocomplete_dropdown_suppression.metric: 'qualified_cumulative_days_of_use'
+      autocomplete_dropdown_suppression.metric: 'uri_count'
       autocomplete_dropdown_suppression.statistic: mean
     row: 30
     col: 12

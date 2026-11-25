@@ -343,7 +343,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Enabled"
-    description: "Whether reader mode was opened or closed"
+    description: "Depending on the type of event:
+* Whether reader mode was opened or closed
+* The engine's enablement value, true if enabled and false if disabled."
   }
 
   dimension: extras__boolean__etp_enabled {
@@ -520,6 +522,26 @@ view: events_stream {
 * Whether the source view of this button is the Toolbar, otherwise the Menu. For Toolbar layout version1 and version2 the source is the Legacy menu meanwhile for baseline the Toolbar."
   }
 
+  dimension: extras__boolean__is_using_fallback {
+    sql: ${TABLE}.extras.boolean.is_using_fallback ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Using Fallback"
+    description: "Depending on the type of event:
+* Set only when the VPN was connected and reconnected successfully. True when the selected location had no usable server, so a different location is used.
+* Set only when the connection succeeded. True when the selected location had no usable server, so a different location is used."
+  }
+
+  dimension: extras__boolean__is_vpn_connected {
+    sql: ${TABLE}.extras.boolean.is_vpn_connected ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Vpn Connected"
+    description: "Whether the VPN was connected when the user changed location."
+  }
+
   dimension: extras__boolean__outcome {
     sql: ${TABLE}.extras.boolean.outcome ;;
     type: yesno
@@ -605,6 +627,15 @@ view: events_stream {
     description: "Depending on the type of event:
 * The number of recent search suggestions displayed.
 * The number of trending search suggestions displayed."
+  }
+
+  dimension: extras__quantity__enabled_count {
+    sql: ${TABLE}.extras.quantity.enabled_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Enabled Count"
+    description: "The total number of enabled engines after the change."
   }
 
   dimension: extras__quantity__expected {
@@ -1006,6 +1037,15 @@ view: events_stream {
     description: "Describes the type of connection used during summarization. Options are listed in the `DeviceInfo.ConnectionType` enum."
   }
 
+  dimension: extras__string__country_code {
+    sql: ${TABLE}.extras.string.country_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Country Code"
+    description: "The location the user selected, as an ISO 3166-1 alpha-2 country code, or `REC` when the recommended location is selected."
+  }
+
   dimension: extras__string__dashboard_state {
     sql: ${TABLE}.extras.string.dashboard_state ;;
     type: string
@@ -1060,6 +1100,15 @@ view: events_stream {
     description: "which action was executed on the result, which can be tap, enter, drop_go, paste_go, dismiss, help"
   }
 
+  dimension: extras__string__engine {
+    sql: ${TABLE}.extras.string.engine ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Engine"
+    description: "The engine that was enabled or disabled."
+  }
+
   dimension: extras__string__error {
     sql: ${TABLE}.extras.string.error ;;
     type: string
@@ -1068,6 +1117,7 @@ view: events_stream {
     group_item_label: "Error"
     description: "Depending on the type of event:
 * The error that occurred.
+* Set only when the connection failed, to why it failed. One of `not_signed_in`, `no_server_found`, `proxy_url_cannot_be_generated`, `token_provider_unavailable`, `network`, `server_error`, `quota_exceeded`, `auth`, `attestation_unsupported`, `attestation`, `keychain`, `invalid_response`, `invalid_url` or `unknown` (see `VPNConnectionFailureReason`).
 * If an error occured during the initial load of the database this field will contain the relevant error code.
 * If an error occurred during the migration, the relevant error code."
   }
@@ -1129,7 +1179,8 @@ view: events_stream {
 * Optional. The error message if present.
 * Describes the error type when summarization fails. Options are listed in the `SummarizerError.telemetryDescription`.
 * A key describing the type of error.
-* The reason for the failure, represented as a key (not a raw message)."
+* The reason for the failure, represented as a key (not a raw message).
+* Why the alert was shown. One of `monthly_limit` or `session_error` (see `VPNAlertType`)."
   }
 
   dimension: extras__string__etp_setting {
@@ -1730,7 +1781,9 @@ view: events_stream {
 * The entry point the reporter was opened from. Options are listed in the WebCompatReporterTelemetry.Source enumeration.
 * Where the Google Lens search was initiated from. Options are listed in the GoogleLensTelemetry.Source enumeration.
 * Source that initiated the pinned shortcut. Options are listed in the HomepageTelemetry.TopSitesShortcutPinnedSource enumeration.
-* Source that initiated the unpinned shortcut. Options are listed in the HomepageTelemetry.TopSitesShortcutUnpinnedSource enumeration."
+* Source that initiated the unpinned shortcut. Options are listed in the HomepageTelemetry.TopSitesShortcutUnpinnedSource enumeration.
+* What started the connection. Currently always `settings`, when the user turns the VPN on in settings (see `VPNConnectionStartSource`).
+* What turned the VPN off. One of `settings`, when the user turns it off in settings, or the alert choice the user picked: `continue_without_vpn`, `close_this_tab` or `close_all_tabs`..."
   }
 
   dimension: extras__string__status {

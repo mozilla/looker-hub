@@ -397,6 +397,15 @@ view: events_stream_table {
     description: "Browser major version (e.g., '130', '127', '17', or 'other')"
   }
 
+  dimension: extras__string__cause {
+    sql: ${TABLE}.extras.string.cause ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Cause"
+    description: "Which side the pairing was lost on: 'peer_closed' when the other device or the channel server ended the channel, 'connection_lost' when this device's connection dropped and could not be resumed, or 'error' for anything else. Empty when the pairing did not fail."
+  }
+
   dimension: extras__string__cg {
     sql: ${TABLE}.extras.string.cg ;;
     type: string

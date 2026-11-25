@@ -1569,7 +1569,7 @@ for example com.google.android.tts.
 
   dimension: metrics__timing_distribution__longfox_game_played_length__sum {
     label: "Longfox: Game Played Length Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.longfox_game_played_length.sum ;;
     type: number
     group_label: "Longfox"
@@ -4970,7 +4970,6 @@ Previously carried in Legacy \"main\" ping `simpleMeasurements`.
     }
 
     description: "Whether non-RDM page had user-triggered zooming activity
-This metric was generated to correspond to the Legacy Telemetry boolean histogram APZ_ZOOM_ACTIVITY.
 "
   }
 
@@ -4989,7 +4988,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Input device that triggered the zoom gesture (InputData::PinchGestureSource)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram APZ_ZOOM_PINCHSOURCE.
 "
   }
 
@@ -11654,7 +11652,6 @@ API for the purposes of Validation (hence GVSV).
     }
 
     description: "system fallback font can't be used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram BAD_FALLBACK_FONT.
 "
   }
 
@@ -11673,7 +11670,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Time(ms) spent activating additional fonts bundled with the product
-This metric was generated to correspond to the Legacy Telemetry exponential histogram FONTLIST_BUNDLEDFONTS_ACTIVATE.
 "
   }
 
@@ -11692,7 +11688,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "gfxDWriteFontList::DelayedInitFontList GetSystemFontCollection (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DWRITEFONT_DELAYEDINITFONTLIST_COLLECT.
 "
   }
 
@@ -11711,7 +11706,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "gfxDWriteFontList::DelayedInitFontList Font Family Count
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DWRITEFONT_DELAYEDINITFONTLIST_COUNT.
 "
   }
 
@@ -11730,7 +11724,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "gfxDWriteFontList::DelayedInitFontList Total (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DWRITEFONT_DELAYEDINITFONTLIST_TOTAL.
 "
   }
 
@@ -11749,7 +11742,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "DirectWrite system fontlist initialization problem: 1=GDI interop (removed in bug 2011408), 2=system font collection, 3=no fonts
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram DWRITEFONT_INIT_PROBLEM.
 "
   }
 
@@ -11767,7 +11759,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "font cache hit
-This metric was generated to correspond to the Legacy Telemetry boolean histogram FONT_CACHE_HIT.
 "
   }
 
@@ -11805,7 +11796,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time(ms) spent on reading family names from all fonts
-This metric was generated to correspond to the Legacy Telemetry exponential histogram FONTLIST_INITFACENAMELISTS.
 "
   }
 
@@ -11824,7 +11814,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time(ms) spent on reading other family names from all fonts
-This metric was generated to correspond to the Legacy Telemetry exponential histogram FONTLIST_INITOTHERFAMILYNAMES.
 "
   }
 
@@ -11843,7 +11832,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time(ms) spent on reading other family names from all fonts for no timeout case
-This metric was generated to correspond to the Legacy Telemetry exponential histogram FONTLIST_INITOTHERFAMILYNAMES_NO_DEFERRING.
 "
   }
 
@@ -11862,7 +11850,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "gfxMacPlatformFontList::InitFontList Total (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MAC_INITFONTLIST_TOTAL.
 "
   }
 
@@ -11881,7 +11868,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "System font fallback (us)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SYSTEM_FONT_FALLBACK.
 "
   }
 
@@ -11900,7 +11886,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "System font fallback, first call (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SYSTEM_FONT_FALLBACK_FIRST.
 "
   }
 
@@ -12858,7 +12843,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Time from vsync to finishing a composite in milliseconds.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram COMPOSITE_FRAME_ROUNDTRIP_TIME.
 "
   }
 
@@ -12877,7 +12861,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time to do swap/present/commit in 100 microseconds
-This metric was generated to correspond to the Legacy Telemetry exponential histogram COMPOSITE_SWAP_TIME.
 "
   }
 
@@ -13075,7 +13058,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Failed to create a gfx content device. 0=content d3d11, 1=image d3d11, 2=d2d1.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram GFX_CONTENT_FAILED_TO_ACQUIRE_DEVICE.
 "
   }
 
@@ -13094,7 +13076,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Graphics Crash Reason (...)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram GFX_CRASH.
 "
   }
 
@@ -13131,7 +13112,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "GPU Device Reset Reason (ok, hung, removed, reset, internal error, invalid call, out of memory)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram DEVICE_RESET_REASON.
 "
   }
 
@@ -13204,7 +13184,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Scaling percentage for the display where the first window is opened
-This metric was generated to correspond to the Legacy Telemetry linear histogram DISPLAY_SCALING.
 "
   }
 
@@ -13279,7 +13258,6 @@ One of \"d3d9\", \"d3d11\", \"opengl\", \"basic\", or \"none\".
     }
 
     description: "GPU Forced Device Reset Reason (OpenSharedHandle)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram FORCED_DEVICE_RESET_REASON.
 "
   }
 
@@ -13298,7 +13276,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Reports whether or not graphics drivers crashed during startup.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram GRAPHICS_DRIVER_STARTUP_TEST.
 "
   }
 
@@ -13316,7 +13293,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A bitfield representation of the available DXGI color spaces of the connected displays on Windows. See (https://docs.microsoft.com/en- us/windows/desktop/api/dxgicommon/ne-dxgicommon- dxgi_color_space_type) for definitions of color spaces. Each N'th bit of this scalar indicates whether the DXGI color space with index 'N' is available on at least one connected monitor. This metric was generated to correspond to the Legacy Telemetry scalar gfx.hdr.windows_display_colorspace_bitfield.
+    description: "A bitfield representation of the available DXGI color spaces of the connected displays on Windows. See (https://docs.microsoft.com/en- us/windows/desktop/api/dxgicommon/ne-dxgicommon- dxgi_color_space_type) for definitions of color spaces. Each N'th bit of this scalar indicates whether the DXGI color space with index 'N' is available on at least one connected monitor.
 "
   }
 
@@ -13352,7 +13329,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Windowing protocol on Linux. Can be Wayland, WaylandDRM, XWayland, or X11 This metric was generated to correspond to the Legacy Telemetry scalar gfx.linux_window_protocol.
+    description: "Windowing protocol on Linux. Can be Wayland, WaylandDRM, XWayland, or X11
 "
   }
 
@@ -13370,7 +13347,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "MacOS video low power state achieved when enqueueing a video frame.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram GFX_MACOS_VIDEO_LOW_POWER.
 "
   }
 
@@ -13388,7 +13364,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Boolean indicating whether the os compositor is being used by WebRender. This metric was generated to correspond to the Legacy Telemetry scalar gfx.os_compositor.
+    description: "Boolean indicating whether the os compositor is being used by WebRender.
 "
   }
 
@@ -13407,7 +13383,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Reports results from the graphics sanity test to track which drivers are having problems (0=TEST_PASSED, 1=TEST_FAILED_RENDER, 2=TEST_FAILED_VIDEO_DECODE, 3=TEST_CRASHED, 4=TEST_TIMEOUT, 5=TEST_FAILED_TO_RUN, 6=TEST_FAILED_VIDEO_ENCODE)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram GRAPHICS_SANITY_TEST.
 "
   }
 
@@ -13443,7 +13418,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Number of skipped composites, happening when rendering is too slow to keep up with content. This metric was generated to correspond to the Legacy Telemetry scalar gfx.skipped_composites.
+    description: "Number of skipped composites, happening when rendering is too slow to keep up with content.
 "
   }
 
@@ -13515,7 +13490,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Does the hardware support accurate display of HDR content This metric was generated to correspond to the Legacy Telemetry scalar gfx.supports_hdr.
+    description: "Does the hardware support accurate display of HDR content
 "
   }
 
@@ -13850,7 +13825,6 @@ Intended for the purpose of testing client side sampling of data. This metric is
     }
 
     description: "GPU process initialization (excluding XPCOM and fork time) time in milliseconds
-This metric was generated to correspond to the Legacy Telemetry exponential histogram GPU_PROCESS_INITIALIZATION_TIME_MS.
 "
   }
 
@@ -13869,7 +13843,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "GPU process launch time in milliseconds
-This metric was generated to correspond to the Legacy Telemetry exponential histogram GPU_PROCESS_LAUNCH_TIME_MS_2.
 "
   }
 
@@ -14547,7 +14520,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__http_response_version__sum {
     label: "HTTP: Response Version Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.http_response_version.sum ;;
     type: number
     group_label: "HTTP"
@@ -15790,6 +15763,23 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "GC effectiveness, the amount of memory freed divided by main-thread collection time (MB/s)
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_gray_bits_valid {
+    label: "Javascript GC: Gray Bits Valid"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_gray_bits_valid ;;
+    group_label: "Javascript GC"
+    group_item_label: "Gray Bits Valid"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript GC: Gray Bits Valid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_gray_bits_valid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the gray marking state was valid at the start of a major GC
 "
   }
 
@@ -33454,7 +33444,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Compression ratio of WOFF data (%)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram WEBFONT_COMPRESSION_WOFF.
 "
   }
 
@@ -33473,7 +33462,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Compression ratio of WOFF2 data (%)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram WEBFONT_COMPRESSION_WOFF2.
 "
   }
 
@@ -33492,7 +33480,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Time to download a webfont (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBFONT_DOWNLOAD_TIME.
 "
   }
 
@@ -33511,7 +33498,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Font format type (woff/woff2/ttf/...)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram WEBFONT_FONTTYPE.
 "
   }
 
@@ -33530,7 +33516,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Number of fonts loaded at page load
-This metric was generated to correspond to the Legacy Telemetry count histogram WEBFONT_PER_PAGE.
 "
   }
 
@@ -33549,7 +33534,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "Size of font loaded (kb)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBFONT_SIZE.
 "
   }
 
@@ -33568,7 +33552,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Size of all fonts loaded at page load (kb)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram WEBFONT_SIZE_PER_PAGE.
 "
   }
 
@@ -33587,7 +33570,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Font src type loaded (1 = local, 2 = url, 3 = data)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram WEBFONT_SRCTYPE.
 "
   }
 
@@ -52018,6 +52000,47 @@ view: metrics__metrics__labeled_counter__ipc_transaction_cancel {
 
 view: metrics__metrics__labeled_counter__javascript_gc_budget_was_increased {
   label: "Javascript GC: Budget Was Increased"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__javascript_gc_gray_bits_valid {
+  label: "Javascript GC: Gray Bits Valid"
 
   dimension: document_id {
     type: string

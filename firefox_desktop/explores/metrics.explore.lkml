@@ -1508,6 +1508,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__javascript_gc_budget_was_increased}) AS metrics__metrics__labeled_counter__javascript_gc_budget_was_increased ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__javascript_gc_budget_was_increased.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__javascript_gc_gray_bits_valid {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__javascript_gc_gray_bits_valid}) AS metrics__metrics__labeled_counter__javascript_gc_gray_bits_valid ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__javascript_gc_gray_bits_valid.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__javascript_gc_is_zone_gc {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__javascript_gc_is_zone_gc}) AS metrics__metrics__labeled_counter__javascript_gc_is_zone_gc ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__javascript_gc_is_zone_gc.document_id} ;;

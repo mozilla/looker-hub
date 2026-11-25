@@ -125,6 +125,13 @@ view: cohort_daily_statistics {
     description: "The source through which the application was installed, such as 'com.android.vending' for the Google Play Store. A null value indicates the install source could not be determined."
   }
 
+  dimension: is_automated {
+    sql: ${TABLE}.is_automated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "Whether the client is a confirmed automated (bot) client, per telemetry_derived.desktop_automated_clients_v1 (DENG-11925, every fleet). FALSE for mobile clients. In the telemetry views it is never NULL. In the derived tables it is NULL in partitions written before DENG-12035 that were not backfilled (before 2026-08-27), so filter there with `is_automated IS NOT TRUE`, not `NOT is_automated`. Flagged rather than removed, so totals that ignore this column include bots."
+  }
+
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno

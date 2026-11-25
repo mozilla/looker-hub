@@ -151,7 +151,7 @@ view: first_startup {
 
   dimension: metrics__quantity__first_startup_normandy_init_time {
     label: "First Startup: Normandy Init Time"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.first_startup_normandy_init_time ;;
     type: number
     group_label: "First Startup"

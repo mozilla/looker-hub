@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: desktop_vpn_holiday_promo_202627_updated
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       desktop_vpn_holiday_promo_202627_updated.submission_date,
       desktop_vpn_holiday_promo_202627_updated.branch,
+      desktop_vpn_holiday_promo_202627_updated.upper,
+      desktop_vpn_holiday_promo_202627_updated.lower,
       desktop_vpn_holiday_promo_202627_updated.point
     ]
     pivots: [
       desktop_vpn_holiday_promo_202627_updated.branch
     ]
     filters:
-      desktop_vpn_holiday_promo_202627_updated.metric: 'retained'
-      desktop_vpn_holiday_promo_202627_updated.statistic: mean
+      desktop_vpn_holiday_promo_202627_updated.metric: 'memory_total'
+      desktop_vpn_holiday_promo_202627_updated.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,12 +42,13 @@
     show_grid: true
     listen:
       Date: desktop_vpn_holiday_promo_202627_updated.submission_date
+      Percentile: desktop_vpn_holiday_promo_202627_updated.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,44 +63,10 @@
       desktop_vpn_holiday_promo_202627_updated.branch
     ]
     filters:
-      desktop_vpn_holiday_promo_202627_updated.metric: 'search_count'
+      desktop_vpn_holiday_promo_202627_updated.metric: 'active_hours'
       desktop_vpn_holiday_promo_202627_updated.statistic: mean
     row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: desktop_vpn_holiday_promo_202627_updated.submission_date
-    field_y: desktop_vpn_holiday_promo_202627_updated.point
-    log_scale: false
-    ci_lower: desktop_vpn_holiday_promo_202627_updated.lower
-    ci_upper: desktop_vpn_holiday_promo_202627_updated.upper
-    show_grid: true
-    listen:
-      Date: desktop_vpn_holiday_promo_202627_updated.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: desktop_vpn_holiday_promo_202627_updated
-    type: looker_line
-    fields: [
-      desktop_vpn_holiday_promo_202627_updated.submission_date,
-      desktop_vpn_holiday_promo_202627_updated.branch,
-      desktop_vpn_holiday_promo_202627_updated.point
-    ]
-    pivots: [
-      desktop_vpn_holiday_promo_202627_updated.branch
-    ]
-    filters:
-      desktop_vpn_holiday_promo_202627_updated.metric: 'uri_count'
-      desktop_vpn_holiday_promo_202627_updated.statistic: mean
-    row: 10
-    col: 0
     width: 12
     height: 8
     field_x: desktop_vpn_holiday_promo_202627_updated.submission_date
@@ -129,6 +98,40 @@
     ]
     filters:
       desktop_vpn_holiday_promo_202627_updated.metric: 'days_of_use'
+      desktop_vpn_holiday_promo_202627_updated.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: desktop_vpn_holiday_promo_202627_updated.submission_date
+    field_y: desktop_vpn_holiday_promo_202627_updated.point
+    log_scale: false
+    ci_lower: desktop_vpn_holiday_promo_202627_updated.lower
+    ci_upper: desktop_vpn_holiday_promo_202627_updated.upper
+    show_grid: true
+    listen:
+      Date: desktop_vpn_holiday_promo_202627_updated.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: desktop_vpn_holiday_promo_202627_updated
+    type: looker_line
+    fields: [
+      desktop_vpn_holiday_promo_202627_updated.submission_date,
+      desktop_vpn_holiday_promo_202627_updated.branch,
+      desktop_vpn_holiday_promo_202627_updated.point
+    ]
+    pivots: [
+      desktop_vpn_holiday_promo_202627_updated.branch
+    ]
+    filters:
+      desktop_vpn_holiday_promo_202627_updated.metric: 'qualified_cumulative_days_of_use'
       desktop_vpn_holiday_promo_202627_updated.statistic: mean
     row: 10
     col: 12
@@ -180,45 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: desktop_vpn_holiday_promo_202627_updated
-    type: "ci-line-chart"
-    fields: [
-      desktop_vpn_holiday_promo_202627_updated.submission_date,
-      desktop_vpn_holiday_promo_202627_updated.branch,
-      desktop_vpn_holiday_promo_202627_updated.upper,
-      desktop_vpn_holiday_promo_202627_updated.lower,
-      desktop_vpn_holiday_promo_202627_updated.point
-    ]
-    pivots: [
-      desktop_vpn_holiday_promo_202627_updated.branch
-    ]
-    filters:
-      desktop_vpn_holiday_promo_202627_updated.metric: 'memory_total'
-      desktop_vpn_holiday_promo_202627_updated.statistic: percentile
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: desktop_vpn_holiday_promo_202627_updated.submission_date
-    field_y: desktop_vpn_holiday_promo_202627_updated.point
-    log_scale: false
-    ci_lower: desktop_vpn_holiday_promo_202627_updated.lower
-    ci_upper: desktop_vpn_holiday_promo_202627_updated.upper
-    show_grid: true
-    listen:
-      Date: desktop_vpn_holiday_promo_202627_updated.submission_date
-      Percentile: desktop_vpn_holiday_promo_202627_updated.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +199,41 @@
       desktop_vpn_holiday_promo_202627_updated.branch
     ]
     filters:
-      desktop_vpn_holiday_promo_202627_updated.metric: 'active_hours'
+      desktop_vpn_holiday_promo_202627_updated.metric: 'search_count'
+      desktop_vpn_holiday_promo_202627_updated.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: desktop_vpn_holiday_promo_202627_updated.submission_date
+    field_y: desktop_vpn_holiday_promo_202627_updated.point
+    log_scale: false
+    ci_lower: desktop_vpn_holiday_promo_202627_updated.lower
+    ci_upper: desktop_vpn_holiday_promo_202627_updated.upper
+    show_grid: true
+    listen:
+      Date: desktop_vpn_holiday_promo_202627_updated.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: desktop_vpn_holiday_promo_202627_updated
+    type: looker_line
+    fields: [
+      desktop_vpn_holiday_promo_202627_updated.submission_date,
+      desktop_vpn_holiday_promo_202627_updated.branch,
+      desktop_vpn_holiday_promo_202627_updated.point
+    ]
+    pivots: [
+      desktop_vpn_holiday_promo_202627_updated.branch
+    ]
+    filters:
+      desktop_vpn_holiday_promo_202627_updated.metric: 'retained'
       desktop_vpn_holiday_promo_202627_updated.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       desktop_vpn_holiday_promo_202627_updated.branch
     ]
     filters:
-      desktop_vpn_holiday_promo_202627_updated.metric: 'qualified_cumulative_days_of_use'
+      desktop_vpn_holiday_promo_202627_updated.metric: 'uri_count'
       desktop_vpn_holiday_promo_202627_updated.statistic: mean
     row: 30
     col: 12

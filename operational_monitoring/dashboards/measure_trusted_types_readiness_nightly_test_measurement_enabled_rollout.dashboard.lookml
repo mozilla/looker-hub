@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date,
       measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch,
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.upper,
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.lower,
       measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.point
     ]
     pivots: [
       measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch
     ]
     filters:
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'retained'
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.statistic: mean
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'memory_total'
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,12 +42,13 @@
     show_grid: true
     listen:
       Date: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date
+      Percentile: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,44 +63,10 @@
       measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch
     ]
     filters:
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'search_count'
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'active_hours'
       measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.statistic: mean
     row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date
-    field_y: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.point
-    log_scale: false
-    ci_lower: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.lower
-    ci_upper: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.upper
-    show_grid: true
-    listen:
-      Date: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout
-    type: looker_line
-    fields: [
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date,
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch,
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.point
-    ]
-    pivots: [
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch
-    ]
-    filters:
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'uri_count'
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.statistic: mean
-    row: 10
-    col: 0
     width: 12
     height: 8
     field_x: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date
@@ -129,6 +98,40 @@
     ]
     filters:
       measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'days_of_use'
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date
+    field_y: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.point
+    log_scale: false
+    ci_lower: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.lower
+    ci_upper: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.upper
+    show_grid: true
+    listen:
+      Date: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout
+    type: looker_line
+    fields: [
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date,
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch,
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.point
+    ]
+    pivots: [
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch
+    ]
+    filters:
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'qualified_cumulative_days_of_use'
       measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.statistic: mean
     row: 10
     col: 12
@@ -180,45 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout
-    type: "ci-line-chart"
-    fields: [
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date,
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch,
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.upper,
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.lower,
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.point
-    ]
-    pivots: [
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch
-    ]
-    filters:
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'memory_total'
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.statistic: percentile
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date
-    field_y: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.point
-    log_scale: false
-    ci_lower: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.lower
-    ci_upper: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.upper
-    show_grid: true
-    listen:
-      Date: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date
-      Percentile: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +199,41 @@
       measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch
     ]
     filters:
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'active_hours'
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'search_count'
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date
+    field_y: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.point
+    log_scale: false
+    ci_lower: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.lower
+    ci_upper: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.upper
+    show_grid: true
+    listen:
+      Date: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout
+    type: looker_line
+    fields: [
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.submission_date,
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch,
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.point
+    ]
+    pivots: [
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch
+    ]
+    filters:
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'retained'
       measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.branch
     ]
     filters:
-      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'qualified_cumulative_days_of_use'
+      measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.metric: 'uri_count'
       measure_trusted_types_readiness_nightly_test_measurement_enabled_rollout.statistic: mean
     row: 30
     col: 12
