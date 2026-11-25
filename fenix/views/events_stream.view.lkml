@@ -577,7 +577,8 @@ view: events_stream {
 * Whether power saving mode is now enabled.
 * Whether or not studies is enabled from Settings screen.
 * Whether or not the preference is enabled
-* The new state, true when saving security codes is on."
+* The new state, true when saving security codes is on.
+* The engine's enablement value, true if enabled and false if disabled."
   }
 
   dimension: extras__boolean__engine_available {
@@ -1701,6 +1702,15 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Edited"
     description: "Number of edited comments."
+  }
+
+  dimension: extras__quantity__enabled_count {
+    sql: ${TABLE}.extras.quantity.enabled_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Enabled Count"
+    description: "The total number of enabled engines after the change."
   }
 
   dimension: extras__quantity__error_code {
@@ -3631,15 +3641,6 @@ view: events_stream {
     description: "The date of the process exit."
   }
 
-  dimension: extras__string__deal_id {
-    sql: ${TABLE}.extras.string.deal_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Deal ID"
-    description: "Deal id, such as 'vivo-cpa-2024', or null"
-  }
-
   dimension: extras__string__death_description {
     sql: ${TABLE}.extras.string.death_description ;;
     type: string
@@ -3777,7 +3778,8 @@ view: events_stream {
 * Which way the addresses were copied: \"to_rust\" for the migration into the Rust store, \"to_json\" for the copy back when the pref that chooses the store is turned off again. A profile can do both, so this is what keeps the two apart.
 * Which way the credit cards were copied: \"to_rust\" for the migration into the Rust store, \"to_json\" for the copy back when the pref that chooses the store is turned off again. A profile can do both, so this is what keeps the two apart.
 * Direction of the m-section. recvonly, sendonly, sendrecv or inactive.
-* Whether the seek moved the position `forward` or `backward`."
+* Whether the seek moved the position `forward` or `backward`.
+* \"decrypt\" or \"encrypt\", the step of the operation that failed; \"unknown\" for a cancelled prompt recorded against an error that names neither."
   }
 
   dimension: extras__string__directive {
@@ -3926,7 +3928,8 @@ view: events_stream {
     group_item_label: "Engine"
     description: "Depending on the type of event:
 * The name of the default search engine the user selected as a string. Custom search engine user created will have the name `Custom`.
-* The name of the built-in search engine the user selected as a string"
+* The name of the built-in search engine the user selected as a string
+* The engine that was enabled or disabled."
   }
 
   dimension: extras__string__engineId {
@@ -4055,7 +4058,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Error Kind"
-    description: "Name of the error that aborted initialization, or empty when it completed."
+    description: "Depending on the type of event:
+* Name of the error that aborted initialization, or empty when it completed.
+* \"canceled\" when the primary password prompt was cancelled or declined; \"nss_auth\" when NSS was not initialized or failed to authenticate; \"missing_key\" when NSS could not hand out the key, or the primary password prompt failed for a reason other than a cancel (a key that is simply absent is not reported: a new one is created, and the logins of the old one then show up as \"undecryptable\"); \"invalid_key\" when the key is not a usable key; \"undecryptable\" when the key was available but a login did not decrypt with it; \"encryption_failed\" when the key was available but a login did not encrypt with it."
   }
 
   dimension: extras__string__error_message {
@@ -4223,8 +4228,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Extra"
     description: "Depending on the type of event:
-* Any extra information about the button that was tapped.
 * Sub-position on the bar. Populated only for `source = url_bar` on the home and browser surfaces, where it is one of: browser_start, page_start, page_end, browser_end. For the `search_engine_selected` item it instead holds the telemetry name of the chosen search engine: the engine name for regular engines (e.g. Google, Bing, DuckDuckGo), or one of the fixed values `custom`, `history`, `bookmarks`, `tabs`, or `application` for custom and application search engines.
+* Any extra information about the button that was tapped.
 * Any extra information about the card clicked.
 * Any extra information about the card displayed."
   }
@@ -5523,6 +5528,15 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Onboarding Reason"
     description: "The reason the user is being onboarded."
+  }
+
+  dimension: extras__string__open_location {
+    sql: ${TABLE}.extras.string.open_location ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Open Location"
+    description: "Where the page opened, either \"full\" for a standalone tab or \"split\" for Split View."
   }
 
   dimension: extras__string__open_type {
@@ -7102,6 +7116,7 @@ view: events_stream {
     description: "Depending on the type of event:
 * The type of top site. Options are: \"FRECENCY\", \"DEFAULT\", \"PINNED\", or \"PROVIDED\"
 * A string containing the name of the tab view the user tapped. These items include: list or grid.
+* The interaction used to close the tab: `tap` for the close button, `swipe` for the swipe-to-dismiss gesture, or `unknown` when the closure was confirmed through a dialog and the original interaction is no longer known.
 * The type of top site. Options are: \"FRECENT\", \"DEFAULT\", \"DEFAULT_PINNED\", \"PINNED\", or \"PROVIDED\"
 * type, draw, text."
   }

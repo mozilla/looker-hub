@@ -940,7 +940,7 @@ Child-process data will likely be absent, or incomplete.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Gfx OS Compositor"
-    description: "Boolean indicating whether the os compositor is being used by WebRender. This metric was generated to correspond to the Legacy Telemetry scalar gfx.os_compositor.
+    description: "Boolean indicating whether the os compositor is being used by WebRender.
 "
   }
 
@@ -960,7 +960,7 @@ Child-process data will likely be absent, or incomplete.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Gfx Supports Hdr"
-    description: "Does the hardware support accurate display of HDR content This metric was generated to correspond to the Legacy Telemetry scalar gfx.supports_hdr.
+    description: "Does the hardware support accurate display of HDR content
 "
   }
 
@@ -2898,7 +2898,7 @@ Will likely be obsoleted by bug 1641989.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Gfx Skipped Composites"
-    description: "Number of skipped composites, happening when rendering is too slow to keep up with content. This metric was generated to correspond to the Legacy Telemetry scalar gfx.skipped_composites.
+    description: "Number of skipped composites, happening when rendering is too slow to keep up with content.
 "
   }
 
@@ -4814,7 +4814,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     group_label: "Metrics: Counter"
     group_item_label: "Webfont Per Page"
     description: "Number of fonts loaded at page load
-This metric was generated to correspond to the Legacy Telemetry count histogram WEBFONT_PER_PAGE.
 "
   }
 
@@ -13349,7 +13348,6 @@ either %AppData% or %LocalAppData%.
     sql: ${TABLE}.metrics.labeled_counter.apz_zoom_activity ;;
     hidden: yes
     description: "Whether non-RDM page had user-triggered zooming activity
-This metric was generated to correspond to the Legacy Telemetry boolean histogram APZ_ZOOM_ACTIVITY.
 "
   }
 
@@ -14201,7 +14199,6 @@ Uses a single label due to only labeled counters being supported
     sql: ${TABLE}.metrics.labeled_counter.fontlist_bad_fallback_font ;;
     hidden: yes
     description: "system fallback font can't be used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram BAD_FALLBACK_FONT.
 "
   }
 
@@ -14209,7 +14206,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.fontlist_font_cache_hit ;;
     hidden: yes
     description: "font cache hit
-This metric was generated to correspond to the Legacy Telemetry boolean histogram FONT_CACHE_HIT.
 "
   }
 
@@ -14335,7 +14331,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.gfx_macos_video_low_power ;;
     hidden: yes
     description: "MacOS video low power state achieved when enqueueing a video frame.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram GFX_MACOS_VIDEO_LOW_POWER.
 "
   }
 
@@ -14602,6 +14597,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.javascript_gc_budget_was_increased ;;
     hidden: yes
     description: "Whether the budget was increased due to taking too long or approaching the incremental limit
+"
+  }
+
+  dimension: metrics__labeled_counter__javascript_gc_gray_bits_valid {
+    sql: ${TABLE}.metrics.labeled_counter.javascript_gc_gray_bits_valid ;;
+    hidden: yes
+    description: "Whether the gray marking state was valid at the start of a major GC
 "
   }
 
@@ -16824,7 +16826,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_custom_distribution.gfx_content_large_paint_phase_weight_full ;;
     hidden: yes
     description: "Percentages of times for phases in an expensive content paint relative to the time spent in the entire expensive paint. (\"dl\" = Display list, \"wrdl\" = WebRender display list, \"sb\" = Scene building, \"fb\" = Frame building)
-This metric was generated to correspond to the Legacy Telemetry linear histogram CONTENT_LARGE_PAINT_PHASE_WEIGHT_FULL.
 "
   }
 
@@ -16832,7 +16833,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     sql: ${TABLE}.metrics.labeled_custom_distribution.gfx_content_large_paint_phase_weight_partial ;;
     hidden: yes
     description: "Percentages of times for phases in an expensive content paint relative to the time spent in the entire expensive paint. (\"dl\" = Display list, \"wrdl\" = WebRender display list, \"sb\" = Scene building, \"fb\" = Frame building)
-This metric was generated to correspond to the Legacy Telemetry linear histogram CONTENT_LARGE_PAINT_PHASE_WEIGHT_PARTIAL.
 "
   }
 
@@ -16840,7 +16840,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     sql: ${TABLE}.metrics.labeled_custom_distribution.gfx_content_small_paint_phase_weight_full ;;
     hidden: yes
     description: "Percentages of times for phases in a normal content paint relative to the time spent in the entire normal paint. (\"dl\" = Display list, \"wrdl\" = WebRender display list, \"sb\" = Scene building, \"fb\" = Frame building)
-This metric was generated to correspond to the Legacy Telemetry linear histogram CONTENT_SMALL_PAINT_PHASE_WEIGHT_FULL.
 "
   }
 
@@ -16848,7 +16847,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     sql: ${TABLE}.metrics.labeled_custom_distribution.gfx_content_small_paint_phase_weight_partial ;;
     hidden: yes
     description: "Percentages of times for phases in a normal content paint relative to the time spent in the entire normal paint. (\"dl\" = Display list, \"wrdl\" = WebRender display list, \"sb\" = Scene building, \"fb\" = Frame building)
-This metric was generated to correspond to the Legacy Telemetry linear histogram CONTENT_SMALL_PAINT_PHASE_WEIGHT_PARTIAL.
 "
   }
 
@@ -20042,7 +20040,7 @@ API for the purposes of Validation (hence GVSV).
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Gfx Hdr Windows Display Colorspace Bitfield"
-    description: "A bitfield representation of the available DXGI color spaces of the connected displays on Windows. See (https://docs.microsoft.com/en- us/windows/desktop/api/dxgicommon/ne-dxgicommon- dxgi_color_space_type) for definitions of color spaces. Each N'th bit of this scalar indicates whether the DXGI color space with index 'N' is available on at least one connected monitor. This metric was generated to correspond to the Legacy Telemetry scalar gfx.hdr.windows_display_colorspace_bitfield.
+    description: "A bitfield representation of the available DXGI color spaces of the connected displays on Windows. See (https://docs.microsoft.com/en- us/windows/desktop/api/dxgicommon/ne-dxgicommon- dxgi_color_space_type) for definitions of color spaces. Each N'th bit of this scalar indicates whether the DXGI color space with index 'N' is available on at least one connected monitor.
 "
   }
 
@@ -21419,7 +21417,7 @@ One of \"d3d9\", \"d3d11\", \"opengl\", \"basic\", or \"none\".
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Gfx Linux Window Protocol"
-    description: "Windowing protocol on Linux. Can be Wayland, WaylandDRM, XWayland, or X11 This metric was generated to correspond to the Legacy Telemetry scalar gfx.linux_window_protocol.
+    description: "Windowing protocol on Linux. Can be Wayland, WaylandDRM, XWayland, or X11
 "
   }
 

@@ -14,21 +14,18 @@ view: clients_daily_table {
     sql: ${TABLE}.aborts_content_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The total number of content-process abort events recorded during a session or aggregation period. A null value indicates no data was collected for this metric."
   }
 
   dimension: aborts_gmplugin_sum {
     sql: ${TABLE}.aborts_gmplugin_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The total number of Gecko Media Plugin (GMP) process abort events recorded during a session or aggregation period. A null value indicates no data was collected for this metric."
   }
 
   dimension: aborts_plugin_sum {
     sql: ${TABLE}.aborts_plugin_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The total number of legacy plugin process abort events recorded during a session or aggregation period. A null value indicates no data was collected for this metric."
   }
 
   dimension: active_addons {
@@ -40,14 +37,12 @@ view: clients_daily_table {
     sql: ${TABLE}.active_addons_count_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The mean number of active add-ons installed across the client's sessions within the aggregation period."
   }
 
   dimension: active_hours_sum {
     sql: ${TABLE}.active_hours_sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The sum of active browser usage hours across all sessions or clients within the aggregation period."
   }
 
   dimension: ad_clicks {
@@ -65,35 +60,30 @@ view: clients_daily_table {
     sql: ${TABLE}.addon_compatibility_check_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Indicates whether the browser's add-on compatibility checking feature is enabled. True means compatibility checks are active; false means they have been disabled."
   }
 
   dimension: app_build_id {
     sql: ${TABLE}.app_build_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The build identifier string for the application, encoding the date and time when the specific build was compiled (format: YYYYMMDDHHmmSS)."
   }
 
   dimension: app_display_version {
     sql: ${TABLE}.app_display_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The human-readable version string of the application as displayed to users, including major, minor, and patch components (e.g., '151.0.1' or '115.36.0esr')."
   }
 
   dimension: app_name {
     sql: ${TABLE}.app_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The name of the Mozilla application that generated the telemetry event (e.g., 'firefox_desktop', 'fenix', 'firefox_ios', 'mozilla_vpn'). Used to distinguish telemetry across Mozilla's suite of products."
   }
 
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The full version string of the application at the time of the event (e.g., '151.0.2'). Combines major, minor, and patch components into a single human-readable version identifier."
   }
 
   dimension: apple_model_id {
@@ -108,7 +98,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Campaign"
-    description: "The marketing campaign name associated with a user's acquisition or install event (e.g., 'SET_DEFAULT_BROWSER', 'non-fx-button'). Null when no campaign attribution is available."
   }
 
   dimension: attribution__content {
@@ -117,7 +106,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Content"
-    description: "A string representing the UTM content parameter or creative identifier associated with a marketing touchpoint or link. May be null or URL-encoded when not explicitly set."
   }
 
   dimension: attribution__dlsource {
@@ -126,7 +114,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Dlsource"
-    description: "Identifier indicating where the Firefox installation originated (e.g., 'mozorg', 'fxdotcom')."
   }
 
   dimension: attribution__dltoken {
@@ -135,7 +122,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Dltoken"
-    description: "A unique token created at Firefox download time to correlate installs with download events."
   }
 
   dimension: attribution__experiment {
@@ -144,7 +130,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Experiment"
-    description: "The slug or identifier of a Nimbus or Normandy experiment the client was enrolled in at the time of the ping. This field is null when the client was not enrolled in any experiment."
   }
 
   dimension: attribution__medium {
@@ -153,7 +138,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Medium"
-    description: "The marketing or traffic medium through which a user arrived, such as 'referral', 'cpc', or 'firefox-desktop'. Used to classify the acquisition channel for attribution purposes."
   }
 
   dimension: attribution__msstoresignedin {
@@ -162,7 +146,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Msstoresignedin"
-    description: "Whether the user was signed in to the Microsoft Store at install time, when Firefox was installed via the Microsoft Store"
   }
 
   dimension: attribution__source {
@@ -171,7 +154,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Source"
-    description: "The referring domain or source URL from which a user navigated to a Mozilla property. Null indicates the source was not captured or not applicable."
   }
 
   dimension: attribution__ua {
@@ -180,7 +162,6 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Ua"
-    description: "The derived user agent type at attribution time (e.g., 'chrome', 'edge', 'firefox')."
   }
 
   dimension: attribution__variation {
@@ -189,14 +170,12 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Variation"
-    description: "The attribution variation key associated with the install."
   }
 
   dimension: blocklist_enabled {
     sql: ${TABLE}.blocklist_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Indicates whether the Firefox blocklist (used to block known malicious add-ons and plugins) is enabled (true) or disabled (false) on the client."
   }
 
   dimension: bookmark_migrations_quantity_all {
@@ -279,7 +258,6 @@ view: clients_daily_table {
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The Firefox release channel through which the client received its build, such as 'release', 'beta', 'aurora', or 'esr'. Used to segment data by product maturity and release train."
   }
 
   dimension: city {
@@ -292,13 +270,11 @@ view: clients_daily_table {
     sql: ${TABLE}.client_clock_skew_mean ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The mean"
   }
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
-    description: "A UUID that uniquely identifies a Firefox client installation. Used to join and deduplicate records across tables at the individual client level."
   }
 
   dimension: client_submission_latency_mean {
@@ -2502,7 +2478,6 @@ view: clients_daily_table {
     ]
     convert_tz: no
     datatype: date
-    description: "The UTC calendar date on which a ping or record was received by Mozilla's ingestion pipeline. Used as the primary partitioning and filtering dimension for date-based analysis."
   }
 
   dimension_group: submission_date_s3 {
@@ -2556,7 +2531,6 @@ view: clients_daily_table__active_addons {
     sql: ${TABLE}.addon_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The unique identifier string for a Firefox browser add-on or extension, typically in the format of a UUID or a reverse-DNS email-style string (e.g., 'formautofill@mozilla.org')."
   }
 
   dimension: app_disabled {
@@ -2593,7 +2567,6 @@ view: clients_daily_table__active_addons {
     sql: ${TABLE}.is_system ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Indicates whether the add-on or component is a system-level (built-in) item rather than a user-installed one. True means it is a system item; false means it is user-installed."
   }
 
   dimension: is_web_extension {
@@ -2606,14 +2579,12 @@ view: clients_daily_table__active_addons {
     sql: ${TABLE}.multiprocess_compatible ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "A structured array of metadata about all active browser add-ons installed on the client, including identifiers, versioning, installation details, and compatibility flags."
   }
 
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "A human-readable name string associated with the entity being described, such as an add-on or extension name. May be null or a placeholder string when the name is unavailable or not yet resolved."
   }
 
   dimension: scope {
@@ -2632,7 +2603,6 @@ view: clients_daily_table__active_addons {
     sql: ${TABLE}.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The category of a browser add-on or extension, indicating its nature. Common values include 'extension', 'locale', 'dictionary', and 'service'."
   }
 
   dimension: update_day {
@@ -2651,7 +2621,6 @@ view: clients_daily_table__active_addons {
     sql: ${TABLE}.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The version string of the software, add-on, or component being measured. Follows standard versioning conventions such as major.minor.patch."
   }
 }
 

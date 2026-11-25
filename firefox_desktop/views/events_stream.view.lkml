@@ -437,7 +437,8 @@ view: events_stream {
 * Whether the box was checked.
 * Whether the Passwords box was checked.
 * Whether the checkbox was toggled on or off.
-* The checked state of the fingerprinting protection checkbox"
+* The checked state of the fingerprinting protection checkbox
+* Whether locking private windows got enabled"
   }
 
   dimension: extras__boolean__com_fallback {
@@ -1205,7 +1206,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Is Final Write"
-    description: "Whether this was the final write at shutdown"
+    description: "Depending on the type of event:
+* Whether this was the final write at shutdown, to sessionstore.jsonlz4, rather than a write to recovery.jsonlz4
+* Whether this was the final write at shutdown"
   }
 
   dimension: extras__boolean__is_first_run {
@@ -2393,6 +2396,17 @@ view: events_stream {
     description: "Weekday the monitor checks on, 0 for Sunday through 6 for Saturday. Only present for weekly schedules."
   }
 
+  dimension: extras__quantity__closed_windows {
+    sql: ${TABLE}.extras.quantity.closed_windows ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Closed Windows"
+    description: "Depending on the type of event:
+* Number of closed windows in the written session, which can be reopened from Recently Closed Windows
+* Number of closed windows in the session that was loaded, as read from the file. Unset if no session could be loaded."
+  }
+
   dimension: extras__quantity__columnnumber {
     sql: ${TABLE}.extras.quantity.columnnumber ;;
     type: number
@@ -2420,6 +2434,15 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Comments Count"
     description: "Number of comments in the sidebar."
+  }
+
+  dimension: extras__quantity__component_summaries {
+    sql: ${TABLE}.extras.quantity.component_summaries ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Component Summaries"
+    description: "The number of distinct memories, by summary text, merged into the card's underlying memory, including memories from earlier merges."
   }
 
   dimension: extras__quantity__concurrent_open {
@@ -2654,9 +2677,9 @@ view: events_stream {
 * Duration of the migration in milliseconds.
 * The amount of time in Ms since the user opened the SmartWindow
 * Duration of the restore in milliseconds, measured with a monotonic clock.
-* Duration of the call as seen by the caller, measured in LoginManager around the delegation to the active backend.
 * How long the mini window was open, in milliseconds.
-* How long the panel was open, in milliseconds, measured from the moment it was shown."
+* How long the panel was open, in milliseconds, measured from the moment it was shown.
+* Duration of the call as seen by the caller, measured in LoginManager around the delegation to the active backend."
   }
 
   dimension: extras__quantity__edited {
@@ -3211,6 +3234,15 @@ view: events_stream {
     description: "hourse since the model was used"
   }
 
+  dimension: extras__quantity__last_visit_age {
+    sql: ${TABLE}.extras.quantity.last_visit_age ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Last Visit Age"
+    description: "Milliseconds since the most recent visit to any of the card's preview tabs."
+  }
+
   dimension: extras__quantity__latency {
     sql: ${TABLE}.extras.quantity.latency ;;
     type: number
@@ -3450,6 +3482,15 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Memory After"
     description: "Memory usage after unloading tabs (in bytes)"
+  }
+
+  dimension: extras__quantity__memory_age {
+    sql: ${TABLE}.extras.quantity.memory_age ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memory Age"
+    description: "Milliseconds since the oldest memory merged into the card's underlying memory was created, or since the underlying memory was created if it was never merged."
   }
 
   dimension: extras__quantity__memory_before {
@@ -4041,6 +4082,7 @@ view: events_stream {
 * Position of the entry that was clicked
 * The position of the tab in the recently closed tab list (starting at 1)
 * The position (0-index) of the card acted on.
+* The position (0-index) of the card when it became visible.
 * The position (0-index) of the Top Sites tile. For example: 2 means the third tile in the row."
   }
 
@@ -4060,6 +4102,33 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Preselected"
     description: "Number of tabs preselected"
+  }
+
+  dimension: extras__quantity__prev_size_bytes {
+    sql: ${TABLE}.extras.quantity.prev_size_bytes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Prev Size Bytes"
+    description: "Size in bytes of the session file written by the previous successful write in this session. Unset if this is the first write since the session file was read."
+  }
+
+  dimension: extras__quantity__prev_tabs {
+    sql: ${TABLE}.extras.quantity.prev_tabs ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Prev Tabs"
+    description: "Number of tabs in the previous successful write in this session. Unset if this is the first write since the session file was read."
+  }
+
+  dimension: extras__quantity__prev_windows {
+    sql: ${TABLE}.extras.quantity.prev_windows ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Prev Windows"
+    description: "Number of open windows in the previous successful write in this session. Unset if this is the first write since the session file was read."
   }
 
   dimension: extras__quantity__previous {
@@ -4125,6 +4194,15 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Prompts"
     description: "Number of prompts displayed"
+  }
+
+  dimension: extras__quantity__rank {
+    sql: ${TABLE}.extras.quantity.rank ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Rank"
+    description: "The card's position (0-index) when the section loaded. Unlike position, it does not shift when other cards are removed."
   }
 
   dimension: extras__quantity__raw_content_len {
@@ -4404,6 +4482,15 @@ view: events_stream {
 * The size of the model in mb"
   }
 
+  dimension: extras__quantity__size_bytes {
+    sql: ${TABLE}.extras.quantity.size_bytes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Size Bytes"
+    description: "Size of the written session file, in bytes"
+  }
+
   dimension: extras__quantity__snippet_chars_returned {
     sql: ${TABLE}.extras.quantity.snippet_chars_returned ;;
     type: number
@@ -4561,7 +4648,8 @@ view: events_stream {
 * Number of tabs restored
 * The number of tabs in the group when it was created
 * Number of open tabs included as context.
-* The number of tabs added to the tab group"
+* The number of tabs added to the tab group
+* Number of tabs in the open windows of the session that was loaded, as read from the file. Unset if no session could be loaded."
   }
 
   dimension: extras__quantity__tabs_added {
@@ -5320,6 +5408,17 @@ view: events_stream {
     description: "The outer width of the browser window, in CSS pixels."
   }
 
+  dimension: extras__quantity__windows {
+    sql: ${TABLE}.extras.quantity.windows ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Windows"
+    description: "Depending on the type of event:
+* Number of open windows in the written session. A window can be written with no tabs.
+* Number of open windows in the session that was loaded, as read from the file. A window can be saved with no tabs. Unset if no session could be loaded."
+  }
+
   dimension: extras__quantity__windows_offered {
     sql: ${TABLE}.extras.quantity.windows_offered ;;
     type: number
@@ -5517,8 +5616,8 @@ view: events_stream {
     group_item_label: "Addonid"
     description: "Depending on the type of event:
 * For addon_study, the ID of the addon that ended.
-* For addon_study recipes, the ID of the addon that was installed.
 * The ID of the addon for the rollout when reason=conflict.
+* For addon_study recipes, the ID of the addon that was installed.
 * The id of the addon
 * For addon_study recipes, the ID of the addon that was updated."
   }
@@ -5841,8 +5940,8 @@ view: events_stream {
 * The branch slug/identifier that was randomly chosen
 * If reason == invalid-branch, the branch that failed validation.
 * The branch of the experiment that this client was on.
-* The slug of the branch that was chosen for this client.
 * The branch that failed to enroll.
+* The slug of the branch that was chosen for this client.
 * The branch slug/identifier that was randomly chosen (if the client is enrolled)
 * The branch that was updated.
 * If reason == \"invalid-branch\", this is the invalid branch.
@@ -6267,7 +6366,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Closing Reason"
-    description: "What closed the panel: \"dismissed\" when the user closed it without acting on it, \"navigated\" when the page navigated away, or the action taken, one of \"etpToggled\", \"siteDataCleared\", \"clearSiteDataCancelled\", \"pageInfoOpened\", \"certExceptionRemoved\", \"httpsOnlyChanged\", \"privacySettingsOpened\", \"smartblockToggled\" and \"monitorOpened\"."
+    description: "Depending on the type of event:
+* What closed the panel: \"dismissed\" when the user closed it without acting on it, \"navigated\" when the page navigated away, or the action taken, one of \"etpToggled\", \"siteDataCleared\", \"clearSiteDataCancelled\", \"pageInfoOpened\", \"certExceptionRemoved\", \"httpsOnlyChanged\", \"privacySettingsOpened\", \"smartblockToggled\" and \"monitorOpened\".
+* What closed the panel: \"dismissed\" when the user closed it without acting on it, \"navigated\" when the page navigated away, or the action taken, one of \"etpToggled\", \"siteDataCleared\", \"clearSiteDataCancelled\", \"pageInfoOpened\", \"certExceptionRemoved\", \"httpsOnlyChanged\", \"privacySettingsOpened\", \"smartblockToggled\", \"monitorOpened\" and \"reportSent\" (a Report Broken Site report was sent from the panel)."
   }
 
   dimension: extras__string__code {
@@ -6343,7 +6444,18 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Component Type"
-    description: "The component name recorded for creation, for example \"Header\" or \"List_column\". \"unknown\" when the click is outside those blocks."
+    description: "Depending on the type of event:
+* The component name recorded for creation, for example \"Header\" or \"List_column\". \"unknown\" when the click is outside those blocks.
+* The component name that recorded the click."
+  }
+
+  dimension: extras__string__components_converted {
+    sql: ${TABLE}.extras.string.components_converted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Components Converted"
+    description: "JSON-encoded array of the body blocks that render as a different component from the one the model sent, in render order, each formatted as sent>rendered with the names used in components_used, for example \"Highlights>TextBlock\". A block that is dropped is sent>none. An empty array when no block is converted, and on failure."
   }
 
   dimension: extras__string__components_used {
@@ -6352,7 +6464,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Components Used"
-    description: "JSON-encoded array of the component types in the generated page, in the order they are used, each formatted as component_layout (or just component when it has no layout). An empty array on failure."
+    description: "Depending on the type of event:
+* JSON-encoded array of the component types in the generated page, in the order they are used, each formatted as component_layout (or just component when it has no layout). An empty array on failure.
+* JSON-encoded array of the component types in the generated page, in the order they are used, each formatted as component_layout (or just component when it has no layout). These are the types that the model sent. An empty array on failure."
   }
 
   dimension: extras__string__computed {
@@ -6768,7 +6882,8 @@ view: events_stream {
     description: "Depending on the type of event:
 * Which way the addresses were copied: \"to_rust\" for the migration into the Rust store, \"to_json\" for the copy back when the pref that chooses the store is turned off again. A profile can do both, so this is what keeps the two apart.
 * Which way the credit cards were copied: \"to_rust\" for the migration into the Rust store, \"to_json\" for the copy back when the pref that chooses the store is turned off again. A profile can do both, so this is what keeps the two apart.
-* Direction of the m-section. recvonly, sendonly, sendrecv or inactive."
+* Direction of the m-section. recvonly, sendonly, sendrecv or inactive.
+* \"decrypt\" or \"encrypt\", the step of the operation that failed; \"unknown\" for a cancelled prompt recorded against an error that names neither."
   }
 
   dimension: extras__string__directive {
@@ -7002,7 +7117,8 @@ view: events_stream {
 * What the user used to open the dialog: \"shortcut\", \"menu_bar\", \"app_menu\", \"quick_action\", \"address_bar_suggestion\", \"sidebar_history\", \"settings_history\", \"settings_site_data\", \"fire_button\", or \"other\" for entry points that don't report one.
 * Where Customize Toolbar mode was opened from. One of `toolbar_context_menu`, `app_menu`, `overflow_menu`, `menu_bar` or `other`.
 * Where the user started from, one of: \"tab_context_menu\", \"content_context_menu\" or \"toolbar_button\".
-* Which code path triggered the restore attempt: - \"set_window_state\": SessionRestore.setWindowState() - \"set_browser_state\": SessionRestore.setBrowserState() - \"automatic_startup\": automatic session restore on startup - \"automatic_with_taskbar_tab\": automatic session restore after the user opened the first normal window after having only taskbar tabs open - \"deferred_initial_state\": deferred restore when opening the first normal window after ..."
+* Where the user started from, one of: \"tab_context_menu\", \"content_context_menu\", \"toolbar_button\" or \"link_context_menu\".
+* Which code path triggered the restore attempt: - \"set_window_state\": SessionRestore.setWindowState() - \"set_browser_state\": SessionRestore.setBrowserState() - \"automatic_startup\": automatic session restore on startup - \"automatic_with_taskbar_tab\": automatic session restore after the user opened the first normal window ..."
   }
 
   dimension: extras__string__entrypoint {
@@ -7012,12 +7128,14 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Entrypoint"
     description: "Depending on the type of event:
+* Where the prompt came from, one of: browser_action (a chat request handled by the manage_tabs tool) or resume (a resume card, or a \"Pick up where you left off\" pill when resume cards are disabled)
 * How was the toolbox opened? CommandLine, ContextMenu, HamburgerMenu, KeyShortcut, SessionRestore, SystemMenu or SlowScript
-* Where the migration wizard was opened from. One of the values of MigrationUtils.MIGRATION_ENTRYPOINTS, for example \"aboutwelcome\", \"preferences\" or \"file_menu\".
 * Where the user opened the page from: \"panel\" for the button in the VPN panel, \"settings\" for the button in about:settings#privacy.
+* Where the migration wizard was opened from. One of the values of MigrationUtils.MIGRATION_ENTRYPOINTS, for example \"aboutwelcome\", \"preferences\" or \"file_menu\".
+* Where the promo was clicked: \"panel\" for the VPN panel, \"settings\" for about:settings.
+* Where the promo was shown: \"panel\" for the VPN panel, \"settings\" for about:settings.
 * The UI surface used to open the referrals tab. One of: app_menu, accounts_menu, preferences, help_menu, about_dialog.
-* Where the card came from: browser_action (a chat request handled by the manage_tabs tool) or resume (a \"Pick up where you left off\" pill)
-* How was the toolbox opened? CommandLine, ContextMenu, HamburgerMenu, KeyShortcut, SessionRestore or SystemMenu"
+* Where the card came from: browser_action (a chat request handled by the..."
   }
 
   dimension: extras__string__error {
@@ -7029,15 +7147,13 @@ view: events_stream {
     description: "Depending on the type of event:
 * The AddonManager error related to an install or update failure.
 * error class
+* Canonical error code, or absent on success: no_content, canceled, page_load_failed, page_not_found, page_not_editable, conversation_unavailable, pages_unreadable, nothing_to_change, history_limit, empty_response, invalid_json, content_related, invalid_format, or generation_failed
 * Error code if Undo was not successful
 * Error code if it's not a successful response
 * Canonical chat error name, or empty on success
 * error class or message
 * Canonical error code, or absent on success: no_content, canceled, page_load_failed, page_not_found, conversation_unavailable, pages_unreadable, nothing_to_change, history_limit, empty_response, invalid_json, invalid_format, or generation_failed
-* Canonical error code, or absent on success: no_content, canceled, page_load_failed, page_not_found, conversation_unavailable, pages_unreadable, nothing_to_change, history_limit, empty_response, invalid_json, content_related, invalid_format, or generation_failed
-* Error code if the action was unsuccessful.
-* Error code if the action was unsuccessful. auto_cancel when a pending confirmation was followed by a new user prompt.
-* If the event value is \"decryptionError\" or \"encryptionError\", this con..."
+* Canonical error code, or absent on success: no_content, canceled, page_load_failed, page_not_found, conversation_unavailable, pages_unreadable, nothing_to_change, history_limit, empty_response, invalid_json, content_..."
   }
 
   dimension: extras__string__errorName {
@@ -7081,7 +7197,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Error Kind"
-    description: "Name of the error that aborted initialization, or empty when it completed."
+    description: "Depending on the type of event:
+* Name of the error that aborted initialization, or empty when it completed.
+* \"canceled\" when the primary password prompt was cancelled or declined; \"nss_auth\" when NSS was not initialized or failed to authenticate; \"missing_key\" when NSS could not hand out the key, or the primary password prompt failed for a reason other than a cancel (a key that is simply absent is not reported: a new one is created, and the logins of the old one then show up as \"undecryptable\"); \"invalid_key\" when the key is not a usable key; \"undecryptable\" when the key was available but a login did not decrypt with it; \"encryption_failed\" when the key was available but a login did not encrypt with it."
   }
 
   dimension: extras__string__error_message {
@@ -8359,6 +8477,15 @@ view: events_stream {
     description: "Final value from the last memories navigate, a comma-separated list of memory checkbox ids the user had selected, for example: 'memories-chats,memories-browsing'. Empty string if the user deselects all options"
   }
 
+  dimension: extras__string__memory_strength {
+    sql: ${TABLE}.extras.string.memory_strength ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Memory Strength"
+    description: "The strength of the card's underlying memory when suggested, recorded as a decimal string to preserve fractional values."
+  }
+
   dimension: extras__string__mention_type {
     sql: ${TABLE}.extras.string.mention_type ;;
     type: string
@@ -8888,6 +9015,15 @@ view: events_stream {
     description: "The panel the user is switching from"
   }
 
+  dimension: extras__string__open_location {
+    sql: ${TABLE}.extras.string.open_location ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Open Location"
+    description: "Where the page opened, either \"full\" for a standalone tab or \"split\" for Split View."
+  }
+
   dimension: extras__string__open_target {
     sql: ${TABLE}.extras.string.open_target ;;
     type: string
@@ -8931,8 +9067,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Opening Reason"
     description: "Depending on the type of event:
-* How the panel was opened: \"shieldButtonClicked\" when the user clicked the shield icon in the URL bar, \"embedPlaceholderButton\" when it was opened from a SmartBlock embed placeholder, or \"unknown\" when it was opened without a reason.
 * How the panel was opened, one of \"shieldButtonClicked\", \"embedPlaceholderButton\", or \"unknown\" when it was opened without a reason.
+* How the panel was opened: \"shieldButtonClicked\" when the user clicked the shield icon in the URL bar, \"embedPlaceholderButton\" when it was opened from a SmartBlock embed placeholder, or \"unknown\" when it was opened without a reason.
 * How the Trust Panel was opened, one of [\"shieldButtonClicked\", \"embedPlaceholderButton\", \"unknown\"]. Same values as the opening_reason extra of trustpanel.opened."
   }
 
@@ -8946,7 +9082,8 @@ view: events_stream {
 * The type of operation that failed (e.g. \"add\", \"modify\", \"remove\", \"remove-all\", \"migration\", etc.).
 * \"search\", \"list\", \"count\" or \"record_password_use\".
 * \"add\": a new card was being saved. \"update\": a stored card was being changed. \"clear\": a stored card's security code was being removed. \"read\": one or all stored cards were being read.
-* The operation being performed when the incompatible format was found (e.g. addLogin, modifyLogin, removeLogin)."
+* The operation being performed when the incompatible format was found (e.g. addLogin, modifyLogin, removeLogin).
+* The store operation that failed: \"list\", \"search\", \"add\", \"modify\", \"record_password_use\", \"breach_dismissals\" or \"vulnerable_passwords\"."
   }
 
   dimension: extras__string__option {
@@ -9003,8 +9140,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Origin"
     description: "Depending on the type of event:
-* The original domain (eTLD+1) of the request that matched a search endpoint.
-* Which file the session was loaded from, one of \"clean\", \"recovery\", \"recoveryBackup\", \"cleanBackup\" or \"upgradeBackup\", or \"empty\" if no session could be loaded"
+* Which file the session was loaded from, one of \"clean\", \"recovery\", \"recoveryBackup\", \"cleanBackup\" or \"upgradeBackup\", or \"empty\" if no session could be loaded
+* The original domain (eTLD+1) of the request that matched a search endpoint."
   }
 
   dimension: extras__string__origin_error {
@@ -9522,6 +9659,17 @@ view: events_stream {
     description: "A string set to determine whether the profile was a new or existing profile, and if the application version was changing, while the write error was hit. The expected values are: \"new\", \"existing\" \"existingWithVersionChanged\""
   }
 
+  dimension: extras__string__promo {
+    sql: ${TABLE}.extras.string.promo ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Promo"
+    description: "Depending on the type of event:
+* Which promo was clicked: \"mozillavpn\" for the Mozilla VPN promo, \"defaultbrowser\" for the Set to Default promo.
+* Which promo was shown: \"mozillavpn\" for the Mozilla VPN promo, \"defaultbrowser\" for the Set to Default promo."
+  }
+
   dimension: extras__string__prompt {
     sql: ${TABLE}.extras.string.prompt ;;
     type: string
@@ -9547,8 +9695,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Prompt Type"
     description: "Depending on the type of event:
-* Type of prompt shown - disambiguation, batch_preview, or safety_confirmation
 * Type of prompt shown: disambiguation, batch_preview, or safety_confirmation
+* Type of prompt shown - disambiguation, batch_preview, or safety_confirmation
 * \"new_card\" for the save doorhanger of a new card, \"existing_card\" for the update doorhanger offering to add a security code to a saved card."
   }
 
@@ -9722,12 +9870,13 @@ view: events_stream {
 * An error code describing the failure.
 * Why panel is toggling.
 * The reason for the unenrollment
+* A code describing the reason the unenroll failed.
 * Why the run happened: manual (the user asked, which includes the automatic first check the chat card triggers right after creation), trigger_time (the schedule fired less than five minutes after the scheduled time) or delayed (the schedule fired five minutes or more late, mostly because the browser was closed or asleep).
 * What triggered the history display: ask or restore
 * The reason the client is in the noted status
-* A code describing the reason the unenroll failed.
+* Reason the original prompt was shown
 * The reason for the enrollment failure
-* Why the validation failed. This will be one of the following reasons: - \"invalid-recipe..."
+* Why the validation failed. This will be one of t..."
   }
 
   dimension: extras__string__record_type {
@@ -9898,7 +10047,8 @@ view: events_stream {
 * The result of the OS Authentication.
 * Outcome of the action: success, partial_success, no_match, unclear_target, blocked, cancelled, or error.
 * Optionally, the name of the error that occurred.
-* The outcome of the attempt to pin, values include: - `success_pinned`: The pin request was affirmed by the user. - `success_r..."
+* \"switch\" when an existing tab was focused, \"new\" when a tab was opened, \"error\" when that attempt failed.
+* The outcome of th..."
   }
 
   dimension: extras__string__results {
@@ -9953,6 +10103,15 @@ view: events_stream {
 * The migrate_to_rust run this record was copied by.
 * Unique identifier for the migration run
 * Unique identifier for the restore run"
+  }
+
+  dimension: extras__string__run_state {
+    sql: ${TABLE}.extras.string.run_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Run State"
+    description: "Where the browser was in its lifecycle at the time of the write, one of \"stopped\" (before the first window finished loading), \"running\", \"quitting\" (shutdown has been granted but Session Restore has not yet shut down) or \"closing\" (the final write)"
   }
 
   dimension: extras__string__runtime_id {
@@ -11055,6 +11214,7 @@ view: events_stream {
 * Content scope.
 * The type of onboarding trigger, e.g. \"longPress\" or \"shiftKey\".
 * \"full_tab\" for a whole popped-out tab, or \"fragment\" for one framing a region of the page.
+* \"full_tab\" for a whole popped-out tab, \"fragment\" for one framing a region of the page, or \"url\" for one opened from a link.
 * chat or browsing
 * the type for the proxy configuration source. e.g. api or string version of nsIProtocolProxyService.proxyConfigType
 * \"individual\" when a single suggested group was created, \"all\" when the user created every suggested group at once.
@@ -11169,8 +11329,8 @@ view: events_stream {
 * The `value` of the event. Mirrors to the Legacy Telemetry event's `value` parameter. The filename's type, see `nsContentSecurityUtils::FilenameToFilenameType(...)`.
 * The error code string (e.g. dnsNotFound, connectionFailure, netTimeout). Truncated to 40 characters.
 * identifier of pane shown.
-* The `value` of the event. Mirrors to the Legacy Telemetry event's `value` parameter. The `value` is `leave` if the user chose to leave the page, and `cancel` if the user chose to stay on the page.
-* The `value` of th..."
+* The `value` of the event. Mirrors to the Legacy Telemetry event's `value` parameter (i.e., the experiment slug).
+* The `value` of the event. Mirrors to the Legacy Telemetry event's `value` parameter. The `value` is `..."
   }
 
   dimension: extras__string__variant_shown {
