@@ -2898,6 +2898,14 @@ Will likely be obsoleted by bug 1641989.
 "
   }
 
+  dimension: metrics__counter__fog_unknown_backup_key {
+    sql: ${TABLE}.metrics.counter.fog_unknown_backup_key ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Fog Unknown Backup Key"
+  }
+
   dimension: metrics__counter__gfx_skipped_composites {
     sql: ${TABLE}.metrics.counter.gfx_skipped_composites ;;
     type: number
@@ -3397,6 +3405,16 @@ This does not include deletion-request pings.
     group_label: "Metrics: Counter"
     group_item_label: "Network SSL Token Cache Persistence Records Loaded"
     description: "Number of TLS session resumption token records successfully loaded from disk into the cache on startup.
+"
+  }
+
+  dimension: metrics__counter__network_ssl_token_cache_wrapped_not_persisted {
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_wrapped_not_persisted ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Network SSL Token Cache Wrapped Not Persisted"
+    description: "Counts session resumption tokens that would have been persisted to disk if their resumption secret had been exported in plaintext.
 "
   }
 
@@ -9824,6 +9842,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__dual_labeled_counter__network_ssl_token_resumption {
+    sql: ${TABLE}.metrics.dual_labeled_counter.network_ssl_token_resumption ;;
+    hidden: yes
+    description: "The session resumption outcome of a connection that had at least one cached token to try, by transport and by where the last token tried came from. Recorded at most once per connection; attempts necko abandons before a handshake outcome, other than on a handshake timeout, are not counted.
+"
+  }
+
   dimension: metrics__dual_labeled_counter__networking_http3_channel_onstart_success {
     sql: ${TABLE}.metrics.dual_labeled_counter.networking_http3_channel_onstart_success ;;
     hidden: yes
@@ -12798,7 +12823,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__network_ssl_token_cache_db_errors {
     sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_db_errors ;;
     hidden: yes
-    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written). Routine removal when persistence is disabled is not counted.
+    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written), 'delete' (removed tokens not deleted). Routine removal when persistence is disabled is not counted.
 "
   }
 
@@ -12967,6 +12992,16 @@ Available keys are:
     hidden: yes
     description: "The count of calls to the native DNS APIs
 "
+  }
+
+  dimension: metrics__labeled_counter__networking_doh_ddr_discovery {
+    sql: ${TABLE}.metrics.labeled_counter.networking_doh_ddr_discovery ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_doh_ddr_result {
+    sql: ${TABLE}.metrics.labeled_counter.networking_doh_ddr_result ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__networking_fetch_keepalive_discard_count {
@@ -13836,6 +13871,20 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.session_restore_shutdown_type ;;
     hidden: yes
     description: "On quit-application-granted, is the shutdown sync (immediate) or async
+"
+  }
+
+  dimension: metrics__labeled_counter__session_restore_tab_group_integrity_checked {
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_tab_group_integrity_checked ;;
+    hidden: yes
+    description: "Recorded once per startup, when the session file has been read. Counts the tab groups, and the tabs with a group id, that were checked for broken references, by where they were found in the session state. Use it as the denominator for tab_group_integrity_problems.
+"
+  }
+
+  dimension: metrics__labeled_counter__session_restore_tab_group_integrity_problems {
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_tab_group_integrity_problems ;;
+    hidden: yes
+    description: "Recorded once per startup, when the session file has been read. Counts broken tab group references in the session state, by kind: a group in a window that no tab in that window points to (*_group_without_tabs), a tab whose group id has no matching group in its window (*_tab_missing_group), a closed or saved group with no tabs, a saved group entry that is not an object, and a saved group flagged removeAfterRestore that the last session to be restored would not reopen (saved_group_stale_restore_flag), which restoring that session would delete. Not counted when there is no last session to restore. Malformed session data is counted as *_check_failed: once per open or closed window that could not be checked (which adds no other counts), once if the list of windows isn't a list, or once if the saved groups or the last session's windows could not be checked. The counts from everything else in the session are still recorded.
 "
   }
 
@@ -32700,6 +32749,33 @@ view: metrics_table__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https
 }
 
 view: metrics_table__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_features_by_resolver__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__network_ssl_token_resumption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__network_ssl_token_resumption__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

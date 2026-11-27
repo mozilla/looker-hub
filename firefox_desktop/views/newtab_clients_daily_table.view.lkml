@@ -206,6 +206,14 @@ view: newtab_clients_daily_table {
     description: "language or country based preferences of the host system"
   }
 
+  dimension: newtab_addon_version {
+    sql: ${TABLE}.newtab_addon_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Version of the newtab@mozilla.org addon reported by the client (`$.version` in metrics.object.addons_active_addons).
+Selects the version on the client's last addons ping for the day and makes it the same for all of the client's visits that day. NULL when the client sent no addons ping reporting the newtab addon that day, and for dates before newtab_addon_versions_daily_v1 has data."
+  }
+
   dimension: newtab_blocked_sponsors {
     sql: ${TABLE}.newtab_blocked_sponsors ;;
     hidden: yes
@@ -310,6 +318,20 @@ view: newtab_clients_daily_table {
     description: "Count of organic content interactions"
   }
 
+  dimension: organic_pinned_topsite_click_count {
+    sql: ${TABLE}.organic_pinned_topsite_click_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of clicks on pinned organic topsites with newtab opened in default ui, summed across the client's newtab visits that day. Covers visits on Firefox 144 and later. NULL if all of the client's visits that day were on versions before 144."
+  }
+
+  dimension: organic_pinned_topsite_impression_count {
+    sql: ${TABLE}.organic_pinned_topsite_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of pinned organic topsite impressions with newtab opened in default ui, summed across the client's newtab visits that day. Covers visits on Firefox 144 and later. NULL if all of the client's visits that day were on versions before 144."
+  }
+
   dimension: organic_topsite_click_count {
     sql: ${TABLE}.organic_topsite_click_count ;;
     type: number
@@ -359,11 +381,32 @@ view: newtab_clients_daily_table {
     description: "TRUE if the user has enabled organic topsites in the browser."
   }
 
+  dimension: organic_unpinned_topsite_click_count {
+    sql: ${TABLE}.organic_unpinned_topsite_click_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of clicks on unpinned organic topsites with newtab opened in default ui, summed across the client's newtab visits that day. Covers visits on Firefox 144 and later. NULL if all of the client's visits that day were on versions before 144."
+  }
+
+  dimension: organic_unpinned_topsite_impression_count {
+    sql: ${TABLE}.organic_unpinned_topsite_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of unpinned organic topsite impressions with newtab opened in default ui, summed across the client's newtab visits that day. Covers visits on Firefox 144 and later. NULL if all of the client's visits that day were on versions before 144."
+  }
+
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
     suggest_persist_for: "24 hours"
     description: "OS name of the host system"
+  }
+
+  dimension: os_version {
+    sql: ${TABLE}.os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The operating system version running at the client prior to normalization (e.g. \"4.18.0-553.97.1.el8_10.aarch64\" or \"6.11+parrot-amd64\" for Linux; \"10.0\" for Windows, \"25.3.0\" for macOS, \"26.3.1\" for iOS, \"16\" for Android). Windows 10 and Windows 11 both show \"10.0\". Use `windows_build_number >= 22000` to identify Windows 11."
   }
 
   dimension: other_impression_count {
@@ -485,6 +528,20 @@ view: newtab_clients_daily_table {
     description: "Count of sponsored content interactions"
   }
 
+  dimension: sponsored_content_inventory_count {
+    sql: ${TABLE}.sponsored_content_inventory_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of times a story slot that can hold a sponsored story was shown, whether it showed a sponsored or an organic story, with newtab opened in default ui, summed across the client's newtab visits that day. Covers visits on Firefox 157 and later. NULL if all of the client's visits that day were on versions before 157."
+  }
+
+  dimension: sponsored_content_inventory_visits {
+    sql: ${TABLE}.sponsored_content_inventory_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of the client's newtab visits that day that showed at least one story slot that can hold a sponsored story. NULL if all of the client's visits that day were on versions before 157."
+  }
+
   dimension: sponsored_topsite_click_count {
     sql: ${TABLE}.sponsored_topsite_click_count ;;
     type: number
@@ -527,6 +584,20 @@ view: newtab_clients_daily_table {
     description: "Count of sponsored topsite interactions"
   }
 
+  dimension: sponsored_topsite_inventory_count {
+    sql: ${TABLE}.sponsored_topsite_inventory_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of times a shortcut slot that can hold a sponsored shortcut was shown, whether it showed a sponsored or an organic shortcut, with newtab opened in default ui, summed across the client's newtab visits that day. Covers visits on Firefox 157 and later. NULL if all of the client's visits that day were on versions before 157."
+  }
+
+  dimension: sponsored_topsite_inventory_visits {
+    sql: ${TABLE}.sponsored_topsite_inventory_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of the client's newtab visits that day that showed at least one shortcut slot that can hold a sponsored shortcut. NULL if all of the client's visits that day were on versions before 157."
+  }
+
   dimension: sponsored_topsites_enabled {
     sql: ${TABLE}.sponsored_topsites_enabled ;;
     type: yesno
@@ -567,6 +638,20 @@ view: newtab_clients_daily_table {
     type: number
     suggest_persist_for: "24 hours"
     description: "Count of widget interactions"
+  }
+
+  dimension: windows_build_number {
+    sql: ${TABLE}.windows_build_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "The Windows build number reported by the operating system (e.g., 19045 for Windows 10, 22000+ for Windows 11); only populated on Windows clients and null on all other platforms."
+  }
+
+  dimension: windows_version {
+    sql: ${TABLE}.windows_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Windows version name derived from os, os_version and windows_build_number with mozfun.norm.glean_windows_version_info (e.g. 'Windows 10', 'Windows 11'). Builds 22000 and above on os_version 10.0 are Windows 11. 'build unknown - likely Windows 10 or 11' when the build number is missing. NULL for non-Windows clients. In this table os_version, windows_build_number and windows_version are each picked separately as the client's most common value, so they can disagree for clients whose OS changed during the day."
   }
 
   dimension_group: submission {

@@ -614,6 +614,13 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_counter__glean_health_backup_client_id_status {
+    sql: ${TABLE}.metrics.labeled_counter.glean_health_backup_client_id_status ;;
+    hidden: yes
+    description: "Count of different states that happened when using the external backup client_id value.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_health_file_read_error {
     sql: ${TABLE}.metrics.labeled_counter.glean_health_file_read_error ;;
     hidden: yes

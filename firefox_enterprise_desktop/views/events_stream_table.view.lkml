@@ -565,6 +565,7 @@ view: events_stream_table {
 * Whether the monitor is enabled.
 * Whether the monitor is enabled (the spec's status).
 * New/current state is enabled
+* Whether the tracker count was enabled by this toggle.
 * Whether the action was turned on or off.
 * True if the feature is enabled.
 * Chatbot was already enabled.
@@ -572,7 +573,6 @@ view: events_stream_table {
 * Boolean indicating if that type of memory was enabled or disabled
 * Whether the sidebar is now set to open by default
 * whether the preference was enabled or disabled in any way
-* Whether the tracker count was enabled by this toggle.
 * The new state, true when saving security codes is on."
   }
 

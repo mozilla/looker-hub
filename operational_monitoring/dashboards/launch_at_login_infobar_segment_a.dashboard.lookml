@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: launch_at_login_infobar_segment_a
-    type: "ci-line-chart"
-    fields: [
-      launch_at_login_infobar_segment_a.submission_date,
-      launch_at_login_infobar_segment_a.branch,
-      launch_at_login_infobar_segment_a.upper,
-      launch_at_login_infobar_segment_a.lower,
-      launch_at_login_infobar_segment_a.point
-    ]
-    pivots: [
-      launch_at_login_infobar_segment_a.branch
-    ]
-    filters:
-      launch_at_login_infobar_segment_a.metric: 'memory_total'
-      launch_at_login_infobar_segment_a.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: launch_at_login_infobar_segment_a.submission_date
-    field_y: launch_at_login_infobar_segment_a.point
-    log_scale: false
-    ci_lower: launch_at_login_infobar_segment_a.lower
-    ci_upper: launch_at_login_infobar_segment_a.upper
-    show_grid: true
-    listen:
-      Date: launch_at_login_infobar_segment_a.submission_date
-      Percentile: launch_at_login_infobar_segment_a.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,43 +26,9 @@
       launch_at_login_infobar_segment_a.branch
     ]
     filters:
-      launch_at_login_infobar_segment_a.metric: 'active_hours'
+      launch_at_login_infobar_segment_a.metric: 'retained'
       launch_at_login_infobar_segment_a.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: launch_at_login_infobar_segment_a.submission_date
-    field_y: launch_at_login_infobar_segment_a.point
-    log_scale: false
-    ci_lower: launch_at_login_infobar_segment_a.lower
-    ci_upper: launch_at_login_infobar_segment_a.upper
-    show_grid: true
-    listen:
-      Date: launch_at_login_infobar_segment_a.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: launch_at_login_infobar_segment_a
-    type: looker_line
-    fields: [
-      launch_at_login_infobar_segment_a.submission_date,
-      launch_at_login_infobar_segment_a.branch,
-      launch_at_login_infobar_segment_a.point
-    ]
-    pivots: [
-      launch_at_login_infobar_segment_a.branch
-    ]
-    filters:
-      launch_at_login_infobar_segment_a.metric: 'days_of_use'
-      launch_at_login_infobar_segment_a.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -133,7 +62,7 @@
     filters:
       launch_at_login_infobar_segment_a.metric: 'qualified_cumulative_days_of_use'
       launch_at_login_infobar_segment_a.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -145,6 +74,43 @@
     show_grid: true
     listen:
       Date: launch_at_login_infobar_segment_a.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: launch_at_login_infobar_segment_a
+    type: "ci-line-chart"
+    fields: [
+      launch_at_login_infobar_segment_a.submission_date,
+      launch_at_login_infobar_segment_a.branch,
+      launch_at_login_infobar_segment_a.upper,
+      launch_at_login_infobar_segment_a.lower,
+      launch_at_login_infobar_segment_a.point
+    ]
+    pivots: [
+      launch_at_login_infobar_segment_a.branch
+    ]
+    filters:
+      launch_at_login_infobar_segment_a.metric: 'memory_total'
+      launch_at_login_infobar_segment_a.statistic: percentile
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: launch_at_login_infobar_segment_a.submission_date
+    field_y: launch_at_login_infobar_segment_a.point
+    log_scale: false
+    ci_lower: launch_at_login_infobar_segment_a.lower
+    ci_upper: launch_at_login_infobar_segment_a.upper
+    show_grid: true
+    listen:
+      Date: launch_at_login_infobar_segment_a.submission_date
+      Percentile: launch_at_login_infobar_segment_a.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -167,41 +133,7 @@
     filters:
       launch_at_login_infobar_segment_a.metric: 'ad_clicks'
       launch_at_login_infobar_segment_a.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: launch_at_login_infobar_segment_a.submission_date
-    field_y: launch_at_login_infobar_segment_a.point
-    log_scale: false
-    ci_lower: launch_at_login_infobar_segment_a.lower
-    ci_upper: launch_at_login_infobar_segment_a.upper
-    show_grid: true
-    listen:
-      Date: launch_at_login_infobar_segment_a.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: launch_at_login_infobar_segment_a
-    type: looker_line
-    fields: [
-      launch_at_login_infobar_segment_a.submission_date,
-      launch_at_login_infobar_segment_a.branch,
-      launch_at_login_infobar_segment_a.point
-    ]
-    pivots: [
-      launch_at_login_infobar_segment_a.branch
-    ]
-    filters:
-      launch_at_login_infobar_segment_a.metric: 'search_count'
-      launch_at_login_infobar_segment_a.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -217,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,9 +165,9 @@
       launch_at_login_infobar_segment_a.branch
     ]
     filters:
-      launch_at_login_infobar_segment_a.metric: 'retained'
+      launch_at_login_infobar_segment_a.metric: 'days_of_use'
       launch_at_login_infobar_segment_a.statistic: mean
-    row: 30
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -268,6 +200,74 @@
     ]
     filters:
       launch_at_login_infobar_segment_a.metric: 'uri_count'
+      launch_at_login_infobar_segment_a.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: launch_at_login_infobar_segment_a.submission_date
+    field_y: launch_at_login_infobar_segment_a.point
+    log_scale: false
+    ci_lower: launch_at_login_infobar_segment_a.lower
+    ci_upper: launch_at_login_infobar_segment_a.upper
+    show_grid: true
+    listen:
+      Date: launch_at_login_infobar_segment_a.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: launch_at_login_infobar_segment_a
+    type: looker_line
+    fields: [
+      launch_at_login_infobar_segment_a.submission_date,
+      launch_at_login_infobar_segment_a.branch,
+      launch_at_login_infobar_segment_a.point
+    ]
+    pivots: [
+      launch_at_login_infobar_segment_a.branch
+    ]
+    filters:
+      launch_at_login_infobar_segment_a.metric: 'active_hours'
+      launch_at_login_infobar_segment_a.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: launch_at_login_infobar_segment_a.submission_date
+    field_y: launch_at_login_infobar_segment_a.point
+    log_scale: false
+    ci_lower: launch_at_login_infobar_segment_a.lower
+    ci_upper: launch_at_login_infobar_segment_a.upper
+    show_grid: true
+    listen:
+      Date: launch_at_login_infobar_segment_a.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: launch_at_login_infobar_segment_a
+    type: looker_line
+    fields: [
+      launch_at_login_infobar_segment_a.submission_date,
+      launch_at_login_infobar_segment_a.branch,
+      launch_at_login_infobar_segment_a.point
+    ]
+    pivots: [
+      launch_at_login_infobar_segment_a.branch
+    ]
+    filters:
+      launch_at_login_infobar_segment_a.metric: 'search_count'
       launch_at_login_infobar_segment_a.statistic: mean
     row: 30
     col: 12

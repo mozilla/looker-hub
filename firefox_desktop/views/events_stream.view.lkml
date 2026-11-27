@@ -589,13 +589,13 @@ view: events_stream {
 * Chatbot was already enabled.
 * New/current state is enabled
 * True if IP Protection was turned on.
+* Whether the tracker count was enabled by this toggle.
 * Whether the action was turned on or off.
 * Boolean indicating if that type of memory was enabled or disabled
 * True if the feature is enabled.
 * Whether launch on login was turned on (true) or off (false).
 * Whether the sidebar is now set to open by default
 * whether the preference was enabled or disabled in any way
-* Whether the tracker count was enabled by this toggle.
 * The new state, true when saving security codes is on."
   }
 
@@ -780,6 +780,15 @@ view: events_stream {
     group_label: "Extras: Boolean"
     group_item_label: "Generation Triggered"
     description: "True when the scheduler found enough new evidence to generate memories. False when it found none; every other extra is then absent."
+  }
+
+  dimension: extras__boolean__granted {
+    sql: ${TABLE}.extras.boolean.granted ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Granted"
+    description: "True if access was granted. False if the user cancelled the file picker."
   }
 
   dimension: extras__boolean__hadPreviousJwt {
@@ -2238,7 +2247,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Attempts"
-    description: "The number of recovery attempts made in this recovery sequence"
+    description: "Depending on the type of event:
+* The number of times a file picker was shown. The file picker is shown again as long as the selected folder doesn't give access.
+* The number of recovery attempts made in this recovery sequence"
   }
 
   dimension: extras__quantity__auto_adjustments_prior {
@@ -8597,6 +8608,7 @@ view: events_stream {
     description: "Depending on the type of event:
 * The key of the migrator that will perform the migration.
 * The key of the browser that was selected.
+* The key of the migrator that access was requested for.
 * The key of the browser that had a profile selected for it.
 * The key of the migrator that performed the migration, for example \"chrome\" or \"safari\".
 * The key of the browser that had resources selected for it."
@@ -9742,8 +9754,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Provider"
     description: "Depending on the type of event:
-* Selected provider id.
 * The name of the `UrlbarProvider` that provided the selected result. The possible values are: `AboutPages`, `AliasEngines`, `Autofill`, `BookmarkKeywords`, `calculator`, `UrlbarProviderContextualSearch`, `HeuristicFallback`, `HistoryUrlHeuristic`, `InputHistory`, `UrlbarProviderInterventions`, `Omnibox`, `OpenTabs`, `Places`, `PrivateSearch`, `quickactions`, `UrlbarProviderQuickSuggest`, `RemoteTabs`, `SearchSuggestions`, `UrlbarProviderSearchTips`, `TabToSearch`, `TokenAliasEngines`, `UrlbarProviderTopSites`, `UnitConversion` and `UnifiedComplete`. If engagement_type is `drop_go` or `paste_go`, this will be null because no results are shown. And also, if selected_result is `experimental_addon`, it means that the user selected a result from an add-on using the urlbar experimental API. In this case, this will be the provider name specified by the add-on.
+* Selected provider id.
 * The name of the provider.
 * Which provider was last selected.
 * Current provider id.
@@ -9868,11 +9880,11 @@ view: events_stream {
 * debuggerStatement, breakpoint, exception, tab_switch, toolbox_show, initial_panel, toggle_settings_off, toggle_settings_on, key_shortcut, select_next_key, select_prev_key, tool_unloaded, inspect_dom, toolbox_closed, unknown etc.
 * A code describing the reason why the recipe ended.
 * An error code describing the failure.
-* Why panel is toggling.
 * The reason for the unenrollment
 * A code describing the reason the unenroll failed.
 * Why the run happened: manual (the user asked, which includes the automatic first check the chat card triggers right after creation), trigger_time (the schedule fired less than five minutes after the scheduled time) or delayed (the schedule fired five minutes or more late, mostly because the browser was closed or asleep).
 * What triggered the history display: ask or restore
+* Why panel is toggling.
 * The reason the client is in the noted status
 * Reason the original prompt was shown
 * The reason for the enrollment failure

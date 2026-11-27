@@ -9022,6 +9022,40 @@ Previously carried in Legacy \"main\" ping `simpleMeasurements`.
 "
   }
 
+  dimension: metrics__labeled_counter__session_restore_tab_group_integrity_checked {
+    label: "Session Restore: Tab Group Integrity Checked"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_tab_group_integrity_checked ;;
+    group_label: "Session Restore"
+    group_item_label: "Tab Group Integrity Checked"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore: Tab Group Integrity Checked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_tab_group_integrity_checked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded once per startup, when the session file has been read. Counts the tab groups, and the tabs with a group id, that were checked for broken references, by where they were found in the session state. Use it as the denominator for tab_group_integrity_problems.
+"
+  }
+
+  dimension: metrics__labeled_counter__session_restore_tab_group_integrity_problems {
+    label: "Session Restore: Tab Group Integrity Problems"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_tab_group_integrity_problems ;;
+    group_label: "Session Restore"
+    group_item_label: "Tab Group Integrity Problems"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore: Tab Group Integrity Problems"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_tab_group_integrity_problems"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded once per startup, when the session file has been read. Counts broken tab group references in the session state, by kind: a group in a window that no tab in that window points to (*_group_without_tabs), a tab whose group id has no matching group in its window (*_tab_missing_group), a closed or saved group with no tabs, a saved group entry that is not an object, and a saved group flagged removeAfterRestore that the last session to be restored would not reopen (saved_group_stale_restore_flag), which restoring that session would delete. Not counted when there is no last session to restore. Malformed session data is counted as *_check_failed: once per open or closed window that could not be checked (which adds no other counts), once if the list of windows isn't a list, or once if the saved groups or the last session's windows could not be checked. The counts from everything else in the session are still recorded.
+"
+  }
+
   dimension: metrics__counter__session_restore_write_attempts {
     label: "Session Restore: Write Attempts"
     hidden: no
@@ -19960,6 +19994,27 @@ while reporting fog.data_diretory_info.
 "
   }
 
+  dimension: metrics__counter__fog_unknown_backup_key {
+    label: "Fog: Unknown Backup Key"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_unknown_backup_key ;;
+    type: number
+    group_label: "Fog"
+    group_item_label: "Unknown Backup Key"
+
+    link: {
+      label: "Glean Dictionary reference for Fog: Unknown Backup Key"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_unknown_backup_key"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often we're asked to store, load, or clear a key from FOG's `ExternalBackup`
+implementation that FOG doesn't support.
+
+We expect this to be zero at all times.
+"
+  }
+
   dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
     label: "Fog Validation: Gvsv Audio Stream Init"
     hidden: yes
@@ -27986,7 +28041,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written). Routine removal when persistence is disabled is not counted.
+    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written), 'delete' (removed tokens not deleted). Routine removal when persistence is disabled is not counted.
 "
   }
 
@@ -28094,6 +28149,24 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Number of TLS session resumption token records successfully loaded from disk into the cache on startup.
+"
+  }
+
+  dimension: metrics__counter__network_ssl_token_cache_wrapped_not_persisted {
+    label: "Network: SSL Token Cache Wrapped Not Persisted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_wrapped_not_persisted ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Wrapped Not Persisted"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Wrapped Not Persisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_wrapped_not_persisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts session resumption tokens that would have been persisted to disk if their resumption secret had been exported in plaintext.
 "
   }
 
@@ -29117,6 +29190,71 @@ Available keys are:
     }
 
     description: "Time for a DNS OS resolution (msec) used to get TTL | Migrated from Firefox Telemetry's `DNS_RENEWAL_TIME_FOR_TTL`.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_doh_ddr_discovery {
+    label: "Networking: Doh Ddr Discovery"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_doh_ddr_discovery ;;
+    group_label: "Networking"
+    group_item_label: "Doh Ddr Discovery"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: Doh Ddr Discovery"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_doh_ddr_discovery"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "RFC 9462 DDR (Discovery of Designated Resolvers) funnel. Each label counts how many DDR discovery attempts reached that stage:
+  total - a DDR discovery attempt was started
+  svcb_result - a native SVCB record for _dns.resolver.arpa was returned
+  dohpath - the record advertised a usable DoH designated resolver
+            (an HTTP ALPN, a valid RFC 9461 dohpath and a usable
+            TargetName)
+  connection - the test query connected to the designated resolver,
+               including connections whose TLS handshake then failed
+  cert_match - the resolver's TLS certificate covered one of the
+               configured unencrypted resolver IPs
+The stages are nested (total >= svcb_result >= dohpath >= connection >= cert_match), so ratios between labels give the per-stage success rate.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_doh_ddr_result {
+    label: "Networking: Doh Ddr Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_doh_ddr_result ;;
+    group_label: "Networking"
+    group_item_label: "Doh Ddr Result"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: Doh Ddr Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_doh_ddr_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "RFC 9462 DDR (Discovery of Designated Resolvers) outcome. Unlike doh_ddr_discovery (a cumulative funnel), each DDR attempt increments exactly one label here - the last stage it reached:
+  no_native_support - SVCB records can't be resolved with the native
+                      resolver on this platform or configuration
+  no_svcb - no native SVCB record for _dns.resolver.arpa was returned
+  no_dohpath - got an SVCB record but no usable DoH designated resolver
+  no_resolver_addrs - found a designated resolver but the addresses of
+                      the unencrypted resolvers could not be determined,
+                      so it could not be verified
+  no_connection - found a designated resolver but the test query failed
+                  to connect
+  tls_failed - connected but the TLS handshake failed, e.g. because the
+               certificate is untrusted, expired or doesn't cover the
+               resolver's name
+  no_cert_match - connected but the resolver's certificate did not cover
+                  any configured unencrypted resolver IP
+  query_failed - the certificate matched but the test query failed
+                 (e.g. an HTTP error or an undecodable response)
+  success - the certificate matched and the resolver answered the test
+            query
+  network_changed - found a designated resolver but the network changed
+                    before it could be verified
+So this gives the distribution of where DDR attempts stop.
 "
   }
 
@@ -48322,6 +48460,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: fog_unknown_backup_key {
+    type: sum
+    sql: ${metrics__counter__fog_unknown_backup_key} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Unknown Backup Key"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_unknown_backup_key"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_unknown_backup_key_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_unknown_backup_key: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Unknown Backup Key"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_unknown_backup_key"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: formautofill_addresses_detected_sections_count {
     type: sum
     sql: ${metrics__counter__formautofill_addresses_detected_sections_count} ;;
@@ -49343,6 +49506,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Network SSL Token Cache Persistence Records Loaded"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_persistence_records_loaded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_wrapped_not_persisted {
+    type: sum
+    sql: ${metrics__counter__network_ssl_token_cache_wrapped_not_persisted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Wrapped Not Persisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_wrapped_not_persisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_wrapped_not_persisted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_ssl_token_cache_wrapped_not_persisted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Wrapped Not Persisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_wrapped_not_persisted"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -67696,19 +67884,19 @@ view: metrics__metrics__labeled_counter__network_ssl_token_resumption_outcome {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -68406,6 +68594,88 @@ view: metrics__metrics__labeled_counter__networking_dns_native_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_doh_ddr_discovery {
+  label: "Networking: Doh Ddr Discovery"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_doh_ddr_result {
+  label: "Networking: Doh Ddr Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
@@ -73823,6 +74093,88 @@ view: metrics__metrics__labeled_counter__session_restore_shutdown_ok {
 
 view: metrics__metrics__labeled_counter__session_restore_shutdown_type {
   label: "Session Restore: Shutdown Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__session_restore_tab_group_integrity_checked {
+  label: "Session Restore: Tab Group Integrity Checked"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__session_restore_tab_group_integrity_problems {
+  label: "Session Restore: Tab Group Integrity Problems"
 
   dimension: document_id {
     type: string
@@ -86914,6 +87266,33 @@ view: metrics__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_fe
 }
 
 view: metrics__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_features_by_resolver__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__network_ssl_token_resumption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__network_ssl_token_resumption__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

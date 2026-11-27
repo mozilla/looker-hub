@@ -1478,7 +1478,7 @@ audio plays are not recorded.
 
   dimension: metrics__string__listen_to_page_tts_engine {
     label: "Listen To Page: Tts Engine"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.listen_to_page_tts_engine ;;
     type: string
     group_label: "Listen To Page"
@@ -19623,7 +19623,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written). Routine removal when persistence is disabled is not counted.
+    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written), 'delete' (removed tokens not deleted). Routine removal when persistence is disabled is not counted.
 "
   }
 
@@ -19731,6 +19731,24 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Number of TLS session resumption token records successfully loaded from disk into the cache on startup.
+"
+  }
+
+  dimension: metrics__counter__network_ssl_token_cache_wrapped_not_persisted {
+    label: "Network: SSL Token Cache Wrapped Not Persisted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_wrapped_not_persisted ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Wrapped Not Persisted"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Wrapped Not Persisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_wrapped_not_persisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts session resumption tokens that would have been persisted to disk if their resumption secret had been exported in plaintext.
 "
   }
 
@@ -41803,6 +41821,31 @@ report notification is scheduled.
     }
   }
 
+  measure: network_ssl_token_cache_wrapped_not_persisted {
+    type: sum
+    sql: ${metrics__counter__network_ssl_token_cache_wrapped_not_persisted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Wrapped Not Persisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_wrapped_not_persisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_wrapped_not_persisted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_ssl_token_cache_wrapped_not_persisted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Wrapped Not Persisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_wrapped_not_persisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: network_sso_total_entra_uses {
     type: sum
     sql: ${metrics__counter__network_sso_total_entra_uses} ;;
@@ -55631,19 +55674,19 @@ view: metrics__metrics__labeled_counter__network_ssl_token_resumption_outcome {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -69469,6 +69512,33 @@ view: metrics__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_fe
 }
 
 view: metrics__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_features_by_resolver__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__network_ssl_token_resumption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__network_ssl_token_resumption__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

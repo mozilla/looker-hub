@@ -227,6 +227,32 @@ In Version 0 this reported the total number of tasks enqueued.
 "
   }
 
+  dimension: metrics__labeled_counter__glean_health_backup_client_id_status {
+    label: "Glean Health: Backup Client ID Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_health_backup_client_id_status ;;
+    group_label: "Glean Health"
+    group_item_label: "Backup Client ID Status"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Health: Backup Client ID Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_health_backup_client_id_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of different states that happened when using the external backup client_id value.
+
+The possible states:
+
+  - `none`: No client ID stored in the backup
+  - `parse`: The stored backup cannot be parsed as a UUID
+  - `c0ffee`: The stored backup is the c0ffee client ID
+  - `match`: The client ID in the backup matches the one in the Glean database
+  - `mismatch`: The client ID in the backup is different from the one in the Glean database
+  - `backup_only`: A valid client ID is stored in the backup, but no client ID stored in the Glean database
+"
+  }
+
   dimension: metrics__string__glean_health_exception_state {
     label: "Glean Health: Exception State"
     hidden: no
@@ -1756,6 +1782,47 @@ view: health__metrics__labeled_counter__glean_error_invalid_state {
 
 view: health__metrics__labeled_counter__glean_error_invalid_value {
   label: "Glean Error: Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${health.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${health.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${health.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: health__metrics__labeled_counter__glean_health_backup_client_id_status {
+  label: "Glean Health: Backup Client ID Status"
 
   dimension: document_id {
     type: string
