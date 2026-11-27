@@ -3745,6 +3745,16 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 "
   }
 
+  dimension: metrics__counter__network_ssl_token_cache_wrapped_not_persisted {
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_wrapped_not_persisted ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Network SSL Token Cache Wrapped Not Persisted"
+    description: "Counts session resumption tokens that would have been persisted to disk if their resumption secret had been exported in plaintext.
+"
+  }
+
   dimension: metrics__counter__network_sso_total_entra_uses {
     sql: ${TABLE}.metrics.counter.network_sso_total_entra_uses ;;
     type: number
@@ -13075,6 +13085,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__dual_labeled_counter__network_ssl_token_resumption {
+    sql: ${TABLE}.metrics.dual_labeled_counter.network_ssl_token_resumption ;;
+    hidden: yes
+    description: "The session resumption outcome of a connection that had at least one cached token to try, by transport and by where the last token tried came from. Recorded at most once per connection; attempts necko abandons before a handshake outcome, other than on a handshake timeout, are not counted.
+"
+  }
+
   dimension: metrics__dual_labeled_counter__networking_http3_channel_onstart_success {
     sql: ${TABLE}.metrics.dual_labeled_counter.networking_http3_channel_onstart_success ;;
     hidden: yes
@@ -15245,7 +15262,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__network_ssl_token_cache_db_errors {
     sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_db_errors ;;
     hidden: yes
-    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written). Routine removal when persistence is disabled is not counted.
+    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written), 'delete' (removed tokens not deleted). Routine removal when persistence is disabled is not counted.
 "
   }
 
@@ -59808,6 +59825,33 @@ view: metrics_table__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https
 }
 
 view: metrics_table__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_features_by_resolver__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__network_ssl_token_resumption {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__network_ssl_token_resumption__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

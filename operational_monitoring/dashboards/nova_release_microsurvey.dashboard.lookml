@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: nova_release_microsurvey
-    type: "ci-line-chart"
-    fields: [
-      nova_release_microsurvey.submission_date,
-      nova_release_microsurvey.branch,
-      nova_release_microsurvey.upper,
-      nova_release_microsurvey.lower,
-      nova_release_microsurvey.point
-    ]
-    pivots: [
-      nova_release_microsurvey.branch
-    ]
-    filters:
-      nova_release_microsurvey.metric: 'memory_total'
-      nova_release_microsurvey.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: nova_release_microsurvey.submission_date
-    field_y: nova_release_microsurvey.point
-    log_scale: false
-    ci_lower: nova_release_microsurvey.lower
-    ci_upper: nova_release_microsurvey.upper
-    show_grid: true
-    listen:
-      Date: nova_release_microsurvey.submission_date
-      Percentile: nova_release_microsurvey.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,43 +26,9 @@
       nova_release_microsurvey.branch
     ]
     filters:
-      nova_release_microsurvey.metric: 'active_hours'
+      nova_release_microsurvey.metric: 'retained'
       nova_release_microsurvey.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: nova_release_microsurvey.submission_date
-    field_y: nova_release_microsurvey.point
-    log_scale: false
-    ci_lower: nova_release_microsurvey.lower
-    ci_upper: nova_release_microsurvey.upper
-    show_grid: true
-    listen:
-      Date: nova_release_microsurvey.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: nova_release_microsurvey
-    type: looker_line
-    fields: [
-      nova_release_microsurvey.submission_date,
-      nova_release_microsurvey.branch,
-      nova_release_microsurvey.point
-    ]
-    pivots: [
-      nova_release_microsurvey.branch
-    ]
-    filters:
-      nova_release_microsurvey.metric: 'days_of_use'
-      nova_release_microsurvey.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -133,7 +62,7 @@
     filters:
       nova_release_microsurvey.metric: 'qualified_cumulative_days_of_use'
       nova_release_microsurvey.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -145,6 +74,43 @@
     show_grid: true
     listen:
       Date: nova_release_microsurvey.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: nova_release_microsurvey
+    type: "ci-line-chart"
+    fields: [
+      nova_release_microsurvey.submission_date,
+      nova_release_microsurvey.branch,
+      nova_release_microsurvey.upper,
+      nova_release_microsurvey.lower,
+      nova_release_microsurvey.point
+    ]
+    pivots: [
+      nova_release_microsurvey.branch
+    ]
+    filters:
+      nova_release_microsurvey.metric: 'memory_total'
+      nova_release_microsurvey.statistic: percentile
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: nova_release_microsurvey.submission_date
+    field_y: nova_release_microsurvey.point
+    log_scale: false
+    ci_lower: nova_release_microsurvey.lower
+    ci_upper: nova_release_microsurvey.upper
+    show_grid: true
+    listen:
+      Date: nova_release_microsurvey.submission_date
+      Percentile: nova_release_microsurvey.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -167,41 +133,7 @@
     filters:
       nova_release_microsurvey.metric: 'ad_clicks'
       nova_release_microsurvey.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: nova_release_microsurvey.submission_date
-    field_y: nova_release_microsurvey.point
-    log_scale: false
-    ci_lower: nova_release_microsurvey.lower
-    ci_upper: nova_release_microsurvey.upper
-    show_grid: true
-    listen:
-      Date: nova_release_microsurvey.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: nova_release_microsurvey
-    type: looker_line
-    fields: [
-      nova_release_microsurvey.submission_date,
-      nova_release_microsurvey.branch,
-      nova_release_microsurvey.point
-    ]
-    pivots: [
-      nova_release_microsurvey.branch
-    ]
-    filters:
-      nova_release_microsurvey.metric: 'search_count'
-      nova_release_microsurvey.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -217,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,9 +165,9 @@
       nova_release_microsurvey.branch
     ]
     filters:
-      nova_release_microsurvey.metric: 'retained'
+      nova_release_microsurvey.metric: 'days_of_use'
       nova_release_microsurvey.statistic: mean
-    row: 30
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -268,6 +200,74 @@
     ]
     filters:
       nova_release_microsurvey.metric: 'uri_count'
+      nova_release_microsurvey.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: nova_release_microsurvey.submission_date
+    field_y: nova_release_microsurvey.point
+    log_scale: false
+    ci_lower: nova_release_microsurvey.lower
+    ci_upper: nova_release_microsurvey.upper
+    show_grid: true
+    listen:
+      Date: nova_release_microsurvey.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: nova_release_microsurvey
+    type: looker_line
+    fields: [
+      nova_release_microsurvey.submission_date,
+      nova_release_microsurvey.branch,
+      nova_release_microsurvey.point
+    ]
+    pivots: [
+      nova_release_microsurvey.branch
+    ]
+    filters:
+      nova_release_microsurvey.metric: 'active_hours'
+      nova_release_microsurvey.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: nova_release_microsurvey.submission_date
+    field_y: nova_release_microsurvey.point
+    log_scale: false
+    ci_lower: nova_release_microsurvey.lower
+    ci_upper: nova_release_microsurvey.upper
+    show_grid: true
+    listen:
+      Date: nova_release_microsurvey.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: nova_release_microsurvey
+    type: looker_line
+    fields: [
+      nova_release_microsurvey.submission_date,
+      nova_release_microsurvey.branch,
+      nova_release_microsurvey.point
+    ]
+    pivots: [
+      nova_release_microsurvey.branch
+    ]
+    filters:
+      nova_release_microsurvey.metric: 'search_count'
       nova_release_microsurvey.statistic: mean
     row: 30
     col: 12

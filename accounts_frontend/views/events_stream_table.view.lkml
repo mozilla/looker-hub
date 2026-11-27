@@ -444,6 +444,17 @@ view: events_stream_table {
 * The Firefox major version from the user agent, or unknown when the browser is not Firefox."
   }
 
+  dimension: extras__string__flow {
+    sql: ${TABLE}.extras.string.flow ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Flow"
+    description: "Depending on the type of event:
+* The flow that shows the step: 'settings' for the Settings account recovery key page, or 'inline' for the setup shown after sign-in.
+* The flow that shows the step: 'settings' for the Settings account recovery key page, 'inline' for the setup shown after sign-in, or 'reset' for the hint step after a password reset with an account recovery key."
+  }
+
   dimension: extras__string__has_passkey_option {
     sql: ${TABLE}.extras.string.has_passkey_option ;;
     type: string

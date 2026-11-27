@@ -3060,6 +3060,15 @@ view: events_stream {
 * The state of the application before the notification was clicked. One of `foreground`, `background_with_window`, `background_no_window`, `closed` or `unknown`. Only determined on Windows and macOS. `background_no_window` means Firefox was running with no browser windows open. `closed` means the click launched Firefox because it wasn't running, and is only reported on Windows, as macOS removes Firefox's notifications when it quits."
   }
 
+  dimension: extras__string__auth_provider {
+    sql: ${TABLE}.extras.string.auth_provider ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Auth Provider"
+    description: "Authentication provider in the store when the failure was recorded. One of \"unknown\", \"fxa\", \"gpi\"."
+  }
+
   dimension: extras__string__auth_type {
     sql: ${TABLE}.extras.string.auth_type ;;
     type: string
@@ -4045,11 +4054,12 @@ view: events_stream {
     group_item_label: "Error Code"
     description: "Depending on the type of event:
 * The error code after users click the fill username autocomplete entry. Only present if the object is \"fill_username\". When the event is successful, the error_code is 0.
-* The UniFFI error variant when the migration threw, for grouping, or \"SourceChanged\" when the JSON store was written to while it was copied into the Rust store, which fails the run. Absent otherwise, including when records were rejected or came up short: the counts already describe that.
 * The error code or number associated with the error, if available.
+* The UniFFI error variant when the migration threw, for grouping, or \"SourceChanged\" when the JSON store was written to while it was copied into the Rust store, which fails the run. Absent otherwise, including when records were rejected or came up short: the counts already describe that.
+* The class name of the error associated with the failure, if available.
 * The UniFFI error variant when the migration threw, for grouping. Absent otherwise, including when records were rejected or came up short: the counts already describe that.
 * The error code after users click the email alias generation panel. When the event is successful, the error_code is 0.
-* The error code describing what occurred during import. Current values are: 1xxx - errors imply a file reading error 1001 - file read error 2xxx - errors imply an er..."
+* The error code describing what occurred during import. Current values are: 1xxx - errors im..."
   }
 
   dimension: extras__string__error_kind {
@@ -6404,8 +6414,8 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Service State"
     description: "Depending on the type of event:
-* Service state when the engine reported the failure. Not the state that issued the request: the reply is asynchronous, so the two can differ. One of \"uninitialized\", \"unavailable\", \"unauthenticated\", \"opted_out\", \"ready\".
 * Service state when the engine reported the failure. Not the state that issued the request: the reply is asynchronous, so the two can differ. One of \"uninitialized\", \"unavailable\", \"unauthenticated\", \"ready\".
+* Service state when the engine reported the failure. Not the state that issued the request: the reply is asynchronous, so the two can differ. One of \"uninitialized\", \"unavailable\", \"unauthenticated\", \"opted_out\", \"ready\".
 * Service state when the reset was recorded. One of \"uninitialized\", \"unavailable\", \"unauthenticated\", \"opted_out\", \"ready\".
 * Service state when the reset was recorded. One of \"uninitialized\", \"unavailable\", \"unauthenticated\", \"ready\"."
   }

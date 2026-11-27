@@ -1823,6 +1823,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_dns_native_count}) AS metrics__metrics__labeled_counter__networking_dns_native_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_dns_native_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_doh_ddr_discovery {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_doh_ddr_discovery}) AS metrics__metrics__labeled_counter__networking_doh_ddr_discovery ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_doh_ddr_discovery.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_doh_ddr_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_doh_ddr_result}) AS metrics__metrics__labeled_counter__networking_doh_ddr_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_doh_ddr_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_fetch_keepalive_discard_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_fetch_keepalive_discard_count}) AS metrics__metrics__labeled_counter__networking_fetch_keepalive_discard_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_fetch_keepalive_discard_count.document_id} ;;
@@ -2401,6 +2411,16 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__session_restore_shutdown_type {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__session_restore_shutdown_type}) AS metrics__metrics__labeled_counter__session_restore_shutdown_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__session_restore_shutdown_type.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__session_restore_tab_group_integrity_checked {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__session_restore_tab_group_integrity_checked}) AS metrics__metrics__labeled_counter__session_restore_tab_group_integrity_checked ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__session_restore_tab_group_integrity_checked.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__session_restore_tab_group_integrity_problems {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__session_restore_tab_group_integrity_problems}) AS metrics__metrics__labeled_counter__session_restore_tab_group_integrity_problems ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__session_restore_tab_group_integrity_problems.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__session_restore_write_outcome {
