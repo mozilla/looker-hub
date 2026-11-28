@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +26,44 @@
       listen_to_page_android.branch
     ]
     filters:
-      listen_to_page_android.metric: 'retained'
+      listen_to_page_android.metric: 'search_count'
       listen_to_page_android.statistic: mean
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: listen_to_page_android.submission_date
+    field_y: listen_to_page_android.point
+    log_scale: false
+    ci_lower: listen_to_page_android.lower
+    ci_upper: listen_to_page_android.upper
+    show_grid: true
+    listen:
+      Date: listen_to_page_android.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: listen_to_page_android
+    type: looker_line
+    fields: [
+      listen_to_page_android.submission_date,
+      listen_to_page_android.branch,
+      listen_to_page_android.point
+    ]
+    pivots: [
+      listen_to_page_android.branch
+    ]
+    filters:
+      listen_to_page_android.metric: 'active_hours'
+      listen_to_page_android.statistic: mean
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: listen_to_page_android.submission_date
@@ -61,40 +95,6 @@
     ]
     filters:
       listen_to_page_android.metric: 'ad_clicks'
-      listen_to_page_android.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: listen_to_page_android.submission_date
-    field_y: listen_to_page_android.point
-    log_scale: false
-    ci_lower: listen_to_page_android.lower
-    ci_upper: listen_to_page_android.upper
-    show_grid: true
-    listen:
-      Date: listen_to_page_android.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: listen_to_page_android
-    type: looker_line
-    fields: [
-      listen_to_page_android.submission_date,
-      listen_to_page_android.branch,
-      listen_to_page_android.point
-    ]
-    pivots: [
-      listen_to_page_android.branch
-    ]
-    filters:
-      listen_to_page_android.metric: 'days_of_use'
       listen_to_page_android.statistic: mean
     row: 10
     col: 0
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       listen_to_page_android.branch
     ]
     filters:
-      listen_to_page_android.metric: 'active_hours'
+      listen_to_page_android.metric: 'retained'
       listen_to_page_android.statistic: mean
     row: 20
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       listen_to_page_android.branch
     ]
     filters:
-      listen_to_page_android.metric: 'search_count'
+      listen_to_page_android.metric: 'days_of_use'
       listen_to_page_android.statistic: mean
     row: 30
     col: 0

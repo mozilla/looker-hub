@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       mozilla_foundation_year_end_fundraising_2026.branch
     ]
     filters:
-      mozilla_foundation_year_end_fundraising_2026.metric: 'retained'
+      mozilla_foundation_year_end_fundraising_2026.metric: 'search_count'
       mozilla_foundation_year_end_fundraising_2026.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       mozilla_foundation_year_end_fundraising_2026.branch
     ]
     filters:
-      mozilla_foundation_year_end_fundraising_2026.metric: 'qualified_cumulative_days_of_use'
+      mozilla_foundation_year_end_fundraising_2026.metric: 'active_hours'
       mozilla_foundation_year_end_fundraising_2026.statistic: mean
     row: 0
     col: 12
@@ -149,40 +149,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mozilla_foundation_year_end_fundraising_2026
-    type: looker_line
-    fields: [
-      mozilla_foundation_year_end_fundraising_2026.submission_date,
-      mozilla_foundation_year_end_fundraising_2026.branch,
-      mozilla_foundation_year_end_fundraising_2026.point
-    ]
-    pivots: [
-      mozilla_foundation_year_end_fundraising_2026.branch
-    ]
-    filters:
-      mozilla_foundation_year_end_fundraising_2026.metric: 'days_of_use'
-      mozilla_foundation_year_end_fundraising_2026.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: mozilla_foundation_year_end_fundraising_2026.submission_date
-    field_y: mozilla_foundation_year_end_fundraising_2026.point
-    log_scale: false
-    ci_lower: mozilla_foundation_year_end_fundraising_2026.lower
-    ci_upper: mozilla_foundation_year_end_fundraising_2026.upper
-    show_grid: true
-    listen:
-      Date: mozilla_foundation_year_end_fundraising_2026.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -202,6 +168,40 @@
       mozilla_foundation_year_end_fundraising_2026.metric: 'uri_count'
       mozilla_foundation_year_end_fundraising_2026.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: mozilla_foundation_year_end_fundraising_2026.submission_date
+    field_y: mozilla_foundation_year_end_fundraising_2026.point
+    log_scale: false
+    ci_lower: mozilla_foundation_year_end_fundraising_2026.lower
+    ci_upper: mozilla_foundation_year_end_fundraising_2026.upper
+    show_grid: true
+    listen:
+      Date: mozilla_foundation_year_end_fundraising_2026.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: mozilla_foundation_year_end_fundraising_2026
+    type: looker_line
+    fields: [
+      mozilla_foundation_year_end_fundraising_2026.submission_date,
+      mozilla_foundation_year_end_fundraising_2026.branch,
+      mozilla_foundation_year_end_fundraising_2026.point
+    ]
+    pivots: [
+      mozilla_foundation_year_end_fundraising_2026.branch
+    ]
+    filters:
+      mozilla_foundation_year_end_fundraising_2026.metric: 'retained'
+      mozilla_foundation_year_end_fundraising_2026.statistic: mean
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       mozilla_foundation_year_end_fundraising_2026.branch
     ]
     filters:
-      mozilla_foundation_year_end_fundraising_2026.metric: 'active_hours'
+      mozilla_foundation_year_end_fundraising_2026.metric: 'days_of_use'
       mozilla_foundation_year_end_fundraising_2026.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       mozilla_foundation_year_end_fundraising_2026.branch
     ]
     filters:
-      mozilla_foundation_year_end_fundraising_2026.metric: 'search_count'
+      mozilla_foundation_year_end_fundraising_2026.metric: 'qualified_cumulative_days_of_use'
       mozilla_foundation_year_end_fundraising_2026.statistic: mean
     row: 30
     col: 12
