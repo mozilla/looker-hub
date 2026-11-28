@@ -833,7 +833,9 @@ view: events_stream {
     group_label: "Extras: Boolean"
     group_item_label: "Hidden"
     description: "Depending on the type of event:
+* True when the move was among the hidden items, false when among the shown items.
 * Whether the section was moved to the sections marked as hidden in the menu, or marked as showing in it.
+* Whether the section was moved among the sections marked as hidden in the menu (true) or among the ones marked as showing in it (false).
 * The document is hidden."
   }
 
@@ -1550,6 +1552,60 @@ view: events_stream {
     description: "The number of characters generated for text generation tasks."
   }
 
+  dimension: extras__quantity__chunk_audio_kb_avg {
+    sql: ${TABLE}.extras.quantity.chunk_audio_kb_avg ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Chunk Audio Kb Avg"
+    description: "The average size on disk of those chunks' audio, in kilobytes, over the chunks whose audio size is known."
+  }
+
+  dimension: extras__quantity__chunk_audio_ms_avg {
+    sql: ${TABLE}.extras.quantity.chunk_audio_ms_avg ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Chunk Audio Ms Avg"
+    description: "The average length of those chunks' audio at normal speed, in milliseconds, over the chunks whose audio length could be measured."
+  }
+
+  dimension: extras__quantity__chunk_chars_avg {
+    sql: ${TABLE}.extras.quantity.chunk_chars_avg ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Chunk Chars Avg"
+    description: "The average number of characters in those chunks."
+  }
+
+  dimension: extras__quantity__chunk_synthesis_ms_avg {
+    sql: ${TABLE}.extras.quantity.chunk_synthesis_ms_avg ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Chunk Synthesis Ms Avg"
+    description: "The average time the speech engine took to make those chunks, in milliseconds."
+  }
+
+  dimension: extras__quantity__chunks {
+    sql: ${TABLE}.extras.quantity.chunks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Chunks"
+    description: "How many chunks after the opening were synthesized, including chunks made again after a seek or a voice change."
+  }
+
+  dimension: extras__quantity__chunks_reclaimed {
+    sql: ${TABLE}.extras.quantity.chunks_reclaimed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Chunks Reclaimed"
+    description: "How many times the system removed a chunk's audio from disk before the session was done with it, as in chunk_audio_reclaimed. Measured here for ease in analyzing session data."
+  }
+
   dimension: extras__quantity__columnnumber {
     sql: ${TABLE}.extras.quantity.columnnumber ;;
     type: number
@@ -1681,6 +1737,7 @@ view: events_stream {
 * Duration of the restore in milliseconds, measured with a monotonic clock.
 * Duration of the call as seen by the caller, measured in LoginManager around the delegation to the active backend.
 * Time in milliseconds between requesting warmup and warmup completion.
+* Time to read the session file, in milliseconds, including creating the engine state of each tab in the file, even tabs then discarded (for example by closing inactive tabs automatically).
 * The duration of time from when the resource began sharing until the share sheet was ready to appear.
 * Duration of the Firefox Account flow in milliseconds.
 * Duration of the Firefox Authorization flow in milliseconds."
@@ -1769,6 +1826,15 @@ view: events_stream {
     description: "Number of deletions the copy could not apply, whether removing a record the source no longer has or importing a tombstone for one it had already deleted. `result` tells the two apart: a record that would not delete is still in the store copied into, so the run fails on it, while a tombstone that would not import leaves that store correct and costs a deletion coming back at the next sync."
   }
 
+  dimension: extras__quantity__file_bytes {
+    sql: ${TABLE}.extras.quantity.file_bytes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "File Bytes"
+    description: "Size of the session file, in bytes."
+  }
+
   dimension: extras__quantity__first_frame_loaded_time {
     sql: ${TABLE}.extras.quantity.first_frame_loaded_time ;;
     type: number
@@ -1794,6 +1860,24 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "From Version"
     description: "The original version of the database. A value of 0 indicates that the db_version was not set in the meta store."
+  }
+
+  dimension: extras__quantity__gap_ms_total {
+    sql: ${TABLE}.extras.quantity.gap_ms_total ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Gap Ms Total"
+    description: "The total time playback was silent across those gaps, in milliseconds."
+  }
+
+  dimension: extras__quantity__gaps {
+    sql: ${TABLE}.extras.quantity.gaps ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Gaps"
+    description: "How many times playback was silent between two chunks, counted as in chunk_gap_duration."
   }
 
   dimension: extras__quantity__has_alt_text {
@@ -2333,7 +2417,10 @@ view: events_stream {
 * The position of the clicked recent site suggestion.
 * The position of the clicked top site suggestion.
 * The position of the clicked trending search suggestion.
-* The position of the section after it was moved, among the sections marked as hidden in the menu if `hidden` is true, among the ones marked as showing in it otherwise. Counted from top to bottom, starting at 1, inclusive."
+* The 1-based position of the item after being hidden: in the top-level hidden items list (ignoring the items inside a hidden More), or among the items inside the hidden More that the app can show when moved into a hidden More.
+* The flat 1-based position of the item after the move: in the shown items list (where More counts as an entry followed by its shown sub-items) when `hidden` is false, in the top-level hidden items list when `hidden` is true and the item is directly in the section, or among the items inside the hidden More that the app can show when `hidden` is true and the item is inside a hidden More.
+* The flat 1-based position of the item among the shown items after being shown again (where More counts as an entry followed by its shown sub-items).
+* The position of the sect..."
   }
 
   dimension: extras__quantity__primary_password_deferrals {
@@ -2524,6 +2611,24 @@ view: events_stream {
     description: "RAM (in MB) attributed to the tab(s) chosen for this action."
   }
 
+  dimension: extras__quantity__tabs_in_file {
+    sql: ${TABLE}.extras.quantity.tabs_in_file ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs In File"
+    description: "Number of tabs in the file, including discarded tabs."
+  }
+
+  dimension: extras__quantity__tabs_restored {
+    sql: ${TABLE}.extras.quantity.tabs_restored ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Restored"
+    description: "Number of tabs that were restored."
+  }
+
   dimension: extras__quantity__target_total {
     sql: ${TABLE}.extras.quantity.target_total ;;
     type: number
@@ -2605,6 +2710,15 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Tokens Per Second"
     description: "Inference throughput in tokens per second (rounded integer)"
+  }
+
+  dimension: extras__quantity__total {
+    sql: ${TABLE}.extras.quantity.total ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total"
+    description: "Logins in the store, local and synced. Only with result \"ok\"."
   }
 
   dimension: extras__quantity__total_completed_requests {
@@ -2730,6 +2844,15 @@ view: events_stream {
     description: "Depending on the type of event:
 * The Terms of Use version, e.g., 1, 2. No semantic versioning.
 * The version of the Terms of Use the user accepted."
+  }
+
+  dimension: extras__quantity__undecryptable {
+    sql: ${TABLE}.extras.quantity.undecryptable ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Undecryptable"
+    description: "Logins that did not decrypt with the available key. Only with result \"ok\"."
   }
 
   dimension: extras__quantity__value {
@@ -3146,7 +3269,6 @@ view: events_stream {
     group_item_label: "Blocklist State"
     description: "Depending on the type of event:
 * The add-on blocklistState (0 not-blocked, 1 soft-blocked, 2 hard-blocked) at the time the manage event was being collected.
-* The blocklistState of the add-on. 0 is unblocked, 2 is blocked. 1 is soft blocked (this state does not exist in blocklist v3).
 * The blocklistState of the add-on. 0 is unblocked, 1 is soft blocked and 2 is hard blocked."
   }
 
@@ -3937,7 +4059,9 @@ view: events_stream {
     group_item_label: "Engine"
     description: "Depending on the type of event:
 * The name of the default search engine the user selected as a string. Custom search engine user created will have the name `Custom`.
+* The package name of the speech engine, as in engine_bound.
 * The name of the built-in search engine the user selected as a string
+* The package name of the speech engine, for example com.google.android.tts.
 * The engine that was enabled or disabled."
   }
 
@@ -4070,7 +4194,8 @@ view: events_stream {
     group_item_label: "Error Kind"
     description: "Depending on the type of event:
 * Name of the error that aborted initialization, or empty when it completed.
-* \"canceled\" when the primary password prompt was cancelled or declined; \"nss_auth\" when NSS was not initialized or failed to authenticate; \"missing_key\" when NSS could not hand out the key, or the primary password prompt failed for a reason other than a cancel (a key that is simply absent is not reported: a new one is created, and the logins of the old one then show up as \"undecryptable\"); \"invalid_key\" when the key is not a usable key; \"undecryptable\" when the key was available but a login did not decrypt with it; \"encryption_failed\" when the key was available but a login did not encrypt with it."
+* \"canceled\" when the primary password prompt was cancelled or declined; \"nss_auth\" when NSS was not initialized or failed to authenticate; \"missing_key\" when NSS could not hand out the key, or the primary password prompt failed for a reason other than a cancel (a key that is simply absent is not reported: a new one is created, and the logins of the old one then show up as \"undecryptable\"); \"invalid_key\" when the key is not a usable key; \"undecryptable\" when the key was available but a login did not decrypt with it; \"encryption_failed\" when the key was available but a login did not encrypt with it.
+* With result \"error\": \"nss_auth\", \"missing_key\" or \"invalid_key\", with the meanings of pwmgr.rust_storage_crypto_error."
   }
 
   dimension: extras__string__error_message {
@@ -4482,6 +4607,18 @@ view: events_stream {
     description: "Optionally, the frame within stack_id."
   }
 
+  dimension: extras__string__from_container {
+    sql: ${TABLE}.extras.string.from_container ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "From Container"
+    description: "Depending on the type of event:
+* Where the item was before being hidden: the section id (`tools`) when directly in the section, or the id of the item it was inside of (`more`).
+* Where the item was before the move: the section id (`tools`) when directly in the section (shown or hidden), or the id of the item it was inside of (`more`).
+* Where the item was before being shown again: the section id (`tools`) when at the hidden top level, or the id of the hidden item it was inside of (`more`)."
+  }
+
   dimension: extras__string__from_language {
     sql: ${TABLE}.extras.string.from_language ;;
     type: string
@@ -4620,6 +4757,15 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Hashed Addon ID"
     description: "The hashed addon id."
+  }
+
+  dimension: extras__string__hidden_items {
+    sql: ${TABLE}.extras.string.hidden_items ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Hidden Items"
+    description: "Comma separated names of the items the user removed from the menu, from top to bottom, top level only: a hidden More is listed and its items are not (the screen shows it collapsed), and an item the user hid on its own is listed. Each name is one of: find_in_page, desktop_site, extensions, more, translate, summarize_page, move_to_normal_tabs, report_broken_site, shortcut, add_to_home_screen, tab_group, open_in_app, save_as_pdf, print."
   }
 
   dimension: extras__string__hidden_sections {
@@ -4900,7 +5046,7 @@ view: events_stream {
 * A string containing the name of the button the user tapped. These items include: navigate_back, navigate_back_long_press, navigate_forward, navigate_forward_long_press, add_new_tab, add_new_tab_long_press, add_new_private_tab, tab_counter, tab_counter_long_press, menu, share, clear, refresh, stop, add_bookmark, edit_bookmark, security_indicator, qr_code, home, reader_mode, microphone, open_in_fenix, close, site_custom, search_engine_selector, search_engine_selected, translate, summarize.
 * A string containing the name of the shortcut the user selected. These items include: new_tab, share, bookmark, translate, homepage, back
 * A string containing the name of the shortcut the user selected. These items include: new_tab, share, bookmark, translate, homepage, back, none.
-* A string containing the name of the item the user ..."
+* The name of the item that could not be moved. One ..."
   }
 
   dimension: extras__string__item_preference_key {
@@ -4981,6 +5127,7 @@ view: events_stream {
 * - The BCP47 language tag.
 * The BCP 47 language tag of the page.
 * The BCP 47 language the page is read in.
+* The BCP 47 language the page was read in, as in content_ready.
 * The BCP 47 language of the page."
   }
 
@@ -5381,6 +5528,15 @@ view: events_stream {
 * The URI of the module the failing consumer is registered from, e.g. \"moz-src:///browser/components/downloads/DownloadsCommon.sys.mjs\". \"other\" for a URI outside moz-src://, resource:// and chrome://, or one containing whitespace, which an entry registered at runtime can pick freely."
   }
 
+  dimension: extras__string__more_items {
+    sql: ${TABLE}.extras.string.more_items ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "More Items"
+    description: "Comma separated names of the shown items inside More, from top to bottom (empty if none). Only More has items inside it today. Tells which entries of `shown_items` are inside More and which are directly in the section. Each name is one of: find_in_page, desktop_site, extensions, more, translate, summarize_page, move_to_normal_tabs, report_broken_site, shortcut, add_to_home_screen, tab_group, open_in_app, save_as_pdf, print."
+  }
+
   dimension: extras__string__name {
     sql: ${TABLE}.extras.string.name ;;
     type: string
@@ -5763,6 +5919,15 @@ view: events_stream {
     description: "Depending on the type of event:
 * Comma-separated list of platform attributes that would cause split-horizon issues (vpn, proxy, nrpt)
 * Comma-separated list of platform attributes that would cause split-horizon issues (vpn, proxy, nrpt, privateDns)"
+  }
+
+  dimension: extras__string__playback_speed_end {
+    sql: ${TABLE}.extras.string.playback_speed_end ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Playback Speed End"
+    description: "The playback speed when the session ended, as a multiple of normal speed, for example 1.5."
   }
 
   dimension: extras__string__playback_type {
@@ -6179,7 +6344,8 @@ view: events_stream {
 * The error code, converted to a string.
 * The outcome of the prompt.
 * \"ok\", or \"error\" when initialization aborted with a fatal error.
-* The outcome of the Nimbus event recording attempt. One of \"success\", \"cancelled\", or \"error\"."
+* The outcome of the Nimbus event recording attempt. One of \"success\", \"cancelled\", or \"error\".
+* \"ok\", or \"error\" when the key itself could not be..."
   }
 
   dimension: extras__string__results {
@@ -6332,7 +6498,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Section"
-    description: "The name of the moved section. One of: page_controls, reader_view, vpn, tools, library, accounts_and_settings, tabs_controls, quit."
+    description: "Depending on the type of event:
+* The id of the section whose items are edited. One of: tools.
+* The name of the moved section. One of: page_controls, reader_view, vpn, tools, library, accounts_and_settings, tabs_controls, quit."
   }
 
   dimension: extras__string__selected_total {
@@ -6484,6 +6652,15 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "Shortcut"
     description: "The key combination pressed. Used only in the case that entrypoint === KeyShortcut."
+  }
+
+  dimension: extras__string__shown_items {
+    sql: ${TABLE}.extras.string.shown_items ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Shown Items"
+    description: "Comma separated names of the items the screen lists as shown, from top to bottom, as one flat list where the shown items inside More come right after More (1-based placement by position). More is listed even when none of its items is shown. Each name is one of: find_in_page, desktop_site, extensions, more, translate, summarize_page, move_to_normal_tabs, report_broken_site, shortcut, add_to_home_screen, tab_group, open_in_app, save_as_pdf, print."
   }
 
   dimension: extras__string__shown_sections {
@@ -7039,6 +7216,18 @@ view: events_stream {
     group_label: "Extras: String"
     group_item_label: "To"
     description: "The newly selected country code, or \"recommended\" for the automatic location."
+  }
+
+  dimension: extras__string__to_container {
+    sql: ${TABLE}.extras.string.to_container ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "To Container"
+    description: "Depending on the type of event:
+* Where the item is after being hidden: the section id (`tools`) when at the hidden top level, or the id of the hidden item it was moved into (`more`).
+* Where the item is after the move: the section id (`tools`) when directly in the section (shown or hidden), or the id of the item it is inside of (`more`).
+* Where the item is after being shown again: the section id (`tools`) when directly in the section, or the id of the item it was moved into (`more`)."
   }
 
   dimension: extras__string__to_language {
