@@ -733,6 +733,15 @@ view: events_stream {
     description: "True when the scheduler found enough new evidence to generate memories. False when it found none; every other extra is then absent."
   }
 
+  dimension: extras__boolean__granted {
+    sql: ${TABLE}.extras.boolean.granted ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Granted"
+    description: "True if access was granted. False if the user cancelled the file picker."
+  }
+
   dimension: extras__boolean__hadPreviousJwt {
     sql: ${TABLE}.extras.boolean.hadPreviousJwt ;;
     type: yesno
@@ -2012,7 +2021,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Attempts"
-    description: "The number of recovery attempts made in this recovery sequence"
+    description: "Depending on the type of event:
+* The number of times a file picker was shown. The file picker is shown again as long as the selected folder doesn't give access.
+* The number of recovery attempts made in this recovery sequence"
   }
 
   dimension: extras__quantity__auto_adjustments_prior {
@@ -4672,7 +4683,9 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Total"
-    description: "Number of history entries displayed"
+    description: "Depending on the type of event:
+* Number of history entries displayed
+* Logins in the store, local and synced. Only with result \"ok\"."
   }
 
   dimension: extras__quantity__total_cards {
@@ -4863,6 +4876,15 @@ view: events_stream {
     group_label: "Extras: Quantity"
     group_item_label: "Turn Number"
     description: "Current chat turn number"
+  }
+
+  dimension: extras__quantity__undecryptable {
+    sql: ${TABLE}.extras.quantity.undecryptable ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Undecryptable"
+    description: "Logins that did not decrypt with the available key. Only with result \"ok\"."
   }
 
   dimension: extras__quantity__uniform_sampling_probability {
@@ -6708,7 +6730,8 @@ view: events_stream {
     group_item_label: "Error Kind"
     description: "Depending on the type of event:
 * Name of the error that aborted initialization, or empty when it completed.
-* \"canceled\" when the primary password prompt was cancelled or declined; \"nss_auth\" when NSS was not initialized or failed to authenticate; \"missing_key\" when NSS could not hand out the key, or the primary password prompt failed for a reason other than a cancel (a key that is simply absent is not reported: a new one is created, and the logins of the old one then show up as \"undecryptable\"); \"invalid_key\" when the key is not a usable key; \"undecryptable\" when the key was available but a login did not decrypt with it; \"encryption_failed\" when the key was available but a login did not encrypt with it."
+* \"canceled\" when the primary password prompt was cancelled or declined; \"nss_auth\" when NSS was not initialized or failed to authenticate; \"missing_key\" when NSS could not hand out the key, or the primary password prompt failed for a reason other than a cancel (a key that is simply absent is not reported: a new one is created, and the logins of the old one then show up as \"undecryptable\"); \"invalid_key\" when the key is not a usable key; \"undecryptable\" when the key was available but a login did not decrypt with it; \"encryption_failed\" when the key was available but a login did not encrypt with it.
+* With result \"error\": \"nss_auth\", \"missing_key\" or \"invalid_key\", with the meanings of pwmgr.rust_storage_crypto_error."
   }
 
   dimension: extras__string__error_message {
@@ -8018,6 +8041,7 @@ view: events_stream {
     description: "Depending on the type of event:
 * The key of the migrator that will perform the migration.
 * The key of the browser that was selected.
+* The key of the migrator that access was requested for.
 * The key of the browser that had a profile selected for it.
 * The key of the migrator that performed the migration, for example \"chrome\" or \"safari\".
 * The key of the browser that had resources selected for it."

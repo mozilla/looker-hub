@@ -284,9 +284,9 @@
       display: inline
       options:
       - 'release'
-      - 'nightly'
       - 'aurora'
       - 'beta'
+      - 'nightly'
       - 'esr'
       - 'Other'
       
